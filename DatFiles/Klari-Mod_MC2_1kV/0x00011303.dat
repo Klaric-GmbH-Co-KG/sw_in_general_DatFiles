@@ -1,0 +1,551 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01="Tk:GlobalPar"	; globale Daten
+User_01=default	; Zugriffsrecht
+Ident_01="GLOBAL_PAR"
+Group_02="Tk:Delta"
+User_02=Operator
+Ident_02="DELTA"
+Group_03="Tk:Calib"
+User_03=System
+Ident_03="KALIB"
+Group_04="Tk:Variables"
+User_04=Operator
+Ident_04="VARIABLEN"
+CanSpace=0x10	; Belegung des Modus von Can Identifiern
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01="Tk:Reset"	; Reset
+Value_01=0x0010
+User_01=default	; Zugriffsrecht
+Help_01="Reset"
+Name_02="Tk:Restart"	; Restart
+Value_02=0x0016
+User_02=default	; Zugriffsrecht
+Help_02="Restart"
+Name_03="Tk:SavePar"	; SavePar
+Value_03=0x0020
+User_03=operator	; Zugriffsrecht
+Help_03="SavePar"
+Name_04="Tk:SaveCalib"	; SaveCalib
+Value_04=0xCA1B
+User_04=system	; Zugriffsrecht
+Help_04="SaveCalib"
+Name_05="Tk:SaveDelta"	; SaveDelta
+Value_05=0xCB1B
+User_05=system	; Zugriffsrecht
+Help_05="SaveDelta"
+Name_06="Tk:Boot"	; Boot
+Value_06=0xB007
+User_06=system	; Zugriffsrecht
+Help_06="Boot"
+Protect_06 = "Tk:BootWarning"
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+[CAN_Baudrate]
+Group       = 1
+Common      = "CAN_Baudrate"
+Type        = int
+
+[CAN_BaseId]
+Group       = 1
+Common      = "CAN_BaseId"
+Default     = 0x701
+
+[CAN_Xtd]
+Group       = 1
+Common      = "CAN_Xtd"
+
+[CAN_Term]
+Group       = 1
+Common      = "CAN_Term"
+
+[ConfigTxEnable]
+Group        = 1
+Name        = "ConfigTxEnable"
+Type        = int
+Help	      = "ConfigTxEnable"
+
+[Measure_Mode]
+Group       = 1
+Common      = "Measure_Mode"
+Name        = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+
+; -----------------------------------------------
+; P1
+; -----------------------------------------------
+[P1_Autorange]
+Group       = 1
+Common      = "Autorange"
+Name        = "Tk:P1_Autorange"
+
+[P1_Path]
+Group       = 1
+Common      = "Path"	
+Name        = "Tk:P1_Path"
+
+[P1_Speed]
+Group       = 1
+Common      = "Speed8Mhz"
+Name        = "Tk:P1_Speed"
+Default     = 3
+
+[P1_Ave]
+Group       = 1
+Common      = "Ave"	
+Name        = "Tk:P1_Ave"
+
+[P1_Delta_Mode]
+Group       = 1
+Common      = "Delta_ModeB"	
+Name        = "Tk:P1_DeltaMode"
+
+; -----------------------------------------------
+; P2
+; -----------------------------------------------
+
+[P2_Enable]
+Group       = 1
+Common      = "N_PartB"	
+Help        = "P2ChanEnable"
+Name        = "Tk:P2_Enable"
+
+
+[P2_AutoRange]
+Group       = 1
+Common      = "AutoRange" 
+Name        = "Tk:P2_Autorange"
+
+[P2_Path]
+Group       = 1
+Common      = "Path"	
+Name        = "Tk:P2_Path"
+
+[P2_Speed]
+Group       = 1
+Common      = "Speed8Mhz"	
+Name        = "Tk:P2_Speed"
+Default     = 3
+
+[P2_Ave]
+Group       = 1
+Common      = "Ave"	
+Name        = "Tk:P2_Ave"
+
+[P2_Delta_Mode]
+Group       = 1
+Common      = "Delta_ModeB"	
+Name        = "Tk:P2_DeltaMode"
+
+; -----------------------------------------------
+; DELTA_DATA
+; -----------------------------------------------
+[P1_Delta_100]
+Group       = 2
+Common      = "Delta_100"	; use section in Common.cnf
+Name        = "P1 Delta 100";
+
+[P1_Delta_50]
+Group       = 2
+Common      = "Delta_50"	; use section in Common.cnf
+Name        = "P1 Delta 50";
+
+[P1_Delta_24]
+Group       = 2
+Common      = "Delta_24"	; use section in Common.cnf
+Name        = "P1 Delta 24";
+
+[P1_Delta_6]
+Group       = 2
+Common      = "Delta_6"	; use section in Common.cnf
+Name        = "P1 Delta 6";
+
+[P1_Delta_1]
+Group       = 2
+Common      = "Delta_1"	; use section in Common.cnf
+Name        = "P1 Delta 1";
+
+[P2_Delta_100]
+Group       = 2
+Common      = "Delta_100"	; use section in Common.cnf
+Name        = "P2 Delta 100";
+
+[P2_Delta_50]
+Group       = 2
+Common      = "Delta_50"	; use section in Common.cnf
+Name        = "P2 Delta 50";
+
+[P2_Delta_24]
+Group       = 2
+Common      = "Delta_24"	; use section in Common.cnf
+Name        = "P2 Delta 24";
+
+[P2_Delta_6]
+Group       = 2
+Common      = "Delta_6"	; use section in Common.cnf
+Name        = "P2 Delta 6";
+
+[P2_Delta_1]
+Group       = 2
+Common      = "Delta_1"	; use section in Common.cnf
+Name        = "P2 Delta 1";
+
+; -----------------------------------------------
+; KALIB
+; -----------------------------------------------
+[Serial_Number]
+Group        = 3
+Common       = "Serial_Number"	
+Default      = -1
+
+[Month]
+Group        = 3
+Common       = "Month"
+
+[Year]
+Group        = 3
+Common       = "Year"
+
+[Shunt1_A]
+Group        = 3
+Common       = "Shunt1_A"
+Default      = 0
+
+[CAR_CGI1_P]
+Group        = 3
+Common       = "CAR_CGI1"
+Name         = "P1 CAR_CGI1 gain6"
+
+[CAR_CGI2_P]
+Group        = 3
+Common       = "CAR_CGI2"
+Name         = "P1 CAR_CGI2 gain24"
+
+[CAR_CGI3_P]
+Group        = 3
+Common       = "CAR_CGI3"
+Name         = "P1 CAR_CGI3 gain50"
+
+[CAR_CGI4_P]
+Group        = 3
+Common       = "CAR_CGI4"
+Name         = "P1 CAR_CGI4 gain100"
+
+[CAR_CAU4_P]
+Group        = 3
+Common       = "CAR_CAU4"
+Name         = "P1 CAR_CAU4 gain1"
+
+[TRR_TRIMC]
+Group        = 3
+Common       = "TRR_TRIMC"
+Name         = "Asic1 TRR_TRIMC"
+Default      = 0
+
+[TRR_TRIMA]
+Group        = 3
+Common       = "TRR_TRIMA"
+Name         = "Asic1 TRR_TRIMA"
+Default      = 0
+
+[TRR_TRIMBV]
+Group        = 3
+Common       = "TRR_TRIMBV"	
+Name         = "Asic1 TRR_TRIMBV"
+Default      = 0
+
+[TRR_TRIMBTC]
+Group        = 3
+Common       = "TRR_TRIMBTC"
+Name         = "Asic1 TRR_TRIMBTC"
+Default      = 0
+
+[Offset_P]
+Group        = 3
+Common       = "Offset"
+Name         = "P1 Offset"
+
+[Shunt2_A]
+Group        = 3	; Calib
+Common       = "Shunt1_A"
+Name         = "Shunt2_A"
+
+[CAR_CGI1_P2]
+Group        = 3
+Common       = "CAR_CGI1"
+Name         = "P2 CAR_CGI1 gain6"
+
+[CAR_CGI2_P2]
+Group        = 3
+Common       = "CAR_CGI2"
+Name         = "P2 CAR_CGI2 gain24"
+
+[CAR_CGI3_P2]
+Group        = 3
+Common       = "CAR_CGI3"
+Name         = "P2 CAR_CGI3 gain50"
+
+[CAR_CGI4_P2]
+Group        = 3
+Common       = "CAR_CGI4"
+Name         = "P2 CAR_CGI4 gain100"
+
+[CAR_CAU4_P2]
+Group        = 3
+Common       = "CAR_CAU4"
+Name         = "P2 CAR_CAU4 gain1"
+
+[Offset_P2]
+Group        = 3
+Common       = "Offset"
+Name         = "P2 Offset"
+
+[TRR_TRIMC_2]
+Group        = 3
+Common       = "TRR_TRIMC"
+Name         = "Asic2 TRR_TRIMC"
+Default      = 0
+
+[TRR_TRIMA_2]
+Group        = 3
+Common       = "TRR_TRIMA"
+Name         = "Asic2 TRR_TRIMA"
+Default      = 0
+
+[TRR_TRIMBV_2]
+Group        = 3
+Common       = "TRR_TRIMBV"	
+Name         = "Asic2 TRR_TRIMBV"
+Default      = 0
+
+[TRR_TRIMBTC_2]
+Group        = 3
+Common       = "TRR_TRIMBTC"
+Name         = "Asic2 TRR_TRIMBTC"
+Default      = 0
+
+[Offset_P1T5]
+Group        = 3
+Common       = "Offset"
+Name         = "P1T5 Offset"
+
+[Offset_P2T5]
+Group        = 3
+Common       = "Offset"
+Name         = "P2T5 Offset"
+
+[TempInt_Enable]
+Group       = 3
+Common      = "N_PartB"
+Name        = "Tk:TempInt_Enable"
+
+[Temp_Rate]
+Group       = 3
+Common      = "Temp_Rate"
+
+
+
+; -----------------------------------------------
+; VARIABLEN
+; -----------------------------------------------
+
+[Error_Flags]
+Group        = 4
+Name         = "Error Flags"
+Type         = uInt
+Attrib       = Option
+Option_01    = "ERR E2Prom"
+Mask_01      = 0x0001
+Option_02    = "ERR Asic1"
+Mask_02      = 0x0002
+Option_03    = "ERR Asic2"
+Mask_03      = 0x0004
+Option_04    = "ERR Can"
+Mask_04      = 0x0010
+Option_05    = "Can OVR"
+Mask_05      = 0x0020
+Option_06     = "Can Fifo"
+Mask_06      = 0x0040
+Option_07    = "Accu Fifo"
+Mask_07      = 0x0080
+
+[SW_Ver]
+Group        = 4
+Common       = "SW_Ver"
+
+[HW_Ver]
+Group        = 4
+Common       = "HW_Ver"
+
+[EEprom_Ver]
+Group        = 4
+Type         = char
+
+[Probe_Channel]
+Group        = 4
+Type         = char
+Common       = "Probe_Channel"
+Values       = -1..4
+
+[Probe_Value]
+Group        = 4
+Common       = "Probe_Value"
+
+[AR_DELTA]
+Group        = 4
+Name         = "Tk:Name"
+Type         = int
+Values       = 0..100
+
+[AR_DELTA_MIN]
+Group        = 4
+Name         = "Tk:Name"
+Type         = int
+Values       = 0..100
+
+[ARD]
+Group        = 4
+Name         = "Tk:Name"
+Type         = char
+Values       = 0..100
+
+[AR_DMODE]
+Group        = 4
+Name         = "Tk:Name"
+Type         = char
+Values       = 0..100
+
+[TCE]
+Group        = 4
+Name         = "Tk:Name"
+Type         = char
+Values       = 0..1
+
+[MainSeqState]
+Group        = 4
+Name         = "Tk:Name"
+Type         = char
+
+[AccuSpace]
+Group        = 4
+Name         = "Tk:Name"
+Type         = int
+
+[CanSpace]
+Group        = 4
+Name         = "Tk:Name"
+Type         = int
+
+[CAN_Flags]
+Group        = 4
+Name         = "Tk:Name"
+Type         = uInt
+Attrib       = Option
+Option_01    = "SW_CAN_TX_CONFIG"
+Value_01     = 0x01
+Option_02    = "SW_CAN_RUNNING"
+Value_02     = 0x02
+Option_03    = "CAN_TO"
+Value_03     = 0x20
+Option_04    = "CAN_BAUD_ERR"
+Value_04     = 0x40
+Option_05    = "SW_CAN_START"
+Value_05     = 0x80
+
+[CAN_State]
+Group        = 4
+Name         = "Tk:Name"
+Type         = char
+Attrib       = Select
+Select_01    = "Idle"
+Value_01     = 0
+Select_02    = "Restart"
+Value_02     = 1
+Select_03    = "PowerUp"
+Value_03     = 2
+Select_04    = "WaitInit"
+Value_04     = 3
+Select_05    = "WaitNormal"
+Value_05     = 4
+Select_06    = "WaitReady"
+Value_06     = 5
+Select_07    = "Ready"
+Value_07     = 6
+Select_08    = "PrepareWaitRestart"
+Value_08     = 7
+Select_09    = "WaitRestart"
+Value_09     = 8
+Select_10    = "WaitDisable"
+Value_10     = 9
+
+[OWH_State]
+Group        = 4
+Name         = "Tk:Name"
+Type         = char
+
+[OWH_ActDevice]
+Group        = 4
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Fps]
+Group        = 4
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Fps2]
+Group        = 4
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Fps1]
+Group        = 4
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Fps0]
+Group        = 4
+Name         = "Tk:Name"
+Type         = uInt
+
+[Asic1_Sn]
+Group        = 4
+Common       = "Asic_Sn"
+Name         = "Tk:Asic1_Sn"
+
+[Asic2_Sn]
+Group        = 4
+Common       = "Asic_Sn"
+Name         = "Tk:Asic2_Sn"
+
+[ProbeType1]
+Group        = 4
+Common       = "ProbeType"
+Name         = "Tk:ProbeType1"
+
+[ProbeType2]
+Group        = 4
+Common       = "ProbeType"
+Name         = "Tk:ProbeType2"
+
+[Kalib1]
+Group        = 4
+Common       = "Kalib"
+Name         = "Tk:Kalib1"
+
+[Kalib] ; [Kalib2]
+Group        = 4
+Common       = "Kalib"
+Name         = "Tk:Kalib2"
+
+[OFFSET1]
+Group        = 4
+Common       = "Offset"
+Name         = "Tk:Offset1"
+
+[OFFSET2]
+Group        = 4
+Common       = "Offset"
+Name         = "Tk:Offset2"
+

@@ -1,0 +1,1130 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01="Tk:GlobalPar"	; global parameter
+User_01=default	; access
+Ident_01="GLOBAL_PAR"
+Display_01="ViewAndModify"
+Group_02="Tk:MeasPar"	; channel parameter
+User_02=default	; access
+Ident_02="MEAS_PAR"
+Display_02="ViewAndModify"
+Group_03="Tk:RtcData"	; channel parameter
+User_03=default	; access
+Ident_03="RTC"
+Display_03="ViewAndModify"
+Group_04="Tk:ChannelData"
+User_04=Operator
+Ident_04="CHANNEL_DATA"
+Display_04="ViewOnly"
+Group_05="Tk:Variables"
+User_05=Operator
+Ident_05="VARIABLEN"
+Display_05="ViewOnly"
+Group_06="Tk:Calib"
+User_06=System
+Ident_06="KALIB"
+Display_06="ViewAndModify"
+CanSpace=0x30	; Belegung des Modus von Can Identifiern
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01="Tk:Reset"	; Reset
+Value_01=0x0010
+User_01=default	; Zugriffsrecht
+Help_01="Reset"
+Name_02="Tk:Restart"	; Restart
+Value_02=0x0016
+User_02=default	; Zugriffsrecht
+Help_02="Restart"
+Name_03="Tk:SavePar"	; SavePar
+Value_03=0x0020
+User_03=operator	; Zugriffsrecht
+Help_03="SavePar"
+Name_04="Tk:SaveMeasPar"	; SaveMeasPar
+Value_04=0x0021
+User_04=operator	; Zugriffsrecht
+Help_04="SaveMeasPar"
+Name_05="Tk:GetTime"	; get time
+Value_05=0x0030
+User_05=system	; Zugriffsrecht
+Help_05="GetTime"
+Name_06="Tk:SetTime"	; set time
+Value_06=0x0040
+User_06=system	; Zugriffsrecht
+Help_06="SetTime"
+Name_07="Tk:SaveCalib"	; SaveCalib
+Value_07=0xCA1B
+User_07=system	; Zugriffsrecht
+Help_07="SaveCalib"
+Name_08="Tk:GetProbe"	; GetProbe
+Value_08=0x1002
+User_08=system	; Zugriffsrecht
+Help_08="GetProbe"
+Name_09="Fpga RESET"	; HardwareReset
+Value_09=0x1001
+User_09=system	; Zugriffsrecht
+Help_09="FpgaHardwareReset"
+Name_10="Fpga Start"	; Start
+Value_10=0x1003
+User_10=system	; Zugriffsrecht
+Help_10="FpgaStart"
+Name_11="Fpga Stop"	; Start
+Value_11=0x1004
+User_11=system	; Zugriffsrecht
+Help_11="FpgaStop"
+Name_12="Fpga Dummy"	; Start
+Value_12=0x1005
+User_12=system	; Zugriffsrecht
+Help_12="FpgaDummy"
+Name_13="Tk:XdmaRx"	; XdmaRx
+Value_13=0x1100
+User_13=system	; Zugriffsrecht
+Help_13="StopReq"
+Name_14="Tk:XdmaRxOff"	; XdmaRx
+Value_14=0x1101
+User_14=system	; Zugriffsrecht
+Help_14="StopReq"
+Name_15="Tk:XdmaStart"	; XdmaFileStart
+Value_15=0x1100
+User_15=system	; Zugriffsrecht
+Help_15="StopReq"
+Name_16="Tk:XdmaStop"	; XdmaStop
+Value_16=0x1101
+User_16=system	; Zugriffsrecht
+Help_16="StopReq"
+Name_17="Tk:StopReq"	; StopReq
+Value_17=0x1234
+User_17=system	; Zugriffsrecht
+Help_17="StopReq"
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+[CAN_BaseId]
+Group        = 1
+Common       = "CAN_BaseId"
+Default      = 0x701
+Help         = "CAN_BaseId_One"
+
+
+; -----------------------------------------------
+; MEAS_PAR
+; -----------------------------------------------
+[Type]
+Group        = 2
+Name         = "Type"
+Type         = uChar
+Row          = 1
+Column       = 1
+Attrib       = Select
+Select_01    = "DC"
+Value_01     = 0
+Select_02    = "AC"
+Value_02     = 1
+Select_03    = "PWM"
+Value_03     = 2
+
+[AutoSpeed]
+Group        = 2
+Name         = "AutoSpeed"
+Type         = uChar
+Row          = 2
+Column       = 1
+Attrib       = Select
+Select_01    = "static"
+Value_01     = 0
+Select_02    = "dynamic"
+Value_02     = 1
+
+[MeasType]
+Group        = 2
+Name         = "MeasType"
+Type         = uChar
+Row          = 3
+Column       = 1
+Attrib       = Select
+Select_01    = "PhaseToGround"
+Value_01     = 0
+Select_02    = "PhaseToPhase"
+Value_02     = 1
+
+[MasterSelect]
+Group        = 2
+Name         = "MasterType"
+Type         = uChar
+Row          = 4
+Column       = 1
+Attrib       = Select
+Select_01    = "disabled"
+Value_01     = 0
+Select_02    = "Ch1"
+Value_02     = 1
+Select_03    = "Ch2"
+Value_03     = 2
+
+[Frequency]
+Group        = 2
+Name         = "Frequency"
+Type         = uLong
+Row          = 5
+Column       = 1
+
+[CalculationEnable]
+Group        = 2
+Name         = "CalculationEnable"
+Type         = uInt
+Row          = 6
+Column       = 1
+Attrib       = Option
+Option_01    = "PavgEn"
+Mask_01      = 0x01
+Option_02    = "PappEn"
+Mask_02      = 0x02
+Option_03    = "PFEn"
+Mask_03      = 0x04
+
+[Results_Divider]
+Group        = 2
+Name         = "Results_Divider"
+Type         = uInt
+Row          = 7
+Column       = 1
+
+[ADC_Enable_0]
+Group        = 2
+Name         = "Ch0 ADC_Enable"
+Type         = uInt
+Row          = 1
+Column       = 3
+Attrib       = Select
+Select_01    = "disabled"
+Value_01     = 0
+Select_02    = "enabled"
+Value_02     = 1
+
+[ADC_Enable_1]
+Group        = 2
+Name         = "Ch1 ADC_Enable"
+Type         = uInt
+Row          = 1
+Column       = 4
+Attrib       = Select
+Select_01    = "disabled"
+Value_01     = 0
+Select_02    = "enabled"
+Value_02     = 1
+
+[ADC_Offset_0]
+Group        = 2
+Name         = "Ch0 ADC_Offet"
+Type         = Int
+Row          = 2
+Column       = 3
+
+[ADC_Offset_1]
+Group        = 2
+Name         = "Ch1 ADC_Offet"
+Type         = Int
+Row          = 2
+Column       = 4
+
+[ADC_Calib_0]
+Group        = 2
+Name         = "Ch0 ADC_Calib"
+Type         = Int
+Format	     = Hex
+Row          = 3
+Column       = 3
+
+[ADC_Calib_1]
+Group        = 2
+Name         = "Ch1 ADC_Calib"
+Type         = Int
+Format	     = Hex
+Row          = 3
+Column       = 4
+
+[ADC_Ovr_0]
+Group        = 2
+Name         = "Ch0 ADC_Ovr"
+Type         = uInt
+Format	     = Hex
+Row          = 4
+Column       = 3
+
+[ADC_Ovr_1]
+Group        = 2
+Name         = "Ch1 ADC_Ovr"
+Type         = uInt
+Format	     = Hex
+Row          = 4
+Column       = 4
+
+[ADC_FilterEnable]
+Group        = 2
+Name         = "Ch0 ADC_FilterEnable"
+Type         = uInt
+Row          = 5
+Column       = 3
+Attrib       = Option
+Option_01    = "Fil3_CE"
+Mask_01      = 0x01
+Option_02    = "Fil1_CE"
+Mask_02      = 0x02
+
+[ADC_FilterEnable_1]
+Group        = 2
+Name         = "Ch1 ADC_FilterEnable"
+Type         = uInt
+Row          = 5
+Column       = 4
+Attrib       = Option
+Option_01    = "Fil3_CE"
+Mask_01      = 0x01
+Option_02    = "Fil1_CE"
+Mask_02      = 0x02
+
+[ADC_FilterDecimation_0]
+Group        = 2
+Name         = "Ch0 ADC_FilterDecimation"
+Type         = uInt
+Row          = 6
+Column       = 3
+Attrib       = Select
+Select_01    = "disabled"
+Value_01      = 0
+Select_02    = "2x"
+Value_02      = 1
+Select_03    = "4x"
+Value_03      = 2
+Select_04    = "8x"
+Value_04      = 3
+Select_05    = "16x"
+Value_05      = 4
+Select_06    = "32x"
+Value_06      = 5
+
+[ADC_FilterDecimation_1]
+Group        = 2
+Name         = "Ch1 ADC_FilterDecimation"
+Type         = uInt
+Row          = 6
+Column       = 4
+Attrib       = Select
+Select_01    = "disabled"
+Value_01      = 0
+Select_02    = "2x"
+Value_02      = 1
+Select_03    = "4x"
+Value_03      = 2
+Select_04    = "8x"
+Value_04      = 3
+Select_05    = "16x"
+Value_05      = 4
+Select_06    = "32x"
+Value_06      = 5
+
+[Filter1Div_0]
+Group        = 2
+Name         = "Ch0 Filter1Div"
+Type         = uLong
+Row          = 7
+Column       = 3
+
+[Filter1Div_1]
+Group        = 2
+Name         = "Ch1 Filter1Div"
+Type         = uLong
+Row          = 7
+Column       = 4
+
+[Filter2Div_0]
+Group        = 2
+Name         = "Ch0 Filter2Div"
+Type         = uLong
+Row          = 8
+Column       = 3
+
+[Filter2Div_1]
+Group        = 2
+Name         = "Ch1 Filter2Div"
+Type         = uLong
+Row          = 8
+Column       = 4
+
+[CalcEnable_0]
+Group        = 2
+Name         = "Ch0 CalcEnable"
+Type         = uInt
+Row          = 9
+Column       = 3
+Attrib       = Option
+Option_01    = "PeriodEn"
+Mask_01      = 0x01
+Option_02    = "RMSEn"
+Mask_02      = 0x02
+
+[CalcEnable_1]
+Group        = 2
+Name         = "Ch1 CalcEnable"
+Type         = uInt
+Row          = 9
+Column       = 4
+Attrib       = Option
+Option_01    = "PeriodEn"
+Mask_01      = 0x01
+Option_02    = "RMSEn"
+Mask_02      = 0x02
+
+[ComA_Divider0]
+Group        = 2
+Name         = "Div0 Raw"
+Type         = uChar
+Row          = 1
+Column       = 2
+
+[ComA_Divider1]
+Group        = 2
+Name         = "Div1 Ave"
+Type         = uChar
+Row          = 2
+Column       = 2
+
+[ComA_Divider2]
+Group        = 2
+Name         = "Div2 Roll"
+Type         = uChar
+Row          = 3
+Column       = 2
+
+[ComA_Divider3]
+Group        = 2
+Name         = "Div3 PeriodSignal"
+Type         = uChar
+Row          = 4
+Column       = 2
+
+[Trigger_ChSelect]
+Group        = 2
+Name         = "Trigger ChSelect"
+Type         = Int
+Row          = 5
+Column       = 2
+Attrib       = Select
+Select_01    = "no trigger"
+Value_01     = 0
+Select_02    = "Ch1"
+Value_02     = 1
+Select_03    = "Ch2"
+Value_03     = 2
+
+[RawSource_ChSelect]
+Group        = 2
+Name         = "RawSource ChSelect"
+Type         = uInt
+Row          = 6
+Column       = 2
+Attrib       = Select
+Select_01    = "Ridx0"
+Value_01     = 0
+Select_02    = "Ridx1"
+Value_02     = 1
+Select_03    = "Ridx2"
+Value_03     = 2
+
+[Trigger_Level]
+Group        = 2
+Name         = "Trigger_Level"
+Type         = Long
+Row          = 7
+Column       = 2
+
+[Trigger_Position]
+Group        = 2
+Name         = "Trigger_Position"
+Type         = Long
+Row          = 8
+Column       = 2
+
+[BufferMode]
+Group        = 2
+Name         = "BufferMode"
+Type         = uLong
+Row          = 9
+Column       = 2
+Attrib       = Select
+Select_01    = "single window"
+Value_01     = 0
+Select_01    = "single stream"
+Value_01     = 1
+Select_01    = "multiple Window"
+Value_01     = 2
+Select_01    = "multiple stream"
+Value_01     = 3
+
+[BufferSize]
+Group        = 2
+Name         = "BufferSize"
+Type         = uLong
+Row          = 10
+Column       = 2
+
+; -----------------------------------------------
+; RTC
+; -----------------------------------------------
+[Sec]
+Group        = 3
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uChar
+Format	     = Hex
+Help         = "Rtc"
+
+[Min]       
+Group        = 3
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uChar
+Format	     = Hex
+Help         = "Rtc"
+
+[Hours]     
+Group        = 3
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uChar
+Format	     = Hex
+Help         = "Rtc"
+
+[Day]       
+Group        = 3
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uChar
+Format	     = Hex
+Help         = "Rtc"
+
+[Date]      
+Group        = 3
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uChar
+Format	     = Hex
+Help         = "Rtc"
+
+[Month]     
+Group        = 3
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uChar
+Format	     = Hex
+Help         = "Rtc"
+
+[Year]      
+Group        = 3
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uChar
+Format	     = Hex
+Help         = "Rtc"
+
+[Dummy]     
+Group        = 3
+Name         = "dummy"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uChar
+Format	     = Hex
+Help         = "dummy"
+
+
+; -----------------------------------------------
+; CHANNEL_DATA
+; -----------------------------------------------
+[P1_ChipCode]
+Group        = 4
+Type         = uLong
+Format	     = Hex
+Row          = 1
+Column       = 1
+Name         = "P1 ChipCode"
+
+[P1B_ChipCode]
+Group        = 4
+Type         = uLong
+Format	     = Hex
+Row          = 1
+Column       = 2
+Name         = "P1B ChipCode"
+
+[P1_ChipCodeB]
+Group        = 4
+Type         = uLong
+Format	     = Hex
+Row          = 2
+Column       = 1
+Name         = "P1 ChipCodeB"
+
+[P1B_ChipCodeB]
+Group        = 4
+Type         = uLong
+Format	     = Hex
+Row          = 2
+Column       = 2
+Name         = "P1B ChipCodeB"
+
+[P1_Inv]
+Group        = 4
+Common       = "Probe_Inv"
+Type         = uInt
+Row          = 3
+Column       = 1
+Name         = "Tk:Inversion"
+
+[P1B_Inv]
+Group        = 4
+Common       = "Probe_Inv"
+Type         = uInt
+Row          = 3
+Column       = 2
+Name         = "Tk:Inversion"
+
+[P1_Type]
+Group        = 4
+Common       = "ProbeType"
+Type         = uInt
+Row          = 4
+Column       = 1
+Name         = "Tk:ProbeType1"
+
+[P1B_Type]
+Group        = 4
+Common       = "ProbeType"
+Type         = uInt
+Row          = 4
+Column       = 2
+Name         = "Tk:ProbeType1B"
+
+[P1_Kalib]
+Group        = 4
+Common       = "Kalib"
+Type         = uLong
+Row          = 5
+Column       = 1
+Name         = "Tk:Kalib1"
+
+[P1B_Kalib]
+Group        = 4
+Common       = "Kalib"
+Type         = uLong
+Row          = 5
+Column       = 2
+Name         = "Tk:Kalib1B"
+
+[P1_Offset]
+Group        = 4
+Common       = "Offset"
+Type         = Long
+Row          = 6
+Column       = 1
+Name         = "Tk:Offset1"
+
+[P1B_Offset]
+Group        = 4
+Common       = "Offset"
+Type         = Long
+Row          = 6
+Column       = 2
+Name         = "Tk:Offset1B"
+
+[P1_DefaultCalib]
+Group        = 4
+Name         = "P1 DefaultCalib"
+Type         = uLong
+Row          = 7
+Column       = 1
+
+[P1B_DefaultCalib]
+Group        = 4
+Name         = "P1B DefaultCalib"
+Type         = uLong
+Row          = 7
+Column       = 2
+
+[P1_Speed]
+Group        = 4
+Type         = Long
+Row          = 8
+Column       = 1
+Name         = "P1 Speed"
+
+[P1B_Speed]
+Group        = 4
+Type         = Long
+Row          = 8
+Column       = 2
+Name         = "P1B Speed"
+
+; -----------------------------------------------
+; VARIABLEN
+; -----------------------------------------------
+
+[Error_Flags]
+Group        = 5
+Name         = "Error Flags"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "ERR Hw"
+Mask_00      = 0x00000001
+Option_01    = "ERR E2Prom"
+Mask_01      = 0x00000002
+Option_02    = "ERR Asic1"
+Mask_02      = 0x00000004
+Option_03    = "ERR Owh"
+Mask_03      = 0x00000008
+Option_04    = "Xdma wait"
+Mask_04      = 0x00000010
+Option_05    = "Xdma ????"
+Mask_05      = 0x00000020
+Option_06    = "Accu Fifo"
+Mask_06      = 0x00000100
+Option_07    = "Sample OVR"
+Mask_07      = 0x00000200
+Option_08    = "Sample CONST"
+Mask_08      = 0x00000400
+Option_09    = "Period OVR"
+Mask_09      = 0x00000800
+Option_10    = "CSM Selected"
+Mask_10      = 0x00002000
+Option_11    = "CSM Mode Idle"
+Mask_11      = 0x00004000
+Option_12    = "Default Calib"
+Mask_12      = 0x00008000
+Option_13    = "ERR ThermoWire"
+Mask_13      = 0x00010000
+Option_14    = "ERR Asic2"
+Mask_14      = 0x00100000
+Option_15    = "ERR Can2"
+Mask_15      = 0x01000000
+Option_16    = "Can2 OVR"
+Mask_16      = 0x02000000
+Option_17    = "Disable CAN Meas"
+Mask_17      = 0x10000000
+
+[SW_Ver]
+Group        = 5
+Common       = "SW_Ver"
+
+[HW_Ver]
+Group        = 5
+Common       = "HW_Ver"
+
+[MainSeq_State]
+Group        = 5
+Name         = "MainSeq State"
+Type         = uLong
+Attrib       = Select
+Select_01    = "PowerOn"
+Value_01     = 0
+Select_02    = "PowerInit"
+Value_02     = 1
+Select_03    = "Init"
+Value_03     = 2
+Select_04    = "Ready"
+Value_04     = 3
+Select_05    = "ShutDown"
+Value_05     = 4
+Select_06    = "Restart"
+Value_06     = 5
+Select_07    = "ResumeHard"
+Value_07     = 6
+
+[MainSeq_Flags]
+Group        = 5
+Name         = "MainSeq Flags"
+Type         = uLong
+Attrib       = Option
+Option_00    = "dummy"
+Mask_00      = 0x00000001
+
+[KoDeX_State]
+Group        = 5
+Name         = "KoDeX State"
+Type         = uLong
+Attrib       = Select
+Select_01    = "Void"
+Value_01     = 0
+Select_02    = "Init"
+Value_02     = 1
+Select_03    = "InitWait"
+Value_03     = 2
+Select_04    = "Ready"
+Value_04     = 3
+Select_05    = "Error"
+Value_05     = 4
+
+[KoDeX_Flags]
+Group        = 5
+Name         = "KoDeX Flags"
+Type         = uLong
+Attrib       = Option
+Option_00    = "dummy"
+Mask_00      = 0x00000001
+
+[KoDeX_ProtState]
+Group        = 5
+Name         = "KoDeX ProtState"
+Type         = uLong
+Attrib       = Select
+Select_01    = "Init"
+Value_01     = 0
+Select_02    = "Ready"
+Value_02     = 1
+Select_03    = "WaitCmd"
+Value_03     = 2
+Select_04    = "WaitArgLow"
+Value_04     = 3
+Select_05    = "WaitArgHigh"
+Value_05     = 4
+Select_06    = "WaitCnt"
+Value_06     = 5
+Select_07    = "WaitCs"
+Value_07     = 6
+Select_08    = "WaitData"
+Value_08     = 7
+
+[ZynqAxi_State]
+Group        = 5
+Name         = "ZynqAxi State"
+Type         = uLong
+Attrib       = Select
+Select_01    = "Void"
+Value_01     = 0
+Select_02    = "Init"
+Value_02     = 1
+Select_03    = "InitWait"
+Value_03     = 2
+Select_04    = "Ready"
+Value_04     = 3
+Select_05    = "Error"
+Value_05     = 4
+
+[Fpga_Flags]
+Group        = 5
+Name         = "Fpga Flags"
+Type         = uLong
+Format	     = Hex
+
+[ZynqAxi_ProtState]
+Group        = 5
+Name         = "ZynqAxi ProtState"
+Type         = uLong
+Attrib       = Select
+Select_01    = "Init"
+Value_01     = 0
+Select_02    = "Ready"
+Value_02     = 1
+Select_03    = "WaitProbeData"
+Value_03     = 2
+Select_04    = "HardwareReset"
+Value_04     = 3
+Select_05    = "StartMeasurement"
+Value_05     = 4
+Select_06    = "WaitLogWriter"
+Value_06     = 5
+Select_07    = "WaitProbeData"
+Value_07     = 6
+Select_08    = "PrepareSetup"
+Value_08     = 7
+Select_9     = "SendSetup"
+Value_9      = 8
+Select_10    = "WaitSetupAck"
+Value_10     = 9
+Select_11    = "Measurement"
+Value_11     = 10
+Select_12    = "StopMeasurement"
+Value_12     = 11
+Select_13    = "StopWaitAck"
+Value_13     = 12
+Select_14    = "WaitLogWriterStopped"
+Value_14     = 13
+
+[Fpga_State]
+Group        = 5
+Name         = "Fpgga State"
+Type         = uLong
+Attrib       = Select
+Select_01    = "void"
+Value_01     = 0
+Select_02    = "void resume"
+Value_02     = 1
+Select_03    = "Init"
+Value_03     = 2
+Select_04    = "Init wait"
+Value_04     = 3
+Select_05    = "Ready"
+Value_05     = 4
+Select_06    = "Error"
+Value_06     = 5
+
+[Fpga_ReadState]
+Group        = 5
+Name         = "Fpgga ReadState"
+Type         = uLong
+Attrib       = Select
+Select_01    = "Idle"
+Value_01     = 0
+Select_02    = "Measure"
+Value_02     = 1
+
+[Fpga_LogState]
+Group        = 5
+Name         = "Fpgga LogState"
+Type         = uLong
+Attrib       = Select
+Select_01    = "Idle"
+Value_01     = 0
+Select_02    = "Ready"
+Value_02     = 1
+Select_03    = "Ready Light"
+Value_03     = 2
+Select_04    = "Resume"
+Value_04     = 3
+Select_05    = "Error"
+Value_05     = 4
+
+[Fpga_XdmaReadState]
+Group        = 5
+Name         = "Fpgga Xdma ReadState"
+Type         = uLong
+Attrib       = Select
+Select_01    = "Init"
+Value_01     = 0
+Select_02    = "Idle"
+Value_02     = 1
+Select_03    = "Measure"
+Value_03     = 2
+Select_04    = "Stop"
+Value_04     = 3
+Select_05    = "Resume"
+Value_05     = 4
+
+[FpgaAxi_Rx_Num]
+Group        = 5
+Name         = "FpgaAxi Rx_Num"
+Type         = uLong
+
+[FpgaAxi_Rx_Fps]
+Group        = 5
+Name         = "FpgaAxi Rx Fps"
+Type         = uLong
+
+[FpgaAxi_Rx_Bps]
+Group        = 5
+Name         = "FpgaAxi Rx Bps"
+Type         = uLong
+
+[FpgaAxi_FileSize]
+Group        = 5
+Name         = "FpgaAxi FileSize"
+Type         = uLong
+
+[FpgaAxi_Log_Fps]
+Group        = 5
+Name         = "FpgaAxi Log Fps"
+Type         = uLong
+
+[FpgaAxi_Log_Bps]
+Group        = 5
+Name         = "FpgaAxi Log Bps"
+Type         = uLong
+
+[Lvar1]
+Group        = 5
+Name         = "Lvar1"
+Type         = uLong
+Display      = "ViewAndModify"
+
+[Lvar2]
+Group        = 5
+Name         = "Lvar2"
+Type         = uLong
+Display      = "ViewAndModify"
+
+[Lvar3]
+Group        = 5
+Name         = "Lvar3"
+Type         = uLong
+Format	     = Hex
+Display      = "ViewAndModify"
+
+[Lvar4]
+Group        = 5
+Name         = "Lvar4"
+Type         = uLong
+Display      = "ViewAndModify"
+
+
+
+
+; -----------------------------------------------
+; KALIB
+; -----------------------------------------------
+[Serial_Number]
+Group        = 6
+Common       = "Serial_Number"	
+Row          = 1
+Column       = 1
+Default      = -1
+
+[Month]
+Group        = 6
+Common       = "Month"
+Row          = 2
+Column       = 1
+
+[Year]
+Group        = 6
+Common       = "Year"
+Row          = 3
+Column       = 1
+
+[P1_Type]
+Group        = 6
+Common       = "ProbeType"
+Type         = uInt
+Row          = 1
+Column       = 2
+Name         = "Tk:ProbeType1"
+
+[P1B_Type]
+Group        = 6
+Common       = "ProbeType"
+Type         = uInt
+Row          = 1
+Column       = 3
+Name         = "Tk:ProbeType1B"
+
+[P1_Inv]
+Group        = 6
+Common       = "Probe_Inv"
+Type         = uInt
+Row          = 2
+Column       = 2
+Name         = "Tk:Inversion"
+
+[P1B_Inv]
+Group        = 6
+Common       = "Probe_Inv"
+Type         = uInt
+Row          = 2
+Column       = 3
+Name         = "Tk:Inversion"
+
+[P1_Kalib]
+Group        = 6
+Common       = "Kalib"
+Type         = uLong
+Row          = 3
+Column       = 2
+Name         = "Tk:Kalib1"
+
+[P1B_Kalib]
+Group        = 6
+Common       = "Kalib"
+Type         = uLong
+Row          = 3
+Column       = 3
+Name         = "Tk:Kalib1B"
+
+[P1_Offset]
+Group        = 6
+Common       = "Offset"
+Type         = Long
+Row          = 4
+Column       = 2
+Name         = "Tk:Offset1"
+
+[P1B_Offset]
+Group        = 6
+Common       = "Offset"
+Type         = Long
+Row          = 4
+Column       = 3
+Name         = "Tk:Offset1B"
+
+[P1_DefaultCalib]
+Group        = 6
+Name         = "P1 DefaultCalib"
+Type         = uLong
+Row          = 5
+Column       = 2
+
+[P1B_DefaultCalib]
+Group        = 6
+Name         = "P1B DefaultCalib"
+Type         = uLong
+Row          = 5
+Column       = 3
+
+[LogMode]
+Group        = 6
+Name         = "LogMode"
+Type         = uLong
+Row          = 1
+Column       = 4
+Attrib       = Select
+Select_01    = "File"
+Value_01     = 0
+Select_02    = "File Dummy"
+Value_02     = 1
+Select_03    = "Socket"
+Value_03     = 2
+Select_04    = "Socket Dummy"
+Value_04     = 3
+
+[Server_IP]
+Group        = 6
+Name         = "Server_IP"
+Type         = String  
+Size         = 16
+Row          = 2
+Column       = 4
+
+[Service]
+Group        = 6
+Name         = "Service"
+Type         = uLong
+Row          = 3
+Column       = 4
+
+[RemoteLogDir]
+Group        = 6
+Name         = "RemoteLogDir"
+Type         = String
+Size         = 32
+Row          = 4
+Column       = 4
+
+[Xdma_Name]
+Group        = 6
+Name         = "Xdma Name"
+Type         = String
+Size         = 32
+Row          = 5
+Column       = 4
+
+[Xdma_RxSize]
+Group        = 6
+Name         = "Rx Size"
+Type         = uLong
+Format       = Hex
+Row          = 6
+Column       = 4
+
+[Xdma_RxBlock]
+Group        = 6
+Name         = "Rx Block"
+Type         = uLong
+Format       = Hex
+Row          = 7
+Column       = 4
+
+[Xdma_LogBlock]
+Group        = 6
+Name         = "Log Block"
+Type         = uLong
+Format       = Hex
+Row          = 8
+Column       = 4
+

@@ -1,0 +1,152 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01="Tk:GlobalPar"	; globale Daten
+User_01=default	; Zugriffsrecht
+Group_02="Tk:Calib"
+User_02=System
+Group_03="Tk:Variables"
+User_03=Operator
+CanSpace=0x10	; Belegung des Modus von Can Identifiern
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01="Tk:Reset"	; Reset
+Value_01=0x0010
+User_01=default	; Zugriffsrecht
+Help_01="Reset"
+Name_02="Tk:Restart"	; Restart
+Value_02=0x0016
+User_02=default	; Zugriffsrecht
+Help_02="Restart"
+Name_03="Tk:SavePar"	; SavePar
+Value_03=0x0020
+User_03=operator	; Zugriffsrecht
+Help_03="SavePar"
+Name_04="Tk:SaveCalib"	; SaveCalib
+Value_04=0xCA1B
+User_04=system	; Zugriffsrecht
+Help_04="SaveCalib"
+Name_05="Tk:Boot"	; Boot
+Value_05=0xB007
+User_05=system	; Zugriffsrecht
+Help_05="Boot"
+Protect_05 = "Tk:BootWarning"
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+[CAN_BaseId]
+Group       = 1
+Common      = "CAN_BaseId"
+Default     = 0x701
+
+[CAN_Baudrate]
+Group       = 1
+Common      = "CAN_Baudrate"
+Type        = int
+
+[CAN_Xtd]
+Group       = 1
+Common      = "CAN_Xtd"
+
+[CAN_Term]
+Group       = 1
+Common      = "CAN_Term"
+
+
+
+; -----------------------------------------------
+; KALIB
+; -----------------------------------------------
+[Serial_Number]
+Group       = 2	; Calib
+Common      = 1	; Übernahme Definition aus Common.cnf
+
+[Month]
+Group       = 2	; Calib
+Common      = 1	; Übernahme Definition aus Common.cnf
+
+[Year]
+Group       = 2	; Calib
+Common      = 1	; Übernahme Definition aus Common.cnf
+
+[CanConfigProt]
+Group        = 2
+Common       = "CanConfigProt"
+
+
+[CAN_BroadcastId]
+Group        = 2
+Common       = "CAN_BroadcastId"
+Default      = 0x100
+
+
+; -----------------------------------------------
+; VARIABLEN
+; -----------------------------------------------
+[Error_Flags]
+Group       = 3
+Type        = uInt
+Attrib      = Option
+Option_01   = "ERR E2Prom"
+Mask_01     = 0x0001
+Option_02   = "ERR Can1"
+Mask_02     = 0x0010
+Option_03   = "ERR Can2"
+Mask_03     = 0x0020
+Option_04   = "ERR Can Overrun"
+Mask_04     = 0x0040
+Option_05   = "ERR Can Fifo"
+Mask_05     = 0x0080
+
+[SW_Ver]
+Group       = 3
+Common      = 1 ; Übernahme Definition aus Common.cnf
+
+[HW_Ver]
+Group       = 3
+Common      = 1 ; Übernahme Definition aus Common.cnf
+
+[MainSeqState]
+Group       = 3
+Name        = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type        = int
+Help        = "void"
+
+[CAN_State]
+Group       = 3
+Name        = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type        = int
+Help        = "void"
+
+[CanSpace]
+Group        = 4
+Name         = "Tk:Name"
+Type         = int
+
+[CAN_Bps]
+Group        = 4
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Fps]
+Group        = 4
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Fps2]
+Group        = 4
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Fps1]
+Group        = 4
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Fps0]
+Group        = 4
+Name         = "Tk:Name"
+Type         = uInt
+
+
+
+

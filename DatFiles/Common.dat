@@ -1,0 +1,2866 @@
+[CAN_Baudrate]
+Name    = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type    = char
+Attrib  = Select
+Help    = "CAN_Baudrate"	; Namenskonvention : Help_<Tk:Lang>.txt"
+Select_01="Tk:Baud_125k"
+Value_01=2
+Select_02="Tk:Baud_250k"
+Value_02=3
+Select_03="Tk:Baud_500k"
+Value_03=4
+Select_04="Tk:Baud_1M"
+Value_04=5
+
+[CAN_Xtd]
+Name    = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type    = char
+Help	= "CAN_Xtd"
+Attrib  = Select
+Select_01="Tk:Standard"
+Value_01=0
+Select_02="Tk:Extended"
+Value_02=1
+
+[CAN_Term]
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = char
+Help	       = "CAN_Term"
+Attrib       = Select
+Select_01    = "Tk:On"
+Value_01     = 1
+Select_02    = "Tk:Off"
+Value_02     = 0
+
+[CAN_Option]
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uChar
+Help	       = "CAN_Option"
+Attrib       = Option
+Option_00    = "Tk:CAN_Term"
+Mask_00      = 0x00000001
+Option_00    = "Tk:CAN_Xtd_Format"
+Mask_00      = 0x00000002
+
+[CAN_BaseId]
+Name    = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type    = uLong
+Format	= Hex
+Values  = 0..0x7FF
+
+[CAN_Id]
+Name    = "CAN Id"	; Namenskonvention : Tk:ParameterId:Name
+Type    = uLong
+Format	= Hex
+Values  = 0..0x7FF
+
+[CAN_ID]
+Name        = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type        = uLong
+Format	    = Hex
+Values      = 0..0x1000
+
+[CanConfigProt]
+Name         = "Tk:Name"
+Type         = Int
+Help	       = "CAN_ConfigProt"
+Attrib       = Combo
+Select_01    = "Tk:CANConfig_NONE"
+Value_01     = 0
+Select_02    = "Tk:CANConfig_KoDeX"
+Value_02     = 1
+Select_03    = "Tk:CANConfig_CSM"
+Value_03     = 2
+
+[CAN_BroadcastId]
+Name    = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type    = uLong
+Help    = "CAN_BroadcastID"
+Format	= Hex
+Values  = 0..0x1000
+
+[CanId_Individual]
+Name    = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type    = uLong
+Help    = "CANId_Individual"
+Format	= Hex
+
+[CanSel]
+Name         = "Tk:Name"
+Type         = uChar
+Help	       = "CANSelection"
+Attrib       = Combo
+Select_01    = "CAN1"
+Value_01     = 0
+Select_02    = "CAN2"
+Value_02     = 1
+
+[Output_Result]
+Name         = "Tk:Output_Result"
+Type         = uLong
+Help	       = "Output_Result"
+Attrib       = Option
+Option_00    = "Tk:CAN1"
+Mask_00      = 0x00000002
+Option_00    = "Tk:CAN2"
+Mask_00      = 0x00000004
+Option_00    = "Tk:KlaricServer"
+Mask_00      = 0x00000008
+Option_00    = "Tk:Xcp"
+Mask_00      = 0x00000010
+Option_00    = "Tk:Rs232"
+Mask_00      = 0x00000020
+
+[Output_Result2]
+Name         = "Tk:Activation"
+Help         = "Activation_Fuse3"
+Type         = uLong
+Column       = 1
+Row          = 1
+Attrib       = Option
+Option_00    = "Tk:ConfigEth"
+Mask_00      = 0x00000040
+
+[Output_Result3]
+Name         = "Tk:Output_Result"
+Type         = uLong
+Help	       = "Output_Result"
+Attrib       = Option
+Option_00    = "Tk:KlaricServer"
+Mask_00      = 0x00000008
+Option_00    = "Tk:Xcp"
+Mask_00      = 0x00000010
+Option_00    = "Tk:Rs232"
+Mask_00      = 0x00000020
+Option_00    = "Usb Stick"
+Mask_00      = 0x00000200
+;Option_00    = "PLP"
+;Mask_00      = 0x00000800
+
+[Output_Result_Fuse3]
+Name         = "Tk:Output_Result"
+Type         = uLong
+Help	       = "Output_Result"
+Attrib       = Option
+Option_00    = "Tk:KlaricServer"
+Mask_00      = 0x00000008
+Option_00    = "Tk:Xcp"
+Mask_00      = 0x00000010
+Option_00    = "Tk:Rs232"
+Mask_00      = 0x00000020
+
+[Output_Result_MC5]
+Name         = "Tk:Output_Result"
+Type         = uLong
+Help	       = "Output_Result"
+Attrib       = Option
+Option_00    = "Tk:KlaricServer"
+Mask_00      = 0x00000008
+Option_00    = "Tk:Xcp"
+Mask_00      = 0x00000010
+Option_00    = "Tk:Rs232"
+Mask_00      = 0x00000020
+;Option_00    = "PLP"
+;Mask_00      = 0x00000800
+
+[Output_Result_Reduced]
+Name         = "Tk:Output_Result"
+Type         = uLong
+Help	       = "Output_Result"
+Attrib       = Option
+Option_00    = "Tk:Rs232"
+Mask_00      = 0x00000020
+
+[Output_Result_Cord5]
+Name         = "Tk:Output_Result"
+Type         = uLong
+Help	       = "Output_Result"
+Attrib       = Option
+Option_00    = "Tk:Rs232"
+Mask_00      = 0x00000020
+Option_00    = "Usb Stick"
+Mask_00      = 0x00000200
+
+
+[Output_Result_Quad2]
+Name         = "Tk:Output_Result"
+Type         = uLong
+Help	       = "Output_Result"
+Attrib       = Option
+Option_00    = "Tk:CAN1"
+Mask_00      = 0x00000002
+Option_00    = "Tk:CAN2"
+Mask_00      = 0x00000004
+Option_00    = "Tk:KlaricServer"
+Mask_00      = 0x00000008
+Option_00    = "Tk:Xcp"
+Mask_00      = 0x00000010
+Option_00    = "Tk:Rs232"
+Mask_00      = 0x00000020
+
+[Common_Output_Sample_Can]
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uLong
+Help	       = "Output_Result"
+Attrib       = Combo
+Default      = 1
+Select_00    = "----"
+Value_00     = 0
+Select_00    = "CAN1"
+Value_00     = 1
+Select_00    = "CAN2"
+Value_00     = 2
+
+[Common_Output_Sample_CanB]
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uLong
+Help	       = "Output_Result"
+Attrib       = Combo
+Default      = 1
+Select_00    = "----"
+Value_00     = 0
+Select_00    = "CAN1"
+Value_00     = 1
+Select_00    = "CAN2"
+Value_00     = 2
+Select_00    = "CAN1 alternierend CAN2"
+Value_00     = 3
+
+[Output_Result_Zynq]
+Name         = "Tk:Output_Result"
+Type         = uLong
+Help	       = "Output_Result"
+Attrib       = Option
+Option_00    = "Tk:CAN1"
+Mask_00      = 0x00000001
+Option_01    = "Tk:CAN2"
+Mask_01      = 0x00000002
+Option_02    = "Tk:KlaricServer"
+Mask_02      = 0x00000004
+Option_03    = "Tk:Xcp"
+Mask_03      = 0x00000008
+;Option_04    = "Tk:Rs232"
+;Mask_04      = 0x00000010
+
+[PeriodicOutput]
+Name         = "Tk:PeriodicOutput"
+Help         = "PeriodicOutput"
+Type         = Long
+
+[Common_Output_Zynq]
+Name         = "Common_Output"
+Type         = uLong
+Attrib       = Option
+Option_00    = "Rohwert"
+Mask_00      = 0x0001
+Option_01    = "Mittelwert"
+Mask_01      = 0x0002
+Option_02    = "Effektivwert (RMS)"
+Mask_02      = 0x0004
+Option_03    = "Tk:Power"
+Mask_03      = 0x0008
+Option_03    = "Scheinleistung"
+Mask_03      = 0x0010
+Option_03    = "Leistungsfaktor"
+Mask_03      = 0x0020
+Option_00    = "Tk:Work"
+Mask_00      = 0x0040
+Option_03    = "Periode"
+Mask_03      = 0x0080
+Option_03    = "Leistung (gemeinsam)"
+Mask_03      = 0x0100
+Option_03    = "Arbeit (gemeinsam)"
+Mask_03      = 0x0200
+Option_03    = "Arbeit (kumuliert)"
+Mask_03      = 0x0400
+Option_03    = "Tk:ChargeBalance"
+Mask_03      = 0x0800
+
+[Common_Output_Zynq_ad7763]
+Name         = "Common_Output"
+Type         = uLong
+Attrib       = Option
+Option_00    = "Rohwert"
+Mask_00      = 0x0001
+Option_01    = "Mittelwert"
+Mask_01      = 0x0002
+Option_02    = "Effektivwert (RMS)"
+Mask_02      = 0x0004
+Option_03    = "Tk:Power"
+Mask_03      = 0x0008
+Option_03    = "Scheinleistung"
+Mask_03      = 0x0010
+Option_03    = "Leistungsfaktor"
+Mask_03      = 0x0020
+Option_03    = "Periode"
+Mask_03      = 0x0040
+Option_03    = "Leistung (gemeinsam)"
+Mask_03      = 0x0080
+
+[Measure_Mode]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uInt
+Attrib    = Option
+Help      = "Measure_Mode"
+Option_01 = "Tk:Measure_Mode:Option:01"	; Datenausgabe CAN
+Mask_01   = 0x31
+Option_02 = "Tk:Measure_Mode:Option:02"	; Datenausgabe Rs232
+Mask_02   = 0x32
+
+[ChannelList_8B]
+Name    = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type    = long
+Attrib  = Combo
+Help    = "ChannelList"	; Namenskonvention : Help_<Tk:Lang>.txt"
+Select_00="Tk:none"
+Value_00=0
+Select_00="P1"
+Value_00=1
+Select_00="P2"
+Value_00=2
+Select_00="P3"
+Value_00=3
+Select_00="P4"
+Value_00=4
+Select_00="P5"
+Value_00=5
+Select_00="P6"
+Value_00=6
+Select_00="P7"
+Value_00=7
+Select_00="P8"
+Value_00=8
+Select_00="P1B"
+Value_00=9
+Select_00="P2B"
+Value_00=10
+Select_00="P3B"
+Value_00=11
+Select_00="P4B"
+Value_00=12
+Select_00="P5B"
+Value_00=13
+Select_00="P6B"
+Value_00=14
+Select_00="P7B"
+Value_00=15
+Select_00="P8B"
+Value_00=16
+
+[Channel_Option]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option"
+Option_01 = "Tk:Channel:Option:Enable"
+Mask_01   = 0x00000001
+Option_02 = "Tk:Channel:Option:Autorange"
+Mask_02   = 0x00000002
+Option_03 = "Tk:Channel:Option:Inversion"
+Mask_03   = 0x00000004
+
+[Channel_Option_Fuse2]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Attrib    = Option
+Help      = "Channel_Option"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x0001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x0002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x0004
+
+[Common_Speed_ADS1675]
+Group        = 7
+Name         = "Tk:Name"
+Type         = uLong
+Attrib       = Combo
+Select_01    = "4,0 MHz"
+Value_01     = 1
+Select_02    = "2,0 MHz"
+Value_02     = 2
+Select_03    = "1,0 MHz"
+Value_03     = 4
+Select_04    = " 500,0 kHz"
+Value_04    = 8
+Select_05    = " 250,0 kHz"
+Value_05     = 16
+Select_06    = " 125,0 kHz"
+Value_06     = 32
+
+[Common_Speed_ADS1675_PA1000]
+Group        = 7
+Name         = "Tk:Name"
+Type         = uLong
+Attrib       = Combo
+Select_03    = "1,0 MHz"
+Value_03     = 4
+Select_04    = " 500,0 kHz"
+Value_04    = 8
+Select_05    = " 250,0 kHz"
+Value_05     = 16
+Select_06    = " 125,0 kHz"
+Value_06     = 32
+
+[Channel_Option_STG]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option"
+Option_01 = "Tk:Channel:Option:Enable"
+Mask_01   = 0x00000001
+Option_02 = "Tk:Channel:Option:Autorange"
+Mask_02   = 0x00000002
+Option_03 = "Tk:Channel:Option:Inversion"
+Mask_03   = 0x00000004
+Option_03 = "Tk:Channel:Option:HalfBridge"
+Mask_03   = 0x00010000
+
+[Common_Channel_Option]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Common_Channel_Option"
+Option_01 = "Tk:Common:Channel:Option:Enable"
+Mask_01   = 0x00000001
+Option_02 = "Tk:Channel:Option:Autorange"
+Mask_02   = 0x00000002
+
+[Common_Channel_Option_ad7763]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Common_Channel_Option_ad7763"
+Option_01 = "Tk:Common:Channel:Option:Enable"
+Mask_01   = 0x00000001
+
+[Channel_Option_FUSE3]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option_Fuse3"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x00000002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+Option_00 = "Tk:ChargeBalance"
+Mask_00   = 0x00000100
+
+[Channel_Option_FUSE3_B]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option_FUSE3"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x00000002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+
+[Channel_Option_CORD5]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option_Fuse3"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x00000002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+Option_00 = "Tk:ChargeBalance"
+Mask_00   = 0x00000100
+Option_00 = "CORD4 U-Bat scaling"
+Mask_00   = 0x10000000
+
+[Channel_Option_MULTI_LV_All]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x00000002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+Option_00 = "Tk:ChargeBalance"
+Mask_00   = 0x00000100
+
+[Channel_Option_MULTI8]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option_Fuse3"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x00000002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+
+[Channel_Option_MULTI8]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option_FUSE3"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x00000002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+[Channel_Option_Zynq]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uLong
+Attrib       = Option
+Option_00    = "Rohwert"
+Mask_00      = 0x01
+Option_01    = "Mittelwert"
+Mask_01      = 0x02
+Option_02    = "Effektivwert (RMS)"
+Mask_02      = 0x04
+
+[Channel_Option_AC_Zynq]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+;Help      = "Channel_Option"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+Option_00 = "Tk:Channel:Option:RawAndAveValues"
+Mask_00   = 0x00000800
+;Option_00 = "Tk:Channel:Option:AC"
+;Mask_00   = 0x00000008
+;Option_00 = "Tk:Channel:Option:Period_Master"
+;Mask_00   = 0x00000010
+Option_00 = "Tk:Channel:Option:SkipSampleOutput"
+Mask_00   = 0x00000080
+;Option_00 = "Tk:ChargeBalance"
+;Mask_00   = 0x00000100
+Col_00    = +1
+Option_00 = "Tk:RMS"
+Mask_00   = 0x00004000
+Option_00 = "Tk:Power"
+Mask_00   = 0x00000200
+;Option_00 = "Tk:Work"
+;Mask_00   = 0x00000400
+Option_00 = "Tk:PAPP"
+Mask_00   = 0x00002000
+Option_00 = "Tk:cosPHI"
+Mask_00   = 0x00008000
+
+[Channel_Option_AC_B2_Zynq]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+Option_00 = "Roh- & Mittelwert"
+Mask_00   = 0x00000800
+;Option_00 = "Tk:Channel:Option:AC"
+;Mask_00   = 0x00000008
+;Option_00 = "Tk:Channel:Option:Period_Master"
+;Mask_00   = 0x00000010
+Option_00 = "Tk:Channel:Option:SkipSampleOutput"
+Mask_00   = 0x00000080
+;Option_00 = "Tk:ChargeBalance"
+;Mask_00   = 0x00000100
+Col_00    = +1
+Option_00 = "Tk:RMS"
+Mask_00   = 0x00004000
+Option_00 = "Tk:Channel:Option:ConnectionTriangle"
+Mask_00   = 0x00001000
+
+[Channel_Option_AC]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x00000002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+Option_00 = "Tk:ChargeBalance"
+Mask_00   = 0x00000100
+Option_00 = "Tk:Power"
+Mask_00   = 0x00000200
+Option_00 = "Tk:Work"
+Mask_00   = 0x00000400
+Col_00    = +1
+Option_00 = "Tk:Channel:Option:AC"
+Mask_00   = 0x00000008
+Option_00 = "Tk:Channel:Option:Period_Master"
+Mask_00   = 0x00000010
+Option_00 = "Tk:Channel:Option:Period_NegEdge"
+Mask_00   = 0x00000020
+Option_00 = "Tk:Channel:Option:Period_AutoSpeed"
+Mask_00   = 0x00000040
+Option_00 = "Tk:Channel:Option:SkipSampleOutput"
+Mask_00   = 0x00000080
+
+[Channel_Option_AC_B]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x00000002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+Option_00 = "Tk:ChargeBalance"
+Mask_00   = 0x00000100
+Col_00    = +1
+Option_00 = "Tk:Channel:Option:AC"
+Mask_00   = 0x00000008
+Option_00 = "Tk:Channel:Option:Period_Master"
+Mask_00   = 0x00000010
+Option_00 = "Tk:Channel:Option:Period_NegEdge"
+Mask_00   = 0x00000020
+Option_00 = "Tk:Channel:Option:Period_AutoSpeed"
+Mask_00   = 0x00000040
+Option_00 = "Tk:Channel:Option:SkipSampleOutput"
+Mask_00   = 0x00000080
+Option_00 = "---"
+Mask_00   = 0x80000000
+
+[Channel_Option_AC_B2]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x00000002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+Option_00 = "Tk:ChargeBalance"
+Mask_00   = 0x00000100
+Col_00    = +1
+Option_00 = "Tk:Channel:Option:AC"
+Mask_00   = 0x00000008
+Option_00 = "Tk:Channel:Option:Period_Master"
+Mask_00   = 0x00000010
+Option_00 = "Tk:Channel:Option:Period_NegEdge"
+Mask_00   = 0x00000020
+Option_00 = "Tk:Channel:Option:Period_AutoSpeed"
+Mask_00   = 0x00000040
+Option_00 = "Tk:Channel:Option:SkipSampleOutput"
+Mask_00   = 0x00000080
+Option_00 = "Tk:Channel:Option:ConnectionTriangle"
+Mask_00   = 0x00001000
+
+[Channel_Option_FUSE3_Status]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x00000002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+Option_00 = "Tk:Fast"
+Mask_00   = 0x00000800
+Option_00 = "Tk:ChargeBalance"
+Mask_00   = 0x00000100
+
+[Channel_Option_FUSE3_Status_B]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x00000002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+Option_00 = "Tk:Fast"
+Mask_00   = 0x00000800
+
+
+[Channel_Option_CORD5_Status]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x00000002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+Option_00 = "Tk:Fast"
+Mask_00   = 0x00000800
+Option_00 = "Tk:ChargeBalance"
+Mask_00   = 0x00000100
+Option_00 = "CORD4 U-Bat scaling"
+Mask_00   = 0x10000000
+
+[Channel_Option_AC_Status]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x00000002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+Option_00 = "Tk:Fast"
+Mask_00   = 0x00000800
+Option_00 = "Tk:ChargeBalance"
+Mask_00   = 0x00000100
+Option_00 = "Tk:Power"
+Mask_00   = 0x00000200
+Option_00 = "Tk:Work"
+Mask_00   = 0x00000400
+Col_00    = +1
+Option_00 = "Tk:Channel:Option:AC"
+Mask_00   = 0x00000008
+Option_00 = "Tk:Channel:Option:Period_Master"
+Mask_00   = 0x00000010
+Option_00 = "Tk:Channel:Option:Period_NegEdge"
+Mask_00   = 0x00000020
+Option_00 = "Tk:Channel:Option:Period_AutoSpeed"
+Mask_00   = 0x00000040
+Option_00 = "Tk:Channel:Option:SkipSampleOutput"
+Mask_00   = 0x00000080
+
+[Channel_Option_AC_Status_B]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x00000002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+Option_00 = "Tk:Fast"
+Mask_00   = 0x00000800
+Option_00 = "Tk:ChargeBalance"
+Mask_00   = 0x00000100
+Col_00    = +1
+Option_00 = "Tk:Channel:Option:AC"
+Mask_00   = 0x00000008
+Option_00 = "Tk:Channel:Option:Period_Master"
+Mask_00   = 0x00000010
+Option_00 = "Tk:Channel:Option:Period_NegEdge"
+Mask_00   = 0x00000020
+Option_00 = "Tk:Channel:Option:Period_AutoSpeed"
+Mask_00   = 0x00000040
+Option_00 = "Tk:Channel:Option:SkipSampleOutput"
+Mask_00   = 0x00000080
+Option_00 = "---"
+Mask_00   = 0x80000000
+
+[Channel_Option_AC_Status_B2]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option"
+Option_00 = "Tk:Channel:Option:Enable"
+Mask_00   = 0x00000001
+Option_00 = "Tk:Channel:Option:Autorange"
+Mask_00   = 0x00000002
+Option_00 = "Tk:Channel:Option:Inversion"
+Mask_00   = 0x00000004
+Option_00 = "Tk:Fast"
+Mask_00   = 0x00000800
+Option_00 = "Tk:ChargeBalance"
+Mask_00   = 0x00000100
+Col_00    = +1
+Option_00 = "Tk:Channel:Option:AC"
+Mask_00   = 0x00000008
+Option_00 = "Tk:Channel:Option:Period_Master"
+Mask_00   = 0x00000010
+Option_00 = "Tk:Channel:Option:Period_NegEdge"
+Mask_00   = 0x00000020
+Option_00 = "Tk:Channel:Option:Period_AutoSpeed"
+Mask_00   = 0x00000040
+Option_00 = "Tk:Channel:Option:SkipSampleOutput"
+Mask_00   = 0x00000080
+Option_00 = "Tk:Channel:Option:ConnectionTriangle"
+Mask_00   = 0x00001000
+
+[Channel_OptionTemp]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Option
+Help      = "Channel_Option"
+Option_01 = "Tk:Channel:Option:Enable"
+Mask_01   = 0x00000001
+
+[Display_FieldSel]
+Name         = "Tk:Name"
+Type         = uChar
+Help	       = "Display_FieldSel"
+Attrib       = Combo
+Select_00    = "Tk:Display_Sel_None"
+Value_00     = 0
+Select_01    = "Tk:Display_Sel_P1"
+Value_01     = 1
+Select_02    = "Tk:Display_Sel_P2"
+Value_02     = 2
+Select_03    = "Tk:Display_Sel_Ubat"
+Value_03     = 3
+Select_04    = "Tk:Display_Sel_Uaux"
+Value_04     = 4
+Select_05    = "Tk:Display_Sel_Temp"
+Value_05     = 5
+Select_06    = "Tk:Display_Sel_P1_Charge"
+Value_06     = 6
+Select_07    = "Tk:Display_Sel_P1_DisCharge"
+Value_07     = 7
+Select_08    = "Tk:Display_Sel_P1_Total"
+Value_08     = 8
+Select_09    = "Tk:Display_Sel_P2_Charge"
+Value_09     = 9
+Select_10    = "Tk:Display_Sel_P2_DisCharge"
+Value_10     = 10
+Select_11    = "Tk:Display_Sel_P2_Total"
+Value_11     = 11
+Select_12    = "Tk:Display_Sel_P1P2"
+Value_12     = 12
+
+[Display_FieldSelU3]
+Name         = "Tk:Name"
+Type         = uChar
+Help	       = "Display_FieldSel"
+Attrib       = Combo
+Select_00    = "Tk:Display_Sel_None"
+Value_00     = 0
+Select_01    = "Tk:Display_Sel_P1"
+Value_01     = 1
+Select_02    = "Tk:Display_Sel_P2"
+Value_02     = 2
+Select_03    = "Tk:Display_Sel_Ubat"
+Value_03     = 3
+Select_04    = "Tk:Display_Sel_Uaux"
+Value_04     = 4
+Select_05    = "Tk:Display_Sel_U3"
+Value_05     = 5
+Select_06    = "Tk:Display_Sel_Temp"
+Value_06     = 6
+Select_07    = "Tk:Display_Sel_P1_Charge"
+Value_07     = 7
+Select_08    = "Tk:Display_Sel_P1_DisCharge"
+Value_08     = 8
+Select_09    = "Tk:Display_Sel_P1_Total"
+Value_09     = 9
+Select_10    = "Tk:Display_Sel_P2_Charge"
+Value_10     = 10
+Select_11    = "Tk:Display_Sel_P2_DisCharge"
+Value_11     = 11
+Select_12    = "Tk:Display_Sel_P2_Total"
+Value_12     = 12
+Select_13    = "Tk:Display_Sel_P1P2"
+Value_13     = 13
+
+[TimeStamp]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uInt
+Help      = "TimeStamp"
+Attrib    = Select
+Select_01 = "Tk:HighRes"
+Value_01  = 0
+Select_02 = "Tk:MedRes"
+Value_02  = 1
+Select_03 = "Tk:LowRes"
+Value_03  = 2
+
+[TimeSync_Master]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "TimeSyncMaster"
+Attrib    = Select
+Select_01 = "Tk:Slave"
+Value_01  = 0
+Select_02 = "Tk:Master"
+Value_02  = 1
+
+[TimeSync_Mode]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Help	    = "TimeSync_Mode"
+Attrib    = Select
+Select_01 = "Tk:none"
+Value_01  = 0
+Select_02 = "Tk:Master"
+Value_02  = 1
+Select_03 = "Tk:Slave"
+Value_03  = 2
+
+[TimeSync_CAN_ID]
+Name    = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type    = uLong
+Help    = "TimeSync_CANId"
+Format	= Hex
+Values  = 0..0x1000
+
+[ErrorMsg_CAN_ID]
+Name    = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type    = uLong
+Help    = "ErrorMsg_CANId"
+Format	= Hex
+Values  = 0..0x1000
+
+[Probe_Enable]
+Type        = uChar
+Name        = "P1 Enable"
+Help        = "Chan_Enable"
+Attrib      = Select
+Select_01   = "Tk:On"
+Value_01    = 1
+Select_02   = "Tk:Off"
+Value_02    = 0
+
+[Probe_Inv]
+Type        = uInt
+Name        = "P1 Inv"
+Help        = "Probe_Inv"
+Attrib      = Select
+Select_01   = "Tk:normal"
+Value_01    = 0
+Select_02   = "Tk:inverted"
+Value_02    = 1
+
+[CB_DirSelection]
+Type        = uChar
+Name        = "Tk:CB_Dir"
+Help        = "ChargeBalance"
+Attrib      = Select
+Select_01   = "Tk:CB_Charge_Positiv"
+Value_01    = 0
+Select_02   = "Tk:CB_Charge_Negativ"
+Value_02    = 1
+
+[ConfigTxEnable]
+Name        = "ConfigTxEnable"
+Type        = int
+Help	      = "ConfigTxEnable"
+Attrib      = Select
+Select_01   = "Tk:On"
+Value_01    = 1
+Select_02   = "Tk:Off"
+Value_02    = 0
+
+[DeviceInfoTransmit]
+Name        = "Tk:DeviceInfoTransmit"
+Type        = int
+Help	      = "DeviceInfoTransmit"
+Values      = -1..1440
+
+[Delta_Mode]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "DeltaMode"
+Attrib    = Combo
+Select_01 = "Tk:Delta:None"
+Value_01  = 0
+Select_02 = "Tk:Delta:Diff"
+Value_02  = 1
+Select_03 = "Tk:Delta:Limit"
+Value_03  = 2
+
+[Delta_ModeB]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "DeltaModeB"
+Attrib    = Select
+Select_01 = "Tk:Delta:None"
+Value_01  = 0
+Select_02 = "Tk:Delta:Diff"
+Value_02  = 1
+
+[Delta]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Help	    = "DeltaMode"
+Values    = 0..20000
+
+[OvrValue]
+Type         = uLong
+Name         = "OVR Value"
+
+[N_Part]
+Name        = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type        = int
+Help        = "Npart"
+Default     = 1
+Values      = 0..255
+
+[N_PartB]
+Type        = int
+Attrib      = Select
+Name        = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Select_01   = "Tk:On"
+Value_01    = 1
+Select_02   = "Tk:Off"
+Value_02    = 0
+
+[FastStartStopDir]
+Name         = "Tk:Name"
+Type         = char
+Help	       = "Fast_StartStopDir"
+Attrib       = Select
+Select_01    = "Tk:FromAboveToLower"
+Value_01     = 0
+Select_02    = "Tk:FromLowerToAbove"
+Value_02     = 1
+
+[SwitchChannels]
+Name         = "Tk:SwitchChannels"
+Type         = uLong
+Display      = "ViewAndModify"
+Help	       = "FastMode_Fuse3"
+Attrib       = Option
+Help         = "Channel_Option"
+Option_00    = "P1"
+Mask_00      = 0x00000001
+Option_00    = "P2"
+Mask_00      = 0x00000002
+Option_00    = "P3"
+Mask_00      = 0x00000004
+Option_00    = "P4"
+Mask_00      = 0x00000008
+;Col_00    = +1
+Option_00    = "P5"
+Mask_00      = 0x00000010
+Option_00    = "P6"
+Mask_00      = 0x00000020
+Option_00    = "P7"
+Mask_00      = 0x00000040
+Option_00    = "P8"
+Mask_00      = 0x00000080
+Col_00    = +1
+Option_00    = "P1B"
+Mask_00      = 0x00000100
+Option_00    = "P2B"
+Mask_00      = 0x00000200
+Option_00    = "P3B"
+Mask_00      = 0x00000400
+Option_00    = "P4B"
+Mask_00      = 0x00000800
+;Col_00    = +1
+Option_00    = "P5B"
+Mask_00      = 0x00001000
+Option_00    = "P6B"
+Mask_00      = 0x00002000
+Option_00    = "P7B"
+Mask_00      = 0x00004000
+Option_00    = "P8B"
+Mask_00      = 0x00008000
+
+[SwitchChannels_Quad]
+Name         = "Tk:SwitchChannels"
+Type         = uLong
+Display      = "ViewAndModify"
+Help	       = "FastMode_Fuse3"
+Attrib       = Option
+Help         = "Channel_Option"
+Option_00    = "P1"
+Mask_00      = 0x00000001
+Option_00    = "P2"
+Mask_00      = 0x00000002
+Option_00    = "P3"
+Mask_00      = 0x00000004
+Option_00    = "P4"
+Mask_00      = 0x00000008
+Col_00    = +1
+Option_00    = "P1B"
+Mask_00      = 0x00000010
+Option_00    = "P2B"
+Mask_00      = 0x00000020
+Option_00    = "P3B"
+Mask_00      = 0x00000040
+Option_00    = "P4B"
+Mask_00      = 0x00000080
+
+
+[PreCond_Channel]
+Name         = "Tk:PreCond_Channel"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_00    = "Tk:none2"
+Mask_00      = 0x00000000
+Select_00    = "P1"
+Value_00     = 1
+Select_00    = "P2"
+Value_00     = 2
+Select_00    = "P3"
+Value_00     = 3
+Select_00    = "P4"
+Value_00     = 4
+Select_00    = "P5"
+Value_00     = 5
+Select_00    = "P6"
+Value_00     = 6
+Select_00    = "P7"
+Value_00     = 7
+Select_00    = "P8"
+Value_00     = 8
+Select_00    = "P1B"
+Value_00     = 9
+Select_00    = "P2B"
+Value_00     = 10
+Select_00    = "P3B"
+Value_00     = 11
+Select_00    = "P4B"
+Value_00     = 12
+Select_00    = "P5B"
+Value_00     = 13
+Select_00    = "P6B"
+Value_00     = 14
+Select_00    = "P7B"
+Value_00     = 15
+Select_00    = "P8B"
+Value_00     = 16
+
+[PreCond_Channel_4]
+Name         = "Tk:PreCond_Channel"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_00    = "Tk:none2"
+Mask_00      = 0x00000000
+Select_00    = "P1"
+Value_00     = 1
+Select_00    = "P2"
+Value_00     = 2
+Select_00    = "P3"
+Value_00     = 3
+Select_00    = "P4"
+Value_00     = 4
+Select_00    = "P1B"
+Value_00     = 9
+Select_00    = "P2B"
+Value_00     = 10
+Select_00    = "P3B"
+Value_00     = 11
+Select_00    = "P4B"
+Value_00     = 12
+
+[OnOffChar]
+Type        = char
+Attrib      = Select
+Select_01   = "Tk:On"
+Value_01    = 1
+Select_02   = "Tk:Off"
+Value_02    = 0
+
+[OnOffInt]
+Type        = int
+Attrib      = Select
+Select_01   = "Tk:On"
+Value_01    = 1
+Select_02   = "Tk:Off"
+Value_02    = 0
+
+[Autorange]
+Name        = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type        = int
+Help	      = "Autorange"
+Attrib      = Select
+Select_01   = "Tk:On"
+Value_01    = 1
+Select_02   = "Tk:Off"
+Value_02    = 0
+
+[Rdeep]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = Int
+Help	    = "Rdeep"
+Attrib    = Combo
+Default   = 0x00
+Select_01 = "Tk:Off"
+Value_01  = 0x00
+Select_02 = "2"
+Value_02  = 0x02
+Select_03 = "4"
+Value_03  = 0x04
+Select_04 = "8"
+Value_04  = 0x08
+Select_05 = "16"
+Value_05  = 0x10
+Select_06 = "32"
+Value_06  = 0x20
+
+[Gain]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Path"
+Attrib    = Combo
+Default   = 0
+Select_00 = "Tk:Gain1"
+Value_00  = 0
+Select_01 = "Tk:Gain6"
+Value_01  = 1
+Select_02 = "Tk:Gain24"
+Value_02  = 2
+Select_03 = "Tk:Gain50"
+Value_03  = 3
+Select_04 = "Tk:Gain100"
+Value_04  = 4
+
+[Gain_Probe]
+Name      = "Tk:Name" ; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help     = "Path"
+Attrib    = Combo
+Default   = 1
+Select_00 = "Tk:IHM:@RefA@@RefB@Gain1"    // @RefA@ may be replaced by "3:" @RefB@ may be replaced by "10000:" for a 100µOhm shunt
+Value_00  = 0
+Select_01 = "Tk:IHM:@RefA@@RefB@Gain6"
+Value_01  = 1
+Select_02 = "Tk:IHM:@RefA@@RefB@Gain24"
+Value_02  = 2
+Select_03 = "Tk:IHM:@RefA@@RefB@Gain50"
+Value_03  = 3
+Select_04 = "Tk:IHM:@RefA@@RefB@Gain100"
+Value_04  = 4
+
+[Gain_No_G1]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Path"
+Attrib    = Combo
+Default   = 1
+Select_01 = "Tk:Gain6"
+Value_01  = 1
+Select_02 = "Tk:Gain24"
+Value_02  = 2
+Select_03 = "Tk:Gain50"
+Value_03  = 3
+Select_04 = "Tk:Gain100"
+Value_04  = 4
+
+[Path]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Path"
+Attrib    = Combo
+Default   = 1
+Select_01 = "Tk:Gain1"
+Value_01  = 1
+Select_02 = "Tk:Gain6"
+Value_02  = 2
+Select_03 = "Tk:Gain24"
+Value_03  = 3
+Select_04 = "Tk:Gain50"
+Value_04  = 4
+Select_05 = "Tk:Gain100"
+Value_05  = 5
+
+[Path_Probe]
+Name      = "Tk:Name" ; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help     = "Path"
+Attrib    = Combo
+Default   = 1
+Select_00 = "Tk:IHM:@RefA@@RefB@Gain1"    // @RefA@ may be replaced by "3:" @RefB@ may be replaced by "10000:"
+Value_00  = 1
+Select_01 = "Tk:IHM:@RefA@@RefB@Gain6"
+Value_01  = 2
+Select_02 = "Tk:IHM:@RefA@@RefB@Gain24"
+Value_02  = 3
+Select_03 = "Tk:IHM:@RefA@@RefB@Gain50"
+Value_03  = 4
+Select_04 = "Tk:IHM:@RefA@@RefB@Gain100"
+Value_04  = 5
+
+[Path_No_G1]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Path"
+Attrib    = Combo
+Default   = 2
+Select_02 = "Tk:Gain6"
+Value_02  = 2
+Select_03 = "Tk:Gain24"
+Value_03  = 3
+Select_04 = "Tk:Gain50"
+Value_04  = 4
+Select_05 = "Tk:Gain100"
+Value_05  = 5
+
+[Path_B]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Path"
+Attrib    = Combo
+Default   = 1
+Select_01 = "Tk:Gain1"
+Value_01  = 1
+Select_02 = "Tk:Gain6"
+Value_02  = 2
+Select_03 = "Tk:Gain24"
+Value_03  = 3
+Select_04 = "Tk:Gain50"
+Value_04  = 4
+
+[Path_4]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Path"
+Attrib    = Combo
+Default   = 2
+Select_01 = "Tk:Gain6"
+Value_01  = 2
+Select_02 = "Tk:Gain24"
+Value_02  = 3
+Select_03 = "Tk:Gain50"
+Value_03  = 4
+Select_04 = "Tk:Gain100"
+Value_04  = 5
+
+[Path_U]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help      = "Path"
+Attrib    = Combo
+Default   = 2
+Select_02 = "Tk:Gain6:U"
+Value_02  = 2
+Select_03 = "Tk:Gain24:U"
+Value_03  = 3
+Select_04 = "Tk:Gain50:U"
+Value_04  = 4
+Select_05 = "Tk:Gain100:U"
+Value_05  = 5
+
+[Path_HVU]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help      = "Path"
+Attrib    = Combo
+Default   = 2
+Select_01 = "Tk:Gain1:HVU"
+Value_01  = 2
+Select_02 = "Tk:Gain6:HVU"
+Value_02  = 2
+Select_03 = "Tk:Gain24:HVU"
+Value_03  = 3
+Select_04 = "Tk:Gain50:HVU"
+Value_04  = 4
+Select_05 = "Tk:Gain100:HVU"
+Value_05  = 5
+
+[Path_ADC]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = Int
+Help	    = "GainAdc"
+Attrib    = Combo
+Default   = 0
+Select_01 = "Tk:GainAdc1"
+Value_01  = 0
+Select_02 = "Tk:GainAdc10"
+Value_02  = 1
+Select_03 = "Tk:GainAdc100"
+Value_03  = 2
+
+[Path_CoDi_U]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Path"
+Attrib    = Combo
+Default   = 2
+Select_02 = "Tk:Gain6"
+Value_02  = 2
+Select_03 = "Tk:Gain24"
+Value_03  = 3
+
+
+[VoltageDivider]
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uChar
+Help         = "VoltageDivider"
+Default      = 0
+Attrib       = Combo
+Select_00    = "1M/200Ohm-0.001250250"
+Value_00     = 0
+Select_01    = "1M/1.5kOhm-0.000166917"
+Value_01     = 1
+Select_02    = "200k/200Ohm-0.000250250"
+Value_02     = 2
+
+[Speed7.5Mhz]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Speed_7.5Mhz"
+Attrib    = Combo
+Default   = 3
+Select_01 = "Tk:75IntMean1"
+Value_01  = 0x00
+Select_02 = "Tk:75IntMean2"
+Value_02  = 0x01
+Select_03 = "Tk:75IntMean4"
+Value_03  = 0x02
+Select_04 = "Tk:75IntMean8"
+Value_04  = 0x03
+Select_05 = "Tk:75IntMean16"
+Value_05  = 0x04
+Select_06 = "Tk:75IntMean32"
+Value_06  = 0x05
+Select_07 = "Tk:75IntMean64"
+Value_07  = 0x06
+Select_08 = "Tk:75IntMean128"
+Value_08  = 0x07
+Select_09 = "Tk:75IntMean256"
+Value_09  = 0x08
+Select_10 = "Tk:75IntMean512"
+Value_10  = 0x09
+Select_11 = "Tk:75IntMean1024"
+Value_11  = 0x0A
+
+[Speed8Mhz]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Speed_8Mhz"
+Attrib    = Combo
+Default   = 3
+Select_01 = "Tk:8IntMean1"
+Value_01  = 0x00
+Select_02 = "Tk:8IntMean2"
+Value_02  = 0x01
+Select_03 = "Tk:8IntMean4"
+Value_03  = 0x02
+Select_04 = "Tk:8IntMean8"
+Value_04  = 0x03
+Select_05 = "Tk:8IntMean16"
+Value_05  = 0x04
+Select_06 = "Tk:8IntMean32"
+Value_06  = 0x05
+Select_07 = "Tk:8IntMean64"
+Value_07  = 0x06
+Select_08 = "Tk:8IntMean128"
+Value_08  = 0x07
+Select_09 = "Tk:8IntMean256"
+Value_09  = 0x08
+Select_10 = "Tk:8IntMean512"
+Value_10  = 0x09
+Select_11 = "Tk:8IntMean1024"
+Value_11  = 0x0A
+
+[Speed8.192Mhz]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Speed_8.192Mhz"
+Attrib    = Combo
+Default   = 3
+Select_01 = "Tk:8.192IntMean1"
+Value_01  = 0x00
+Select_02 = "Tk:8.192IntMean2"
+Value_02  = 0x01
+Select_03 = "Tk:8.192IntMean4"
+Value_03  = 0x02
+Select_04 = "Tk:8.192IntMean8"
+Value_04  = 0x03
+Select_05 = "Tk:8.192IntMean16"
+Value_05  = 0x04
+Select_06 = "Tk:8.192IntMean32"
+Value_06  = 0x05
+Select_07 = "Tk:8.192IntMean64"
+Value_07  = 0x06
+Select_08 = "Tk:8.192IntMean128"
+Value_08  = 0x07
+Select_09 = "Tk:8.192IntMean256"
+Value_09  = 0x08
+Select_10 = "Tk:8.192IntMean512"
+Value_10  = 0x09
+Select_11 = "Tk:8.192IntMean1024"
+Value_11  = 0x0A
+
+
+[SpeedFuse]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Speed_Fuse"
+Attrib    = Combo
+Default   = 3
+Select_01 = "Tk:FuseIntMean1"
+Value_01  = 0x00
+Select_02 = "Tk:FuseIntMean2"
+Value_02  = 0x01
+Select_03 = "Tk:FuseIntMean4"
+Value_03  = 0x02
+Select_04 = "Tk:FuseIntMean8"
+Value_04  = 0x03
+Select_05 = "Tk:FuseIntMean16"
+Value_05  = 0x04
+Select_06 = "Tk:FuseIntMean32"
+Value_06  = 0x05
+Select_07 = "Tk:FuseIntMean64"
+Value_07  = 0x06
+Select_08 = "Tk:FuseIntMean128"
+Value_08  = 0x07
+Select_09 = "Tk:FuseIntMean256"
+Value_09  = 0x08
+Select_10 = "Tk:FuseIntMean512"
+Value_10  = 0x09
+Select_11 = "Tk:FuseIntMean1024"
+Value_11  = 0x0A
+
+[SpeedAsic7.5Mhz]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "SpeedAsic_7.5Mhz"
+Attrib    = Combo
+Default   = 3
+Select_01 = "Tk:Asic75IntMean1"
+Value_01  = 0x00
+Select_02 = "Tk:Asic75IntMean2"
+Value_02  = 0x01
+Select_03 = "Tk:Asic75IntMean4"
+Value_03  = 0x02
+Select_04 = "Tk:Asic75IntMean8"
+Value_04  = 0x03
+Select_05 = "Tk:Asic75IntMean16"
+Value_05  = 0x04
+Select_06 = "Tk:Asic75IntMean32"
+Value_06  = 0x05
+Select_07 = "Tk:Asic75IntMean64"
+Value_07  = 0x06
+Select_08 = "Tk:Asic75IntMean128"
+Value_08  = 0x07
+Select_09 = "Tk:Asic75IntMean256"
+Value_09  = 0x08
+Select_10 = "Tk:Asic75IntMean512"
+Value_10  = 0x09
+Select_11 = "Tk:Asic75IntMean1024"
+Value_11  = 0x0A
+
+[SpeedAsic8Mhz]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "SpeedAsic_8Mhz"
+Attrib    = Combo
+Default   = 3
+Select_01 = "Tk:Asic8IntMean1"
+Value_01  = 0x00
+Select_02 = "Tk:Asic8IntMean2"
+Value_02  = 0x01
+Select_03 = "Tk:Asic8IntMean4"
+Value_03  = 0x02
+Select_04 = "Tk:Asic8IntMean8"
+Value_04  = 0x03
+Select_05 = "Tk:Asic8IntMean16"
+Value_05  = 0x04
+Select_06 = "Tk:Asic8IntMean32"
+Value_06  = 0x05
+Select_07 = "Tk:Asic8IntMean64"
+Value_07  = 0x06
+Select_08 = "Tk:Asic8IntMean128"
+Value_08  = 0x07
+Select_09 = "Tk:Asic8IntMean256"
+Value_09  = 0x08
+Select_10 = "Tk:Asic8IntMean512"
+Value_10  = 0x09
+Select_11 = "Tk:Asic8IntMean1024"
+Value_11  = 0x0A
+
+[SpeedAsic8.192Mhz]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "SpeedAsic_8.192Mhz"
+Attrib    = Combo
+Default   = 3
+Select_01 = "Tk:Asic8.192IntMean1"
+Value_01  = 0x00
+Select_02 = "Tk:Asic8.192IntMean2"
+Value_02  = 0x01
+Select_03 = "Tk:Asic8.192IntMean4"
+Value_03  = 0x02
+Select_04 = "Tk:Asic8.192IntMean8"
+Value_04  = 0x03
+Select_05 = "Tk:Asic8.192IntMean16"
+Value_05  = 0x04
+Select_06 = "Tk:Asic8.192IntMean32"
+Value_06  = 0x05
+Select_07 = "Tk:Asic8.192IntMean64"
+Value_07  = 0x06
+Select_08 = "Tk:Asic8.192IntMean128"
+Value_08  = 0x07
+Select_09 = "Tk:Asic8.192IntMean256"
+Value_09  = 0x08
+Select_10 = "Tk:Asic8.192IntMean512"
+Value_10  = 0x09
+Select_11 = "Tk:Asic8.192IntMean1024"
+Value_11  = 0x0A
+
+[Speed16kHz]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Speed_16kHz"
+Attrib    = Combo
+Default   = 3
+Select_01 = "Tk:16IntMean1"
+Value_01  = 0x00
+Select_02 = "Tk:16IntMean2"
+Value_02  = 0x01
+Select_03 = "Tk:16IntMean4"
+Value_03  = 0x02
+Select_04 = "Tk:16IntMean8"
+Value_04  = 0x03
+Select_05 = "Tk:16IntMean16"
+Value_05  = 0x04
+Select_06 = "Tk:16IntMean32"
+Value_06  = 0x05
+Select_07 = "Tk:16IntMean64"
+Value_07  = 0x06
+Select_08 = "Tk:16IntMean128"
+Value_08  = 0x07
+Select_09 = "Tk:16IntMean256"
+Value_09  = 0x08
+Select_10 = "Tk:16IntMean512"
+Value_10  = 0x09
+Select_11 = "Tk:16IntMean1024"
+Value_11  = 0x0A
+
+[Speed16kHzB]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Speed_16kHzB"
+Attrib    = Combo
+Default   = 11
+Select_00 = "Tk:16BIntMean0"
+Value_00  = 0x00
+Select_01 = "Tk:16BIntMean1"
+Value_01  = 0x01
+Select_02 = "Tk:16BIntMean2"
+Value_02  = 0x02
+Select_03 = "Tk:16BIntMean4"
+Value_03  = 0x03
+Select_04 = "Tk:16BIntMean8"
+Value_04  = 0x04
+Select_05 = "Tk:16BIntMean16"
+Value_05  = 0x05
+Select_06 = "Tk:16BIntMean32"
+Value_06  = 0x06
+Select_07 = "Tk:16BIntMean64"
+Value_07  = 0x07
+Select_08 = "Tk:16BIntMean128"
+Value_08  = 0x08
+Select_09 = "Tk:16BIntMean256"
+Value_09  = 0x09
+Select_10 = "Tk:16BIntMean512"
+Value_10  = 0x0A
+Select_11 = "Tk:16BIntMean1024"
+Value_11  = 0x0B
+
+[Speed16Mhz]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Speed_16kHz"
+Attrib    = Combo
+Default   = 3
+Select_02 = "Tk:16IntMean2"
+Value_02  = 0x01
+Select_03 = "Tk:16IntMean4"
+Value_03  = 0x02
+Select_04 = "Tk:16IntMean8"
+Value_04  = 0x03
+Select_05 = "Tk:16IntMean16"
+Value_05  = 0x04
+Select_06 = "Tk:16IntMean32"
+Value_06  = 0x05
+Select_07 = "Tk:16IntMean64"
+Value_07  = 0x06
+Select_08 = "Tk:16IntMean128"
+Value_08  = 0x07
+Select_09 = "Tk:16IntMean256"
+Value_09  = 0x08
+Select_10 = "Tk:16IntMean512"
+Value_10  = 0x09
+Select_11 = "Tk:16IntMean1024"
+Value_11  = 0x0A
+
+
+[SpeedAS8510]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Speed_AS8510"
+Attrib    = Combo
+Default   = 3
+Select_01 = "Tk:Asic8.192IntMean1"
+Value_01  = 0x00
+Select_02 = "Tk:Asic8.192IntMean2"
+Value_02  = 0x01
+Select_03 = "Tk:Asic8.192IntMean4"
+Value_03  = 0x02
+Select_04 = "Tk:Asic8.192IntMean8"
+Value_04  = 0x03
+Select_05 = "Tk:Asic8.192IntMean16"
+Value_05  = 0x04
+Select_06 = "Tk:Asic8.192IntMean32"
+Value_06  = 0x05
+Select_07 = "Tk:Asic8.192IntMean64"
+Value_07  = 0x06
+Select_08 = "Tk:Asic8.192IntMean128"
+Value_08  = 0x07
+Select_09 = "Tk:Asic8.192IntMean256"
+Value_09  = 0x08
+Select_10 = "Tk:Asic8.192IntMean512"
+Value_10  = 0x09
+Select_11 = "Tk:Asic8.192IntMean1024"
+Value_11  = 0x0A
+Select_11 = "Tk:Asic8.192IntMean2048"
+Value_11  = 0x0B
+Select_11 = "Tk:Asic8.192IntMean4096"
+Value_11  = 0x0C
+Select_11 = "Tk:Asic8.192IntMean8192"
+Value_11  = 0x0D
+Select_11 = "Tk:Asic8.192IntMean16384"
+Value_11  = 0x0E
+Select_11 = "Tk:Asic8.192IntMean32768"
+Value_11  = 0x0F
+
+[SpeedAD7763]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Help	    = "Speed_AS8510"
+Attrib    = Combo
+Default   = 3
+Select_02    = "625,0 kHz"
+Value_02     = 1
+Select_03    = "312,5 kHz"
+Value_03     = 2
+Select_04    = "156,25 kHz"
+Value_04     = 4
+Select_05    = " 78,125 kHz"
+Value_05     = 8
+
+[RangeAS8510]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "Range_AS8510"
+Attrib    = Combo
+Default   = 3
+Select_01 = "Gain 1   : -240...+1050 mV"
+Value_01  = 0x00
+Select_02 = "Gain 5   : +/-210 mV"
+Value_02  = 0x01
+Select_03 = "Gain 25  : +/-42 mV"
+Value_03  = 0x02
+Select_04 = "Gain 40  : +/-27 mV"
+Value_04  = 0x03
+Select_05 = "Gain 100 : +/-9 mV"
+Value_05  = 0x04
+
+[RangeAS8510_Probe]
+Name               = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type               = char
+Help	             = "Range_AS8510"
+Attrib             = Combo
+Default            = 3
+Select_00          = "Tk:AMS:@RefA@@RefB@Gain1"    // @RefA@ may be replaced by "3:" @RefB@ may be replaced by "10000:" for a 100µOhm shunt
+Value_00           = 0
+Select_01          = "Tk:AMS:@RefA@@RefB@Gain5"
+Value_01           = 1
+Select_02          = "Tk:AMS:@RefA@@RefB@Gain25"
+Value_02           = 2
+Select_03          = "Tk:AMS:@RefA@@RefB@Gain40"
+Value_03           = 3
+Select_04          = "Tk:AMS:@RefA@@RefB@Gain100"
+Value_04           = 4
+Default            = 0
+
+[AS8510_State]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uInt
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_00    = "init"
+Value_00     = 1
+Select_00    = "wait vcc off"
+Value_00     = 2
+Select_00    = "wait vcc on"
+Value_00     = 3
+Select_00    = "init wait asic reserved"
+Value_00     = 4
+Select_00    = "reset asic wait"
+Value_00     = 5
+Select_00    = "prepare asic"
+Value_00     = 6
+Select_00    = "standby"
+Value_00     = 7
+Select_00    = "start asic"
+Value_00     = 8
+Select_00    = "start asic wait"
+Value_00     = 9
+Select_00    = "asic started"
+Value_00     = 10
+Select_00    = "stop asic"
+Value_00     = 11
+Select_00    = "stop asic wait"
+Value_00     = 12
+Select_00    = "ready"
+Value_00     = 13
+Select_00    = "suspend"
+Value_00     = 14
+Select_00    = "error"
+Value_00     = 15
+Select_00    = "error resume"
+Value_00     = 16
+Select_00    = "init resume wait"
+Value_00     = 17
+
+[AS8510_State_B]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uInt
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_00    = "init"
+Value_00     = 1
+Select_00    = "wait vcc off"
+Value_00     = 2
+Select_00    = "wait vcc on"
+Value_00     = 3
+Select_00    = "vcc is on"
+Value_00     = 4
+Select_00    = "select asic"
+Value_00     = 5
+Select_00    = "init wait asic reserved"
+Value_00     = 6
+Select_00    = "reset asic wait"
+Value_00     = 7
+Select_00    = "prepare asic"
+Value_00     = 8
+Select_00    = "standby"
+Value_00     = 9
+Select_00    = "start asic"
+Value_00     = 10
+Select_00    = "start asic wait"
+Value_00     = 11
+Select_00    = "asic started"
+Value_00     = 12
+Select_00    = "stop asic"
+Value_00     = 13
+Select_00    = "stop asic wait"
+Value_00     = 14
+Select_00    = "ready"
+Value_00     = 15
+Select_00    = "suspend"
+Value_00     = 16
+Select_00    = "error"
+Value_00     = 17
+Select_00    = "error resume"
+Value_00     = 18
+Select_00    = "init resume wait"
+Value_00     = 19
+
+[AS8510_State_C]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uInt
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_00    = "init"
+Value_00     = 1
+Select_00    = "wait vcc off"
+Value_00     = 2
+Select_00    = "wait vcc on"
+Value_00     = 3
+Select_00    = "vcc is on"
+Value_00     = 4
+Select_00    = "select asic"
+Value_00     = 5
+Select_00    = "init wait asic reserved"
+Value_00     = 6
+Select_00    = "reset asic wait"
+Value_00     = 7
+Select_00    = "prepare asic"
+Value_00     = 8
+Select_00    = "standby"
+Value_00     = 9
+Select_00    = "start asic"
+Value_00     = 10
+Select_00    = "start asic wait"
+Value_00     = 11
+Select_00    = "start asic delay"
+Value_00     = 12
+Select_00    = "asic started"
+Value_00     = 13
+Select_00    = "stop asic"
+Value_00     = 14
+Select_00    = "stop asic wait"
+Value_00     = 15
+Select_00    = "stop asic delay"
+Value_00     = 16
+Select_00    = "ready"
+Value_00     = 17
+Select_00    = "suspend"
+Value_00     = 18
+Select_00    = "error"
+Value_00     = 19
+Select_00    = "error resume"
+Value_00     = 20
+Select_00    = "init resume wait"
+Value_00     = 21
+
+[ADC7763_Speed]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help	    = "ADC7763_Speed"
+Attrib    = Combo
+Default   = 3
+Select_00 = "Tk:ADC7763_x16"
+Value_00  = 0x02
+Select_00 = "Tk:ADC7763_x32"
+Value_00  = 0x03
+
+[Ave]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help      = "Average"
+Default   = 1
+Values    = 1..100
+
+[Ave_uInt]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uInt
+Help      = "Average"
+Default   = 1
+Values    = 1..1000
+
+[Ave_uInt_Zynq]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uInt
+Help      = "Average"
+Default   = 1
+Values    = 1..655350
+
+[Ave_uInt_Zynq_ads]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uInt
+Help      = "Average"
+Default   = 1
+Values    = 1..4000000
+
+[CanAve]
+Name         = "Tk:CANAve"
+Type         = uInt
+Help         = "CANAve"
+
+[PickNum]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uInt
+Help      = "PickNum"
+Default   = 1
+Values    = 1..10000
+
+[Rm]
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uInt
+Values       = 1..256
+Help         = "RollingMean"
+Default      = 1
+
+[zynq_Rm]
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uInt
+Values       = 1..1023
+Help         = "RollingMean"
+Default      = 1
+
+[Temp_Rate]
+Name        = "Tk:Temp_Rate"
+Type		    = int
+Default     = 6
+Help	    = "TempRate"
+Attrib    = Combo
+Select_01 = "0.01 sec"
+Value_01  = 0x00
+Select_02 = "0.02 sec"
+Value_02  = 0x01
+Select_03 = "0.05 sec"
+Value_03  = 0x02
+Select_04 = "0.10 sec"
+Value_04  = 0x03
+Select_05 = "0.20 sec"
+Value_05  = 0x04
+Select_06 = "0.50 sec"
+Value_06  = 0x05
+Select_07 = "1.00 sec"
+Value_07  = 0x06
+Select_08 = "2.00 sec"
+Value_08  = 0x07
+Select_09 = "5.00 sec"
+Value_09  = 0x08
+Select_10 = "10.00 sec"
+Value_10  = 0x09
+
+[Delta_100]
+Type    = int
+Values  = -10000..10000
+Help    = "Delta"
+Default = 500
+
+[Delta_50]
+Type    = int
+Values  = -10000..10000
+Help    = "Delta"
+Default = 100
+
+[Delta_24]
+Type    = int
+Values  = -10000..10000
+Help    = "Delta"
+Default = 100
+
+[Delta_6]
+Type    = int
+Values  = -10000..10000
+Help    = "Delta"
+Default = 50
+
+[Delta_1]
+Type    = int
+Values  = -10000..10000
+Help    = "Delta"
+Default = 50
+
+
+[Serial_Number]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = -2..32767
+Help      = "Serial_Number"
+Default   = -1
+
+[Month]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Help      = "MonthYearKalib"
+Values    = 0..12
+Default   = 0
+
+[Year]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Help      = "MonthYearKalib"
+Values    = 0..99
+Default   = 0
+
+[Shunt1_A]
+Name      = "Shunt1_A"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = -32768..32767
+Default   = 0
+
+[CAR_CGI1]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = 0..2047
+Help      = "CalibAsic"
+Default   = 1548
+
+[CAR_CGI2]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = 0..2047
+Help      = "CalibAsic"
+Default   = 1548
+
+[CAR_CGI3]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = 0..2047
+Help      = "CalibAsic"
+Default   = 1548
+
+[CAR_CGI4]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = 0..2047
+Help      = "CalibAsic"
+Default   = 1548
+
+[CAR_CAU0]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = 0..2047
+Help      = "CalibAsic"
+Default   = 1548
+
+[CAR_CAU1]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = 0..2047
+Help      = "CalibAsic"
+Default   = 1548
+
+[CAR_CAU2]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = 0..2047
+Help      = "CalibAsic"
+Default   = 1548
+
+[CAR_CAU3]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = 0..2047
+Help      = "CalibAsic"
+Default   = 1548
+
+[CAR_CAU4]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = 0..2047
+Help      = "CalibAsic"
+Default   = 1548
+
+[CAR_CAU5]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = 0..2047
+Help      = "CalibAsic"
+Default   = 1548
+
+[TRR_TRIMC]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Values    = 0..31
+Default   = 0
+
+[TRR_TRIMA]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Values    = 0..31
+Default   = 0
+
+[TRR_TRIMBV]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Values    = 0..31
+Default   = 0
+
+[TRR_TRIMBTC]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Values    = 0..31
+Default   = 0
+
+[Offset]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = -32000..32000
+Help      = "CalibAsic"
+Default   = 0
+
+
+[Error_Flags]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uInt
+Attrib    = Option
+Help      = "Error_Flags"
+Option_01 = "EEprom"
+Mask_01   = 0x0001
+Option_02 = "Asic"
+Mask_02   = 0x0002
+Option_03 = "CAN"
+Mask_03   = 0x0004
+
+[SW_Ver]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uInt
+Help      = "ModuleVersion"
+
+[HW_Ver]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uInt
+Help      = "ModuleVersion"
+
+[EEprom_Ver]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Help      = "ModuleVersion"
+
+[Probe_Channel]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Display   = "ViewAndModify"
+Help      = "ProbeChannelValue"
+
+[Probe_Value]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = long
+Display   = "ViewAndModify"
+Help      = "ProbeChannelValue"
+
+[ASIC_SN]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Format	  = Hex
+
+[OWH_State]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+
+[ProbeType]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Attrib    = Combo
+Help      = "ProbeType"
+Select_01 = "Tk:Type0"
+Value_01  = 0
+Select_02 = "Tk:Type1"
+Value_02  = 1
+Select_03 = "Tk:Type2"
+Value_03  = 2
+Select_04 = "Tk:Type3"
+Value_04  = 3
+Select_05 = "Tk:Type4"
+Value_05  = 4
+Select_06 = "Tk:Type5"
+Value_06  = 5
+Select_07 = "Tk:Type6"
+Value_07  = 6
+Select_08 = "Tk:Type7"
+Value_08  = 7
+Select_09 = "Tk:Type8"
+Value_09  = 8
+Select_10 = "Tk:Type9"
+Value_10  = 9
+Select_11 = "Tk:Type10"
+Value_11  = 10
+Select_12 = "Tk:Type11"
+Value_12  = 11
+
+[ProbeType_B]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Attrib    = Combo
+Help      = "ProbeType"
+Select_01 = "Tk:Type0"
+Value_01  = 0
+Select_02 = "Tk:Type1"
+Value_02  = 1
+Select_03 = "Tk:Type2"
+Value_03  = 2
+Select_04 = "Tk:Type3"
+Value_04  = 3
+Select_05 = "Tk:Type4"
+Value_05  = 4
+Select_06 = "Tk:Type5"
+Value_06  = 5
+Select_07 = "Tk:Type6"
+Value_07  = 6
+Select_08 = "Tk:Type7"
+Value_08  = 7
+Select_09 = "Tk:Type8"
+Value_09  = 8
+Select_10 = "Tk:Type9"
+Value_10  = 9
+Select_11 = "Tk:Type10"
+Value_11  = 10
+Select_12 = "Tk:Type11"
+Value_12  = 11
+Select_13 = "Tk:Type12"
+Value_13  = 12
+
+[ProbeType_C]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Attrib    = Combo
+Help      = "ProbeType"
+Select_01 = "Tk:Type0"
+Value_01  = 0
+Select_02 = "Tk:Type1"
+Value_02  = 1
+Select_03 = "Tk:Type2"
+Value_03  = 2
+Select_04 = "Tk:Type3"
+Value_04  = 3
+Select_05 = "Tk:Type4"
+Value_05  = 4
+Select_06 = "Tk:Type5"
+Value_06  = 5
+Select_07 = "Tk:Type6"
+Value_07  = 6
+Select_08 = "Tk:Type7"
+Value_08  = 7
+Select_09 = "Tk:Type8"
+Value_09  = 8
+Select_10 = "Tk:Type9"
+Value_10  = 9
+Select_11 = "Tk:Type10"
+Value_11  = 10
+Select_12 = "Tk:Type11"
+Value_12  = 11
+Select_13 = "Tk:Type12"
+Value_13  = 12
+Select_14 = "13: PT_U_200:1_PROBE"
+Value_14  = 13
+
+[ProbeType_D]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Attrib    = Combo
+Help      = "ProbeType"
+Select_01 = "Tk:Type0"
+Value_01  = 0
+Select_02 = "Tk:Type1"
+Value_02  = 1
+Select_03 = "Tk:Type2"
+Value_03  = 2
+Select_04 = "Tk:Type3"
+Value_04  = 3
+Select_05 = "Tk:Type4"
+Value_05  = 4
+Select_06 = "Tk:Fuse3:Type5"
+Value_06  = 5
+Select_07 = "Tk:Type6"
+Value_07  = 6
+Select_08 = "Tk:Type7"
+Value_08  = 7
+Select_09 = "Tk:Type8"
+Value_09  = 8
+Select_10 = "Tk:Type9"
+Value_10  = 9
+Select_11 = "Tk:Type10"
+Value_11  = 10
+Select_12 = "Tk:Type11"
+Value_12  = 11
+Select_13 = "Tk:Type12"
+Value_13  = 12
+
+[ProbeType3rdParty]
+Name      = "Tk:ProbeType3rdParty"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uLong
+Attrib    = Combo
+Help      = "Probe3rdParty"
+Select_01 = "Tk:Type0_3rdParty"
+Value_01  = 0
+Select_02 = "Tk:Type15"
+Value_02  = 15
+
+[ProbeType_CoDi]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Attrib    = Combo
+Help      = "ProbeType"
+Select_01 = "Tk:Type0"
+Value_01  = 0
+Select_02 = "Tk:Type1"
+Value_02  = 1
+Select_03 = "Tk:Type2"
+Value_03  = 2
+Select_04 = "Tk:Type3"
+Value_04  = 3
+Select_05 = "Tk:Type4"
+Value_05  = 4
+Select_06 = "Tk:Type5"
+Value_06  = 5
+Select_07 = "Tk:Type6"
+Value_07  = 6
+Select_08 = "Tk:Type7"
+Value_08  = 7
+Select_09 = "Tk:Type8"
+Value_09  = 8
+Select_10 = "Tk:Type9"
+Value_10  = 9
+Select_11 = "Tk:Type10"
+Value_11  = 10
+Select_12 = "Tk:Type11"
+Value_12  = 11
+Select_13 = "Tk:Type16"
+Value_13  = 16
+Select_14 = "Tk:Type17"
+Value_14  = 17
+
+[ProbeScale3rdParty]
+Name      = "Tk:ProbeScale3rdParty"	; Namenskonvention : Tk:ParameterId:Name
+Type      = string
+Size      = 16
+Help      = "Probe3rdParty"
+
+[ProbeOffset3rdParty]
+Name      = "Tk:ProbeOffset3rdParty"	; Namenskonvention : Tk:ParameterId:Name
+Type      = string
+Size      = 16
+Help      = "Probe3rdParty"
+
+[ProbeScale3rdParty_float]
+Name      = "Tk:ProbeScale3rdParty"	; Namenskonvention : Tk:ParameterId:Name
+Type      = float
+Help      = "Probe3rdParty"
+
+[ProbeOffset3rdParty_float]
+Name      = "Tk:ProbeOffset3rdParty"	; Namenskonvention : Tk:ParameterId:Name
+Type      = float
+Help      = "Probe3rdParty"
+
+[ProbeUnit3rdParty]
+Name      = "Tk:ProbeUnit3rdParty"	; Namenskonvention : Tk:ParameterId:Name
+Type      = string
+Size      = 4
+Help      = "Probe3rdParty"
+
+[DeviceType]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Format	  = Hex
+
+[SerNuA]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Format	  = Hex
+
+[SerNuB]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Format	  = Hex
+
+[SerNuC]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Format	  = Hex
+
+[SerNuD]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Format	  = Hex
+
+[SerNuE]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Format	  = Hex
+
+[SerNuF]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Format	  = Hex
+
+[Crc]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Format	  = Hex
+
+[Kalib]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uint
+
+[DefaultCalib]
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uInt
+
+[WireTest]
+Name         = "Tk:Name"
+Type         = uLong
+Help         = "WireTest"
+
+[Thermo_N_Part]
+Name         = "P1 Thermo_N_Part"
+Type         = uInt
+Help         = "Thermo_N_Part"
+Default      = 1
+Values       = 1..10000
+
+[R100_Ave]
+Name         = "Tk:Name"
+Type         = uInt
+Help         = "R100_Ave"
+Default      = 1
+Values       = 1..100
+
+[PT100_Ave]
+Name         = "Tk:Name"
+Type         = uInt
+Help         = "PT100_Ave"
+Default      = 1
+Values       = 1..100
+
+[SocketState]
+Name         = "Tk:Name"
+Type         = uInt
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_00    = "Init"
+Value_00     = 1
+Select_00    = "Init UDP CLient"
+Value_00     = 2
+Select_00    = "Init Broadcast send"
+Value_00     = 3
+Select_00    = "Init Broadcast receive"
+Value_00     = 4
+Select_00    = "Init TCP Service Auth"
+Value_00     = 5
+Select_00    = "Init TCP Client"
+Value_00     = 6
+Select_00    = "Init TCP Client connect"
+Value_00     = 7
+Select_00    = "Init TCP Service"
+Value_00     = 8
+Select_00    = "Wait Ready"
+Value_00     = 9
+Select_00    = "Ready"
+Value_00     = 10
+Select_00    = "Resume"
+Value_00     = 11
+Select_00    = "Error"
+Value_00     = 12
+Select_00    = "Close service"
+Value_00     = 13
+
+[SocketStateB]
+Name         = "Tk:Name"
+Type         = uInt
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_00    = "Init"
+Value_00     = 1
+Select_00    = "Init UDP CLient"
+Value_00     = 2
+Select_00    = "Init UDP Service"
+Value_00     = 3
+Select_00    = "Init Broadcast send"
+Value_00     = 4
+Select_00    = "Init Broadcast receive"
+Value_00     = 5
+Select_00    = "Init TCP Service Auth"
+Value_00     = 6
+Select_00    = "Init TCP Client"
+Value_00     = 7
+Select_00    = "Init TCP Client connect"
+Value_00     = 8
+Select_00    = "Init TCP Service"
+Value_00     = 9
+Select_00    = "Wait Ready"
+Value_00     = 10
+Select_00    = "Ready"
+Value_00     = 11
+Select_00    = "Resume"
+Value_00     = 12
+Select_00    = "Error"
+Value_00     = 13
+Select_00    = "Close service"
+Value_00     = 14
+
+[SysLog_Flags]
+Name         = "SysLog Flags"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "ON"
+Mask_00      = 0x00000001
+Option_00    = "DBG"
+Mask_00      = 0x00000002
+Option_00    = "ERR"
+Mask_00      = 0x00000004
+Option_00    = "FLW"
+Mask_00      = 0x00000008
+Option_00    = "RX"
+Mask_00      = 0x00000010
+Option_00    = "TX"
+Mask_00      = 0x00000020
+Option_00    = "PROT"
+Mask_00      = 0x00000040
+Option_00    = "USR1"
+Mask_00      = 0x00000080
+Option_00    = "USR2"
+Mask_00      = 0x00000100
+Option_00    = "USR3"
+Mask_00      = 0x00000200
+Option_00    = "USR4"
+Mask_00      = 0x00000400
+Option_00    = "USR5"
+Mask_00      = 0x00000800
+Option_00    = "USR6"
+Mask_00      = 0x00001000
+Option_00    = "USR7"
+Mask_00      = 0x00002000
+Option_00    = "USR8"
+Mask_00      = 0x00004000
+Option_00    = "USR9"
+Mask_00      = 0x00008000
+
+[SysLog_Flags_Fuse3]
+Name         = "SysLog Flags"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "ON"
+Mask_00      = 0x00000001
+Option_00    = "DBG"
+Mask_00      = 0x00000002
+Option_00    = "ERR"
+Mask_00      = 0x00000004
+Option_00    = "FLW"
+Mask_00      = 0x00000008
+Option_00    = "RX"
+Mask_00      = 0x00000010
+Option_00    = "TX"
+Mask_00      = 0x00000020
+Option_00    = "PROT"
+Mask_00      = 0x00000040
+Option_00    = "MainSeq"
+Mask_00      = 0x00000080
+Option_00    = "Uart KoDeX"
+Mask_00      = 0x00000100
+Option_00    = "OWH"
+Mask_00      = 0x00000200
+Option_00    = "AS8510"
+Mask_00      = 0x00000400
+Option_00    = "Meas"
+Mask_00      = 0x00000800
+Option_00    = "RMS"
+Mask_00      = 0x00001000
+Option_00    = "CMD"
+Mask_00      = 0x00002000
+Option_00    = "CAN"
+Mask_00      = 0x00004000
+Option_00    = "CANDrv"
+Mask_00      = 0x00008000
+Option_00    = "Socket"
+Mask_00      = 0x00010000
+Option_00    = "NetDev"
+Mask_00      = 0x00020000
+Option_00    = "XCP"
+Mask_00      = 0x00040000
+Option_00    = "XCP Prot"
+Mask_00      = 0x00080000
+Option_00    = "XCP Rx Tx"
+Mask_00      = 0x00100000
+Option_00    = "KODEX RX TX"
+Mask_00      = 0x00200000
+Option_00    = "NETDEV RX TX"
+Mask_00      = 0x00400000
+Option_00    = "USB"
+Mask_00      = 0x00800000
+Option_00    = "USR17"
+Mask_00      = 0x01000000
+Option_00    = "USR18"
+Mask_00      = 0x02000000
+Option_00    = "USR19"
+Mask_00      = 0x04000000
+Option_00    = "RAW"
+Mask_00      = 0x08000000
+
+[Cord5_DIGIO_Type]
+Name         = "Tk:Type"
+Help         = "DIGIO_Dig"
+Type         = uInt
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_00    = "IO_OUT_T_DO_HighSide"
+Value_00     = 1
+Select_00    = "IO_OUT_T_DO_PushPull"
+Value_00     = 2
+Select_00    = "IO_IN_T_DI_Type1_3"
+Value_00     = 3
+Select_00    = "IO_IN_T_DI_Type2"
+Value_00     = 4
+
+[Cord5_DIGIO_Event]
+Name         = "Tk:Event"
+Help         = "DIGIO_Dig"
+Type         = uChar
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_00    = "IN:FtpOn"
+Value_00     = 1
+Select_00    = "IN:CANOn"
+Value_00     = 2
+Select_00    = "OUT:Ftp pending"
+Value_00     = 3
+Select_00    = "OUT:CAN active"
+Value_00     = 4
+
+[Cord5_DIGIO_BitStat]
+Name         = "BitStat"
+Type         = uChar
+Help         = "BitStat"
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "Out:Default Status"
+Mask_00      = 0x00000001
+
+[SysLog_Flags_Cord5]
+Name         = "Tk:Status"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "ON"
+Mask_00      = 0x00000001
+Option_00    = "DBG"
+Mask_00      = 0x00000002
+Option_00    = "ERR"
+Mask_00      = 0x00000004
+Option_00    = "FLW"
+Mask_00      = 0x00000008
+Option_00    = "RX/TX"
+Mask_00      = 0x00000010
+Option_00    = "PROT"
+Mask_00      = 0x00000020
+Option_00    = "MainSeq"
+Mask_00      = 0x00000080
+Option_00    = "KoDeX"
+Mask_00      = 0x00000100
+Option_00    = "Uart"
+Mask_00      = 0x00000200
+Option_00    = "OWH"
+Mask_00      = 0x00000400
+Option_00    = "AS8510"
+Mask_00      = 0x00000800
+Option_00    = "Meas"
+Mask_00      = 0x00001000
+Option_00    = "RMS"
+Mask_00      = 0x00002000
+Option_00    = "CMD"
+Mask_00      = 0x00004000
+Option_00    = "CAN"
+Mask_00      = 0x00008000
+Option_00    = "CANDrv"
+Mask_00      = 0x00010000
+Option_00    = "Socket"
+Mask_00      = 0x00020000
+Option_00    = "NetDev"
+Mask_00      = 0x00040000
+Option_00    = "XCP"
+Mask_00      = 0x00080000
+Option_00    = "USB"
+Mask_00      = 0x00100000
+Option_00    = "FTP"
+Mask_00      = 0x00200000
+Option_00    = "FTPC"
+Mask_00      = 0x00400000
+Option_00    = "DIGIO"
+Mask_00      = 0x00800000
+Option_00    = "RTC"
+Mask_00      = 0x01000000
+Option_00    = "DISPL"
+Mask_00      = 0x02000000
+Option_00    = "SPISW"
+Mask_00      = 0x04000000
+Option_00    = "RAW"
+Mask_00      = 0x08000000
+Option_00    = "USR21"
+Mask_00      = 0x10000000
+Option_00    = "USR22"
+Mask_00      = 0x20000000
+Option_00    = "USR23"
+Mask_00      = 0x40000000
+Option_00    = "USR24"
+Mask_00      = 0x80000000
+
+[SysLog_Flags_Quad2]
+Name         = "SysLog Flags"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "ON"
+Mask_00      = 0x00000001
+Option_00    = "DBG"
+Mask_00      = 0x00000002
+Option_00    = "ERR"
+Mask_00      = 0x00000004
+Option_00    = "FLW"
+Mask_00      = 0x00000008
+Option_00    = "RX"
+Mask_00      = 0x00000010
+Option_00    = "TX"
+Mask_00      = 0x00000020
+Option_00    = "PROT"
+Mask_00      = 0x00000040
+Option_00    = "MainSeq"
+Mask_00      = 0x00000080
+Option_00    = "Uart KoDeX"
+Mask_00      = 0x00000100
+Option_00    = "OWH"
+Mask_00      = 0x00000200
+Option_00    = "AS8510"
+Mask_00      = 0x00000400
+Option_00    = "Meas"
+Mask_00      = 0x00000800
+Option_00    = "RMS"
+Mask_00      = 0x00001000
+Option_00    = "CMD"
+Mask_00      = 0x00002000
+Option_00    = "CAN"
+Mask_00      = 0x00004000
+Option_00    = "CANDrv"
+Mask_00      = 0x00008000
+Option_00    = "Socket"
+Mask_00      = 0x00010000
+Option_00    = "NetDev"
+Mask_00      = 0x00020000
+Option_00    = "XCP"
+Mask_00      = 0x00040000
+Option_00    = "XCP Prot"
+Mask_00      = 0x00080000
+Option_00    = "XCP RxTx"
+Mask_00      = 0x00100000
+Option_00    = "KodeX Eth RxTx"
+Mask_00      = 0x00200000
+Option_00    = "NetDev RxTx"
+Mask_00      = 0x00400000
+Option_00    = "USR16"
+Mask_00      = 0x00800000
+Option_00    = "USR17"
+Mask_00      = 0x01000000
+Option_00    = "USR18"
+Mask_00      = 0x02000000
+Option_00    = "USR19"
+Mask_00      = 0x04000000
+Option_00    = "RAW"
+Mask_00      = 0x08000000
+
+[KoDeX_Prot_State]
+Type         = uInt
+Help	       = "CAN_ConfigProt"
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_00    = "base"
+Value_00     = 1
+Select_00    = "wait cmd"
+Value_00     = 2
+Select_00    = "wait arg low"
+Value_00     = 3
+Select_00    = "wait arg high"
+Value_00     = 4
+Select_00    = "wait arg cnt"
+Value_00     = 5
+Select_00    = "wait data"
+Value_00     = 6
+Select_00    = "wait cs"
+Value_00     = 7
+Select_00    = "exit"
+Value_00     = 8
+
+[CP_DependsOnLock]
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type         = ulong
+Attrib       = Select
+Select_01    = "Tk:On"
+Value_01     = 1
+Select_02    = "Tk:Off"
+Value_02     = 0			  

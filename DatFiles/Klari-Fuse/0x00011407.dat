@@ -1,0 +1,1573 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01="Tk:GlobalPar"	; globale Daten
+User_01=default	; Zugriffsrecht
+Ident_01="GLOBAL_PAR"
+Group_02="Tk:ChannelPar"	; Channel data
+User_02=default	; Zugriffsrecht
+Ident_02="CHANNEL_PAR"
+Group_03="Tk:ChannelStat"
+User_03=default
+Ident_03="CHANNEL_DATA"
+Group_04="Tk:Variables"
+User_04=default
+Ident_04="VARIABLEN"
+Group_05="Tk:Calib"
+User_05=System
+Ident_05="KALIB"
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01="Tk:Reset"	; Reset
+Value_01=0x0010
+Id_01=CMD_RESET
+User_01=default	; Zugriffsrecht
+Help_01="Reset"
+Name_02="Tk:Restart"	; Restart
+Value_02=0x0018
+Id_02=CMD_RESTART_MM
+User_02=default	; Zugriffsrecht
+Help_02="Restart"
+Name_03="Tk:SavePar"	; SavePar
+Value_03=0x0020
+Id_03=CMD_SAVE_PAR
+User_03=operator	; Zugriffsrecht
+Help_03="SavePar"
+Name_04="Tk:SaveChannel"	; SaveChannel
+Value_04=0x0030
+Id_04=CMD_SAVE_CHANNEL_PAR
+User_04=operator	; Zugriffsrecht
+Help_04="SaveChannel"
+Name_05="Tk:SaveCalib"	; SaveCalib
+Value_05=0xCA1B
+Id_05=CMD_SAVE_KALIB
+User_05=system	; Zugriffsrecht
+Help_05="SaveCalib"
+Name_06="Tk:Boot"	; Boot
+Value_06=0xB007
+User_06=system	; Zugriffsrecht
+Help_06="Boot"
+Protect_06 = "Tk:BootWarning"
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+[CAN_BaseId]
+Group        = 1
+Common       = "CAN_BaseId"
+Help         = "CAN_BaseId_Fuse"
+
+[CAN_Baudrate]
+Group        = 1
+Common       = "CAN_Baudrate"
+Type         = int
+
+[CAN_Xtd]
+Group        = 1
+Common       = "CAN_Xtd"
+
+[CAN_Term]
+Group        = 1
+Common       = "CAN_Term"
+
+[Measure_Mode]
+Group        = 1
+Common       = "Measure_Mode"
+; zusätzliche Optionen
+Option_04    = "Tk:Measure_Mode:Option:04"	; "Error message"
+Mask_04      = 0x08
+
+[ChannelProgMode]
+Group        = 1
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Help	       = "ChannelProgMode"
+Type         = int
+Attrib       = Select
+Select_01    = "Tk:ChannelProgMode:Select:Off"
+Value_01     = 0
+Select_02    = "Tk:ChannelProgMode:Select:On"
+Value_02     = 1
+
+[Speed]
+Group        = 1
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Type         = Int
+Name         = "Tk:Measure_Speed"
+Default      = 10
+
+[Ave]
+Group        = 1
+Common       = "Ave"	
+Type         = Int
+Name         = "Tk:Ave"
+
+[Autorange]
+Group        = 1
+Common       = "AutoRange"
+Type         = char
+
+[Range_Mode] ; Range_Mode
+Group        = 1
+Common       = "Path"
+Name         = "Range_Mode"
+
+; -----------------------------------------------
+; TimeSync
+; -----------------------------------------------
+[TimeSync_Mode]
+Group        = 1
+Common       = "TimeSync_Mode"
+
+[ConfigTxEnable]
+Group        = 1
+Common       = "ConfigTxEnable"
+
+[OvrValue]
+Group        = 1
+Common       = "OvrValue"
+
+
+; -----------------------------------------------
+; ProbeChannel
+; -----------------------------------------------
+[P1_Enable]
+Group        = 2
+Common       = "Probe_Enable"
+Name         = "Tk:P1_Enable"
+Column       = 1
+Row          = 1
+
+[P2_Enable]
+Group        = 2
+Common       = "Probe_Enable"
+Name         = "Tk:P2_Enable"
+Column       = 2
+Row          = 1
+
+[P3_Enable]
+Group        = 2
+Common       = "Probe_Enable"
+Name         = "Tk:P3_Enable"
+Column       = 3
+Row          = 1
+
+[P4_Enable]
+Group        = 2
+Common       = "Probe_Enable"
+Name         = "Tk:P4_Enable"
+Column       = 4
+Row          = 1
+
+[P5_Enable]
+Group        = 2
+Common       = "Probe_Enable"
+Name         = "Tk:P5_Enable"
+Column       = 5
+Row          = 1
+
+[P6_Enable]
+Group        = 2
+Common       = "Probe_Enable"
+Name         = "Tk:P6_Enable"
+Column       = 6
+Row          = 1
+
+[P7_Enable]
+Group        = 2
+Common       = "Probe_Enable"
+Name         = "Tk:P7_Enable"
+Column       = 7
+Row          = 1
+
+[P8_Enable]
+Group        = 2
+Common       = "Probe_Enable"
+Name         = "Tk:P8_Enable"
+Column       = 8
+Row          = 1
+
+[P1_Autorange]
+Group        = 2
+Common       = "Autorange"
+Type         = char
+Name         = "Tk:P1_Autorange"
+Column       = 1
+Row          = 2
+
+[P2_Autorange]
+Group        = 2
+Common       = "Autorange"
+Type         = char
+Name         = "Tk:P2_Autorange"
+Column       = 2
+Row          = 2
+
+[P3_Autorange]
+Group        = 2
+Common       = "Autorange"
+Type         = char
+Name         = "Tk:P3_Autorange"
+Column       = 3
+Row          = 2
+
+[P4_Autorange]
+Group        = 2
+Common       = "Autorange"
+Type         = char
+Name         = "Tk:P4_Autorange"
+Column       = 4
+Row          = 2
+
+[P5_Autorange]
+Group        = 2
+Common       = "Autorange"
+Type         = char
+Name         = "Tk:P5_Autorange"
+Column       = 5
+Row          = 2
+
+[P6_Autorange]
+Group        = 2
+Common       = "Autorange"
+Type         = char
+Name         = "Tk:P6_Autorange"
+Column       = 6
+Row          = 2
+
+[P7_Autorange]
+Group        = 2
+Common       = "Autorange"
+Type         = char
+Name         = "Tk:P7_Autorange"
+Column       = 7
+Row          = 2
+
+[P8_Autorange]
+Group        = 2
+Common       = "Autorange"
+Type         = char
+Name         = "Tk:P8_Autorange"
+Column       = 8
+Row          = 2
+
+[P1_Path]
+Group        = 2
+Common       = "Path"	
+Name         = "Tk:P1_Path"
+Column       = 1
+Row          = 3
+
+[P2_Path]
+Group        = 2
+Common       = "Path"	
+Name         = "Tk:P2_Path"
+Column       = 2
+Row          = 3
+
+[P3_Path]
+Group        = 2
+Common       = "Path"	
+Name         = "Tk:P3_Path"
+Column       = 3
+Row          = 3
+
+[P4_Path]
+Group        = 2
+Common       = "Path"	
+Name         = "Tk:P4_Path"
+Column       = 4
+Row          = 3
+
+[P5_Path]
+Group        = 2
+Common       = "Path"	
+Name         = "Tk:P5_Path"
+Column       = 5
+Row          = 3
+
+[P6_Path]
+Group        = 2
+Common       = "Path"	
+Name         = "Tk:P6_Path"
+Column       = 6
+Row          = 3
+
+[P7_Path]
+Group        = 2
+Common       = "Path"	
+Name         = "Tk:P7_Path"
+Column       = 7
+Row          = 3
+
+[P8_Path]
+Group        = 2
+Common       = "Path"	
+Name         = "Tk:P8_Path"
+Column       = 8
+Row          = 3
+
+[P1_Speed]
+Group        = 2
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Default      = 10
+Column       = 1
+Row          = 4
+
+[P2_Speed]
+Group        = 2
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Default      = 10
+Column       = 2
+Row          = 4
+
+[P3_Speed]
+Group        = 2
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Default      = 10
+Column       = 3
+Row          = 4
+
+[P4_Speed]
+Group        = 2
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Default      = 10
+Column       = 4
+Row          = 4
+
+[P5_Speed]
+Group        = 2
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Default      = 10
+Column       = 5
+Row          = 4
+
+[P6_Speed]
+Group        = 2
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Default      = 10
+Column       = 6
+Row          = 4
+
+[P7_Speed]
+Group        = 2
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Default      = 10
+Column       = 7
+Row          = 4
+
+[P8_Speed]
+Group        = 2
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Default      = 10
+Column       = 8
+Row          = 4
+
+[P1_Ave]
+Group        = 2
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P1_Ave"
+Column       = 1
+Row          = 5
+
+[P2_Ave]
+Group        = 2
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P2_Ave"
+Column       = 2
+Row          = 5
+
+[P3_Ave]
+Group        = 2
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P3_Ave"
+Column       = 3
+Row          = 5
+
+[P4_Ave]
+Group        = 2
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P4_Ave"
+Column       = 4
+Row          = 5
+
+[P5_Ave]
+Group        = 2
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P5_Ave"
+Column       = 5
+Row          = 5
+
+[P6_Ave]
+Group        = 2
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P6_Ave"
+Column       = 6
+Row          = 5
+
+[P7_Ave]
+Group        = 2
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P7_Ave"
+Column       = 7
+Row          = 5
+
+[P8_Ave]
+Group        = 2
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P8_Ave"
+Column       = 8
+Row          = 5
+
+; -----------------------------------------------
+; CHANNEL
+; -----------------------------------------------
+[Asic1 SN]
+Group        = 3
+Common       = "ASIC_SN"
+Name         = "Asic1 SN"
+Column       = 1
+Row          = 1
+
+[Asic2 SN]
+Group        = 3
+Common       = "ASIC_SN"
+Name         = "Asic2 SN"
+Column       = 2
+Row          = 1
+
+[Asic3 SN]
+Group        = 3
+Common       = "ASIC_SN"
+Name         = "Asic3 SN"
+Column       = 3
+Row          = 1
+
+[Asic4 SN]
+Group        = 3
+Common       = "ASIC_SN"
+Name         = "Asic4 SN"
+Column       = 4
+Row          = 1
+
+[Asic5 SN]
+Group        = 3
+Common       = "ASIC_SN"
+Name         = "Asic5 SN"
+Column       = 5
+Row          = 1
+
+[Asic6 SN]
+Group        = 3
+Common       = "ASIC_SN"
+Name         = "Asic6 SN"
+Column       = 6
+Row          = 1
+
+[Asic7 SN]
+Group        = 3
+Common       = "ASIC_SN"
+Name         = "Asic7 SN"
+Column       = 7
+Row          = 1
+
+[Asic8 SN]
+Group        = 3
+Common       = "ASIC_SN"
+Name         = "Asic8 SN"
+Column       = 8
+Row          = 1
+
+[P1_Type]
+Group        = 3
+Common       = "ProbeType"
+Type         = uChar
+Name         = "Tk:P1_Probe_Type"
+Column       = 1
+Row          = 2
+
+[P2_Type]
+Group        = 3
+Common       = "ProbeType"
+Type         = uChar
+Name         = "Tk:P2_Probe_Type"
+Column       = 2
+Row          = 2
+
+[P3_Type]
+Group        = 3
+Common       = "ProbeType"
+Type         = uChar
+Name         = "Tk:P3_Probe_Type"
+Column       = 3
+Row          = 2
+
+[P4_Type]
+Group        = 3
+Common       = "ProbeType"
+Type         = uChar
+Name         = "Tk:P4_Probe_Type"
+Column       = 4
+Row          = 2
+
+[P5_Type]
+Group        = 3
+Common       = "ProbeType"
+Type         = uChar
+Name         = "Tk:P5_Probe_Type"
+Column       = 5
+Row          = 2
+
+[P6_Type]
+Group        = 3
+Common       = "ProbeType"
+Type         = uChar
+Name         = "Tk:P6_Probe_Type"
+Column       = 6
+Row          = 2
+
+[P7_Type]
+Group        = 3
+Common       = "ProbeType"
+Type         = uChar
+Name         = "Tk:P7_Probe_Type"
+Column       = 7
+Row          = 2
+
+[P8_Type]
+Group        = 3
+Common       = "ProbeType"
+Type         = uChar
+Name         = "Tk:P8_Probe_Type"
+Column       = 8
+Row          = 2
+
+[P1_Speed]
+Group        = 3
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Type         = uChar
+Column       = 1
+Row          = 3
+
+[P2_Speed]
+Group        = 3
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Type         = uChar
+Column       = 2
+Row          = 3
+
+[P3_Speed]
+Group        = 3
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Type         = uChar
+Column       = 3
+Row          = 3
+
+[P4_Speed]
+Group        = 3
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Type         = uChar
+Column       = 4
+Row          = 3
+
+[P5_Speed]
+Group        = 3
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Type         = uChar
+Column       = 5
+Row          = 3
+
+[P6_Speed]
+Group        = 3
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Type         = uChar
+Column       = 6
+Row          = 3
+
+[P7_Speed]
+Group        = 3
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Type         = uChar
+Column       = 7
+Row          = 3
+
+[P8_Speed]
+Group        = 3
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Type         = uChar
+Column       = 8
+Row          = 3
+
+[P1_Kalib]
+Group        = 3
+Common       = "Kalib"
+Name         = "Tk:P1_Calib"
+Column       = 1
+Row          = 4
+
+[P2_Kalib]
+Group        = 3
+Common       = "Kalib"
+Name         = "Tk:P2_Calib"
+Column       = 2
+Row          = 4
+
+[P3_Kalib]
+Group        = 3
+Common       = "Kalib"
+Name         = "Tk:P3_Calib"
+Column       = 3
+Row          = 4
+
+[P4_Kalib]
+Group        = 3
+Common       = "Kalib"
+Name         = "Tk:P4_Calib"
+Column       = 4
+Row          = 4
+
+[P5_Kalib]
+Group        = 3
+Common       = "Kalib"
+Name         = "Tk:P5_Calib"
+Column       = 5
+Row          = 4
+
+[P6_Kalib]
+Group        = 3
+Common       = "Kalib"
+Name         = "Tk:P6_Calib"
+Column       = 6
+Row          = 4
+
+[P7_Kalib]
+Group        = 3
+Common       = "Kalib"
+Name         = "Tk:P7_Calib"
+Column       = 7
+Row          = 4
+
+[P8_Kalib]
+Group        = 3
+Common       = "Kalib"
+Name         = "Tk:P8_Calib"
+Column       = 8
+Row          = 4
+
+[P1_Offset]
+Group        = 3
+Common       = "Offset"
+Name         = "Tk:P1_Offset"
+Column       = 1
+Row          = 5
+
+[P2_Offset]
+Group        = 3
+Common       = "Offset"
+Name         = "Tk:P2_Offset"
+Column       = 2
+Row          = 5
+
+[P3_Offset]
+Group        = 3
+Common       = "Offset"
+Name         = "Tk:P3_Offset"
+Column       = 3
+Row          = 5
+
+[P4_Offset]
+Group        = 3
+Common       = "Offset"
+Name         = "Tk:P4_Offset"
+Column       = 4
+Row          = 5
+
+[P5_Offset]
+Group        = 3
+Common       = "Offset"
+Name         = "Tk:P5_Offset"
+Column       = 5
+Row          = 5
+
+[P6_Offset]
+Group        = 3
+Common       = "Offset"
+Name         = "Tk:P6_Offset"
+Column       = 6
+Row          = 5
+
+[P7_Offset]
+Group        = 3
+Common       = "Offset"
+Name         = "Tk:P7_Offset"
+Column       = 7
+Row          = 5
+
+[P8_Offset]
+Group        = 3
+Common       = "Offset"
+Name         = "Tk:P8_Offset"
+Column       = 8
+Row          = 5
+
+[P1_Month]
+Group        = 3
+Common       = "Month"
+Name         = "Tk:P1_Month"
+Column       = 1
+Row          = 6
+
+[P2_Month]
+Group        = 3
+Common       = "Month"
+Name         = "Tk:P2_Month"
+Column       = 2
+Row          = 6
+
+[P3_Month]
+Group        = 3
+Common       = "Month"
+Name         = "Tk:P3_Month"
+Column       = 3
+Row          = 6
+
+[P4_Month]
+Group        = 3
+Common       = "Month"
+Name         = "Tk:P4_Month"
+Column       = 4
+Row          = 6
+
+[P5_Month]
+Group        = 3
+Common       = "Month"
+Name         = "Tk:P5_Month"
+Column       = 5
+Row          = 6
+
+[P6_Month]
+Group        = 3
+Common       = "Month"
+Name         = "Tk:P6_Month"
+Column       = 6
+Row          = 6
+
+[P7_Month]
+Group        = 3
+Common       = "Month"
+Name         = "Tk:P7_Month"
+Column       = 7
+Row          = 6
+
+[P8_Month]
+Group        = 3
+Common       = "Month"
+Name         = "Tk:P8_Month"
+Column       = 8
+Row          = 6
+
+[P1_Year]
+Group        = 3
+Common       = "Year"
+Name         = "Tk:P1_Year"
+Column       = 1
+Row          = 7
+
+[P2_Year]
+Group        = 3
+Common       = "Year"
+Name         = "Tk:P2_Year"
+Column       = 2
+Row          = 7
+
+[P3_Year]
+Group        = 3
+Common       = "Year"
+Name         = "Tk:P3_Year"
+Column       = 3
+Row          = 7
+
+[P4_Year]
+Group        = 3
+Common       = "Year"
+Name         = "Tk:P4_Year"
+Column       = 4
+Row          = 7
+
+[P5_Year]
+Group        = 3
+Common       = "Year"
+Name         = "Tk:P5_Year"
+Column       = 5
+Row          = 7
+
+[P6_Year]
+Group        = 3
+Common       = "Year"
+Name         = "Tk:P6_Year"
+Column       = 6
+Row          = 7
+
+[P7_Year]
+Group        = 3
+Common       = "Year"
+Name         = "Tk:P7_Year"
+Column       = 7
+Row          = 7
+
+[P8_Year]
+Group        = 3
+Common       = "Year"
+Name         = "Tk:P8_Year"
+Column       = 8
+Row          = 7
+
+[P1_Ave]
+Group        = 3
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P1_Ave"
+Column       = 1
+Row          = 8
+
+[P2_Ave]
+Group        = 3
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P2_Ave"
+Column       = 2
+Row          = 8
+
+[P3_Ave]
+Group        = 3
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P3_Ave"
+Column       = 3
+Row          = 8
+
+[P4_Ave]
+Group        = 3
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P4_Ave"
+Column       = 4
+Row          = 8
+
+[P5_Ave]
+Group        = 3
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P5_Ave"
+Column       = 5
+Row          = 8
+
+[P6_Ave]
+Group        = 3
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P6_Ave"
+Column       = 6
+Row          = 8
+
+[P7_Ave]
+Group        = 3
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P7_Ave"
+Column       = 7
+Row          = 8
+
+[P8_Ave]
+Group        = 3
+Common       = "Ave"	
+Type         = uInt
+Name         = "Tk:P8_Ave"
+Column       = 8
+Row          = 8
+
+
+; -----------------------------------------------
+; VARIABLEN
+; -----------------------------------------------
+
+[Error_Flags]
+Group        = 4
+Type         = uLong
+Attrib       = Option
+Option_01    = "ERR:Owh"
+Mask_01      = 0x00000001
+Option_02    = "ERR:Timeout"
+Mask_02      = 0x00000002
+Option_03    = "ERR:EEprom"
+Mask_03      = 0x00000004
+Option_04    = "ERR:TimeSync"
+Mask_04      = 0x00000008
+Option_05    = "ERR:Fifo full"
+Mask_05      = 0x00000010
+Option_07    = "ERR:Clock"
+Mask_07      = 0x00000040
+Option_08    = "ERR:Default"
+Mask_08      = 0x00000080
+Option_09    = "ERR:Asic1"
+Mask_09      = 0x00000100
+Option_10    = "ERR:Asic2"
+Mask_10      = 0x00000200
+Option_11    = "ERR:Asic3"
+Mask_11      = 0x00000400
+Option_12    = "ERR:Asic4"
+Mask_12      = 0x00000800
+Option_13    = "ERR:Asic5"
+Mask_13      = 0x00001000
+Option_14    = "ERR:Asic6"
+Mask_14      = 0x00002000
+Option_15    = "ERR:Asic7"
+Mask_15      = 0x00004000
+Option_16    = "ERR:Asic8"
+Mask_16      = 0x00008000
+Option_17    = "ERR:Can"
+Mask_17      = 0x00010000
+Option_18    = "ERR:CanBusLoad"
+Mask_18      = 0x00020000
+
+[SW_Ver]
+Group        = 4
+Common       = "SW_Ver"
+
+[HW_Ver]
+Group        = 4
+Common       = "HW_Ver"
+
+[Probe_Channel]
+Group        = 4
+Common       = "Probe_Channel"
+Values       = -1..7
+
+[Probe_Value]
+Group        = 4
+Common       = "Probe_Value"
+
+[Probes_Found]
+Group        = 4
+Name         = "Tk:Name"
+Type         = uInt
+
+[ActTime_High]
+Group        = 4
+Type         = uLong
+Name         = "Tk:Name"
+
+[PR_State]
+Group        = 4
+Type         = uInt
+Name         = "Tk:Name"
+
+[MS_State]
+Group        = 4
+Type         = uInt
+Name         = "Tk:Name"
+
+[MM_State]
+Group        = 4
+Type         = uInt
+Name         = "Tk:Name"
+
+[CanSpace]
+Group        = 4
+Name         = "Tk:Name"
+Type         = int
+
+[Owh_State]
+Group        = 4
+Type         = uInt
+Name         = "Tk:Name"
+
+[CAN_State]
+Group        = 4
+Type         = uInt
+Name         = "Tk:Name"
+
+[CAN_Fps]
+Group        = 4
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Bps]
+Group        = 4
+Name         = "Tk:Name"
+Type         = uLong
+
+[AsicSpeedInd]
+Group        = 4
+Common       = "SpeedAsic8.192Mhz"	
+Type         = Long
+Name         = "SpeedAsic 8.192Mhz"
+
+[ProcAve]
+Group        = 4
+Type         = Long
+Name         = "ProcAve"
+
+[AsicSps]
+Group        = 4
+Type         = Long
+Name         = "AsicSps"
+
+[ProcSps]
+Group        = 4
+Type         = Long
+Name         = "ProcSps"
+
+
+; -----------------------------------------------
+; KALIB
+; -----------------------------------------------
+[Serial_Number]
+Group        = 5
+Common       = "Serial_Number"	
+Default      = -1
+
+[Month]
+Group        = 5
+Common       = "Month"
+
+[Year]
+Group        = 5
+Common       = "Year"
+
+[HW_Ver]
+Group        = 5
+Common       = "HW_Ver"
+
+[CAR_CGI1_P1]
+Group        = 5
+Common       = "CAR_CGI1"
+Name         = "P1 CAR_CGI1 gain6"
+
+[CAR_CGI1_P2]
+Group        = 5
+Common       = "CAR_CGI1"
+Name         = "P2 CAR_CGI1 gain6"
+
+[CAR_CGI1_P3]
+Group        = 5
+Common       = "CAR_CGI1"
+Name         = "P3 CAR_CGI1 gain6"
+
+[CAR_CGI1_P4]
+Group        = 5
+Common       = "CAR_CGI1"
+Name         = "P4 CAR_CGI1 gain6"
+
+[CAR_CGI1_P5]
+Group        = 5
+Common       = "CAR_CGI1"
+Name         = "P5 CAR_CGI1 gain6"
+
+[CAR_CGI1_P6]
+Group        = 5
+Common       = "CAR_CGI1"
+Name         = "P6 CAR_CGI1 gain6"
+
+[CAR_CGI1_P7]
+Group        = 5
+Common       = "CAR_CGI1"
+Name         = "P7 CAR_CGI1 gain6"
+
+[CAR_CGI1_P8]
+Group        = 5
+Common       = "CAR_CGI1"
+Name         = "P8 CAR_CGI1 gain6"
+
+[CAR_CGI2_P1]
+Group        = 5
+Common       = "CAR_CGI2"
+Name         = "P1 CAR_CGI2 gain24"
+
+[CAR_CGI2_P2]
+Group        = 5
+Common       = "CAR_CGI2"
+Name         = "P2 CAR_CGI2 gain24"
+
+[CAR_CGI2_P3]
+Group        = 5
+Common       = "CAR_CGI2"
+Name         = "P3 CAR_CGI2 gain24"
+
+[CAR_CGI2_P4]
+Group        = 5
+Common       = "CAR_CGI2"
+Name         = "P4 CAR_CGI2 gain24"
+
+[CAR_CGI2_P5]
+Group        = 5
+Common       = "CAR_CGI2"
+Name         = "P5 CAR_CGI2 gain24"
+
+[CAR_CGI2_P6]
+Group        = 5
+Common       = "CAR_CGI2"
+Name         = "P6 CAR_CGI2 gain24"
+
+[CAR_CGI2_P7]
+Group        = 5
+Common       = "CAR_CGI2"
+Name         = "P7 CAR_CGI2 gain24"
+
+[CAR_CGI2_P8]
+Group        = 5
+Common       = "CAR_CGI2"
+Name         = "P8 CAR_CGI2 gain24"
+
+[CAR_CGI3_P1]
+Group        = 5
+Common       = "CAR_CGI3"
+Name         = "P1 CAR_CGI3 gain50"
+
+[CAR_CGI3_P2]
+Group        = 5
+Common       = "CAR_CGI3"
+Name         = "P2 CAR_CGI3 gain50"
+
+[CAR_CGI3_P3]
+Group        = 5
+Common       = "CAR_CGI3"
+Name         = "P3 CAR_CGI3 gain50"
+
+[CAR_CGI3_P4]
+Group        = 5
+Common       = "CAR_CGI3"
+Name         = "P4 CAR_CGI3 gain50"
+
+[CAR_CGI3_P5]
+Group        = 5
+Common       = "CAR_CGI3"
+Name         = "P5 CAR_CGI3 gain50"
+
+[CAR_CGI3_P6]
+Group        = 5
+Common       = "CAR_CGI3"
+Name         = "P6 CAR_CGI3 gain50"
+
+[CAR_CGI3_P7]
+Group        = 5
+Common       = "CAR_CGI3"
+Name         = "P7 CAR_CGI3 gain50"
+
+[CAR_CGI3_P8]
+Group        = 5
+Common       = "CAR_CGI3"
+Name         = "P8 CAR_CGI3 gain50"
+
+[CAR_CGI4_P1]
+Group        = 5
+Common       = "CAR_CGI4"
+Name         = "P1 CAR_CGI4 gain100"
+
+[CAR_CGI4_P2]
+Group        = 5
+Common       = "CAR_CGI4"
+Name         = "P2 CAR_CGI4 gain100"
+
+[CAR_CGI4_P3]
+Group        = 5
+Common       = "CAR_CGI4"
+Name         = "P3 CAR_CGI4 gain100"
+
+[CAR_CGI4_P4]
+Group        = 5
+Common       = "CAR_CGI4"
+Name         = "P4 CAR_CGI4 gain100"
+
+[CAR_CGI4_P5]
+Group        = 5
+Common       = "CAR_CGI4"
+Name         = "P5 CAR_CGI4 gain100"
+
+[CAR_CGI4_P6]
+Group        = 5
+Common       = "CAR_CGI4"
+Name         = "P6 CAR_CGI4 gain100"
+
+[CAR_CGI4_P7]
+Group        = 5
+Common       = "CAR_CGI4"
+Name         = "P7 CAR_CGI4 gain100"
+
+[CAR_CGI4_P8]
+Group        = 5
+Common       = "CAR_CGI4"
+Name         = "P8 CAR_CGI4 gain100"
+
+[CAR_CAU4_P1]
+Group        = 5
+Common       = "CAR_CAU4"
+Name         = "P1 CAR_CAU4 gain1"
+
+[CAR_CAU4_P2]
+Group        = 5
+Common       = "CAR_CAU4"
+Name         = "P2 CAR_CAU4 gain1"
+
+[CAR_CAU4_P3]
+Group        = 5
+Common       = "CAR_CAU4"
+Name         = "P3 CAR_CAU4 gain1"
+
+[CAR_CAU4_P4]
+Group        = 5
+Common       = "CAR_CAU4"
+Name         = "P4 CAR_CAU4 gain1"
+
+[CAR_CAU4_P5]
+Group        = 5
+Common       = "CAR_CAU4"
+Name         = "P5 CAR_CAU4 gain1"
+
+[CAR_CAU4_P6]
+Group        = 5
+Common       = "CAR_CAU4"
+Name         = "P6 CAR_CAU4 gain1"
+
+[CAR_CAU4_P7]
+Group        = 5
+Common       = "CAR_CAU4"
+Name         = "P7 CAR_CAU4 gain1"
+
+[CAR_CAU4_P8]
+Group        = 5
+Common       = "CAR_CAU4"
+Name         = "P8 CAR_CAU4 gain1"
+
+[P1_Offset_G1]
+Group        = 5
+Common       = "Offset"
+Name         = "P1 Offset G1"
+Type         = int
+
+[P1_Offset_G6]
+Group        = 5
+Common       = "Offset"
+Name         = "P1 Offset G6"
+Type         = int
+
+[P1_Offset_G24]
+Group        = 5
+Common       = "Offset"
+Name         = "P1 Offset G24"
+Type         = int
+
+[P1_Offset_G50]
+Group        = 5
+Common       = "Offset"
+Name         = "P1 Offset G50"
+Type         = int
+
+[P1_Offset_G100]
+Group        = 5
+Common       = "Offset"
+Name         = "P1 Offset G100"
+Type         = int
+
+[P2_Offset_G1]
+Group        = 5
+Common       = "Offset"
+Name         = "P2 Offset G1"
+Type         = int
+
+[P2_Offset_G6]
+Group        = 5
+Common       = "Offset"
+Name         = "P2 Offset G6"
+Type         = int
+
+[P2_Offset_G24]
+Group        = 5
+Common       = "Offset"
+Name         = "P2 Offset G24"
+Type         = int
+
+[P2_Offset_G50]
+Group        = 5
+Common       = "Offset"
+Name         = "P2 Offset G50"
+Type         = int
+
+[P2_Offset_G100]
+Group        = 5
+Common       = "Offset"
+Name         = "P2 Offset G100"
+Type         = int
+
+[P3_Offset_G1]
+Group        = 5
+Common       = "Offset"
+Name         = "P3 Offset G1"
+Type         = int
+
+[P3_Offset_G6]
+Group        = 5
+Common       = "Offset"
+Name         = "P3 Offset G6"
+Type         = int
+
+[P3_Offset_G24]
+Group        = 5
+Common       = "Offset"
+Name         = "P3 Offset G24"
+Type         = int
+
+[P3_Offset_G50]
+Group        = 5
+Common       = "Offset"
+Name         = "P3 Offset G50"
+Type         = int
+
+[P3_Offset_G100]
+Group        = 5
+Common       = "Offset"
+Name         = "P3 Offset G100"
+Type         = int
+
+[P4_Offset_G1]
+Group        = 5
+Common       = "Offset"
+Name         = "P4 Offset G1"
+Type         = int
+
+[P4_Offset_G6]
+Group        = 5
+Common       = "Offset"
+Name         = "P4 Offset G6"
+Type         = int
+
+[P4_Offset_G24]
+Group        = 5
+Common       = "Offset"
+Name         = "P4 Offset G24"
+Type         = int
+
+[P4_Offset_G50]
+Group        = 5
+Common       = "Offset"
+Name         = "P4 Offset G50"
+Type         = int
+
+[P4_Offset_G100]
+Group        = 5
+Common       = "Offset"
+Name         = "P4 Offset G100"
+Type         = int
+
+[P5_Offset_G1]
+Group        = 5
+Common       = "Offset"
+Name         = "P5 Offset G1"
+Type         = int
+
+[P5_Offset_G6]
+Group        = 5
+Common       = "Offset"
+Name         = "P5 Offset G6"
+Type         = int
+
+[P5_Offset_G24]
+Group        = 5
+Common       = "Offset"
+Name         = "P5 Offset G24"
+Type         = int
+
+[P5_Offset_G50]
+Group        = 5
+Common       = "Offset"
+Name         = "P5 Offset G50"
+Type         = int
+
+[P5_Offset_G100]
+Group        = 5
+Common       = "Offset"
+Name         = "P5 Offset G100"
+Type         = int
+
+[P6_Offset_G1]
+Group        = 5
+Common       = "Offset"
+Name         = "P6 Offset G1"
+Type         = int
+
+[P6_Offset_G6]
+Group        = 5
+Common       = "Offset"
+Name         = "P6 Offset G6"
+Type         = int
+
+[P6_Offset_G24]
+Group        = 5
+Common       = "Offset"
+Name         = "P6 Offset G24"
+Type         = int
+
+[P6_Offset_G50]
+Group        = 5
+Common       = "Offset"
+Name         = "P6 Offset G50"
+Type         = int
+
+[P6_Offset_G100]
+Group        = 5
+Common       = "Offset"
+Name         = "P6 Offset G100"
+Type         = int
+
+[P7_Offset_G1]
+Group        = 5
+Common       = "Offset"
+Name         = "P7 Offset G1"
+Type         = int
+
+[P7_Offset_G6]
+Group        = 5
+Common       = "Offset"
+Name         = "P7 Offset G6"
+Type         = int
+
+[P7_Offset_G24]
+Group        = 5
+Common       = "Offset"
+Name         = "P7 Offset G24"
+Type         = int
+
+[P7_Offset_G50]
+Group        = 5
+Common       = "Offset"
+Name         = "P7 Offset G50"
+Type         = int
+
+[P7_Offset_G100]
+Group        = 5
+Common       = "Offset"
+Name         = "P7 Offset G100"
+Type         = int
+
+[P8_Offset_G1]
+Group        = 5
+Common       = "Offset"
+Name         = "P8 Offset G1"
+Type         = int
+
+[P8_Offset_G6]
+Group        = 5
+Common       = "Offset"
+Name         = "P8 Offset G6"
+Type         = int
+
+[P8_Offset_G24]
+Group        = 5
+Common       = "Offset"
+Name         = "P8 Offset G24"
+Type         = int
+
+[P8_Offset_G50]
+Group        = 5
+Common       = "Offset"
+Name         = "P8 Offset G50"
+Type         = int
+
+[P8_Offset_G100]
+Group        = 5
+Common       = "Offset"
+Name         = "P8 Offset G100"
+Type         = int
+
+[Offset_P1T5]
+Group        = 5
+Common       = "Offset"
+Name         = "P1T5 Offset"
+Help         = "PxTOffset"
+
+[Offset_P2T5]
+Group        = 5
+Common       = "Offset"
+Name         = "P2T5 Offset"
+Help         = "PxTOffset"
+
+[Offset_P3T5]
+Group        = 5
+Common       = "Offset"
+Name         = "P3T5 Offset"
+Help         = "PxTOffset"
+
+[Offset_P4T5]
+Group        = 5
+Common       = "Offset"
+Name         = "P4T5 Offset"
+Help         = "PxTOffset"
+
+[Offset_P5T5]
+Group        = 5
+Common       = "Offset"
+Name         = "P5T5 Offset"
+Help         = "PxTOffset"
+
+[Offset_P6T5]
+Group        = 5
+Common       = "Offset"
+Name         = "P6T5 Offset"
+Help         = "PxTOffset"
+
+[Offset_P7T5]
+Group        = 5
+Common       = "Offset"
+Name         = "P7T5 Offset"
+Help         = "PxTOffset"
+
+[Offset_P8T5]
+Group        = 5
+Common       = "Offset"
+Name         = "P8T5 Offset"
+Help         = "PxTOffset"
+
+[TempInt_Enable]
+Group        = 5
+Common       = "N_PartB"
+Name         = "Tk:TempInt_Enable"
+Help         = "Temp_Int_Enable"
+
+[CanConfigProt]
+Group        = 5
+Common       = "CanConfigProt"
+
+[DebugFlags]
+Group        = 5
+Name         = "DebugFlags"	; Namenskonvention : Tk:ParameterId:Name
+Type         = long
+Attrib       = Option
+Option_01    = "AcceptOldTs30"
+Value_01     = 0x00001000
+
+[CAN_BroadcastId]
+Group        = 5
+Common       = "CAN_BroadcastId"
+Default      = 0x100

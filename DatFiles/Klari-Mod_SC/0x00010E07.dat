@@ -1,0 +1,319 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01="Tk:GlobalPar"	; globale Daten
+User_01=default	; Zugriffsrecht
+Group_02="Tk:Calib"
+User_02=System
+Group_03="Tk:Variables"
+User_03=Operator
+CanSpace=0x10	; Belegung des Modus von Can Identifiern
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01="Tk:Reset"	; Reset
+Value_01=0x0010
+User_01=default	; Zugriffsrecht
+Help_01="Reset"
+Name_02="Tk:Restart"	; Restart
+Value_02=0x0015
+User_02=default	; Zugriffsrecht
+Help_02="Restart"
+Name_03="Tk:SavePar"	; SavePar
+Value_03=0x0020
+User_03=operator	; Zugriffsrecht
+Help_03="SavePar"
+Name_04="Tk:SaveCalib"	; SaveCalib
+Value_04=0xCA1B
+User_04=system	; Zugriffsrecht
+Help_04="SaveCalib"
+Name_05="Tk:Boot"	; Boot
+Value_05=0xB007
+User_05=system	; Zugriffsrecht
+Help_05="Boot"
+Protect_05 = "Tk:BootWarning"
+
+[CAN_Baudrate]
+Group=1	; globale Parameter
+Common=1	; Übernahme Definition aus Common.cnf
+
+[CAN_Xtd]
+Group=1	; globale Parameter
+Common=1	; Übernahme Definition aus Common.cnf
+
+[CAN_Term]
+Group=1	; globale Parameter
+Common=1	; Übernahme Definition aus Common.cnf
+
+[CAN_FdEnable]
+Group=1	; globale Parameter
+Type    = char
+Help	= "CAN_FdEnable"
+Attrib	= Select
+Select_01="Tk:Off"
+Value_01=0
+Select_02="Tk:On"
+Value_02=1
+
+[CAN_BaseId]
+Group   = 1	; globale Parameter
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 0x700
+
+[Measure_Mode]
+Group=1	; globale Parameter
+Common=1	; Übernahme Definition aus Common.cnf
+; zusätzliche Optionen
+Option_03 = "Tk:Measure_Mode:Option:03"	; "Zeitsynchronisation"
+Mask_03   = 0x0034
+
+[T_Sample]
+Name    = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type    = uInt
+Help	= "TSample"
+Attrib  = Select
+Default = 0x63
+Select_01="125ys"
+Value_01=0x10
+Select_02="250ys"
+Value_02=0x11
+Select_03="500ys"
+Value_03=0x12
+Select_04="1ms"
+Value_04=0x13
+Select_05="2ms"
+Value_05=0x23
+Select_06="4ms"
+Value_06=0x24
+Select_07="8ms"
+Value_07=0x25
+Select_08="16ms"
+Value_08=0x26
+Select_09="32ms"
+Value_09=0x63
+Select_10="64ms"
+Value_10=0x64
+Select_11="128ms"
+Value_11=0x65
+Select_12="256ms"
+Value_12=0x66
+Select_13="512ms"
+Value_13=0xA3
+Select_14="1024ms"
+Value_14=0xA4
+Select_15="2048ms"
+Value_15=0xA5
+Select_16="4096ms"
+Value_16=0xA6
+Select_17="8192ms"
+Value_17=0xA7
+
+[Range_Mode]
+Name    = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type    = uInt
+Help	= "RangeMode"
+Attrib  = Select
+Default = 9
+Select_01="Tk:Autorange"
+Value_01=9
+Select_02="Tk:Gain1"
+Value_02=0
+Select_03="Tk:Gain6"
+Value_03=1
+Select_04="Tk:Gain24"
+Value_04=2
+Select_05="Tk:Gain50"
+Value_05=3
+Select_06="Tk:Gain100"
+Value_06=4
+
+[TimeSync_CAN_ID]
+Name    = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type    = uInt
+Format	= Hex
+Help	= "TimeSyncCanId"
+Values  = 0..0x1000
+Default = 0x0100
+
+[Dummy1]
+Name    = "Dummy1"	; Namenskonvention : Tk:ParameterId:Name
+Type    = uInt
+
+[Timestamp]
+Group   = 1	; globale Parameter
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 0 ; high resolution
+
+[TimeSync_Master]
+Group   = 1	; globale Parameter
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 0 ; Slave
+
+[Delta_Mode]
+Group   = 1	; globale Parameter
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 0 ; Daten immer senden
+
+[Delta]
+Group   = 1	; globale Parameter
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 0 ; Daten immer senden
+
+
+
+[Serial_Number]
+Group   = 2	; Calib
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = -1
+
+[Shunt1_A]
+Group   = 2	; Calib
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 0
+
+[CAR_CGI1] ; [CAR_CGI1_P]
+Group     = 2
+Common    = 1	; Übernahme Definition aus Common.cnf
+Name      = "CAR_CGI1_P"	; Namenskonvention : Tk:ParameterId:Name
+
+[CAR_CGI2] ; [CAR_CGI2_P]
+Group     = 2
+Common    = 1	; Übernahme Definition aus Common.cnf
+Name      = "CAR_CGI2_P"	; Namenskonvention : Tk:ParameterId:Name
+
+[CAR_CGI3] ; [CAR_CGI3_P]
+Group     = 2
+Common    = 1	; Übernahme Definition aus Common.cnf
+Name      = "CAR_CGI3_P"	; Namenskonvention : Tk:ParameterId:Name
+
+[CAR_CGI4] ; [CAR_CGI4_P]
+Group     = 2
+Common    = 1	; Übernahme Definition aus Common.cnf
+Name      = "CAR_CGI4_P"	; Namenskonvention : Tk:ParameterId:Name
+
+[CAR_CAU4] ; [CAR_CAU4_P]
+Group     = 2
+Common    = 1	; Übernahme Definition aus Common.cnf
+Name      = "CAR_CAU4_P"	; Namenskonvention : Tk:ParameterId:Name
+
+[TRR_TRIMC]
+Group=2
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 0
+Name      = "TRR_TRIMC"	; Namenskonvention : Tk:ParameterId:Name
+
+[TRR_TRIMA]
+Group=2
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 0
+Name      = "TRR_TRIMA"	; Namenskonvention : Tk:ParameterId:Name
+
+[TRR_TRIMBV]
+Group=2
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 0
+Name      = "TRR_TRIMBV"	; Namenskonvention : Tk:ParameterId:Name
+
+[TRR_TRIMBTC]
+Group=2
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 0
+Name      = "TRR_TRIMBTC"	; Namenskonvention : Tk:ParameterId:Name
+
+[Offset]
+Group=2
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 0
+
+[CAR_CGI1] ; [CAR_CGI1_P]
+Group=2
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 1548
+Name      = "CAR_CGI1"	; Namenskonvention : Tk:ParameterId:Name
+
+[CAR_CGI2] ; [CAR_CGI2_P]
+Group=2
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 1548
+Name      = "CAR_CGI2"	; Namenskonvention : Tk:ParameterId:Name
+
+[CAR_CGI3] ; [CAR_CGI3_P]
+Group=2
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 1548
+Name      = "CAR_CGI3"	; Namenskonvention : Tk:ParameterId:Name
+
+[CAR_CGI4] ; [CAR_CGI4_P]
+Group=2
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 1548
+Name      = "CAR_CGI4"	; Namenskonvention : Tk:ParameterId:Name
+
+[CAR_CAU4] ; [CAR_CAU4_P]
+Group=2
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 1548
+Name      = "CAR_CAU4"	; Namenskonvention : Tk:ParameterId:Name
+
+[Offset] ; [Offset_P] 
+Group=2
+Common  = 1	; Übernahme Definition aus Common.cnf
+Default = 0
+
+
+
+[Error_Flags]
+Group=3
+Type      = uInt
+Attrib = Option
+Option_01 = "EEprom"
+Mask_01   = 0x0001
+Option_02 = "Asic"
+Mask_02   = 0x0002
+Option_03 = "CAN"
+Mask_03   = 0x0004
+Option_10="Fifo OVR"
+Mask_10=0x0008
+Option_11="Tx OVR"
+Mask_11=0x0010
+Option_12="Clock"
+Mask_12=0x0020
+
+[SW_Ver]
+Group=3
+Common=1	; Übernahme Definition aus Common.cnf
+
+[HW_Ver]
+Group=3
+Common=1	; Übernahme Definition aus Common.cnf
+
+[EEprom_Ver]
+Group=3
+Common=1	; Übernahme Definition aus Common.cnf
+
+[Probe_Channel]
+Group=3
+Common=1	; Übernahme Definition aus Common.cnf
+Values   = -1..1
+
+[Probe_Value]
+Group=3
+Common=1	; Übernahme Definition aus Common.cnf
+
+[ASIC_SN]
+Group=3
+Common=1	; Übernahme Definition aus Common.cnf
+
+[OWH_State]
+Group=3
+Common=1	; Übernahme Definition aus Common.cnf
+
+[ProbeType]
+Group=3
+Common=1	; Übernahme Definition aus Common.cnf
+
+[Kalib]
+Group=3
+Common=1	; Übernahme Definition aus Common.cnf
+
+[Offset]
+Group=3
+Common=1	; Übernahme Definition aus Common.cnf
+

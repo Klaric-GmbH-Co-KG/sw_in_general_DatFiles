@@ -1,0 +1,5710 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01="Tk:GlobalPar"	; global parameter
+User_01=default	; access
+Ident_01="GLOBAL_PAR"
+Display_01="ViewAndModify"
+Group_02="Tk:DisplayPar"	; display parameter
+User_02=default	; access
+Ident_02="DISPLAY_PAR"
+Display_02="ViewAndModify"
+Group_03="Tk:CANId"
+SubGroup_1="Module 1"
+SubGroup_2="Module 2"
+SubGroup_3="Module 3"
+SubGroup_4="Module 4"
+SubGroup_5="Module 5"
+SubGroup_6="Module 6"
+SubGroup_7="Module 7"
+SubGroup_8="Module 8"
+SubGroup_9="Set CAN_CMD_OFFSET"
+User_03=Operator
+Ident_03="CANID"
+Display_03="ViewAndModify"
+Group_04="Modul Parameter" ; modul parameter
+User_04=default
+Ident_04="MODUL_PAR"
+Display_04="ViewAndModify"
+Group_05="Tk:RtcData"
+User_05=Operator
+Ident_05="RTC"
+Display_05="ViewAndModify"
+Group_06="Tk:FS_Par"	; status information
+User_06=default	; access
+Ident_06="FS_PAR"
+Display_06="ViewOnly"
+Group_07="Tk:Status"	; status information
+User_07=default	; access
+Ident_07="STATUS_DATA"
+;Display_07="ViewOnly"
+Group_08="Tk:Calib"
+SubGroup_1="General"
+SubGroup_2="Module 1"
+SubGroup_3="Module 2"
+SubGroup_4="Module 3"
+SubGroup_5="Module 4"
+SubGroup_6="Module 5"
+SubGroup_7="Module 6"
+SubGroup_8="Module 7"
+SubGroup_9="Module 8" 
+SubGroup_10="Last Pattern"
+User_08=System 
+Ident_08="CALIB_PAR"
+Display_08="ViewAndModify"
+CanSpace=0x30	; Belegung des Modus von Can Identifiern
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01="Tk:Reset"	; Reset
+Value_01=0x0010
+Id_01=CMD_RESET
+User_01=default	; Zugriffsrecht
+Help_01="Reset"
+Name_02="Tk:Restart"	; Restart
+Value_02=0x0016
+User_02=default	; Zugriffsrecht
+Id_02=CMD_RESTART_MM
+Help_02="Restart"
+Name_03="Tk:SaveAllPar"	; SavePar
+Value_03=0x0020
+Id_03=CMD_SAVE_ALL_PAR
+User_03=operator	; Zugriffsrecht
+Help_03="SavePar"
+Name_04="Tk:SaveCalib"	; SaveCalib
+Value_04=0xCA1B
+Id_04=CMD_SAVE_CALIB
+User_04=system		; Zugriffsrecht 
+Help_04="SaveCalib"
+Name_05="Tk:DisplayOnOff"	; Reset
+Value_05=0x2025
+Id_05=CMD_DISPLAY_POWER
+User_05=default	; Zugriffsrecht
+Help_05="DisplayOnOff"
+Name_06="Tk:GetTime"	; get time
+Value_06=0x0030
+User_06=operator	; Zugriffsrecht
+Help_06="GetTime"
+Name_07="Tk:SetTime"	; set time
+Value_07=0x0040
+User_07=operator	; Zugriffsrecht
+Help_07="SetTime"
+Protect_07 = "Tk:SetTimeWarning"
+Name_08="Tk:Boot"	; Boot
+Value_08=0xB007
+User_08=system		; Zugriffsrecht 
+Help_08="Boot"
+Protect_08 = "Tk:BootWarning"
+
+Name_09="last aid"
+Value_09=0xB008
+User_09=system		; Zugriffsrecht 
+Help_09="LastAid"
+
+Name_10="DUMP"	; CalibEtrEts
+Value_10=0x1401
+Id_10=CMD_PROC_DUMP
+User_10=system		; Zugriffsrecht
+Help_10="LastAid"
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+[LogFolder]
+Group        = 1
+Type         = string
+Size         = 32
+Name         = "Tk:LogFile"
+Help         = "LogFile"
+Display      = "ViewOnly"
+
+[CAN_BaseId]
+Group        = 1
+Common       = "CAN_BaseId"
+Default      = 0x701
+Help         = "CAN_BaseId"
+
+[Can1_Baudrate]
+Group        = 1
+Name         = "Can1_Baudrate"
+Common       = "CAN_Baudrate"
+Type         = uChar
+
+[Can1_Term]
+Group        = 1
+Name         = "Can1_Term"
+Common       = "CAN_Term"
+Help         = "Can_Term"
+Type         = uChar
+
+[Can2_Baudrate]
+Group        = 1
+Name         = "Can2_Baudrate"
+Common       = "CAN_Baudrate"
+Type         = uChar
+
+[Can2_Term]
+Group        = 1
+Name         = "Can2_Term"
+Common       = "CAN_Term"
+Help         = "Can_Term"
+Type         = uChar
+
+[Output]
+Group        = 1
+Name         = "Tk:Output_Mode"
+Help         = "Output"
+Type         = uLong
+Attrib       = Option
+Option_00    = "Tk:Measure_Mode:Option:01"
+Mask_00      = 0x00000001
+Option_01    = "Tk:Measure_Mode:Option:06"
+Mask_01      = 0x00000002
+
+[LogFile_Size]
+Group        = 1
+Name         = "Tk:Log_File_Size"
+Help         = "LogFileSize"
+Type         = uInt
+Values       = 1..1024
+
+[MeasPoint]
+Group        = 1
+Name         = "MeasPoint"
+Type         = uInt
+Attrib       = Option
+Option_00    = "Phase L1"
+Mask_00     = 0x00000001
+Option_01    = "Phase L2"
+Mask_01     = 0x00000002
+Option_02    = "Phase L3"
+Mask_02     = 0x00000004
+Option_03    = "PE/DC0"
+Mask_03     = 0x00000008
+Option_04    = "Phase L1/DC1"
+Mask_04     = 0x00000100
+Option_05    = "Phase L2/DC2"
+Mask_05     = 0x00000200
+Option_06    = "Phase L3/DC3"
+Mask_06     = 0x00000400
+Option_07    = "DC4"
+Mask_07     = 0x00000800
+
+[Language]
+Group        = 1
+Name         = "Tk:LANGUAGE_MENU"
+Type         = uInt
+Attrib       = Combo
+Select_00    = "Tk:GERMAN_SUBMENU"
+Value_00     = 0
+Select_01    = "Tk:ENGLISH_SUBMENU"
+Value_01     = 1
+
+[AutoStart]
+Group        = 1
+Name         = "AutoStart"
+Type         = uInt
+Attrib       = Select
+Select_00    = "Tk:On"
+Value_00     = 1
+Select_01    = "Tk:Off"
+Value_01     = 0
+
+; -----------------------------------------------
+; DISPLAY_PAR
+; -----------------------------------------------
+[U_Decimal]
+Group        = 2
+Name         = "Tk:U_Decimal"
+Help         = "Decimal"
+Type         = uChar
+Values       = 0..3
+
+[I_Decimal]
+Group        = 2
+Name         = "Tk:I_Decimal"
+Help         = "Decimal"
+Type         = uChar
+Values       = 0..3
+
+[Urms_Decimal]
+Group        = 2
+Name         = "Tk:Urms_Decimal"
+Help         = "Decimal"
+Type         = uChar
+Values       = 0..3
+
+[Irms_Decimal]
+Group        = 2
+Name         = "Tk:Irms_Decimal"
+Help         = "Decimal"
+Type         = uChar
+Values       = 0..3
+
+[CosPhi_Decimal]
+Group        = 2
+Name         = "Tk:CosPhi_Decimal"
+Help         = "Decimal"
+Type         = uChar
+Values       = 0..3
+
+[Freq_Decimal]
+Group        = 2
+Name         = "Tk:Freq_Decimal"
+Help         = "Decimal"
+Type         = uChar
+Values       = 0..3
+
+[Power_Decimal]
+Group        = 2
+Name         = "Tk:Power_Decimal"
+Help         = "Decimal"
+Type         = uChar
+Values       = 0..3
+
+[Work_Decimal]
+Group        = 2
+Name         = "Tk:Work_Decimal"
+Help         = "Decimal"
+Type         = uChar
+Values       = 0..3
+
+[Charge_Decimal]
+Group        = 2
+Name         = "Tk:Charge_Decimal"
+Help         = "Decimal"
+Type         = uChar
+Values       = 0..3
+
+[Discharge_Decimal]
+Group        = 2
+Name         = "Tk:Discharge_Decimal"
+Help         = "Decimal"
+Type         = uChar
+Values       = 0..3
+
+[Balance_Decimal]
+Group        = 2
+Name         = "Tk:Balance_Decimal"
+Help         = "Decimal"
+Type         = uChar
+Values       = 0..3
+
+[TotPower_Decimal]
+Group        = 2
+Name         = "Tk:TotPower_Decimal"
+Help         = "Decimal"
+Type         = uChar
+Values       = 0..3
+
+[TotWork_Decimal]
+Group        = 2
+Name         = "Tk:TotWork_Decimal"
+Help         = "Decimal"
+Type         = uLong
+Values       = 0..3
+
+; -----------------------------------------------
+; CAN IDENTIFIER
+; -----------------------------------------------
+
+[Module1Type]
+Group        = 3
+SubGroup     = 1
+Name         = "Module 1 Type"
+Type         = uChar
+Attrib       = Select
+Select_00    = "AC"
+Value_00     = 0
+Select_01    = "DC"
+Value_01     = 1
+
+[Module2Type]
+Group        = 3
+SubGroup     = 2
+Name         = "Module 2 Type"
+Type         = uChar
+Attrib       = Select
+Select_00    = "AC"
+Value_00     = 0
+Select_01    = "DC"
+Value_01     = 1
+
+[Module3Type]
+Group        = 3
+SubGroup     = 3
+Name         = "Module 3 Type"
+Type         = uChar
+Attrib       = Select
+Select_00    = "AC"
+Value_00     = 0
+Select_01    = "DC"
+Value_01     = 1
+
+[Module4Type]
+Group        = 3
+SubGroup     = 4
+Name         = "Module 4 Type"
+Type         = uChar
+Attrib       = Select
+Select_00    = "AC"
+Value_00     = 0
+Select_01    = "DC"
+Value_01     = 1
+
+[Module5Type]
+Group        = 3
+SubGroup     = 5
+Name         = "Module 5 Type"
+Type         = uChar
+Attrib       = Select
+Select_00    = "AC"
+Value_00     = 0
+Select_01    = "DC"
+Value_01     = 1
+
+[Module6Type]
+Group        = 3
+SubGroup     = 6
+Name         = "Module 6 Type"
+Type         = uChar
+Attrib       = Select
+Select_00    = "AC"
+Value_00     = 0
+Select_01    = "DC"
+Value_01     = 1
+
+[Module7Type]
+Group        = 3
+SubGroup     = 7
+Name         = "Module 7 Type"
+Type         = uChar
+Attrib       = Select
+Select_00    = "AC"
+Value_00     = 0
+Select_01    = "DC"
+Value_01     = 1
+
+[Module8Type]
+Group        = 3
+SubGroup     = 8
+Name         = "Module 8 Type"
+Type         = uChar
+Attrib       = Select
+Select_00    = "AC"
+Value_00     = 0
+Select_01    = "DC"
+Value_01     = 1
+
+[TotalPower1Mod1]
+Group        = 3
+SubGroup     = 1
+Name         = "Tk:Power1"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[TotalPower1Mod2]
+Group        = 3
+SubGroup     = 2
+Name         = "Tk:Power1"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[TotalPower1Mod3]
+Group        = 3
+SubGroup     = 3
+Name         = "Tk:Power1"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[TotalPower1Mod4]
+Group        = 3
+SubGroup     = 4
+Name         = "Tk:Power1"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[TotalPower1Mod5]
+Group        = 3
+SubGroup     = 5
+Name         = "Tk:Power1"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[TotalPower1Mod6]
+Group        = 3
+SubGroup     = 6
+Name         = "Tk:Power1"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[TotalPower1Mod7]
+Group        = 3
+SubGroup     = 7
+Name         = "Tk:Power1"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[TotalPower1Mod8]
+Group        = 3
+SubGroup     = 8
+Name         = "Tk:Power1"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[TotalPower2Mod1]
+Group        = 3
+SubGroup     = 1
+Name         = "Tk:Power2"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[TotalPower2Mod2]
+Group        = 3
+SubGroup     = 2
+Name         = "Tk:Power2"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[TotalPower2Mod3]
+Group        = 3
+SubGroup     = 3
+Name         = "Tk:Power2"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[TotalPower2Mod4]
+Group        = 3
+SubGroup     = 4
+Name         = "Tk:Power2"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[TotalPower2Mod5]
+Group        = 3
+SubGroup     = 5
+Name         = "Tk:Power2"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[TotalPower2Mod6]
+Group        = 3
+SubGroup     = 6
+Name         = "Tk:Power2"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[TotalPower2Mod7]
+Group        = 3
+SubGroup     = 7
+Name         = "Tk:Power2"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[TotalPower2Mod8]
+Group        = 3
+SubGroup     = 8
+Name         = "Tk:Power2"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Off"
+Value_00     = 0x00
+Select_01    = "Tk:On"
+Value_01     = 0x01
+
+[Mod1BelongsTo]
+Group        = 3
+SubGroup     = 1
+Name         = "Tk:BelongsTo"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Mod1"
+Value_00     = 0x00
+Select_01    = "Tk:Mod2"
+Value_01     = 0x01
+
+[Mod2BelongsTo]
+Group        = 3
+SubGroup     = 2
+Name         = "Tk:BelongsTo"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Mod1"
+Value_00     = 0x00
+Select_01    = "Tk:Mod2"
+Value_01     = 0x01
+
+[Mod3BelongsTo]
+Group        = 3
+SubGroup     = 3
+Name         = "Tk:BelongsTo"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Mod1"
+Value_00     = 0x00
+Select_01    = "Tk:Mod2"
+Value_01     = 0x01
+
+[Mod4BelongsTo]
+Group        = 3
+SubGroup     = 4
+Name         = "Tk:BelongsTo"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Mod1"
+Value_00     = 0x00
+Select_01    = "Tk:Mod2"
+Value_01     = 0x01
+
+[Mod5BelongsTo]
+Group        = 3
+SubGroup     = 5
+Name         = "Tk:BelongsTo"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Mod1"
+Value_00     = 0x00
+Select_01    = "Tk:Mod2"
+Value_01     = 0x01
+
+[Mod6BelongsTo]
+Group        = 3
+SubGroup     = 6
+Name         = "Tk:BelongsTo"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Mod1"
+Value_00     = 0x00
+Select_01    = "Tk:Mod2"
+Value_01     = 0x01
+
+[Mod7BelongsTo]
+Group        = 3
+SubGroup     = 7
+Name         = "Tk:BelongsTo"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Mod1"
+Value_00     = 0x00
+Select_01    = "Tk:Mod2"
+Value_01     = 0x01
+
+[Mod8BelongsTo]
+Group        = 3
+SubGroup     = 8
+Name         = "Tk:BelongsTo"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:Mod1"
+Value_00     = 0x00
+Select_01    = "Tk:Mod2"
+Value_01     = 0x01
+
+[CAN_Rx_Mod1]
+Group        = 3
+SubGroup     = 1
+Name         = "CAN_Rx_Mod1"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x500
+
+[CAN_Rx_Mod2]
+Group        = 3
+SubGroup     = 2
+Name         = "CAN_Rx_Mod2"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x510
+
+[CAN_Rx_Mod3]
+Group        = 3
+SubGroup     = 3
+Name         = "CAN_Rx_Mod3"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x520
+
+[CAN_Rx_Mod4]
+Group        = 3
+SubGroup     = 4
+Name         = "CAN_Rx_Mod4"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x530
+
+[CAN_Rx_Mod5]
+Group        = 3
+SubGroup     = 5
+Name         = "CAN_Rx_Mod5"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x540
+
+[CAN_Rx_Mod6]
+Group        = 3
+SubGroup     = 6
+Name         = "CAN_Rx_Mod6"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x550
+
+[CAN_Rx_Mod7]
+Group        = 3
+SubGroup     = 7
+Name         = "CAN_Rx_Mod7"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x560
+
+[CAN_Rx_Mod8]
+Group        = 3
+SubGroup     = 8
+Name         = "CAN_Rx_Mod8"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x570
+
+[CAN_Id_I_Mod1]
+Group        = 3
+SubGroup     = 1
+Name         = "CAN_Id_I_Mod1"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x501
+
+[CAN_Id_U_Mod1]
+Group        = 3
+SubGroup     = 1
+Name         = "CAN_Id_U_Mod1"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x502
+
+[CAN_Id_IRMS_Mod1]
+Group        = 3
+SubGroup     = 1
+Name         = "CAN_Id_IRMS_Mod1"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x503
+
+[CAN_Id_URMS_Mod1]
+Group        = 3
+SubGroup     = 1
+Name         = "CAN_Id_URMS_Mod1"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x504
+
+[CAN_Id_FREQ_Mod1]
+Group        = 3
+SubGroup     = 1
+Name         = "CAN_Id_FREQ_Mod1"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x505
+
+[CAN_Id_COSPHI_Mod1]
+Group        = 3
+SubGroup     = 1
+Name         = "CAN_Id_COSPHI_Mod1"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x505
+
+[CAN_Id_POWER_Mod1]
+Group        = 3
+SubGroup     = 1
+Name         = "CAN_Id_POWER_Mod1"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x506
+
+[CAN_Id_WORK_Mod1]
+Group        = 3
+SubGroup     = 1
+Name         = "CAN_Id_WORK_Mod1"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x507
+
+[CAN_Id_CHARGE_Mod1]
+Group        = 3
+SubGroup     = 1
+Name         = "CAN_Id_CHARGE_Mod1"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x50B
+
+[CAN_Id_DISCHARGE_Mod1]
+Group        = 3
+SubGroup     = 1
+Name         = "CAN_Id_DISCHARGE_Mod1"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x50C
+
+[CAN_Id_BALANCE_Mod1]
+Group        = 3
+SubGroup     = 1
+Name         = "CAN_Id_BALANCE_Mod1"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x50A
+
+[CAN_Id_I_Mod2]
+Group        = 3
+SubGroup     = 2
+Name         = "CAN_Id_I_Mod2"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x511
+
+[CAN_Id_U_Mod2]
+Group        = 3
+SubGroup     = 2
+Name         = "CAN_Id_U_Mod2"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x512
+
+[CAN_Id_IRMS_Mod2]
+Group        = 3
+SubGroup     = 2
+Name         = "CAN_Id_IRMS_Mod2"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x513
+
+[CAN_Id_URMS_Mod2]
+Group        = 3
+SubGroup     = 2
+Name         = "CAN_Id_URMS_Mod2"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x514
+
+[CAN_Id_FREQ_Mod2]
+Group        = 3
+SubGroup     = 2
+Name         = "CAN_Id_FREQ_Mod2"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x515
+
+[CAN_Id_COSPHI_Mod2]
+Group        = 3
+SubGroup     = 2
+Name         = "CAN_Id_COSPHI_Mod2"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x515
+
+[CAN_Id_POWER_Mod2]
+Group        = 3
+SubGroup     = 2
+Name         = "CAN_Id_POWER_Mod2"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x516
+
+[CAN_Id_WORK_Mod2]
+Group        = 3
+SubGroup     = 2
+Name         = "CAN_Id_WORK_Mod2"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x517
+
+[CAN_Id_CHARGE_Mod2]
+Group        = 3
+SubGroup     = 2
+Name         = "CAN_Id_CHARGE_Mod2"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x51B
+
+[CAN_Id_DISCHARGE_Mod2]
+Group        = 3
+SubGroup     = 2
+Name         = "CAN_Id_DISCHARGE_Mod2"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x51C
+
+[CAN_Id_BALANCE_Mod2]
+Group        = 3
+SubGroup     = 2
+Name         = "CAN_Id_BALANCE_Mod2"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x51A
+
+[CAN_Id_I_Mod3]
+Group        = 3
+SubGroup     = 3
+Name         = "CAN_Id_I_Mod3"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x521
+
+[CAN_Id_U_Mod3]
+Group        = 3
+SubGroup     = 3
+Name         = "CAN_Id_U_Mod3"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x522
+
+[CAN_Id_IRMS_Mod3]
+Group        = 3
+SubGroup     = 3
+Name         = "CAN_Id_IRMS_Mod3"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x523
+
+[CAN_Id_URMS_Mod3]
+Group        = 3
+SubGroup     = 3
+Name         = "CAN_Id_URMS_Mod3"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x524
+
+[CAN_Id_FREQ_Mod3]
+Group        = 3
+SubGroup     = 3
+Name         = "CAN_Id_FREQ_Mod3"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x525
+
+[CAN_Id_COSPHI_Mod3]
+Group        = 3
+SubGroup     = 3
+Name         = "CAN_Id_COSPHI_Mod3"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x525
+
+[CAN_Id_POWER_Mod3]
+Group        = 3
+SubGroup     = 3
+Name         = "CAN_Id_POWER_Mod3"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x526
+
+[CAN_Id_WORK_Mod3]
+Group        = 3
+SubGroup     = 3
+Name         = "CAN_Id_WORK_Mod3"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x527
+
+[CAN_Id_CHARGE_Mod3]
+Group        = 3
+SubGroup     = 3
+Name         = "CAN_Id_CHARGE_Mod3"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x52B
+
+[CAN_Id_DISCHARGE_Mod3]
+Group        = 3
+SubGroup     = 3
+Name         = "CAN_Id_DISCHARGE_Mod3"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x52C
+
+[CAN_Id_BALANCE_Mod3]
+Group        = 3
+SubGroup     = 3
+Name         = "CAN_Id_BALANCE_Mod3"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x52A
+
+[CAN_Id_I_Mod4]
+Group        = 3
+SubGroup     = 4
+Name         = "CAN_Id_I_Mod4"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x531
+
+[CAN_Id_U_Mod4]
+Group        = 3
+SubGroup     = 4
+Name         = "CAN_Id_U_Mod4"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x532
+
+[CAN_Id_IRMS_Mod4]
+Group        = 3
+SubGroup     = 4
+Name         = "CAN_Id_IRMS_Mod4"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x533
+
+[CAN_Id_URMS_Mod4]
+Group        = 3
+SubGroup     = 4
+Name         = "CAN_Id_URMS_Mod4"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x534
+
+[CAN_Id_FREQ_Mod4]
+Group        = 3
+SubGroup     = 4
+Name         = "CAN_Id_FREQ_Mod4"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x535
+
+[CAN_Id_COSPHI_Mod4]
+Group        = 3
+SubGroup     = 4
+Name         = "CAN_Id_COSPHI_Mod4"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x535
+
+[CAN_Id_POWER_Mod4]
+Group        = 3
+SubGroup     = 4
+Name         = "CAN_Id_POWER_Mod4"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x536
+
+[CAN_Id_WORK_Mod4]
+Group        = 3
+SubGroup     = 4
+Name         = "CAN_Id_WORK_Mod4"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x537
+
+[CAN_Id_CHARGE_Mod4]
+Group        = 3
+SubGroup     = 4
+Name         = "CAN_Id_CHARGE_Mod4"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x53B
+
+[CAN_Id_DISCHARGE_Mod4]
+Group        = 3
+SubGroup     = 4
+Name         = "CAN_Id_DISCHARGE_Mod4"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x53C
+
+[CAN_Id_BALANCE_Mod4]
+Group        = 3
+SubGroup     = 4
+Name         = "CAN_Id_BALANCE_Mod4"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x53A
+
+[CAN_Id_I_Mod5]
+Group        = 3
+SubGroup     = 5
+Name         = "CAN_Id_I_Mod5"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x541
+
+[CAN_Id_U_Mod5]
+Group        = 3
+SubGroup     = 5
+Name         = "CAN_Id_U_Mod5"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x542
+
+[CAN_Id_IRMS_Mod5]
+Group        = 3
+SubGroup     = 5
+Name         = "CAN_Id_IRMS_Mod5"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x543
+
+[CAN_Id_URMS_Mod5]
+Group        = 3
+SubGroup     = 5
+Name         = "CAN_Id_URMS_Mod5"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x544
+
+[CAN_Id_FREQ_Mod5]
+Group        = 3
+SubGroup     = 5
+Name         = "CAN_Id_FREQ_Mod5"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x545
+
+[CAN_Id_COSPHI_Mod5]
+Group        = 3
+SubGroup     = 5
+Name         = "CAN_Id_COSPHI_Mod5"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x545
+
+[CAN_Id_POWER_Mod5]
+Group        = 3
+SubGroup     = 5
+Name         = "CAN_Id_POWER_Mod5"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x546
+
+[CAN_Id_WORK_Mod5]
+Group        = 3
+SubGroup     = 5
+Name         = "CAN_Id_WORK_Mod5"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x547
+
+[CAN_Id_CHARGE_Mod5]
+Group        = 3
+SubGroup     = 5
+Name         = "CAN_Id_CHARGE_Mod5"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x54B
+
+[CAN_Id_DISCHARGE_Mod5]
+Group        = 3
+SubGroup     = 5
+Name         = "CAN_Id_DISCHARGE_Mod5"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x54C
+
+[CAN_Id_BALANCE_Mod5]
+Group        = 3
+SubGroup     = 5
+Name         = "CAN_Id_BALANCE_Mod5"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x54A
+
+[CAN_Id_I_Mod6]
+Group        = 3
+SubGroup     = 6
+Name         = "CAN_Id_I_Mod6"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x551
+
+[CAN_Id_U_Mod6]
+Group        = 3
+SubGroup     = 6
+Name         = "CAN_Id_U_Mod6"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x552
+
+[CAN_Id_IRMS_Mod6]
+Group        = 3
+SubGroup     = 6
+Name         = "CAN_Id_IRMS_Mod6"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x553
+
+[CAN_Id_URMS_Mod6]
+Group        = 3
+SubGroup     = 6
+Name         = "CAN_Id_URMS_Mod6"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x554
+
+[CAN_Id_FREQ_Mod6]
+Group        = 3
+SubGroup     = 6
+Name         = "CAN_Id_FREQ_Mod6"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x555
+
+[CAN_Id_COSPHI_Mod6]
+Group        = 3
+SubGroup     = 6
+Name         = "CAN_Id_COSPHI_Mod6"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x555
+
+[CAN_Id_POWER_Mod6]
+Group        = 3
+SubGroup     = 6
+Name         = "CAN_Id_POWER_Mod6"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x556
+
+[CAN_Id_WORK_Mod6]
+Group        = 3
+SubGroup     = 6
+Name         = "CAN_Id_WORK_Mod6"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x557
+
+[CAN_Id_CHARGE_Mod6]
+Group        = 3
+SubGroup     = 6
+Name         = "CAN_Id_CHARGE_Mod6"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x55B
+
+[CAN_Id_DISCHARGE_Mod6]
+Group        = 3
+SubGroup     = 6
+Name         = "CAN_Id_DISCHARGE_Mod6"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x55C
+
+[CAN_Id_BALANCE_Mod6]
+Group        = 3
+SubGroup     = 6
+Name         = "CAN_Id_BALANCE_Mod6"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x55A
+
+[CAN_Id_I_Mod7]
+Group        = 3
+SubGroup     = 7
+Name         = "CAN_Id_I_Mod7"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x561
+
+[CAN_Id_U_Mod7]
+Group        = 3
+SubGroup     = 7
+Name         = "CAN_Id_U_Mod7"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x562
+
+[CAN_Id_IRMS_Mod7]
+Group        = 3
+SubGroup     = 7
+Name         = "CAN_Id_IRMS_Mod7"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x563
+
+[CAN_Id_URMS_Mod7]
+Group        = 3
+SubGroup     = 7
+Name         = "CAN_Id_URMS_Mod7"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x564
+
+[CAN_Id_FREQ_Mod7]
+Group        = 3
+SubGroup     = 7
+Name         = "CAN_Id_FREQ_Mod7"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x565
+
+[CAN_Id_COSPHI_Mod7]
+Group        = 3
+SubGroup     = 7
+Name         = "CAN_Id_COSPHI_Mod7"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x565
+
+[CAN_Id_POWER_Mod7]
+Group        = 3
+SubGroup     = 7
+Name         = "CAN_Id_POWER_Mod7"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x566
+
+[CAN_Id_WORK_Mod7]
+Group        = 3
+SubGroup     = 7
+Name         = "CAN_Id_WORK_Mod7"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x567
+
+[CAN_Id_CHARGE_Mod7]
+Group        = 3
+SubGroup     = 7
+Name         = "CAN_Id_CHARGE_Mod7"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x56B
+
+[CAN_Id_DISCHARGE_Mod7]
+Group        = 3
+SubGroup     = 7
+Name         = "CAN_Id_DISCHARGE_Mod7"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x56C
+
+[CAN_Id_BALANCE_Mod7]
+Group        = 3
+SubGroup     = 7
+Name         = "CAN_Id_BALANCE_Mod7"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x56A
+
+[CAN_Id_I_Mod8]
+Group        = 3
+SubGroup     = 8
+Name         = "CAN_Id_I_Mod8"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x571
+
+[CAN_Id_U_Mod8]
+Group        = 3
+SubGroup     = 8
+Name         = "CAN_Id_U_Mod8"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x572
+
+[CAN_Id_IRMS_Mod8]
+Group        = 3
+SubGroup     = 8
+Name         = "CAN_Id_IRMS_Mod8"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x573
+
+[CAN_Id_URMS_Mod8]
+Group        = 3
+SubGroup     = 8
+Name         = "CAN_Id_URMS_Mod8"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x574
+
+[CAN_Id_FREQ_Mod8]
+Group        = 3
+SubGroup     = 8
+Name         = "CAN_Id_FREQ_Mod8"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x575
+
+[CAN_Id_COSPHI_Mod8]
+Group        = 3
+SubGroup     = 8
+Name         = "CAN_Id_COSPHI_Mod8"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x575
+
+[CAN_Id_POWER_Mod8]
+Group        = 3
+SubGroup     = 8
+Name         = "CAN_Id_POWER_Mod8"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x576
+
+[CAN_Id_WORK_Mod8]
+Group        = 3
+SubGroup     = 8
+Name         = "CAN_Id_WORK_Mod8"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x577
+
+[CAN_Id_CHARGE_Mod8]
+Group        = 3
+SubGroup     = 8
+Name         = "CAN_Id_CHARGE_Mod8"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x57B
+
+[CAN_Id_DISCHARGE_Mod8]
+Group        = 3
+SubGroup     = 8
+Name         = "CAN_Id_DISCHARGE_Mod8"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x57C
+
+[CAN_Id_BALANCE_Mod8]
+Group        = 3
+SubGroup     = 8
+Name         = "CAN_Id_BALANCE_Mod8"
+Type         = uLong
+Format	= Hex
+Values  = 0..0x7FF
+Default      = 0x57A
+
+[CAN_OFFSET_QUAD]
+Group        = 3
+SubGroup     = 9
+Name         = "CAN_OFFSET_QUAD"
+Type         = uLong
+Format	= Hex
+Values  = 0..0xFF
+Default      = 0x4E
+
+; -----------------------------------------------
+; MODUL_PAR
+; -----------------------------------------------
+
+[Mod1]
+Group 	     = 4
+Name         = "Modul_1"
+Type         = String
+Size 	     = 6
+
+[Mod2]
+Group 	     = 4
+Name         = "Modul_2"
+Type         = String
+Size 	     = 6
+
+[Mod3]
+Group 	     = 4
+Name         = "Modul_3"
+Type         = String
+Size 	     = 6
+
+[Mod4]
+Group 	     = 4
+Name         = "Modul_4"
+Type         = String
+Size 	     = 6
+
+[Mod5]
+Group 	     = 4
+Name         = "Modul_5"
+Type         = String
+Size 	     = 6
+
+[Mod6]
+Group 	     = 4
+Name         = "Modul_6"
+Type         = String
+Size 	     = 6
+
+[Mod7]
+Group 	     = 4
+Name         = "Modul_7"
+Type         = String
+Size 	     = 6
+
+[Mod8]
+Group 	     = 4
+Name         = "Modul_8"
+Type         = String
+Size 	     = 6
+
+[ModSum1]
+Group 	     = 4
+Name 	     = "ModulSum_1"
+Type 	     = String
+Size         = 8
+
+[ModSum2]
+Group 	     = 4
+Name 	     = "ModulSum_2"
+Type 	     = String
+Size         = 8
+
+; -----------------------------------------------
+; RTC_PAR
+; -----------------------------------------------
+
+[SEC]
+Group        = 5
+Name         = "Tk:Seconds"
+Type         = uChar
+Format       = Hex
+
+[MIN]
+Group        = 5
+Name         = "Tk:Minutes"
+Type         = uChar
+Format       = Hex
+
+[HOURS]
+Group        = 5
+Name         = "Tk:Hour"
+Type         = uChar
+Format       = Hex
+
+[DAY]
+Group        = 5
+Name         = "Tk:Week_Day"
+Type         = uChar
+Format       = Hex
+
+[DATE]
+Group        = 5
+Name         = "Tk:Dates"
+Type         = uChar
+Format       = Hex
+
+[MONTH]
+Group        = 5
+Name         = "Tk:Months"
+Type         = uChar
+Format       = Hex
+
+[YEAR]
+Group        = 5
+Name         = "Tk:Years"
+Type         = uChar
+Format       = Hex
+
+[dummy]
+Group        = 5
+Name         = "dummy"
+Type         = uChar
+Format       = Hex
+
+; -----------------------------------------------
+; FS_PAR
+; -----------------------------------------------
+
+[State]
+Group        = 6
+Display      = "ViewOnly"
+Name         = "State"
+Type         = uLong
+Attrib       = Combo
+Select_00    = "FS_ST_VOID"
+Value_00     = 0
+Select_01    = "FS_ST_INIT"
+Value_01     = 1
+Select_02    = "FS_ST_POWER_ON_WAIT"
+Value_02     = 2
+Select_03    = "FS_ST_WAIT_FOR_BUS_ENABLE_COMPLETE"
+Value_03     = 3
+Select_04    = "FS_ST_WAIT_FOR_DEVICE_ATTACH"
+Value_04     = 4
+Select_05    = "FS_ST_READY"
+Value_05     = 5
+Select_06    = "FS_ST_RESUME"
+Value_06     = 6
+Select_07    = "FS_ST_RESUME_WAIT"
+Value_07     = 7
+Select_08    = "FS_ST_STOP"
+Value_08     = 8
+Select_09    = "FS_ST_STOP2"
+Value_09     = 9
+Select_10    = "FS_ST_STOP3"
+Value_10     = 10
+
+[Flags]
+Group        = 6
+Name         = "Flags"
+Type         = uLong
+Display      = "ViewOnly"
+Attrib       = Option
+Option_00    = "FS_FLG_USB_IS_POWERED"
+Mask_00      = 0x00000001
+Option_01    = "FS_FLG_USB_POWER_OC"
+Mask_01      = 0x00000002
+Option_02    = "FS_FLG_USB_DEVICE_PRESENT"
+Mask_02      = 0x00000004
+Option_03    = "FS_FLG_MOUNTED"
+Mask_03      = 0x00000008
+Option_04    = "FS_FLG_DEVICE_UNSUPPORTED"
+Mask_04      = 0x00000010
+Option_05    = "FS_FLG_WRITE_PENDING"
+Mask_05      = 0x00000020
+Option_06    = "FS_FLG_WRITE_ERROR"
+Mask_06      = 0x00000040
+Option_07    = "FS_FLG_DELETE_PENDING"
+Mask_07      = 0x00000080
+Option_08    = "FS_FLG_MOUNT_REQUEST"
+Mask_08      = 0x00000100
+Option_09    = "FS_FLG_UNMOUNT_REQUEST"
+Mask_09      = 0x00000200
+Option_10    = "FS_FLG_UNMOUNT_REQUEST"
+Mask_10      = 0x00000400
+Option_10    = "FS_FLG_SEARCH_DBC"
+Mask_10      = 0x00000800
+Option_10    = "FS_FLG_READ_RUNNING"
+Mask_10      = 0x00001000
+Option_10    = "FS_FLG_READ_ERROR"
+Mask_10      = 0x00002000
+Option_10    = "FS_FLG_BUF_OVERFLOW"
+Mask_10      = 0x00004000
+Option_10    = "FS_FLG_MEAS_PRESENT"
+Mask_10      = 0x00008000
+
+[FileWriteTime]
+Group        = 6
+Name         = "FileWriteTime"
+Type         = uLong
+
+[FileBlockSize]
+Group        = 6
+Name         = "FileBlockSize"
+Type         = uLong
+
+[SysFsError]
+Group        = 6
+Name         = "SysFsError"
+Type         = uLong
+
+[FileIdx]
+Group        = 6
+Name         = "FileIdx"
+Type         = uLong
+
+[MeasIdx]
+Group        = 6
+Name         = "MeasIdx"
+Type         = uLong
+
+[FileDeleteNum]
+Group        = 6
+Name         = "FileDeleteNum"
+Type         = uLong
+
+[Write_Bps]
+Group        = 6
+Name         = "Write_Bps"
+Type         = uLong
+
+[FileSize]
+Group        = 6
+Name         = "FileSize"
+Type         = uLong
+
+[FileWriteTotalBytes]
+Group        = 6
+Name         = "FileWriteTotalBytes"
+Type         = uLong
+
+[TotalSectors]
+Group        = 6
+Name         = "TotalSectors"
+Type         = uLong
+
+[FreeSectors]
+Group        = 6
+Name         = "FreeSectors"
+Type         = uLong
+
+[Capacity]
+Group        = 6
+Name         = "Capacity"
+Type         = uLong
+
+[Head]
+Group        = 6
+Name         = "Head"
+Type         = uLong
+
+[Tail]
+Group        = 6
+Name         = "Tail"
+Type         = uLong
+
+; -----------------------------------------------
+; STATUS
+; -----------------------------------------------
+
+[Error_Flags]
+Group        = 7
+Name         = "Error Flags"
+Type         = uLong
+Display      = "ViewOnly"
+Attrib       = Option
+Option_00    = "ERR_HW"
+Mask_00      = 0x00000001
+Option_01    = "ERR_EE"
+Mask_01      = 0x00000002
+Option_02    = "ERR_MEMORY"
+Mask_02      = 0x00000004
+Option_03    = "ERR_NETDEV_HANDLER"
+Mask_03      = 0x00000010
+Option_04    = "ERR_NETDEV_OVR"
+Mask_04      = 0x00000020
+Option_05    = "ERR_OWH_DATA"
+Mask_05      = 0x00000100
+Option_06    = "ERR_CAN1"
+Mask_06      = 0x00000200
+Option_07    = "ERR_CAN2"
+Mask_07      = 0x00000400
+Option_08    = "ERR_XCP_OVR"
+Mask_08      = 0x00000800
+Option_09    = "ERR_RTC"
+Mask_09      = 0x00004000
+Option_10    = "ERR_DEFAULT"
+Mask_10      = 0x00008000
+Option_11    = "UART_ERROR"
+Mask_11      = 0x00010000
+
+[Status_Flags]
+Group        = 7
+Name         = "Status Flags"
+Type         = uLong
+Display      = "ViewOnly"
+Attrib       = Option
+Option_00    = "STATUS_UART"
+Mask_00      = 0x00000001
+Option_01    = "STATUS_ETHERNET"
+Mask_01      = 0x00000002
+Option_02    = "STATUS_SYSLOG"
+Mask_02      = 0x00000004
+Option_03    = "STATUS_NETDEV"
+Mask_03      = 0x00000008
+Option_04    = "STATUS_XCP"
+Mask_04      = 0x00000010
+Option_05    = "STATUS_XCP_CONNECTED"
+Mask_05      = 0x00000100
+Option_06    = "STATUS_XCP_DAQ"
+Mask_06      = 0x00000200
+Option_07    = "STATUS_MEAS_IS_RUNNING"
+Mask_07      = 0x00001000
+Option_08    = "STATUS_ETH_IS_UP"
+Mask_08      = 0x00010000
+Option_09    = "STATUS_ETH_IS_LINKED"
+Mask_09      = 0x00020000
+Option_10    = "STATUS_ETH_IS_READY"
+Mask_10      = 0x00040000
+Option_11    = "STATUS_USB_OC_INT"
+Mask_11      = 0x00100000
+Option_12    = "STATUS_REL_STATE"
+Mask_12      = 0x00200000
+Option_13    = "STATUS_NEG_MASK"
+Mask_13      = 0xFFFFFFFF
+
+[SW_Ver]
+Group        = 7
+Common       = "SW_Ver"
+
+[HW_Ver]
+Group        = 7
+Common       = "HW_Ver"
+
+[MainSeqState]
+Group        = 7
+Name         = "Tk:Name"
+Type         = int
+Attrib       = Combo
+Select_00    = "MAIN_SEQ_ST_PON"
+Value_00     = 0
+Select_01    = "MAIN_SEQ_ST_PON_WAIT"
+Value_01     = 1
+Select_02    = "MAIN_SEQ_ST_INIT_EE"
+Value_02     = 2
+Select_03    = "MAIN_SEQ_ST_INIT"
+Value_03     = 3
+Select_04    = "MAIN_SEQ_ST_WAIT_UART"
+Value_04     = 4
+Select_05    = "MAIN_SEQ_ST_WAIT_SYSLOG_UART"
+Value_05     = 5
+Select_06    = "MAIN_SEQ_ST_WAIT_DSP_UART"
+Value_06     = 6
+Select_07    = "MAIN_SEQ_ST_START_HANDLER"
+Value_07     = 7
+Select_08    = "MAIN_SEQ_ST_WAIT_ETHERNET"
+Value_08     = 8
+Select_09    = "MAIN_SEQ_ST_WAIT_SYSLOG_ETH"
+Value_09     = 9
+Select_10    = "MAIN_SEQ_ST_INIT_NETDEV"
+Value_10     = 10
+Select_11    = "MAIN_SEQ_ST_INIT_CONFIG"
+Value_11     = 11
+Select_12    = "MAIN_SEQ_ST_INIT_XCP"
+Value_12     = 12
+Select_13    = "MAIN_SEQ_ST_ONEWIRE_WAIT"
+Value_13     = 13
+Select_14    = "MAIN_SEQ_ST_FINISH_STARTUP"
+Value_14     = 14
+Select_15    = "MAIN_SEQ_ST_WAIT_HANDLER"
+Value_15     = 15
+Select_15    = "MAIN_SEQ_ST_WAIT_FS"
+Value_15     = 16
+Select_16    = "MAIN_SEQ_ST_CREATE_INFO_VEC"
+Value_16     = 17
+Select_17    = "MAIN_SEQ_ST_UPDATE_DSP_REG"
+Value_17     = 18
+Select_17    = "MAIN_SEQ_ST_UPDATE_DSP_REG_2"
+Value_17     = 19
+Select_17    = "MAIN_SEQ_ST_WELCOME_DSP"
+Value_17     = 20
+Select_18    = "MAIN_SEQ_ST_READY"
+Value_18     = 21
+Select_19    = "MAIN_SEQ_ST_RESTART"
+Value_19     = 22
+Select_20    = "MAIN_SEQ_ST_RESTART_WAIT"
+Value_20     = 23
+Select_21    = "MAIN_SEQ_ST_RESUME"
+Value_21     = 24
+Select_22    = "MAIN_SEQ_ST_STOP"
+Value_22     = 25
+Select_23    = "MAIN_SEQ_ST_VOID"
+Value_23     = 26
+Select_24    = "MAIN_SEQ_ST_ERROR"
+Value_24     = 27
+Select_25    = "MAIN_SEQ_ST_AUTO_START_EN"
+Value_25     = 28
+Select_26    = "MAIN_SEQ_ST_START"
+Value_26     = 29
+
+[UartKoDeX_State]
+Group        = 7
+Name         = "Tk:Name"
+Type         = int
+Attrib       = Combo
+Select_00    = "UART_ST_VOID"
+Value_00     = 0
+Select_01    = "UART_ST_INIT"
+Value_01     = 1
+Select_02    = "UART_ST_READY"
+Value_02     = 2
+Select_03    = "UART_ST_RESTART"
+Value_03     = 3
+Select_04    = "UART_ST_RESUME"
+Value_04     = 4
+Select_05    = "UART_ST_STOP"
+Value_05     = 5
+
+[UartDisplay_State]
+Group        = 7
+Name         = "Tk:Name"
+Type         = int
+Attrib       = Combo
+Select_00    = "UART_ST_VOID"
+Value_00     = 0
+Select_01    = "UART_ST_INIT"
+Value_01     = 1
+Select_02    = "UART_ST_READY"
+Value_02     = 2
+Select_03    = "UART_ST_RESTART"
+Value_03     = 3
+Select_04    = "UART_ST_RESUME"
+Value_04     = 4
+Select_05    = "UART_ST_STOP"
+Value_05     = 5
+
+[Display_State]
+Group        = 7
+Name         = "Tk:Name"
+Type         = int
+Attrib       = Combo
+Select_00    = "DSP_ST_VOID"
+Value_00     = 0
+Select_00    = "DSP_ST_IDLE"
+Value_00     = 1
+Select_00    = "DSP_ST_PROCESS"
+Value_00     = 2
+Select_00    = "DSP_ST_WAIT_ACK"
+Value_00     = 3
+Select_00    = "DSP_ST_CLEAR_COMBO"          
+Value_00     = 4
+Select_00    = "DSP_ST_CREATE_SCROLL"
+Value_00     = 5
+Select_00    = "DSP_ST_CREATE_COMBO"
+Value_00     = 6
+Select_00    = "DSP_ST_DRAW_CELLS"
+Value_00     = 7
+Select_00    = "DSP_ST_ADD_FIELD_2_CELL"
+Value_00     = 8
+Select_00    = "DSP_ST_ADD_FIELD_2_CELL_1"
+Value_00     = 9
+
+[DisplayProt_State]
+Group        = 7
+Name         = "Tk:Name"
+Type         = long
+Attrib       = Combo
+Select_00    = "DSP_STATE_INIT"
+Value_00     = 0
+Select_00    = "DSP_STATE_BASE"
+Value_00     = 1
+Select_00    = "DSP_STATE_GET_LEN"
+Value_00     = 2
+Select_00    = "DSP_STATE_WAIT_DATA"
+Value_00     = 3
+Select_00    = "DSP_STATE_EXEC_CMD"
+Value_00     = 4
+Select_00    = "DSP_STATE_EXIT"
+
+[Can1_State]
+Group        = 7
+Name         = "Tk:Can1_State"
+Type         = uInt
+Attrib       = Combo
+Select_00    = "CAN_ST_VOID"
+Value_00     = 0
+Select_01    = "CAN_ST_IDLE"
+Value_01     = 1
+Select_02    = "CAN_ST_INIT"
+Value_02     = 2
+Select_03    = "CAN_ST_WAIT_PWR"
+Value_03     = 3
+Select_04    = "CAN_ST_WAIT_VIO"
+Value_04     = 4
+Select_05    = "CAN_ST_WAIT_CONFIG_MODE"
+Value_05     = 5
+Select_06    = "CAN_ST_WAIT_NORMAL_MODE"
+Value_06     = 6
+Select_07    = "CAN_ST_READY"
+Value_07     = 7
+Select_08    = "CAN_ST_RESUME"
+Value_08     = 8
+Select_09    = "CAN_ST_RESUME_WAIT_CLR_PWR_EN"
+Value_09     = 9
+Select_10    = "CAN_ST_RESUME_WAIT_CLR_VIO_EN"
+Value_10     = 10
+Select_11    = "CAN_ST_STOP"
+Value_11     = 11
+Select_12    = "CAN_ST_STOP_WAIT_CLR_PWR_EN"
+Value_12     = 12
+Select_13    = "CAN_ST_STOP_WAIT_CLR_VIO_EN"
+Value_13     = 13
+Select_14    = "CAN_ST_NUM"
+Value_14     = 14
+
+[Can2_State]
+Group        = 7
+Name         = "Tk:Can2_State"
+Type         = uInt
+Attrib       = Combo
+Select_00    = "CAN_ST_VOID"
+Value_00     = 0
+Select_01    = "CAN_ST_IDLE"
+Value_01     = 1
+Select_02    = "CAN_ST_INIT"
+Value_02     = 2
+Select_03    = "CAN_ST_WAIT_PWR"
+Value_03     = 3
+Select_04    = "CAN_ST_WAIT_VIO"
+Value_04     = 4
+Select_05    = "CAN_ST_WAIT_CONFIG_MODE"
+Value_05     = 5
+Select_06    = "CAN_ST_WAIT_NORMAL_MODE"
+Value_06     = 6
+Select_07    = "CAN_ST_READY"
+Value_07     = 7
+Select_08    = "CAN_ST_RESUME"
+Value_08     = 8
+Select_09    = "CAN_ST_RESUME_WAIT_CLR_PWR_EN"
+Value_09     = 9
+Select_10    = "CAN_ST_RESUME_WAIT_CLR_VIO_EN"
+Value_10     = 10
+Select_11    = "CAN_ST_STOP"
+Value_11     = 11
+Select_12    = "CAN_ST_STOP_WAIT_CLR_PWR_EN"
+Value_12     = 12
+Select_13    = "CAN_ST_STOP_WAIT_CLR_VIO_EN"
+Value_13     = 13
+Select_14    = "CAN_ST_NUM"
+Value_14     = 14
+
+[Can1_Flags]
+Group        = 7
+Name         = "Can1 Flags"
+Type         = uLong
+Attrib       = Option
+Option_00    = "CAN_PWR_EN"
+Mask_00      = 0x00000001
+Option_01    = "CAN_VIO_EN"
+Mask_01      = 0x00000002
+Option_02    = "CAN_IS_RUNNING"
+Mask_02      = 0x00000004
+Option_03    = "CAN_ERROR"
+Mask_03      = 0x00000008
+Option_04    = "CAN_TERM"
+Mask_04      = 0x00000010
+Option_05    = "CAN_BROADCAST_DELAY"
+Mask_05      = 0x00000020
+Option_06    = "CAN_KODEX_EN"
+Mask_06      = 0x00000040
+Option_07    = "CAN_BUF_OVERFLOW"
+Mask_07      = 0x00000080
+Option_08    = "CAN_NEG_MASK"
+Mask_08      = 0xFFFFFFFF
+
+[Can2_Flags]
+Group        = 7
+Name         = "Can2 Flags"
+Type         = uLong
+Attrib       = Option
+Option_00    = "CAN_PWR_EN"
+Mask_00      = 0x00000001
+Option_01    = "CAN_VIO_EN"
+Mask_01      = 0x00000002
+Option_02    = "CAN_IS_RUNNING"
+Mask_02      = 0x00000004
+Option_03    = "CAN_ERROR"
+Mask_03      = 0x00000008
+Option_04    = "CAN_TERM"
+Mask_04      = 0x00000010
+Option_05    = "CAN_BROADCAST_DELAY"
+Mask_05      = 0x00000020
+Option_06    = "CAN_KODEX_EN"
+Mask_06      = 0x00000040
+Option_07    = "CAN_BUF_OVERFLOW"
+Mask_07      = 0x00000080
+Option_08    = "CAN_NEG_MASK"
+Mask_08      = 0xFFFFFFFF
+
+[Uart_RxBps]
+Group        = 7
+Name         = "Uart RxBps"
+Type         = uLong
+
+[Uart_TxBps]
+Group        = 7
+Name         = "Uart TxBps"
+Type         = uLong
+
+[KoDeX_Instances]
+Group        = 7
+Name         = "KoDeX Instances"
+Type         = uLong
+
+[UartSysLog_State]
+Group        = 7
+Name         = "UartSysLog_State"
+Type         = uLong
+Attrib       = Combo
+Select_00    = "UART_ST_VOID"
+Value_00     = 0
+Select_01    = "UART_ST_INIT"
+Value_01     = 1
+Select_02    = "UART_ST_READY"
+Value_02     = 2
+Select_03    = "UART_ST_RESTART"
+Value_03     = 3
+Select_04    = "UART_ST_RESUME"
+Value_04     = 4
+Select_05    = "UART_ST_STOP"
+Value_05     = 5
+
+[UartSysLog_RxBps]
+Group        = 7
+Name         = "UartSysLog_RxBps"
+Type         = uLong
+
+[UartSysLog_TxBps]
+Group        = 7
+Name         = "UartSysLog_TxBps"
+Type         = uLong
+
+[SysLog_State]
+Group        = 7
+Name         = "SysLog State"
+Type         = long
+Attrib       = Combo
+Select_00    = "SYSLOG_ST_VOID"
+Value_00     = 0
+Select_01    = "SYSLOG_ST_INIT"
+Value_01     = 1
+Select_02    = "SYSLOG_ST_READY"
+Value_02     = 2
+Select_03    = "SYSLOG_ST_STOP"
+Value_03     = 3
+Select_04    = "SYSLOG_ST_NUM"
+Value_04     = 4
+
+[SysLog_Head]
+Group        = 7
+Name         = "SysLog_Head"
+Type         = long
+
+[SysLog_Tail]
+Group        = 7
+Name         = "SysLog_Tail"
+Type         = long
+
+[SysLog_Space]
+Group        = 7
+Name         = "SysLog_Space"
+Type         = long
+
+[SysLog_Bps]
+Group        = 7
+Name         = "SysLog_Bps"
+Type         = long
+
+[ResetReason]
+Group        = 7
+Name         = "ResetReason"
+Type         = uLong
+
+[SysTs]
+Group        = 7
+Name         = "SysTs"
+Type         = uLong
+
+[CurrDialog]
+Group        = 7
+Name         = "Dialog"
+Type         = uChar
+Attrib       = Combo
+Select_00    = "Configuration"
+Value_00     = 0x00
+Select_01    = "Configuration II"
+Value_01     = 0x01
+Select_02    = "Configuration III"
+Value_02     = 0x02
+Select_03    = "Messages AC"
+Value_03     = 0x03
+Select_04    = "Messages DC"
+Value_04     = 0x04
+
+[Measurement]
+Group        = 7
+Name         = "Measurement"
+Type         = uChar
+Attrib       = Select
+Help         = "DisplayPwr"
+Select_01    = "Tk:On"
+Value_01     = 1
+Select_02    = "Tk:Off"
+Value_02     = 0
+
+[CurrPage]
+Group        = 7
+Name         = "CurrPage"
+Type         = uChar
+
+[DisplayPwr]
+Group        = 7
+Name         = "DisplayPwr"
+Type         = uChar
+Attrib       = Select
+Help         = "DisplayPwr"
+Select_01    = "Tk:On"
+Value_01     = 1
+Select_02    = "Tk:Off"
+Value_02     = 0
+
+[DateTime]
+Group        = 7
+Type         = string
+Size         = 32
+Name         = "DateTime"
+
+[lVar2]
+Group        = 7
+Name         = "lVar2"
+Type         = Long
+
+[DOutStatus]
+Group        = 7
+Name         = "DOutStatus"
+Type         = uLong
+Attrib       = Option
+Option_00    = "DOUT1_ST"
+Mask_00     = 0x00000001
+Option_01    = "DOUT2_ST"
+Mask_01     = 0x00000002
+Option_02    = "DOUT3_ST"
+Mask_02     = 0x00000004
+Option_03    = "DOUT4_ST"
+Mask_03     = 0x00000008
+Option_04    = "DOUT5_ST"
+Mask_04     = 0x00000100
+Option_05    = "DOUT6_ST"
+Mask_05     = 0x00000200
+Option_06    = "DOUT7_ST"
+Mask_06     = 0x00000400
+Option_07    = "DOUT8_ST"
+Mask_07     = 0x00000800
+Option_08    = "DOUT9_ST"
+Mask_08     = 0x00010000
+Option_09    = "DOUT10_ST"
+Mask_09     = 0x00020000
+Option_10    = "DOUT11_ST"
+Mask_10     = 0x00040000
+Option_11    = "DOUT12_ST"
+Mask_11     = 0x00080000
+Option_12    = "DOUT13_ST"
+Mask_12     = 0x01000000
+Option_13    = "DOUT14_ST"
+Mask_13     = 0x02000000
+Option_14    = "DOUT15_ST"
+Mask_14     = 0x04000000
+Option_15    = "DOUT16_ST"
+Mask_15     = 0x08000000
+
+[DInStatus]
+Group        = 7
+Name         = "DInStatus"
+Type         = uLong
+Attrib       = Option
+Option_00    = "DIN1_ST"
+Mask_00     = 0x00000001
+Option_01    = "DIN2_ST"
+Mask_01     = 0x00000002
+Option_02    = "DIN3_ST"
+Mask_02     = 0x00000004
+Option_03    = "DIN4_ST"
+Mask_03     = 0x00000008
+Option_04    = "DIN5_ST"
+Mask_04     = 0x00000100
+Option_05    = "DIN6_ST"
+Mask_05     = 0x00000200
+Option_06    = "DIN7_ST"
+Mask_06     = 0x00000400
+Option_07    = "DIN8_ST"
+Mask_07     = 0x00000800
+
+[ModCanHead]
+Group        = 7
+Name         = "ModCanRxHead"
+Type         = uLong
+
+[ModCanTail]
+Group        = 7
+Name         = "ModCanRxTail"
+Type         = uLong
+
+[CanRxHead]
+Group        = 7
+Name         = "CanRxHead"
+Type         = uLong
+
+[CanRxTail]
+Group        = 7
+Name         = "CanRxTail"
+Type         = uLong
+
+; -----------------------------------------------
+; KALIB
+; -----------------------------------------------
+[Serial_Number]
+Group        = 8
+SubGroup     = 1
+Common       = "Serial_Number"	
+Type         = long
+Default      = -1
+
+[Month]
+Group        = 8
+SubGroup     = 1
+Common       = "Month"
+Type         = uInt
+
+[Year]
+Group        = 8
+SubGroup     = 1
+Common       = "Year"
+Type         = uInt
+
+[SLD_Flags]
+Group        = 8
+SubGroup     = 1
+Name         = "SysLog Flags"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "SYSLOG_MASK_ON"
+Mask_00      = 0x00000001
+Option_01    = "SYSLOG_MASK_DBG"
+Mask_01      = 0x00000002
+Option_02    = "SYSLOG_MASK_ERR"
+Mask_02      = 0x00000004
+Option_03    = "SYSLOG_MASK_FLW"
+Mask_03      = 0x00000008
+Option_04    = "SYSLOG_MASK_RXTX"
+Mask_04      = 0x00000010
+Option_05    = "SYSLOG_MASK_PROT"
+Mask_05      = 0x00000040
+Option_06    = "SYSLOG_MASK_USR1"
+Mask_06      = 0x00000100
+Option_07    = "SYSLOG_MASK_USR2"
+Mask_07      = 0x00000200
+Option_08    = "SYSLOG_MASK_USR3"
+Mask_08      = 0x00000400
+Option_09    = "SYSLOG_MASK_USR4"
+Mask_09      = 0x00000800
+Option_10    = "SYSLOG_MASK_USR5"
+Mask_10      = 0x00001000
+Option_11    = "SYSLOG_MASK_USR6"
+Mask_11      = 0x00002000
+Option_12    = "SYSLOG_MASK_USR7"
+Mask_12      = 0x00004000
+Option_13    = "SYSLOG_MASK_USR8"
+Mask_13      = 0x00008000
+Option_14    = "SYSLOG_MASK_USR9"
+Mask_14      = 0x00010000
+Option_15    = "SYSLOG_MASK_DISP_CMD"
+Mask_15      = 0x00020000
+Option_16    = "SYSLOG_FLG_NEG_MASK"
+Mask_16      = 0xFFFFFFFF
+
+[Debug_Flags]
+Group        = 8
+SubGroup     = 1
+Name         = "Debug_Flags"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "DEBUG_UART1_ENABLE"
+Mask_00      = 0x00000001
+Option_01    = "DEBUG_UART2_ENABLE"
+Mask_01      = 0x00000002
+Option_02    = "DEBUG_UART3_ENABLE"
+Mask_02      = 0x00000004
+Option_03    = "DEBUG_CAN1_ENABLE"
+Mask_03      = 0x00000008
+Option_04    = "DEBUG_CAN2_ENABLE"
+Mask_04      = 0x00000010
+Option_05    = "DEBUG_ETH_ENABLE"
+Mask_05      = 0x00000020
+Option_06    = "DEBUG_USB_ENABLE"
+Mask_06      = 0x00000100
+Option_07    = "DEBUG_NETDEV_ENABLE"
+Mask_07      = 0x00000200
+Option_08    = "DEBUG_XCP_ENABLE"
+Mask_08      = 0x00000400
+Option_09    = "DEBUG_TS_SUB_MS"
+Mask_09      = 0x00000800
+Option_10    = "DEBUG_SYSLOG_UART"
+Mask_10      = 0x00001000
+Option_11    = "DEBUG_SYSLOG_ETH"
+Mask_11      = 0x00002000
+Option_12    = "DEBUG_KODEX_CAN1_ENABLE"
+Mask_12      = 0x00004000
+Option_13    = "DEBUG_KODEX_CAN2_ENABLE"
+Mask_13      = 0x00008000
+Option_14    = "DEBUG_KODEX_ETH_ENABLE"
+Mask_14      = 0x00010000
+Option_15    = "DEBUG_DIN_DOUT_ENABLE"
+Mask_15      = 0x00020000
+Option_16    = "DEBUG_NEG_MASK"
+Mask_16      = 0xFFFFFFFF
+
+[OvrValue]
+Group        = 8
+SubGroup     = 1
+Name         = "OvrValue"
+Type         = long
+
+[IOSwitch]
+Group        = 8
+SubGroup     = 1
+Name         = "IOSwitch"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Unknown"
+Value_00     = 0
+Select_01    = "4xModule 2xMotor"
+Value_01     = 1
+Select_02    = "8xModule"
+Value_02     = 2
+Select_03    = "8xModule 4xMotor"
+Value_03     = 3
+
+[ModuleCount]
+Group        = 8
+SubGroup     = 1
+Name         = "ModuleCount"
+Type         = uChar
+Values       = 3..8
+
+[USB_Present]
+Group        = 8
+SubGroup     = 1
+Name         = "USB_Present"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Not present"
+Value_00     = 0
+Select_01    = "Present"
+Value_01     = 1
+
+[MotorCount]
+Group        = 8
+SubGroup     = 1
+Name         = "MotorCount"
+Type         = uChar
+Values       = 0..4
+
+[AutoScale]
+Group        = 8
+SubGroup     = 1
+Name         = "AutoScale"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:On"
+Value_00     = 1
+Select_01    = "Tk:Off"
+Value_01     = 0
+
+[WaitForStart]
+Group        = 8
+SubGroup     = 1
+Name         = "WaitForStart"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Tk:On"
+Value_00     = 1
+Select_01    = "Tk:Off"
+Value_01     = 0
+
+[MotorDelay]
+Group        = 8
+SubGroup     = 1
+Name         = "MotorDelay"
+Type         = uInt
+
+[Module1Select]
+Group        = 8
+SubGroup     = 2
+Name         = "Module 1 Select"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Klari-One-Plus"
+Value_00     = 0
+Select_01    = "Klari-Quad"
+Value_01     = 1
+
+[Module2Select]
+Group        = 8
+SubGroup     = 3
+Name         = "Module 2 Select"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Klari-One-Plus"
+Value_00     = 0
+Select_01    = "Klari-Quad"
+Value_01     = 1
+
+[Module3Select]
+Group        = 8
+SubGroup     = 4
+Name         = "Module 3 Select"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Klari-One-Plus"
+Value_00     = 0
+Select_01    = "Klari-Quad"
+Value_01     = 1
+
+[Module4Select]
+Group        = 8
+SubGroup     = 5
+Name         = "Module 4 Select"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Klari-One-Plus"
+Value_00     = 0
+Select_01    = "Klari-Quad"
+Value_01     = 1
+
+[Module5Select]
+Group        = 8
+SubGroup     = 6
+Name         = "Module 5 Select"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Klari-One-Plus"
+Value_00     = 0
+Select_01    = "Klari-Quad"
+Value_01     = 1
+
+[Module6Select]
+Group        = 8
+SubGroup     = 7
+Name         = "Module 6 Select"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Klari-One-Plus"
+Value_00     = 0
+Select_01    = "Klari-Quad"
+Value_01     = 1
+
+[Module7Select]
+Group        = 8
+SubGroup     = 8
+Name         = "Module 7 Select"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Klari-One-Plus"
+Value_00     = 0
+Select_01    = "Klari-Quad"
+Value_01     = 1
+
+[Module8Select]
+Group        = 8
+SubGroup     = 9
+Name         = "Module 8 Select"
+Type         = uChar
+Attrib       = Select
+Select_00    = "Klari-One-Plus"
+Value_00     = 0
+Select_01    = "Klari-Quad"
+Value_01     = 1
+
+[U_Float_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "U_Float"
+Type         = uInt
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[U_Float_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "U_Float"
+Type         = uInt
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[U_Float_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "U_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[U_Float_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "U_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[U_Float_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "U_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[U_Float_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "U_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[U_Float_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "U_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[U_Float_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "U_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[I_Float_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "I_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[I_Float_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "I_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[I_Float_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "I_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[I_Float_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "I_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[I_Float_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "I_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[I_Float_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "I_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[I_Float_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "I_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[I_Float_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "I_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Urms_Float_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Urms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Urms_Float_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Urms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Urms_Float_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Urms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Urms_Float_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Urms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Urms_Float_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Urms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Urms_Float_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Urms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Urms_Float_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Urms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Urms_Float_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Urms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Irms_Float_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Irms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Irms_Float_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Irms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Irms_Float_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Irms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Irms_Float_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Irms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Irms_Float_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Irms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Irms_Float_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Irms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Irms_Float_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Irms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Irms_Float_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Irms_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Cos_Float_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Cos_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Cos_Float_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Cos_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Cos_Float_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Cos_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Cos_Float_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Cos_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Cos_Float_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Cos_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Cos_Float_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Cos_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Cos_Float_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Cos_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Cos_Float_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Cos_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[F_Float_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "F_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[F_Float_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "F_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[F_Float_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "F_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[F_Float_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "F_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[F_Float_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "F_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[F_Float_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "F_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[F_Float_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "F_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[F_Float_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "F_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[P_Float_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "P_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[P_Float_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "P_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[P_Float_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "P_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[P_Float_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "P_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[P_Float_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "P_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[P_Float_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "P_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[P_Float_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "P_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[P_Float_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "P_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[W_Float_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "W_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[W_Float_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "W_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[W_Float_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "W_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[W_Float_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "W_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[W_Float_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "W_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[W_Float_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "W_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[W_Float_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "W_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[W_Float_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "W_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Charge_Float_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Charge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Charge_Float_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Charge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Charge_Float_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Charge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Charge_Float_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Charge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Charge_Float_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Charge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Charge_Float_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Charge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Charge_Float_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Charge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Charge_Float_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Charge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Discharge_Float_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Discharge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Discharge_Float_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Discharge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Discharge_Float_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Discharge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Discharge_Float_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Discharge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Discharge_Float_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Discharge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Discharge_Float_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Discharge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Discharge_Float_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Discharge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Discharge_Float_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Discharge_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Balance_Float_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Balance_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Balance_Float_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Balance_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Balance_Float_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Balance_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Balance_Float_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Balance_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Balance_Float_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Balance_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Balance_Float_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Balance_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Balance_Float_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Balance_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[Balance_Float_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Balance_Float"
+Type         = uChar
+Attrib       = Select
+Select_00    = "True"
+Value_00     = 1
+Select_01    = "False"
+Value_01     = 0
+
+[U_StartBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "U_StartBit"
+Type         = uChar
+
+[U_StartBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "U_StartBit"
+Type         = uChar
+
+[U_StartBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "U_StartBit"
+Type         = uChar
+
+[U_StartBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "U_StartBit"
+Type         = uChar
+
+[U_StartBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "U_StartBit"
+Type         = uChar
+
+[U_StartBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "U_StartBit"
+Type         = uChar
+
+[U_StartBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "U_StartBit"
+Type         = uChar
+
+[U_StartBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "U_StartBit"
+Type         = uChar
+
+[I_StartBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "I_StartBit"
+Type         = uChar
+
+[I_StartBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "I_StartBit"
+Type         = uChar
+
+[I_StartBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "I_StartBit"
+Type         = uChar
+
+[I_StartBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "I_StartBit"
+Type         = uChar
+
+[I_StartBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "I_StartBit"
+Type         = uChar
+
+[I_StartBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "I_StartBit"
+Type         = uChar
+
+[I_StartBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "I_StartBit"
+Type         = uChar
+
+[I_StartBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "I_StartBit"
+Type         = uChar
+
+[Urms_StartBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Urms_StartBit"
+Type         = uChar
+
+[Urms_StartBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Urms_StartBit"
+Type         = uChar
+
+[Urms_StartBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Urms_StartBit"
+Type         = uChar
+
+[Urms_StartBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Urms_StartBit"
+Type         = uChar
+
+[Urms_StartBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Urms_StartBit"
+Type         = uChar
+
+[Urms_StartBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Urms_StartBit"
+Type         = uChar
+
+[Urms_StartBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Urms_StartBit"
+Type         = uChar
+
+[Urms_StartBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Urms_StartBit"
+Type         = uChar
+
+[Irms_StartBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Irms_StartBit"
+Type         = uChar
+
+[Irms_StartBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Irms_StartBit"
+Type         = uChar
+
+[Irms_StartBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Irms_StartBit"
+Type         = uChar
+
+[Irms_StartBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Irms_StartBit"
+Type         = uChar
+
+[Irms_StartBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Irms_StartBit"
+Type         = uChar
+
+[Irms_StartBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Irms_StartBit"
+Type         = uChar
+
+[Irms_StartBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Irms_StartBit"
+Type         = uChar
+
+[Irms_StartBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Irms_StartBit"
+Type         = uChar
+
+[Cos_StartBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Cos_StartBit"
+Type         = uChar
+
+[Cos_StartBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Cos_StartBit"
+Type         = uChar
+
+[Cos_StartBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Cos_StartBit"
+Type         = uChar
+
+[Cos_StartBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Cos_StartBit"
+Type         = uChar
+
+[Cos_StartBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Cos_StartBit"
+Type         = uChar
+
+[Cos_StartBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Cos_StartBit"
+Type         = uChar
+
+[Cos_StartBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Cos_StartBit"
+Type         = uChar
+
+[Cos_StartBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Cos_StartBit"
+Type         = uChar
+
+[F_StartBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "F_StartBit"
+Type         = uChar
+
+[F_StartBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "F_StartBit"
+Type         = uChar
+
+[F_StartBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "F_StartBit"
+Type         = uChar
+
+[F_StartBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "F_StartBit"
+Type         = uChar
+
+[F_StartBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "F_StartBit"
+Type         = uChar
+
+[F_StartBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "F_StartBit"
+Type         = uChar
+
+[F_StartBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "F_StartBit"
+Type         = uChar
+
+[F_StartBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "F_StartBit"
+Type         = uChar
+
+[P_StartBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "P_StartBit"
+Type         = uChar
+
+[P_StartBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "P_StartBit"
+Type         = uChar
+
+[P_StartBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "P_StartBit"
+Type         = uChar
+
+[P_StartBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "P_StartBit"
+Type         = uChar
+
+[P_StartBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "P_StartBit"
+Type         = uChar
+
+[P_StartBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "P_StartBit"
+Type         = uChar
+
+[P_StartBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "P_StartBit"
+Type         = uChar
+
+[P_StartBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "P_StartBit"
+Type         = uChar
+
+[W_StartBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "W_StartBit"
+Type         = uChar
+
+[W_StartBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "W_StartBit"
+Type         = uChar
+
+[W_StartBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "W_StartBit"
+Type         = uChar
+
+[W_StartBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "W_StartBit"
+Type         = uChar
+
+[W_StartBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "W_StartBit"
+Type         = uChar
+
+[W_StartBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "W_StartBit"
+Type         = uChar
+
+[W_StartBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "W_StartBit"
+Type         = uChar
+
+[W_StartBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "W_StartBit"
+Type         = uChar
+
+[Charge_StartBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Charge_StartBit"
+Type         = uChar
+
+[Charge_StartBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Charge_StartBit"
+Type         = uChar
+
+[Charge_StartBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Charge_StartBit"
+Type         = uChar
+
+[Charge_StartBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Charge_StartBit"
+Type         = uChar
+
+[Charge_StartBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Charge_StartBit"
+Type         = uChar
+
+[Charge_StartBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Charge_StartBit"
+Type         = uChar
+
+[Charge_StartBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Charge_StartBit"
+Type         = uChar
+
+[Charge_StartBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Charge_StartBit"
+Type         = uChar
+
+[Discharge_StartBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Discharge_StartBit"
+Type         = uChar
+
+[Discharge_StartBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Discharge_StartBit"
+Type         = uChar
+
+[Discharge_StartBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Discharge_StartBit"
+Type         = uChar
+
+[Discharge_StartBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Discharge_StartBit"
+Type         = uChar
+
+[Discharge_StartBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Discharge_StartBit"
+Type         = uChar
+
+[Discharge_StartBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Discharge_StartBit"
+Type         = uChar
+
+[Discharge_StartBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Discharge_StartBit"
+Type         = uChar
+
+[Discharge_StartBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Discharge_StartBit"
+Type         = uChar
+
+[Balance_StartBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Balance_StartBit"
+Type         = uChar
+
+[Balance_StartBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Balance_StartBit"
+Type         = uChar
+
+[Balance_StartBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Balance_StartBit"
+Type         = uChar
+
+[Balance_StartBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Balance_StartBit"
+Type         = uChar
+
+[Balance_StartBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Balance_StartBit"
+Type         = uChar
+
+[Balance_StartBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Balance_StartBit"
+Type         = uChar
+
+[Balance_StartBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Balance_StartBit"
+Type         = uChar
+
+[Balance_StartBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Balance_StartBit"
+Type         = uChar
+
+[U_EndBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "U_EndBit"
+Type         = uChar
+
+[U_EndBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "U_EndBit"
+Type         = uChar
+
+[U_EndBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "U_EndBit"
+Type         = uChar
+
+[U_EndBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "U_EndBit"
+Type         = uChar
+
+[U_EndBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "U_EndBit"
+Type         = uChar
+
+[U_EndBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "U_EndBit"
+Type         = uChar
+
+[U_EndBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "U_EndBit"
+Type         = uChar
+
+[U_EndBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "U_EndBit"
+Type         = uChar
+
+[I_EndBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "I_EndBit"
+Type         = uChar
+
+[I_EndBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "I_EndBit"
+Type         = uChar
+
+[I_EndBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "I_EndBit"
+Type         = uChar
+
+[I_EndBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "I_EndBit"
+Type         = uChar
+
+[I_EndBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "I_EndBit"
+Type         = uChar
+
+[I_EndBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "I_EndBit"
+Type         = uChar
+
+[I_EndBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "I_EndBit"
+Type         = uChar
+
+[I_EndBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "I_EndBit"
+Type         = uChar
+
+[Urms_EndBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Urms_EndBit"
+Type         = uChar
+
+[Urms_EndBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Urms_EndBit"
+Type         = uChar
+
+[Urms_EndBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Urms_EndBit"
+Type         = uChar
+
+[Urms_EndBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Urms_EndBit"
+Type         = uChar
+
+[Urms_EndBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Urms_EndBit"
+Type         = uChar
+
+[Urms_EndBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Urms_EndBit"
+Type         = uChar
+
+[Urms_EndBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Urms_EndBit"
+Type         = uChar
+
+[Urms_EndBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Urms_EndBit"
+Type         = uChar
+
+[Irms_EndBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Irms_EndBit"
+Type         = uChar
+
+[Irms_EndBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Irms_EndBit"
+Type         = uChar
+
+[Irms_EndBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Irms_EndBit"
+Type         = uChar
+
+[Irms_EndBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Irms_EndBit"
+Type         = uChar
+
+[Irms_EndBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Irms_EndBit"
+Type         = uChar
+
+[Irms_EndBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Irms_EndBit"
+Type         = uChar
+
+[Irms_EndBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Irms_EndBit"
+Type         = uChar
+
+[Irms_EndBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Irms_EndBit"
+Type         = uChar
+
+[Cos_EndBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Cos_EndBit"
+Type         = uChar
+
+[Cos_EndBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Cos_EndBit"
+Type         = uChar
+
+[Cos_EndBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Cos_EndBit"
+Type         = uChar
+
+[Cos_EndBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Cos_EndBit"
+Type         = uChar
+
+[Cos_EndBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Cos_EndBit"
+Type         = uChar
+
+[Cos_EndBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Cos_EndBit"
+Type         = uChar
+
+[Cos_EndBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Cos_EndBit"
+Type         = uChar
+
+[Cos_EndBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Cos_EndBit"
+Type         = uChar
+
+[F_EndBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "F_EndBit"
+Type         = uChar
+
+[F_EndBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "F_EndBit"
+Type         = uChar
+
+[F_EndBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "F_EndBit"
+Type         = uChar
+
+[F_EndBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "F_EndBit"
+Type         = uChar
+
+[F_EndBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "F_EndBit"
+Type         = uChar
+
+[F_EndBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "F_EndBit"
+Type         = uChar
+
+[F_EndBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "F_EndBit"
+Type         = uChar
+
+[F_EndBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "F_EndBit"
+Type         = uChar
+
+[P_EndBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "P_EndBit"
+Type         = uChar
+
+[P_EndBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "P_EndBit"
+Type         = uChar
+
+[P_EndBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "P_EndBit"
+Type         = uChar
+
+[P_EndBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "P_EndBit"
+Type         = uChar
+
+[P_EndBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "P_EndBit"
+Type         = uChar
+
+[P_EndBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "P_EndBit"
+Type         = uChar
+
+[P_EndBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "P_EndBit"
+Type         = uChar
+
+[P_EndBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "P_EndBit"
+Type         = uChar
+
+[W_EndBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "W_EndBit"
+Type         = uChar
+
+[W_EndBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "W_EndBit"
+Type         = uChar
+
+[W_EndBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "W_EndBit"
+Type         = uChar
+
+[W_EndBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "W_EndBit"
+Type         = uChar
+
+[W_EndBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "W_EndBit"
+Type         = uChar
+
+[W_EndBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "W_EndBit"
+Type         = uChar
+
+[W_EndBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "W_EndBit"
+Type         = uChar
+
+[W_EndBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "W_EndBit"
+Type         = uChar
+
+[Charge_EndBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Charge_EndBit"
+Type         = uChar
+
+[Charge_EndBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Charge_EndBit"
+Type         = uChar
+
+[Charge_EndBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Charge_EndBit"
+Type         = uChar
+
+[Charge_EndBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Charge_EndBit"
+Type         = uChar
+
+[Charge_EndBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Charge_EndBit"
+Type         = uChar
+
+[Charge_EndBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Charge_EndBit"
+Type         = uChar
+
+[Charge_EndBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Charge_EndBit"
+Type         = uChar
+
+[Charge_EndBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Charge_EndBit"
+Type         = uChar
+
+[Discharge_EndBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Discharge_EndBit"
+Type         = uChar
+
+[Discharge_EndBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Discharge_EndBit"
+Type         = uChar
+
+[Discharge_EndBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Discharge_EndBit"
+Type         = uChar
+
+[Discharge_EndBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Discharge_EndBit"
+Type         = uChar
+
+[Discharge_EndBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Discharge_EndBit"
+Type         = uChar
+
+[Discharge_EndBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Discharge_EndBit"
+Type         = uChar
+
+[Discharge_EndBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Discharge_EndBit"
+Type         = uChar
+
+[Discharge_EndBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Discharge_EndBit"
+Type         = uChar
+
+[Balance_EndBit_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Balance_EndBit"
+Type         = uChar
+
+[Balance_EndBit_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Balance_EndBit"
+Type         = uChar
+
+[Balance_EndBit_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Balance_EndBit"
+Type         = uChar
+
+[Balance_EndBit_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Balance_EndBit"
+Type         = uChar
+
+[Balance_EndBit_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Balance_EndBit"
+Type         = uChar
+
+[Balance_EndBit_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Balance_EndBit"
+Type         = uChar
+
+[Balance_EndBit_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Balance_EndBit"
+Type         = uChar
+
+[Balance_EndBit_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Balance_EndBit"
+Type         = uChar
+
+[U_SCALE_Nominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "U_Nominator"
+Type         = uInt
+
+[U_SCALE_Nominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "U_Nominator"
+Type         = uInt
+
+[U_SCALE_Nominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "U_Nominator"
+Type         = uInt
+
+[U_SCALE_Nominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "U_Nominator"
+Type         = uInt
+
+[U_SCALE_Nominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "U_Nominator"
+Type         = uInt
+
+[U_SCALE_Nominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "U_Nominator"
+Type         = uInt
+
+[U_SCALE_Nominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "U_Nominator"
+Type         = uInt
+
+[U_SCALE_Nominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "U_Nominator"
+Type         = uInt
+
+[I_SCALE_Nominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "I_Nominator"
+Type         = uInt
+
+[I_SCALE_Nominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "I_Nominator"
+Type         = uInt
+
+[I_SCALE_Nominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "I_Nominator"
+Type         = uInt
+
+[I_SCALE_Nominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "I_Nominator"
+Type         = uInt
+
+[I_SCALE_Nominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "I_Nominator"
+Type         = uInt
+
+[I_SCALE_Nominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "I_Nominator"
+Type         = uInt
+
+[I_SCALE_Nominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "I_Nominator"
+Type         = uInt
+
+[I_SCALE_Nominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "I_Nominator"
+Type         = uInt
+
+[Urms_SCALE_Nominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Urms_Nominator"
+Type         = uInt
+
+[Urms_SCALE_Nominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Urms_Nominator"
+Type         = uInt
+
+[Urms_SCALE_Nominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Urms_Nominator"
+Type         = uInt
+
+[Urms_SCALE_Nominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Urms_Nominator"
+Type         = uInt
+
+[Urms_SCALE_Nominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Urms_Nominator"
+Type         = uInt
+
+[Urms_SCALE_Nominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Urms_Nominator"
+Type         = uInt
+
+[Urms_SCALE_Nominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Urms_Nominator"
+Type         = uInt
+
+[Urms_SCALE_Nominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Urms_Nominator"
+Type         = uInt
+
+[Irms_SCALE_Nominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Irms_Nominator"
+Type         = uInt
+
+[Irms_SCALE_Nominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Irms_Nominator"
+Type         = uInt
+
+[Irms_SCALE_Nominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Irms_Nominator"
+Type         = uInt
+
+[Irms_SCALE_Nominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Irms_Nominator"
+Type         = uInt
+
+[Irms_SCALE_Nominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Irms_Nominator"
+Type         = uInt
+
+[Irms_SCALE_Nominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Irms_Nominator"
+Type         = uInt
+
+[Irms_SCALE_Nominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Irms_Nominator"
+Type         = uInt
+
+[Irms_SCALE_Nominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Irms_Nominator"
+Type         = uInt
+
+[Cos_SCALE_Nominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Cos_Nominator"
+Type         = uInt
+
+[Cos_SCALE_Nominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Cos_Nominator"
+Type         = uInt
+
+[Cos_SCALE_Nominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Cos_Nominator"
+Type         = uInt
+
+[Cos_SCALE_Nominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Cos_Nominator"
+Type         = uInt
+
+[Cos_SCALE_Nominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Cos_Nominator"
+Type         = uInt
+
+[Cos_SCALE_Nominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Cos_Nominator"
+Type         = uInt
+
+[Cos_SCALE_Nominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Cos_Nominator"
+Type         = uInt
+
+[Cos_SCALE_Nominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Cos_Nominator"
+Type         = uInt
+
+[F_SCALE_Nominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "F_Nominator"
+Type         = uInt
+
+[F_SCALE_Nominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "F_Nominator"
+Type         = uInt
+
+[F_SCALE_Nominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "F_Nominator"
+Type         = uInt
+
+[F_SCALE_Nominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "F_Nominator"
+Type         = uInt
+
+[F_SCALE_Nominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "F_Nominator"
+Type         = uInt
+
+[F_SCALE_Nominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "F_Nominator"
+Type         = uInt
+
+[F_SCALE_Nominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "F_Nominator"
+Type         = uInt
+
+[F_SCALE_Nominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "F_Nominator"
+Type         = uInt
+
+[P_SCALE_Nominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "P_Nominator"
+Type         = uInt
+
+[P_SCALE_Nominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "P_Nominator"
+Type         = uInt
+
+[P_SCALE_Nominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "P_Nominator"
+Type         = uInt
+
+[P_SCALE_Nominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "P_Nominator"
+Type         = uInt
+
+[P_SCALE_Nominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "P_Nominator"
+Type         = uInt
+
+[P_SCALE_Nominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "P_Nominator"
+Type         = uInt
+
+[P_SCALE_Nominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "P_Nominator"
+Type         = uInt
+
+[P_SCALE_Nominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "P_Nominator"
+Type         = uInt
+
+[W_SCALE_Nominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "W_Nominator"
+Type         = uInt
+
+[W_SCALE_Nominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "W_Nominator"
+Type         = uInt
+
+[W_SCALE_Nominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "W_Nominator"
+Type         = uInt
+
+[W_SCALE_Nominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "W_Nominator"
+Type         = uInt
+
+[W_SCALE_Nominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "W_Nominator"
+Type         = uInt
+
+[W_SCALE_Nominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "W_Nominator"
+Type         = uInt
+
+[W_SCALE_Nominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "W_Nominator"
+Type         = uInt
+
+[W_SCALE_Nominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "W_Nominator"
+Type         = uInt
+
+[Charge_SCALE_Nominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Charge_Nominator"
+Type         = uInt
+
+[Charge_SCALE_Nominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Charge_Nominator"
+Type         = uInt
+
+[Charge_SCALE_Nominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Charge_Nominator"
+Type         = uInt
+
+[Charge_SCALE_Nominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Charge_Nominator"
+Type         = uInt
+
+[Charge_SCALE_Nominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Charge_Nominator"
+Type         = uInt
+
+[Charge_SCALE_Nominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Charge_Nominator"
+Type         = uInt
+
+[Charge_SCALE_Nominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Charge_Nominator"
+Type         = uInt
+
+[Charge_SCALE_Nominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Charge_Nominator"
+Type         = uInt
+
+[Discharge_SCALE_Nominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Discharge_Nominator"
+Type         = uInt
+
+[Discharge_SCALE_Nominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Discharge_Nominator"
+Type         = uInt
+
+[Discharge_SCALE_Nominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Discharge_Nominator"
+Type         = uInt
+
+[Discharge_SCALE_Nominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Discharge_Nominator"
+Type         = uInt
+
+[Discharge_SCALE_Nominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Discharge_Nominator"
+Type         = uInt
+
+[Discharge_SCALE_Nominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Discharge_Nominator"
+Type         = uInt
+
+[Discharge_SCALE_Nominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Discharge_Nominator"
+Type         = uInt
+
+[Discharge_SCALE_Nominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Discharge_Nominator"
+Type         = uInt
+
+[Balance_SCALE_Nominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Balance_Nominator"
+Type         = uInt
+
+[Balance_SCALE_Nominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Balance_Nominator"
+Type         = uInt
+
+[Balance_SCALE_Nominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Balance_Nominator"
+Type         = uInt
+
+[Balance_SCALE_Nominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Balance_Nominator"
+Type         = uInt
+
+[Balance_SCALE_Nominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Balance_Nominator"
+Type         = uInt
+
+[Balance_SCALE_Nominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Balance_Nominator"
+Type         = uInt
+
+[Balance_SCALE_Nominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Balance_Nominator"
+Type         = uInt
+
+[Balance_SCALE_Nominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Balance_Nominator"
+Type         = uLong
+
+[U_SCALE_Denominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "U_Denominator"
+Type         = uLong
+
+[U_SCALE_Denominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "U_Denominator"
+Type         = uLong
+
+[U_SCALE_Denominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "U_Denominator"
+Type         = uLong
+
+[U_SCALE_Denominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "U_Denominator"
+Type         = uLong
+
+[U_SCALE_Denominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "U_Denominator"
+Type         = uLong
+
+[U_SCALE_Denominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "U_Denominator"
+Type         = uLong
+
+[U_SCALE_Denominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "U_Denominator"
+Type         = uLong
+
+[U_SCALE_Denominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "U_Denominator"
+Type         = uLong
+
+[I_SCALE_Denominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "I_Denominator"
+Type         = uLong
+
+[I_SCALE_Denominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "I_Denominator"
+Type         = uLong
+
+[I_SCALE_Denominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "I_Denominator"
+Type         = uLong
+
+[I_SCALE_Denominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "I_Denominator"
+Type         = uLong
+
+[I_SCALE_Denominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "I_Denominator"
+Type         = uLong
+
+[I_SCALE_Denominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "I_Denominator"
+Type         = uLong
+
+[I_SCALE_Denominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "I_Denominator"
+Type         = uLong
+
+[I_SCALE_Denominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "I_Denominator"
+Type         = uLong
+
+[Urms_SCALE_Denominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Urms_Denominator"
+Type         = uLong
+
+[Urms_SCALE_Denominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Urms_Denominator"
+Type         = uLong
+
+[Urms_SCALE_Denominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Urms_Denominator"
+Type         = uLong
+
+[Urms_SCALE_Denominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Urms_Denominator"
+Type         = uLong
+
+[Urms_SCALE_Denominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Urms_Denominator"
+Type         = uLong
+
+[Urms_SCALE_Denominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Urms_Denominator"
+Type         = uLong
+
+[Urms_SCALE_Denominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Urms_Denominator"
+Type         = uLong
+
+[Urms_SCALE_Denominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Urms_Denominator"
+Type         = uLong
+
+[Irms_SCALE_Denominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Irms_Denominator"
+Type         = uLong
+
+[Irms_SCALE_Denominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Irms_Denominator"
+Type         = uLong
+
+[Irms_SCALE_Denominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Irms_Denominator"
+Type         = uLong
+
+[Irms_SCALE_Denominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Irms_Denominator"
+Type         = uLong
+
+[Irms_SCALE_Denominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Irms_Denominator"
+Type         = uLong
+
+[Irms_SCALE_Denominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Irms_Denominator"
+Type         = uLong
+
+[Irms_SCALE_Denominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Irms_Denominator"
+Type         = uLong
+
+[Irms_SCALE_Denominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Irms_Denominator"
+Type         = uLong
+
+[Cos_SCALE_Denominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Cos_Denominator"
+Type         = uLong
+
+[Cos_SCALE_Denominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Cos_Denominator"
+Type         = uLong
+
+[Cos_SCALE_Denominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Cos_Denominator"
+Type         = uLong
+
+[Cos_SCALE_Denominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Cos_Denominator"
+Type         = uLong
+
+[Cos_SCALE_Denominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Cos_Denominator"
+Type         = uLong
+
+[Cos_SCALE_Denominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Cos_Denominator"
+Type         = uLong
+
+[Cos_SCALE_Denominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Cos_Denominator"
+Type         = uLong
+
+[Cos_SCALE_Denominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Cos_Denominator"
+Type         = uLong
+
+[F_SCALE_Denominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "F_Denominator"
+Type         = uLong
+
+[F_SCALE_Denominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "F_Denominator"
+Type         = uLong
+
+[F_SCALE_Denominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "F_Denominator"
+Type         = uLong
+
+[F_SCALE_Denominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "F_Denominator"
+Type         = uLong
+
+[F_SCALE_Denominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "F_Denominator"
+Type         = uLong
+
+[F_SCALE_Denominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "F_Denominator"
+Type         = uLong
+
+[F_SCALE_Denominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "F_Denominator"
+Type         = uLong
+
+[F_SCALE_Denominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "F_Denominator"
+Type         = uLong
+
+[P_SCALE_Denominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "P_Denominator"
+Type         = uLong
+
+[P_SCALE_Denominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "P_Denominator"
+Type         = uLong
+
+[P_SCALE_Denominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "P_Denominator"
+Type         = uLong
+
+[P_SCALE_Denominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "P_Denominator"
+Type         = uLong
+
+[P_SCALE_Denominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "P_Denominator"
+Type         = uLong
+
+[P_SCALE_Denominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "P_Denominator"
+Type         = uLong
+
+[P_SCALE_Denominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "P_Denominator"
+Type         = uLong
+
+[P_SCALE_Denominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "P_Denominator"
+Type         = uLong
+
+[W_SCALE_Denominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "W_Denominator"
+Type         = uLong
+
+[W_SCALE_Denominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "W_Denominator"
+Type         = uLong
+
+[W_SCALE_Denominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "W_Denominator"
+Type         = uLong
+
+[W_SCALE_Denominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "W_Denominator"
+Type         = uLong
+
+[W_SCALE_Denominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "W_Denominator"
+Type         = uLong
+
+[W_SCALE_Denominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "W_Denominator"
+Type         = uLong
+
+[W_SCALE_Denominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "W_Denominator"
+Type         = uLong
+
+[W_SCALE_Denominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "W_Denominator"
+Type         = uLong
+
+[Charge_SCALE_Denominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Charge_Denominator"
+Type         = uLong
+
+[Charge_SCALE_Denominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Charge_Denominator"
+Type         = uLong
+
+[Charge_SCALE_Denominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Charge_Denominator"
+Type         = uLong
+
+[Charge_SCALE_Denominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Charge_Denominator"
+Type         = uLong
+
+[Charge_SCALE_Denominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Charge_Denominator"
+Type         = uLong
+
+[Charge_SCALE_Denominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Charge_Denominator"
+Type         = uLong
+
+[Charge_SCALE_Denominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Charge_Denominator"
+Type         = uLong
+
+[Charge_SCALE_Denominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Charge_Denominator"
+Type         = uLong
+
+[Discharge_SCALE_Denominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Discharge_Denominator"
+Type         = uLong
+
+[Discharge_SCALE_Denominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Discharge_Denominator"
+Type         = uLong
+
+[Discharge_SCALE_Denominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Discharge_Denominator"
+Type         = uLong
+
+[Discharge_SCALE_Denominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Discharge_Denominator"
+Type         = uLong
+
+[Discharge_SCALE_Denominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Discharge_Denominator"
+Type         = uLong
+
+[Discharge_SCALE_Denominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Discharge_Denominator"
+Type         = uLong
+
+[Discharge_SCALE_Denominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Discharge_Denominator"
+Type         = uLong
+
+[Discharge_SCALE_Denominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Discharge_Denominator"
+Type         = uLong
+
+[Balance_SCALE_Denominator_Mod1]
+Group        = 8
+SubGroup     = 2
+Name         = "Balance_Denominator"
+Type         = uLong
+
+[Balance_SCALE_Denominator_Mod2]
+Group        = 8
+SubGroup     = 3
+Name         = "Balance_Denominator"
+Type         = uLong
+
+[Balance_SCALE_Denominator_Mod3]
+Group        = 8
+SubGroup     = 4
+Name         = "Balance_Denominator"
+Type         = uLong
+
+[Balance_SCALE_Denominator_Mod4]
+Group        = 8
+SubGroup     = 5
+Name         = "Balance_Denominator"
+Type         = uLong
+
+[Balance_SCALE_Denominator_Mod5]
+Group        = 8
+SubGroup     = 6
+Name         = "Balance_Denominator"
+Type         = uLong
+
+[Balance_SCALE_Denominator_Mod6]
+Group        = 8
+SubGroup     = 7
+Name         = "Balance_Denominator"
+Type         = uLong
+
+[Balance_SCALE_Denominator_Mod7]
+Group        = 8
+SubGroup     = 8
+Name         = "Balance_Denominator"
+Type         = uLong
+
+[Balance_SCALE_Denominator_Mod8]
+Group        = 8
+SubGroup     = 9
+Name         = "Balance_Denominator"
+Type         = uLong
+
+[LastPattern]
+Group        = 8
+SubGroup     = 10
+Name         = "LastPattern"
+Type         = uLong
+Format	     = Hex

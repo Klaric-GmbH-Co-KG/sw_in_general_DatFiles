@@ -1,0 +1,1209 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01="Tk:GlobalPar"	; global parameter
+User_01=default	; access
+Ident_01="GLOBAL_PAR"
+Display_01="ViewAndModify"
+Group_02="Tk:Calib"
+User_02=System
+Ident_02="KALIB"
+Display_02="ViewAndModify"
+Group_03="Tk:Variables"
+User_03=Operator
+Ident_03="VARIABLEN"
+Display_03="ViewAndModify"
+Group_04="Tk:Limits"
+User_04=Operator
+Ident_04="LIMITS"
+Display_04="ViewAndModify"
+
+CanSpace=0x30	; Belegung des Modus von Can Identifiern
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01="Tk:Reset"	; Reset
+Value_01=0x0010
+Id_01=CMD_RESET
+User_01=default	; Zugriffsrecht
+Help_01="Reset"
+Name_02="Tk:Restart"	; Restart
+Value_02=0x0016
+Id_02=CMD_RESTART_MM
+User_02=default	; Zugriffsrecht
+Help_02="Restart"
+Name_03="Tk:SavePar"	; SavePar
+Value_03=0x0020
+User_03=operator	; Zugriffsrecht
+Help_03="SavePar"
+Name_04="Tk:ShipMode"	; ShipMode
+Value_04=0x0021
+User_04=operator	; Zugriffsrecht
+Help_04="ShipMode"
+Name_05="Tk:BacklightOnOff"	; BackLight
+Value_05=0x0022
+User_05=operator	; Zugriffsrecht
+Help_05="BacklightOnOff"
+Name_06="Tk:SaveCalib"	; SaveCalib
+Value_06=0xCA1B
+User_06=system	; Zugriffsrecht
+Help_06="SaveCalib"
+Name_07="Tk:RestartQCount"	; SaveCalib
+Value_07=0x0023
+User_07=system	; Zugriffsrecht
+Help_07="RestartQCount"
+Name_08="Tk:Boot"	; Boot
+Value_08=0xB007
+User_08=system	; Zugriffsrecht
+Help_08="Boot"
+Protect_08 = "Tk:BootWarning"
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+[CAN_BaseId]
+Group        = 1
+Common       = "CAN_BaseId"
+Default      = 0x700
+Column       = 1
+Row          = 1
+Help         = "CAN_BaseId"
+
+[CAN_Baudrate]
+Group        = 1
+Common       = "CAN_Baudrate"
+Type         = char
+Column       = 1
+Row          = 2
+
+[CAN_Xtd]
+Group        = 1
+Common       = "CAN_Xtd"
+Column       = 1
+Row          = 3
+
+[CAN_Term]
+Group        = 1
+Common       = "CAN_Term"
+Type			   = uChar
+Help         = "Can_Term"
+Column       = 1
+Row          = 4
+
+[RechargeSOC]
+Group        = 1
+Name         = "Tk:RechargeThresholdPercent"
+Column       = 3
+Row          = 3
+Type         = uChar
+Help	       = "RechargeThresholdPercent"
+Values       = 20..90
+
+[CAN_MotorBaseId]
+Group        = 1
+Name         = "Tk:CAN_MotorBaseId"
+Column       = 4
+Row          = 4
+Type         = uLong
+Format	     = Hex
+Values       = 0..0x1000
+Help	       = "CAN_MotorBaseId"
+
+[CAN_MotorTimeOut]
+Group        = 1
+Name         = "Tk:CAN_MotorTimeOut"
+Column       = 4
+Row          = 5
+Type         = uLong
+Values       = 1..50000
+Help	       = "CAN_MotorTimeOut"
+
+[CanSelect]
+Group        = 1
+Name         = "Tk:CanSelect"
+Column       = 1
+Row          = 6
+Type         = uLong
+Help	       = "CanSelect"
+Attrib       = Option
+;Option_00    = "Vin_LTC"
+;Mask_00      = 0x00000001
+;Option_01    = "Iin_LTC"
+;Mask_01      = 0x00000002
+Option_02    = "Tk:V_Aus"
+Mask_02      = 0x00000001
+Option_03    = "Tk:I_Aus"
+Mask_03      = 0x00000002
+Option_06    = "Tk:Temp_NTC"
+Mask_06      = 0x00000004
+Option_07    = "Tk:Vin_Analog"
+Mask_07      = 0x00000008
+Option_08    = "Tk:Iin_Analog"
+Mask_08      = 0x00000100
+Option_09    = "Tk:V_Motor"
+Mask_09      = 0x00000200
+Option_10    = "Tk:Bat_SOC"
+Mask_10      = 0x00000400
+
+[RechargeU]
+Group        = 1
+Name         = "Tk:RechargeThresholdU"
+Column       = 3
+Row          = 2
+Type         = Int
+Help	       = "RechargeThresholdU"
+Values       = 10000..14000
+
+[UsrsTrigger]
+Group        = 1
+Name         = "Tk:UsrsTrigger"
+Column       = 4
+Row          = 2
+Type         = uInt
+Help	       = "UsrsTrigger"
+Values       = 8000..48000
+
+[MotorDigThr]
+Group        = 1
+Name         = "Tk:MotorDigThr"
+Column       = 4
+Row          = 3
+Type         = uInt
+Help	       = "MotorDigThr"
+Values       = 8000..48000
+
+[EmergencyCharge]
+Group	       = 1
+Name	       = "Tk:EmergencyCharge"
+Column       = 3
+Row          = 1
+Type	       = uChar
+Help	       = "EmergencyCharge"
+Attrib       = Select
+Select_00    = "Tk:On"
+Value_00     = 1
+Select_01    = "Tk:Off"
+Value_01     = 0
+
+[CanEnable]
+Group	       = 1
+Name	       = "Tk:CanEnable"
+Column       = 1
+Row          = 5
+Type	       = uChar
+Help	       = "CanEnable"
+Attrib       = Option
+Option_00    = "Tk:CanSend"
+Value_00     = 1
+Option_01    = "Tk:CanReceive"
+Value_01     = 2
+
+[Backlight]
+Group	       = 1
+Name	       = "Tk:Backlight"
+Column       = 2
+Row          = 1
+Type	       = uChar
+Help	       = "Backlight"
+Attrib       = Select
+Select_00    = "Tk:AlwaysOff"
+Value_00     = 0
+Select_01    = "Tk:Timeout"
+Value_01     = 1
+
+[MotorCheck]
+Group	       = 1
+Name	       = "Tk:MotorCheck"
+Column       = 4
+Row          = 1
+Type	       = uChar
+Help	       = "MotorCheck"
+Attrib       = Select
+Select_01    = "Digital"
+Value_01     = 0
+Select_02    = "CAN"
+Value_02     = 1
+Select_03    = "U Motor"
+Value_03     = 2
+
+[AutoCycle]
+Group        = 1
+Name         = "Tk:AutoCycle"
+Column       = 2
+Row          = 3
+Type         = uChar
+Help	       = "AutoCycle"
+Attrib       = Select
+Select_00    = "Tk:On"
+Value_00     = 1
+Select_01    = "Tk:Off"
+Value_01     = 0
+Help	       = "AutoCycle"
+
+[BacklightT]
+Group        = 1
+Name         = "Tk:BacklightT"
+Column       = 2
+Row          = 2
+Type         = uChar
+Help	       = "BacklightT"
+Values       = 10..255
+
+; -----------------------------------------------
+; KALIB
+; -----------------------------------------------
+[Serial_Number]
+Group        = 2
+Common       = "Serial_Number"	
+Default      = -1
+
+[VBatLow]
+Group        = 2
+Name         = "Tk:VBatLow"
+;Column       = 2
+;Row          = 1
+Type         = uInt
+Values       = 10000..15000
+Help	       = "VBatLow"
+
+[VBatHigh]
+Group        = 2
+Name         = "Tk:VBatHigh"
+;Column       = 2
+;Row          = 2
+Type         = uInt
+Values       = 0..15000
+Help	       = "VBatHigh"
+
+[IBatHigh]
+Group        = 2
+Name         = "Tk:IBatHigh"
+;Column       = 2
+;Row          = 3
+Type         = uInt
+Values       = 0..3000
+Help	       = "IBatHigh"
+
+[VinHigh]
+Group        = 2
+Name         = "Tk:VinHigh"
+;Column       = 2
+;Row          = 4
+Type         = uInt
+Values       = 0..17000
+Help	       = "VinHigh"
+
+[IinHigh]
+Group        = 2
+Name         = "Tk:IinHigh"
+;Column       = 2
+;Row          = 8
+Type         = uInt
+Display      = "ViewOnly"
+Values       = 0..5000
+Help	       = "IinHigh"
+
+[IBatLow]
+Group        = 2
+Name         = "Tk:IBatLow"
+;Column       = 2
+;Row          = 7
+Type         = int
+Values       = -4000..4000
+Help	       = "IBatLow"
+
+[QCountCurr]
+Group        = 2
+Name         = "Tk:QCountCurr"
+;Column       = 5
+;Row          = 9
+Type         = uInt
+Help	       = "QCountCurr"
+Display      = "ViewOnly"
+
+[QCountMax]
+Group        = 2
+Name         = "Tk:QCountMax"
+;Column       = 5
+;Row          = 9
+Type         = uInt
+Help	       = "QCountMax"
+Display      = "ViewOnly"
+
+[QCountMin]
+Group        = 2
+Name         = "Tk:QCountMin"
+;Column       = 5
+;Row          = 9
+Type         = uInt
+Help	       = "QCountMin"
+Display      = "ViewOnly"
+
+[QCountPrescale]
+Group        = 2
+Name         = "Tk:QCountPrescale"
+;Column       = 5
+;Row          = 9
+Type         = uInt
+Help	       = "QCountPrescale"
+Display      = "ViewOnly"
+
+[Vin_Gain]
+Group        = 2
+Name         = "Tk:Vin_Gain"
+;Column       = 5
+;Row          = 9
+Type         = uInt
+Values       = 0..65535
+Help	       = "Vin_Gain"
+
+[Vin_Offset]
+Group        = 2
+Name         = "Tk:Vin_Offset"
+;Column       = 5
+;Row          = 9
+Type         = int
+Values       = -32767..32767
+Help	       = "Vin_Offset"
+
+[Vmotor_Gain]
+Group        = 2
+Name         = "Tk:Vmotor_Gain"
+;Column       = 5
+;Row          = 9
+Type         = uInt
+Values       = 0..65535
+Help	       = "Vmotor_Gain"
+
+[Vmotor_Offset]
+Group        = 2
+Name         = "Tk:Vmotor_Offset"
+;Column       = 5
+;Row          = 9
+Type         = int
+Values       = -32767..32767
+Help	       = "Vmotor_Offset"
+
+[Iin_Gain]
+Group        = 2
+Name         = "Tk:Iin_Gain"
+;Column       = 5
+;Row          = 9
+Type         = uInt
+Values       = 0..65535
+Help	       = "Iin_Gain"
+
+[Iin_Offset]
+Group        = 2
+Name         = "Tk:Iin_Offset"
+;Column       = 5
+;Row          = 9
+Type         = int
+Values       = -32767..32767
+Help	       = "Iin_Offset"
+
+[Temp_Gain]
+Group        = 2
+Name         = "Tk:Temp_Gain"
+;Column       = 5
+;Row          = 9
+Type         = uInt
+Values       = 0..65535
+Help	       = "Temp_Gain"
+
+[Temp_Offset]
+Group        = 2
+Name         = "Tk:Temp_Offset"
+;Column       = 5
+;Row          = 9
+Type         = int
+Values       = -32767..32767
+Help	       = "Temp_Offset"
+
+[VCharge]
+Group        = 2
+Name         = "Tk:VCharge_Setting"
+;Column       = 3
+;Row          = 1
+Type         = Int
+Values       = 14000..24000
+Help	       = "VCharge_Setting"
+
+[ICharge]
+Group        = 2
+Name         = "Tk:ICharge_Target"
+;Column       = 3
+;Row          = 2
+Type         = Int
+Help	       = "ICharge_Target"
+Display      = "ViewOnly"
+Values       = 0..4000
+
+;[MaxChargeTime]
+;Group        = 2
+;Name         = "Tk:MaxChargeTime"
+;Column       = 3
+;Row          = 4
+;Type         = Int
+;Help	       = "MaxChargeTime"
+;Values       = 6..64800
+
+[Capacity]
+Group        = 2
+Name         = "Tk:Capacity"
+;Column       = 3
+;Row          = 8
+Type         = Int
+Help	       = "Capacity"
+Values       = 3000..7300
+
+[IBatt_Perc]
+Group        = 2
+Name         = "Tk:IBatt_Perc"
+;Column       = 5
+;Row          = 9
+Type         = uInt
+Help	       = "IBatt_Perc"
+
+;[MaxCVTime]
+;Group        = 2
+;Name         = "Tk:MaxCVTime"
+;Column       = 3
+;Row          = 3
+;Type         = uChar
+;Help	       = "MaxCVTime"
+;Values       = 6..255
+
+;[CalibMode]
+;Group        = 2
+;Name         = "Tk:CalibMode"
+;Column       = 5
+;Row          = 9
+;Type         = uChar
+;Help	       = "CalibMode"
+;Attrib       = Select
+;Select_00    = "Tk:Off"
+;Value_00     = 0
+;Select_01    = "Tk:ProofPlace"
+;Value_01     = 1
+;Select_02    = "Tk:Manual"
+;Value_02     = 2
+
+[PowerDownEn]
+Group	       = 2
+Name	       = "Tk:PowerDownEn"
+;Column       = 2
+;Row          = 1
+Type	       = uChar
+Help	       = "PowerDownEn"
+Attrib       = Select
+Select_00    = "Tk:On"
+Value_00     = 1
+Select_01    = "Tk:Off"
+Value_01     = 0
+
+[PowerDownT]
+Group        = 2
+Name         = "Tk:PowerDownT"
+;Column       = 2
+;Row          = 2
+Type         = uChar
+Help	       = "PowerDownT"
+Values       = 1..250
+
+[CAN_BroadcastId]
+Group        = 2
+Common       = "CAN_BroadcastId"
+Default      = 0x100
+
+; -----------------------------------------------
+; VARIABLEN
+; -----------------------------------------------
+
+[Error_Flags]
+Group        = 3
+Name         = "Tk:ERROR_FLAGS"
+Column       = 1
+Row          = 1
+Type         = uLong
+Display      = "ViewOnly"
+Attrib       = Option
+Option_00    = "ERR_DEFAULT"
+Mask_00      = 0x00000001
+Option_01    = "ERR_EEPROM"
+Mask_01      = 0x00000002
+Option_02    = "ERR_CAN"
+Mask_02      = 0x00000004
+Option_03    = "ERR_CAN_OVR"
+Mask_03      = 0x00000008
+Option_04    = "ERR_LTC"
+Mask_04      = 0x00000100
+Option_05    = "ERR_I2C"
+Mask_05      = 0x00000200
+Option_06    = "ERR_ADC"
+Mask_06      = 0x00000400
+Option_07    = "ERR_BATTERY"
+Mask_07      = 0x00000800
+Option_08    = "LTC_PENDING_RESTART"
+Mask_08      = 0x00010000
+Option_09    = "LTC_RESTART"
+Mask_09      = 0x00020000
+Option_10    = "ERR_IIN_HIGH"
+Mask_10      = 0x00040000
+Option_11    = "nC10"
+Mask_11      = 0x00080000
+Option_12    = "ERR_CAN_SET_SPEED"
+Mask_12      = 0x01000000
+Option_13    = "WAIT_SHIP_MODE"
+Mask_13      = 0x02000000
+Option_14    = "ERR_NEG_MASK"
+Mask_14      = 0xFFFFFFFF
+
+[SW_Ver]
+Group        = 3
+Display      = "ViewOnly"
+Common       = "SW_Ver"
+Column       = 1
+Row          = 2
+
+[HW_Ver]
+Group        = 3
+Display      = "ViewOnly"
+Common       = "HW_Ver"
+Column       = 1
+Row          = 3
+
+[EEProm_Ver]
+Group        = 3
+Name         = "Tk:EEPROM_VER"
+Column       = 1
+Row          = 4
+Type         = uInt
+Display      = "ViewOnly"
+Help         = "EEProm_Ver"
+
+[CAN_Flags]
+Group        = 3
+Name         = "Tk:CAN_FLAGS"
+Column       = 1
+Row          = 7
+Type         = uInt
+Display      = "ViewOnly"
+Help	       = "CAN_Flags"
+Attrib       = Option
+Option_01    = "Running"
+Value_01     = 0x0002
+Option_02    = "Ovr"
+Value_02     = 0x0010
+Option_03    = "TimeOut"
+Value_03     = 0x0020
+Option_04    = "BaudError"
+Value_04     = 0x0040
+Option_05    = "CanStart"
+Value_05     = 0x0080
+Option_06    = "TimeSyncMaster"
+Value_06     = 0x0100
+Option_07    = "TimeSyncSlave"
+Value_07     = 0x0200
+Option_08    = "WaitTimeSync"
+Value_08     = 0x0400
+
+[CAN_State]
+Group        = 3
+Name         = "Tk:CAN_STATE"
+Column       = 1
+Row          = 6
+Type         = uChar
+Display      = "ViewOnly"
+Help	       = "CAN_Status"
+Attrib       = Combo
+Select_00    = "Idle"
+Value_00     = 0
+Select_01    = "Restart"
+Value_01     = 1
+Select_02    = "PowerUp"
+Value_02     = 2
+Select_03    = "WaitInit"
+Value_03     = 3
+Select_04    = "WaitNormal"
+Value_04     = 4
+Select_05    = "WaitReady"
+Value_05     = 5
+Select_06    = "WaitTimeSync"
+Value_06     = 6
+Select_07    = "Ready"
+Value_07     = 7
+Select_08    = "PrepareWaitRestart"
+Value_08     = 8
+Select_09    = "WaitRestart"
+Value_09     = 9
+Select_10    = "WaitDisable"
+Value_10     = 10
+
+[I2C_State]
+Group        = 3
+Name         = "Tk:I2C_State"
+Column       = 2
+Row          = 3
+Type         = uChar
+Display      = "ViewOnly"
+Help	       = "I2C_State"
+Attrib       = Combo
+Select_00    = "I2C_IDLE"
+Value_00     = 0
+Select_01    = "I2C_READY"
+Value_01     = 1
+Select_02    = "I2C_START_COND"
+Value_02     = 2
+Select_03    = "I2C_WAIT_START_COND"
+Value_03     = 3
+Select_04    = "I2C_WRITE_ADDRESS"
+Value_04     = 4
+Select_05    = "I2C_WRITE_SUB_ADDRESS"
+Value_05     = 5
+Select_06    = "I2C_WRITE_DATA_LOW"
+Value_06     = 6
+Select_07    = "I2C_WRITE_DATA_HIGH"
+Value_07     = 7
+Select_08    = "I2C_WAIT_WRITE_CONFIRM"
+Value_08     = 8
+Select_09    = "I2C_RESTART_COND"
+Value_09     = 9
+Select_10    = "I2C_WAIT_RESTART_COND"
+Value_10     = 10
+Select_11    = "I2C_WRITE_ADDRESS_READ"
+Value_11     = 11
+Select_12    = "I2C_READ_LOW"
+Value_12     = 12
+Select_13    = "I2C_READ_HIGH"
+Value_13     = 13
+Select_14    = "I2C_SEND_ACK"
+Value_14     = 14
+Select_15    = "I2C_WAIT_ACK"
+Value_15     = 15
+Select_16    = "I2C_STOP_COND"
+Value_16     = 16
+Select_17    = "I2C_WAIT_STOP_COND"
+Value_17     = 17
+Select_18    = "I2C_ERROR"
+Value_18     = 18
+
+[BattType]
+Group        = 3
+Name         = "Tk:BattType"
+Column       = 2
+Row          = 5
+Type         = uChar
+Display      = "ViewOnly"
+Help	       = "BattType"
+Attrib       = Select
+Select_00    = "LI_ION_PROGRAMMABLE"
+Value_00     = 0
+Select_01    = "LI_ION_FIXED_4P2V"
+Value_01     = 1
+Select_02    = "LI_ION_FIXED_4P1V"
+Value_02     = 2
+Select_03    = "LI_ION_FIXED_4P0V"
+Value_03     = 3
+Select_04    = "LIFEPO4_PROGRAMMABLE"
+Value_04     = 4
+Select_05    = "LIFEPO4_FIXED_FAST_CHARGE"
+Value_05     = 5
+Select_06    = "LIFEPO4_FIXED_3P6V"
+Value_06     = 6
+Select_07    = "LEAD_ACID_FIXED"
+Value_07     = 7
+Select_08    = "LEAD_ACID_PROGRAMMABLE"
+Value_08     = 8
+
+[CellsCnt]
+Group        = 3
+Name         = "Tk:CellsCnt"
+Column       = 2
+Row          = 6
+Type         = uChar
+Display      = "ViewOnly"
+Help	       = "CellsCnt"
+
+[LTC_State]
+Group        = 3
+Name         = "Tk:LTC_State"
+Column       = 2
+Row          = 2
+Type         = uChar
+Display      = "ViewOnly"
+Help	       = "LTC_State"
+Attrib       = Combo
+Select_00    = "LTC_IDLE"
+Value_00     = 0
+Select_01    = "LTC_READY"
+Value_01     = 1
+Select_02    = "LTC_START"
+Value_02     = 2
+Select_03    = "LTC_STOP"
+Value_03     = 3
+Select_04    = "LTC_WAIT_ANSWER"
+Value_04     = 4
+Select_05    = "LTC_ERROR"
+Value_05     = 5
+
+[MainSeq_State]
+Group        = 3
+Name         = "Tk:MAINSEQSTATE"
+Column       = 2
+Row          = 1
+Type         = uChar
+Display      = "ViewOnly"
+Help	       = "MainSeq_State"
+Attrib       = Combo
+Select_00    = "MS_PON"
+Value_00     = 0
+Select_01    = "MS_WAIT_EE_PROM"
+Value_01     = 1
+Select_02    = "MS_RESTART"
+Value_02     = 2
+Select_03    = "MS_RESTART_WAIT"
+Value_03     = 3
+Select_04    = "MS_WAIT_START_MEAS"
+Value_04     = 4
+Select_05    = "MS_SHOW_START_DSP"
+Value_05     = 5
+Select_06    = "MS_SHOW_CONFIG_DSP"
+Value_06     = 6
+Select_07    = "MS_EDIT_CONFIG"
+Value_07     = 7
+Select_08    = "MS_HANDLER_WAIT"
+Value_08     = 8
+Select_09    = "MS_RESET"
+Value_09     = 9
+Select_10    = "MS_EEREAD"
+Value_10     = 10
+Select_11    = "MS_EEWRITE"
+Value_11     = 11
+Select_12    = "MS_ERROR"
+Value_12     = 12
+Select_13    = "MS_ERROR_WAIT"
+Value_13     = 13
+Select_14    = "MS_START_PRESET"
+Value_14     = 14
+Select_15    = "MS_REQUEST_BAT_INFO"
+Value_15     = 15
+Select_16    = "MS_READ_SYS_STATUS"
+Value_16     = 16
+Select_17    = "MS_READ_CHARGE_STATUS"
+Value_17     = 17
+Select_18    = "MS_READ_CHARGE_STATE"
+Value_18     = 18
+Select_19    = "MS_READ_LIMITS_ACTIVE"
+Value_19     = 19
+Select_20    = "MS_READ_CHARGE_STATE_ALERT"
+Value_20     = 20
+Select_21    = "MS_READ_CHARGE_STATUS_ALERT"
+Value_21     = 21
+Select_22    = "MS_READ_CONFIG_BITS"
+Value_22     = 22
+Select_23    = "MS_STOP_PRESET"
+Value_23     = 23
+Select_24    = "MS_REQUEST_LTC_PARAM"
+Value_24     = 24
+Select_25    = "MS_SET_LTC_PARAM"
+Value_25     = 25
+Select_26    = "MS_START_CHARGER"
+Value_26     = 26
+Select_27    = "MS_STOP_CHARGER"
+Value_27     = 27
+Select_28    = "MS_STOP_I2C"
+Value_28     = 28
+Select_29    = "MS_FORCE_MEAS_SYS"
+Value_29     = 29
+Select_30    = "MS_START_SET_ALL"
+Value_30     = 30
+Select_31    = "MS_FINISH_SET_ALL"
+Value_31     = 31
+Select_32    = "MS_SUSPEND_CHARGE_PRESET"
+Value_32     = 32
+Select_33    = "MS_SET_QCOUNT_INFO"
+Value_33     = 33
+Select_34    = "MS_START_DISP_READY"
+Value_34     = 34
+Select_35    = "MS_RELEASE_INT"
+Value_35     = 35
+Select_36    = "MS_SET_NEW_ITARGET"
+Value_36     = 36
+Select_37    = "MS_WAIT_SHIP_MODUS"
+Value_37     = 37
+Select_38    = "MS_CALIB"
+Value_38     = 38
+
+[SubAddr]
+Group        = 3
+Name         = "Tk:SubAddr"
+Column       = 2
+Row          = 7
+Type         = uInt
+Display      = "ViewOnly"
+Help	       = "SubAddr"
+
+[SendMsg]
+Group        = 3
+Name         = "Tk:SendMsg"
+Column       = 2
+Row          = 8
+Type         = uInt
+Display      = "ViewOnly"
+Help	       = "SendMsg"
+
+[DieTemp]
+Group        = 3
+Name         = "Tk:DieTemp"
+Column       = 3
+Row          = 6
+Type         = char
+Display      = "ViewOnly"
+Help	       = "DieTemp"
+
+[NTCTemp]
+Group        = 3
+Name         = "Tk:NTCTemp"
+Column       = 3
+Row          = 5
+Type         = char
+Display      = "ViewOnly"
+Help	       = "NTCTemp"
+
+[ConfigBits]
+Group        = 3
+Name         = "Tk:ConfigBits"
+Column       = 4
+Row          = 2
+Type         = uChar
+Help	       = "ConfigBits"
+Display      = "ViewOnly"
+Attrib       = Option
+Option_00    = "Suspend Charger"
+Mask_00      = 0x0001
+Option_01    = "Run BSR"
+Mask_01      = 0x0002
+Option_03    = "Force Meas Sys"
+Mask_03      = 0x0004
+Option_04    = "MPPT Enabled"
+Mask_04      = 0x0008
+Option_05    = "QCount Enabled"
+Mask_05      = 0x0010
+
+[ChargeStatus]
+Group        = 3
+Name         = "Tk:ChargeStatus"
+Column       = 4
+Row          = 4
+Type         = uChar
+Help	       = "ChargeStatus"
+Display      = "ViewOnly"
+Attrib       = Option
+Option_00    = "VIN_UVCL_ACTIVE"
+Mask_00      = 0x00000001
+Option_01    = "IIN_LIMIT_ACTIVE"
+Mask_01      = 0x00000002
+Option_02    = "CONSTANT_CURRENT"
+Mask_02      = 0x00000004
+Option_03    = "CONSTANT_VOLTAGE"
+Mask_03      = 0x00000008
+
+[VBAT]
+Group        = 3
+Name         = "Tk:VBAT"
+Column       = 3
+Row          = 2
+Type         = Int
+Display      = "ViewOnly"
+Help	       = "VBAT"
+
+[VIN]
+Group        = 3
+Name         = "Tk:VIN"
+Column       = 3
+Row          = 1
+Type         = Int
+Display      = "ViewOnly"
+Help	       = "VIN"
+
+[IBAT]
+Group        = 3
+Name         = "Tk:IBAT"
+Column       = 3
+Row          = 4
+Type         = Int
+Display      = "ViewOnly"
+Help	       = "IBAT"
+
+[IIN]
+Group        = 3
+Name         = "Tk:IIN"
+Column       = 3
+Row          = 3
+Type         = Int
+Display      = "ViewOnly"
+Help	       = "IIN"
+
+[ChargeState]
+Group	       = 3
+Name	       = "Tk:ChargeState"
+Column       = 4
+Row          = 3
+Type	       = Int
+Display      = "ViewOnly"
+Help	       = "ChargeState"
+Attrib       = Select
+Select_01    = "Idle"
+Value_01     = 0
+Select_02    = "BAT_SHORT_FAULT"
+Value_02     = 1
+Select_03    = "BAT_MISSING_FAULT"
+Value_03     = 2
+Select_04    = "MAX_CHARGE_TIME_FAULT"
+Value_04     = 4
+Select_05    = "C_OVER_X_TERM"
+Value_05     = 8
+Select_06    = "TIMER_TERM"
+Value_06     = 16
+Select_07    = "NTC_PAUSE"
+Value_07     = 32
+Select_08    = "CC_CV_CHARGE"
+Value_08     = 64
+Select_09    = "PRECHARGE"
+Value_09     = 128
+Select_10    = "CHARGER_SUSPENDED"
+Value_10     = 256
+Select_11    = "ABSORD_CHARGE"
+Value_11     = 512
+Select_12    = "EQUALIZE_CHARGE"
+Value_12     = 1024
+
+[EnVIN]
+Group	       = 3
+Name	       = "Tk:VINState"
+Column       = 6
+Row          = 1
+Type	       = uChar
+Display      = "ViewOnly"
+Help	       = "VINState"
+Attrib       = Select
+Select_00    = "Tk:On"
+Value_00     = 1
+Select_01    = "Tk:Off"
+Value_01     = 0
+
+[EnEntladen]
+Group	       = 3
+Name	       = "Tk:EntladenState"
+Column       = 6
+Row          = 2
+Type	       = uChar
+Display      = "ViewOnly"
+Help	       = "EntladenState"
+Attrib       = Select
+Select_00    = "Tk:On"
+Value_00     = 0
+Select_01    = "Tk:Off"
+Value_01     = 1
+
+[MotorOn]
+Group	       = 3
+Name	       = "Tk:MotorState"
+Column       = 6
+Row          = 3
+Type	       = uChar
+Display      = "ViewOnly"
+Help	       = "MotorState"
+Attrib       = Select
+Select_00    = "Tk:On"
+Value_00     = 1
+Select_01    = "Tk:Off"
+Value_01     = 0
+
+[EnBacklight]
+Group	       = 3
+Name	       = "Tk:BacklightState"
+Column       = 6
+Row          = 4
+Type	       = uChar
+Display      = "ViewOnly"
+Help	       = "BacklightState"
+Attrib       = Select
+Select_00    = "Tk:On"
+Value_00     = 1
+Select_01    = "Tk:Off"
+Value_01     = 0
+
+[CVTimer]
+Group	       = 3
+Name	       = "Tk:CVTimer"
+Column       = 3
+Row          = 12
+Type	       = uInt
+Display      = "ViewOnly"
+Help	       = "CVTimer"
+
+[QCountCurr]
+Group        = 3
+Name         = "Tk:QCountCurr"
+Column       = 3
+Row          = 13
+Type         = uInt
+Display      = "ViewOnly"
+Help	       = "QCountCurr"
+
+[QCountMax]
+Group        = 3
+Name         = "Tk:QCountMax"
+Column       = 3
+Row          = 14
+Type         = uInt
+Display      = "ViewOnly"
+Help	       = "QCountMax"
+
+[QCountMin]
+Group        = 3
+Name         = "Tk:QCountMin"
+Column       = 3
+Row          = 15
+Type         = uInt
+Display      = "ViewOnly"
+Help	       = "QCountMin"
+
+[SMBAlert_State]
+Group        = 3
+Name         = "Tk:SMBAlert_State"
+Column       = 2
+Row          = 4
+Type         = uChar
+Display      = "ViewOnly"
+Help	       = "SMBAlert_State"
+Attrib       = Combo
+Select_00    = "SMB_IDLE"
+Value_00     = 0
+Select_01    = "SMB_INT_RECEIVED"
+Value_01     = 1
+Select_02    = "SMB_RELEASE_INT"
+Value_02     = 2
+Select_03    = "SMB_REQUEST_LTC_PARAM"
+Value_03     = 3
+Select_04    = "SMB_SET_LTC_PARAM"
+Value_04     = 4
+Select_05    = "SMB_STOP_I2C"
+Value_05     = 5
+
+[BattSOC]
+Group        = 3
+Name         = "Tk:BattSOC"
+Column       = 3
+Row          = 11
+Type         = uChar
+Display      = "ViewOnly"
+Help	       = "BattSOC"
+
+[VinMeas]
+Group        = 3
+Name        = "Tk:VinAnalog"
+Column       = 3
+Row          = 8
+Type         = int
+Display      = "ViewOnly"
+Help	       = "VinAnalog"
+
+[SystemStatus]
+Group        = 3
+Name         = "Tk:SystemStatus"
+Column       = 5
+Row          = 1
+Type         = Long
+Help	       = "SystemStatus"
+Display      = "ViewOnly"
+Attrib       = Option
+Option_00    = "Charger Enabled"
+Mask_00      = 0x00000001
+Option_01    = "MPPT Enabled"
+Mask_01      = 0x00000002
+Option_02    = "Not Lead-Acid"
+Mask_02      = 0x00000004
+Option_03    = "DRVcc valid"
+Mask_03      = 0x00000008
+Option_04    = "Cell count error"
+Mask_04      = 0x00000100
+Option_05    = "Ok to Charge"
+Mask_05      = 0x00000200
+Option_06    = "Valid Rt present"
+Mask_06      = 0x00000400
+Option_07    = "Die Temp Normal"
+Mask_07      = 0x00000800
+Option_08    = "Vin not in OVLO"
+Mask_08      = 0x00010000
+Option_09    = "Vin > V(BATSNS)"
+Mask_09      = 0x00020000
+Option_10    = "INT_VCC > 4.3V"
+Mask_10      = 0x00040000
+Option_11    = "INT_VCC > 2.8V"
+Mask_11      = 0x00080000
+
+[V_Motor]
+Group        = 3
+Name        = "Tk:VMotor"
+Column       = 3
+Row          = 10
+Type         = int
+Display      = "ViewOnly"
+Help	       = "VMotor"
+
+[IinMeas]
+Group        = 3
+Name        = "Tk:IinAnalog"
+Column       = 3
+Row          = 9
+Type         = int
+Display      = "ViewOnly"
+Help	       = "IinAnalog"
+
+[TempMeas]
+Group        = 3
+Name        = "Tk:TempPT1000"
+Column       = 3
+Row          = 7
+Type         = int
+Display      = "ViewOnly"
+Help	       = "TempPT1000"
+
+[LimitOptions]
+Group        = 3
+Name         = "Tk:LimitAlert"
+Column       = 5
+Row          = 2
+Type         = Int
+Help	       = "LimitAlert"
+Display      = "ViewOnly"
+Attrib       = Option
+Option_00    = "VIN_HI_ALERT_LIMIT"
+Mask_00      = 0x00000001
+Option_01    = "IIN_HI_ALERT_LIMIT"
+Mask_01      = 0x00000002
+Option_02    = "IBAT_LO_ALERT_LIMIT"
+Mask_02      = 0x00000004
+Option_03    = "VBAT_HI_ALERT_LIMIT"
+Mask_03      = 0x00000008
+Option_04    = "VBAT_LO_ALERT_LIMIT"
+Mask_04      = 0x00000100
+Option_05    = "NTC_HI_ALERT_LIMIT"
+Mask_05      = 0x00000200
+Option_06    = "NTC_LO_ALERT_LIMIT"
+Mask_06      = 0x00000400
+
+;[Probe_Channel]
+;Group        = 3
+;Name        = "Tk:Probe_Channel"
+;Column       = 6
+;Row          = 9
+;Type         = int
+
+;[Probe_Value]
+;Group        = 3
+;Name        = "Tk:Probe_Value"
+;Column       = 6
+;Row          = 10
+;Type         = int
+;Display      = "ViewOnly"

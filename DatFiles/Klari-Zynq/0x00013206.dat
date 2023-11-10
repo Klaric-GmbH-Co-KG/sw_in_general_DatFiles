@@ -1,0 +1,3308 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01	= "Tk:GlobalPar"	; global parameter
+User_01		= default			; access
+Ident_01	= "GLOBAL_PAR"
+Display_01	= "ViewAndModify"
+
+Group_02	= "Tk:Variables"
+User_02		= Operator
+Ident_02	= "VARIABLEN"
+Display_02	= "ViewOnly"
+
+Group_03	= "Tk:Calib"
+User_03		= System
+Ident_03	= "SYSTEM_KALIB_DATA"
+Display_03	= "ViewAndModify"
+
+Group_04	= "Tk:CalibAdc"
+User_04		= System
+Ident_04	= "ADC_CALIB"
+Display_04	= "ViewAndModify"
+
+Group_05	= "Tk:CalibProbe"
+User_05		= System
+Ident_05	= "PROBE_CALIB"
+Display_05	= "ViewAndModify"
+
+Group_06	="Tk:ChannelStat"	; global parameter
+User_06		=default			; access
+Ident_06	="CHANNEL_DATA"
+Display_06	="ViewOnly"
+
+CanSpace	= 0x30				; Belegung des Modus von Can Identifiern
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01		= "Tk:Reset"		; Reset
+Value_01	= 0x0010
+User_01		= default			; Zugriffsrecht
+Help_01		= "Reset"
+
+Name_02		= "Tk:Restart"		; Restart
+Value_02	= 0x0016
+User_02		= default			; Zugriffsrecht
+Help_02		= "Restart"
+
+Name_03		= "Starte Messung"	; Restart
+Value_03	= 0x1020
+User_03		= default			; Zugriffsrecht
+Help_03		= "Starteth"
+
+Name_04		= "Stoppe Messung"	; Restart
+Value_04	= 0x1021
+User_04		= default			; Zugriffsrecht
+Help_04		= "Starteth"
+
+
+Name_06		= "ADC Save Config"
+Value_06	= 0x2000
+User_06		= default			; Zugriffsrecht
+Help_06		= "Starteth"
+
+Name_07		= "ADC Load Config"
+Value_07	= 0x2001
+User_07		= default			; Zugriffsrecht
+Help_07		= "Starteth"
+
+Name_08		= "ADC Load Default Config"
+Value_08	= 0x2002
+User_08		= default			; Zugriffsrecht
+Help_08		= "Starteth"
+
+Name_09		= "ADC Offset Calib"
+Value_09	= 0x2003
+User_09		= default			; Zugriffsrecht
+Help_09		= "Starteth"
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+[CAN_BaseId]
+Group        = 1
+Common       = "CAN_BaseId"
+Default      = 0x701
+Help         = "CAN_BaseId_One"
+
+[CAN_BAUDRATE]
+Group        = 1
+Name         = "CAN Baudrate"
+Type         = uLong
+Display      = "ViewOnly"
+Attrib       = Combo
+Select_00    = "1 MBaud"
+Value_00     = 1
+Select_01    = "500 kBaud"
+Value_01     = 2
+Select_02    = "250 kBaud"
+Value_02     = 4
+Select_03    = "125 kBaud"
+Value_03     = 8
+
+[Group]
+Group        = 1
+Name         = "Group"
+Type         = String
+Size         = 16
+
+[DeviceName]
+Group        = 1
+Name         = "DeviceName"
+Type         = String
+Size         = 16
+
+[Output_Result]
+Group        = 1
+Common       = "Output_Result"
+
+[OUTPUT_EN_Flags]
+Name         = "Output_EN"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x00000001
+Option_01    = "CAN1"
+Mask_01      = 0x00000002
+Option_02    = "CAN2"
+Mask_02      = 0x00000004
+Option_03    = "XCP"
+Mask_03      = 0x00000008
+Option_04    = "XCP fast"
+Mask_04      = 0x00000010
+
+; -----------------------------------------------
+; VARIABLEN
+; -----------------------------------------------
+
+[Error_Flags]
+Group        = 2
+Name         = "Error Flags"
+Type         = uLong
+Row          = 1
+Column       = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+
+Option_00    = "ERR_HW"
+Mask_00      = 0x00000001
+Option_01    = "ERR_EE"
+Mask_01      = 0x00000002
+Option_02    = "ERR_MEMORY"
+Mask_02      = 0x00000004
+Option_03    = "ERR_KLARIC_SERVER"
+Mask_03      = 0x00000008
+Option_04    = "ERR_NETDEV_OVR"
+Mask_04      = 0x00000010
+Option_05    = "ERR_MEAS_OVR"
+Mask_05      = 0x00000020
+
+Option_06    = "ERR_DEFAULT"
+Mask_06      = 0x00008000
+Option_07    = "ERR_IRQ_SYSTEM"
+Mask_07      = 0x00010000
+Option_08    = "ERR_DMA_DEVICE"
+Mask_08      = 0x00020000
+Option_09    = "ERR_SCU_TIMER"
+Mask_09      = 0x00040000
+Option_10    = "ERR_AXI_TIMER"
+Mask_10      = 0x00080000
+Option_11    = "ERR_CAN0_DEVICE"
+Mask_11      = 0x00100000
+Option_12    = "ERR_CAN1_DEVICE"
+Mask_12      = 0x00200000
+Option_13    = "ERR_UART_DEVICE"
+Mask_13      = 0x00400000
+Option_14    = "ERR_ETH_DEVICE"
+Mask_14      = 0x00800000
+Option_15    = "ERR_XCP_OVR"
+Mask_15      = 0x01000000
+Option_16    = "ERR_DEFAULT_CALIB"
+Mask_16      = 0x80000000
+
+
+[Status_Flags]
+Group        = 2
+Name         = "Status Flags"
+Type         = uLong
+Row          = 1
+Column       = 2
+Display      = "ViewAndModify"
+Attrib       = Option
+
+Option_00    = "STATUS IRQ SYSTEM"
+Mask_00      = 0x00000001
+Option_01    = "STATUS DMA"
+Mask_01      = 0x00000002
+Option_02    = "STATUS SCU TIMER"
+Mask_02      = 0x00000004
+Option_03    = "STATUS AXI TIMER"
+Mask_03      = 0x00000008
+Option_04    = "STATUS CAN 0"
+Mask_04      = 0x00000010
+Option_05    = "STATUS CAN 1"
+Mask_05      = 0x00000020
+Option_06    = "STATUS UART"
+Mask_06      = 0x00000040
+Option_06    = "STATUS UART1"
+Mask_06      = 0x00000080
+Option_07    = "STATUS ETHERNET"
+Mask_07      = 0x00000100
+Option_08    = "STATUS KODEX UART"
+Mask_08      = 0x00000200
+Option_09    = "STATUS KODEX ETH"
+Mask_09      = 0x00000400
+Option_10    = "STATUS SYSLOG UART"
+Mask_10      = 0x00000800
+Option_11    = "STATUS SYSLOG ETHERNET"
+Mask_11      = 0x00001000
+Option_12    = "STATUS ETHERNET IS UP"
+Mask_12      = 0x00010000
+Option_13    = "STATUS ETHERNET IS LINKED"
+Mask_13      = 0x00020000
+Option_14    = "STATUS ETHERNET IS READY"
+Mask_14      = 0x00040000
+Option_15    = "STATUS ETHERNET IS Connected"
+Mask_15      = 0x00080000
+Option_16    = "STATUS_MEAS_IS_RUNNING"
+Mask_16      = 0x00100000
+Option_17    = "STATUS_XCP_DAQ"
+Mask_17      = 0x00200000
+Option_18    = "STATUS_XCP_CONNECTED"
+Mask_18      = 0x00400000
+Option_19    = "STATUS_XCP"
+Mask_19      = 0x00800000
+
+[Xcp_Flags]
+Group        = 2
+Name         = "Xcp Flags"
+Type         = uLong
+Row          = 1
+Column       = 3
+Display      = "ViewAndModify"
+Attrib       = Option
+
+Option_00    = "XCP_READY"
+Mask_00      = 0x00000001
+Option_01    = "XCP_MEAS_READY"
+Mask_01      = 0x00000002
+
+
+[SW_Ver]
+Group        = 2
+Common       = "SW_Ver"
+Row          = 2
+Column       = 3
+[HW_Ver]
+Group        = 2
+Common       = "HW_Ver"
+Row          = 3
+Column       = 3
+
+[KoDeX_Instances]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 4
+Column       = 3
+Display      = "ViewAndModify"
+
+[MainSeq_State]
+Group        = 2
+Name         = "MainSeq State"
+Type         = int
+Row          = 1
+Column       = 4
+Attrib       = Combo
+
+Select_00    = "PowerOn"
+Value_00     = 0
+Select_01    = "Power Wait"
+Value_01     = 1
+Select_02    = "Init"
+Value_02     = 2
+Select_03    = "UART Kodex Wait"
+Value_03     = 3
+Select_04    = "UART Syslog Wait"
+Value_04     = 4
+Select_05    = "Syslog Wait"
+Value_05     = 5
+Select_06    = "ETH Init"
+Value_06     = 6
+Select_07    = "ETH wait"
+Value_07     = 7
+Select_08    = "ETH Syslog Wait"
+Value_08     = 8
+Select_09    = "Finish startup"
+Value_09     = 9
+Select_10    = "Ready"
+Value_10     = 10
+Select_11    = "Restart"
+Value_11     = 11
+Select_12    = "Restart Wait"
+Value_12     = 12
+Select_13    = "Resume"
+Value_13     = 13
+Select_14    = "Stop"
+Value_14     = 14
+Select_15    = "Void"
+Value_15     = 15
+Select_16    = "Error"
+Value_16     = 16
+Select_17    = "Num"
+Value_17     = 17
+
+[SysLog_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 2
+Column       = 4
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "Ready"
+Value_02     = 2
+Select_03    = "Restart"
+Value_03     = 3
+Select_04    = "Resume"
+Value_04     = 4
+Select_05    = "Stop"
+Value_05     = 5
+
+[UartKoDeX_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 3
+Column       = 4
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "Ready"
+Value_02     = 2
+Select_03    = "Restart"
+Value_03     = 3
+Select_04    = "Resume"
+Value_04     = 4
+Select_05    = "Stop"
+Value_05     = 5
+
+[UartSysLog_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 4
+Column       = 4
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "Ready"
+Value_02     = 2
+Select_03    = "Restart"
+Value_03     = 3
+Select_04    = "Resume"
+Value_04     = 4
+Select_05    = "Stop"
+Value_05     = 5
+
+[Eth_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 5
+Column       = 4
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "IDLE"
+Value_02     = 2
+Select_03    = "Setup new connection"
+Value_03     = 3
+Select_04    = "Wait for Connection"
+Value_04     = 4
+Select_05    = "Connected"
+Value_05     = 5
+Select_06    = "Sending"
+Value_06     = 6
+Select_07    = "Close connection"
+Value_07     = 7
+Select_08    = "Restart"
+Value_08     = 8
+Select_09    = "Resume"
+Value_09     = 9
+Select_10    = "Stop"
+Value_10     = 10
+Select_11    = "Num"
+Value_11    = 11
+
+[EthSysLog_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 6
+Column       = 4
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "SETUP"
+Value_02     = 2
+Select_04    = "READY"
+Value_04     = 3
+Select_05    = "STOP"
+Value_05     = 4
+Select_06    = "RESUME"
+Value_06     = 5
+Select_07    = "ERROR"
+Value_07     = 6
+Select_07    = "CLOSE"
+Value_07     = 7
+Select_08    = "NUM"
+Value_08     = 8
+
+[Broadcast_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 7
+Column       = 4
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "SETUP"
+Value_02     = 2
+Select_03    = "WAIT"
+Value_03     = 3
+Select_04    = "CONNECTING"
+Value_04     = 4
+Select_04    = "READY"
+Value_04     = 5
+Select_05    = "GET CONFIG"
+Value_05     = 6
+Select_06    = "SET CONFIG"
+Value_06     = 7
+Select_07    = "ERROR"
+Value_07     = 8
+Select_07    = "CLOSE"
+Value_07     = 9
+Select_08    = "NUM"
+Value_08     = 10
+
+[EthKoDex_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 8
+Column       = 4
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "SETUP"
+Value_02     = 2
+Select_03    = "WAIT"
+Value_03     = 3
+Select_04    = "CONNECTING"
+Value_04     = 4
+Select_04    = "READY"
+Value_04     = 5
+Select_05    = "STOP"
+Value_05     = 6
+Select_06    = "RESUME"
+Value_06     = 7
+Select_07    = "ERROR"
+Value_07     = 8
+Select_07    = "CLOSE"
+Value_07     = 9
+Select_08    = "NUM"
+Value_08     = 10
+
+[Xcp_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 9
+Column       = 4
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "READY"
+Value_02     = 2
+Select_03    = "MEAS"
+Value_03     = 3
+Select_04    = "STOP"
+Value_04     = 4
+Select_04    = "RESUME"
+Value_04     = 5
+
+
+[DUMMY_0_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 10
+Column       = 4
+Attrib       = Combo
+Select_00    = "IDLE"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "ADC_RESET"
+Value_02     = 2
+Select_03    = "WAIT_RESET"
+Value_03     = 3
+Select_04    = "SETUP"
+Value_04     = 4
+Select_05    = "READY"
+Value_05     = 5
+Select_06    = "SAVE CONFIG"
+Value_06     = 6
+Select_07    = "SAVE CONFIG WAIT"
+Value_07     = 7
+Select_08    = "LOAD CONFIG"
+Value_08     = 8
+Select_09    = "STOP"
+Value_09     = 9
+Select_10    = "CALIB"
+Value_10     = 10
+
+[DUMMY_1_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 11
+Column       = 4
+Attrib       = Combo
+Select_00    = "IDLE"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "ADC_RESET"
+Value_02     = 2
+Select_03    = "WAIT_RESET"
+Value_03     = 3
+Select_04    = "SETUP"
+Value_04     = 4
+Select_05    = "READY"
+Value_05     = 5
+Select_06    = "SAVE CONFIG"
+Value_06     = 6
+Select_07    = "SAVE CONFIG WAIT"
+Value_07     = 7
+Select_08    = "LOAD CONFIG"
+Value_08     = 8
+Select_09    = "STOP"
+Value_09     = 9
+Select_10    = "CALIB"
+Value_10     = 10
+
+[DUMMY_2_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 12
+Column       = 4
+Attrib       = Combo
+Select_00    = "IDLE"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "ADC_RESET"
+Value_02     = 2
+Select_03    = "WAIT_RESET"
+Value_03     = 3
+Select_04    = "SETUP"
+Value_04     = 4
+Select_05    = "READY"
+Value_05     = 5
+Select_06    = "SAVE CONFIG"
+Value_06     = 6
+Select_07    = "SAVE CONFIG WAIT"
+Value_07     = 7
+Select_08    = "LOAD CONFIG"
+Value_08     = 8
+Select_09    = "STOP"
+Value_09     = 9
+Select_10    = "CALIB"
+Value_10     = 10
+
+[DUMMY_3_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 13
+Column       = 4
+Attrib       = Combo
+Select_00    = "IDLE"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "ADC_RESET"
+Value_02     = 2
+Select_03    = "WAIT_RESET"
+Value_03     = 3
+Select_04    = "SETUP"
+Value_04     = 4
+Select_05    = "READY"
+Value_05     = 5
+Select_06    = "SAVE CONFIG"
+Value_06     = 6
+Select_07    = "SAVE CONFIG WAIT"
+Value_07     = 7
+Select_08    = "LOAD CONFIG"
+Value_08     = 8
+Select_09    = "STOP"
+Value_09     = 9
+Select_10    = "CALIB"
+Value_10     = 10
+
+[DUMMY_4_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 14
+Column       = 4
+Attrib       = Combo
+Select_00    = "IDLE"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "ADC_RESET"
+Value_02     = 2
+Select_03    = "WAIT_RESET"
+Value_03     = 3
+Select_04    = "SETUP"
+Value_04     = 4
+Select_05    = "READY"
+Value_05     = 5
+Select_06    = "SAVE CONFIG"
+Value_06     = 6
+Select_07    = "SAVE CONFIG WAIT"
+Value_07     = 7
+Select_08    = "LOAD CONFIG"
+Value_08     = 8
+Select_09    = "STOP"
+Value_09     = 9
+Select_10    = "CALIB"
+Value_10     = 10
+
+[DUMMY_4_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 15
+Column       = 4
+Attrib       = Combo
+Select_00    = "IDLE"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "ADC_RESET"
+Value_02     = 2
+Select_03    = "WAIT_RESET"
+Value_03     = 3
+Select_04    = "SETUP"
+Value_04     = 4
+Select_05    = "READY"
+Value_05     = 5
+Select_06    = "SAVE CONFIG"
+Value_06     = 6
+Select_07    = "SAVE CONFIG WAIT"
+Value_07     = 7
+Select_08    = "LOAD CONFIG"
+Value_08     = 8
+Select_09    = "STOP"
+Value_09     = 9
+Select_10    = "CALIB"
+Value_10     = 10
+
+[DUMMY_5_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 16
+Column       = 4
+Attrib       = Combo
+Select_00    = "IDLE"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "ADC_RESET"
+Value_02     = 2
+Select_03    = "WAIT_RESET"
+Value_03     = 3
+Select_04    = "SETUP"
+Value_04     = 4
+Select_05    = "READY"
+Value_05     = 5
+Select_06    = "SAVE CONFIG"
+Value_06     = 6
+Select_07    = "SAVE CONFIG WAIT"
+Value_07     = 7
+Select_08    = "LOAD CONFIG"
+Value_08     = 8
+Select_09    = "STOP"
+Value_09     = 9
+Select_10    = "CALIB"
+Value_10     = 10
+
+[DUMMY_7_State]
+Group        = 2
+Name         = "Tk:Name"
+Type         = int
+Row          = 17
+Column       = 4
+Attrib       = Combo
+Select_00    = "IDLE"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "ADC_RESET"
+Value_02     = 2
+Select_03    = "WAIT_RESET"
+Value_03     = 3
+Select_04    = "SETUP"
+Value_04     = 4
+Select_05    = "READY"
+Value_05     = 5
+Select_06    = "SAVE CONFIG"
+Value_06     = 6
+Select_07    = "SAVE CONFIG WAIT"
+Value_07     = 7
+Select_08    = "LOAD CONFIG"
+Value_08     = 8
+Select_09    = "STOP"
+Value_09     = 9
+Select_10    = "CALIB"
+Value_10     = 10
+
+[DevIP]
+Group        = 2
+Name         = "Device IP"
+Type         = String
+Row          = 1
+Column       = 5
+Size         = 16
+Display      = "ViewAndModify"
+
+
+; -----------------------------------------------
+; SYSTEM_KALIB_DATA
+; -----------------------------------------------
+[Serial_Number]
+Group        = 3
+Name         = "Serial_Number"	
+Type         = int
+Row          = 1
+Column       = 1
+Default      = -1
+
+[Month]
+Group        = 3
+Name       = "Month"
+Type         = uChar
+Row          = 2
+Column       = 1
+
+[Year]
+Group        = 3
+Name       = "Year"
+Type         = uChar
+Row          = 3
+Column       = 1
+
+[Enable_Flags]
+Group        = 3
+Name         = "Enable Flags"
+Type         = uLong
+Row          = 1
+Column       = 2
+Display      = "ViewAndModify"
+Attrib       = Option
+
+Option_00    = "ENABLE_UART1"
+Mask_00      = 0x00000001
+Option_01    = "ENABLE_UART2"
+Mask_01      = 0x00000002
+Option_02    = "ENABLE_CAN1"
+Mask_02      = 0x00000004
+Option_03    = "ENABLE_CAN2"
+Mask_03      = 0x00000008
+Option_04    = "ENABLE_ETH"
+Mask_04      = 0x00000010
+Option_05    = "ENABLE_USB"
+Mask_05      = 0x00000020
+Option_06    = "ENABLE_ADC7763_1"
+Mask_06      = 0x00000040
+Option_07    = "ENABLE_ADC7763_2"
+Mask_07      = 0x00000080
+Option_08    = "ENABLE_ADC7763_3"
+Mask_08      = 0x00000100
+Option_09    = "ENABLE_ADC7763_4"
+Mask_09      = 0x00000200
+Option_06    = "ENABLE_ADC7763_5"
+Mask_06      = 0x00000400
+Option_07    = "ENABLE_ADC7763_6"
+Mask_07      = 0x00000800
+Option_08    = "ENABLE_ADC7763_7"
+Mask_08      = 0x00001000
+Option_09    = "ENABLE_ADC7763_8"
+Mask_09      = 0x00002000
+Option_10    = "ENABLE_XCP"
+Mask_10      = 0x00004000
+Option_11    = "ENABLE_TS_SUB_MS"
+Mask_11      = 0x00008000
+Option_12    = "ENABLE_KODEX_UART"
+Mask_12      = 0x00010000
+Option_13    = "ENABLE_SYSLOG_UART"
+Mask_13      = 0x00020000
+Option_14    = "ENABLE_KODEX_ETH"
+Mask_14      = 0x00080000
+Option_15    = "ENABLE_SYSLOG_ETH"
+Mask_15      = 0x00040000
+Option_16    = "ENABLE_MEAS_ETH"
+Mask_16      = 0x00100000
+Option_17    = "ENABLE_BC_ETH"
+Mask_17      = 0x00200000
+Option_18    = "ENABLE_KLANETDEV"
+Mask_18      = 0x00400000
+Option_18    = "ENABLE_XCP_ETAS"
+Mask_18      = 0x00800000
+
+[BroadcastIP]
+Group        = 3
+Name         = "Broadcast IP"
+Type         = String
+Row          = 1
+Column       = 3
+Size         = 16
+Display      = "ViewAndModify"
+
+[BC_Port]
+Group        = 3
+Name         = "BC_Port"
+Type         = uLong
+Row          = 2
+Column       = 3
+Display      = "ViewAndModify"
+
+[KlaServer_IP]
+Group        = 3
+Name         = "KlaServer IP"
+Type         = String
+Row          = 3
+Column       = 3
+Size         = 16
+Display      = "ViewOnly"
+
+[KoDex_Port]
+Group        = 3
+Name         = "KoDex_Port"
+Type         = uLong
+Row          = 4
+Column       = 3
+Display      = "ViewAndModify"
+
+[Meas_Port]
+Group        = 3
+Name         = "Meas_Port"
+Type         = uLong
+Row          = 4
+Column       = 3
+Display      = "ViewAndModify"
+
+[SysLog_Port]
+Group        = 3
+Name         = "SysLog_Port"
+Type         = uLong
+Row          = 5
+Column       = 3
+Display      = "ViewAndModify"
+
+[Xcp_Port]
+Group        = 3
+Name         = "Xcp_Port"
+Type         = uLong
+Row          = 6
+Column       = 3
+Display      = "ViewAndModify"
+
+; -----------------------------------------------
+; ADC_CALIB
+; -----------------------------------------------
+
+
+;---ADC1-----------------------------------------
+
+[ADC Calib Num]
+Group        = 4
+Name         = "ADC1 Calib Value"
+Type         = uInt
+Row          = 1
+Column       = 1
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 4
+Name         = "ADC1 default Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 1
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 4
+Name         = "ADC1 Offset Value"
+Display      = "ViewAndModify"
+Type         = Int
+Row          = 3
+Column       = 1
+Format	     = Hex
+
+[GAIN]
+Group        = 4
+Name         = "ADC1 Gain Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 4
+Column       = 1
+Format	     = Hex
+
+[OVERRANGE]
+Group        = 4
+Name         = "ADC1 Overrange Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 5
+Column       = 1
+Format	     = Hex
+
+;---ADC2-----------------------------------------
+
+[ADC Calib Num]
+Group        = 4
+Name         = "ADC2 Calib Value"
+Type         = uInt
+Row          = 1
+Column       = 2
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 4
+Name         = "ADC2 default Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 2
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 4
+Name         = "ADC2 Offset Value"
+Display      = "ViewAndModify"
+Type         = Int
+Row          = 3
+Column       = 2
+Format	     = Hex
+
+[GAIN]
+Group        = 4
+Name         = "ADC2 Gain Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 4
+Column       = 2
+Format	     = Hex
+
+[OVERRANGE]
+Group        = 4
+Name         = "ADC2 Overrange Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 5
+Column       = 2
+Format	     = Hex
+
+;---ADC3-----------------------------------------
+
+[ADC Calib Num]
+Group        = 4
+Name         = "ADC3 Calib Value"
+Type         = uInt
+Row          = 1
+Column       = 3
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 4
+Name         = "ADC3 default Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 3
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 4
+Name         = "ADC3 Offset Value"
+Display      = "ViewAndModify"
+Type         = Int
+Row          = 3
+Column       = 3
+Format	     = Hex
+
+[GAIN]
+Group        = 4
+Name         = "ADC3 Gain Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 4
+Column       = 3
+Format	     = Hex
+
+[OVERRANGE]
+Group        = 4
+Name         = "ADC3 Overrange Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 5
+Column       = 3
+Format	     = Hex
+
+;---ADC4-----------------------------------------
+
+[ADC Calib Num]
+Group        = 4
+Name         = "ADC4 Calib Value"
+Type         = uInt
+Row          = 1
+Column       = 4
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 4
+Name         = "ADC4 default Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 4
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 4
+Name         = "ADC4 Offset Value"
+Display      = "ViewAndModify"
+Type         = Int
+Row          = 3
+Column       = 4
+Format	     = Hex
+
+[GAIN]
+Group        = 4
+Name         = "ADC4 Gain Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 4
+Column       = 4
+Format	     = Hex
+
+[OVERRANGE]
+Group        = 4
+Name         = "ADC4 Overrange Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 5
+Column       = 4
+Format	     = Hex
+
+;---ADC5-----------------------------------------
+
+[ADC Calib Num]
+Group        = 4
+Name         = "ADC5 Calib Value"
+Type         = uInt
+Row          = 1
+Column       = 5
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 4
+Name         = "ADC5 default Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 5
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 4
+Name         = "ADC5 Offset Value"
+Display      = "ViewAndModify"
+Type         = Int
+Row          = 3
+Column       = 5
+Format	     = Hex
+
+[GAIN]
+Group        = 4
+Name         = "ADC5 Gain Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 4
+Column       = 5
+Format	     = Hex
+
+[OVERRANGE]
+Group        = 4
+Name         = "ADC5 Overrange Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 5
+Column       = 5
+Format	     = Hex
+
+;---ADC6-----------------------------------------
+
+[ADC Calib Num]
+Group        = 4
+Name         = "ADC6 Calib Value"
+Type         = uInt
+Row          = 1
+Column       = 6
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 4
+Name         = "ADC6 default Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 6
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 4
+Name         = "ADC6 Offset Value"
+Display      = "ViewAndModify"
+Type         = Int
+Row          = 3
+Column       = 6
+Format	     = Hex
+
+[GAIN]
+Group        = 4
+Name         = "ADC6 Gain Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 4
+Column       = 6
+Format	     = Hex
+
+[OVERRANGE]
+Group        = 4
+Name         = "ADC6 Overrange Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 5
+Column       = 6
+Format	     = Hex
+
+;---ADC7-----------------------------------------
+
+[ADC Calib Num]
+Group        = 4
+Name         = "ADC7 Calib Value"
+Type         = uInt
+Row          = 1
+Column       = 7
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 4
+Name         = "ADC7 default Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 7
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 4
+Name         = "ADC7 Offset Value"
+Display      = "ViewAndModify"
+Type         = Int
+Row          = 3
+Column       = 7
+Format	     = Hex
+
+[GAIN]
+Group        = 4
+Name         = "ADC7 Gain Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 4
+Column       = 7
+Format	     = Hex
+
+[OVERRANGE]
+Group        = 4
+Name         = "ADC7 Overrange Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 5
+Column       = 7
+Format	     = Hex
+
+;---ADC8-----------------------------------------
+
+[ADC Calib Num]
+Group        = 4
+Name         = "ADC8 Calib Value"
+Type         = uInt
+Row          = 1
+Column       = 8
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 4
+Name         = "ADC8 default Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 8
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 4
+Name         = "ADC8 Offset Value"
+Display      = "ViewAndModify"
+Type         = Int
+Row          = 3
+Column       = 8
+Format	     = Hex
+
+[GAIN]
+Group        = 4
+Name         = "ADC8 Gain Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 4
+Column       = 8
+Format	     = Hex
+
+[OVERRANGE]
+Group        = 4
+Name         = "ADC8 Overrange Value"
+Display      = "ViewAndModify"
+Type         = uInt
+Row          = 5
+Column       = 8
+Format	     = Hex
+; -----------------------------------------------
+; PROBE_CALIB
+; -----------------------------------------------
+
+;---P1-------------------------------------------
+
+[Probe_Type]
+Group        = 5
+Name         = "P1 Probe Type"
+Type         = uLong
+Row          = 1
+Column       = 1
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_00    = " 0: PT_NONE"
+Value_00     = 0
+Select_01    = " 1: PT_I_PROBE"
+Value_01     = 1
+Select_02    = " 2: PT_HI_PROBE"
+Value_02     = 2
+Select_03    = " 3: PT_I_PROBE2"
+Value_03     = 3
+Select_04    = " 4: PT_U_PROBE"
+Value_04     = 4
+Select_05    = " 5: PT_T_PROBE"
+Value_05     = 5
+Select_06    = " 6: PT_PT100_PROBE"
+Value_06     = 6
+Select_07    = " 7: PT_U3_PROBE"
+Value_07     = 7
+Select_08    = " 8: PT_I_PROBE3"
+Value_08     = 8
+Select_09    = " 9: PT_I_PROBE4"
+Value_09     = 9
+Select_10    = " 10: PT_HU_PROBE"
+Value_10     = 10
+Select_11    = " 11: PT_THERMO_PROBE"
+Value_11     = 11
+
+[Probe Calib Num]
+Group        = 5
+Name         = "P1 Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 1
+Display      = "ViewAndModify"
+
+[Probe Calib Denum]
+Group        = 5
+Name         = "P1 default Calib Value"
+Type         = uInt
+Row          = 3
+Column       = 1
+Display      = "ViewAndModify"
+
+[Probe OFFSET]
+Group        = 5
+Name         = "P1 default Calib Value"
+Type         = Long
+Row          = 4
+Column       = 1
+Display      = "ViewAndModify"
+
+;---P2-------------------------------------------
+
+[Probe_Type]
+Group        = 5
+Name         = "P2 Probe Type"
+Type         = uLong
+Row          = 1
+Column       = 2
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_00    = " 0: PT_NONE"
+Value_00     = 0
+Select_01    = " 1: PT_I_PROBE"
+Value_01     = 1
+Select_02    = " 2: PT_HI_PROBE"
+Value_02     = 2
+Select_03    = " 3: PT_I_PROBE2"
+Value_03     = 3
+Select_04    = " 4: PT_U_PROBE"
+Value_04     = 4
+Select_05    = " 5: PT_T_PROBE"
+Value_05     = 5
+Select_06    = " 6: PT_PT100_PROBE"
+Value_06     = 6
+Select_07    = " 7: PT_U3_PROBE"
+Value_07     = 7
+Select_08    = " 8: PT_I_PROBE3"
+Value_08     = 8
+Select_09    = " 9: PT_I_PROBE4"
+Value_09     = 9
+Select_10    = " 10: PT_HU_PROBE"
+Value_10     = 10
+Select_11    = " 11: PT_THERMO_PROBE"
+Value_11     = 11
+
+[Probe Calib Num]
+Group        = 5
+Name         = "P2 Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 2
+Display      = "ViewAndModify"
+
+[Probe Calib Denum]
+Group        = 5
+Name         = "P2 default Calib Value"
+Type         = uInt
+Row          = 3
+Column       = 2
+Display      = "ViewAndModify"
+
+[Probe OFFSET]
+Group        = 5
+Name         = "P2 default Calib Value"
+Type         = Long
+Row          = 4
+Column       = 2
+Display      = "ViewAndModify"
+
+;---P3-------------------------------------------
+
+[Probe_Type]
+Group        = 5
+Name         = "P3 Probe Type"
+Type         = uLong
+Row          = 1
+Column       = 3
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_00    = " 0: PT_NONE"
+Value_00     = 0
+Select_01    = " 1: PT_I_PROBE"
+Value_01     = 1
+Select_02    = " 2: PT_HI_PROBE"
+Value_02     = 2
+Select_03    = " 3: PT_I_PROBE2"
+Value_03     = 3
+Select_04    = " 4: PT_U_PROBE"
+Value_04     = 4
+Select_05    = " 5: PT_T_PROBE"
+Value_05     = 5
+Select_06    = " 6: PT_PT100_PROBE"
+Value_06     = 6
+Select_07    = " 7: PT_U3_PROBE"
+Value_07     = 7
+Select_08    = " 8: PT_I_PROBE3"
+Value_08     = 8
+Select_09    = " 9: PT_I_PROBE4"
+Value_09     = 9
+Select_10    = " 10: PT_HU_PROBE"
+Value_10     = 10
+Select_11    = " 11: PT_THERMO_PROBE"
+Value_11     = 11
+
+[Probe Calib Num]
+Group        = 5
+Name         = "P3 Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 3
+Display      = "ViewAndModify"
+
+[Probe Calib Denum]
+Group        = 5
+Name         = "P3 default Calib Value"
+Type         = uInt
+Row          = 3
+Column       = 3
+Display      = "ViewAndModify"
+
+[Probe OFFSET]
+Group        = 5
+Name         = "P3 default Calib Value"
+Type         = Long
+Row          = 4
+Column       = 3
+Display      = "ViewAndModify"
+
+;---P4-------------------------------------------
+
+[Probe_Type]
+Group        = 5
+Name         = "P4 Probe Type"
+Type         = uLong
+Row          = 1
+Column       = 4
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_00    = " 0: PT_NONE"
+Value_00     = 0
+Select_01    = " 1: PT_I_PROBE"
+Value_01     = 1
+Select_02    = " 2: PT_HI_PROBE"
+Value_02     = 2
+Select_03    = " 3: PT_I_PROBE2"
+Value_03     = 3
+Select_04    = " 4: PT_U_PROBE"
+Value_04     = 4
+Select_05    = " 5: PT_T_PROBE"
+Value_05     = 5
+Select_06    = " 6: PT_PT100_PROBE"
+Value_06     = 6
+Select_07    = " 7: PT_U3_PROBE"
+Value_07     = 7
+Select_08    = " 8: PT_I_PROBE3"
+Value_08     = 8
+Select_09    = " 9: PT_I_PROBE4"
+Value_09     = 9
+Select_10    = " 10: PT_HU_PROBE"
+Value_10     = 10
+Select_11    = " 11: PT_THERMO_PROBE"
+Value_11     = 11
+
+[Probe Calib Num]
+Group        = 5
+Name         = "P4 Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 4
+Display      = "ViewAndModify"
+
+[Probe Calib Denum]
+Group        = 5
+Name         = "P4 default Calib Value"
+Type         = uInt
+Row          = 3
+Column       = 4
+Display      = "ViewAndModify"
+
+[Probe OFFSET]
+Group        = 5
+Name         = "P4 default Calib Value"
+Type         = Long
+Row          = 4
+Column       = 4
+Display      = "ViewAndModify"
+
+;---P5-------------------------------------------
+
+[Probe_Type]
+Group        = 5
+Name         = "P5 Probe Type"
+Type         = uLong
+Row          = 1
+Column       = 5
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_00    = " 0: PT_NONE"
+Value_00     = 0
+Select_01    = " 1: PT_I_PROBE"
+Value_01     = 1
+Select_02    = " 2: PT_HI_PROBE"
+Value_02     = 2
+Select_03    = " 3: PT_I_PROBE2"
+Value_03     = 3
+Select_04    = " 4: PT_U_PROBE"
+Value_04     = 4
+Select_05    = " 5: PT_T_PROBE"
+Value_05     = 5
+Select_06    = " 6: PT_PT100_PROBE"
+Value_06     = 6
+Select_07    = " 7: PT_U3_PROBE"
+Value_07     = 7
+Select_08    = " 8: PT_I_PROBE3"
+Value_08     = 8
+Select_09    = " 9: PT_I_PROBE4"
+Value_09     = 9
+Select_10    = " 10: PT_HU_PROBE"
+Value_10     = 10
+Select_11    = " 11: PT_THERMO_PROBE"
+Value_11     = 11
+
+[Probe Calib Num]
+Group        = 5
+Name         = "P5 Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 5
+Display      = "ViewAndModify"
+
+[Probe Calib Denum]
+Group        = 5
+Name         = "P5 default Calib Value"
+Type         = uInt
+Row          = 3
+Column       = 5
+Display      = "ViewAndModify"
+
+[Probe OFFSET]
+Group        = 5
+Name         = "P5 default Calib Value"
+Type         = Long
+Row          = 4
+Column       = 5
+Display      = "ViewAndModify"
+
+;---P6-------------------------------------------
+
+[Probe_Type]
+Group        = 5
+Name         = "P6 Probe Type"
+Type         = uLong
+Row          = 1
+Column       = 6
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_00    = " 0: PT_NONE"
+Value_00     = 0
+Select_01    = " 1: PT_I_PROBE"
+Value_01     = 1
+Select_02    = " 2: PT_HI_PROBE"
+Value_02     = 2
+Select_03    = " 3: PT_I_PROBE2"
+Value_03     = 3
+Select_04    = " 4: PT_U_PROBE"
+Value_04     = 4
+Select_05    = " 5: PT_T_PROBE"
+Value_05     = 5
+Select_06    = " 6: PT_PT100_PROBE"
+Value_06     = 6
+Select_07    = " 7: PT_U3_PROBE"
+Value_07     = 7
+Select_08    = " 8: PT_I_PROBE3"
+Value_08     = 8
+Select_09    = " 9: PT_I_PROBE4"
+Value_09     = 9
+Select_10    = " 10: PT_HU_PROBE"
+Value_10     = 10
+Select_11    = " 11: PT_THERMO_PROBE"
+Value_11     = 11
+
+[Probe Calib Num]
+Group        = 5
+Name         = "P6 Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 6
+Display      = "ViewAndModify"
+
+[Probe Calib Denum]
+Group        = 5
+Name         = "P6 default Calib Value"
+Type         = uInt
+Row          = 3
+Column       = 6
+Display      = "ViewAndModify"
+
+[Probe OFFSET]
+Group        = 5
+Name         = "P6 default Calib Value"
+Type         = Long
+Row          = 4
+Column       = 6
+Display      = "ViewAndModify"
+
+;---P7-------------------------------------------
+
+[Probe_Type]
+Group        = 5
+Name         = "P7 Probe Type"
+Type         = uLong
+Row          = 1
+Column       = 7
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_00    = " 0: PT_NONE"
+Value_00     = 0
+Select_01    = " 1: PT_I_PROBE"
+Value_01     = 1
+Select_02    = " 2: PT_HI_PROBE"
+Value_02     = 2
+Select_03    = " 3: PT_I_PROBE2"
+Value_03     = 3
+Select_04    = " 4: PT_U_PROBE"
+Value_04     = 4
+Select_05    = " 5: PT_T_PROBE"
+Value_05     = 5
+Select_06    = " 6: PT_PT100_PROBE"
+Value_06     = 6
+Select_07    = " 7: PT_U3_PROBE"
+Value_07     = 7
+Select_08    = " 8: PT_I_PROBE3"
+Value_08     = 8
+Select_09    = " 9: PT_I_PROBE4"
+Value_09     = 9
+Select_10    = " 10: PT_HU_PROBE"
+Value_10     = 10
+Select_11    = " 11: PT_THERMO_PROBE"
+Value_11     = 11
+
+[Probe Calib Num]
+Group        = 5
+Name         = "P7 Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 7
+Display      = "ViewAndModify"
+
+[Probe Calib Denum]
+Group        = 5
+Name         = "P7 default Calib Value"
+Type         = uInt
+Row          = 3
+Column       = 7
+Display      = "ViewAndModify"
+
+[Probe OFFSET]
+Group        = 5
+Name         = "P7 default Calib Value"
+Type         = Long
+Row          = 4
+Column       = 7
+Display      = "ViewAndModify"
+
+;---P8-------------------------------------------
+
+[Probe_Type]
+Group        = 5
+Name         = "P8 Probe Type"
+Type         = uLong
+Row          = 1
+Column       = 8
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_00    = " 0: PT_NONE"
+Value_00     = 0
+Select_01    = " 1: PT_I_PROBE"
+Value_01     = 1
+Select_02    = " 2: PT_HI_PROBE"
+Value_02     = 2
+Select_03    = " 3: PT_I_PROBE2"
+Value_03     = 3
+Select_04    = " 4: PT_U_PROBE"
+Value_04     = 4
+Select_05    = " 5: PT_T_PROBE"
+Value_05     = 5
+Select_06    = " 6: PT_PT100_PROBE"
+Value_06     = 6
+Select_07    = " 7: PT_U3_PROBE"
+Value_07     = 7
+Select_08    = " 8: PT_I_PROBE3"
+Value_08     = 8
+Select_09    = " 9: PT_I_PROBE4"
+Value_09     = 9
+Select_10    = " 10: PT_HU_PROBE"
+Value_10     = 10
+Select_11    = " 11: PT_THERMO_PROBE"
+Value_11     = 11
+
+[Probe Calib Num]
+Group        = 5
+Name         = "P8 Calib Value"
+Type         = uInt
+Row          = 2
+Column       = 8
+Display      = "ViewAndModify"
+
+[Probe Calib Denum]
+Group        = 5
+Name         = "P8 default Calib Value"
+Type         = uInt
+Row          = 3
+Column       = 8
+Display      = "ViewAndModify"
+
+[Probe OFFSET]
+Group        = 5
+Name         = "P8 default Calib Value"
+Type         = Long
+Row          = 4
+Column       = 8
+Display      = "ViewAndModify"
+
+
+; -----------------------------------------------
+; CHANNEL_DATA
+; -----------------------------------------------
+
+;---CHANNEL1-------------------------------------
+
+[Enable_Channel]
+Group        = 6
+Name         = "Enable Meas Channel"
+Type         = uLong
+Row          = 1
+Column       = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "Enable_Meas"
+Mask_00      = 0x1
+
+[Meas Value RAW]
+Group        = 6
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Row          = 2
+Column       = 1
+Format	     = Hex
+
+[Meas Value REAL]
+Group        = 6
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Row          = 3
+Column       = 1
+Format	     = Hex
+
+[Value]
+Group        = 6
+Name         = "Value"
+Type         = String
+Row          = 4
+Column       = 1
+Size         = 16
+
+[SampleRate]
+Group        = 6
+Name         = "ADC Sample Rate"
+Type         = uChar
+Row          = 5
+Column       = 1
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_02    = "500,0 kHz"
+Value_02     = 2
+Select_03    = "250,0 kHz"
+Value_03     = 3
+Select_04    = "125,0 kHz"
+Value_04     = 4
+Select_05    = " 62,5 kHz"
+Value_05     = 5
+
+[Rolling_decimation]
+Group        = 6
+Name         = "Rolling Average decimation"
+Type         = uChar
+Row          = 6
+Column       = 1
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[Average_decimation]
+Group        = 6
+Name         = "Average decimation"
+Type         = uChar
+Row          = 7
+Column       = 1
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[CAN_output_rate]
+Group        = 6
+Name         = "CAN Output Rate"
+Type         = uChar
+Row          = 8
+Column       = 1
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_01    = "8000 Frames / s"
+Value_01     = 0
+Select_02    = "4000 Frames / s"
+Value_02     = 1
+Select_03    = "2666 Frames / s"
+Value_03     = 2
+Select_04    = "2000 Frames / s"
+Value_04     = 3
+Select_05    = "1600 Frames / s"
+Value_05     = 4
+
+[Output_RAW]
+Group        = 6
+Name         = "Output RAW"
+Type         = uChar
+Row          = 9
+Column       = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+
+[Output_AV_R]
+Group        = 6
+Name         = "Output AV R"
+Type         = uChar
+Row          = 10
+Column       = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_AV]
+Group        = 6
+Name         = "Output AV"
+Type         = uChar
+Row          = 11
+Column       = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_NONE]
+Group        = 6
+Name         = "Output NONE"
+Type         = uChar
+Row          = 12
+Column       = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+;---CHANNEL2-------------------------------------
+
+[Enable_Channel]
+Group        = 6
+Name         = "Enable Meas Channel"
+Type         = uLong
+Row          = 1
+Column       = 2
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "Enable_Meas"
+Mask_00      = 0x1
+
+[Meas Value RAW]
+Group        = 6
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Row          = 2
+Column       = 2
+Format	     = Hex
+
+[Meas Value REAL]
+Group        = 6
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Row          = 3
+Column       = 2
+Format	     = Hex
+
+[Value]
+Group        = 6
+Name         = "Value"
+Type         = String
+Row          = 4
+Column       = 2
+Size         = 16
+
+[SampleRate]
+Group        = 6
+Name         = "ADC Sample Rate"
+Type         = uChar
+Row          = 5
+Column       = 2
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_02    = "500,0 kHz"
+Value_02     = 2
+Select_03    = "250,0 kHz"
+Value_03     = 3
+Select_04    = "125,0 kHz"
+Value_04     = 4
+Select_05    = " 62,5 kHz"
+Value_05     = 5
+
+[Rolling_decimation]
+Group        = 6
+Name         = "Rolling Average decimation"
+Type         = uChar
+Row          = 6
+Column       = 2
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[Average_decimation]
+Group        = 6
+Name         = "Average decimation"
+Type         = uChar
+Row          = 7
+Column       = 2
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[CAN_output_rate]
+Group        = 6
+Name         = "CAN Output Rate"
+Type         = uChar
+Row          = 8
+Column       = 2
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_01    = "8000 Frames / s"
+Value_01     = 0
+Select_02    = "4000 Frames / s"
+Value_02     = 1
+Select_03    = "2666 Frames / s"
+Value_03     = 2
+Select_04    = "2000 Frames / s"
+Value_04     = 3
+Select_05    = "1600 Frames / s"
+Value_05     = 4
+
+[Output_RAW]
+Group        = 6
+Name         = "Output RAW"
+Type         = uChar
+Row          = 9
+Column       = 2
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_AV_R]
+Group        = 6
+Name         = "Output AV R"
+Type         = uChar
+Row          = 10
+Column       = 2
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_AV]
+Group        = 6
+Name         = "Output AV"
+Type         = uChar
+Row          = 11
+Column       = 2
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_NONE]
+Group        = 6
+Name         = "Output NONE"
+Type         = uChar
+Row          = 12
+Column       = 2
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+
+;---CHANNEL3-------------------------------------
+
+[Enable_Channel]
+Group        = 6
+Name         = "Enable Meas Channel"
+Type         = uLong
+Row          = 1
+Column       = 3
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "Enable_Meas"
+Mask_00      = 0x1
+
+[Meas Value RAW]
+Group        = 6
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Row          = 2
+Column       = 3
+Format	     = Hex
+
+[Meas Value REAL]
+Group        = 6
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Row          = 3
+Column       = 3
+Format	     = Hex
+
+[Value]
+Group        = 6
+Name         = "Value"
+Type         = String
+Row          = 4
+Column       = 3
+Size         = 16
+
+[SampleRate]
+Group        = 6
+Name         = "ADC Sample Rate"
+Type         = uChar
+Row          = 5
+Column       = 3
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_02    = "500,0 kHz"
+Value_02     = 2
+Select_03    = "250,0 kHz"
+Value_03     = 3
+Select_04    = "125,0 kHz"
+Value_04     = 4
+Select_05    = " 62,5 kHz"
+Value_05     = 5
+
+[Rolling_decimation]
+Group        = 6
+Name         = "Rolling Average decimation"
+Type         = uChar
+Row          = 6
+Column       = 3
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[Average_decimation]
+Group        = 6
+Name         = "Average decimation"
+Type         = uChar
+Row          = 7
+Column       = 3
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[CAN_output_rate]
+Group        = 6
+Name         = "CAN Output Rate"
+Type         = uChar
+Row          = 8
+Column       = 3
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_01    = "8000 Frames / s"
+Value_01     = 0
+Select_02    = "4000 Frames / s"
+Value_02     = 1
+Select_03    = "2666 Frames / s"
+Value_03     = 2
+Select_04    = "2000 Frames / s"
+Value_04     = 3
+Select_05    = "1600 Frames / s"
+Value_05     = 4
+
+[Output_RAW]
+Group        = 6
+Name         = "Output RAW"
+Type         = uChar
+Row          = 9
+Column       = 3
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_AV_R]
+Group        = 6
+Name         = "Output AV R"
+Type         = uChar
+Row          = 10
+Column       = 3
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_AV]
+Group        = 6
+Name         = "Output AV"
+Type         = uChar
+Row          = 11
+Column       = 3
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_NONE]
+Group        = 6
+Name         = "Output NONE"
+Type         = uChar
+Row          = 12
+Column       = 3
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+;---CHANNEL4-------------------------------------
+
+[Enable_Channel]
+Group        = 6
+Name         = "Enable Meas Channel"
+Type         = uLong
+Row          = 1
+Column       = 4
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "Enable_Meas"
+Mask_00      = 0x1
+
+[Meas Value RAW]
+Group        = 6
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Row          = 2
+Column       = 4
+Format	     = Hex
+
+[Meas Value REAL]
+Group        = 6
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Row          = 3
+Column       = 4
+Format	     = Hex
+
+[Value]
+Group        = 6
+Name         = "Value"
+Type         = String
+Row          = 4
+Column       = 4
+Size         = 16
+
+[SampleRate]
+Group        = 6
+Name         = "ADC Sample Rate"
+Type         = uChar
+Row          = 5
+Column       = 4
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_02    = "500,0 kHz"
+Value_02     = 2
+Select_03    = "250,0 kHz"
+Value_03     = 3
+Select_04    = "125,0 kHz"
+Value_04     = 4
+Select_05    = " 62,5 kHz"
+Value_05     = 5
+
+[Rolling_decimation]
+Group        = 6
+Name         = "Rolling Average decimation"
+Type         = uChar
+Row          = 6
+Column       = 4
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[Average_decimation]
+Group        = 6
+Name         = "Average decimation"
+Type         = uChar
+Row          = 7
+Column       = 4
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[CAN_output_rate]
+Group        = 6
+Name         = "CAN Output Rate"
+Type         = uChar
+Row          = 8
+Column       = 4
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_01    = "8000 Frames / s"
+Value_01     = 0
+Select_02    = "4000 Frames / s"
+Value_02     = 1
+Select_03    = "2666 Frames / s"
+Value_03     = 2
+Select_04    = "2000 Frames / s"
+Value_04     = 3
+Select_05    = "1600 Frames / s"
+Value_05     = 4
+
+[Output_RAW]
+Group        = 6
+Name         = "Output RAW"
+Type         = uChar
+Row          = 9
+Column       = 4
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_AV_R]
+Group        = 6
+Name         = "Output AV R"
+Type         = uChar
+Row          = 10
+Column       = 4
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_AV]
+Group        = 6
+Name         = "Output AV"
+Type         = uChar
+Row          = 11
+Column       = 4
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_NONE]
+Group        = 6
+Name         = "Output NONE"
+Type         = uChar
+Row          = 12
+Column       = 4
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+;---CHANNEL5-------------------------------------
+
+[Enable_Channel]
+Group        = 6
+Name         = "Enable Meas Channel"
+Type         = uLong
+Row          = 1
+Column       = 5
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "Enable_Meas"
+Mask_00      = 0x1
+
+[Meas Value RAW]
+Group        = 6
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Row          = 2
+Column       = 5
+Format	     = Hex
+
+[Meas Value REAL]
+Group        = 6
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Row          = 3
+Column       = 5
+Format	     = Hex
+
+[Value]
+Group        = 6
+Name         = "Value"
+Type         = String
+Row          = 4
+Column       = 5
+Size         = 16
+
+[SampleRate]
+Group        = 6
+Name         = "ADC Sample Rate"
+Type         = uChar
+Row          = 5
+Column       = 5
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_02    = "500,0 kHz"
+Value_02     = 2
+Select_03    = "250,0 kHz"
+Value_03     = 3
+Select_04    = "125,0 kHz"
+Value_04     = 4
+Select_05    = " 62,5 kHz"
+Value_05     = 5
+
+[Rolling_decimation]
+Group        = 6
+Name         = "Rolling Average decimation"
+Type         = uChar
+Row          = 6
+Column       = 5
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[Average_decimation]
+Group        = 6
+Name         = "Average decimation"
+Type         = uChar
+Row          = 7
+Column       = 5
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[CAN_output_rate]
+Group        = 6
+Name         = "CAN Output Rate"
+Type         = uChar
+Row          = 8
+Column       = 5
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_01    = "8000 Frames / s"
+Value_01     = 0
+Select_02    = "4000 Frames / s"
+Value_02     = 1
+Select_03    = "2666 Frames / s"
+Value_03     = 2
+Select_04    = "2000 Frames / s"
+Value_04     = 3
+Select_05    = "1600 Frames / s"
+Value_05     = 4
+
+[Output_RAW]
+Group        = 6
+Name         = "Output RAW"
+Type         = uChar
+Row          = 9
+Column       = 5
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_AV_R]
+Group        = 6
+Name         = "Output AV R"
+Type         = uChar
+Row          = 10
+Column       = 5
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_AV]
+Group        = 6
+Name         = "Output AV"
+Type         = uChar
+Row          = 11
+Column       = 5
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_NONE]
+Group        = 6
+Name         = "Output NONE"
+Type         = uChar
+Row          = 12
+Column       = 5
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+;---CHANNEL6-------------------------------------
+
+[Enable_Channel]
+Group        = 6
+Name         = "Enable Meas Channel"
+Type         = uLong
+Row          = 1
+Column       = 6
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "Enable_Meas"
+Mask_00      = 0x1
+
+[Meas Value RAW]
+Group        = 6
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Row          = 2
+Column       = 6
+Format	     = Hex
+
+[Meas Value REAL]
+Group        = 6
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Row          = 3
+Column       = 6
+Format	     = Hex
+
+[Value]
+Group        = 6
+Name         = "Value"
+Type         = String
+Row          = 4
+Column       = 6
+Size         = 16
+
+[SampleRate]
+Group        = 6
+Name         = "ADC Sample Rate"
+Type         = uChar
+Row          = 5
+Column       = 6
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_02    = "500,0 kHz"
+Value_02     = 2
+Select_03    = "250,0 kHz"
+Value_03     = 3
+Select_04    = "125,0 kHz"
+Value_04     = 4
+Select_05    = " 62,5 kHz"
+Value_05     = 5
+
+[Rolling_decimation]
+Group        = 6
+Name         = "Rolling Average decimation"
+Type         = uChar
+Row          = 6
+Column       = 6
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[Average_decimation]
+Group        = 6
+Name         = "Average decimation"
+Type         = uChar
+Row          = 7
+Column       = 6
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[CAN_output_rate]
+Group        = 6
+Name         = "CAN Output Rate"
+Type         = uChar
+Row          = 8
+Column       = 6
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_01    = "8000 Frames / s"
+Value_01     = 0
+Select_02    = "4000 Frames / s"
+Value_02     = 1
+Select_03    = "2666 Frames / s"
+Value_03     = 2
+Select_04    = "2000 Frames / s"
+Value_04     = 3
+Select_05    = "1600 Frames / s"
+Value_05     = 4
+
+[Output_RAW]
+Group        = 6
+Name         = "Output RAW"
+Type         = uChar
+Row          = 9
+Column       = 6
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_AV_R]
+Group        = 6
+Name         = "Output AV R"
+Type         = uChar
+Row          = 10
+Column       = 6
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_AV]
+Group        = 6
+Name         = "Output AV"
+Type         = uChar
+Row          = 11
+Column       = 6
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_NONE]
+Group        = 6
+Name         = "Output NONE"
+Type         = uChar
+Row          = 12
+Column       = 6
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+;---CHANNEL7-------------------------------------
+
+[Enable_Channel]
+Group        = 6
+Name         = "Enable Meas Channel"
+Type         = uLong
+Row          = 1
+Column       = 7
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "Enable_Meas"
+Mask_00      = 0x1
+
+[Meas Value RAW]
+Group        = 6
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Row          = 2
+Column       = 7
+Format	     = Hex
+
+[Meas Value REAL]
+Group        = 6
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Row          = 3
+Column       = 7
+Format	     = Hex
+
+[Value]
+Group        = 6
+Name         = "Value"
+Type         = String
+Row          = 4
+Column       = 7
+Size         = 16
+
+[SampleRate]
+Group        = 6
+Name         = "ADC Sample Rate"
+Type         = uChar
+Row          = 5
+Column       = 7
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_02    = "500,0 kHz"
+Value_02     = 2
+Select_03    = "250,0 kHz"
+Value_03     = 3
+Select_04    = "125,0 kHz"
+Value_04     = 4
+Select_05    = " 62,5 kHz"
+Value_05     = 5
+
+[Rolling_decimation]
+Group        = 6
+Name         = "Rolling Average decimation"
+Type         = uChar
+Row          = 6
+Column       = 7
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[Average_decimation]
+Group        = 6
+Name         = "Average decimation"
+Type         = uChar
+Row          = 7
+Column       = 7
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[CAN_output_rate]
+Group        = 6
+Name         = "CAN Output Rate"
+Type         = uChar
+Row          = 8
+Column       = 7
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_01    = "8000 Frames / s"
+Value_01     = 0
+Select_02    = "4000 Frames / s"
+Value_02     = 1
+Select_03    = "2666 Frames / s"
+Value_03     = 2
+Select_04    = "2000 Frames / s"
+Value_04     = 3
+Select_05    = "1600 Frames / s"
+Value_05     = 4
+
+[Output_RAW]
+Group        = 6
+Name         = "Output RAW"
+Type         = uChar
+Row          = 9
+Column       = 7
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_AV_R]
+Group        = 6
+Name         = "Output AV R"
+Type         = uChar
+Row          = 10
+Column       = 7
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_AV]
+Group        = 6
+Name         = "Output AV"
+Type         = uChar
+Row          = 11
+Column       = 7
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_NONE]
+Group        = 6
+Name         = "Output NONE"
+Type         = uChar
+Row          = 12
+Column       = 7
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+;---CHANNEL8-------------------------------------
+
+[Enable_Channel]
+Group        = 6
+Name         = "Enable Meas Channel"
+Type         = uLong
+Row          = 1
+Column       = 8
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "Enable_Meas"
+Mask_00      = 0x1
+
+[Meas Value RAW]
+Group        = 6
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Row          = 2
+Column       = 8
+Format	     = Hex
+
+[Meas Value REAL]
+Group        = 6
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Row          = 3
+Column       = 8
+Format	     = Hex
+
+[Value]
+Group        = 6
+Name         = "Value"
+Type         = String
+Row          = 4
+Column       = 8
+Size         = 16
+
+[SampleRate]
+Group        = 6
+Name         = "ADC Sample Rate"
+Type         = uChar
+Row          = 5
+Column       = 8
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_02    = "500,0 kHz"
+Value_02     = 2
+Select_03    = "250,0 kHz"
+Value_03     = 3
+Select_04    = "125,0 kHz"
+Value_04     = 4
+Select_05    = " 62,5 kHz"
+Value_05     = 5
+
+[Rolling_decimation]
+Group        = 6
+Name         = "Rolling Average decimation"
+Type         = uChar
+Row          = 6
+Column       = 8
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[Average_decimation]
+Group        = 6
+Name         = "Average decimation"
+Type         = uChar
+Row          = 7
+Column       = 8
+Display      = "ViewAndModify"
+;Attrib       = Combo
+;Select_02    = "x2"
+;Value_02     = 1
+;Select_03    = "x4"
+;Value_03     = 2
+;Select_04    = "x8"
+;Value_04     = 3
+;Select_05    = "x16"
+;Value_05     = 4
+;Select_06    = "x32"
+;Value_06     = 5
+;Select_07    = "x64"
+;Value_07     = 6
+;Select_08    = "x128"
+;Value_08     = 7
+
+[CAN_output_rate]
+Group        = 6
+Name         = "CAN Output Rate"
+Type         = uChar
+Row          = 8
+Column       = 8
+Display      = "ViewAndModify"
+Attrib       = Combo
+Select_01    = "8000 Frames / s"
+Value_01     = 0
+Select_02    = "4000 Frames / s"
+Value_02     = 1
+Select_03    = "2666 Frames / s"
+Value_03     = 2
+Select_04    = "2000 Frames / s"
+Value_04     = 3
+Select_05    = "1600 Frames / s"
+Value_05     = 4
+
+[Output_RAW]
+Group        = 6
+Name         = "Output RAW"
+Type         = uChar
+Row          = 9
+Column       = 8
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_AV_R]
+Group        = 6
+Name         = "Output AV R"
+Type         = uChar
+Row          = 10
+Column       = 8
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_AV]
+Group        = 6
+Name         = "Output AV"
+Type         = uChar
+Row          = 11
+Column       = 8
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10
+
+[Output_NONE]
+Group        = 6
+Name         = "Output NONE"
+Type         = uChar
+Row          = 12
+Column       = 8
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "KlaNetDev"
+Mask_00      = 0x01
+Option_01    = "CAN0"
+Mask_01      = 0x02
+Option_02    = "CAN1"
+Mask_02      = 0x04
+Option_03    = "XCP"
+Mask_03      = 0x08
+Option_04    = "XCP fast"
+Mask_04      = 0x10

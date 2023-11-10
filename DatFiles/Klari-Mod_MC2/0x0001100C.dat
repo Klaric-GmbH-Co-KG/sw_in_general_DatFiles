@@ -1,0 +1,1080 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01="Tk:GlobalPar"	; globale Daten
+User_01=default	; Zugriffsrecht
+Ident_01="GLOBAL_PAR"
+Group_02="Tk:ChannelPar"	; globale Daten
+User_02=default	; Zugriffsrecht
+Ident_02="CHANNEL_PAR"
+Group_03="Tk:FastPar"	; Fast parameter
+User_03=default	; Zugriffsrecht
+Ident_03="FAST_PAR"
+Group_04="Tk:ChannelStat"
+User_04=Operator
+Ident_04="CHANNEL_DATA"
+Group_05="Tk:Variables"
+User_05=Operator
+Ident_05="VARIABLEN"
+Group_06="Tk:Calib"
+User_06=System
+Ident_06="KALIB"
+CanSpace=0x10	; Belegung des Modus von Can Identifiern
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01="Tk:Reset"	; Reset
+Value_01=0x0010
+User_01=default	; Zugriffsrecht
+Help_01="Reset"
+Name_02="Tk:Restart"	; Restart
+Value_02=0x0016
+User_02=default	; Zugriffsrecht
+Help_02="Restart"
+Name_03="Tk:SavePar"	; SavePar
+Value_03=0x0020
+User_03=operator	; Zugriffsrecht
+Help_03="SavePar"
+Name_04="Tk:SaveChannel"	; SavePar
+Value_04=0x0030
+User_04=operator	; Zugriffsrecht
+Help_04="SaveChannelPar"
+Name_05="Tk:SaveFast"	; SaveFast
+Value_05=0x0040
+User_05=operator	; Zugriffsrecht
+Help_05="SaveFastPar"
+Name_06="Tk:SaveCalib"	; SaveCalib
+Value_06=0xCA1B
+User_06=system	; Zugriffsrecht
+Help_06="SaveCalib"
+Name_07="Tk:FastStart"	; SaveFast
+Value_07=0xAB41
+User_07=operator	; Zugriffsrecht
+Help_07="FastStart"
+Name_08="Tk:FastStop"	; SaveFast
+Value_08=0xAB40
+User_08=operator	; Zugriffsrecht
+Help_08="FastStop"
+//Name_09="Tune Offset"	; SaveFast
+//Value_09=0xCA15
+//User_09=operator	; Zugriffsrecht
+//Help_09="TuneOffset"
+Name_10="Tk:Boot"	; Boot
+Value_10=0xB007
+User_10=system	; Zugriffsrecht
+Help_10="Boot"
+Protect_10 = "Tk:BootWarning"
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+[CAN_Baudrate]
+Group        = 1
+Common       = "CAN_Baudrate"
+Type         = int
+
+[CAN_BaseId]
+Group        = 1
+Common       = "CAN_BaseId"
+Help         = "CAN_BaseId_MC2"
+Default      = 0x701
+
+[CAN_Xtd]
+Group        = 1
+Common       = "CAN_Xtd"
+
+[CAN_Term]
+Group        = 1
+Common       = "CAN_Term"
+
+[ConfigTxEnable]
+Group        = 1
+Name         = "ConfigTxEnable"
+Type         = int
+Help	       = "Config_TxEnable"
+
+[Measure_Mode]
+Group        = 1
+Common       = "Measure_Mode"
+Help         = "Measure_Mode_MC2"
+Name         = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+
+[TimeSync_Mode]
+Group        = 1
+Common       = "TimeSync_Mode"
+
+; -----------------------------------------------
+; P1
+; -----------------------------------------------
+[P1_Enable]
+Group        = 2
+Common       = "N_PartB"	
+Help         = "MeasChanEnable"
+Name         = "Tk:P1_Enable"
+Row          = 1
+Column       = 1
+
+[P2_Enable]
+Group        = 2
+Common       = "N_PartB"	
+Help         = "MeasChanEnable"
+Name         = "Tk:P2_Enable"
+Row          = 1
+Column       = 2
+
+[UBAT_Enable]
+Group        = 2
+Common       = "N_PartB"	
+Help         = "MeasChanEnable"
+Name         = "Tk:U_Bat_Enable"
+Row          = 1
+Column       = 3
+
+[UAUX_Enable]
+Group        = 2
+Common       = "N_PartB"	
+Help         = "MeasChanEnable"
+Name         = "Tk:U_Aux_Enable"
+Row          = 1
+Column       = 4
+
+[P1_Autorange]
+Group        = 2
+Common       = "Autorange"
+Name         = "Tk:P1_Autorange"
+Row          = 2
+Column       = 1
+
+[P2_Autorange]
+Group        = 2
+Common       = "Autorange"
+Name         = "Tk:P2_Autorange"
+Row          = 2
+Column       = 2
+
+[UBAT_Autorange]
+Group        = 2
+Common       = "Autorange"
+Name         = "Tk:U_Bat_Autorange"
+Row          = 2
+Column       = 3
+
+[UAUX_Autorange]
+Group        = 2
+Common       = "Autorange"
+Name         = "Tk:U_Aux_Autorange"
+Row          = 2
+Column       = 4
+
+[P1_Path]
+Group        = 2
+Common       = "Path"	
+Name         = "Tk:P1_Path"
+Row          = 3
+Column       = 1
+
+[P2_Path]
+Group        = 2
+Common       = "Path"	
+Name         = "Tk:P2_Path"
+Row          = 3
+Column       = 2
+
+[UBAT_Path]
+Group        = 2
+Common       = "Path"	
+Name         = "Tk:U_Bat_Path"
+Row          = 3
+Column       = 3
+
+[UAUX_Path]
+Group        = 2
+Common       = "Path"	
+Name         = "Tk:U_Aux_Path"
+Row          = 3
+Column       = 4
+
+[P1_Speed]
+Group        = 2
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Name         = "Tk:P1_Speed"
+Default      = 3
+Row          = 4
+Column       = 1
+
+[P2_Speed]
+Group        = 2
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Name         = "Tk:P2_Speed"
+Default      = 3
+Row          = 4
+Column       = 2
+
+[UBAT_Speed]
+Group        = 2
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Name         = "Tk:U_Bat_Speed"
+Default      = 3
+Row          = 4
+Column       = 3
+
+[UAUX_Speed]
+Group        = 2
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Name         = "Tk:U_Aux_Speed"
+Default      = 3
+Row          = 4
+Column       = 4
+
+[P1_Ave]
+Group        = 2
+Common       = "Ave"
+Type         = uInt
+Name         = "Tk:P1_Ave"
+Row          = 5
+Column       = 1
+
+[P2_Ave]
+Group        = 2
+Common       = "Ave"
+Type         = uInt
+Name         = "Tk:P2_Ave"
+Row          = 5
+Column       = 2
+
+[UBAT_Ave]
+Group        = 2
+Common       = "Ave"
+Type         = uInt
+Name         = "Tk:U_bat_Ave"
+Row          = 5
+Column       = 3
+
+[UAUX_Ave]
+Group        = 2
+Common       = "Ave"
+Type         = uInt
+Name         = "Tk:U_aux_Ave"
+Row          = 5
+Column       = 4
+
+[Temp_Enable]
+Group        = 2
+Common       = "N_PartB"
+Help         = "MeasChanEnable"
+Name         = "Tk:Temp_Enable"
+Row          = 1
+Column       = 5
+
+[Temp_Rate]
+Group        = 2
+Common       = "Temp_Rate"
+Row          = 2
+Column       = 5
+
+
+; -----------------------------------------------
+; Fast
+; -----------------------------------------------
+[P1_Fast_Enable]
+Group        = 3
+Common       = "OnOffChar"	
+Help         = "MeasChanEnable"
+Name         = "Tk:Fast_Trig_Enable_P1"
+Row          = 1
+Column       = 1
+
+[P2_Fast_Enable]
+Group        = 3
+Common       = "OnOffChar"	
+Help         = "MeasChanEnable"
+Name         = "Tk:Fast_Trig_Enable_P2"
+Row          = 1
+Column       = 2
+
+[Ubat_Fast_Enable]
+Group        = 3
+Common       = "OnOffChar"	
+Help         = "MeasChanEnable"
+Name         = "Tk:Fast_Trig_Enable_Ubat"
+Row          = 1
+Column       = 3
+
+[Uaux_Fast_Enable]
+Group        = 3
+Common       = "OnOffChar"	
+Help         = "MeasChanEnable"
+Name         = "Tk:Fast_Trig_Enable_Uaux"
+Row          = 1
+Column       = 4
+
+[P1_Fast_Speed]
+Group        = 3
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Name         = "Tk:Fast_Speed_P1"
+Default      = 3
+Row          = 2
+Column       = 1
+
+[P2_Fast_Speed]
+Group        = 3
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Name         = "Tk:Fast_Speed_P2"
+Default      = 3
+Row          = 2
+Column       = 2
+
+[Ubat_Fast_Speed]
+Group        = 3
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Name         = "Tk:Fast_Speed_Ubat"
+Default      = 3
+Row          = 2
+Column       = 3
+
+[Uaux_Fast_Speed]
+Group        = 3
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Name         = "Tk:Fast_Speed_Uaux"
+Default      = 3
+Row          = 2
+Column       = 4
+
+[P1_FastStartDir]
+Group        = 3
+Common       = "FastStartStopDir"
+Name         = "Tk:Fast_StartDir_P1"
+Row          = 3
+Column       = 1
+
+[P2_FastStartDir]
+Group        = 3
+Common       = "FastStartStopDir"
+Name         = "Tk:Fast_StartDir_P2"
+Row          = 3
+Column       = 2
+
+[Ubat_FastStartDir]
+Group        = 3
+Common       = "FastStartStopDir"
+Name         = "Tk:Fast_StartDir_Ubat"
+Row          = 3
+Column       = 3
+
+[Uaux_FastStartDir]
+Group        = 3
+Common       = "FastStartStopDir"
+Name         = "Tk:Fast_StartDir_Uaux"
+Row          = 3
+Column       = 4
+
+[P1_Fast_StartLevel]
+Group        = 3
+Type         = Long
+Name         = "Tk:Fast_StartLevel_P1"
+Row          = 4
+Column       = 1
+
+[P2_Fast_StartLevel]
+Group        = 3
+Type         = Long
+Name         = "Tk:Fast_StartLevel_P2"
+Row          = 4
+Column       = 2
+
+[Ubat_Fast_StartLevel]
+Group        = 3
+Type         = Long
+Name         = "Tk:Fast_StartLevel_Ubat"
+Row          = 4
+Column       = 3
+
+[Uaux_Fast_StartLevel]
+Group        = 3
+Type         = Long
+Name         = "Tk:Fast_StartLevel_Uaux"
+Row          = 4
+Column       = 4
+
+[P1_FastStopDir]
+Group        = 3
+Common       = "FastStartStopDir"
+Name         = "Tk:Fast_StopDir_P1"
+Row          = 5
+Column       = 1
+
+[P2_FastStopDir]
+Group        = 3
+Common       = "FastStartStopDir"
+Name         = "Tk:Fast_StopDir_P2"
+Row          = 5
+Column       = 2
+
+[Ubat_FastStopDir]
+Group        = 3
+Common       = "FastStartStopDir"
+Name         = "Tk:Fast_StopDir_Ubat"
+Row          = 5
+Column       = 3
+
+[Uaux_FastStopDir]
+Group        = 3
+Common       = "FastStartStopDir"
+Name         = "Tk:Fast_StopDir_Uaux"
+Row          = 5
+Column       = 4
+
+[P1_Fast_StopLevel]
+Group        = 3
+Type         = Long
+Name         = "Tk:Fast_StopLevel_P1"
+Row          = 6
+Column       = 1
+
+[P2_Fast_StopLevel]
+Group        = 3
+Type         = Long
+Name         = "Tk:Fast_StopLevel_P2"
+Row          = 6
+Column       = 2
+
+[Ubat_Fast_StopLevel]
+Group        = 3
+Type         = Long
+Name         = "Tk:Fast_StopLevel_Ubat"
+Row          = 6
+Column       = 3
+
+[Uaux_Fast_StopLevel]
+Group        = 3
+Type         = Long
+Name         = "Tk:Fast_StopLevel_Uaux"
+Row          = 6
+Column       = 4
+
+[P1_Fast_Duration]
+Group        = 3
+Type         = Int
+Name         = "Tk:Fast_Duration_P1"
+Row          = 7
+Column       = 1
+
+[P2_Fast_Duration]
+Group        = 3
+Type         = Int
+Name         = "Tk:Fast_Duration_P2"
+Row          = 7
+Column       = 2
+
+[Ubat_Fast_Duration]
+Group        = 3
+Type         = Int
+Name         = "Tk:Fast_Duration_Ubat"
+Row          = 7
+Column       = 3
+
+[Uaux_Fast_Duration]
+Group        = 3
+Type         = Int
+Name         = "Tk:Fast_Duration_Uaux"
+Row          = 7
+Column       = 4
+
+
+
+; -----------------------------------------------
+; CHANNEL
+; -----------------------------------------------
+[Asic1 SN]
+Group        = 4
+Common       = "ASIC_SN"
+Name         = "Asic1 SN"
+Column       = 1
+Row          = 1
+
+[Asic2 SN]
+Group        = 4
+Common       = "ASIC_SN"
+Name         = "Asic2 SN"
+Column       = 2
+Row          = 1
+
+[Probe1_Speed]
+Group        = 4
+Common       = "Speed8.192Mhz"
+Name         = "Probe1 Speed"
+Type         = uLong
+Column       = 1
+Row          = 2
+
+[Probe2_Speed]
+Group        = 4
+Common       = "Speed8.192Mhz"
+Name         = "Probe2 Speed"
+Type         = uLong
+Column       = 2
+Row          = 2
+
+[P1 Type]
+Group        = 4
+Common       = "ProbeType"
+Type         = Int
+Name         = "Tk:ProbeType1"
+Column       = 1
+Row          = 3
+
+[P2 Type]
+Group        = 4
+Common       = "ProbeType"
+Type         = Int
+Name         = "Tk:ProbeType2"
+Column       = 2
+Row          = 3
+
+[P1 Kalib]
+Group        = 4
+Common       = "Kalib"
+Name         = "Tk:Kalib1"
+Column       = 1
+Row          = 4
+
+[P2 Kalib]
+Group        = 4
+Common       = "Kalib"
+Name         = "Tk:Kalib2"
+Column       = 2
+Row          = 4
+
+[P1 Offset]
+Group        = 4
+Common       = "Offset"
+Name         = "Tk:Offset1"
+Column       = 1
+Row          = 5
+
+[P2 Offset]
+Group        = 4
+Common       = "Offset"
+Name         = "Tk:Offset2"
+Column       = 2
+Row          = 5
+
+[P1 DefaultCalib]
+Group        = 4
+Name         = "P1 DefaultCalib"
+Type         = uInt
+Column       = 1
+Row          = 6
+
+[P2 DefaultCalib]
+Group        = 4
+Name         = "P2 DefaultCalib"
+Type         = uInt
+Column       = 2
+Row          = 6
+
+
+; -----------------------------------------------
+; VARIABLEN
+; -----------------------------------------------
+
+[Error_Flags] 
+Group        = 5
+Name         = "Error Flags"
+Type         = uInt
+Attrib       = Option
+Help         = "Error_Flags"
+Option_01    = "ERR E2Prom"
+Mask_01      = 0x0001
+Option_02    = "ERR Asic1"
+Mask_02      = 0x0002
+Option_03    = "ERR Asic2"
+Mask_03      = 0x0004
+Option_04    = "ERR Can1"
+Mask_04      = 0x0010
+Option_05    = "Can OVR"
+Mask_05      = 0x0040
+Option_06    = "Accu Fifo"
+Mask_06      = 0x0080
+Option_07    = "Can Fifo"
+Mask_07      = 0x0100
+Option_08    = "ERR Default"
+Mask_08      = 0x0200
+Option_9     = "ERR TimeSync"
+Mask_9       = 0x0400
+
+[SW_Ver]
+Group        = 5
+Common       = "SW_Ver"
+
+[HW_Ver]
+Group        = 5
+Common       = "HW_Ver"
+
+[Probe_Channel]
+Group        = 5
+Common       = "Probe_Channel"
+Type         = int
+Values       = -1..4
+
+[Probe_Value]
+Group        = 5
+Common       = "Probe_Value"
+
+[MainSeqState]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Attrib       = Combo
+Select_01    = "Idle"
+Value_01     = 0
+Select_02    = "PowerOnInit"
+Value_02     = 1
+Select_03    = "PowerOnInitWait"
+Value_03     = 2
+Select_04    = "Init"
+Value_04     = 3
+Select_05    = "InitWaitCan"
+Value_05     = 4
+Select_06    = "InitWaitPowerOff"
+Value_06     = 5
+Select_07    = "InitWaitPowerOn"
+Value_07     = 6
+Select_08    = "InitExec"
+Value_08     = 7
+Select_09    = "WaitOwhReady"
+Value_09     = 8
+Select_10    = "WaitHandlerReady"
+Value_10     = 9
+Select_11    = "WaitData"
+Value_11     = 10
+Select_12    = "EEwrite"
+Value_12     = 11
+Select_13    = "EEread"
+Value_13     = 12
+Select_14    = "Error"
+Value_14     = 13
+Select_15    = "Error resume"
+Value_15     = 14
+Select_16    = "Error restart"
+Value_16     = 15
+
+[MM_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Attrib       = Combo
+Select_00    = "Idle"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "WaitAsicOff"
+Value_02     = 2
+Select_03    = "WaitAsicOn"
+Value_03     = 3
+Select_04    = "StartPatch"
+Value_04     = 4
+Select_05    = "StartAsic"
+Value_05     = 5
+Select_06    = "StartMCM"
+Value_06     = 6
+Select_07    = "Ready"
+Value_07     = 7
+Select_08    = "PowerDown"
+Value_08     = 8
+
+[AccuSpace]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+
+[CanSpace]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+
+[CAN_Flags]
+Group        = 5
+Name         = "Tk:Name"
+Type         = uInt
+Attrib       = Option
+Option_01    = "SW_CAN_TX_CONFIG"
+Value_01     = 0x01
+Option_02    = "SW_CAN_RUNNING"
+Value_02     = 0x02
+Option_03    = "CAN_TO"
+Value_03     = 0x20
+Option_04    = "CAN_BAUD_ERR"
+Value_04     = 0x40
+Option_05    = "SW_CAN_START"
+Value_05     = 0x80
+
+[CAN_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = char
+Attrib       = Combo
+Select_01    = "Idle"
+Value_01     = 0
+Select_02    = "Restart"
+Value_02     = 1
+Select_03    = "PowerUp"
+Value_03     = 2
+Select_04    = "WaitInit"
+Value_04     = 3
+Select_05    = "WaitNormal"
+Value_05     = 4
+Select_06    = "WaitReady"
+Value_06     = 5
+Select_07    = "WaitTimeSync"
+Value_07     = 6
+Select_08    = "Ready"
+Value_08     = 7
+Select_09    = "PrepareWaitRestart"
+Value_09     = 8
+Select_10    = "WaitRestart"
+Value_10     = 9
+Select_11    = "WaitDisable"
+Value_11     = 10
+
+[OWH_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = char
+Attrib       = Combo
+Select_01    = "Init"
+Value_01     = 0
+Select_02    = "Scan"
+Value_02     = 1
+Select_03    = "WaitTestDevicePrepare"
+Value_03     = 2
+Select_04    = "WaitTestDevice"
+Value_04     = 3
+Select_05    = "WaitBeforeStartReset"
+Value_05     = 4
+Select_06    = "StartReset"
+Value_06     = 5
+Select_07    = "ResetDuration"
+Value_07     = 6
+Select_08    = "ResetTest"
+Value_08     = 7
+Select_09    = "Rescan"
+Value_09     = 8
+Select_10    = "WaitAfterRescan"
+Value_10     = 9
+Select_11    = "Off"
+Value_11     = 10
+
+[OWH_ActDevice]
+Group        = 5
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Bps]
+Group        = 5
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Fps]
+Group        = 5
+Name         = "Tk:Name"
+Type         = uInt
+
+
+; -----------------------------------------------
+; KALIB
+; -----------------------------------------------
+[Serial_Number]
+Group        = 6
+Common       = "Serial_Number"	
+Default      = -1
+
+[Month]
+Group        = 6
+Common       = "Month"
+
+[Year]
+Group        = 6
+Common       = "Year"
+
+[HW_Ver]
+Group        = 6
+Common       = "HW_Ver"
+
+[CGI1_P]
+Group        = 6
+Common       = "CAR_CGI1"
+Name         = "P1 CGI1 gain6"
+
+[CGI2_P]
+Group        = 6
+Common       = "CAR_CGI2"
+Name         = "P1 CGI2 gain24"
+
+[CGI3_P]
+Group        = 6
+Common       = "CAR_CGI3"
+Name         = "P1 CGI3 gain50"
+
+[CGI4_P]
+Group        = 6
+Common       = "CAR_CGI4"
+Name         = "P1 CGI4 gain100"
+
+[CAU4_P]
+Group        = 6
+Common       = "CAR_CAU4"
+Name         = "P1 CAU4 gain1"
+
+[Offset_P_G1]
+Group        = 6
+Common       = "Offset"
+Name         = "P1 Offset G1"
+
+[Offset_P_G6]
+Group        = 6
+Common       = "Offset"
+Name         = "P1 Offset G6"
+
+[Offset_P_G24]
+Group        = 6
+Common       = "Offset"
+Name         = "P1 Offset G24"
+
+[Offset_P_G50]
+Group        = 6
+Common       = "Offset"
+Name         = "P1 Offset G50"
+
+[Offset_P_G100]
+Group        = 6
+Common       = "Offset"
+Name         = "P1 Offset G100"
+
+[CGI1_P2]
+Group        = 6
+Common       = "CAR_CGI1"
+Name         = "P2 CGI1 gain6"
+
+[CGI2_P2]
+Group        = 6
+Common       = "CAR_CGI2"
+Name         = "P2 CGI2 gain24"
+
+[CGI3_P2]
+Group        = 6
+Common       = "CAR_CGI3"
+Name         = "P2 CGI3 gain50"
+
+[CGI4_P2]
+Group        = 6
+Common       = "CAR_CGI4"
+Name         = "P2 CGI4 gain100"
+
+[CAU4_P2]
+Group        = 6
+Common       = "CAR_CAU4"
+Name         = "P2 CAU4 gain1"
+
+[Offset_P2_G1]
+Group        = 6
+Common       = "Offset"
+Name         = "P2 Offset G1"
+
+[Offset_P2_G6]
+Group        = 6
+Common       = "Offset"
+Name         = "P2 Offset G6"
+
+[Offset_P2_G24]
+Group        = 6
+Common       = "Offset"
+Name         = "P2 Offset G24"
+
+[Offset_P2_G50]
+Group        = 6
+Common       = "Offset"
+Name         = "P2 Offset G50"
+
+[Offset_P2_G100]
+Group        = 6
+Common       = "Offset"
+Name         = "P2 Offset G100"
+
+[CAU0_A2]
+Group        = 6
+Common       = "CAR_CAU0"
+Name         = "U-Bat CAU0 gain6"
+
+[CAU1_A2]
+Group        = 6
+Common       = "CAR_CAU1"
+Name         = "U-Bat CAU1 gain24"
+
+[CAU2_A2]
+Group        = 6
+Common       = "CAR_CAU2"
+Name         = "U-Bat CAU2 gain50"
+
+[CAU3_A2]
+Group        = 6
+Common       = "CAR_CAU3"
+Name         = "U-Bat CAU3 gain100"
+
+[CAU0_B2]
+Group        = 6
+Common       = "CAR_CAU0"
+Name         = "U-Aux CAU0 gain6"
+
+[CAU1_B2]
+Group        = 6
+Common       = "CAR_CAU1"
+Name         = "U-Aux CAU1 gain24"
+
+[CAU2_B2]
+Group        = 6
+Common       = "CAR_CAU2"
+Name         = "U-Aux CAU2 gain50"
+
+[CAU3_B2]
+Group        = 6
+Common       = "CAR_CAU3"
+Name         = "U-Aux CAU3 gain100"
+
+[CAU5_2]
+Group        = 6
+Common       = "CAR_CAU5"
+Name         = "Temp CAU5 gain6"
+
+[Offset_U_Bat_G1]
+Group        = 6
+Common       = "Offset"
+Name         = "U-Bat Offset G1"
+
+[Offset_U_Bat_G6]
+Group        = 6
+Common       = "Offset"
+Name         = "U-Bat Offset G6"
+
+[Offset_U_Bat_G24]
+Group        = 6
+Common       = "Offset"
+Name         = "U-Bat Offset G24"
+
+[Offset_U_Bat_G50]
+Group        = 6
+Common       = "Offset"
+Name         = "U-Bat Offset G50"
+
+[Offset_U_Bat_G100]
+Group        = 6
+Common       = "Offset"
+Name         = "U-Bat Offset G100"
+
+[Offset_U_Aux_G1]
+Group        = 6
+Common       = "Offset"
+Name         = "U-Aux Offset G1"
+
+[Offset_U_Aux_G6]
+Group        = 6
+Common       = "Offset"
+Name         = "U-Aux Offset G6"
+
+[Offset_U_Aux_G24]
+Group        = 6
+Common       = "Offset"
+Name         = "U-Aux Offset G24"
+
+[Offset_U_Aux_G50]
+Group        = 6
+Common       = "Offset"
+Name         = "U-Aux Offset G50"
+
+[Offset_U_Aux_G100]
+Group        = 6
+Common       = "Offset"
+Name         = "U-Aux Offset G100"
+
+[Offset_Temp]
+Group        = 6
+Common       = "Offset"
+Name         = "Temp Offset"
+
+[Offset_P1T5]
+Group        = 6
+Common       = "Offset"
+Name         = "P1T5 Offset"
+
+[Offset_P2T5]
+Group        = 6
+Common       = "Offset"
+Name         = "P2T5 Offset"
+
+[TempInt_Enable]
+Group        = 6
+Common       = "N_PartB"
+Name         = "Tk:TempInt_Enable"
+Help         = "MeasChanEnable"
+
+[OvrValue]
+Group        = 6
+Common       = "OvrValue"
+
+[CanConfigProt]
+Group        = 6
+Common       = "CanConfigProt"
+
+[P1_Type]
+Group        = 6
+Common       = "ProbeType"
+Type         = uInt
+Name         = "Tk:ProbeType1"
+
+[P1_Calib]
+Group        = 6
+Common       = "Kalib"
+Name         = "Tk:Kalib1"
+
+[P1_Offset]
+Group        = 6
+Common       = "Offset"
+Name         = "Tk:Offset1"
+
+[P1_DefaultCalib]
+Group        = 6
+Name         = "P1_DefaultCalib"
+Type         = uInt
+
+[P2_Type]
+Group        = 6
+Common       = "ProbeType"
+Type         = uInt
+Name         = "Tk:ProbeType2"
+
+[P2_Calib]
+Group        = 6
+Common       = "Kalib"
+Name         = "Tk:Kalib2"
+
+[P2_Offset]
+Group        = 6
+Common       = "Offset"
+Name         = "Tk:Offset2"
+
+[P2_DefaultCalib]
+Group        = 6
+Name         = "P2_DefaultCalib"
+Type         = uInt
+
+[CAN_BroadcastId]
+Group        = 6
+Common       = "CAN_BroadcastId"
+Default      = 0x100
+
+

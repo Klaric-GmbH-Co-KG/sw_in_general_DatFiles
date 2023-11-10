@@ -1,0 +1,687 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01="Tk:GlobalPar"	; global parameter
+User_01=default	; access
+Ident_01="GLOBAL_PAR"
+Display_01="ViewAndModify"
+Group_02="Tk:ClientType"	; global parameter
+User_02=default	; access
+Ident_02="CLIENT_TYPE"
+Display_02="ViewOnly"
+Group_03="Tk:Variables"
+User_03=Operator
+Ident_03="VARIABLEN"
+Display_03="ViewOnly"
+CanSpace=0x30	; Belegung des Modus von Can Identifiern
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01="Tk:Restart"	; Restart
+Value_01=0x0016
+User_01=default	; Zugriffsrecht
+Help_01="Restart"
+Name_02="Tk:SaveAll"	; SavePar
+Value_02=0x0020
+User_02=operator	; Zugriffsrecht
+Help_02="SaveAll"
+Name_03="Tk:StartMeas"	; SavePar
+Value_03=0x1020
+User_03=operator	; Zugriffsrecht
+Help_03="StartStopMeas"
+Name_04="Tk:StopMeas"	; SavePar
+Value_04=0x1021
+User_04=operator	; Zugriffsrecht
+Help_04="StartStopMeas"
+Name_05="Tk:Terminate"	; SavePar
+Value_05=0x5501
+User_05=operator	; Zugriffsrecht
+Help_05="RestartTerminate"
+Name_06="Tk:Restart"	; SavePar
+Value_06=0x5502
+User_06=operator	; Zugriffsrecht
+Help_06="RestartTerminate"
+
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+[Family]
+Group        = 1
+Name         = "Family"
+Type         = string
+Size         = 24
+
+[IPv4]
+Group        = 1
+Name         = "IPv4"
+Type         = string
+Size         = 24
+
+[ServiceBroadcast]
+Group        = 1
+Name         = "ServiceBroadcast"
+Type         = string
+Size         = 24
+
+[ServiceConfig]
+Group        = 1
+Name         = "ServiceConfig"
+Type         = string
+Size         = 24
+
+[ServiceMeas]
+Group        = 1
+Name         = "ServiceMeas"
+Type         = string
+Size         = 24
+
+[Group]
+Group        = 1
+Name         = "Group"
+Type         = string
+Size         = 24
+
+
+
+; -----------------------------------------------
+; CLIENT_INFO_STRUCT
+; -----------------------------------------------
+[Option_1]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 1
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_1]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = 1
+Row          = 2
+
+[Type_1]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = 1
+Row          = 3
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_1]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = 1
+Row          = 4
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_1]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = 1
+Row          = 5
+
+[Rx_Bps_1]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = 1
+Row          = 6
+
+[Tx_Bps_1]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = 1
+Row          = 7
+
+
+[Option_2]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 2
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_2]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = 2
+Row          = 2
+
+[Type_2]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = 2
+Row          = 3
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_2]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = 2
+Row          = 4
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_2]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = 2
+Row          = 5
+
+[Rx_Bps_2]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = 2
+Row          = 6
+
+[Tx_Bps_2]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = 2
+Row          = 7
+
+
+[Option_3]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 3
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_3]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = 3
+Row          = 2
+
+[Type_3]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = 3
+Row          = 3
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_3]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = 3
+Row          = 4
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_3]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = 3
+Row          = 5
+
+[Rx_Bps_3]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = 3
+Row          = 6
+
+[Tx_Bps_3]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = 3
+Row          = 7
+
+
+[Option_4]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 4
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_4]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = 4
+Row          = 2
+
+[Type_4]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = 4
+Row          = 3
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_4]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = 4
+Row          = 4
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_4]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = 4
+Row          = 5
+
+[Rx_Bps_4]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = 4
+Row          = 6
+
+[Tx_Bps_4]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = 4
+Row          = 7
+
+[Option_5]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 5
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_5]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = 5
+Row          = 2
+
+[Type_5]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = 5
+Row          = 3
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_5]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = 5
+Row          = 4
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_5]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = 5
+Row          = 5
+
+[Rx_Bps_5]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = 5
+Row          = 6
+
+[Tx_Bps_5]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = 5
+Row          = 7
+
+
+[Option_6]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 6
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_6]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = 6
+Row          = 2
+
+[Type_6]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = 6
+Row          = 3
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_6]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = 6
+Row          = 4
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_6]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = 6
+Row          = 5
+
+[Rx_Bps_6]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = 6
+Row          = 6
+
+[Tx_Bps_6]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = 6
+Row          = 7
+
+
+[Option_7]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 7
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_7]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = 7
+Row          = 2
+
+[Type_7]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = 7
+Row          = 3
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_7]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = 7
+Row          = 4
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_7]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = 7
+Row          = 5
+
+[Rx_Bps_7]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = 7
+Row          = 6
+
+[Tx_Bps_7]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = 7
+Row          = 7
+
+
+[Option_8]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 8
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_8]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = 8
+Row          = 2
+
+[Type_8]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = 8
+Row          = 3
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_8]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = 8
+Row          = 4
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_8]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = 8
+Row          = 5
+
+[Rx_Bps_8]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = 8
+Row          = 6
+
+[Tx_Bps_8]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = 8
+Row          = 7
+
+
+
+; -----------------------------------------------
+; VARIABLEN
+; -----------------------------------------------
+
+[Error_Flags]
+Group        = 3
+Name         = "Error Flags"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "ERR Hw"
+Mask_00      = 0x00000001
+
+[Status_Flags]
+Group        = 3
+Name         = "Status Flags"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "MeasService is up"
+Mask_00      = 0x00000001
+Option_00    = "ConfigService is up"
+Mask_00      = 0x00000002
+
+[SW_Ver]
+Group        = 3
+Common       = "SW_Ver"
+Type         = uInt
+
+[HW_Ver]
+Group        = 3
+Common       = "HW_Ver"
+Type         = uInt
+
+[State]
+Group        = 3
+Name         = "MainSeq State"
+Type         = Long
+Attrib       = Select
+Select_01    = "PowerOn"
+Value_01     = 0
+Select_02    = "PowerInit"
+Value_02     = 1
+Select_03    = "Init"
+Value_03     = 2
+Select_04    = "Ready"
+Value_04     = 3
+Select_05    = "ShutDown"
+Value_05     = 4
+Select_06    = "Restart"
+Value_06     = 5
+Select_07    = "ResumeHard"
+Value_07     = 6
+
+[Rx_Bps]
+Group        = 3
+Name         = "Rx Bps"
+Type         = uLong
+
+[Tx_Bps]
+Group        = 3
+Name         = "Tx Bps"
+Type         = uLong
+
+

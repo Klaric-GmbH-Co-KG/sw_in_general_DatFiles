@@ -1,0 +1,7429 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01	= "Tk:GlobalPar"	; global parameter
+User_01		= default			; access
+Ident_01	= "GLOBAL_PAR"
+Display_01	= "ViewAndModify"
+
+Group_02	= "Tk:Ethernet"
+User_02		= default
+Ident_02	= "ETHERNET_PAR"
+Display_02	= "ViewAndModify"
+
+Group_03	= "Tk:ChannelPar"	; global parameter
+SubGroup_1="P1/P1B"
+SubGroup_2="P2/P2B"
+SubGroup_3="P3/P3B"
+SubGroup_4="P4/P4B"
+SubGroup_5="Calc"
+User_03		= default			; access
+Ident_03	="CHANNEL_DATA"
+Display_03	="ViewAndModify"
+
+Group_04	= "Tk:ProbeStat"
+User_04		= default
+Ident_04	= "PROBE_DATA"
+Display_04	= "ViewOnly"
+
+Group_05	= "Tk:Status"
+User_05		= default
+Ident_05	= "STATUS"
+Display_05	= "ViewOnly"
+
+Group_06	= "Tk:Calib"
+User_06		= System
+Ident_06	= "SYSTEM_KALIB_DATA"
+Display_06	= "ViewAndModify"
+
+Group_07	= "Tk:CalibAdc"
+User_07		= System
+Ident_07	= "ADC_CALIB"
+Display_07	= "ViewAndModify"
+
+Group_08	= "ADC_TEMP_CALIB"	; global parameter
+SubGroup_1="P1"
+SubGroup_2="P1B"
+SubGroup_3="P2"
+SubGroup_4="P2B"
+SubGroup_5="P3"
+SubGroup_6="P3B"
+SubGroup_7="P4"
+SubGroup_8="P4B"
+User_08		= System			; access
+Ident_08	="ADC_TEMP_CALIB"
+Display_08	="ViewAndModify"
+
+Group_09	= "Tk:CalibProbe"
+User_09		= System
+Ident_09	= "PROBE_CALIB"
+Display_09	= "ViewAndModify"
+
+Group_10	= "DEBUG_DATA"
+User_10		= System
+Ident_10	= "DEBUG_DATA"
+Display_10	= "ViewAndModify"
+
+Group_11	= "Tk:Socket"
+User_11		= default
+Ident_11	= "SOCKET_DATA"
+Display_11	= "ViewAndModify"
+
+CanSpace	= 0x30				; Belegung des Modus von Can Identifiern
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01		= "Tk:Reset"		; Reset
+Value_01	= 0x0010
+User_01		= default			; Zugriffsrecht
+Help_01		= "Reset"
+
+Name_02		= "Tk:Restart"		; Restart
+Value_02	= 0x0016
+User_02		= default			; Zugriffsrecht
+Help_02		= "Restart"
+
+Name_03		= "Tk:SaveAllPar"
+Value_03	= 0x23
+User_03		= operator			; Zugriffsrecht
+Help_03		= "SavePar"
+
+Name_04		= "Tk:SaveCalib"
+Value_04	= 0x24
+User_04		= System			; Zugriffsrecht
+Help_04		= "SavePar"
+
+Name_05		= "Tk:StartMeas"	; Restart
+Value_05	= 0x1020
+User_05		= operator			; Zugriffsrecht
+Help_05		="KLARI-PA4000\StartMeas"
+
+
+Name_06		= "Tk:StopMeas"	; Restart
+Value_06	= 0x1021
+User_06		= operator			; Zugriffsrecht
+Help_06		="KLARI-PA4000\StopMeas"
+
+Name_11		= "TEMP SAVE"	; Restart
+Value_11	= 0x2026
+User_11		= System			; Zugriffsrecht
+Help_11		= "TempSave"
+
+Name_11		= "TEMP RESET"	; Restart
+Value_11	= 0x2027
+User_11		= System			; Zugriffsrecht
+Help_11		= "TempReset"
+
+Name_12		= "Messung Test"	; Restart
+Value_12	= 0x2020
+User_12		= System			; Zugriffsrecht
+Help_12		= "StartTestMeas"
+
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+
+[Activation]
+Group        = 1
+Common       = "Output_Result_Zynq"
+Name         = "Tk:Activation"
+Help         = "KLARI-PA4000\Activation"
+Column       = 1
+Row          = 1
+Option_05    = "Tk:ConfigEth"
+Mask_05      = 0x00000020
+Option_06    = "Tk:ConfigCan"
+Mask_06      = 0x00000040
+
+[CAN_BaseId]
+Group        = 1
+Common       = "CAN_BaseId"
+Default      = 0x701
+Help         = "CAN_BaseId"
+Column       = 2
+Row          = 1
+
+[CAN1_Baudrate]
+Group        = 1
+Common       = "CAN_Baudrate"
+Name         = "Tk:CAN1_Baudrate"
+Type         = uChar
+Column       = +0
+Row          = +1
+
+[CAN1_TERM]
+Group        = 1
+Common       = "CAN_Term"
+Name         = "Tk:CAN1_TERM"
+Type         = uChar
+Help         = "Can_Term"
+Column       = +0
+Row          = +1
+
+[CAN2_Baudrate]
+Group        = 1
+Common       = "CAN_Baudrate"
+Name         = "Tk:CAN1_Baudrate"
+Type         = uChar
+Column       = +0
+Row          = +1
+
+[CAN2_TERM]
+Group        = 1
+Common       = "CAN_Term"
+Name         = "Tk:CAN2_TERM"
+Type         = uChar
+Help         = "Can_Term"
+Column       = +0
+Row          = +1
+
+[Common_Option]
+Group        = 1
+Common       = "Common_Channel_Option_ad7763"
+Name         = "Tk:Common_Option"
+Help         = "KLARI-PA4000\Common_Option"
+Column       = 3
+Row          = 1
+
+[Common_Speed]
+Group        = 1
+Common       = "Common_Speed_ADS1675_PA1000"
+Name         = "Tk:Name"
+Help         = "KLARI-PA4000\ADS1675_Speed"
+Column       = +0
+Row          = +1
+
+[Common_Rm]
+Group        = 1
+Common       = "zynq_Rm"
+Name         = "Tk:Common_Rm"	; Namenskonvention : Tk:ParameterId:Name
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Common_Ave]
+Group        = 1
+Common       = "Ave_uInt_Zynq_ads"
+Name         = "Tk:Common_Ave"
+Help         = "KLARI-PA4000\Average"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Common_Avc]
+Group        = 1
+Common       = "Ave_uInt_Zynq_ads"
+Name         = "Gemeinsam Mittelwert CAN"
+Help         = "KLARI-PA4000\Average"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Common_Output_Sample]
+Group        = 1
+Common       = "Output_Result_Zynq"
+Name         = "Tk:Output_Result"
+Help         = "KLARI-PA4000\Output_Sample"
+Column       = +0
+Row          = +1
+
+
+; -----------------------------------------------
+; ETHERNET_PAR
+; -----------------------------------------------
+[Group]
+Group        = 2
+Type         = string
+Size         = 16
+Name         = "Tk:Group"
+Help         = "GroupName"
+Column       = 1
+Row          = 1
+
+[DeviceName]
+Group        = 2
+Type         = string
+Size         = 16
+Name         = "Tk:DeviceName"
+Help         = "DeviceName"
+Column       = +0
+Row          = +1
+
+[TcpIp_Option]
+Group        = 2
+Name         = "Tk:TcpIp_Option"
+Help         = "KLARI-PA4000\TcpIp_Option"
+Type         = uInt
+Column       = +0
+Row          = +1
+Attrib       = Option
+Option_00    = "DHCP"
+Mask_00      = 0x00000001
+;Option_00    = "specific Broadcast"
+;Mask_00      = 0x00000002
+
+[TcpIp_Speed]
+Group        = 2
+Name         = "Tk:TcpIp_Speed"
+Help         = "KLARI-PA4000\TcpIp_Speed"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[TcpIpV4_Addr]
+Group        = 2
+Type         = string
+Size         = 16
+Name         = "Tk:TcpIpV4_Addr"
+Help         = "KLARI-PA4000\TcpIpV4_Addr"
+Column       = +0
+Row          = +1
+
+[TcpIpV4_Server]
+Group        = 2
+Type         = string
+Help         = "KLARI-PA4000\TcpIpV4_Server"
+Size         = 16
+Name         = "Tk:TcpIpV4_KlaNetDev"
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[BroadcastIP]
+Group        = 2
+Name         = "Tk:TcpIpV4_BC"
+Help         = "KLARI-PA4000\BroadcastIP"
+Type         = String
+Column       = +0
+Row          = +1
+Size         = 16
+Display      = "ViewAndModify"
+
+[BC_Port]
+Group        = 2
+Name         = "BC Port"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[KoDex_Port]
+Group        = 2
+Name         = "KoDex Port"
+Type         = uint
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[Meas_Port]
+Group        = 2
+Name         = "KlaNetDev Port"
+Type         = uint
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[SysLog_Port]
+Group        = 2
+Name         = "SysLog Port"
+Type         = uint
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[Xcp_Port]
+Group        = 2
+Name         = "Xcp Port"
+Type         = uint
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+; -----------------------------------------------
+; CHANNEL_DATA
+; -----------------------------------------------
+
+;---CHANNEL1-------------------------------------
+
+[ProbeName]
+Group        = 3
+SubGroup     = 1
+Name         = "Tk:P1_Name"
+Help         = "ChannelName"
+Type         = String
+Row          = 1
+Column       = 1
+Size         = 32
+Display      = "ViewAndModify"
+
+[P1_Option]
+Group        = 3
+SubGroup     = 1
+Common       = "Channel_Option_AC_Zynq"
+Help         = "KLARI-PA4000\Channel_Option_AC_Zynq"
+Name         = "Tk:P1_Option"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[Decimation]
+Group        = 3
+SubGroup     = 1
+Name         = "Tk:P1_Speed"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_04    = "1,0 MHz"
+Value_04     = 4
+Select_05    = " 500,0 kHz"
+Value_05     = 8
+Select_06    = " 250,0 kHz"
+Value_06     = 16
+Select_07    = " 125,0 kHz"
+Value_07     = 32
+
+[AVR_dec]
+Group        = 3
+SubGroup     = 1
+Name         = "Tk:P1_Rm"
+Help         = "RollingMean"
+Type         = uLong
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..1023
+
+[AVE_dec]
+Group        = 3
+SubGroup     = 1
+Name         = "Tk:P1_Ave"
+Help         = "KLARI-PA4000\Average"
+Type         = uLong
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..4000000
+
+[Can_dec]
+Group        = 3
+SubGroup     = 1
+Name         = "Tk:P1_Avc"
+Help         = "KLARI-PA4000\Average"
+Type         = uLong
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..4000000
+
+[Can_ODR]
+Group        = 3
+SubGroup     = 1
+Name         = "P1 Can ODR [Fps]"
+Type         = uLong
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[P1_Output_Sample]
+Group        = 3
+SubGroup     = 1
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P1_Output_Sample"
+Help         = "KLARI-PA4000\Output_Sample"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[P1_Output_Calc]
+Group        = 3
+SubGroup     = 1
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P1_Output_Calc"
+Help         = "KLARI-PA4000\Output_Calc"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+
+;---CHANNEL2-------------------------------------
+
+[ProbeName]
+Group        = 3
+SubGroup     = 1
+Name         = "Tk:P1B_Name"
+Help         = "ChannelName"
+Type         = String
+Row          = 1
+Column       = 2
+Size         = 32
+Display      = "ViewAndModify"
+
+[P1B_Option]
+Group        = 3
+SubGroup     = 1
+Common       = "Channel_Option_AC_B2_Zynq"
+Help         = "KLARI-PA4000\Channel_Option_AC_Zynq"
+Name         = "Tk:P1B_Option"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[Decimation]
+Group        = 3
+SubGroup     = 1
+Name         = "Tk:P1B_Speed"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_04    = "1,0 MHz"
+Value_04     = 4
+Select_05    = " 500,0 kHz"
+Value_05     = 8
+Select_06    = " 250,0 kHz"
+Value_06     = 16
+Select_07    = " 125,0 kHz"
+Value_07     = 32
+
+[AVR_dec]
+Group        = 3
+SubGroup     = 1
+Name         = "Tk:P1B_Rm"
+Help         = "RollingMean"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..1023
+
+[AVE_dec]
+Group        = 3
+SubGroup     = 1
+Name         = "Tk:P1B_Ave"
+Help         = "KLARI-PA4000\Average"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..4000000
+
+[Can_dec]
+Group        = 3
+SubGroup     = 1
+Name         = "Tk:P1B_Avc"
+Help         = "KLARI-PA4000\Average"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..4000000
+
+[Can_ODR]
+Group        = 3
+SubGroup     = 1
+Name         = "P1B Can ODR [Fps]"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[P1B_Output_Sample]
+Group        = 3
+SubGroup     = 1
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P1B_Output_Sample"
+Help         = "KLARI-PA4000\Output_Sample"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[P1B_Output_Calc]
+Group        = 3
+SubGroup     = 1
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P1B_Output_Calc"
+Help         = "KLARI-PA4000\Output_Calc"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+
+;---CHANNEL3-------------------------------------
+
+[ProbeName]
+Group        = 3
+SubGroup     = 2
+Name         = "Tk:P2_Name"
+Help         = "ChannelName"
+Type         = String
+Row          = 1
+Column       = 1
+Size         = 32
+Display      = "ViewAndModify"
+
+[P2_Option]
+Group        = 3
+SubGroup     = 2
+Common       = "Channel_Option_AC_Zynq"
+Help         = "KLARI-PA4000\Channel_Option_AC_Zynq"
+Name         = "Tk:P2_Option"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[Decimation]
+Group        = 3
+SubGroup     = 2
+Name         = "Tk:P2_Speed"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_04    = "1,0 MHz"
+Value_04     = 4
+Select_05    = " 500,0 kHz"
+Value_05     = 8
+Select_06    = " 250,0 kHz"
+Value_06     = 16
+Select_07    = " 125,0 kHz"
+Value_07     = 32
+
+[AVR_dec]
+Group        = 3
+SubGroup     = 2
+Name         = "Tk:P2_Rm"
+Help         = "RollingMean"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..1023
+
+[AVE_dec]
+Group        = 3
+SubGroup     = 2
+Name         = "Tk:P2_Ave"
+Help         = "KLARI-PA4000\Average"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..4000000
+
+[Can_dec]
+Group        = 3
+SubGroup     = 2
+Name         = "Tk:P2_Avc"
+Help         = "KLARI-PA4000\Average"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..4000000
+
+[Can_ODR]
+Group        = 3
+SubGroup     = 2
+Name         = "P2 Can ODR [Fps]"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[P2_Output_Sample]
+Group        = 3
+SubGroup     = 2
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P2_Output_Sample"
+Help         = "KLARI-PA4000\Output_Sample"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[P2_Output_Calc]
+Group        = 3
+SubGroup     = 2
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P2_Output_Calc"
+Help         = "KLARI-PA4000\Output_Calc"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+;---CHANNEL4-------------------------------------
+
+[ProbeName]
+Group        = 3
+SubGroup     = 2
+Name         = "Tk:P2B_Name"
+Help         = "ChannelName"
+Type         = String
+Row          = 1
+Column       = 2
+Size         = 32
+Display      = "ViewAndModify"
+
+[P2B_Option]
+Group        = 3
+SubGroup     = 2
+Common       = "Channel_Option_AC_B2_Zynq"
+Help         = "KLARI-PA4000\Channel_Option_AC_Zynq"
+Name         = "Tk:P2B_Option"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[Decimation]
+Group        = 3
+SubGroup     = 2
+Name         = "Tk:P2B_Speed"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_04    = "1,0 MHz"
+Value_04     = 4
+Select_05    = " 500,0 kHz"
+Value_05     = 8
+Select_06    = " 250,0 kHz"
+Value_06     = 16
+Select_07    = " 125,0 kHz"
+Value_07     = 32
+
+[AVR_dec]
+Group        = 3
+SubGroup     = 2
+Name         = "Tk:P2B_Rm"
+Help         = "RollingMean"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..1023
+
+[AVE_dec]
+Group        = 3
+SubGroup     = 2
+Name         = "Tk:P2B_Ave"
+Help         = "KLARI-PA4000\Average"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..4000000
+
+[Can_dec]
+Group        = 3
+SubGroup     = 2
+Name         = "Tk:P2B_Avc"
+Help         = "KLARI-PA4000\Average"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values   	 = 1..4000000
+
+[Can_ODR]
+Group        = 3
+SubGroup     = 2
+Name         = "P2B Can ODR [Fps]"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[P2B_Output_Sample]
+Group        = 3
+SubGroup     = 2
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P2B_Output_Sample"
+Help         = "KLARI-PA4000\Output_Sample"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[P2B_Output_Calc]
+Group        = 3
+SubGroup     = 2
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P2B_Output_Calc"
+Help         = "KLARI-PA4000\Output_Calc"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+;---CHANNEL5-------------------------------------
+
+[ProbeName]
+Group        = 3
+SubGroup     = 3
+Name         = "Tk:P3_Name"
+Help         = "ChannelName"
+Type         = String
+Row          = 1
+Column       = 1
+Size         = 32
+Display      = "ViewAndModify"
+
+[P3_Option]
+Group        = 3
+SubGroup     = 3
+Common       = "Channel_Option_AC_Zynq"
+Help         = "KLARI-PA4000\Channel_Option_AC_Zynq"
+Name         = "Tk:P3_Option"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[Decimation]
+Group        = 3
+SubGroup     = 3
+Name         = "Tk:P3_Speed"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_04    = "1,0 MHz"
+Value_04     = 4
+Select_05    = " 500,0 kHz"
+Value_05     = 8
+Select_06    = " 250,0 kHz"
+Value_06     = 16
+Select_07    = " 125,0 kHz"
+Value_07     = 32
+
+[AVR_dec]
+Group        = 3
+SubGroup     = 3
+Name         = "Tk:P3_Rm"
+Help         = "RollingMean"
+Type         = uLong
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..1023
+
+[AVE_dec]
+Group        = 3
+SubGroup     = 3
+Name         = "Tk:P3_Ave"
+Help         = "KLARI-PA4000\Average"
+Type         = uLong
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..4000000
+
+[Can_dec]
+Group        = 3
+SubGroup     = 3
+Name         = "Tk:P3_Avc"
+Help         = "KLARI-PA4000\Average"
+Type         = uLong
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..4000000
+
+[Can_ODR]
+Group        = 3
+SubGroup     = 3
+Name         = "P3 Can ODR [Fps]"
+Type         = uLong
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[P3_Output_Sample]
+Group        = 3
+SubGroup     = 3
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P3_Output_Sample"
+Help         = "KLARI-PA4000\Output_Sample"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[P3_Output_Calc]
+Group        = 3
+SubGroup     = 3
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P3_Output_Calc"
+Help         = "KLARI-PA4000\Output_Calc"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+;---CHANNEL6-------------------------------------
+
+[ProbeName]
+Group        = 3
+SubGroup     = 3
+Name         = "Tk:P3B_Name"
+Help         = "ChannelName"
+Type         = String
+Row          = 1
+Column       = 2
+Size         = 32
+Display      = "ViewAndModify"
+
+[P3B_Option]
+Group        = 3
+SubGroup     = 3
+Common       = "Channel_Option_AC_B2_Zynq"
+Help         = "KLARI-PA4000\Channel_Option_AC_Zynq"
+Name         = "Tk:P3B_Option"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[Decimation]
+Group        = 3
+SubGroup     = 3
+Name         = "Tk:P3B_Speed"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_04    = "1,0 MHz"
+Value_04     = 4
+Select_05    = " 500,0 kHz"
+Value_05     = 8
+Select_06    = " 250,0 kHz"
+Value_06     = 16
+Select_07    = " 125,0 kHz"
+Value_07     = 32
+
+[AVR_dec]
+Group        = 3
+SubGroup     = 3
+Name         = "Tk:P3B_Rm"
+Help         = "RollingMean"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values       = 1..1023
+
+[AVE_dec]
+Group        = 3
+SubGroup     = 3
+Name         = "Tk:P3B_Ave"
+Help         = "KLARI-PA4000\Average"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values   	 = 1..4000000
+
+[Can_dec]
+Group        = 3
+SubGroup     = 3
+Name         = "Tk:P3B_Avc"
+Help         = "KLARI-PA4000\Average"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..4000000
+
+[Can_ODR]
+Group        = 3
+SubGroup     = 3
+Name         = "P3B Can ODR [Fps]"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[P3B_Output_Sample]
+Group        = 3
+SubGroup     = 3
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P3B_Output_Sample"
+Help         = "KLARI-PA4000\Output_Sample"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[P3B_Output_Calc]
+Group        = 3
+SubGroup     = 3
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P3B_Output_Calc"
+Help         = "KLARI-PA4000\Output_Calc"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+;---CHANNEL7-------------------------------------
+
+[ProbeName]
+Group        = 3
+SubGroup     = 4
+Name         = "Tk:P4_Name"
+Help         = "ChannelName"
+Type         = String
+Row          = 1
+Column       = 1
+Size         = 32
+Display      = "ViewAndModify"
+
+[P4_Option]
+Group        = 3
+SubGroup     = 4
+Common       = "Channel_Option_AC_Zynq"
+Help         = "KLARI-PA4000\Channel_Option_AC_Zynq"
+Name         = "Tk:P4_Option"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[Decimation]
+Group        = 3
+SubGroup     = 4
+Name         = "Tk:P4_Speed"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_04    = "1,0 MHz"
+Value_04     = 4
+Select_05    = " 500,0 kHz"
+Value_05     = 8
+Select_06    = " 250,0 kHz"
+Value_06     = 16
+Select_07    = " 125,0 kHz"
+Value_07     = 32
+
+[AVR_dec]
+Group        = 3
+SubGroup     = 4
+Name         = "Tk:P4_Rm"
+Help         = "RollingMean"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values       = 1..1023
+
+[AVE_dec]
+Group        = 3
+SubGroup     = 4
+Name         = "Tk:P4_Ave"
+Help         = "KLARI-PA4000\Average"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values   	 = 1..4000000
+
+[Can_dec]
+Group        = 3
+SubGroup     = 4
+Name         = "Tk:P4_Avc"
+Help         = "KLARI-PA4000\Average"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..4000000
+
+[Can_ODR]
+Group        = 3
+SubGroup     = 4
+Name         = "P4 Can ODR [Fps]"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[P3B_Output_Sample]
+Group        = 3
+SubGroup     = 4
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P3B_Output_Sample"
+Help         = "KLARI-PA4000\Output_Sample"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[P3B_Output_Calc]
+Group        = 3
+SubGroup     = 4
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P3B_Output_Calc"
+Help         = "KLARI-PA4000\Output_Calc"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+;---CHANNEL8-------------------------------------
+
+[ProbeName]
+Group        = 3
+SubGroup     = 4
+Name         = "Tk:P4B_Name"
+Help         = "ChannelName"
+Type         = String
+Row          = 1
+Column       = 2
+Size         = 32
+Display      = "ViewAndModify"
+
+[P4B_Option]
+Group        = 3
+SubGroup     = 4
+Common       = "Channel_Option_AC_B2_Zynq"
+Help         = "KLARI-PA4000\Channel_Option_AC_Zynq"
+Name         = "Tk:P4B_Option"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[Decimation]
+Group        = 3
+SubGroup     = 4
+Name         = "Tk:P4B_Speed"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_04    = "1,0 MHz"
+Value_04     = 4
+Select_05    = " 500,0 kHz"
+Value_05     = 8
+Select_06    = " 250,0 kHz"
+Value_06     = 16
+Select_07    = " 125,0 kHz"
+Value_07     = 32
+
+[AVR_dec]
+Group        = 3
+SubGroup     = 4
+Name         = "Tk:P4B_Rm"
+Help         = "RollingMean"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values       = 1..1023
+
+[AVE_dec]
+Group        = 3
+SubGroup     = 4
+Name         = "Tk:P4B_Ave"
+Help         = "KLARI-PA4000\Average"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values   	 = 1..4000000
+
+[Can_dec]
+Group        = 3
+SubGroup     = 4
+Name         = "Tk:P4B_Avc"
+Help         = "KLARI-PA4000\Average"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Values    	 = 1..4000000
+
+[Can_ODR]
+Group        = 3
+SubGroup     = 4
+Name         = "P4B Can ODR [Fps]"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[P4B_Output_Sample]
+Group        = 3
+SubGroup     = 4
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P4B_Output_Sample"
+Help         = "KLARI-PA4000\Output_Sample"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+[P4B_Output_Calc]
+Group        = 3
+SubGroup     = 4
+Common       = "Output_Result_Zynq"
+Name         = "Tk:P4B_Output_Calc"
+Help         = "KLARI-PA4000\Output_Calc"
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Column       = +0
+Row          = +1
+
+; -----------------------------------------------
+; PROBE_DATA
+; -----------------------------------------------
+
+[P1_Type]
+Group        = 4
+Common       = "ProbeType_D"
+Name         = ""
+Type         = uInt
+Column       = 1
+Row          = 1
+
+[P1_Calib]
+Group        = 4
+Common       = "Kalib"
+Name         = "Tk:P1_Calib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P1_Offset]
+Group        = 4
+Common       = "Offset"
+Name         = "Tk:P1_Offset"
+Type         = Int
+Column       = +1
+Row          = +0
+
+[P1_DefaultCalib]
+Group        = 4
+Common       = "DefaultCalib"
+Name         = "Tk:P1_DefaultCalib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P1_Month]
+Group        = 4
+Common       = "Month"
+Name         = "Tk:Months"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P1_Year]
+Group        = 4
+Common       = "Year"
+Name         = "Tk:Years"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P1B_Type]
+Group        = 4
+Common       = "ProbeType_D"
+Name         = ""
+Type         = uInt
+Column       = 1
+Row          = 2
+
+[P1B_Calib]
+Group        = 4
+Common       = "Kalib"
+Name         = "Tk:P1B_Calib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P1B_Offset]
+Group        = 4
+Common       = "Offset"
+Name         = "Tk:P1B_Offset"
+Type         = Int
+Column       = +1
+Row          = +0
+
+[P1B_DefaultCalib]
+Group        = 4
+Common       = "DefaultCalib"
+Name         = "Tk:P1B_DefaultCalib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P1B_Month]
+Group        = 4
+Common       = "Month"
+Name         = "Tk:Months"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P1B_Year]
+Group        = 4
+Common       = "Year"
+Name         = "Tk:Years"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P2_Type]
+Group        = 4
+Common       = "ProbeType_D"
+Name         = ""
+Type         = uInt
+Column       = 1
+Row          = 3
+
+[P2_Calib]
+Group        = 4
+Common       = "Kalib"
+Name         = "Tk:P2_Calib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P2_Offset]
+Group        = 4
+Common       = "Offset"
+Name         = "Tk:P2_Offset"
+Type         = Int
+Column       = +1
+Row          = +0
+
+[P2_DefaultCalib]
+Group        = 4
+Common       = "DefaultCalib"
+Name         = "Tk:P2_DefaultCalib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P2_Month]
+Group        = 4
+Common       = "Month"
+Name         = "Tk:Months"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P2_Year]
+Group        = 4
+Common       = "Year"
+Name         = "Tk:Years"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P2B_Type]
+Group        = 4
+Common       = "ProbeType_D"
+Name         = ""
+Type         = uInt
+Column       = 1
+Row          = 4
+
+[P2B_Calib]
+Group        = 4
+Common       = "Kalib"
+Name         = "Tk:P2B_Calib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P2B_Offset]
+Group        = 4
+Common       = "Offset"
+Name         = "Tk:P2B_Offset"
+Type         = Int
+Column       = +1
+Row          = +0
+
+[P2B_DefaultCalib]
+Group        = 4
+Common       = "DefaultCalib"
+Name         = "Tk:P2B_DefaultCalib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P2B_Month]
+Group        = 4
+Common       = "Month"
+Name         = "Tk:Months"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P2B_Year]
+Group        = 4
+Common       = "Year"
+Name         = "Tk:Years"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P3_Type]
+Group        = 4
+Common       = "ProbeType_D"
+Name         = ""
+Type         = uInt
+Column       = 1
+Row          = 5
+
+[P3_Calib]
+Group        = 4
+Common       = "Kalib"
+Name         = "Tk:P3_Calib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P3_Offset]
+Group        = 4
+Common       = "Offset"
+Name         = "Tk:P3_Offset"
+Type         = Int
+Column       = +1
+Row          = +0
+
+[P3_DefaultCalib]
+Group        = 4
+Common       = "DefaultCalib"
+Name         = "Tk:P3_DefaultCalib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P3_Month]
+Group        = 4
+Common       = "Month"
+Name         = "Tk:Months"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P3_Year]
+Group        = 4
+Common       = "Year"
+Name         = "Tk:Years"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P3B_Type]
+Group        = 4
+Common       = "ProbeType_D"
+Name         = ""
+Type         = uInt
+Column       = 1
+Row          = 6
+
+[P3B_Calib]
+Group        = 4
+Common       = "Kalib"
+Name         = "Tk:P3B_Calib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P3B_Offset]
+Group        = 4
+Common       = "Offset"
+Name         = "Tk:P3B_Offset"
+Type         = Int
+Column       = +1
+Row          = +0
+
+[P3B_DefaultCalib]
+Group        = 4
+Common       = "DefaultCalib"
+Name         = "Tk:P3B_DefaultCalib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P3B_Month]
+Group        = 4
+Common       = "Month"
+Name         = "Tk:Months"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P3B_Year]
+Group        = 4
+Common       = "Year"
+Name         = "Tk:Years"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P4_Type]
+Group        = 4
+Common       = "ProbeType_D"
+Name         = ""
+Type         = uInt
+Column       = 1
+Row          = 7
+
+[P4_Calib]
+Group        = 4
+Common       = "Kalib"
+Name         = "Tk:P4_Calib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P4_Offset]
+Group        = 4
+Common       = "Offset"
+Name         = "Tk:P4_Offset"
+Type         = Int
+Column       = +1
+Row          = +0
+
+[P4_DefaultCalib]
+Group        = 4
+Common       = "DefaultCalib"
+Name         = "Tk:P4_DefaultCalib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P4_Month]
+Group        = 4
+Common       = "Month"
+Name         = "Tk:Months"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P4_Year]
+Group        = 4
+Common       = "Year"
+Name         = "Tk:Years"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P4B_Type]
+Group        = 4
+Common       = "ProbeType_D"
+Name         = ""
+Type         = uInt
+Column       = 1
+Row          = 8
+
+[P4B_Calib]
+Group        = 4
+Common       = "Kalib"
+Name         = "Tk:P4B_Calib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P4B_Offset]
+Group        = 4
+Common       = "Offset"
+Name         = "Tk:P4B_Offset"
+Type         = Int
+Column       = +1
+Row          = +0
+
+[P4B_DefaultCalib]
+Group        = 4
+Common       = "DefaultCalib"
+Name         = "Tk:P4B_DefaultCalib"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P4B_Month]
+Group        = 4
+Common       = "Month"
+Name         = "Tk:Months"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+[P4B_Year]
+Group        = 4
+Common       = "Year"
+Name         = "Tk:Years"
+Type         = uInt
+Column       = +1
+Row          = +0
+
+; -----------------------------------------------
+; STATUS
+; -----------------------------------------------
+
+[Error_Flags]
+Group        = 5
+Name         = "Error Flags"
+Type         = uLong
+Row          = 1
+Column       = 1
+Display      = "ViewOnly"
+Attrib       = Option
+Option_00    = "ERR_HW"
+Mask_00      = 0x00000001
+Option_01    = "ERR_EE"
+Mask_01      = 0x00000002
+Option_02    = "ERR_MEMORY"
+Mask_02      = 0x00000004
+Option_03    = "ERR_KLARIC_SERVER"
+Mask_03      = 0x00000008
+Option_04    = "ERR_NETDEV_OVR"
+Mask_04      = 0x00000010
+Option_05    = "ERR_MEAS_OVR"
+Mask_05      = 0x00000020
+Option_06    = "ERR_DEFAULT"
+Mask_06      = 0x00008000
+Option_07    = "ERR_IRQ_SYSTEM"
+Mask_07      = 0x00010000
+Option_08    = "ERR_DMA_DEVICE"
+Mask_08      = 0x00020000
+Option_09    = "ERR_SCU_TIMER"
+Mask_09      = 0x00040000
+Option_10    = "ERR_AXI_TIMER"
+Mask_10      = 0x00080000
+Option_11    = "ERR_CAN0_DEVICE"
+Mask_11      = 0x00100000
+Option_12    = "ERR_CAN1_DEVICE"
+Mask_12      = 0x00200000
+Option_13    = "ERR_UART_DEVICE"
+Mask_13      = 0x00400000
+Option_14    = "ERR_ETH_DEVICE"
+Mask_14      = 0x00800000
+Option_15    = "ERR_XCP_OVR"
+Mask_15      = 0x01000000
+Option_16    = "ERR_ADC_DEVICE"
+Mask_16      = 0x02000000
+Option_16    = "ERR_FLASH_UP"
+Mask_16      = 0x04000000
+Option_16    = "ERR_AXI_XCP"
+Mask_16      = 0x08000000
+Option_16    = "ERR_DEFAULT_CALIB"
+Mask_16      = 0x80000000
+
+[Error_Can_Flags]
+Group        = 5
+Name         = "Can Error Flags"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+Attrib       = Option
+Option_00    = "ACK ERROR"
+Mask_00      = 0x00000001
+Option_01    = "Bit Error"
+Mask_01      = 0x00000002
+Option_02    = "Stuff Error"
+Mask_02      = 0x00000004
+Option_03    = "Form Error"
+Mask_03      = 0x00000008
+Option_04    = "CRC Error"
+Mask_04      = 0x00000010
+Option_05    = "Bus off Status"
+Mask_05      = 0x00000020
+Option_06    = "RX FIFO Overflow"
+Mask_06      = 0x00000040
+Option_07    = "RX FIFO Underflow"
+Mask_07      = 0x00000080
+Option_08    = "TX High Priority Buffer Full"
+Mask_08      = 0x00000100
+Option_09    = "TX FIFO Full"
+Mask_09      = 0x00000200
+Option_10    = "Wake up"
+Mask_10      = 0x00000400
+Option_11    = "sleep mode"
+Mask_11      = 0x00000800
+Option_12    = "Lost bus arbitration"
+Mask_12      = 0x00001000
+
+[Xcp_Flags]
+Group        = 5
+Name         = "Xcp Flags"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewOnly"
+Attrib       = Option
+Option_00    = "XCP_READY"
+Mask_00      = 0x00000001
+Option_01    = "XCP_MEAS_READY"
+Mask_01      = 0x00000002
+
+[Status_Flags]
+Group        = 5
+Name         = "Status Flags"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+Attrib       = Option
+Option_00    = "STATUS IRQ SYSTEM"
+Mask_00      = 0x00000001
+Option_01    = "STATUS DMA TCP"
+Mask_01      = 0x00000002
+Option_02    = "STATUS SCU TIMER"
+Mask_02      = 0x00000004
+Option_03    = "STATUS AXI TIMER"
+Mask_03      = 0x00000008
+Option_04    = "STATUS CAN 0"
+Mask_04      = 0x00000010
+Option_05    = "STATUS CAN 1"
+Mask_05      = 0x00000020
+Option_06    = "STATUS UART 0"
+Mask_06      = 0x00000040
+Option_06    = "STATUS UART 1"
+Mask_06      = 0x00000080
+Option_07    = "STATUS ETHERNET"
+Mask_07      = 0x00000100
+Option_08    = "STATUS KODEX UART"
+Mask_08      = 0x00000200
+Option_09    = "STATUS KODEX ETH"
+Mask_09      = 0x00000400
+Option_10    = "STATUS SYSLOG UART"
+Mask_10      = 0x00000800
+Option_11    = "STATUS SYSLOG ETHERNET"
+Mask_11      = 0x00001000
+Option_11    = "STATUS FLASH UP"
+Mask_11      = 0x00002000
+Option_11    = "STATUS FLASH LOAD"
+Mask_11      = 0x00004000
+Option_11    = "STATUS AXI XCP"
+Mask_11      = 0x00008000
+Option_11    = "STATUS DMA XCP"
+Mask_11      = 0x00010000
+Option_12    = "STATUS ETHERNET READY"
+Mask_12      = 0x00020000
+Option_13    = "STATUS ETHERNET LINK UP"
+Mask_13      = 0x00040000
+Option_14    = "STATUS ETHERNET LINK NEGOTIATING"
+Mask_14      = 0x00080000
+Option_16    = "STATUS_MEAS_IS_RUNNING"
+Mask_16      = 0x00100000
+Option_17    = "STATUS_XCP_DAQ"
+Mask_17      = 0x00200000
+Option_18    = "STATUS_XCP_CONNECTED"
+Mask_18      = 0x00400000
+Option_19    = "STATUS_XCP"
+Mask_19      = 0x00800000
+Option_20   = "STAUTS_ADC"
+Mask_20      = 0x01000000
+Option_21    = "STAUTS_ADC1"
+Mask_21      = 0x02000000
+Option_22    = "STAUTS_ADC2"
+Mask_22      = 0x04000000
+Option_23    = "STAUTS_ADC3"
+Mask_23      = 0x08000000
+Option_24    = "STAUTS_ADC4"
+Mask_24      = 0x10000000
+Option_25    = "STAUTS_MEAS_CONNECTED"
+Mask_25      = 0x20000000
+
+[SW_Ver]
+Group        = 5
+Common       = "SW_Ver"
+Column       = +1
+Row          = +0
+
+[HW_Ver]
+Group        = 5
+Common       = "HW_Ver"
+Column       = +0
+Row          = +1
+
+[KoDeX_Instances]
+Group        = 5
+Name         = "Tk:Name"
+Type         = long
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[Probe_Channel]
+Group        = 5
+Type         = long
+Common       = "Probe_Channel"
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[Probe_Value]
+Group        = 5
+Common       = "Probe_Value"
+Type         = long
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[XCP_SCOUNT]
+Group        = 5
+Name         = "XCP min sample cnt"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[XCP_VAL_TH]
+Group        = 5
+Name         = "XCP Threshold"
+Type         = Long
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[MainSeq_State]
+Group        = 5
+Name         = "MainSeq State"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_00    = "Init"
+Value_00     = 1
+Select_01    = "PON"
+Value_01     = 2
+Select_02    = "Init Flash"
+Value_02     = 3
+Select_02    = "PON wait"
+Value_02     = 4
+Select_03    = "UART Kodex Wait"
+Value_03     = 5
+Select_04    = "UART Syslog Wait"
+Value_04     = 6
+Select_05    = "Syslog Wait"
+Value_05     = 7
+Select_06    = "Init ADCs"
+Value_06     = 8
+Select_07    = "Init Eth"
+Value_07     = 9
+Select_09    = "Finish startup"
+Value_09     = 10
+Select_10    = "Ready"
+Value_10     = 11
+Select_11    = "Restart"
+Value_11     = 12
+Select_12    = "Restart Wait"
+Value_12     = 13
+Select_13    = "Resume"
+Value_13     = 14
+Select_14    = "Stop"
+Value_14     = 15
+Select_16    = "Error"
+Value_16     = 16
+Select_17    = "Num"
+Value_17     = 17
+
+[SysLog_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "Ready"
+Value_02     = 2
+Select_05    = "Stop"
+Value_05     = 3
+
+[UartKoDeX_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "Ready"
+Value_02     = 2
+Select_03    = "Restart"
+Value_03     = 3
+Select_04    = "Resume"
+Value_04     = 4
+Select_05    = "Stop"
+Value_05     = 5
+
+[UartSysLog_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "Ready"
+Value_02     = 2
+Select_03    = "Restart"
+Value_03     = 3
+Select_04    = "Resume"
+Value_04     = 4
+Select_05    = "Stop"
+Value_05     = 5
+
+[Eth_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +1
+Row          = +0
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "DHCP Start"
+Value_02     = 2
+Select_03    = "DHCP wait"
+Value_03     = 3
+Select_04    = "Setup"
+Value_04     = 4
+Select_05    = "NetUp"
+Value_05     = 5
+Select_06    = "Close"
+Value_06     = 6
+Select_07    = "Restart"
+Value_07     = 7
+Select_08    = "Resume"
+Value_08     = 8
+Select_09    = "Stop"
+Value_09     = 9
+Select_10    = "Num"
+Value_10    = 10
+
+[EthKoDex_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "READY"
+Value_02     = 2
+Select_03    = "STOP"
+Value_03     = 3
+Select_04    = "RESUME"
+Value_04     = 4
+Select_04    = "ERROR"
+Value_04     = 5
+Select_05    = "CLOSE"
+Value_05     = 6
+Select_08    = "NUM"
+Value_08     = 7
+
+[EthSysLog_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "Setup"
+Value_02     = 2
+Select_04    = "Ready"
+Value_04     = 3
+Select_05    = "Stop"
+Value_05     = 4
+Select_06    = "RESUME"
+Value_06     = 5
+Select_07    = "ERROR"
+Value_07     = 6
+Select_07    = "CLOSE"
+Value_07     = 7
+Select_08    = "NUM"
+Value_08     = 8
+
+[Broadcast_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "SETUP"
+Value_02     = 2
+Select_03    = "WAIT"
+Value_03     = 3
+Select_04    = "CONNECTING"
+Value_04     = 4
+Select_04    = "READY"
+Value_04     = 5
+Select_05    = "STOP"
+Value_05     = 6
+Select_06    = "RESUME"
+Value_06     = 7
+Select_07    = "ERROR"
+Value_07     = 8
+Select_07    = "CLOSE"
+Value_07     = 9
+Select_08    = "NUM"
+Value_08     = 10
+
+[Broadcast_TxBps]
+Group        = 5
+Name         = "BC_TxBps"
+Type         = ulong
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[Broadcast_RxBps]
+Group        = 5
+Name         = "BC_RxBps"
+Type         = ulong
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[Xcp_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = long
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "READY"
+Value_02     = 2
+Select_03    = "STOP"
+Value_03     = 3
+Select_04    = "RESUME"
+Value_04     = 4
+Select_04    = "NUM"
+Value_04     = 5
+
+[Xcp_TxBps]
+Group        = 5
+Name         = "Xcp_TxBps"
+Type         = ulong
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[Xcp_RxBps]
+Group        = 5
+Name         = "Xcp_RxBps"
+Type         = ulong
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[Meas_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = long
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "void"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "Setup"
+Value_02     = 2
+Select_03    = "Wait"
+Value_03     = 3
+Select_04    = "Connect"
+Value_04     = 4
+Select_04    = "Connect wait"
+Value_04     = 5
+
+[Meas_TxBps]
+Group        = 5
+Name         = "Meas_TxBps"
+Type         = ulong
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[Meas_RxBps]
+Group        = 5
+Name         = "Meas_RxBps"
+Type         = ulong
+Column       = +0
+Row          = +1
+Display      = "ViewOnly"
+
+[AD7763_0_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +1
+Row          = +0
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "POWERUP"
+Value_02     = 2
+Select_03    = "RESET"
+Value_03     = 3
+Select_04    = "RESET_WAIT"
+Value_04     = 4
+Select_05    = "SETUP"
+Value_05     = 5
+Select_05    = "WAIT"
+Value_05     = 6
+Select_06    = "READY"
+Value_06     = 7
+Select_07    = "SAVE CONFIG"
+Value_07     = 8
+Select_08    = "SAVE CONFIG WAIT"
+Value_08     = 9
+Select_09    = "LOAD CONFIG"
+Value_09     = 10
+Select_10    = "STOP"
+Value_10     = 11
+Select_11    = "NUM"
+Value_11     = 12
+
+[AD7763_1_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "POWERUP"
+Value_02     = 2
+Select_03    = "RESET"
+Value_03     = 3
+Select_04    = "RESET_WAIT"
+Value_04     = 4
+Select_05    = "SETUP"
+Value_05     = 5
+Select_05    = "WAIT"
+Value_05     = 6
+Select_06    = "READY"
+Value_06     = 7
+Select_07    = "SAVE CONFIG"
+Value_07     = 8
+Select_08    = "SAVE CONFIG WAIT"
+Value_08     = 9
+Select_09    = "LOAD CONFIG"
+Value_09     = 10
+Select_10    = "STOP"
+Value_10     = 11
+Select_11    = "NUM"
+Value_11     = 12
+
+[AD7763_2_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "POWERUP"
+Value_02     = 2
+Select_03    = "RESET"
+Value_03     = 3
+Select_04    = "RESET_WAIT"
+Value_04     = 4
+Select_05    = "SETUP"
+Value_05     = 5
+Select_05    = "WAIT"
+Value_05     = 6
+Select_06    = "READY"
+Value_06     = 7
+Select_07    = "SAVE CONFIG"
+Value_07     = 8
+Select_08    = "SAVE CONFIG WAIT"
+Value_08     = 9
+Select_09    = "LOAD CONFIG"
+Value_09     = 10
+Select_10    = "STOP"
+Value_10     = 11
+Select_11    = "NUM"
+Value_11     = 12
+
+[AD7763_3_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "POWERUP"
+Value_02     = 2
+Select_03    = "RESET"
+Value_03     = 3
+Select_04    = "RESET_WAIT"
+Value_04     = 4
+Select_05    = "SETUP"
+Value_05     = 5
+Select_05    = "WAIT"
+Value_05     = 6
+Select_06    = "READY"
+Value_06     = 7
+Select_07    = "SAVE CONFIG"
+Value_07     = 8
+Select_08    = "SAVE CONFIG WAIT"
+Value_08     = 9
+Select_09    = "LOAD CONFIG"
+Value_09     = 10
+Select_10    = "STOP"
+Value_10     = 11
+Select_11    = "NUM"
+Value_11     = 12
+
+[AD7763_4_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "POWERUP"
+Value_02     = 2
+Select_03    = "RESET"
+Value_03     = 3
+Select_04    = "RESET_WAIT"
+Value_04     = 4
+Select_05    = "SETUP"
+Value_05     = 5
+Select_05    = "WAIT"
+Value_05     = 6
+Select_06    = "READY"
+Value_06     = 7
+Select_07    = "SAVE CONFIG"
+Value_07     = 8
+Select_08    = "SAVE CONFIG WAIT"
+Value_08     = 9
+Select_09    = "LOAD CONFIG"
+Value_09     = 10
+Select_10    = "STOP"
+Value_10     = 11
+Select_11    = "NUM"
+Value_11     = 12
+
+[AD7763_5_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "POWERUP"
+Value_02     = 2
+Select_03    = "RESET"
+Value_03     = 3
+Select_04    = "RESET_WAIT"
+Value_04     = 4
+Select_05    = "SETUP"
+Value_05     = 5
+Select_05    = "WAIT"
+Value_05     = 6
+Select_06    = "READY"
+Value_06     = 7
+Select_07    = "SAVE CONFIG"
+Value_07     = 8
+Select_08    = "SAVE CONFIG WAIT"
+Value_08     = 9
+Select_09    = "LOAD CONFIG"
+Value_09     = 10
+Select_10    = "STOP"
+Value_10     = 11
+Select_11    = "NUM"
+Value_11     = 12
+
+[AD7763_6_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "POWERUP"
+Value_02     = 2
+Select_03    = "RESET"
+Value_03     = 3
+Select_04    = "RESET_WAIT"
+Value_04     = 4
+Select_05    = "SETUP"
+Value_05     = 5
+Select_05    = "WAIT"
+Value_05     = 6
+Select_06    = "READY"
+Value_06     = 7
+Select_07    = "SAVE CONFIG"
+Value_07     = 8
+Select_08    = "SAVE CONFIG WAIT"
+Value_08     = 9
+Select_09    = "LOAD CONFIG"
+Value_09     = 10
+Select_10    = "STOP"
+Value_10     = 11
+Select_11    = "NUM"
+Value_11     = 12
+
+[AD7763_7_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "POWERUP"
+Value_02     = 2
+Select_03    = "RESET"
+Value_03     = 3
+Select_04    = "RESET_WAIT"
+Value_04     = 4
+Select_05    = "SETUP"
+Value_05     = 5
+Select_05    = "WAIT"
+Value_05     = 6
+Select_06    = "READY"
+Value_06     = 7
+Select_07    = "SAVE CONFIG"
+Value_07     = 8
+Select_08    = "SAVE CONFIG WAIT"
+Value_08     = 9
+Select_09    = "LOAD CONFIG"
+Value_09     = 10
+Select_10    = "STOP"
+Value_10     = 11
+Select_11    = "NUM"
+Value_11     = 12
+
+[ADCService_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "INIT"
+Value_01     = 1
+Select_02    = "CONFIG"
+Value_02     = 2
+Select_03    = "CONFIG WAIT"
+Value_03     = 3
+Select_03    = "READY"
+Value_03     = 4
+
+[MeasHandler_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "Ready"
+Value_02     = 2
+Select_03    = "Stop"
+Value_03     = 3
+Select_04    = "Num"
+Value_04     = 4
+
+[Can0_State]
+Group        = 5
+Name         = "Can0_State"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "SETUP"
+Value_02     = 2
+Select_03    = "WAIT"
+Value_03     = 3
+Select_04    = "CONNECT"
+Value_04     = 4
+Select_05    = "CONNECT_WAIT"
+Value_05     = 5
+Select_06    = "AUTH"
+Value_06     = 6
+Select_07    = "READY"
+Value_07     = 7
+Select_08    = "RESUME"
+Value_08     = 8
+Select_09    = "ERROR"
+Value_09     = 9
+Select_10    = "CLOSE"
+Value_10     = 10
+Select_11    = "CLOSED"
+Value_11     = 11
+Select_11    = "HOLD"
+Value_11     = 12
+Select_11    = "SETUP_WAIT"
+Value_11     = 13
+Select_11    = "STOP"
+Value_11     = 14
+Select_11    = "NUM"
+Value_11     = 15
+
+[Can1_State]
+Group        = 5
+Name         = "Can1_State"
+Type         = int
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "SETUP"
+Value_02     = 2
+Select_03    = "WAIT"
+Value_03     = 3
+Select_04    = "CONNECT"
+Value_04     = 4
+Select_05    = "CONNECT_WAIT"
+Value_05     = 5
+Select_06    = "AUTH"
+Value_06     = 6
+Select_07    = "READY"
+Value_07     = 7
+Select_08    = "RESUME"
+Value_08     = 8
+Select_09    = "ERROR"
+Value_09     = 9
+Select_10    = "CLOSE"
+Value_10     = 10
+Select_11    = "CLOSED"
+Value_11     = 11
+Select_11    = "HOLD"
+Value_11     = 12
+Select_11    = "SETUP_WAIT"
+Value_11     = 13
+Select_11    = "STOP"
+Value_11     = 14
+Select_11    = "NUM"
+Value_11     = 15
+
+[NetDev1_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = long
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "Init_wait"
+Value_02     = 2
+Select_03    = "Connect"
+Value_03     = 3
+Select_03    = "Connect_wait"
+Value_03     = 4
+Select_04    = "Wait"
+Value_04     = 5
+Select_04    = "Activate"
+Value_04     = 6
+Select_04    = "Ready"
+Value_04     = 7
+Select_04    = "Stop"
+Value_04     = 8
+Select_04    = "Resume"
+Value_04     = 9
+Select_04    = "Error"
+Value_04     = 10
+Select_04    = "num"
+Value_04     = 11
+
+[NetDev2_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = long
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "Init_wait"
+Value_02     = 2
+Select_03    = "Connect"
+Value_03     = 3
+Select_03    = "Connect_wait"
+Value_03     = 4
+Select_04    = "Wait"
+Value_04     = 5
+Select_04    = "Activate"
+Value_04     = 6
+Select_04    = "Ready"
+Value_04     = 7
+Select_04    = "Stop"
+Value_04     = 8
+Select_04    = "Resume"
+Value_04     = 9
+Select_04    = "Error"
+Value_04     = 10
+Select_04    = "num"
+Value_04     = 11
+
+[NetDev3_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = long
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "Init_wait"
+Value_02     = 2
+Select_03    = "Connect"
+Value_03     = 3
+Select_03    = "Connect_wait"
+Value_03     = 4
+Select_04    = "Wait"
+Value_04     = 5
+Select_04    = "Activate"
+Value_04     = 6
+Select_04    = "Ready"
+Value_04     = 7
+Select_04    = "Stop"
+Value_04     = 8
+Select_04    = "Resume"
+Value_04     = 9
+Select_04    = "Error"
+Value_04     = 10
+Select_04    = "num"
+Value_04     = 11
+
+[NetDev4_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = long
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "VOID"
+Value_00     = 0
+Select_01    = "Init"
+Value_01     = 1
+Select_02    = "Init_wait"
+Value_02     = 2
+Select_03    = "Connect"
+Value_03     = 3
+Select_03    = "Connect_wait"
+Value_03     = 4
+Select_04    = "Wait"
+Value_04     = 5
+Select_04    = "Activate"
+Value_04     = 6
+Select_04    = "Ready"
+Value_04     = 7
+Select_04    = "Stop"
+Value_04     = 8
+Select_04    = "Resume"
+Value_04     = 9
+Select_04    = "Error"
+Value_04     = 10
+Select_04    = "num"
+Value_04     = 11
+
+[AdcAutoCalib_State]
+Group        = 5
+Name         = "Tk:Name"
+Type         = long
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "inactive"
+Value_00     = 0
+Select_01    = "active"
+Value_01     = 1
+
+; -----------------------------------------------
+; SYSTEM_KALIB_DATA
+; -----------------------------------------------
+[Serial_Number]
+Group        = 6
+Name         = "Serial_Number"	
+Type         = int
+Row          = 1
+Column       = 1
+Default      = -1
+
+[Month]
+Group        = 6
+Name       = "Month"
+Type         = uChar
+Row          = 2
+Column       = 1
+
+[Year]
+Group        = 6
+Name       = "Year"
+Type         = uChar
+Row          = 3
+Column       = 1
+
+[Enable_Flags]
+Group        = 6
+Name         = "Enable Flags"
+Type         = uLong
+Row          = 1
+Column       = 2
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "ENABLE_UART1"
+Mask_00      = 0x00000001
+Option_01    = "ENABLE_UART2"
+Mask_01      = 0x00000002
+Option_02    = "ENABLE_CAN1"
+Mask_02      = 0x00000004
+Option_03    = "ENABLE_CAN2"
+Mask_03      = 0x00000008
+Option_04    = "ENABLE_ETH"
+Mask_04      = 0x00000010
+Option_05    = "ENABLE_USB"
+Mask_05      = 0x00000020
+Option_06    = "ENABLE_ADC7763_1"
+Mask_06      = 0x00000040
+Option_07    = "ENABLE_ADC7763_2"
+Mask_07      = 0x00000080
+Option_08    = "ENABLE_ADC7763_3"
+Mask_08      = 0x00000100
+Option_09    = "ENABLE_ADC7763_4"
+Mask_09      = 0x00000200
+Option_06    = "ENABLE_ADC7763_5"
+Mask_06      = 0x00000400
+Option_07    = "ENABLE_ADC7763_6"
+Mask_07      = 0x00000800
+Option_08    = "ENABLE_ADC7763_7"
+Mask_08      = 0x00001000
+Option_09    = "ENABLE_ADC7763_8"
+Mask_09      = 0x00002000
+Option_10    = "ENABLE_XCP"
+Mask_10      = 0x00004000
+Option_11    = "ENABLE_TS_SUB_MS"
+Mask_11      = 0x00008000
+Option_12    = "ENABLE_KODEX_UART"
+Mask_12      = 0x00010000
+Option_13    = "ENABLE_SYSLOG_UART"
+Mask_13      = 0x00020000
+Option_14    = "ENABLE_KODEX_ETH"
+Mask_14      = 0x00080000
+Option_15    = "ENABLE_SYSLOG_ETH"
+Mask_15      = 0x00040000
+Option_16    = "ENABLE_MEAS_ETH"
+Mask_16      = 0x00100000
+Option_17    = "ENABLE_BC_ETH"
+Mask_17      = 0x00200000
+Option_18    = "ENABLE_KLANETDEV"
+Mask_18      = 0x00400000
+Option_19    = "ENABLE_XCP_ETAS"
+Mask_19      = 0x00800000
+Option_20    = "ENABLE_DHCP"
+Mask_20      = 0x01000000
+Option_21    = "ENABLE_KODEX_CAN"
+Mask_21      = 0x02000000
+Option_22    = "ENABLE_CAN_AUTOBAUD"
+Mask_22      = 0x04000000
+Option_23    = "ENABLE_XCP_STIEGELE"
+Mask_23      = 0x08000000
+Option_24    = "ENABLE_TEMP_OFFSET_CORR"
+Mask_24      = 0x10000000
+Option_25    = "ENABLE_XCP_BLOCK"
+Mask_25      = 0x20000000
+Option_25    = "ENABLE_OWH"
+Mask_25      = 0x40000000
+Option_25    = "ENABLE_ADCAUTOCALIB"
+Mask_25      = 0x80000000
+
+; -----------------------------------------------
+; ADC_CALIB
+; -----------------------------------------------
+
+
+;---ADC1-----------------------------------------
+
+[ADC Calib Num]
+Group        = 7
+Name         = "ADC1 Calib Value"
+Type         = uInt
+Row          = 1
+Column       = 1
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 7
+Name         = "ADC1 default Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 7
+Name         = "ADC1 Channel Offset"
+Display      = "ViewAndModify"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[ADC_HW_GAIN]
+Group        = 7
+Name         = "ADC1 HW Gain"
+Display      = "ViewAndModify"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[ADC_EN_FLAGS]
+Group        = 7
+Name         = "ADC1 EN FLAGS"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "FPATH"
+Mask_00      = 0x0001
+Option_01    = "LL_CONFIG"
+Mask_01      = 0x0002
+Option_02    = "PWDN"
+Mask_02      = 0x0004
+Option_04    = "invert"
+Mask_04      = 0x0010
+Option_04    = "Temp_EN"
+Mask_04      = 0x0020
+
+
+;---ADC2-----------------------------------------
+
+[ADC Calib Num]
+Group        = 7
+Name         = "ADC2 Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 7
+Name         = "ADC2 default Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 7
+Name         = "ADC2 Channel Offset"
+Display      = "ViewAndModify"
+Type         = Long
+Column       = +0
+Row          = +1
+
+
+[ADC_HW_GAIN]
+Group        = 7
+Name         = "ADC2 HW Gain"
+Display      = "ViewAndModify"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[ADC_EN_FLAGS]
+Group        = 7
+Name         = "ADC2 EN FLAGS"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "FPATH"
+Mask_00      = 0x0001
+Option_01    = "LL_CONFIG"
+Mask_01      = 0x0002
+Option_02    = "PWDN"
+Mask_02      = 0x0004
+Option_04    = "invert"
+Mask_04      = 0x0010
+Option_04    = "Temp_EN"
+Mask_04      = 0x0020
+
+;---ADC3-----------------------------------------
+
+[ADC Calib Num]
+Group        = 7
+Name         = "ADC3 Calib Value"
+Type         = uInt
+Row          = 1
+Column       = 2
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 7
+Name         = "ADC3 default Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 7
+Name         = "ADC3 Channel Offset"
+Display      = "ViewAndModify"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[ADC_HW_GAIN]
+Group        = 7
+Name         = "ADC3 HW Gain"
+Display      = "ViewAndModify"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[ADC_EN_FLAGS]
+Group        = 7
+Name         = "ADC3 EN FLAGS"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "FPATH"
+Mask_00      = 0x0001
+Option_01    = "LL_CONFIG"
+Mask_01      = 0x0002
+Option_02    = "PWDN"
+Mask_02      = 0x0004
+Option_04    = "invert"
+Mask_04      = 0x0010
+Option_04    = "Temp_EN"
+Mask_04      = 0x0020
+
+;---ADC4-----------------------------------------
+
+[ADC Calib Num]
+Group        = 7
+Name         = "ADC4 Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 7
+Name         = "ADC4 default Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 7
+Name         = "ADC4 Channel Offset"
+Display      = "ViewAndModify"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[ADC_HW_GAIN]
+Group        = 7
+Name         = "ADC4 HW Gain"
+Display      = "ViewAndModify"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[ADC_EN_FLAGS]
+Group        = 7
+Name         = "ADC4 EN FLAGS"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "FPATH"
+Mask_00      = 0x0001
+Option_01    = "LL_CONFIG"
+Mask_01      = 0x0002
+Option_02    = "PWDN"
+Mask_02      = 0x0004
+Option_04    = "invert"
+Mask_04      = 0x0010
+Option_04    = "Temp_EN"
+Mask_04      = 0x0020
+
+;---ADC5-----------------------------------------
+
+[ADC Calib Num]
+Group        = 7
+Name         = "ADC5 Calib Value"
+Type         = uInt
+Row          = 1
+Column       = 3
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 7
+Name         = "ADC5 default Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 7
+Name         = "ADC5 Channel Offset"
+Display      = "ViewAndModify"
+Type         = Long
+Row          = +1
+Column       = +0
+
+[ADC_HW_GAIN]
+Group        = 7
+Name         = "ADC5 HW Gain"
+Display      = "ViewAndModify"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[ADC_EN_FLAGS]
+Group        = 7
+Name         = "ADC5 EN FLAGS"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "FPATH"
+Mask_00      = 0x0001
+Option_01    = "LL_CONFIG"
+Mask_01      = 0x0002
+Option_02    = "PWDN"
+Mask_02      = 0x0004
+Option_04    = "invert"
+Mask_04      = 0x0010
+Option_04    = "Temp_EN"
+Mask_04      = 0x0020
+
+;---ADC6-----------------------------------------
+
+[ADC Calib Num]
+Group        = 7
+Name         = "ADC6 Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 7
+Name         = "ADC6 default Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 7
+Name         = "ADC6 Channel Offset"
+Display      = "ViewAndModify"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[ADC_HW_GAIN]
+Group        = 7
+Name         = "ADC6 HW Gain"
+Display      = "ViewAndModify"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[ADC_EN_FLAGS]
+Group        = 7
+Name         = "ADC6 EN FLAGS"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "FPATH"
+Mask_00      = 0x0001
+Option_01    = "LL_CONFIG"
+Mask_01      = 0x0002
+Option_02    = "PWDN"
+Mask_02      = 0x0004
+Option_04    = "invert"
+Mask_04      = 0x0010
+Option_04    = "Temp_EN"
+Mask_04      = 0x0020
+
+;---ADC7-----------------------------------------
+
+[ADC Calib Num]
+Group        = 7
+Name         = "ADC7 Calib Value"
+Type         = uInt
+Row          = 1
+Column       = 4
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 7
+Name         = "ADC7 default Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 7
+Name         = "ADC7 Channel Offset"
+Display      = "ViewAndModify"
+Type         = Long
+Row          = +1
+Column       = +0
+
+[ADC_HW_GAIN]
+Group        = 7
+Name         = "ADC7 HW Gain"
+Display      = "ViewAndModify"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[ADC_EN_FLAGS]
+Group        = 7
+Name         = "ADC7 EN FLAGS"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "FPATH"
+Mask_00      = 0x0001
+Option_01    = "LL_CONFIG"
+Mask_01      = 0x0002
+Option_02    = "PWDN"
+Mask_02      = 0x0004
+Option_04    = "invert"
+Mask_04      = 0x0010
+Option_04    = "Temp_EN"
+Mask_04      = 0x0020
+
+;---ADC8-----------------------------------------
+
+[ADC Calib Num]
+Group        = 7
+Name         = "ADC8 Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[ADC Calib Denum]
+Group        = 7
+Name         = "ADC8 default Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[OFFSET]
+Group        = 7
+Name         = "ADC8 Channel Offset"
+Display      = "ViewAndModify"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[ADC_HW_GAIN]
+Group        = 7
+Name         = "ADC8 HW Gain"
+Display      = "ViewAndModify"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[ADC_EN_FLAGS]
+Group        = 7
+Name         = "ADC8 EN FLAGS"
+Type         = uLong
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "FPATH"
+Mask_00      = 0x0001
+Option_01    = "LL_CONFIG"
+Mask_01      = 0x0002
+Option_02    = "PWDN"
+Mask_02      = 0x0004
+Option_04    = "invert"
+Mask_04      = 0x0010
+Option_04    = "Temp_EN"
+Mask_04      = 0x0020
+
+; -----------------------------------------------
+; ADC_TEMP_CALIB
+; -----------------------------------------------
+
+;---P1-------------------------------------------
+[x0]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x0"
+Type         = uLong
+Row          = 1
+Column       = 1
+Display      = "ViewAndModify"
+
+[y0]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y0"
+Type         = uLong
+Column       = 2
+Row          = 1
+Display      = "ViewAndModify"
+
+[x1]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x1"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y1]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y1"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x2]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x2"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y2]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y2"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x3]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x3"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y3]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y3"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x4]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x4"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y4]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y4"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x5]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x5"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y5]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y5"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x6]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x6"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y6]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y6"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x7]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x7"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y7]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y7"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x8]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x8"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y8]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y8"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x9]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x9"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y9]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y9"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x10]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x10"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y10]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y10"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x11]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x11"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y11]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y11"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x12]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x12"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y12]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y12"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x13]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x13"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y13]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y13"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x14]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x14"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y14]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y14"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x15]
+Group        = 8
+SubGroup     = 1
+Name         = "Temp_x15"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y15]
+Group        = 8
+SubGroup     = 1
+Name         = "Kalib_y15"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+;---P1B-------------------------------------------
+[x0]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x0"
+Type         = uLong
+Row          = 1
+Column       = 1
+Display      = "ViewAndModify"
+
+[y0]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y0"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x1]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x1"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y1]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y1"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x2]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x2"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y2]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y2"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x3]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x3"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y3]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y3"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x4]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x4"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y4]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y4"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x5]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x5"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y5]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y5"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x6]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x6"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y6]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y6"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x7]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x7"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y7]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y7"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x8]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x8"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y8]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y8"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x9]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x9"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y9]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y9"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x10]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x10"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y10]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y10"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x11]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x11"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y11]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y11"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x12]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x12"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y12]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y12"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x13]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x13"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y13]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y13"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x14]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x14"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y14]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y14"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x15]
+Group        = 8
+SubGroup     = 2
+Name         = "Temp_x15"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y15]
+Group        = 8
+SubGroup     = 2
+Name         = "Kalib_y15"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+;---P2-------------------------------------------
+[x0]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x0"
+Type         = uLong
+Row          = 1
+Column       = 1
+Display      = "ViewAndModify"
+
+[y0]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y0"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x1]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x1"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y1]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y1"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x2]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x2"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y2]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y2"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x3]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x3"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y3]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y3"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x4]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x4"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y4]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y4"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x5]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x5"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y5]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y5"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x6]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x6"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y6]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y6"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x7]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x7"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y7]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y7"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x8]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x8"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y8]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y8"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x9]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x9"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y9]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y9"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x10]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x10"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y10]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y10"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x11]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x11"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y11]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y11"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x12]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x12"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y12]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y12"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x13]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x13"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y13]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y13"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x14]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x14"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y14]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y14"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x15]
+Group        = 8
+SubGroup     = 3
+Name         = "Temp_x15"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y15]
+Group        = 8
+SubGroup     = 3
+Name         = "Kalib_y15"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+;---P2B-------------------------------------------
+[x0]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x0"
+Type         = uLong
+Row          = 1
+Column       = 1
+Display      = "ViewAndModify"
+
+[y0]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y0"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x1]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x1"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y1]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y1"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x2]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x2"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y2]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y2"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x3]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x3"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y3]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y3"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x4]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x4"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y4]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y4"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x5]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x5"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y5]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y5"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x6]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x6"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y6]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y6"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x7]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x7"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y7]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y7"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x8]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x8"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y8]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y8"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x9]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x9"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y9]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y9"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x10]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x10"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y10]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y10"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x11]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x11"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y11]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y11"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x12]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x12"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y12]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y12"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x13]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x13"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y13]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y13"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x14]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x14"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y14]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y14"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x15]
+Group        = 8
+SubGroup     = 4
+Name         = "Temp_x15"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y15]
+Group        = 8
+SubGroup     = 4
+Name         = "Kalib_y15"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+;---P3-------------------------------------------
+[x0]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x0"
+Type         = uLong
+Row          = 1
+Column       = 1
+Display      = "ViewAndModify"
+
+[y0]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y0"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x1]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x1"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y1]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y1"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x2]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x2"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y2]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y2"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x3]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x3"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y3]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y3"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x4]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x4"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y4]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y4"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x5]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x5"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y5]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y5"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x6]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x6"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y6]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y6"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x7]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x7"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y7]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y7"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x8]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x8"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y8]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y8"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x9]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x9"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y9]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y9"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x10]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x10"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y10]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y10"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x11]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x11"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y11]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y11"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x12]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x12"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y12]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y12"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x13]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x13"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y13]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y13"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x14]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x14"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y14]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y14"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x15]
+Group        = 8
+SubGroup     = 5
+Name         = "Temp_x15"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y15]
+Group        = 8
+SubGroup     = 5
+Name         = "Kalib_y15"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+;---P3B-------------------------------------------
+[x0]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x0"
+Type         = uLong
+Row          = 1
+Column       = 1
+Display      = "ViewAndModify"
+
+[y0]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y0"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x1]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x1"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y1]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y1"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x2]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x2"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y2]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y2"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x3]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x3"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y3]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y3"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x4]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x4"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y4]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y4"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x5]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x5"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y5]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y5"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x6]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x6"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y6]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y6"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x7]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x7"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y7]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y7"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x8]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x8"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y8]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y8"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x9]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x9"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y9]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y9"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x10]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x10"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y10]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y10"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x11]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x11"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y11]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y11"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x12]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x12"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y12]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y12"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x13]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x13"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y13]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y13"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x14]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x14"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y14]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y14"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x15]
+Group        = 8
+SubGroup     = 6
+Name         = "Temp_x15"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y15]
+Group        = 8
+SubGroup     = 6
+Name         = "Kalib_y15"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+;---P4-------------------------------------------
+[x0]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x0"
+Type         = uLong
+Row          = 1
+Column       = 1
+Display      = "ViewAndModify"
+
+[y0]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y0"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x1]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x1"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y1]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y1"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x2]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x2"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y2]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y2"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x3]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x3"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y3]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y3"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x4]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x4"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y4]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y4"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x5]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x5"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y5]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y5"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x6]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x6"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y6]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y6"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x7]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x7"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y7]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y7"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x8]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x8"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y8]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y8"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x9]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x9"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y9]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y9"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x10]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x10"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y10]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y10"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x11]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x11"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y11]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y11"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x12]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x12"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y12]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y12"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x13]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x13"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y13]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y13"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x14]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x14"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y14]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y14"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x15]
+Group        = 8
+SubGroup     = 7
+Name         = "Temp_x15"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y15]
+Group        = 8
+SubGroup     = 7
+Name         = "Kalib_y15"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+;---P4B-------------------------------------------
+[x0]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x0"
+Type         = uLong
+Row          = 1
+Column       = 1
+Display      = "ViewAndModify"
+
+[y0]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y0"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x1]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x1"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y1]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y1"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x2]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x2"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y2]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y2"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x3]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x3"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y3]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y3"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x4]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x4"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y4]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y4"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x5]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x5"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y5]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y5"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x6]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x6"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y6]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y6"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x7]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x7"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y7]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y7"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x8]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x8"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y8]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y8"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x9]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x9"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y9]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y9"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x10]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x10"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y10]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y10"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x11]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x11"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y11]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y11"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x12]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x12"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y12]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y12"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x13]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x13"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y13]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y13"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x14]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x14"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y14]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y14"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+[x15]
+Group        = 8
+SubGroup     = 8
+Name         = "Temp_x15"
+Type         = uLong
+Column       = -1
+Row          = +1
+Display      = "ViewAndModify"
+
+[y15]
+Group        = 8
+SubGroup     = 8
+Name         = "Kalib_y15"
+Type         = uLong
+Column       = +1
+Row          = +0
+Display      = "ViewAndModify"
+
+; -----------------------------------------------
+; PROBE_CALIB
+; -----------------------------------------------
+
+;---P1-------------------------------------------
+
+[P1_Type]
+Group        = 9
+Name         = "P1 Probe Type"
+Type         = uInt
+Row          = 1
+Column       = 1
+Display      = "ViewAndModify"
+Common       = "ProbeType_D"
+
+[P1_Kalib]
+Group        = 9
+Name         = "P1 Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P1_Offset]
+Group        = 9
+Name         = "P1 Offset"
+Type         = Int
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P1_DefaultCalib]
+Group        = 9
+Name         = "P1 DefaultCalib"
+Type         = uInt
+Column       = +0
+Row          = +1
+
+;---P1B-------------------------------------------
+
+[P1B_Type]
+Group        = 9
+Name         = "P1B Probe Type"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Common       = "ProbeType_D"
+
+[P1B_Kalib]
+Group        = 9
+Name         = "P1B Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P1B_Offset]
+Group        = 9
+Name         = "P1B Offset"
+Type         = Int
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P1B_DefaultCalib]
+Group        = 9
+Name         = "P1B DefaultCalib"
+Type         = uInt
+Column       = +0
+Row          = +1
+
+;---P2-------------------------------------------
+
+[P2_Type]
+Group        = 9
+Name         = "P2 Probe Type"
+Type         = uInt
+Row          = 1
+Column       = 2
+Display      = "ViewAndModify"
+Common       = "ProbeType_D"
+
+[P2_Kalib]
+Group        = 9
+Name         = "P2 Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P2_Offset]
+Group        = 9
+Name         = "P2 Offset"
+Type         = Int
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P2_DefaultCalib]
+Group        = 9
+Name         = "P2 DefaultCalib"
+Type         = uInt
+Column       = +0
+Row          = +1
+
+;---P2B-------------------------------------------
+
+[P2B_Type]
+Group        = 9
+Name         = "P2B Probe Type"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Common       = "ProbeType_D"
+
+[P2B_Kalib]
+Group        = 9
+Name         = "P2B Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P2B_Offset]
+Group        = 9
+Name         = "P2B Offset"
+Type         = Int
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P2B_DefaultCalib]
+Group        = 9
+Name         = "P2B DefaultCalib"
+Type         = uInt
+Column       = +0
+Row          = +1
+
+;---P3-------------------------------------------
+
+[P3_Type]
+Group        = 9
+Name         = "P3 Probe Type"
+Type         = uInt
+Row          = 1
+Column       = 3
+Display      = "ViewAndModify"
+Common       = "ProbeType_D"
+
+[P3_Kalib]
+Group        = 9
+Name         = "P3 Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P3_Offset]
+Group        = 9
+Name         = "P3 Offset"
+Type         = Int
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P3_DefaultCalib]
+Group        = 9
+Name         = "P3 DefaultCalib"
+Type         = uInt
+Column       = +0
+Row          = +1
+
+;---P3B-------------------------------------------
+
+[P3B_Type]
+Group        = 9
+Name         = "P3B Probe Type"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Common       = "ProbeType_D"
+
+[P3B_Kalib]
+Group        = 9
+Name         = "P3B Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P3B_Offset]
+Group        = 9
+Name         = "P3B Offset"
+Type         = Int
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P3B_DefaultCalib]
+Group        = 9
+Name         = "P3B DefaultCalib"
+Type         = uInt
+Column       = +0
+Row          = +1
+
+;---P4-------------------------------------------
+
+[P4_Type]
+Group        = 9
+Name         = "P4 Probe Type"
+Type         = uInt
+Row          = 1
+Column       = 4
+Display      = "ViewAndModify"
+Common       = "ProbeType_D"
+
+[P4_Kalib]
+Group        = 9
+Name         = "P4 Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P4_Offset]
+Group        = 9
+Name         = "P4 Offset"
+Type         = Int
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P4_DefaultCalib]
+Group        = 9
+Name         = "P4 DefaultCalib"
+Type         = uInt
+Column       = +0
+Row          = +1
+
+;---P4B-------------------------------------------
+
+[P4B_Type]
+Group        = 9
+Name         = "P4B Probe Type"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+Common       = "ProbeType_D"
+
+[P4B_Kalib]
+Group        = 9
+Name         = "P4B Calib Value"
+Type         = uInt
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P4B_Offset]
+Group        = 9
+Name         = "P4B Offset"
+Type         = Int
+Column       = +0
+Row          = +1
+Display      = "ViewAndModify"
+
+[P4B_DefaultCalib]
+Group        = 9
+Name         = "P4B DefaultCalib"
+Type         = uInt
+Column       = +0
+Row          = +1
+
+; -----------------------------------------------
+; CALCULATIONS
+; -----------------------------------------------
+[Calc_options]
+Group        = 3
+SubGroup     = 5
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Name         = "Tk:Name"
+Help         = "KLARI-PA4000\Calc_options"
+Type         = uLong
+Row          = 1
+Column       = 1
+Attrib       = Option
+Option_00    = "Tk:EnablePowerSum"
+Mask_00      = 0x01
+Option_00    = "Tk:Enable3Phase"
+Mask_00      = 0x02
+;Option_00    = "Tk:EnableWork"
+;Mask_00      = 0x04
+Option_00    = "Tk:EnablePeriodTo"
+Mask_00      = 0x08
+
+[PeriodType]
+Group        = 3
+SubGroup     = 5
+RefC_Group         = "GLOBAL_PAR"
+RefC_Parameter     = "Common_Option"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Name         = "Tk:Name"
+Help         = "KLARI-PA4000\PeriodType"
+Type         = Long
+Row          = 2
+Column       = 1
+Attrib       = Combo
+Select_01    = "none"
+Value_01     = 0
+Select_02    = "DC"
+Value_02     = 1
+Select_03    = "AC"
+Value_03     = 2
+
+[PerSelChannel]
+Group        = 3
+SubGroup     = 5
+RefC_Group         = "CHANNEL_DATA"
+RefC_Parameter     = "PeriodType"
+RefC_Mask          = 2
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Name         = "Tk:Name"
+Help         = "KLARI-PA4000\PerSelChannel"
+Type         = Long
+Row          = 3
+Column       = 1
+Attrib       = Combo
+Select_01    = "Channel 1"
+Value_01     = 0
+Select_02    = "Channel 1B"
+Value_02     = 1
+Select_03    = "Channel 2"
+Value_03     = 2
+Select_04    = "Channel 2B"
+Value_04     = 3
+Select_05    = "Channel 3"
+Value_05     = 4
+Select_04    = "Channel 3B"
+Value_04     = 5
+Select_05    = "Channel 4"
+Value_05     = 6
+Select_04    = "Channel 4B"
+Value_04     = 7
+
+[PerThValue]
+Group        = 3
+SubGroup     = 5
+RefC_Group         = "CHANNEL_DATA"
+RefC_Parameter     = "PeriodType"
+RefC_Mask          = 2
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Name         = "Tk:Name"
+Help         = "KLARI-PA4000\PerThValue"
+Type         = uLong
+Row          = 3
+Column       = 1
+Attrib       = Combo
+Select_01    = " 1: 75%"
+Value_01     = 0
+Select_02    = " 2: 50%"
+Value_02     = 1
+Select_03    = " 3: 25%"
+Value_03     = 2
+
+[PerAve]
+Group        = 3
+SubGroup     = 5
+RefC_Group         = "CHANNEL_DATA"
+RefC_Parameter     = "PeriodType"
+RefC_Mask          = 2
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Name         = "Tk:Name"
+Help         = "KLARI-PA4000\PerAve"
+Type         = uLong
+Row          = 3
+Column       = 1
+Attrib       = Combo
+Select_01    = " 0: 1 Wert"
+Value_01     = 0
+Select_02    = " 1: 2 Werte"
+Value_02     = 1
+Select_03    = " 2: 4 Werte"
+Value_03     = 2
+Select_03    = " 3: 8 Werte"
+Value_03     = 3
+Select_03    = " 4: 16 Werte"
+Value_03     = 4
+Select_03    = " 5: 32 Werte"
+Value_03     = 5
+Select_03    = " 6: 64 Werte"
+Value_03     = 6
+Select_03    = " 7: 128 Werte"
+Value_03     = 7
+Select_03    = " 8: 256 Werte"
+Value_03     = 8
+Select_03    = " 9: 512 Werte"
+Value_03     = 9
+Select_03    = " 10: 1024 Werte"
+Value_03     = 10
+
+[PerODR]
+Group        = 3
+SubGroup     = 5
+RefC_Group         = "CHANNEL_DATA"
+RefC_Parameter     = "PeriodType"
+RefC_Mask          = 1
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Name         = "Tk:Name"
+Help         = "KLARI-PA4000\PerODR"
+Type         = uLong
+Row          = 4
+Column       = 1
+Values    	 = 0..21474836
+
+[PerNullTh]
+Group        = 3
+SubGroup     = 5
+RefC_Group         = "CHANNEL_DATA"
+RefC_Parameter     = "PeriodType"
+RefC_Mask          = 2
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Name         = "Tk:Name"
+Help         = "KLARI-PA4000\PerNullTh"
+Type         = uLong
+Row          = 4
+Column       = 1
+
+[PerSelInput]
+Group        = 3
+SubGroup     = 5
+RefC_Group         = "CHANNEL_DATA"
+RefC_Parameter     = "PeriodType"
+RefC_Mask          = 2
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Name         = "Tk:Name"
+Help         = "KLARI-PA4000\PerSelInput"
+Type         = int
+Row          = 5
+Column       = 1
+Attrib       = Combo
+Select_01    = " 1: RAW Values"
+Value_01     = 0
+Select_02    = " 2: Average Values"
+Value_02     = 1
+
+[CalcSelInput]
+Group        = 3
+SubGroup     = 5
+RefC_Group         = "CHANNEL_DATA"
+RefC_Parameter     = "PeriodType"
+RefC_Mask          = 2
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Name         = "Tk:Name"
+Help         = "KLARI-PA4000\CalcSelInput"
+Type         = int
+Row          = 5
+Column       = 1
+Attrib       = Combo
+Select_01    = " 1: RAW Values"
+Value_01     = 0
+Select_02    = " 2: Average Values"
+Value_02     = 1
+
+[FilterIn]
+Group        = 3
+SubGroup     = 5
+RefC_Group         = "CHANNEL_DATA"
+RefC_Parameter     = "PeriodType"
+RefC_Mask          = 2
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Name         = "Tk:Name"
+Help         = "KLARI-PA4000\FilterIn"
+Type         = Long
+Row          = 6
+Column       = 1
+
+[FilterOut]
+Group        = 3
+SubGroup     = 5
+RefC_Group         = "CHANNEL_DATA"
+RefC_Parameter     = "PeriodType"
+RefC_Mask          = 2
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Name         = "Tk:Name"
+Help         = "KLARI-PA4000\FilterOut"
+Type         = Long
+Row          = 7
+Column       = 1
+
+; -----------------------------------------------
+; DEBUG_DATA
+; -----------------------------------------------
+
+[P1_Meas_Value_RAW]
+Group        = 10
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Row          = 1
+Column       = 1
+Format	     = Hex
+
+[P1_Meas_Value_REAL]
+Group        = 10
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Column       = +0
+Row          = +1
+Format	     = Hex
+
+[P1_Meas_Value_TEMP]
+Group        = 10
+Name         = "Temp"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P1_Temp_Offset]
+Group        = 10
+Name         = "TempOffset"
+Display      = "ViewOnly"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P1_Value]
+Group        = 10
+Name         = "Value"
+Type         = String
+Column       = +0
+Row          = +1
+Size         = 16
+
+[P1B_Meas_Value_RAW]
+Group        = 10
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Column       = +0
+Row          = +1
+Format	     = Hex
+
+[P1B_Meas_Value_REAL]
+Group        = 10
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Column       = +0
+Row          = +1
+Format	     = Hex
+
+[P1B_Meas_Value_TEMP]
+Group        = 10
+Name         = "Temp"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P1B_Temp_Offset]
+Group        = 10
+Name         = "TempOffset"
+Display      = "ViewOnly"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P1B_Value]
+Group        = 10
+Name         = "Value"
+Type         = String
+Column       = +0
+Row          = +1
+Size         = 16
+
+[P2_Meas_Value_RAW]
+Group        = 10
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Row          = 1
+Column       = 2
+Format	     = Hex
+
+[P2_Meas_Value_REAL]
+Group        = 10
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Column       = +0
+Row          = +1
+Format	     = Hex
+
+[P2_Meas_Value_TEMP]
+Group        = 10
+Name         = "Temp"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P2_Temp_Offset]
+Group        = 10
+Name         = "TempOffset"
+Display      = "ViewOnly"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P2_Value]
+Group        = 10
+Name         = "Value"
+Type         = String
+Column       = +0
+Row          = +1
+Size         = 16
+
+[P2B_Meas_Value_RAW]
+Group        = 10
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Column       = +0
+Row          = +1
+Format	     = Hex
+
+[P2B_Meas_Value_REAL]
+Group        = 10
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Column       = +0
+Row          = +1
+Format	     = Hex
+
+[P2B_Meas_Value_TEMP]
+Group        = 10
+Name         = "Temp"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P2B_Temp_Offset]
+Group        = 10
+Name         = "TempOffset"
+Display      = "ViewOnly"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P2B_Value]
+Group        = 10
+Name         = "Value"
+Type         = String
+Column       = +0
+Row          = +1
+Size         = 16
+
+[P3_Meas_Value_RAW]
+Group        = 10
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Row          = 1
+Column       = 3
+Format	     = Hex
+
+[P3_Meas_Value_REAL]
+Group        = 10
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Column       = +0
+Row          = +1
+Format	     = Hex
+
+[P3_Meas_Value_TEMP]
+Group        = 10
+Name         = "Temp"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P3_Temp_Offset]
+Group        = 10
+Name         = "TempOffset"
+Display      = "ViewOnly"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P3_Value]
+Group        = 10
+Name         = "Value"
+Type         = String
+Column       = +0
+Row          = +1
+Size         = 16
+
+[P3B_Meas_Value_RAW]
+Group        = 10
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Column       = +0
+Row          = +1
+Format	     = Hex
+
+[P3B_Meas_Value_REAL]
+Group        = 10
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Column       = +0
+Row          = +1
+Format	     = Hex
+
+[P3B_Meas_Value_TEMP]
+Group        = 10
+Name         = "Temp"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P3B_Temp_Offset]
+Group        = 10
+Name         = "TempOffset"
+Display      = "ViewOnly"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P3B_Value]
+Group        = 10
+Name         = "Value"
+Type         = String
+Column       = +0
+Row          = +1
+Size         = 16
+
+[P4_Meas_Value_RAW]
+Group        = 10
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Row          = 1
+Column       = 4
+Format	     = Hex
+
+[P4_Meas_Value_REAL]
+Group        = 10
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Column       = +0
+Row          = +1
+Format	     = Hex
+
+[P4_Meas_Value_TEMP]
+Group        = 10
+Name         = "Temp"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P4_Temp_Offset]
+Group        = 10
+Name         = "TempOffset"
+Display      = "ViewOnly"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P4_Value]
+Group        = 10
+Name         = "Value"
+Type         = String
+Column       = +0
+Row          = +1
+Size         = 16
+
+[P4B_Meas_Value_RAW]
+Group        = 10
+Name         = "Meas Value ( RAW )"
+Type         = uLong
+Column       = +0
+Row          = +1
+Format	     = Hex
+
+[P4B_Meas_Value_REAL]
+Group        = 10
+Name         = "Meas Value ( REAL )"
+Type         = uLong
+Column       = +0
+Row          = +1
+Format	     = Hex
+
+[P4B_Meas_Value_TEMP]
+Group        = 10
+Name         = "Temp"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P4B_Temp_Offset]
+Group        = 10
+Name         = "TempOffset"
+Display      = "ViewOnly"
+Type         = Long
+Column       = +0
+Row          = +1
+
+[P4B_Value]
+Group        = 10
+Name         = "Value"
+Type         = String
+Column       = +0
+Row          = +1
+Size         = 16
+
+; -----------------------------------------------
+; Socket
+; -----------------------------------------------
+[Sock1_Name]
+Group        = 11
+Type         = string
+Size         = 32
+Name         = "Sock1 Name"
+Display      = "ViewOnly"
+Column       = 1
+Row          = 1
+
+[Sock1_SockId]
+Group        = 11
+Name         = "Sock1 Service"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock1_State]
+Group        = 11
+Name         = "Sock1 State"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "VOID"
+Value_01     = 0
+Select_02    = "INIT"
+Value_02     = 1
+Select_03    = "SETUP"
+Value_03     = 2
+Select_04    = "WAIT"
+Value_04     = 3
+Select_05    = "CONNECT"
+Value_05     = 4
+Select_06    = "CONNEC_WAIT"
+Value_06     = 5
+Select_07    = "AUTH"
+Value_07     = 6
+Select_08    = "READY"
+Value_08     = 7
+Select_09    = "RESUME"
+Value_09     = 8
+Select_10    = "ERROR"
+Value_10     = 9
+Select_11    = "CLOSE"
+Value_11     = 10
+Select_12    = "CLOSED"
+Value_12     = 11
+Select_13    = "HOLD"
+Value_13     = 12
+Select_14    = "SETUP_WAIT"
+Value_14     = 13
+Select_15    = "STOP"
+Value_15     = 14
+
+[Sock1_Type]
+Group        = 11
+Name         = "Sock1_Type"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "INIT"
+Value_01     = 0
+Select_02    = "TCP SERVER LISTEN"
+Value_02     = 1
+Select_03    = "TCP CLIENT CONNECT"
+Value_03     = 2
+Select_04    = "UDP SERVER LISTEN"
+Value_04     = 3
+Select_05    = "UDP SERVER NOTLISTEN"
+Value_05     = 4
+Select_06    = "UDP CLIENT CONNECT"
+Value_06     = 5
+Select_07    = "UDP CLIENT NOTCONNECT"
+Value_07     = 6
+Select_08    = "TCP SERVER ACCEPTED"
+Value_08     = 7
+
+[Sock1_RxBps]
+Group        = 11
+Name         = "Sock1_RxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock1_TxBps]
+Group        = 11
+Name         = "Sock1_TxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock1_IP]
+Group        = 11
+Type         = string
+Size         = 16
+Name         = "Sock1 IP"
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock1_Port]
+Group        = 11
+Name         = "Sock1_Port"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock2_Name]
+Group        = 11
+Type         = string
+Display      = "ViewOnly"
+Size         = 32
+Name         = "Sock2 Name"
+Column       = 2
+Row          = 1
+
+[Sock2_SockId]
+Group        = 11
+Name         = "Sock2 Service"
+Display      = "ViewOnly"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Sock2_State]
+Group        = 11
+Name         = "Sock2 State"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "VOID"
+Value_01     = 0
+Select_02    = "INIT"
+Value_02     = 1
+Select_03    = "SETUP"
+Value_03     = 2
+Select_04    = "WAIT"
+Value_04     = 3
+Select_05    = "CONNECT"
+Value_05     = 4
+Select_06    = "CONNEC_WAIT"
+Value_06     = 5
+Select_07    = "AUTH"
+Value_07     = 6
+Select_08    = "READY"
+Value_08     = 7
+Select_09    = "RESUME"
+Value_09     = 8
+Select_10    = "ERROR"
+Value_10     = 9
+Select_11    = "CLOSE"
+Value_11     = 10
+Select_12    = "CLOSED"
+Value_12     = 11
+Select_13    = "HOLD"
+Value_13     = 12
+Select_14    = "SETUP_WAIT"
+Value_14     = 13
+Select_15    = "STOP"
+Value_15     = 14
+
+[Sock2_Type]
+Group        = 11
+Name         = "Sock2_Type"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "INIT"
+Value_01     = 0
+Select_02    = "TCP SERVER LISTEN"
+Value_02     = 1
+Select_03    = "TCP CLIENT CONNECT"
+Value_03     = 2
+Select_04    = "UDP SERVER LISTEN"
+Value_04     = 3
+Select_05    = "UDP SERVER NOTLISTEN"
+Value_05     = 4
+Select_06    = "UDP CLIENT CONNECT"
+Value_06     = 5
+Select_07    = "UDP CLIENT NOTCONNECT"
+Value_07     = 6
+Select_08    = "TCP SERVER ACCEPTED"
+Value_08     = 7
+
+[Sock2_RxBps]
+Group        = 11
+Name         = "Sock2_RxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock2_TxBps]
+Group        = 11
+Name         = "Sock2_TxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock2_IP]
+Group        = 11
+Type         = string
+Size         = 16
+Name         = "Sock2 IP"
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock2_Port]
+Group        = 11
+Name         = "Sock2_Port"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock3_Name]
+Group        = 11
+Type         = string
+Display      = "ViewOnly"
+Display      = "ViewOnly"
+Size         = 32
+Name         = "Sock3 Name"
+Column       = 3
+Row          = 1
+
+[Sock3_SockId]
+Group        = 11
+Name         = "Sock3 Service"
+Display      = "ViewOnly"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Sock3_State]
+Group        = 11
+Name         = "Sock3 State"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "VOID"
+Value_01     = 0
+Select_02    = "INIT"
+Value_02     = 1
+Select_03    = "SETUP"
+Value_03     = 2
+Select_04    = "WAIT"
+Value_04     = 3
+Select_05    = "CONNECT"
+Value_05     = 4
+Select_06    = "CONNEC_WAIT"
+Value_06     = 5
+Select_07    = "AUTH"
+Value_07     = 6
+Select_08    = "READY"
+Value_08     = 7
+Select_09    = "RESUME"
+Value_09     = 8
+Select_10    = "ERROR"
+Value_10     = 9
+Select_11    = "CLOSE"
+Value_11     = 10
+Select_12    = "CLOSED"
+Value_12     = 11
+Select_13    = "HOLD"
+Value_13     = 12
+Select_14    = "SETUP_WAIT"
+Value_14     = 13
+Select_15    = "STOP"
+Value_15     = 14
+
+[Sock3_Type]
+Group        = 11
+Name         = "Sock3_Type"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "INIT"
+Value_01     = 0
+Select_02    = "TCP SERVER LISTEN"
+Value_02     = 1
+Select_03    = "TCP CLIENT CONNECT"
+Value_03     = 2
+Select_04    = "UDP SERVER LISTEN"
+Value_04     = 3
+Select_05    = "UDP SERVER NOTLISTEN"
+Value_05     = 4
+Select_06    = "UDP CLIENT CONNECT"
+Value_06     = 5
+Select_07    = "UDP CLIENT NOTCONNECT"
+Value_07     = 6
+Select_08    = "TCP SERVER ACCEPTED"
+Value_08     = 7
+
+[Sock3_RxBps]
+Group        = 11
+Name         = "Sock3_RxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock3_TxBps]
+Group        = 11
+Name         = "Sock3_TxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock3_IP]
+Group        = 11
+Type         = string
+Size         = 16
+Name         = "Sock3 IP"
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock3_Port]
+Group        = 11
+Name         = "Sock3_Port"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock4_Name]
+Group        = 11
+Type         = string
+Display      = "ViewOnly"
+Size         = 32
+Name         = "Sock4 Name"
+Column       = 4
+Row          = 1
+
+[Sock4_SockId]
+Group        = 11
+Name         = "Sock4 Service"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock4_State]
+Group        = 11
+Name         = "Sock4 State"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "VOID"
+Value_01     = 0
+Select_02    = "INIT"
+Value_02     = 1
+Select_03    = "SETUP"
+Value_03     = 2
+Select_04    = "WAIT"
+Value_04     = 3
+Select_05    = "CONNECT"
+Value_05     = 4
+Select_06    = "CONNEC_WAIT"
+Value_06     = 5
+Select_07    = "AUTH"
+Value_07     = 6
+Select_08    = "READY"
+Value_08     = 7
+Select_09    = "RESUME"
+Value_09     = 8
+Select_10    = "ERROR"
+Value_10     = 9
+Select_11    = "CLOSE"
+Value_11     = 10
+Select_12    = "CLOSED"
+Value_12     = 11
+Select_13    = "HOLD"
+Value_13     = 12
+Select_14    = "SETUP_WAIT"
+Value_14     = 13
+Select_15    = "STOP"
+Value_15     = 14
+
+[Sock4_Type]
+Group        = 11
+Name         = "Sock4_Type"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "INIT"
+Value_01     = 0
+Select_02    = "TCP SERVER LISTEN"
+Value_02     = 1
+Select_03    = "TCP CLIENT CONNECT"
+Value_03     = 2
+Select_04    = "UDP SERVER LISTEN"
+Value_04     = 3
+Select_05    = "UDP SERVER NOTLISTEN"
+Value_05     = 4
+Select_06    = "UDP CLIENT CONNECT"
+Value_06     = 5
+Select_07    = "UDP CLIENT NOTCONNECT"
+Value_07     = 6
+Select_08    = "TCP SERVER ACCEPTED"
+Value_08     = 7
+
+[Sock4_RxBps]
+Group        = 11
+Name         = "Sock4_RxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock4_TxBps]
+Group        = 11
+Name         = "Sock4_TxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock4_IP]
+Group        = 11
+Type         = string
+Size         = 16
+Name         = "Sock4 IP"
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock4_Port]
+Group        = 11
+Name         = "Sock4_Port"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock5_Name]
+Group        = 11
+Type         = string
+Display      = "ViewOnly"
+Size         = 32
+Name         = "Sock5 Name"
+Column       = 5
+Row          = 1
+
+[Sock5_SockId]
+Group        = 11
+Name         = "Sock5 Service"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock5_State]
+Group        = 11
+Name         = "Sock5 State"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "VOID"
+Value_01     = 0
+Select_02    = "INIT"
+Value_02     = 1
+Select_03    = "SETUP"
+Value_03     = 2
+Select_04    = "WAIT"
+Value_04     = 3
+Select_05    = "CONNECT"
+Value_05     = 4
+Select_06    = "CONNEC_WAIT"
+Value_06     = 5
+Select_07    = "AUTH"
+Value_07     = 6
+Select_08    = "READY"
+Value_08     = 7
+Select_09    = "RESUME"
+Value_09     = 8
+Select_10    = "ERROR"
+Value_10     = 9
+Select_11    = "CLOSE"
+Value_11     = 10
+Select_12    = "CLOSED"
+Value_12     = 11
+Select_13    = "HOLD"
+Value_13     = 12
+Select_14    = "SETUP_WAIT"
+Value_14     = 13
+Select_15    = "STOP"
+Value_15     = 14
+
+[Sock5_Type]
+Group        = 11
+Name         = "Sock5_Type"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "INIT"
+Value_01     = 0
+Select_02    = "TCP SERVER LISTEN"
+Value_02     = 1
+Select_03    = "TCP CLIENT CONNECT"
+Value_03     = 2
+Select_04    = "UDP SERVER LISTEN"
+Value_04     = 3
+Select_05    = "UDP SERVER NOTLISTEN"
+Value_05     = 4
+Select_06    = "UDP CLIENT CONNECT"
+Value_06     = 5
+Select_07    = "UDP CLIENT NOTCONNECT"
+Value_07     = 6
+Select_08    = "TCP SERVER ACCEPTED"
+Value_08     = 7
+
+[Sock5_RxBps]
+Group        = 11
+Name         = "Sock5_RxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock5_TxBps]
+Group        = 11
+Name         = "Sock5_TxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock5_IP]
+Group        = 11
+Type         = string
+Size         = 16
+Name         = "Sock5 IP"
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock5_Port]
+Group        = 11
+Name         = "Sock5_Port"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock6_Name]
+Group        = 11
+Type         = string
+Display      = "ViewOnly"
+Size         = 32
+Name         = "Sock6 Name"
+Column       = 6
+Row          = 1
+
+[Sock6_SockId]
+Group        = 11
+Name         = "Sock6 Service"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock6_State]
+Group        = 11
+Name         = "Sock6 State"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "VOID"
+Value_01     = 0
+Select_02    = "INIT"
+Value_02     = 1
+Select_03    = "SETUP"
+Value_03     = 2
+Select_04    = "WAIT"
+Value_04     = 3
+Select_05    = "CONNECT"
+Value_05     = 4
+Select_06    = "CONNEC_WAIT"
+Value_06     = 5
+Select_07    = "AUTH"
+Value_07     = 6
+Select_08    = "READY"
+Value_08     = 7
+Select_09    = "RESUME"
+Value_09     = 8
+Select_10    = "ERROR"
+Value_10     = 9
+Select_11    = "CLOSE"
+Value_11     = 10
+Select_12    = "CLOSED"
+Value_12     = 11
+Select_13    = "HOLD"
+Value_13     = 12
+Select_14    = "SETUP_WAIT"
+Value_14     = 13
+Select_15    = "STOP"
+Value_15     = 14
+
+[Sock6_Type]
+Group        = 11
+Name         = "Sock6_Type"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "INIT"
+Value_01     = 0
+Select_02    = "TCP SERVER LISTEN"
+Value_02     = 1
+Select_03    = "TCP CLIENT CONNECT"
+Value_03     = 2
+Select_04    = "UDP SERVER LISTEN"
+Value_04     = 3
+Select_05    = "UDP SERVER NOTLISTEN"
+Value_05     = 4
+Select_06    = "UDP CLIENT CONNECT"
+Value_06     = 5
+Select_07    = "UDP CLIENT NOTCONNECT"
+Value_07     = 6
+Select_08    = "TCP SERVER ACCEPTED"
+Value_08     = 7
+
+[Sock6_RxBps]
+Group        = 11
+Name         = "Sock6_RxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock6_TxBps]
+Group        = 11
+Name         = "Sock6_TxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock6_IP]
+Group        = 11
+Type         = string
+Size         = 16
+Name         = "Sock6 IP"
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock6_Port]
+Group        = 11
+Name         = "Sock6_Port"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock7_Name]
+Group        = 11
+Type         = string
+Display      = "ViewOnly"
+Size         = 32
+Name         = "Sock7 Name"
+Column       = 7
+Row          = 1
+
+[Sock7_SockId]
+Group        = 11
+Name         = "Sock7 Service"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock7_State]
+Group        = 11
+Name         = "Sock7 State"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "VOID"
+Value_01     = 0
+Select_02    = "INIT"
+Value_02     = 1
+Select_03    = "SETUP"
+Value_03     = 2
+Select_04    = "WAIT"
+Value_04     = 3
+Select_05    = "CONNECT"
+Value_05     = 4
+Select_06    = "CONNEC_WAIT"
+Value_06     = 5
+Select_07    = "AUTH"
+Value_07     = 6
+Select_08    = "READY"
+Value_08     = 7
+Select_09    = "RESUME"
+Value_09     = 8
+Select_10    = "ERROR"
+Value_10     = 9
+Select_11    = "CLOSE"
+Value_11     = 10
+Select_12    = "CLOSED"
+Value_12     = 11
+Select_13    = "HOLD"
+Value_13     = 12
+Select_14    = "SETUP_WAIT"
+Value_14     = 13
+Select_15    = "STOP"
+Value_15     = 14
+
+[Sock7_Type]
+Group        = 11
+Name         = "Sock7_Type"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "INIT"
+Value_01     = 0
+Select_02    = "TCP SERVER LISTEN"
+Value_02     = 1
+Select_03    = "TCP CLIENT CONNECT"
+Value_03     = 2
+Select_04    = "UDP SERVER LISTEN"
+Value_04     = 3
+Select_05    = "UDP SERVER NOTLISTEN"
+Value_05     = 4
+Select_06    = "UDP CLIENT CONNECT"
+Value_06     = 5
+Select_07    = "UDP CLIENT NOTCONNECT"
+Value_07     = 6
+Select_08    = "TCP SERVER ACCEPTED"
+Value_08     = 7
+
+[Sock7_RxBps]
+Group        = 11
+Name         = "Sock7_RxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock7_TxBps]
+Group        = 11
+Name         = "Sock7_TxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock7_IP]
+Group        = 11
+Type         = string
+Size         = 16
+Name         = "Sock7 IP"
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock7_Port]
+Group        = 11
+Name         = "Sock7_Port"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock8_Name]
+Group        = 11
+Type         = string
+Display      = "ViewOnly"
+Size         = 32
+Name         = "Sock8 Name"
+Column       = 8
+Row          = 1
+
+[Sock8_SockId]
+Group        = 11
+Name         = "Sock8 Service"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock8_State]
+Group        = 11
+Name         = "Sock8 State"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "VOID"
+Value_01     = 0
+Select_02    = "INIT"
+Value_02     = 1
+Select_03    = "SETUP"
+Value_03     = 2
+Select_04    = "WAIT"
+Value_04     = 3
+Select_05    = "CONNECT"
+Value_05     = 4
+Select_06    = "CONNEC_WAIT"
+Value_06     = 5
+Select_07    = "AUTH"
+Value_07     = 6
+Select_08    = "READY"
+Value_08     = 7
+Select_09    = "RESUME"
+Value_09     = 8
+Select_10    = "ERROR"
+Value_10     = 9
+Select_11    = "CLOSE"
+Value_11     = 10
+Select_12    = "CLOSED"
+Value_12     = 11
+Select_13    = "HOLD"
+Value_13     = 12
+Select_14    = "SETUP_WAIT"
+Value_14     = 13
+Select_15    = "STOP"
+Value_15     = 14
+
+[Sock8_Type]
+Group        = 11
+Name         = "Sock8_Type"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_01    = "INIT"
+Value_01     = 0
+Select_02    = "TCP SERVER LISTEN"
+Value_02     = 1
+Select_03    = "TCP CLIENT CONNECT"
+Value_03     = 2
+Select_04    = "UDP SERVER LISTEN"
+Value_04     = 3
+Select_05    = "UDP SERVER NOTLISTEN"
+Value_05     = 4
+Select_06    = "UDP CLIENT CONNECT"
+Value_06     = 5
+Select_07    = "UDP CLIENT NOTCONNECT"
+Value_07     = 6
+Select_08    = "TCP SERVER ACCEPTED"
+Value_08     = 7
+
+[Sock8_RxBps]
+Group        = 11
+Name         = "Sock8_RxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock8_TxBps]
+Group        = 11
+Name         = "Sock8_TxBps"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock8_IP]
+Group        = 11
+Type         = string
+Size         = 16
+Name         = "Sock8 IP"
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1
+
+[Sock8_Port]
+Group        = 11
+Name         = "Sock8_Port"
+Type         = uLong
+Display      = "ViewOnly"
+Column       = +0
+Row          = +1

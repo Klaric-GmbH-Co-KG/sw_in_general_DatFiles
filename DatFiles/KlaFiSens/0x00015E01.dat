@@ -1,0 +1,1594 @@
+// ********************************************
+// created by DatFileCreator
+// device : 0x00015E01
+// ********************************************
+
+// ********************************************
+// GROUPs
+// ********************************************
+[GLOBAL]; Festlegung der Parametergruppen
+Group_01            = "Module 0"; global parameter
+SubGroup_1          = "general"
+SubGroup_2          = "FBG_0"
+SubGroup_3          = "FBG_1"
+SubGroup_4          = "FBG_2"
+SubGroup_5          = "FBG_3"
+SubGroup_6          = "FBG_4"
+SubGroup_7          = "FBG_5"
+SubGroup_8          = "FBG_6"
+SubGroup_9          = "FBG_7"
+User_01             = default; access
+Ident_01            = "MODULE_0_PAR"
+Display_01          = "ViewAndModify"
+
+Group_02            = "Tk:ConfigPar"
+User_02             = default; access
+Ident_02            = "CONFIG_PAR"
+Display_02          = "ViewOnly"
+
+Group_03            = "Tk:StatusData"
+User_03             = default; access
+Ident_03            = "STATUS_DATA"
+Display_03          = "ViewOnly"
+
+CanSpace            = 0x30; 
+MeasTab             = 0
+
+// ********************************************
+// COMMANDs
+// ********************************************
+[COMMAND]; Festlegung der Modulkommandos
+Name_01             = "Tk:CreateDbc"	; Reset
+Value_01            = 0x5503
+Id_01               = CMD_CREATE_DBC
+User_01             = default; Zugriffsrecht
+Help_01             = "CreateDbc"
+
+Name_02             = "Tk:Restart"
+Value_02            = 0x5502
+User_02             = operator;
+Id_02               = CMD_RESTART_MM
+Help_02             = "Restart"
+
+Name_03             = "Tk:Terminate"
+Value_03            = 0x5501
+User_03             = operator;
+Id_03               = CMD_RESET
+Help_03             = "Terminate"
+
+Name_04             = "Tk:SaveAllPar"
+Value_04            = 0x0020
+User_04             = operator;
+Id_04               = CMD_SAVE_ALL_PAR
+Help_04             = "Terminate"
+
+// ********************************************
+// MODULE_0_PAR
+// ********************************************
+[M0_AddrFiSens]
+Group               = 1
+SubGroup            = 1
+Name                = "Addr"
+Type                = string
+Size                = 24
+Column              = 1
+Row                 = 1
+
+[M0_ServiceFiSens]
+Group               = 1
+SubGroup            = 1
+Name                = "Service"
+Type                = string
+Size                = 24
+Column              = +0
+Row                 = +1
+
+[M0_AddrLocal]
+Group               = 1
+SubGroup            = 1
+Name                = "Addr local"
+Type                = string
+Size                = 24
+Column              = +0
+Row                 = +1
+
+[M0_ServiceLocal]
+Group               = 1
+SubGroup            = 1
+Name                = "Service local"
+Type                = string
+Size                = 24
+Column              = +0
+Row                 = +1
+
+[M0_State]
+Group               = 1
+SubGroup            = 1
+Name                = "State"
+Type                = Long
+Column              = +0
+Row                 = +1
+Display             = "ViewOnly"
+Attrib              = Select
+Select_01           = "void"
+Value_01            = 0
+Select_02           = "init"
+Value_02            = 1
+Select_03           = "init socket"
+Value_03            = 2
+Select_04           = "ready"
+Value_04            = 3
+Select_05           = "running"
+Value_05            = 4
+Select_06           = "resume"
+Value_06            = 5
+Select_06           = "exit"
+Value_06            = 6
+
+[M0_Rx_Bps]
+Group               = 1
+SubGroup            = 1
+Name                = "Rx Bps"
+Type                = uLong
+Display             = "ViewOnly"
+Column              = +0
+Row                 = +1
+
+[M0_Rx_Fps]
+Group               = 1
+SubGroup            = 1
+Name                = "Rx Fps"
+Type                = uLong
+Display             = "ViewOnly"
+Column              = +0
+Row                 = +1
+
+[M0_Tx_Bps]
+Group               = 1
+SubGroup            = 1
+Name                = "Tx Bps"
+Type                = uLong
+Display             = "ViewOnly"
+Column              = +0
+Row                 = +1
+
+[M0_Tx_Fps]
+Group               = 1
+SubGroup            = 1
+Name                = "Tx Fps"
+Type                = uLong
+Display             = "ViewOnly"
+Column              = +0
+Row                 = +1
+
+; -----------------------------------------------
+[M0_0_RawTemp]
+Group               = 1
+SubGroup            = 2
+Name                = "Tk:TempSource"
+Type                = float
+Display             = "ViewOnly"
+Column              = 1
+Row                 = 1
+
+[M0_0_Temp]
+Group               = 1
+SubGroup            = 2
+Name                = "Tk:TempFinal"
+Type                = float
+Display             = "ViewOnly"
+Column              = 2
+Row                 = 1
+
+; -----------------------------------------------
+[M0_0_Interpol_Y1_0]
+Group               = 1
+SubGroup            = 2
+Name                = "Y1_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_0_Interpol_Y1_1]
+Group               = 1
+SubGroup            = 2
+Name                = "Y1_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_0_Interpol_Y1_2]
+Group               = 1
+SubGroup            = 2
+Name                = "Y1_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_0_Interpol_Y1_3]
+Group               = 1
+SubGroup            = 2
+Name                = "Y1_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_0_Interpol_Y1_4]
+Group               = 1
+SubGroup            = 2
+Name                = "Y1_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_0_Interpol_Y1_5]
+Group               = 1
+SubGroup            = 2
+Name                = "Y1_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_0_Interpol_Y1_6]
+Group               = 1
+SubGroup            = 2
+Name                = "Y1_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_0_Interpol_Y1_7]
+Group               = 1
+SubGroup            = 2
+Name                = "Y1_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_0_Interpol_Y2_0]
+Group               = 1
+SubGroup            = 2
+Name                = "Y2_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 2
+
+[M0_0_Interpol_Y2_1]
+Group               = 1
+SubGroup            = 2
+Name                = "Y2_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 3
+
+[M0_0_Interpol_Y2_2]
+Group               = 1
+SubGroup            = 2
+Name                = "Y2_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 4
+
+[M0_0_Interpol_Y2_3]
+Group               = 1
+SubGroup            = 2
+Name                = "Y2_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 5
+
+[M0_0_Interpol_Y2_4]
+Group               = 1
+SubGroup            = 2
+Name                = "Y2_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 6
+
+[M0_0_Interpol_Y2_5]
+Group               = 1
+SubGroup            = 2
+Name                = "Y2_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 7
+
+[M0_0_Interpol_Y2_6]
+Group               = 1
+SubGroup            = 2
+Name                = "Y2_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 8
+
+[M0_0_Interpol_Y2_7]
+Group               = 1
+SubGroup            = 2
+Name                = "Y2_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 9
+
+; -----------------------------------------------
+[M0_1_RawTemp]
+Group               = 1
+SubGroup            = 3
+Name                = "Tk:TempSource"
+Type                = float
+Display             = "ViewOnly"
+Column              = 1
+Row                 = 1
+
+[M0_1_Temp]
+Group               = 1
+SubGroup            = 3
+Name                = "Tk:TempFinal"
+Type                = float
+Display             = "ViewOnly"
+Column              = 2
+Row                 = 1
+
+; -----------------------------------------------
+[M0_1_Interpol_Y1_0]
+Group               = 1
+SubGroup            = 3
+Name                = "Y1_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_1_Interpol_Y1_1]
+Group               = 1
+SubGroup            = 3
+Name                = "Y1_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_1_Interpol_Y1_2]
+Group               = 1
+SubGroup            = 3
+Name                = "Y1_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_1_Interpol_Y1_3]
+Group               = 1
+SubGroup            = 3
+Name                = "Y1_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_1_Interpol_Y1_4]
+Group               = 1
+SubGroup            = 3
+Name                = "Y1_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_1_Interpol_Y1_5]
+Group               = 1
+SubGroup            = 3
+Name                = "Y1_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_1_Interpol_Y1_6]
+Group               = 1
+SubGroup            = 3
+Name                = "Y1_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_1_Interpol_Y1_7]
+Group               = 1
+SubGroup            = 3
+Name                = "Y1_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_1_Interpol_Y2_0]
+Group               = 1
+SubGroup            = 3
+Name                = "Y2_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 2
+
+[M0_1_Interpol_Y2_1]
+Group               = 1
+SubGroup            = 3
+Name                = "Y2_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 3
+
+[M0_1_Interpol_Y2_2]
+Group               = 1
+SubGroup            = 3
+Name                = "Y2_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 4
+
+[M0_1_Interpol_Y2_3]
+Group               = 1
+SubGroup            = 3
+Name                = "Y2_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 5
+
+[M0_1_Interpol_Y2_4]
+Group               = 1
+SubGroup            = 3
+Name                = "Y2_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 6
+
+[M0_1_Interpol_Y2_5]
+Group               = 1
+SubGroup            = 3
+Name                = "Y2_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 7
+
+[M0_1_Interpol_Y2_6]
+Group               = 1
+SubGroup            = 3
+Name                = "Y2_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 8
+
+[M0_1_Interpol_Y2_7]
+Group               = 1
+SubGroup            = 3
+Name                = "Y2_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 9
+
+; -----------------------------------------------
+[M0_2_RawTemp]
+Group               = 1
+SubGroup            = 4
+Name                = "Tk:TempSource"
+Type                = float
+Display             = "ViewOnly"
+Column              = 1
+Row                 = 1
+
+[M0_2_Temp]
+Group               = 1
+SubGroup            = 4
+Name                = "Tk:TempFinal"
+Type                = float
+Display             = "ViewOnly"
+Column              = 2
+Row                 = 1
+
+; -----------------------------------------------
+[M0_2_Interpol_Y1_0]
+Group               = 1
+SubGroup            = 4
+Name                = "Y1_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_2_Interpol_Y1_1]
+Group               = 1
+SubGroup            = 4
+Name                = "Y1_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_2_Interpol_Y1_2]
+Group               = 1
+SubGroup            = 4
+Name                = "Y1_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_2_Interpol_Y1_3]
+Group               = 1
+SubGroup            = 4
+Name                = "Y1_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_2_Interpol_Y1_4]
+Group               = 1
+SubGroup            = 4
+Name                = "Y1_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_2_Interpol_Y1_5]
+Group               = 1
+SubGroup            = 4
+Name                = "Y1_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_2_Interpol_Y1_6]
+Group               = 1
+SubGroup            = 4
+Name                = "Y1_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_2_Interpol_Y1_7]
+Group               = 1
+SubGroup            = 4
+Name                = "Y1_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_2_Interpol_Y2_0]
+Group               = 1
+SubGroup            = 4
+Name                = "Y2_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 2
+
+[M0_2_Interpol_Y2_1]
+Group               = 1
+SubGroup            = 4
+Name                = "Y2_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 3
+
+[M0_2_Interpol_Y2_2]
+Group               = 1
+SubGroup            = 4
+Name                = "Y2_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 4
+
+[M0_2_Interpol_Y2_3]
+Group               = 1
+SubGroup            = 4
+Name                = "Y2_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 5
+
+[M0_2_Interpol_Y2_4]
+Group               = 1
+SubGroup            = 4
+Name                = "Y2_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 6
+
+[M0_2_Interpol_Y2_5]
+Group               = 1
+SubGroup            = 4
+Name                = "Y2_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 7
+
+[M0_2_Interpol_Y2_6]
+Group               = 1
+SubGroup            = 4
+Name                = "Y2_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 8
+
+[M0_2_Interpol_Y2_7]
+Group               = 1
+SubGroup            = 4
+Name                = "Y2_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 9
+
+; -----------------------------------------------
+[M0_3_RawTemp]
+Group               = 1
+SubGroup            = 5
+Name                = "Tk:TempSource"
+Type                = float
+Display             = "ViewOnly"
+Column              = 1
+Row                 = 1
+
+[M0_3_Temp]
+Group               = 1
+SubGroup            = 5
+Name                = "Tk:TempFinal"
+Type                = float
+Display             = "ViewOnly"
+Column              = 2
+Row                 = 1
+
+; -----------------------------------------------
+[M0_3_Interpol_Y1_0]
+Group               = 1
+SubGroup            = 5
+Name                = "Y1_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_3_Interpol_Y1_1]
+Group               = 1
+SubGroup            = 5
+Name                = "Y1_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_3_Interpol_Y1_2]
+Group               = 1
+SubGroup            = 5
+Name                = "Y1_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_3_Interpol_Y1_3]
+Group               = 1
+SubGroup            = 5
+Name                = "Y1_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_3_Interpol_Y1_4]
+Group               = 1
+SubGroup            = 5
+Name                = "Y1_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_3_Interpol_Y1_5]
+Group               = 1
+SubGroup            = 5
+Name                = "Y1_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_3_Interpol_Y1_6]
+Group               = 1
+SubGroup            = 5
+Name                = "Y1_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_3_Interpol_Y1_7]
+Group               = 1
+SubGroup            = 5
+Name                = "Y1_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_3_Interpol_Y2_0]
+Group               = 1
+SubGroup            = 5
+Name                = "Y2_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 2
+
+[M0_3_Interpol_Y2_1]
+Group               = 1
+SubGroup            = 5
+Name                = "Y2_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 3
+
+[M0_3_Interpol_Y2_2]
+Group               = 1
+SubGroup            = 5
+Name                = "Y2_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 4
+
+[M0_3_Interpol_Y2_3]
+Group               = 1
+SubGroup            = 5
+Name                = "Y2_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 5
+
+[M0_3_Interpol_Y2_4]
+Group               = 1
+SubGroup            = 5
+Name                = "Y2_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 6
+
+[M0_3_Interpol_Y2_5]
+Group               = 1
+SubGroup            = 5
+Name                = "Y2_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 7
+
+[M0_3_Interpol_Y2_6]
+Group               = 1
+SubGroup            = 5
+Name                = "Y2_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 8
+
+[M0_3_Interpol_Y2_7]
+Group               = 1
+SubGroup            = 5
+Name                = "Y2_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 9
+
+; -----------------------------------------------
+[M0_4_RawTemp]
+Group               = 1
+SubGroup            = 6
+Name                = "Tk:TempSource"
+Type                = float
+Display             = "ViewOnly"
+Column              = 1
+Row                 = 1
+
+[M0_4_Temp]
+Group               = 1
+SubGroup            = 6
+Name                = "Tk:TempFinal"
+Type                = float
+Display             = "ViewOnly"
+Column              = 2
+Row                 = 1
+
+; -----------------------------------------------
+[M0_4_Interpol_Y1_0]
+Group               = 1
+SubGroup            = 6
+Name                = "Y1_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_4_Interpol_Y1_1]
+Group               = 1
+SubGroup            = 6
+Name                = "Y1_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_4_Interpol_Y1_2]
+Group               = 1
+SubGroup            = 6
+Name                = "Y1_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_4_Interpol_Y1_3]
+Group               = 1
+SubGroup            = 6
+Name                = "Y1_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_4_Interpol_Y1_4]
+Group               = 1
+SubGroup            = 6
+Name                = "Y1_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_4_Interpol_Y1_5]
+Group               = 1
+SubGroup            = 6
+Name                = "Y1_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_4_Interpol_Y1_6]
+Group               = 1
+SubGroup            = 6
+Name                = "Y1_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_4_Interpol_Y1_7]
+Group               = 1
+SubGroup            = 6
+Name                = "Y1_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_4_Interpol_Y2_0]
+Group               = 1
+SubGroup            = 6
+Name                = "Y2_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 2
+
+[M0_4_Interpol_Y2_1]
+Group               = 1
+SubGroup            = 6
+Name                = "Y2_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 3
+
+[M0_4_Interpol_Y2_2]
+Group               = 1
+SubGroup            = 6
+Name                = "Y2_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 4
+
+[M0_4_Interpol_Y2_3]
+Group               = 1
+SubGroup            = 6
+Name                = "Y2_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 5
+
+[M0_4_Interpol_Y2_4]
+Group               = 1
+SubGroup            = 6
+Name                = "Y2_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 6
+
+[M0_4_Interpol_Y2_5]
+Group               = 1
+SubGroup            = 6
+Name                = "Y2_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 7
+
+[M0_4_Interpol_Y2_6]
+Group               = 1
+SubGroup            = 6
+Name                = "Y2_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 8
+
+[M0_4_Interpol_Y2_7]
+Group               = 1
+SubGroup            = 6
+Name                = "Y2_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 9
+
+; -----------------------------------------------
+[M0_5_RawTemp]
+Group               = 1
+SubGroup            = 7
+Name                = "Tk:TempSource"
+Type                = float
+Display             = "ViewOnly"
+Column              = 1
+Row                 = 1
+
+[M0_5_Temp]
+Group               = 1
+SubGroup            = 7
+Name                = "Tk:TempFinal"
+Type                = float
+Display             = "ViewOnly"
+Column              = 2
+Row                 = 1
+
+; -----------------------------------------------
+[M0_5_Interpol_Y1_0]
+Group               = 1
+SubGroup            = 7
+Name                = "Y1_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_5_Interpol_Y1_1]
+Group               = 1
+SubGroup            = 7
+Name                = "Y1_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_5_Interpol_Y1_2]
+Group               = 1
+SubGroup            = 7
+Name                = "Y1_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_5_Interpol_Y1_3]
+Group               = 1
+SubGroup            = 7
+Name                = "Y1_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_5_Interpol_Y1_4]
+Group               = 1
+SubGroup            = 7
+Name                = "Y1_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_5_Interpol_Y1_5]
+Group               = 1
+SubGroup            = 7
+Name                = "Y1_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_5_Interpol_Y1_6]
+Group               = 1
+SubGroup            = 7
+Name                = "Y1_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_5_Interpol_Y1_7]
+Group               = 1
+SubGroup            = 7
+Name                = "Y1_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_5_Interpol_Y2_0]
+Group               = 1
+SubGroup            = 7
+Name                = "Y2_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 2
+
+[M0_5_Interpol_Y2_1]
+Group               = 1
+SubGroup            = 7
+Name                = "Y2_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 3
+
+[M0_5_Interpol_Y2_2]
+Group               = 1
+SubGroup            = 7
+Name                = "Y2_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 4
+
+[M0_5_Interpol_Y2_3]
+Group               = 1
+SubGroup            = 7
+Name                = "Y2_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 5
+
+[M0_5_Interpol_Y2_4]
+Group               = 1
+SubGroup            = 7
+Name                = "Y2_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 6
+
+[M0_5_Interpol_Y2_5]
+Group               = 1
+SubGroup            = 7
+Name                = "Y2_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 7
+
+[M0_5_Interpol_Y2_6]
+Group               = 1
+SubGroup            = 7
+Name                = "Y2_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 8
+
+[M0_5_Interpol_Y2_7]
+Group               = 1
+SubGroup            = 7
+Name                = "Y2_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 9
+
+; -----------------------------------------------
+[M0_6_RawTemp]
+Group               = 1
+SubGroup            = 8
+Name                = "Tk:TempSource"
+Type                = float
+Display             = "ViewOnly"
+Column              = 1
+Row                 = 1
+
+[M0_6_Temp]
+Group               = 1
+SubGroup            = 8
+Name                = "Tk:TempFinal"
+Type                = float
+Display             = "ViewOnly"
+Column              = 2
+Row                 = 1
+
+; -----------------------------------------------
+[M0_6_Interpol_Y1_0]
+Group               = 1
+SubGroup            = 8
+Name                = "Y1_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_6_Interpol_Y1_1]
+Group               = 1
+SubGroup            = 8
+Name                = "Y1_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_6_Interpol_Y1_2]
+Group               = 1
+SubGroup            = 8
+Name                = "Y1_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_6_Interpol_Y1_3]
+Group               = 1
+SubGroup            = 8
+Name                = "Y1_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_6_Interpol_Y1_4]
+Group               = 1
+SubGroup            = 8
+Name                = "Y1_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_6_Interpol_Y1_5]
+Group               = 1
+SubGroup            = 8
+Name                = "Y1_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_6_Interpol_Y1_6]
+Group               = 1
+SubGroup            = 8
+Name                = "Y1_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_6_Interpol_Y1_7]
+Group               = 1
+SubGroup            = 8
+Name                = "Y1_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_6_Interpol_Y2_0]
+Group               = 1
+SubGroup            = 8
+Name                = "Y2_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 2
+
+[M0_6_Interpol_Y2_1]
+Group               = 1
+SubGroup            = 8
+Name                = "Y2_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 3
+
+[M0_6_Interpol_Y2_2]
+Group               = 1
+SubGroup            = 8
+Name                = "Y2_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 4
+
+[M0_6_Interpol_Y2_3]
+Group               = 1
+SubGroup            = 8
+Name                = "Y2_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 5
+
+[M0_6_Interpol_Y2_4]
+Group               = 1
+SubGroup            = 8
+Name                = "Y2_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 6
+
+[M0_6_Interpol_Y2_5]
+Group               = 1
+SubGroup            = 8
+Name                = "Y2_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 7
+
+[M0_6_Interpol_Y2_6]
+Group               = 1
+SubGroup            = 8
+Name                = "Y2_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 8
+
+[M0_6_Interpol_Y2_7]
+Group               = 1
+SubGroup            = 8
+Name                = "Y2_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 9
+
+; -----------------------------------------------
+[M0_7_RawTemp]
+Group               = 1
+SubGroup            = 9
+Name                = "Tk:TempSource"
+Type                = float
+Display             = "ViewOnly"
+Column              = 1
+Row                 = 1
+
+[M0_7_Temp]
+Group               = 1
+SubGroup            = 9
+Name                = "Tk:TempFinal"
+Type                = float
+Display             = "ViewOnly"
+Column              = 2
+Row                 = 1
+
+; -----------------------------------------------
+[M0_7_Interpol_Y1_0]
+Group               = 1
+SubGroup            = 9
+Name                = "Y1_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_7_Interpol_Y1_1]
+Group               = 1
+SubGroup            = 9
+Name                = "Y1_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_7_Interpol_Y1_2]
+Group               = 1
+SubGroup            = 9
+Name                = "Y1_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_7_Interpol_Y1_3]
+Group               = 1
+SubGroup            = 9
+Name                = "Y1_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_7_Interpol_Y1_4]
+Group               = 1
+SubGroup            = 9
+Name                = "Y1_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_7_Interpol_Y1_5]
+Group               = 1
+SubGroup            = 9
+Name                = "Y1_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_7_Interpol_Y1_6]
+Group               = 1
+SubGroup            = 9
+Name                = "Y1_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_7_Interpol_Y1_7]
+Group               = 1
+SubGroup            = 9
+Name                = "Y1_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 1
+Row                 = 2
+
+[M0_7_Interpol_Y2_0]
+Group               = 1
+SubGroup            = 9
+Name                = "Y2_0"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 2
+
+[M0_7_Interpol_Y2_1]
+Group               = 1
+SubGroup            = 9
+Name                = "Y2_1"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 3
+
+[M0_7_Interpol_Y2_2]
+Group               = 1
+SubGroup            = 9
+Name                = "Y2_2"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 4
+
+[M0_7_Interpol_Y2_3]
+Group               = 1
+SubGroup            = 9
+Name                = "Y2_3"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 5
+
+[M0_7_Interpol_Y2_4]
+Group               = 1
+SubGroup            = 9
+Name                = "Y2_4"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 6
+
+[M0_7_Interpol_Y2_5]
+Group               = 1
+SubGroup            = 9
+Name                = "Y2_5"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 7
+
+[M0_7_Interpol_Y2_6]
+Group               = 1
+SubGroup            = 9
+Name                = "Y2_6"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 8
+
+[M0_7_Interpol_Y2_7]
+Group               = 1
+SubGroup            = 9
+Name                = "Y2_7"
+Type                = float
+Display             = "ViewAndModify"
+Column              = 2
+Row                 = 9
+
+; ----------------------------------------------
+; CONFIG_PAR
+; ----------------------------------------------
+[BroadcastAddr]
+Group               = 2
+Name                = "BroadcastAddr"
+Type                = string
+Size                = 24
+Column              = 1
+Row                 = 1
+
+[BroadcastService]
+Group               = 2
+Name                = "BroadcastService"
+Type                = string
+Size                = 24
+Column              = +0
+Row                 = +1
+
+[ConfigAddr]
+Group               = 2
+Name                = "ConfigAddr"
+Type                = string
+Size                = 24
+Column              = +0
+Row                 = +1
+
+[ConfigService]
+Group               = 2
+Name                = "ConfigService"
+Type                = string
+Size                = 24
+Column              = +0
+Row                 = +1
+[Group]
+Group               = 2
+Name                = "Group"
+Type                = string
+Size                = 24
+Column              = +0
+Row                 = +1
+; ----------------------------------------------
+; STATUS_DATA
+; ----------------------------------------------
+[Error_Flags]
+Group               = 3
+Name                = "Error Flags"
+Type                = uLong
+Display             = "ViewAndModify"
+Attrib              = Option
+Option_00           = "ERR Hw"
+Mask_00             = 0x00000001
+Option_00           = "ERR Can"
+Mask_00             = 0x00000002
+[Status_Flags]
+Group               = 3
+Name                = "Status Flags"
+Type                = uLong
+Display             = "ViewAndModify"
+Attrib              = Option
+Option_00           = "Broadcast is up"
+Mask_00             = 0x00000001
+Option_00           = "Config Service is up"
+Mask_00             = 0x00000002
+Option_00           = "FiSens Service is up"
+Mask_00             = 0x00000004
+Option_00           = "Can is active"
+Mask_00             = 0x00000008
+[SW_Ver]
+Group               = 3
+Common              = "SW_Ver"
+Type                = uInt
+[HW_Ver]
+Group               = 3
+Common              = "HW_Ver"
+Type                = uInt
+[State]
+Group               = 3
+Name                = "Service State"
+Type                = Long
+Attrib              = Select
+Select_01           = "init"
+Value_01            = 0
+Select_02           = "init broadcast"
+Value_02            = 1
+Select_03           = "init broadcast2"
+Value_03            = 2
+Select_04           = "init config service"
+Value_04            = 3
+Select_05           = "init fisens service"
+Value_05            = 4
+Select_06           = "ready"
+Value_06            = 5
+Select_06           = "reset devices"
+Value_06            = 6
+Select_07           = "restart devices"
+Value_07            = 7
+Select_08           = "start"
+Value_08            = 8
+Select_09           = "stop"
+Value_09            = 9
+Select_10           = "resume"
+Value_10            = 10
+[Rx_Bps]
+Group               = 3
+Name                = "Rx Bps"
+Type                = uLong
+[Rx_Fps]
+Group               = 3
+Name                = "Rx Fps"
+Type                = uLong
+[Tx_Bps]
+Group               = 3
+Name                = "Tx Bps"
+Type                = uLong
+[Tx_Fps]
+Group               = 3
+Name                = "Tx Fps"
+Type                = uLong

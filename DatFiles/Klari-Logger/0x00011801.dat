@@ -1,0 +1,856 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01="Tk:GlobalPar"	; global parameter
+User_01=default	; access
+Ident_01="GLOBAL_PAR"
+Display_01="ViewAndModify"
+Group_02="Tk:RtcData"
+User_02=Operator
+Ident_02="RTC"
+Display_02="ViewAndModify"
+Group_03="Tk:FS_Par"	; status information
+User_03=default	; access
+Ident_03="FS_PAR"
+Display_03="ViewOnly"
+Group_04="Tk:Status"	; status information
+User_04=default	; access
+Ident_04="STATUS_DATA"
+Display_04="ViewOnly"
+Group_05="Tk:Calib"
+User_05=System
+Ident_05="CALIB_PAR"
+Display_05="ViewAndModify"
+CanSpace=0x30	; Belegung des Modus von Can Identifiern
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01="Tk:Reset"	; Reset
+Value_01=0x0010
+Id_01=CMD_RESET
+User_01=default	; Zugriffsrecht
+Help_01="Reset"
+Name_02="Tk:Restart"	; Restart
+Value_02=0x0016
+User_02=default	; Zugriffsrecht
+Id_02=CMD_RESTART_MM
+Help_02="Restart"
+Name_03="Tk:SaveAllPar"	; SavePar
+Value_03=0x0020
+Id_03=CMD_SAVE_ALL_PAR
+User_03=operator	; Zugriffsrecht
+Help_03="SavePar"
+Name_04="Tk:SaveCalib"	; SaveCalib
+Value_04=0xCA1B
+Id_04=CMD_SAVE_CALIB
+User_04=system	; Zugriffsrecht
+Help_04="SaveCalib"
+Name_05="Tk:DisplayOnOff"	; Reset
+Value_05=0x2025
+Id_05=CMD_DISPLAY_POWER
+User_05=default	; Zugriffsrecht
+Help_05="DisplayOnOff"
+Name_06="Tk:GetTime"	; get time
+Value_06=0x0030
+User_06=operator	; Zugriffsrecht
+Help_06="GetTime"
+Name_07="Tk:SetTime"	; set time
+Value_07=0x0040
+User_07=operator	; Zugriffsrecht
+Help_07="SetTime"
+Protect_07 = "Tk:SetTimeWarning"
+Name_08="Tk:Boot"	; Boot
+Value_08=0xB007
+User_08=system	; Zugriffsrecht
+Help_08="Boot"
+Protect_08 = "Tk:BootWarning"
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+[DBCFile]
+Group        = 1
+Type         = string
+Size         = 32
+Name         = "Tk:DBCFile"
+Help         = "DBCFile"
+Display      = "ViewOnly"
+
+[LogFile]
+Group        = 1
+Type         = string
+Size         = 32
+Name         = "Tk:LogFile"
+Help         = "LogFile"
+Display      = "ViewOnly"
+
+[CAN_BaseId]
+Group        = 1
+Common       = "CAN_BaseId"
+Default      = 0x701
+Help         = "CAN_BaseId"
+
+[Can1_Baudrate]
+Group        = 1
+Name         = "Can1_Baudrate"
+Common       = "CAN_Baudrate"
+Type         = uChar
+
+[Can1_Term]
+Group        = 1
+Name         = "Can1_Term"
+Common       = "CAN_Term"
+Help         = "Can_Term"
+Type         = uChar
+
+[Can2_Baudrate]
+Group        = 1
+Name         = "Can2_Baudrate"
+Common       = "CAN_Baudrate"
+Type         = uChar
+
+[Can2_Term]
+Group        = 1
+Name         = "Can2_Term"
+Common       = "CAN_Term"
+Help         = "Can_Term"
+Type         = uChar
+
+[Output]
+Group        = 1
+Name         = "Tk:Output_Mode"
+Help         = "Output"
+Type         = uChar
+Attrib       = Option
+Option_00    = "Tk:Measure_Mode:Option:01"
+Mask_00      = 0x00000001
+Option_01    = "Tk:Measure_Mode:Option:06"
+Mask_01      = 0x00000002
+
+[ScreenOrientation]
+Group        = 1
+Name         = "Tk:ScreenOrientation"
+Type         = uChar
+Attrib       = Combo
+Select_00    = "Tk:Landscape"
+Value_00     = 0
+Select_01    = "Tk:Portrait"
+Value_01     = 1
+
+[Language]
+Group        = 1
+Name         = "Tk:LANGUAGE_MENU"
+Type         = uChar
+Attrib       = Combo
+Select_00    = "Tk:GERMAN_SUBMENU"
+Value_00     = 0
+Select_01    = "Tk:ENGLISH_SUBMENU"
+Value_01     = 1
+
+[DspInfo]
+Group        = 1
+Name         = "Tk:Display_Info"
+Help         = "DisplayInfo"
+Type         = uChar
+Attrib       = Option
+Option_00    = "Hexadecimal"
+Mask_00      = 0x00000001
+
+[LogFile_Size]
+Group        = 1
+Name         = "Tk:Log_File_Size"
+Help         = "LogFileSize"
+Type         = uLong
+Values       = 100..40000
+
+; -----------------------------------------------
+; RTC_PAR
+; -----------------------------------------------
+
+[Sec]
+Group        = 2
+Name         = "Tk:Seconds"
+Type         = uChar
+Values       = 0..59
+
+[Min]
+Group        = 2
+Name         = "Tk:Minutes"
+Type         = uChar
+Values       = 0..59
+
+[Hours]
+Group        = 2
+Name         = "Tk:Hour"
+Type         = uChar
+Values       = 0..23
+
+[Day]
+Group        = 2
+Name         = "Tk:Week_Day"
+Type         = uChar
+Values       = 1..7
+
+[Date]
+Group        = 2
+Name         = "Tk:Dates"
+Type         = uChar
+Values       = 1..31
+
+[Month]
+Group        = 2
+Name         = "Tk:Months"
+Type         = uChar
+Values       = 1..12
+
+[Year]
+Group        = 2
+Name         = "Tk:Years"
+Type         = uInt
+Values       = 1970..10000
+
+; -----------------------------------------------
+; FS_PAR
+; -----------------------------------------------
+
+[State]
+Group        = 3
+Display      = "ViewOnly"
+Name         = "State"
+Type         = uLong
+Attrib       = Combo
+Select_00    = "FS_ST_VOID"
+Value_00     = 0
+Select_01    = "FS_ST_INIT"
+Value_01     = 1
+Select_02    = "FS_ST_POWER_ON_WAIT"
+Value_02     = 2
+Select_03    = "FS_ST_WAIT_FOR_BUS_ENABLE_COMPLETE"
+Value_03     = 3
+Select_04    = "FS_ST_WAIT_FOR_DEVICE_ATTACH"
+Value_04     = 4
+Select_05    = "FS_ST_READY"
+Value_05     = 5
+Select_06    = "FS_ST_RESUME"
+Value_06     = 6
+Select_07    = "FS_ST_RESUME_WAIT"
+Value_07     = 7
+Select_08    = "FS_ST_STOP"
+Value_08     = 8
+Select_09    = "FS_ST_STOP2"
+Value_09     = 9
+Select_10    = "FS_ST_STOP3"
+Value_10     = 10
+
+[Flags]
+Group        = 3
+Name         = "Flags"
+Type         = uLong
+Display      = "ViewOnly"
+Attrib       = Option
+Option_00    = "FS_FLG_USB_IS_POWERED"
+Mask_00      = 0x00000001
+Option_01    = "FS_FLG_USB_POWER_OC"
+Mask_01      = 0x00000002
+Option_02    = "FS_FLG_USB_DEVICE_PRESENT"
+Mask_02      = 0x00000004
+Option_03    = "FS_FLG_MOUNTED"
+Mask_03      = 0x00000008
+Option_04    = "FS_FLG_DEVICE_UNSUPPORTED"
+Mask_04      = 0x00000010
+Option_05    = "FS_FLG_WRITE_PENDING"
+Mask_05      = 0x00000020
+Option_06    = "FS_FLG_WRITE_ERROR"
+Mask_06      = 0x00000040
+Option_07    = "FS_FLG_DELETE_PENDING"
+Mask_07      = 0x00000080
+Option_08    = "FS_FLG_MOUNT_REQUEST"
+Mask_08      = 0x00000100
+Option_09    = "FS_FLG_UNMOUNT_REQUEST"
+Mask_09      = 0x00000200
+Option_10    = "FS_FLG_UNMOUNT_REQUEST"
+Mask_10      = 0x00000400
+Option_10    = "FS_FLG_SEARCH_DBC"
+Mask_10      = 0x00000800
+Option_10    = "FS_FLG_READ_RUNNING"
+Mask_10      = 0x00001000
+Option_10    = "FS_FLG_READ_ERROR"
+Mask_10      = 0x00002000
+
+[FileWriteTime]
+Group        = 3
+Name         = "FileWriteTime"
+Type         = uLong
+
+[FileBlockSize]
+Group        = 3
+Name         = "FileBlockSize"
+Type         = uLong
+
+[SysFsError]
+Group        = 3
+Name         = "SysFsError"
+Type         = uLong
+
+[FileIdx]
+Group        = 3
+Name         = "FileIdx"
+Type         = uLong
+
+[FileDeleteNum]
+Group        = 3
+Name         = "FileDeleteNum"
+Type         = uLong
+
+[Write_Bps]
+Group        = 3
+Name         = "Write_Bps"
+Type         = uLong
+
+[FileSize]
+Group        = 3
+Name         = "FileSize"
+Type         = uLong
+
+[FileWriteTotalBytes]
+Group        = 3
+Name         = "FileWriteTotalBytes"
+Type         = uLong
+
+[TotalSectors]
+Group        = 3
+Name         = "TotalSectors"
+Type         = uLong
+
+[FreeSectors]
+Group        = 3
+Name         = "FreeSectors"
+Type         = uLong
+
+[Capacity]
+Group        = 3
+Name         = "Capacity"
+Type         = uLong
+
+; -----------------------------------------------
+; STATUS
+; -----------------------------------------------
+
+[Error_Flags]
+Group        = 4
+Name         = "Error Flags"
+Type         = uLong
+Display      = "ViewOnly"
+Attrib       = Option
+Option_00    = "ERR_HW"
+Mask_00      = 0x00000001
+Option_01    = "ERR_EE"
+Mask_01      = 0x00000002
+Option_02    = "ERR_MEMORY"
+Mask_02      = 0x00000004
+Option_03    = "ERR_NETDEV_HANDLER"
+Mask_03      = 0x00000010
+Option_04    = "ERR_NETDEV_OVR"
+Mask_04      = 0x00000020
+Option_05    = "ERR_OWH_DATA"
+Mask_05      = 0x00000100
+Option_06    = "ERR_CAN1"
+Mask_06      = 0x00000200
+Option_07    = "ERR_CAN2"
+Mask_07      = 0x00000400
+Option_08    = "ERR_XCP_OVR"
+Mask_08      = 0x00000800
+Option_09    = "ERR_RTC"
+Mask_09      = 0x00004000
+Option_10    = "ERR_DEFAULT"
+Mask_10      = 0x00008000
+Option_11    = "ERROR_NEG_MASK"
+Mask_11      = 0xFFFFFFFF
+Option_12    = "ERR_TEMP_MASK"
+Mask_12      = 0x00001670
+Option_13    = "ERR_HW_MASK"
+Mask_13      = 0x00FF8183
+
+[Status_Flags]
+Group        = 4
+Name         = "Status Flags"
+Type         = uLong
+Display      = "ViewOnly"
+Attrib       = Option
+Option_00    = "STATUS_UART"
+Mask_00      = 0x00000001
+Option_01    = "STATUS_ETHERNET"
+Mask_01      = 0x00000002
+Option_02    = "STATUS_SYSLOG"
+Mask_02      = 0x00000004
+Option_03    = "STATUS_NETDEV"
+Mask_03      = 0x00000008
+Option_04    = "STATUS_XCP"
+Mask_04      = 0x00000010
+Option_05    = "STATUS_XCP_CONNECTED"
+Mask_05      = 0x00000100
+Option_06    = "STATUS_XCP_DAQ"
+Mask_06      = 0x00000200
+Option_07    = "STATUS_MEAS_IS_RUNNING"
+Mask_07      = 0x00001000
+Option_08    = "STATUS_ETH_IS_UP"
+Mask_08      = 0x00010000
+Option_09    = "STATUS_ETH_IS_LINKED"
+Mask_09      = 0x00020000
+Option_10    = "STATUS_ETH_IS_READY"
+Mask_10      = 0x00040000
+Option_11    = "STATUS_USB_OC_INT"
+Mask_11      = 0x00100000
+Option_12    = "STATUS_REL_STATE"
+Mask_12      = 0x00200000
+Option_13    = "STATUS_NEG_MASK"
+Mask_13      = 0xFFFFFFFF
+
+[SW_Ver]
+Group        = 4
+Common       = "SW_Ver"
+
+[HW_Ver]
+Group        = 4
+Common       = "HW_Ver"
+
+[MainSeqState]
+Group        = 4
+Name         = "Tk:Name"
+Type         = int
+Attrib       = Combo
+Select_00    = "MAIN_SEQ_ST_PON"
+Value_00     = 0
+Select_01    = "MAIN_SEQ_ST_PON_WAIT"
+Value_01     = 1
+Select_02    = "MAIN_SEQ_ST_INIT_EE"
+Value_02     = 2
+Select_03    = "MAIN_SEQ_ST_INIT"
+Value_03     = 3
+Select_04    = "MAIN_SEQ_ST_WAIT_UART"
+Value_04     = 4
+Select_05    = "MAIN_SEQ_ST_WAIT_SYSLOG_UART"
+Value_05     = 5
+Select_06    = "MAIN_SEQ_ST_WAIT_DSP_UART"
+Value_06     = 6
+Select_07    = "MAIN_SEQ_ST_START_HANDLER"
+Value_07     = 7
+Select_08    = "MAIN_SEQ_ST_WAIT_ETHERNET"
+Value_08     = 8
+Select_09    = "MAIN_SEQ_ST_WAIT_SYSLOG_ETH"
+Value_09     = 9
+Select_10    = "MAIN_SEQ_ST_INIT_NETDEV"
+Value_10     = 10
+Select_11    = "MAIN_SEQ_ST_INIT_CONFIG"
+Value_11     = 11
+Select_12    = "MAIN_SEQ_ST_INIT_XCP"
+Value_12     = 12
+Select_13    = "MAIN_SEQ_ST_ONEWIRE_WAIT"
+Value_13     = 13
+Select_14    = "MAIN_SEQ_ST_FINISH_STARTUP"
+Value_14     = 14
+Select_15    = "MAIN_SEQ_ST_WAIT_HANDLER"
+Value_15     = 15
+Select_15    = "MAIN_SEQ_ST_WAIT_FS"
+Value_15     = 16
+Select_16    = "MAIN_SEQ_ST_CREATE_INFO_VEC"
+Value_16     = 17
+Select_17    = "MAIN_SEQ_ST_UPDATE_DSP_REG"
+Value_17     = 18
+Select_17    = "MAIN_SEQ_ST_WELCOME_DSP"
+Value_17     = 19
+Select_18    = "MAIN_SEQ_ST_READY"
+Value_18     = 20
+Select_19    = "MAIN_SEQ_ST_RESTART"
+Value_19     = 21
+Select_20    = "MAIN_SEQ_ST_RESTART_WAIT"
+Value_20     = 22
+Select_21    = "MAIN_SEQ_ST_RESUME"
+Value_21     = 23
+Select_22    = "MAIN_SEQ_ST_STOP"
+Value_22     = 24
+Select_23    = "MAIN_SEQ_ST_VOID"
+Value_23     = 25
+Select_24    = "MAIN_SEQ_ST_ERROR"
+Value_24     = 26
+
+[UartKoDeX_State]
+Group        = 4
+Name         = "Tk:Name"
+Type         = int
+Attrib       = Combo
+Select_00    = "UART_ST_VOID"
+Value_00     = 0
+Select_01    = "UART_ST_INIT"
+Value_01     = 1
+Select_02    = "UART_ST_READY"
+Value_02     = 2
+Select_03    = "UART_ST_RESTART"
+Value_03     = 3
+Select_04    = "UART_ST_RESUME"
+Value_04     = 4
+Select_05    = "UART_ST_STOP"
+Value_05     = 5
+
+[Can1_State]
+Group        = 4
+Name         = "Tk:Can1_State"
+Type         = uInt
+Attrib       = Combo
+Select_00    = "CAN_ST_VOID"
+Value_00     = 0
+Select_01    = "CAN_ST_IDLE"
+Value_01     = 1
+Select_02    = "CAN_ST_INIT"
+Value_02     = 2
+Select_03    = "CAN_ST_WAIT_PWR"
+Value_03     = 3
+Select_04    = "CAN_ST_WAIT_VIO"
+Value_04     = 4
+Select_05    = "CAN_ST_WAIT_CONFIG_MODE"
+Value_05     = 5
+Select_06    = "CAN_ST_WAIT_NORMAL_MODE"
+Value_06     = 6
+Select_07    = "CAN_ST_READY"
+Value_07     = 7
+Select_08    = "CAN_ST_RESUME"
+Value_08     = 8
+Select_09    = "CAN_ST_RESUME_WAIT_CLR_PWR_EN"
+Value_09     = 9
+Select_10    = "CAN_ST_RESUME_WAIT_CLR_VIO_EN"
+Value_10     = 10
+Select_11    = "CAN_ST_STOP"
+Value_11     = 11
+Select_12    = "CAN_ST_STOP_WAIT_CLR_PWR_EN"
+Value_12     = 12
+Select_13    = "CAN_ST_STOP_WAIT_CLR_VIO_EN"
+Value_13     = 13
+Select_14    = "CAN_ST_NUM"
+Value_14     = 14
+
+[Can2_State]
+Group        = 4
+Name         = "Tk:Can2_State"
+Type         = uInt
+Attrib       = Combo
+Select_00    = "CAN_ST_VOID"
+Value_00     = 0
+Select_01    = "CAN_ST_IDLE"
+Value_01     = 1
+Select_02    = "CAN_ST_INIT"
+Value_02     = 2
+Select_03    = "CAN_ST_WAIT_PWR"
+Value_03     = 3
+Select_04    = "CAN_ST_WAIT_VIO"
+Value_04     = 4
+Select_05    = "CAN_ST_WAIT_CONFIG_MODE"
+Value_05     = 5
+Select_06    = "CAN_ST_WAIT_NORMAL_MODE"
+Value_06     = 6
+Select_07    = "CAN_ST_READY"
+Value_07     = 7
+Select_08    = "CAN_ST_RESUME"
+Value_08     = 8
+Select_09    = "CAN_ST_RESUME_WAIT_CLR_PWR_EN"
+Value_09     = 9
+Select_10    = "CAN_ST_RESUME_WAIT_CLR_VIO_EN"
+Value_10     = 10
+Select_11    = "CAN_ST_STOP"
+Value_11     = 11
+Select_12    = "CAN_ST_STOP_WAIT_CLR_PWR_EN"
+Value_12     = 12
+Select_13    = "CAN_ST_STOP_WAIT_CLR_VIO_EN"
+Value_13     = 13
+Select_14    = "CAN_ST_NUM"
+Value_14     = 14
+
+[Can1_Flags]
+Group        = 4
+Name         = "Can1 Flags"
+Type         = uLong
+Attrib       = Option
+Option_00    = "CAN_PWR_EN"
+Mask_00      = 0x00000001
+Option_01    = "CAN_VIO_EN"
+Mask_01      = 0x00000002
+Option_02    = "CAN_IS_RUNNING"
+Mask_02      = 0x00000004
+Option_03    = "CAN_ERROR"
+Mask_03      = 0x00000008
+Option_04    = "CAN_TERM"
+Mask_04      = 0x00000010
+Option_05    = "CAN_BROADCAST_DELAY"
+Mask_05      = 0x00000020
+Option_06    = "CAN_KODEX_EN"
+Mask_06      = 0x00000040
+Option_07    = "CAN_NEG_MASK"
+Mask_07      = 0xFFFFFFFF
+
+[Can2_Flags]
+Group        = 4
+Name         = "Can2 Flags"
+Type         = uLong
+Attrib       = Option
+Option_00    = "CAN_PWR_EN"
+Mask_00      = 0x00000001
+Option_01    = "CAN_VIO_EN"
+Mask_01      = 0x00000002
+Option_02    = "CAN_IS_RUNNING"
+Mask_02      = 0x00000004
+Option_03    = "CAN_ERROR"
+Mask_03      = 0x00000008
+Option_04    = "CAN_TERM"
+Mask_04      = 0x00000010
+Option_05    = "CAN_BROADCAST_DELAY"
+Mask_05      = 0x00000020
+Option_06    = "CAN_KODEX_EN"
+Mask_06      = 0x00000040
+Option_07    = "CAN_NEG_MASK"
+Mask_07      = 0xFFFFFFFF
+
+[Uart_RxBps]
+Group        = 4
+Name         = "Uart RxBps"
+Type         = uLong
+
+[Uart_TxBps]
+Group        = 4
+Name         = "Uart TxBps"
+Type         = uLong
+
+[KoDeX_Instances]
+Group        = 4
+Name         = "KoDeX Instances"
+Type         = uLong
+
+[UartSysLog_State]
+Group        = 4
+Name         = "UartSysLog_State"
+Type         = uLong
+Attrib       = Combo
+Select_00    = "UART_ST_VOID"
+Value_00     = 0
+Select_01    = "UART_ST_INIT"
+Value_01     = 1
+Select_02    = "UART_ST_READY"
+Value_02     = 2
+Select_03    = "UART_ST_RESTART"
+Value_03     = 3
+Select_04    = "UART_ST_RESUME"
+Value_04     = 4
+Select_05    = "UART_ST_STOP"
+Value_05     = 5
+
+[UartSysLog_RxBps]
+Group        = 4
+Name         = "UartSysLog_RxBps"
+Type         = uLong
+
+[UartSysLog_TxBps]
+Group        = 4
+Name         = "UartSysLog_TxBps"
+Type         = uLong
+
+[SysLog_State]
+Group        = 4
+Name         = "SysLog State"
+Type         = long
+Attrib       = Combo
+Select_00    = "SYSLOG_ST_VOID"
+Value_00     = 0
+Select_01    = "SYSLOG_ST_INIT"
+Value_01     = 1
+Select_02    = "SYSLOG_ST_READY"
+Value_02     = 2
+Select_03    = "SYSLOG_ST_STOP"
+Value_03     = 3
+Select_04    = "SYSLOG_ST_NUM"
+Value_04     = 4
+
+[SysLog_Head]
+Group        = 4
+Name         = "SysLog_Head"
+Type         = long
+
+[SysLog_Tail]
+Group        = 4
+Name         = "SysLog_Tail"
+Type         = long
+
+[SysLog_Space]
+Group        = 4
+Name         = "SysLog_Space"
+Type         = long
+
+[SysLog_Bps]
+Group        = 4
+Name         = "SysLog_Bps"
+Type         = long
+
+[ResetReason]
+Group        = 4
+Name         = "ResetReason"
+Type         = uLong
+
+[SysTs]
+Group        = 4
+Name         = "SysTs"
+Type         = uLong
+
+[CurrDialog]
+Group        = 4
+Name         = "Dialog"
+Type         = uChar
+Attrib       = Combo
+Select_00    = "Configuration"
+Value_00     = 0
+Select_01    = "Messages"
+Value_01     = 1
+
+[PageCnt]
+Group        = 4
+Name         = "PageCnt"
+Type         = uChar
+
+[CurrPage]
+Group        = 4
+Name         = "CurrPage"
+Type         = uChar
+
+[DisplayPwr]
+Group        = 4
+Name         = "DisplayPwr"
+Type         = uChar
+Attrib       = Select
+Help         = "DisplayPwr"
+Select_01    = "Tk:On"
+Value_01     = 1
+Select_02    = "Tk:Off"
+Value_02     = 0
+
+[DateTime]
+Group        = 4
+Type         = string
+Size         = 32
+Name         = "DateTime"
+
+[lVar2]
+Group        = 4
+Name         = "lVar2"
+Type         = Long
+
+[lVar3]
+Group        = 4
+Name         = "lVar3"
+Type         = long
+
+[lVar4]
+Group        = 4
+Name         = "lVar4"
+Type         = long
+
+; -----------------------------------------------
+; KALIB
+; -----------------------------------------------
+[Serial_Number]
+Group        = 5
+Common       = "Serial_Number"	
+Type         = long
+Default      = -1
+
+[Month]
+Group        = 5
+Common       = "Month"
+Type         = int
+
+[Year]
+Group        = 5
+Common       = "Year"
+Type         = int
+
+[SLD_Flags]
+Group        = 5
+Name         = "SysLog Flags"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "SYSLOG_MASK_ON"
+Mask_00      = 0x00000001
+Option_01    = "SYSLOG_MASK_DBG"
+Mask_01      = 0x00000002
+Option_02    = "SYSLOG_MASK_ERR"
+Mask_02      = 0x00000004
+Option_03    = "SYSLOG_MASK_FLW"
+Mask_03      = 0x00000008
+Option_04    = "SYSLOG_MASK_RX"
+Mask_04      = 0x00000010
+Option_05    = "SYSLOG_MASK_TX"
+Mask_05      = 0x00000020
+Option_06    = "SYSLOG_MASK_PROT"
+Mask_06      = 0x00000040
+Option_07    = "SYSLOG_MASK_USR1"
+Mask_07      = 0x00000080
+Option_08    = "SYSLOG_MASK_USR2"
+Mask_08      = 0x00000100
+Option_09    = "SYSLOG_MASK_USR3"
+Mask_09      = 0x00000200
+Option_10    = "SYSLOG_MASK_USR4"
+Mask_10      = 0x00000400
+Option_11    = "SYSLOG_MASK_USR5"
+Mask_11      = 0x00000800
+Option_12    = "SYSLOG_MASK_USR6"
+Mask_12      = 0x00001000
+Option_13    = "SYSLOG_MASK_USR7"
+Mask_13      = 0x00002000
+Option_14    = "SYSLOG_MASK_USR8"
+Mask_14      = 0x00004000
+Option_15    = "SYSLOG_MASK_USR9"
+Mask_15      = 0x00008000
+Option_16    = "SYSLOG_FLG_NEG_MASK"
+Mask_16      = 0xFFFFFFFF
+
+[Debug_Flags]
+Group        = 5
+Name         = "Debug_Flags"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "DEBUG_UART1_ENABLE"
+Mask_00      = 0x00000001
+Option_01    = "DEBUG_UART2_ENABLE"
+Mask_01      = 0x00000002
+Option_02    = "DEBUG_UART3_ENABLE"
+Mask_02      = 0x00000004
+Option_03    = "DEBUG_CAN1_ENABLE"
+Mask_03      = 0x00000008
+Option_04    = "DEBUG_CAN2_ENABLE"
+Mask_04      = 0x00000010
+Option_05    = "DEBUG_ETH_ENABLE"
+Mask_05      = 0x00000020
+Option_06    = "DEBUG_USB_ENABLE"
+Mask_06      = 0x00000100
+Option_07    = "DEBUG_NETDEV_ENABLE"
+Mask_07      = 0x00000200
+Option_08    = "DEBUG_XCP_ENABLE"
+Mask_08      = 0x00000400
+Option_09    = "DEBUG_TS_SUB_MS"
+Mask_09      = 0x00000800
+Option_10    = "DEBUG_SYSLOG_UART"
+Mask_10      = 0x00001000
+Option_11    = "DEBUG_SYSLOG_ETH"
+Mask_11      = 0x00002000
+Option_12    = "DEBUG_KODEX_CAN1_ENABLE"
+Mask_12      = 0x00004000
+Option_13    = "DEBUG_KODEX_CAN2_ENABLE"
+Mask_13      = 0x00008000
+Option_14    = "DEBUG_KODEX_ETH_ENABLE"
+Mask_14      = 0x00010000
+Option_15    = "DEBUG_NEG_MASK"
+Mask_15      = 0xFFFFFFFF
+
+[OvrValue]
+Group        = 5
+Name         = "OvrValue"
+Type         = long
+
+[LastPattern]
+Group        = 5
+Name         = "LastPattern"
+Type         = uLong

@@ -1,0 +1,198 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01="Tk:GlobalPar"	; global parameter
+User_01=default	; access
+Ident_01="GLOBAL_PAR"
+Display_01="ViewAndModify"
+Group_02="Tk:Variables"
+User_02=Operator
+Ident_02="VARIABLEN"
+Display_02="ViewOnly"
+CanSpace=0x30	; Belegung des Modus von Can Identifiern
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01="Tk:Reset"	; Reset
+Value_01=0x0010
+User_01=default	; Zugriffsrecht
+Help_01="Reset"
+Name_02="Tk:Restart"	; Restart
+Value_02=0x0016
+User_02=default	; Zugriffsrecht
+Help_02="Restart"
+Name_03="Tk:SavePar"	; SavePar
+Value_03=0x0020
+User_03=operator	; Zugriffsrecht
+Help_03="SavePar"
+
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+[CAN_BaseId]
+Group        = 1
+Common       = "CAN_BaseId"
+Default      = 0x700
+Help         = "CAN_BaseId"
+
+[Family]
+Group        = 1
+Name         = "Family"
+Type         = string
+Size         = 24
+
+[IPv4]
+Group        = 1
+Name         = "IPv4"
+Type         = string
+Size         = 24
+
+[ServiceBroadcast]
+Group        = 1
+Name         = "ServiceBroadcast"
+Type         = string
+Size         = 24
+
+[ServiceConfig]
+Group        = 1
+Name         = "ServiceConfig"
+Type         = string
+Size         = 24
+
+[ServiceMeas]
+Group        = 1
+Name         = "ServiceMeas"
+Type         = string
+Size         = 24
+
+
+
+; -----------------------------------------------
+; VARIABLEN
+; -----------------------------------------------
+
+[Error_Flags]
+Group        = 2
+Name         = "Error Flags"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "ERR Hw"
+Mask_00      = 0x00000001
+Option_01    = "ERR E2Prom"
+Mask_01      = 0x00000002
+Option_02    = "ERR Asic1"
+Mask_02      = 0x00000004
+Option_03    = "ERR Owh"
+Mask_03      = 0x00000008
+Option_04    = "Xdma wait"
+Mask_04      = 0x00000010
+Option_05    = "Xdma ????"
+Mask_05      = 0x00000020
+Option_06    = "Accu Fifo"
+Mask_06      = 0x00000100
+Option_07    = "Sample OVR"
+Mask_07      = 0x00000200
+Option_08    = "Sample CONST"
+Mask_08      = 0x00000400
+Option_09    = "Period OVR"
+Mask_09      = 0x00000800
+Option_10    = "CSM Selected"
+Mask_10      = 0x00002000
+Option_11    = "CSM Mode Idle"
+Mask_11      = 0x00004000
+Option_12    = "Default Calib"
+Mask_12      = 0x00008000
+Option_13    = "ERR ThermoWire"
+Mask_13      = 0x00010000
+Option_14    = "ERR Asic2"
+Mask_14      = 0x00100000
+Option_15    = "ERR Can2"
+Mask_15      = 0x01000000
+Option_16    = "Can2 OVR"
+Mask_16      = 0x02000000
+Option_17    = "Disable CAN Meas"
+Mask_17      = 0x10000000
+
+[Status_Flags]
+Group        = 2
+Name         = "Status Flags"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "ERR Hw"
+Mask_00      = 0x00000001
+Option_01    = "ERR E2Prom"
+Mask_01      = 0x00000002
+Option_02    = "ERR Asic1"
+Mask_02      = 0x00000004
+Option_03    = "ERR Owh"
+Mask_03      = 0x00000008
+Option_04    = "Xdma wait"
+Mask_04      = 0x00000010
+Option_05    = "Xdma ????"
+Mask_05      = 0x00000020
+Option_06    = "Accu Fifo"
+Mask_06      = 0x00000100
+Option_07    = "Sample OVR"
+Mask_07      = 0x00000200
+Option_08    = "Sample CONST"
+Mask_08      = 0x00000400
+Option_09    = "Period OVR"
+Mask_09      = 0x00000800
+Option_10    = "CSM Selected"
+Mask_10      = 0x00002000
+Option_11    = "CSM Mode Idle"
+Mask_11      = 0x00004000
+Option_12    = "Default Calib"
+Mask_12      = 0x00008000
+Option_13    = "ERR ThermoWire"
+Mask_13      = 0x00010000
+Option_14    = "ERR Asic2"
+Mask_14      = 0x00100000
+Option_15    = "ERR Can2"
+Mask_15      = 0x01000000
+Option_16    = "Can2 OVR"
+Mask_16      = 0x02000000
+Option_17    = "Disable CAN Meas"
+Mask_17      = 0x10000000
+
+[SW_Ver]
+Group        = 2
+Common       = "SW_Ver"
+Type         = uInt
+
+[HW_Ver]
+Group        = 2
+Common       = "HW_Ver"
+Type         = uInt
+
+[State]
+Group        = 2
+Name         = "MainSeq State"
+Type         = Long
+Attrib       = Select
+Select_01    = "PowerOn"
+Value_01     = 0
+Select_02    = "PowerInit"
+Value_02     = 1
+Select_03    = "Init"
+Value_03     = 2
+Select_04    = "Ready"
+Value_04     = 3
+Select_05    = "ShutDown"
+Value_05     = 4
+Select_06    = "Restart"
+Value_06     = 5
+Select_07    = "ResumeHard"
+Value_07     = 6
+
+[Rx_Bps]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+
+[Tx_Bps]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+
+

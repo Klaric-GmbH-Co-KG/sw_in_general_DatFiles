@@ -1,0 +1,2011 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01="Tk:GlobalPar"	; global parameter
+User_01=default	; access
+Ident_01="GLOBAL_PAR"
+Display_01="ViewAndModify"
+Group_02="Tk:ClientType"	; global parameter
+User_02=default	; access
+Ident_02="CLIENT_TYPE"
+Display_02="ViewOnly"
+Group_03="Tk:ClientInfo"	; global parameter
+User_03=default	; access
+Ident_03="CLIENT_INFO"
+Display_03="ViewOnly"
+Group_04="Tk:Variables"
+User_04=Operator
+Ident_04="VARIABLEN"
+Display_04="ViewOnly"
+CanSpace=0x10	; Belegung des Modus von Can Identifiern
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01="Tk:Restart"	; Restart
+Value_01=0x0016
+User_01=default	; Zugriffsrecht
+Help_01="Restart"
+Name_02="Tk:SaveAll"	; SavePar
+Value_02=0x0020
+User_02=operator	; Zugriffsrecht
+Help_02="SaveAll"
+Name_03="Tk:StartMeas"	; SavePar
+Value_03=0x1020
+User_03=operator	; Zugriffsrecht
+Help_03="StartStopMeas"
+Name_04="Tk:StopMeas"	; SavePar
+Value_04=0x1021
+User_04=operator	; Zugriffsrecht
+Help_04="StartStopMeas"
+Name_05="Tk:Terminate"	; SavePar
+Value_05=0x5501
+User_05=operator	; Zugriffsrecht
+Help_05="RestartTerminate"
+Name_06="Tk:Restart"	; SavePar
+Value_06=0x5502
+User_06=operator	; Zugriffsrecht
+Help_06="RestartTerminate"
+Name_07="Tk:RestartDevices"	; Restart
+Value_07=0x1616
+User_07=default	; Zugriffsrecht
+Help_07="Restart"
+Name_08="Tk:ResetDevices"	; Restart
+Value_08=0x1010
+User_08=default	; Zugriffsrecht
+Help_08="Reset"
+
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+[Family]
+Group        = 1
+Name         = "Family"
+Type         = string
+Size         = 24
+
+[IPv4]
+Group        = 1
+Name         = "IPv4"
+Type         = string
+Size         = 24
+
+[ServiceBroadcast]
+Group        = 1
+Name         = "ServiceBroadcast"
+Type         = string
+Size         = 24
+
+[ServiceConfig]
+Group        = 1
+Name         = "ServiceConfig"
+Type         = string
+Size         = 24
+
+[ServiceMeas]
+Group        = 1
+Name         = "ServiceMeas"
+Type         = string
+Size         = 24
+
+[Group]
+Group        = 1
+Name         = "Group"
+Type         = string
+Size         = 24
+
+
+
+; -----------------------------------------------
+; CLIENT_INFO_STRUCT
+; -----------------------------------------------
+[Option_1]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 1
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_1]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_1]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_1]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_1]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_1]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_1]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+
+[Option_2]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 2
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_2]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_2]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_2]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_2]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_2]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_2]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+
+[Option_3]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 3
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_3]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_3]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_3]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_3]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_3]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_3]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+
+[Option_4]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 4
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_4]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_4]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_4]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_4]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_4]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_4]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Option_5]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 5
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_5]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_5]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_5]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_5]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_5]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_5]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+
+[Option_6]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 6
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_6]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_6]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_6]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_6]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_6]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_6]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+
+[Option_7]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 7
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_7]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_7]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_7]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_7]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_7]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_7]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+
+[Option_8]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 8
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_8]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_8]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_8]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_8]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_8]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_8]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Option_9]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 9
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_9]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_9]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_9]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_9]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_9]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_9]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Option_10]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 10
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_10]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_10]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_10]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_10]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_10]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_10]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Option_11]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 11
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_11]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_11]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_11]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_11]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_11]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_11]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Option_12]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 12
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_12]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_12]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_12]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_12]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_12]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_12]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Option_13]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 13
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_13]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_13]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_13]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_13]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_13]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_13]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Option_14]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 14
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_14]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_14]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_14]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_14]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_14]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_14]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Option_15]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 15
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_15]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_15]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_15]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_15]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_15]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_15]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Option_16]
+Group        = 2
+Name         = "Option"
+Type         = uLong
+Column       = 16
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "select"
+Mask_00      = 0x00000001
+
+[ServiceId_16]
+Group        = 2
+Name         = "ServiceId"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Type_16]
+Group        = 2
+Name         = "Type"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "---"
+Value_00     = 0
+Select_00    = "CONFIG"
+Value_00     = 1
+Select_00    = "MEAS"
+Value_00     = 2
+
+[ProgressState_16]
+Group        = 2
+Name         = "ProgressState"
+Type         = uLong
+Column       = +0
+Row          = +1
+Attrib       = Combo
+Select_00    = "in progress"
+Value_00     = 0
+Select_00    = "keep alive"
+Value_00     = 1
+
+[Name_16]
+Group        = 2
+Name         = "Name"
+Type         = string
+Size         = 64
+Column       = +0
+Row          = +1
+
+[Rx_Bps_16]
+Group        = 2
+Name         = "Rx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+[Tx_Bps_16]
+Group        = 2
+Name         = "Tx Bps"
+Type         = uLong
+Column       = +0
+Row          = +1
+
+
+
+; -----------------------------------------------
+; VARIABLEN
+; -----------------------------------------------
+[Option]
+Group        = 3
+Name         = "Option"
+Type         = uLong
+Column       = 1
+Row          = 1
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "Config Client"
+Mask_00      = 0x00000001
+Option_00    = "Meas Client"
+Mask_00      = 0x00000002
+
+[Info_0_0]
+Group        = 3
+Name         = "Name"
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 1
+
+[Info_0_1]
+Group        = 3
+Name         = "Rx : Bps Fps"
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_0_2]
+Group        = 3
+Name         = "Tx : Bps Fps"
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_0_3]
+Group        = 3
+Name         = "KeepAlive : TxFps RxFps"
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_0_4]
+Group        = 3
+Name         = "Lfw : Bps Fps"
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_0_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_1_0]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 2
+
+[Info_1_1]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_1_2]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_1_3]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_1_4]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_1_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_2_0]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 3
+
+[Info_2_1]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_2_2]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_2_3]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_2_4]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_2_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_3_0]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 4
+
+[Info_3_1]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_3_2]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_3_3]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_3_4]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_3_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_4_0]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 5
+
+[Info_4_1]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_4_2]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_4_3]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_4_4]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_4_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_5_0]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 6
+
+[Info_5_1]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_5_2]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_5_3]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_5_4]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_5_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_6_0]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 7
+
+[Info_6_1]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_6_2]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_6_3]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_6_4]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_6_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_7_0]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 8
+
+[Info_7_1]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_7_2]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_7_3]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_7_4]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_7_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_8_0]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 9
+
+[Info_8_1]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_8_2]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_8_3]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_8_4]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_8_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_9_0]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 10
+
+[Info_9_1]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_9_2]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_9_3]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_9_4]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_9_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_10_0]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 11
+
+[Info_10_1]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_10_2]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_10_3]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_10_4]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_10_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_11_0]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 12
+
+[Info_11_1]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_11_2]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_11_3]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_11_4]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_11_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_12_0]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 13
+
+[Info_12_1]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_12_2]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_12_3]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_12_4]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_12_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_13_0]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 14
+
+[Info_13_1]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_13_2]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_13_3]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_13_4]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_13_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_14_0]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 15
+
+[Info_14_1]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_14_2]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_14_3]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_14_4]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_14_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_15_0]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = 2
+Row          = 16
+
+[Info_15_1]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_15_2]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_15_3]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_15_4]
+Group        = 3
+Name         = ""
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+[Info_15_5]
+Group        = 3
+Name         = "."
+Type         = string
+Size         = 48
+Column       = +1
+Row          = +0
+
+
+; -----------------------------------------------
+; VARIABLEN
+; -----------------------------------------------
+[Error_Flags]
+Group        = 4
+Name         = "Error Flags"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "ERR Hw"
+Mask_00      = 0x00000001
+
+[Status_Flags]
+Group        = 4
+Name         = "Status Flags"
+Type         = uLong
+Display      = "ViewAndModify"
+Attrib       = Option
+Option_00    = "MeasService is up"
+Mask_00      = 0x00000001
+Option_00    = "ConfigService is up"
+Mask_00      = 0x00000002
+
+[SW_Ver]
+Group        = 4
+Common       = "SW_Ver"
+Type         = uInt
+
+[HW_Ver]
+Group        = 4
+Common       = "HW_Ver"
+Type         = uInt
+
+[State]
+Group        = 4
+Name         = "MainSeq State"
+Type         = Long
+Attrib       = Select
+Select_01    = "PowerOn"
+Value_01     = 0
+Select_02    = "PowerInit"
+Value_02     = 1
+Select_03    = "Init"
+Value_03     = 2
+Select_04    = "Ready"
+Value_04     = 3
+Select_05    = "ShutDown"
+Value_05     = 4
+Select_06    = "Restart"
+Value_06     = 5
+Select_07    = "ResumeHard"
+Value_07     = 6
+
+[Rx_Bps]
+Group        = 4
+Name         = "Rx Bps"
+Type         = uLong
+
+[Tx_Bps]
+Group        = 4
+Name         = "Tx Bps"
+Type         = uLong
+
+

@@ -1,0 +1,644 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01="Tk:GlobalPar"	; globale Daten
+User_01=default	; Zugriffsrecht
+Group_02="Tk:RtcData"
+User_02=Operator
+Group_03="Tk:Variables"
+User_03=Operator
+Group_04="Tk:Calib"
+User_04=System
+CanSpace=0x10	; Belegung des Modus von Can Identifiern
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01="Tk:Reset"	; Reset
+Value_01=0x0010
+User_01=default	; Zugriffsrecht
+Help_01="Reset"
+Name_02="Tk:Restart"	; Restart
+Value_02=0x0016
+User_02=default	; Zugriffsrecht
+Help_02="Restart"
+Name_03="Tk:Restart:SD"	; Restart
+Value_03=0x0015
+User_03=default	; Zugriffsrecht
+Help_03="Restart"
+Name_04="Tk:Restart:EEPROM"	; Restartcybera.default
+Value_04=0x0017
+User_04=default	; Zugriffsrecht
+Help_04="Restart"
+Name_05="Tk:SavePar"	; SavePar
+Value_05=0x0020
+User_05=operator	; Zugriffsrecht
+Help_05="SavePar"
+Name_06="Tk:SaveCalib"	; SaveCalib
+Value_06=0xCA1B
+User_06=system	; Zugriffsrecht
+Help_06="SaveCalib"
+Name_07="Tk:GetTime"	; get time
+Value_07=0x0030
+User_07=system	; Zugriffsrecht
+Help_07="GetTime"
+Name_08="Tk:SetTime"	; set time
+Value_08=0x0040
+User_08=operator	; Zugriffsrecht
+Help_08="SetTime"
+Protect_08 = "Tk:SetTimeWarning"
+Name_09="Tk:ResetBalance"	; reset balance
+Value_09=0x0050
+User_09=system	; Zugriffsrecht
+Help_09="ResetBalance"
+Name_10="Tk:Boot"	; Boot
+Value_10=0xB007
+User_10=system	; Zugriffsrecht
+Help_10="Boot"
+Protect_10 = "Tk:BootWarning"
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+[CAN_BaseId]
+Group       = 1
+Common      = "CAN_BaseId"
+Default     = 0x701
+Help        = "CAN_BaseId"
+
+[CAN_Baudrate]
+Group     = 1	; globale Parameter
+Common    = 1	; Übernahme Definition aus Common.cnf
+Type      = char
+
+[CAN_Xtd]
+Group     = 1	; globale Parameter
+Common    = 1	; Übernahme Definition aus Common.cnf
+
+[CAN_Term]
+Group     = 1	; globale Parameter
+Common    = 1	; Übernahme Definition aus Common.cnf
+
+[ConfigTxEnable]
+Group     = 1	; globale Parameter
+Common    = 1	; Übernahme Definition aus Common.cnf
+Type      = char
+
+[CAN_Mode]
+Group     = 1	; globale Parameter
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Attrib    = Select
+Help      = "CAN_Mode"	; Namenskonvention : Help_<Tk:Lang>.txt"
+Select_01 = "Tk:CanMode_01"
+Value_01  = 0
+Select_02 = "Tk:CanMode_02"
+Value_02  = 1
+Select_03 = "Tk:CanMode_03"
+Value_03  = 2
+
+[Measure_Mode]
+Group     = 1	; globale Parameter
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Attrib    = Option
+Help      = "CAN_Mode"	; Namenskonvention : Help_<Tk:Lang>.txt
+Option_01 = "Multi-Channel-Modus"
+Mask_01   = 0x0030
+Option_02 = "Charge-Balance-Modus"
+Mask_02   = 0x0040
+Option_03 = "Rs232 Momentanwerte"
+Mask_03   = 0x0001
+Option_04 = "Can Momentanwertausgabe"
+Mask_04   = 0x0002
+
+[Measure_Speed]
+Group     = 1	; globale Parameter
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Attrib    = Select
+Help      = "MeasureSpeed"	; Namenskonvention : Help_<Tk:Lang>.txt
+Select_01 = "max. speed (100 sps)"
+Value_01  = 0
+Select_02 = "medium speed (10 sps)"
+Value_02  = 1
+Select_03 = "min. speed (1 sps)"
+Value_03  = 2
+
+[Ext_Ave]
+Group     = 1	; globale Parameter
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Help      = "Average"
+Default   = 1
+Values    = 1..100
+
+[Chan_I_Path]
+Group     = 1	; globale Parameter
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Help	    = "Path"
+Attrib    = Select
+Default   = 1
+Select_01 = "Tk:Gain1"
+Value_01  = 1
+Select_02 = "Tk:Gain6"
+Value_02  = 2
+Select_03 = "Tk:Gain24"
+Value_03  = 3
+Select_04 = "Tk:Gain50"
+Value_04  = 4
+Select_05 = "Tk:Gain100"
+Value_05  = 5
+
+[Chan_I_DeltaMode]
+Group     = 1	; globale Parameter
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Help      = "DeltaMode"
+Attrib    = Select
+Select_01 = "Tk:Off"
+Value_01  = 0
+Select_02 = "Tk:On"
+Value_02  = 1
+Select_02 = "Limit"
+Value_02  = 2
+
+[Chan_I_Delta]
+Group     = 1
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = -10000..10000
+Default   = 0
+
+[Chan_I_AutoRange]
+Group     = 1
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Help	    = "AutoRange"
+Attrib    = Select
+Select_01 = "Tk:Off"
+Value_01  = 0
+Select_02 = "Tk:On"
+Value_02  = 1
+
+[Chan_A_Path]
+Group     = 1
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Help	    = "Path"
+Attrib    = Select
+Default   = 7
+Select_01 = "U_Bat +/- 60V range, gain 6"
+Value_01  = 6
+Select_02 = "U_Bat +/- 20V range, gain 24"
+Value_02  = 7
+
+[Chan_A_DeltaMode]
+Group     = 1
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help      = "DeltaMode"
+Attrib    = Select
+Select_01 = "Tk:Off"
+Value_01  = 0
+Select_02 = "Tk:On"
+Value_02  = 1
+Select_02 = "Limit"
+Value_02  = 2
+
+[Chan_A_Delta]
+Group     = 1
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = -10000..10000
+Default   = 0
+
+[Chan_A_N_part]
+Group     = 1
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Help      = "Npart"
+Default   = 1
+Values    = 0..255
+
+[Chan_B_Path]
+Group     = 1
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Help	    = "Path"
+Attrib    = Select
+Default   = 8
+Select_01 = "U_Aux +/- 60V range, gain 6"
+Value_01  = 8
+Select_02 = "U_Aux +/- 20V range, gain 24"
+Value_02  = 9
+Select_03 = "external PT1000, gain 6"
+Value_03  = 10
+
+[Chan_B_DeltaMode]
+Group     = 1	; globale Parameter
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = char
+Help      = "DeltaMode"
+Attrib    = Select
+Select_01 = "Tk:Off"
+Value_01  = 0
+Select_02 = "Tk:On"
+Value_02  = 1
+Select_02 = "Limit"
+Value_02  = 2
+
+[Chan_B_Delta]
+Group     = 1
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = -10000..10000
+Default   = 0
+
+[Chan_B_N_part]
+Group     = 1
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Help      = "Npart"
+Default   = 1
+Values    = 0..255
+
+[CB_Reset_Delay]
+Group     = 1
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Help	    = "ResetDelay"
+Format	  = Hex
+Values    = 0..0x1000
+Default   = 0x500
+
+
+[Fast_Enable]
+Group     = 1
+Name      = "Fast Enable"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Attrib    = Select
+Select_01 = "Tk:Off"
+Value_01  = 0
+Select_02 = "Tk:On"
+Value_02  = 1
+
+[Fast_Speed]
+Group     = 1
+Name      = "Fast Speed"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Attrib    = Combo
+Default   = 3
+Select_01 = "5 msec"
+Value_01  = 0x00
+Select_02 = "10 msec"
+Value_02  = 0x01
+Select_03 = "20 msec"
+Value_03  = 0x02
+
+[Fast_StartLevel]
+Group     = 1
+Name      = "Fast StartLessThan [probe unit]"	; Namenskonvention : Tk:ParameterId:Name
+Type      = long
+
+[Fast_StopLevel]
+Group     = 1
+Name      = "Fast StopGreaterThan [probe unit]"	; Namenskonvention : Tk:ParameterId:Name
+Type      = long
+
+[Fast_Duration]
+Group     = 1
+Name      = "Fast Duration [s]"	; Namenskonvention : Tk:ParameterId:Name
+Type      = int
+Values    = 1..1000
+
+[Fast_StartDir]
+Type        = char
+Name        = "Fast StartDir"
+Attrib      = Select
+Select_01   = "from above to lower"
+Value_01    = 0
+Select_02   = "from lower to above"
+Value_02    = 1
+
+[Fast_StopDir]
+Type        = char
+Name        = "Fast StopDir"
+Attrib      = Select
+Select_01   = "from above to lower"
+Value_01    = 0
+Select_02   = "from lower to above"
+Value_02    = 1
+
+[AltTempEnable]
+Type        = int
+Name        = "Alt Temp Enable [s]"
+
+
+; -----------------------------------------------
+; RTC
+; -----------------------------------------------
+
+[Sec]
+Group     = 2
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Help      = "Rtc"
+
+[Min]
+Group     = 2
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Help      = "Rtc"
+
+[Hours]
+Group     = 2
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Help      = "Rtc"
+
+[Day]
+Group     = 2
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Help      = "Rtc"
+
+[Date]
+Group     = 2
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Help      = "Rtc"
+
+[Month]
+Group     = 2
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Help      = "Rtc"
+
+[Year]
+Group     = 2
+Name      = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Help      = "Rtc"
+
+[Dummy]
+Group     = 2
+Name      = "dummy"	; Namenskonvention : Tk:ParameterId:Name
+Type      = uChar
+Help      = "dummy"
+
+
+; -----------------------------------------------
+; VARIABLEN
+; -----------------------------------------------
+[Error_Flags]
+Group       = 3
+Type        = uLong
+Attrib      = Option
+Option_01   = "ERR E2Prom"
+Mask_01     = 0x0001
+Option_02   = "ERR Asic1"
+Mask_02     = 0x0002
+Option_03   = "RTC"
+Mask_03     = 0x0004
+Option_04   = "SD card"
+Mask_04     = 0x0008
+Option_05   = "Can"
+Mask_05     = 0x0010
+Option_06   = "Signatur"
+Mask_06     = 0x0020
+Option_07   = "Default"
+Mask_07     = 0x0080
+Option_08   = "SD Limit"
+Mask_08     = 0x0100
+Option_09   = "No Probe"
+Mask_09     = 0x0200
+Option_10   = "Fast Level"
+Mask_10     = 0x0400
+Option_11   = "Fast Pending"
+Mask_11     = 0x0800
+
+[SW_Ver]
+Group       = 3
+Common      = 1 ; Übernahme Definition aus Common.cnf
+
+[HW_Ver]
+Group       = 3
+Common      = 1 ; Übernahme Definition aus Common.cnf
+
+[Probe_Value]
+Group       = 3
+Common      = 1 ; Übernahme Definition aus Common.cnf
+
+[Probe_Channel]
+Group       = 3
+Common      = 1 ; Übernahme Definition aus Common.cnf
+Type        = int
+Values      = -1..4
+
+[MainSeqState]
+Group       = 3
+Name        = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type        = uInt
+Help        = "void"
+
+[CAN_State]
+Group       = 3
+Type        = uint
+
+[CAN_Flags]
+Group       = 3
+Type        = uint
+
+[OWH_State]
+Group       = 3
+Name        = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type        = uInt
+
+[PowerBusyFlags]
+Group       = 3
+Name        = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type        = uInt
+Help        = "void"
+
+[SDFSStartSec]
+Group       = 3
+Type        = int
+Format      = hex
+
+[SDRootStartSec]
+Group       = 3
+Type        = int
+Format      = hex
+
+[SDClusterStartSec]
+Group       = 3
+Type        = int
+Format      = hex
+
+[SDLogStartSec]
+Group       = 3
+Type        = int
+Format      = hex
+
+[SD_Sector]
+Group       = 3
+Type        = uInt
+Format      = hex
+
+[SDCnfStartSec]
+Group       = 3
+Type        = uInt
+Format      = hex
+
+[T1]
+Group       = 3
+Type        = uLong
+
+[T2]
+Group       = 3
+Type        = uLong
+
+[T3]
+Group       = 3
+Type        = uLong
+
+[T4]
+Group       = 3
+Type        = uLong
+
+[Parameter_Set]
+Group       = 3
+Name        = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type        = char
+Values      = 0..3
+
+[ProbeType]
+Group       = 3
+Common      = 1	; Übernahme Definition aus Common.cnf
+
+[Kalib]
+Group       = 3
+Common      = 1	; Übernahme Definition aus Common.cnf
+
+[Offset]
+Group       = 3
+Common      = 1	; Übernahme Definition aus Common.cnf
+Type        = long
+
+
+
+; -----------------------------------------------
+; KALIB
+; -----------------------------------------------
+[Serial_Number]
+Group       = 4	; Calib
+Common      = 1	; Übernahme Definition aus Common.cnf
+
+[Month]
+Group   = 4	; Calib
+Common  = 1	; Übernahme Definition aus Common.cnf
+
+[Year]
+Group   = 4	; Calib
+Common  = 1	; Übernahme Definition aus Common.cnf
+
+[Parameter_Set]
+Group       = 4
+Name        = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type        = uInt
+Values      = 0..3
+
+[CAR_CGI1] ; [CAR_CGI1_P]
+Group     = 4
+Common    = 1	; Übernahme Definition aus Common.cnf
+Name      = "CAR_CGI1_P"	; Namenskonvention : Tk:ParameterId:Name
+
+[CAR_CGI2] ; [CAR_CGI2_P]
+Group     = 4
+Common    = 1	; Übernahme Definition aus Common.cnf
+Name      = "CAR_CGI2_P"	; Namenskonvention : Tk:ParameterId:Name
+
+[CAR_CGI3] ; [CAR_CGI3_P]
+Group     = 4
+Common    = 1	; Übernahme Definition aus Common.cnf
+Name      = "CAR_CGI3_P"	; Namenskonvention : Tk:ParameterId:Name
+
+[CAR_CGI4] ; [CAR_CGI4_P]
+Group     = 4
+Common    = 1	; Übernahme Definition aus Common.cnf
+Name      = "CAR_CGI4_P"	; Namenskonvention : Tk:ParameterId:Name
+
+[CAR_CAU4] ; [CAR_CAU4_P]
+Group     = 4
+Common    = 1	; Übernahme Definition aus Common.cnf
+Name      = "CAR_CAU4_P"	; Namenskonvention : Tk:ParameterId:Name
+
+[Offset] ; [Offset_P]
+Group     = 4
+Common    = 1	; Übernahme Definition aus Common.cnf
+Name      = "OFFSET_P"	; Namenskonvention : Tk:ParameterId:Name
+Type      = long
+
+[CAR_CAU0]
+Group       = 4	; Calib
+Common      = 1	; Übernahme Definition aus Common.cnf
+
+[CAR_CAU1]
+Group       = 4	; Calib
+Common      = 1	; Übernahme Definition aus Common.cnf
+
+[CAR_CAU2]
+Group       = 4	; Calib
+Common      = 1	; Übernahme Definition aus Common.cnf
+
+[CAR_CAU3]
+Group       = 4	; Calib
+Common      = 1	; Übernahme Definition aus Common.cnf
+
+[CAR_CAU4]
+Group       = 4	; Calib
+Type      = int
+Help      = "CalibAsic"
+Default   = 1548
+
+[CAR_CAU5]
+Group       = 4	; Calib
+Common      = 1	; Übernahme Definition aus Common.cnf
+
+[Offset]
+Group       = 4	; Calib
+Common      = 1	; Übernahme Definition aus Common.cnf
+Type        = long
+
+[TempOffset]
+Group       = 4
+Name        = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type        = long
+Help        = "Offset"
+
+[Debug_Flags]
+Group       = 4
+Name        = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
+Type        = int
+Help        = "Options"
+Attrib       = Option
+Option_00    = "CAN R0 enable"
+Mask_00      = 0x00000001
+Option_00    = "CAN R0 status"
+Mask_00      = 0x00000002
+Option_00    = "CAN R1 enable"
+Mask_00      = 0x00000004
+Option_00    = "CAN R1 status"
+Mask_00      = 0x00000008
+
+[FD_Fixed_Type]
+Group       = 4
+Type        = int
+
+[FD_Fixed_Kalib]
+Group       = 4
+Type        = long
+
+[FD_Fixed_Offset]
+Group       = 4
+Type        = long
+
+

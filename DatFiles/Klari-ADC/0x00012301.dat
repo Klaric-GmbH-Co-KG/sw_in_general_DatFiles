@@ -1,0 +1,703 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01="Tk:GlobalPar"	; globale Daten
+User_01=default	; Zugriffsrecht
+Ident_01="GLOBAL_PAR"
+Group_02="Tk:Variables"
+User_02=System
+Ident_02="VARIABLEN"
+Group_03="Tk:Calib"
+User_03=System
+Ident_03="KALIB"
+Group_04="Tk:Trim"
+User_04=System
+Ident_04="TRIM"
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01="Tk:Reset"	; Reset
+Value_01=0x0010
+User_01=default	; Zugriffsrecht
+Help_01="Reset"
+Name_02="Tk:Restart"	; Restart
+Value_02=0x0016
+User_02=default	; Zugriffsrecht
+Help_02="Restart"
+Name_03="Tk:SavePar"	; SavePar
+Value_03=0x0020
+User_03=operator	; Zugriffsrecht
+Help_03="SavePar"
+Name_04="Tk:SaveCalib"	; SaveCalib
+Value_04=0xCA1B
+User_04=system	; Zugriffsrecht
+Help_04="SaveCalib"
+Name_05="Tk:SaveTrim"	; SaveTrim
+Value_05=0xCAA5
+User_05=system	; Zugriffsrecht
+Help_05="SaveTrim"
+Name_06="Tk:Boot"	; Boot
+Value_06=0xB007
+User_06=system	; Zugriffsrecht
+Help_06="Boot"
+Protect_06 = "Tk:BootWarning"
+Name_07="Manual Mode"	; Manual Mode
+Value_07=0x014F
+User_07=system	; Zugriffsrecht
+Name_08="Automatic Mode"	; Automatic Mode
+Value_08=0x024F
+User_08=system	; Zugriffsrecht
+Name_09="Reference Selection"	; Ref Selection
+Value_09=0x54
+User_09=system	; Zugriffsrecht
+Name_10="Ext.Temp Selection"	; Temp Selection
+Value_10=0x74
+User_10=system	; Zugriffsrecht
+
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+[CAN_Baudrate]
+Group        = 1
+Common       = "CAN_Baudrate"
+Type         = int
+
+[CAN_Xtd]
+Group        = 1
+Common       = "CAN_Xtd"
+
+[CAN_Term]
+Group        = 1
+Common       = "CAN_Term"
+
+[CAN_BaseId]
+Group        = 1
+Common       = "CAN_BaseId"
+
+[AutoStart]
+Group       = 1
+Type	       = int
+Attrib	  = Select
+Select_01    = "Off"
+Value_01     = 0x00
+Select_02    = "On"
+Value_02     = 0x01
+
+[Vcc_12V]
+Group        = 1
+Type	        = uInt
+Name		  = "VCC Option"
+Attrib	  = Select
+Select_01    = "5V"
+Value_01     = 0x00
+Select_02    = "12V"
+Value_02     = 0x01
+
+[Delay]
+Group        = 1
+Type		  = uInt
+Name		  = "Delay"
+
+[AdcChannel]
+Group        = 1
+Type	        = uInt
+Name		   = "Channel"
+Attrib	  = Select
+Select_01    = "No Selection"
+Value_01     = 0x00
+Select_02    = "Channel 1"
+Value_02     = 0x01
+Select_03    = "Channel 2"
+Value_03     = 0x02
+Select_04    = "Channel 3"
+Value_04     = 0x03
+Select_05    = "Channel 4"
+Value_05     = 0x04
+Select_06    = "Channel 5"
+Value_06     = 0x05
+Select_07    = "Channel 6"
+Value_07     = 0x06
+Select_08    = "Channel 7"
+Value_08     = 0x07
+Select_09    = "Channel 8"
+Value_09     = 0x08
+Select_10    = "Reference"
+Value_10     = 0x09
+Select_11    = "Temp"
+Value_11     = 0x0A
+
+[Speed]
+Group        = 1
+Common       = "Speed8.192Mhz"
+Help         = "Speed_8.192Mhz"	
+Type         = int
+Name         = "Measure Speed"
+Default      = 10
+
+[Ave]
+Group        = 1
+Common       = "Ave"	
+Type         = int
+Name         = "Ave"
+
+[SensorTypeRef]
+Group        = 1
+Type	        = int
+Name		   = "Sensor Type Reference"
+Attrib	  = Select
+Select_01    = "Standard"
+Value_01     = 0x00
+Select_02    = "PT100"
+Value_02     = 0x01
+Select_03    = "PT1000"
+Value_03     = 0x02
+
+[SensorTypeTemp]
+Group        = 1
+Type	        = int
+Name		   = "Sensor Type Temp"
+Attrib	  = Select
+Select_01    = "Standard"
+Value_01     = 0x00
+Select_02    = "PT100"
+Value_02     = 0x01
+Select_03    = "PT1000"
+Value_03     = 0x02
+
+; -----------------------------------------------
+; VARIABLEN
+; -----------------------------------------------
+
+[Error_Flags]
+Group        = 2
+Type         = uInt
+Attrib       = Option
+Option_01    = "ERR:EEProm"
+Mask_01      = 0x001
+Option_02    = "ERR:Asic"
+Mask_02      = 0x002
+Option_03    = "ERR:CAN"
+Mask_03      = 0x010
+Option_04    = "ERR:CAN Buffer"
+Mask_04      = 0x040
+Option_05    = "ERR:CAN Fifo"
+Mask_05      = 0x100
+Option_06    = "ERR:Default"
+Mask_06      = 0x200
+
+[SW_Ver]
+Group        = 2
+Common       = 1
+
+[HW_Ver]
+Group        = 2
+Common       = 1
+
+[IntDigOut]
+Group        = 2
+Name         = "Internal Digital Out"
+Type         = uInt
+
+[OpMode]
+Group        = 2
+Name         = "Operational Mode"
+Type         = int
+Attrib	  = Combo
+Select_01    = "Idle"
+Value_01     = 0x0000
+Select_02    = "Manual Mode"
+Value_02     = 0x0001
+Select_03    = "Automatic Mode"
+Value_03     = 0x0002
+
+[Result_I]
+Group        = 2
+Name         = "Result I"
+Type         = int
+
+[Result_U]
+Group        = 2
+Name         = "Result U"
+Type         = int
+
+[CanSpace]
+Group        = 2
+Name         = "Can Tx Buffer"
+Type         = int
+
+[Asic1_Sn]
+Group        = 2
+Common       = "ASIC_SN"
+Name         = "Asic Serial Number"
+
+
+[MainSeqState]
+Group        = 2
+Type         = uInt
+Name         = "Main Sequence State"
+Attrib       = Select
+Select_01    = "MS_PON_INIT"
+Value_01     = 0x0000
+Select_02    = "MS_PON_INIT_WAIT"
+Value_02     = 0x0001
+Select_03    = "MS_INIT"
+Value_03     = 0x0002
+Select_04    = "MS_INIT_WAIT_CAN"
+Value_04     = 0x0003
+Select_05    = "MS_IDLE"
+Value_05     = 0x0004
+Select_06    = "MS_EXECUTE"
+Value_06     = 0x0005
+Select_07    = "MS_ERROR"
+Value_07     = 0x0006
+Select_08    = "MS_ERROR_RESUME"
+Value_08     = 0x0007
+
+[CAN_Flags]
+Group        = 2
+Type         = uInt
+Name         = "Tk:Name"
+Attrib       = Select
+Select_01    = "SW_CAN_TX_CONFIG"
+Value_01     = 0x01
+Select_02    = "SW_CAN_RUNNING"
+Value_02     = 0x02
+Select_03    = "CAN_TO"
+Value_03     = 0x03
+Select_04    = "SW_CAN_BAUDERR"
+Value_04     = 0x04
+Select_05    = "SW_CAN_START"
+Value_05     = 0x05
+
+[CAN_State]
+Group        = 2
+Type         = uInt
+Name         = "Tk:Name"
+Attrib       = Select
+Select_01    = "CAN_IDLE"
+Value_01     = 0x0000
+Select_02    = "CAN_RESTART"
+Value_02     = 0x0001
+Select_03    = "CAN_POWER_UP"
+Value_03     = 0x0002
+Select_04    = "CAN_WAIT_INIT"
+Value_04     = 0x0003
+Select_05    = "CAN_WAIT_NORMAL"
+Value_05     = 0x0004
+Select_06    = "CAN_WAIT_READY"
+Value_06     = 0x0005
+Select_07    = "CAN_READY"
+Value_07     = 0x0006
+Select_08    = "CAN_PREPARE_WAIT_RESTART"
+Value_08     = 0x0007
+Select_09    = "CAN_WAIT_RESTART"
+Value_09     = 0x0008
+Select_10    = "CAN_WAIT_DISABLE"
+Value_10     = 0x0009
+
+
+[CAN_Fps]
+Group        = 2
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Fps_0]
+Group        = 2
+Name         = "Can FramesPerSecond 0"
+Type         = uInt
+
+[CAN_Fps_1]
+Group        = 2
+Name         = "Can FramesPerSecond 1"
+Type         = uInt
+
+[CAN_Fps_2]
+Group        = 2
+Name         = "Can FramesPerSecond 2"
+Type         = uInt
+
+[CAN_Bps]
+Group        = 2
+Name         = "Tk:Name"
+Type         = uInt
+
+
+
+; -----------------------------------------------
+; KALIB
+; -----------------------------------------------
+[Serial_Number]
+Group        = 3
+Common       = "Serial_Number"	
+Default      = -1
+
+[Month]
+Group        = 3
+Common       = "Month"
+
+[Year]
+Group        = 3
+Common       = "Year"
+
+[CHAN_I_CGI]
+Group        = 3
+Name         = "CHAN_I_CGI"
+Type		  = uInt
+
+[CHAN_U_CAU0]
+Group        = 3
+Name         = "CHAN_U_CAU0"
+Type		  = uInt
+
+[CHAN_U_CAU1]
+Group        = 3
+Name         = "CHAN_U_CAU1"
+Type		  = uInt
+
+[CHAN_I_Offset]
+Group        = 3
+Name         = "P Offset"
+Type		  = long
+
+[CHAN_U_Offset_PT1000]
+Group        = 3
+Name         = "U Offset PT1000"
+Type		  = long
+
+[CHAN_U_Offset_PT100]
+Group        = 3
+Name         = "U Offset PT100"
+Type		  = long
+
+[CHAN_U_Offset_Standard]
+Group        = 3
+Name         = "U Offset Standard"
+Type		  = long
+
+[CHAN_I_SCALE]
+Group        = 3
+Name         = "I Scale"
+Type		  = long
+
+[CHAN_U_PT100_SCALE]
+Group        = 3
+Name         = "U Scale PT100"
+Type		  = long
+
+[CHAN_U_PT1000_SCALE]
+Group        = 3
+Name         = "U Scale PT1000"
+Type		  = long
+
+[CHAN_U_Standard_SCALE]
+Group        = 3
+Name         = "U Scale Standard"
+Type		  = long
+
+[CalibMode]
+Group        = 3
+Type	        = int
+Name		   = "Calibration Mode"
+Attrib	  = Select
+Select_01    = "ON"
+Value_01     = 0x000
+Select_02    = "OFF"
+Value_02     = 0x001
+
+[CanConfigProt]
+Group        = 3
+Common       = "CanConfigProt"
+
+[CAN_BroadcastId]
+Group        = 3
+Common       = "CAN_BroadcastId"
+Default      = 0x100
+
+; -----------------------------------------------
+; TRIM
+; -----------------------------------------------
+[TRR_TRIMC_1_100]
+Group        = 4
+Common       = "TRR_TRIMC"
+Column       = 1
+Row          = 1
+Name         = "P1 TRR_TRIMC_100"
+
+[TRR_TRIMA_1_100]
+Group        = 4
+Common       = "TRR_TRIMA"
+Column       = 2
+Row          = 1
+Name         = "P1 TRR_TRIMA_100"
+
+[TRR_TRIMBV_1_100]
+Group        = 4
+Common       = "TRR_TRIMBV"
+Help         = "CalibTrim_Fuse"
+Column       = 3
+Row          = 1
+Name         = "P1 TRR_TRIMBV_100"
+
+[TRR_TRIMBTC_1_100]
+Group        = 4
+Common       = "TRR_TRIMBTC"
+Help         = "CalibTrim_Fuse"
+Column       = 4
+Row          = 1
+Name         = "P1 TRR_TRIMBTC_100"
+
+[TRR_TRIMC_1_50]
+Group        = 4
+Common       = "TRR_TRIMC"
+Column       = 1
+Row          = 2
+Name         = "P1 TRR_TRIMC_50"
+
+[TRR_TRIMA_1_50]
+Group        = 4
+Common       = "TRR_TRIMA"
+Column       = 2
+Row          = 2
+Name         = "P1 TRR_TRIMA_50"
+
+[TRR_TRIMBV_1_50]
+Group        = 4
+Common       = "TRR_TRIMBV"
+Column       = 3
+Row          = 2
+Name         = "P1 TRR_TRIMBV_50"
+
+[TRR_TRIMBTC_1_50]
+Group        = 4
+Common       = "TRR_TRIMBTC"
+Column       = 4
+Row          = 2
+Name         = "P1 TRR_TRIMBTC_50"
+
+[TRR_TRIMC_1_24]
+Group        = 4
+Common       = "TRR_TRIMC"
+Column       = 1
+Row          = 3
+Name         = "P1 TRR_TRIMC_24"
+
+[TRR_TRIMA_1_24]
+Group        = 4
+Common       = "TRR_TRIMA"
+Column       = 2
+Row          = 3
+Name         = "P1 TRR_TRIMA_24"
+
+[TRR_TRIMBV_1_24]
+Group        = 4
+Common       = "TRR_TRIMBV"
+Column       = 3
+Row          = 3
+Name         = "P1 TRR_TRIMBV_24"
+
+[TRR_TRIMBTC_1_24]
+Group        = 4
+Common       = "TRR_TRIMBTC"
+Column       = 4
+Row          = 3
+Name         = "P1 TRR_TRIMBTC_24"
+
+[TRR_TRIMC_1_6]
+Group        = 4
+Common       = "TRR_TRIMC"
+Column       = 1
+Row          = 4
+Name         = "P1 TRR_TRIMC_6"
+
+[TRR_TRIMA_1_6]
+Group        = 4
+Common       = "TRR_TRIMA"
+Column       = 2
+Row          = 4
+Name         = "P1 TRR_TRIMA_6"
+
+[TRR_TRIMBV_1_6]
+Group        = 4
+Common       = "TRR_TRIMBV"
+Column       = 3
+Row          = 4
+Name         = "P1 TRR_TRIMBV_6"
+
+[TRR_TRIMBTC_1_6]
+Group        = 4
+Common       = "TRR_TRIMBTC"
+Column       = 4
+Row          = 4
+Name         = "P1 TRR_TRIMBTC_6"
+
+[TRR_TRIMC_1_1]
+Group        = 4
+Common       = "TRR_TRIMC"
+Column       = 1
+Row          = 5
+Name         = "P1 TRR_TRIMC_1"
+
+[TRR_TRIMA_1_1]
+Group        = 4
+Common       = "TRR_TRIMA"
+Column       = 2
+Row          = 5
+Name         = "P1 TRR_TRIMA_1"
+
+[TRR_TRIMBV_1_1]
+Group        = 4
+Common       = "TRR_TRIMBV"
+Help         = "CalibTrim_Fuse"
+Column       = 3
+Row          = 5
+Name         = "P1 TRR_TRIMBV_1"
+
+[TRR_TRIMBTC_1_1]
+Group        = 4
+Common       = "TRR_TRIMBTC"
+Help         = "CalibTrim_Fuse"
+Column       = 4
+Row          = 5
+Name         = "P1 TRR_TRIMBTC_1"
+
+[TRR_TRIMC_2_100]
+Group        = 4
+Common       = "TRR_TRIMC"
+Column       = 1
+Row          = 6
+Name         = "P2 TRR_TRIMC_100"
+
+[TRR_TRIMA_2_100]
+Group        = 4
+Common       = "TRR_TRIMA"
+Column       = 2
+Row          = 6
+Name         = "P2 TRR_TRIMA_100"
+
+[TRR_TRIMBV_2_100]
+Group        = 4
+Common       = "TRR_TRIMBV"
+Help         = "CalibTrim_Fuse"
+Column       = 3
+Row          = 6
+Name         = "P2 TRR_TRIMBV_100"
+
+[TRR_TRIMBTC_2_100]
+Group        = 4
+Common       = "TRR_TRIMBTC"
+Help         = "CalibTrim_Fuse"
+Column       = 4
+Row          = 6
+Name         = "P2 TRR_TRIMBTC_100"
+
+[TRR_TRIMC_2_50]
+Group        = 4
+Common       = "TRR_TRIMC"
+Column       = 1
+Row          = 7
+Name         = "P2 TRR_TRIMC_50"
+
+[TRR_TRIMA_2_50]
+Group        = 4
+Common       = "TRR_TRIMA"
+Column       = 2
+Row          = 7
+Name         = "P2 TRR_TRIMA_50"
+
+[TRR_TRIMBV_2_50]
+Group        = 4
+Common       = "TRR_TRIMBV"
+Column       = 3
+Row          = 7
+Name         = "P2 TRR_TRIMBV_50"
+
+[TRR_TRIMBTC_2_50]
+Group        = 4
+Common       = "TRR_TRIMBTC"
+Column       = 4
+Row          = 7
+Name         = "P2 TRR_TRIMBTC_50"
+
+[TRR_TRIMC_2_24]
+Group        = 4
+Common       = "TRR_TRIMC"
+Column       = 1
+Row          = 8
+Name         = "P2 TRR_TRIMC_24"
+
+[TRR_TRIMA_2_24]
+Group        = 4
+Common       = "TRR_TRIMA"
+Column       = 2
+Row          = 8
+Name         = "P2 TRR_TRIMA_24"
+
+[TRR_TRIMBV_2_24]
+Group        = 4
+Common       = "TRR_TRIMBV"
+Column       = 3
+Row          = 8
+Name         = "P2 TRR_TRIMBV_24"
+
+[TRR_TRIMBTC_2_24]
+Group        = 4
+Common       = "TRR_TRIMBTC"
+Column       = 4
+Row          = 8
+Name         = "P2 TRR_TRIMBTC_24"
+
+[TRR_TRIMC_2_6]
+Group        = 4
+Common       = "TRR_TRIMC"
+Column       = 1
+Row          = 9
+Name         = "P2 TRR_TRIMC_6"
+
+[TRR_TRIMA_2_6]
+Group        = 4
+Common       = "TRR_TRIMA"
+Column       = 2
+Row          = 9
+Name         = "P2 TRR_TRIMA_6"
+
+[TRR_TRIMBV_2_6]
+Group        = 4
+Common       = "TRR_TRIMBV"
+Column       = 3
+Row          = 9
+Name         = "P2 TRR_TRIMBV_6"
+
+[TRR_TRIMBTC_2_6]
+Group        = 4
+Common       = "TRR_TRIMBTC"
+Column       = 4
+Row          = 9
+Name         = "P2 TRR_TRIMBTC_6"
+
+[TRR_TRIMC_2_1]
+Group        = 4
+Common       = "TRR_TRIMC"
+Column       = 1
+Row          = 10
+Name         = "P2 TRR_TRIMC_1"
+
+[TRR_TRIMA_2_1]
+Group        = 4
+Common       = "TRR_TRIMA"
+Column       = 2
+Row          = 10
+Name         = "P2 TRR_TRIMA_1"
+
+[TRR_TRIMBV_2_1]
+Group        = 4
+Common       = "TRR_TRIMBV"
+Help         = "CalibTrim_Fuse"
+Column       = 3
+Row          = 10
+Name         = "P2 TRR_TRIMBV_1"
+
+[TRR_TRIMBTC_2_1]
+Group        = 4
+Common       = "TRR_TRIMBTC"
+Help         = "CalibTrim_Fuse"
+Column       = 4
+Row          = 10
+Name         = "P2 TRR_TRIMBTC_1"

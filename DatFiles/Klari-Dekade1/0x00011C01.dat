@@ -1,0 +1,246 @@
+[GLOBAL]	; Festlegung der Parametergruppen
+Group_01="Tk:GlobalPar"	; globale Daten
+User_01=default	; Zugriffsrecht
+Ident_01="GLOBAL_PAR"
+Group_02="Tk:Calib"
+User_02=System
+Ident_02="KALIB"
+Group_03="Tk:Variables"
+User_03=Operator
+Ident_03="VARIABLEN"
+CanSpace=0x10	; Belegung des Modus von Can Identifiern
+
+[COMMAND]	; Festlegung der Modulkommandos
+Name_01="Tk:Reset"	; Reset
+Value_01=0x0010
+User_01=default	; Zugriffsrecht
+Help_01="Reset"
+Name_02="Tk:Restart"	; Restart
+Value_02=0x0016
+User_02=default	; Zugriffsrecht
+Help_02="Restart"
+Name_03="Tk:SavePar"	; SavePar
+Value_03=0x0020
+User_03=operator	; Zugriffsrecht
+Help_03="SavePar"
+Name_04="Tk:SaveCalib"	; SaveCalib
+Value_04=0xCA1B
+User_04=system	; Zugriffsrecht
+Help_04="SaveCalib"
+Name_05="Set EN_DEK1"	; Set EN_DEK1
+Value_05=0x0162
+User_05=system	; Zugriffsrecht
+Help_05="Set EN_DEK1"
+Name_06="Reset EN_DEK1"	; Reset EN_DEK1
+Value_06=0x0062
+User_06=system	; Zugriffsrecht
+Help_06="Reset EN_DEK1"
+Name_07="Tk:Boot"	; Boot
+Value_07=0xB007
+User_07=system	; Zugriffsrecht
+Help_07="Boot"
+Protect_07 = "Tk:BootWarning"
+
+; -----------------------------------------------
+; GLOBAL_PAR
+; -----------------------------------------------
+[CAN_Baudrate]
+Group       = 1
+Common      = "CAN_Baudrate"
+Type        = int
+
+[CAN_BaseId]
+Group       = 1
+Common      = "CAN_BaseId"
+Default     = 0x701
+
+[CAN_Xtd]
+Group       = 1
+Common      = "CAN_Xtd"
+
+[CAN_Term]
+Group       = 1
+Common      = "CAN_Term"
+
+
+; -----------------------------------------------
+; TimeSync
+; -----------------------------------------------
+[TimeSync_Mode]
+Group       = 1
+Common      = "TimeSync_Mode"
+
+
+
+; -----------------------------------------------
+; KALIB
+; -----------------------------------------------
+[Serial_Number]
+Group        = 2
+Common       = "Serial_Number"	
+Default      = -1
+
+[Month]
+Group        = 2
+Common       = "Month"
+
+[Year]
+Group        = 2
+Common       = "Year"
+
+[SerResi1]
+Group        = 2
+Name         = "Serial Resistor 1"
+Type         = Int
+
+[SerResi2]
+Group        = 2
+Name         = "Serial Resistor 2"
+Type         = Int
+
+[OffsetResi1]
+Group        = 2
+Name         = "Offset Resistor 1"
+Type         = Int
+
+[SerResi1]
+Group        = 2
+Name         = "Offset Resistor 2"
+Type         = Int
+
+[CanConfigProt]
+Group        = 2
+Common       = "CanConfigProt"
+
+
+[CAN_BroadcastId]
+Group        = 2
+Common       = "CAN_BroadcastId"
+Default      = 0x100
+
+
+; -----------------------------------------------
+; VARIABLEN
+; -----------------------------------------------
+
+[Error_Flags]
+Group        = 3
+Name         = "Error Flags"
+Type         = uInt
+Attrib       = Option
+Help         = "Error_Flags"
+Option_01    = "ERR E2Prom"
+Mask_01      = 0x0001
+Option_02    = "ERR Can1"
+Mask_02      = 0x0010
+Option_03    = "ERR Can2"
+Mask_03      = 0x0020
+Option_04    = "Can OVR"
+Mask_04      = 0x0040
+Option_05     = "ERR Default"
+Mask_05      = 0x0200
+
+[SW_Ver]
+Group        = 3
+Common       = "SW_Ver"
+
+[HW_Ver]
+Group        = 3
+Common       = "HW_Ver"
+
+
+[MainSeqState]
+Group        = 3
+Name         = "Tk:Name"
+Type         = char
+Attrib       = Combo
+Select_01    = "PowerOnInit"
+Value_01     = 0
+Select_02    = "PowerOnInitWait"
+Value_02     = 1
+Select_03    = "Init"
+Value_03     = 2
+Select_04    = "InitWaitCan"
+Value_04     = 3
+Select_05    = "Idle"
+Value_05     = 4
+Select_06    = "Error"
+Value_06     = 5
+Select_07    = "Error resume"
+Value_07     = 6
+
+[CanSpace]
+Group        = 3
+Name         = "Tk:Name"
+Type         = int
+
+[CAN_Flags]
+Group        = 3
+Name         = "Tk:Name"
+Type         = uInt
+Attrib       = Option
+Option_01    = "SW_CAN_TX_CONFIG"
+Value_01     = 0x01
+Option_02    = "SW_CAN_RUNNING"
+Value_02     = 0x02
+Option_03    = "CAN_TO"
+Value_03     = 0x20
+Option_04    = "CAN_BAUD_ERR"
+Value_04     = 0x40
+Option_05    = "SW_CAN_START"
+Value_05     = 0x80
+
+[CAN_State]
+Group        = 3
+Name         = "Tk:Name"
+Type         = char
+Attrib       = Combo
+Select_01    = "Idle"
+Value_01     = 0
+Select_02    = "Restart"
+Value_02     = 1
+Select_03    = "PowerUp"
+Value_03     = 2
+Select_04    = "WaitInit"
+Value_04     = 3
+Select_05    = "WaitNormal"
+Value_05     = 4
+Select_06    = "WaitReady"
+Value_06     = 5
+Select_07    = "WaitTimeSync"
+Value_07     = 6
+Select_08    = "Ready"
+Value_08     = 7
+Select_09    = "PrepareWaitRestart"
+Value_09     = 8
+Select_10    = "WaitRestart"
+Value_10     = 9
+Select_11    = "WaitDisable"
+Value_11     = 10
+
+[CAN_Bps]
+Group        = 3
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Fps]
+Group        = 3
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Fps2]
+Group        = 3
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Fps1]
+Group        = 3
+Name         = "Tk:Name"
+Type         = uInt
+
+[CAN_Fps0]
+Group        = 3
+Name         = "Tk:Name"
+Type         = uInt
+
+
