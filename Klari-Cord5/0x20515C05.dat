@@ -121,16 +121,6 @@ SubGroup_5          = "Adc Add1"
 SubGroup_6          = "Adc Add2"
 SubGroup_7          = "Adc Add3"
 SubGroup_8          = "Adc Add4"
-							
-									 
-									 
-
-									 
-							
-									   
-									 
-
-										
 User_12             = System
 Ident_12            = "CALIB_ADC_PAR"
 Display_12          = "ViewAndModify"
