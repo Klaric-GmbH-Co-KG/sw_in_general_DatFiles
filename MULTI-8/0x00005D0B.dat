@@ -1,15 +1,7 @@
 // ********************************************
 // created by DatFileCreator
-// device : 0xXXXX5D0A
+// device : 0xXXXX5D0B
 //   - SW_EN_CAN2
-//   - SW_EN_ETHERNET
-//   - SW_EN_4xASIC
-//   - SW_EN_AC
-//   - SW_EN_3RD_PARTY_PROBE
-//   - SW_EN_FAST
-//   - SW_EN_CHARGE_BALANCE
-//   - SW_EN_PLP
-//   - SW_EN_PTP
 // ********************************************
 
 // ********************************************
