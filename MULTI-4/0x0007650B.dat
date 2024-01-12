@@ -1,14 +1,10 @@
 // ********************************************
 // created by DatFileCreator
-// device : 0x33F15D01
-//   - SW_EN_MANDATORY
+// device : 0x0007650B
 //   - SW_EN_CAN2
-//   - SW_EN_INDIVIDUAL_SETUP
-//   - SW_EN_KOMBI_PROBE
 //   - SW_EN_3RD_PARTY_PROBE
 //   - SW_EN_FAST
 //   - SW_EN_CHARGE_BALANCE
-//   - SW_EN_ETHERNET
 // ********************************************
 
 // ********************************************
