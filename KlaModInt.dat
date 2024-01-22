@@ -1,0 +1,1238 @@
+[Interface]
+Serial = AutoFtDi
+Serial_0 = Com4
+Serial_1 = 
+Serial_2 = 
+Serial_3 = 
+Serial_4 = 
+Serial_5 = 
+Serial_6 = 
+Serial_7 = 
+Serial_8 = 
+Serial_9 = 
+Usb = 
+Can =
+Tcp_0 = 
+Tcp_1 = 
+Tcp_2 = 
+Tcp_3 = 
+Baudrate = 115200
+LogFileSizeMax = 10000000
+
+[PeakCan]
+Baudrate = 500
+Broadcast = 0x0100
+
+[PeakCanBasic]
+Baudrate = 500
+Broadcast = 0x0100
+Channel_0 = 0
+Channel_1 = 1
+
+[Kvaser]
+Baudrate = 500
+Broadcast = 0x0100
+
+[Vector]
+Baudrate = 500
+Broadcast = 0x0100
+Channel_0 = 0
+Channel_1 = 1
+
+[Ethernet1]
+--BroadcastFamily = IPv6
+--BroadcastAdaptor = "fd00:0:0:202:0:0:0:76"
+BroadcastAdaptor = 192.168.202.10
+--BroadcastAddr = 169.254.255.255
+--BroadcastAddr = 0.0.0.0
+--BroadcastAddr = 192.168.202.255
+--BroadcastAddr = ::
+BroadcastAddr = 
+BroadcastService = "50000"
+
+--SNDBUFSIZE = 49152
+--RCVBUFSIZE = 32768
+LogFileSizeMax = 10000000
+Type = Time
+SubType = ms
+ALL = 1
+FLW = 1
+DBG = 0
+CON = 0    // Console output
+RX = 0
+TX = 0
+PROT = 1
+ERR = 1
+USR1 = 1   // Processor info
+USR2 = 1   // TransferBuffer : Execute
+USR3 = 1   // TransferBuffer : Enter
+USR4 = 1   // LogFileWriter
+USR5 = 1   // Server
+USR6 = 1   // ClientService
+USR7 = 1   // TransferBuffer
+USR8 = 1   // Bps statistic
+USR9 = 1   // Stat_Dump Buffer
+
+[Ethernet2]
+BroadcastFamily = IPv4
+BroadcastAdaptor = "192.168.200.76" // default 0.0.0.0
+BroadcastBind = 1                   // default 1
+BroadcastAddr = "192.168.200.255"   // default 255.255.255.255
+BroadcastService = "50000"          // default 50000
+--SNDBUFSIZE = 49152
+--RCVBUFSIZE = 32768
+LogFileSizeMax = 10000000
+Type = Time
+SubType = ms
+ALL = 1
+FLW = 1
+DBG = 0
+CON = 0    // Console output
+RX = 0
+TX = 0
+PROT = 1
+ERR = 1
+USR1 = 0   // Processor info
+USR2 = 0   // TransferBuffer : Execute
+USR3 = 0   // TransferBuffer : Enter
+USR4 = 0   // LogFileWriter
+USR5 = 0   // Server
+USR6 = 0   // ClientService
+USR7 = 0   // TransferBuffer
+USR8 = 0   // Bps statistic
+USR9 = 0   // Stat_Dump Buffer
+
+[Settings]
+Group = ""
+
+[internal]
+Language = GER
+
+[Logging_Virtual]
+Type = Time
+SubType = ms
+LogFileSizeMax = 10000000
+ALL = 1
+DBG = 1
+ERR = 1
+FLW = 1
+PROT = 1
+CON = 0
+RX = 1
+TX = 1
+USR1 = 1
+USR2 = 1
+USR3 = 1
+USR4 = 1
+USR5 = 1
+USR6 = 1
+USR7 = 1
+USR8 = 1
+USR9 = 1
+
+[Logging]
+LogFileSizeMax = 10000000
+Type = Time
+SubType = ms
+ALL = 1
+DBG = 0
+ERR = 1
+FLW = 1
+PROT = 1
+CON = 0
+RX = 1
+TX = 1
+USR1 = 0
+USR2 = 0
+USR3 = 0
+USR4 = 0
+USR5 = 0
+USR6 = 0
+USR7 = 0
+USR8 = 0
+USR9 = 0
+
+[LoggingCom]
+AutoStart = 1
+ByteDelay = 0
+Baudrate = 115200
+Size = 8
+StopBit = 0
+Parity = n
+Type = Time
+SubType = ms
+LogFileSizeMax = 10000000
+ALL = 1
+DBG = 0
+ERR = 1
+FLW = 1
+PROT = 1
+CON = 0
+RX = 0
+TX = 0
+USR1 = 0
+USR2 = 0
+USR3 = 0
+USR4 = 0
+USR5 = 0
+USR6 = 0
+USR7 = 0
+USR8 = 1
+USR9 = 0
+
+[LoggingCan]
+LogFileSizeMax = 10000000
+Type = Time
+SubType = ms
+ALL = 1
+DBG = 0
+ERR = 1
+FLW = 1
+PROT = 1
+CON = 0
+RX = 0
+TX = 0
+USR1 = 0
+USR2 = 0
+USR3 = 0
+USR4 = 0
+USR5 = 0
+USR6 = 0
+USR7 = 0
+USR8 = 0
+USR9 = 0
+
+[LoggingUsb]
+Allow_0 = FTKLARICB
+Allow_1 = FTKLARI_A
+Allow_2 = FTKLARI_B
+Allow_3 = FTKLAZPA
+Allow_4 = KLAMMSSSB
+LogFileSizeMax = 10000000
+Type = Time
+SubType = ms
+ALL = 1
+DBG = 0
+ERR = 1
+FLW = 1
+PROT = 1
+CON = 0
+RX = 0
+TX = 0
+USR1 = 0
+USR2 = 0
+USR3 = 0
+USR4 = 1
+USR5 = 1
+USR6 = 0
+USR7 = 0
+USR8 = 0
+USR9 = 1
+
+[LoggingTcp]
+Allow_0 = FTKLARICA
+Allow_1 = FTKLA4A_A
+Allow_2 = FTKLA4A_B
+Allow_3 = FTKLA4B_A
+Allow_4 = FTKLA4B_B
+Allow_5 = FTKLAMZA
+Allow_6 = KLAMMSSSA
+LogFileSizeMax = 10000000
+Type = Time
+SubType = ms
+ALL = 1
+DBG = 0
+ERR = 1
+FLW = 1
+PROT = 1
+CON = 0
+RX = 0
+TX = 0
+USR1 = 1
+USR2 = 1
+USR3 = 1
+USR4 = 1
+USR5 = 1
+USR6 = 1
+USR7 = 1
+USR8 = 1
+USR9 = 1
+
+[KlaFindComPort]
+AllowMultiple = 0
+AllowSpecific = 0
+Allow_0 = FTKLARICA
+Allow_1 = FTKLA4A_A
+Allow_2 = FTKLA4A_B
+Allow_3 = FTKLA4B_A
+Allow_4 = FTKLA4B_B
+Allow_5 = FTKLAMZA
+Allow_6 = KLAMMSSSA
+LogFileName = KlaFindComPort
+Type = Time
+SubType = ms
+LogFileSizeMax = 10000000
+ALL = 1
+DBG = 0
+ERR = 1
+FLW = 1
+PROT = 0
+CON = 0
+RX = 0
+TX = 0
+USR1 = 0
+USR2 = 0
+USR3 = 0
+USR4 = 1 // info
+USR5 = 0 // detail
+USR6 = 0
+USR7 = 0
+USR8 = 0
+USR9 = 0
+
+[DeviceInfoList]
+Name_0x01 = I-Can
+SubDir_0x01 = I-Can
+Desc_0x01 = : Stromsensor-Prototyp I-CAN
+Name_0x02 = UnImoT
+SubDir_0x02 = UnImoT
+Desc_0x02 = : Stromsensor-Modul Klari-Mod (UnImoT) - Einfach-Shunt
+Name_0x03 = CF-Card
+SubDir_0x03 = CF-Card
+Desc_0x03 = : CF-Card-Datenlogger CF-ctrl.brd
+Name_0x04 = UnIGate
+SubDir_0x04 = UnIGate
+Desc_0x04 = : CANGateway UnIGate
+Name_0x05 = UnImoT-DS
+SubDir_0x05 = UnImoT-DS
+Desc_0x05 = : Stromsensor-Modul UnImoT - Doppel-Shunt
+Name_0x06 = Klari-Fuse
+SubDir_0x06 = Klari-Fuse
+Desc_0x06 = : Mehrkanal-Sicherungs-Strommesser Klari-Fuse (UnIFuse)
+Name_0x07 = Klari-Mod
+SubDir_0x07 = Klari-Mod
+Desc_0x07 = : Stromsensor-Modul Klari-Mod
+Name_0x08 = SensorSim
+SubDir_0x08 = SensorSim
+Desc_0x08 = : Sensorsimulation für USS4.0-Sensoren
+Name_0x09 = Accell
+SubDir_0x09 = Accell
+Desc_0x09 = : Beschleunigungs-Messgerät
+Name_0x0A = Klari-Cord2
+SubDir_0x0A = Klari-Cord2
+Desc_0x0A = : Stromsensor-Modul mit SD-Card-Logger Klari-Cord 2
+Name_0x0B = Klari-Mod
+SubDir_0x0B = Klari-Mod
+Desc_0x0B = : Stromsensor-Modul Klari-Mod-Analog (Klari-Mod mit analogem Ausgang)
+Name_0x0C = OneWire
+SubDir_0x0C = OneWire
+Desc_0x0C = : One-Wire-Bus-Handler für Klari-Fuse-System
+Name_0x0D = Klari-Cord
+SubDir_0x0D = Klari-Cord
+Desc_0x0D = : Stromsensor-Modul mit SD-Card-Logger Produ_Cord (Produktionseinsatz)
+Name_0x0E = Klari-Mod_SC
+SubDir_0x0E = Klari-Mod_SC
+Desc_0x0E = : Single-Channel Messmodul
+Name_0x0F = AsicDiag
+SubDir_0x0F = AsicDiag
+Desc_0x0F = : Diagnosetool für Asic
+Name_0x10 = Klari-Mod_MC2
+SubDir_0x10 = Klari-Mod_MC2
+Desc_0x10 = : Mehrkanaliges Messmodul mit 2 Asic, potentialgetrennt
+Name_0x11 = Klari-Meas
+SubDir_0x11 = Klari-Meas
+Desc_0x11 = : Klari-Meas: Mehrkanaliges Aufsteckmessmodul mit 2 Asic, potentialgetrennt, SPI-Interface
+Name_0x12 = Klari-Charge
+SubDir_0x12 = Klari-Charge
+Desc_0x12 = : intelligentes Ladegerät für Lithium-Ionen Akkus zur Versorgung der Klari-? Messgeräte
+Name_0x13 = Klari-Mod_MC2_1kV
+SubDir_0x13 = Klari-Mod_MC2_1kV
+Desc_0x13 = : Mehrkanaliges Messmodul mit 2 Asic, potentialgetrennt, 1kV Spannungsfestigkeit
+Name_0x14 = Klari-Fuse2
+SubDir_0x14 = Klari-Fuse
+Desc_0x14 = : Millivoltmeter Klari-Fuse2
+Name_0x15 = Klari-BreDru
+SubDir_0x15 = Klari-BreDru
+Desc_0x15 = : Bremsdrucksteuerung
+Name_0x16 = Klari-CVSU
+SubDir_0x16 = Klari-CVSU
+Desc_0x16 = : Klari-CVSU
+Name_0x17 = Klari-CSM
+SubDir_0x17 = Klari-CSM
+Desc_0x17 = : Klari-CSM
+Name_0x18 = Klari-Logger
+SubDir_0x18 = Klari-Logger
+Desc_0x18 = : Klari-Logger
+Name_0x19 = Klari-Mod_SC2_1kV
+SubDir_0x19 = Klari-Mod_SC2_1kV
+Desc_0x19 = : Einkanaliges Messmodul mit 1 Asic, potentialgetrennt, 1kV Spannungsfestigkeit
+Name_0x1A = Klari-Four
+SubDir_0x1A = Klari-Four
+Desc_0x1A = : 4 kanaliges Messmodul mit je 1 Asic, potentialgetrennt, 1kV Spannungsfestigkeit
+Name_0x1B = Klari-Pilot
+SubDir_0x1B = Klari-Pilot
+Desc_0x1B = : Pilot- und Proxysignalerzeugung
+Name_0x1C = Klari-Dekade1
+SubDir_0x1C = Klari-Dekade1
+Desc_0x1C = : Widerstandsdekade 1-BCD
+Name_0x1D = Klari-100k
+SubDir_0x1D = Klari-100k
+Desc_0x1D = : 100kHz Messmodul Pic32
+Name_0x1E = Klari-One 18
+SubDir_0x1E = Klari-One
+Desc_0x1E = : Einkanaliges Messmodul mit Analogausgang
+Name_0x1F = Klari-Function
+SubDir_0x1F = Klari-Function
+Desc_0x1F = : Funktionsgenerator
+Name_0x20 = Klari-One 32
+SubDir_0x20 = Klari-One
+Desc_0x20 = : Einkanaliges Messmodul mit Analogausgang
+Name_0x21 = Klari-Batt
+SubDir_0x21 = Klari-Batt
+Desc_0x21 = : Batterie Messmodul mit Analogausgang
+Name_0x22 = Klari-PDC
+SubDir_0x22 = Klari-PDC
+Desc_0x22 = : Prüfmodul für Ultraschallsensoren
+Name_0x23 = Klari-ADC
+SubDir_0x23 = Klari-ADC
+Desc_0x23 = : Lampentestmodul
+Name_0x24 = Klari-Quad
+SubDir_0x24 = Klari-Quad
+Desc_0x24 = : 4 kanaliges Messmodul mit Analogausgang
+Name_0x25 = Klari-1MHz
+SubDir_0x25 = Klari-1MHz
+Desc_0x25 = : 1MHz Messmodul
+Name_0x27 = Klari-Display
+SubDir_0x27 = Klari-Display
+Desc_0x27 = : Klari-Display Messmodul
+Name_0x28 = Klari-One 32 plus
+SubDir_0x28 = Klari-One
+Desc_0x28 = : Doppelkanaliges Messmodul
+Name_0x29 = Klari-Batt 18
+SubDir_0x29 = Klari-Batt
+Desc_0x29 = : 1*I 3*U
+Name_0x30 = KLARI-CORD4/Display
+SubDir_0x30 = Klari-Cord4
+Desc_0x30 = : KLARI-CORD4 - Display
+Name_0x31 = Klari-Eload
+SubDir_0x31 = Klari-Eload
+Desc_0x31 = : Electronic Load with Display
+Name_0x32 = Klari-Zynq
+SubDir_0x32 = Klari-Zynq
+Desc_0x32 = : Zynq Device
+Name_0x33 = Klari-Infineon
+SubDir_0x33 = Klari-Zynq
+Desc_0x33 = : Infineon Device
+Name_0x34 = KLARI-CORD4/Display
+SubDir_0x34 = Klari-Cord4
+Desc_0x34 = : KLARI-CORD4 - 3xAsics, Display
+Name_0x35 = Klari-3Phase
+SubDir_0x35 = Klari-3Phase
+Desc_0x35 = : Klari-3Phase - Display
+Name_0x36 = KlaricServer
+SubDir_0x36 = KlaricServer
+Desc_0x36 = : KlaricServer
+Name_0x37 = Klari-DMS
+SubDir_0x37 = Klari-DMS
+Desc_0x37 = : Klari-DMS
+Name_0x38 = Klari-Mod_MC3
+SubDir_0x38 = Klari-Mod_MC3
+Desc_0x38 = : Klari-Mod MC3
+Name_0x39 = Klari-AMS
+SubDir_0x39 = Klari-AMS
+Desc_0x39 = : Klari-AMS
+Name_0x40 = KLARI-CORD4/Display
+SubDir_0x40 = Klari-Cord4
+Desc_0x40 = : KLARI-CORD4 - 1xCan,SD,Display,2xU,PT1000
+Name_0x41 = KLARI-CORD4
+SubDir_0x41 = Klari-Cord4
+Desc_0x41 = : KLARI-CORD4 - 1xCan,SD,2xU,PT1000
+Name_0x42 = KLARI-CORD4/Display
+SubDir_0x42 = Klari-Cord4
+Desc_0x42 = : KLARI-CORD4 - 2xCan,SD,Display,3xU,PT1000
+Name_0x43 = KLARI-CORD4
+SubDir_0x43 = KLARI-Cord4
+Desc_0x43 = : KLARI-CORD4 - 2xCan,SD,3xU,PT1000
+Name_0x44 = KLARI-MOD_MC3/Display
+SubDir_0x44 = KLARI-Mod_MC3
+Desc_0x44 = : KLARI-MOD_MC3 - 1xCan,Display,2xU,PT1000
+Name_0x45 = KLARI-MOD_MC3
+SubDir_0x45 = KLARI-Mod_MC3
+Desc_0x45 = : KLARI-MOD_MC3 - 1xCan,2xU,PT1000
+Name_0x46 = KLARI-MOD_MC3/Display
+SubDir_0x46 = KLARI-Mod_MC3
+Desc_0x46 = : KLARI-MOD_MC3 - 2xCan,Display,3xU,PT1000
+Name_0x47 = KLARI-MOD_MC3
+SubDir_0x47 = KLARI-Mod_MC3
+Desc_0x47 = : KLARI-MOD_MC3 - 2xCan,3xU,PT1000
+Name_0x48 = KLARI-MZ
+SubDir_0x48 = KLARI-MZ
+Desc_0x48 = : KLARI-MZ - Pic32MZ
+Name_0x49 = KLARI-AD7763
+SubDir_0x49 = KLARI-AD7763
+Desc_0x49 = : KLARI-AD7763 - Pic32MX AD7763 Test
+Name_0x50 = KLARI-FUSE3
+SubDir_0x50 = KLARI-Fuse
+Desc_0x50 = : KLARI-FUSE3 - 8x2 Asic, 2 Can, Usb, Ethernet
+Name_0x51 = KLARI-Stg
+SubDir_0x51 = KLARI-Stg
+Desc_0x51 = : KLARI-Stg - 4xStrain Gauge, 2 Can, Usb, Ethernet
+Name_0x52 = CHARGE-MONITOR
+SubDir_0x52 = Charge-Monitor
+Desc_0x52 = : CHARGE-MONITOR - 4xKlari-One-Plus
+Name_0x53 = Klari-Zynq-SPI
+SubDir_0x53 = Klari-Zynq
+Desc_0x53 = : ADC SPI
+Name_0x54 = KLARI-1000 1500V
+SubDir_0x54 = KLARI-1000_1500V
+Desc_0x54 = : KLARI-1000_1500V
+Name_0x55 = KLARI-PA1000 1500V
+SubDir_0x55 = KLARI-PA1000_1500V
+Desc_0x55 = : KLARI-PA1000_1500V
+Name_0x56 = KLARI-FUSE3
+SubDir_0x56 = KLARI-Fuse
+Desc_0x56 = : KLARI-FUSE3 - 8x2 Asic, 2 Can, Usb
+Name_0x57 = KLARI-FUSE3
+SubDir_0x57 = KLARI-Fuse
+Desc_0x57 = : KLARI-FUSE3 - 4x2 Asic, 2 Can, Usb, Ethernet
+Name_0x58 = KLARI-FUSE3
+SubDir_0x58 = KLARI-Fuse
+Desc_0x58 = : KLARI-FUSE3 - 4x2 Asic, 2 Can, Usb
+Name_0x59 = KLARI-QUAD2 1500V
+SubDir_0x59 = KLARI-Quad
+Desc_0x59 = : KLARI-QUAD2 1500V - 4x2 Asic, 2 Can, Usb, Ethernet
+Name_0x5A = KLARI-QUAD2 TB8 1500V
+SubDir_0x5A = KLARI-Quad
+Desc_0x5A = : KLARI-QUAD2 1500V - 8x2 Asic, Can, Usb, Ethernet
+Name_0x5B = KLARI-THERM
+SubDir_0x5B = KLARI-Therm
+Desc_0x5B = : KLARI-Therm - 8xThermoelement, 2 Can, Usb
+Name_0x5C = KLARI-CORD5
+SubDir_0x5C = KLARI-Cord5
+Desc_0x5C = : KLARI-CORD5 - 4x2 Asic, 2 Can, Usb, Display, Ethernet
+Name_0x5D = MULTI-8
+SubDir_0x5D = MULTI-8
+Desc_0x5D = : MULTI-8 - 8x2 ADC, CAN
+Name_0x5E = KlaFiSens
+SubDir_0x5E = KlaFiSens
+Desc_0x5E = : KlaFiSens : FiSens UDP to Can service connector
+Name_0x5F = MULTI-HV
+SubDir_0x5F = Multi-HV
+Desc_0x5F = : MULTI-HV - 4x2 ADC, CAN
+Name_0x60 = KlaMeasClient
+SubDir_0x60 = KlaMeasClient
+Desc_0x60 = : KlaMeasClient : KlaricMeasurementClient (TEST)
+Name_0x61 = KLARI-MOD MC5
+SubDir_0x61 = KLARI-Mod_MC5
+Desc_0x61 = : KLARI-Mod MC5
+Name_0x62 = KLARI-THERM HV TB8
+SubDir_0x62 = KLARI-Therm
+Desc_0x62 = : KLARI-THERM HV TB8 - 8x2 Asic, 2 Can, Usb
+Name_0x63 = MULTI-4 ETH
+SubDir_0x63 = MULTI-4_ETH
+Desc_0x63 = : MULTI-4 ETH - 4x2 ADC, ETH
+Name_0x64 = MULTI-8 ETH
+SubDir_0x64 = MULTI-8_ETH
+Desc_0x64 = : MULTI-8 ETH - 8x2 ADC, ETH
+Name_0x65 = MULTI-4
+SubDir_0x65 = MULTI-4
+Desc_0x65 = : MULTI-4 - 4x2 ADC, CAN
+Name_0xFA = Klari-Debug
+SubDir_0xFA = Klari-Debug
+Desc_0xFA = : Klari-Debug
+Name_0xFE = Bootloader (Mini)
+SubDir_0xFE = Klari-Batt
+Desc_0xFE = : Bootloader (Mini)
+Name_0xFF = Bootloader (Hex)
+SubDir_0xFF = Klari-Batt
+Desc_0xFF = : Bootloader (Hex)
+
+[Probe]
+Scale_00 = 0.0025
+Unit_00 = A
+Desc_00 = I
+TotDig_00 = 12
+DecDig_00 = 3
+Scale_01 = 0.00001
+Unit_01 = A
+Desc_01 = HI-Probe 10yA
+TotDig_01 = 12
+DecDig_01 = 5
+Scale_02 = 0.0001
+Unit_02 = A
+Desc_02 = HI-Probe 100yA
+TotDig_02 = 12
+DecDig_02 = 4
+Scale_03 = 0.001
+Unit_03 = A
+Desc_03 = HI-Probe 1mA
+TotDig_03 = 12
+DecDig_03 = 3
+Scale_04 = 0.0001
+Unit_04 = V
+Desc_04 = U/Probe
+TotDig_04 = 12
+DecDig_04 = 4
+Scale_05 = 0.001
+Unit_05 = °C
+Desc_05 = PT-1000
+TotDig_05 = 5
+DecDig_05 = 1
+Scale_06 = 0.01
+Unit_06 = °C
+Desc_06 = PT-100
+TotDig_06 = 5
+DecDig_06 = 1
+Scale_07 = 0.0001
+Unit_07 = mV
+Desc_07 = MasterProbe
+TotDig_07 = 12
+DecDig_07 = 4
+Scale_08 = 0.001
+Unit_08 = mA
+Desc_08 = LI-Probe 1yA
+TotDig_08 = 12
+DecDig_08 = 3
+Scale_09 = 0.0001
+Unit_09 = mA
+Desc_09 = LI-Probe 0.1yA
+TotDig_09 = 12
+DecDig_09 = 4
+Scale_10 = 0.001
+Unit_10 = V
+Desc_10 = HVU/Probe
+TotDig_10 = 12
+DecDig_10 = 3
+Scale_11 = 0.01
+Unit_11 = °C
+Desc_11 = Thermo
+TotDig_11 = 5
+DecDig_11 = 1
+Scale_12 = 0.01
+Unit_12 = A
+Desc_12 = HI-Probe 10mA
+TotDig_12 = 12
+DecDig_12 = 2
+
+[Probe_Fuse3]
+Range = Range_Fuse3
+TimeStamp = TimeStamp_Fuse3
+Scale_00 = 0.0025
+Unit_00 = A
+Desc_00 = I
+TotDig_00 = 12
+DecDig_00 = 3
+Scale_01 = 0.00001
+Unit_01 = A
+Desc_01 = HI-Probe 10yA
+TotDig_01 = 12
+DecDig_01 = 5
+Scale_02 = 0.0001
+Unit_02 = A
+Desc_02 = HI-Probe 100yA
+TotDig_02 = 12
+DecDig_02 = 4
+Scale_03 = 0.001
+Unit_03 = A
+Desc_03 = HI-Probe 1mA
+TotDig_03 = 12
+DecDig_03 = 3
+Scale_04 = 0.0001
+Unit_04 = V
+Desc_04 = U/Probe
+TotDig_04 = 12
+DecDig_04 = 4
+Scale_05 = 0.001
+Unit_05 = ?C
+Desc_05 = PT-1000
+TotDig_05 = 5
+DecDig_05 = 1
+Scale_06 = 0.01
+Unit_06 = ?C
+Desc_06 = PT-100
+TotDig_06 = 5
+DecDig_06 = 1
+Scale_07 = 0.0001
+Unit_07 = mV
+Desc_07 = MasterProbe
+TotDig_07 = 12
+DecDig_07 = 4
+Scale_08 = 0.001
+Unit_08 = mA
+Desc_08 = LI-Probe 1yA
+TotDig_08 = 12
+DecDig_08 = 3
+Scale_09 = 0.0001
+Unit_09 = mA
+Desc_09 = LI-Probe 0.1yA
+TotDig_09 = 12
+DecDig_09 = 4
+Scale_10 = 0.001
+Unit_10 = V
+Desc_10 = HVU/Probe
+TotDig_10 = 12
+DecDig_10 = 3
+Scale_11 = 0.01
+Unit_11 = ?C
+Desc_11 = Thermo
+TotDig_11 = 5
+DecDig_11 = 1
+Scale_12 = 0.01
+Unit_12 = A
+Desc_12 = HI-Probe 10mA
+TotDig_12 = 12
+DecDig_12 = 2
+
+[Din_0]
+Scale_00 = 0.00017025
+Unit_00 = V
+Desc_00 = 
+TotDig_00 = 10
+DecDig_00 = 3
+
+[Din_1]
+Scale_00 = 0.000166917
+Unit_00 = V
+Desc_00 = 
+TotDig_00 = 11
+DecDig_00 = 3
+
+[Ubat]
+Scale_00 = 0.00125025
+Unit_00 = V
+Desc_00 = 
+TotDig_00 = 10
+DecDig_00 = 4
+
+[Chan_U0]
+Scale_00 = 0.00125025
+Unit_00 = V
+Desc_00 = 
+TotDig_00 = 10
+DecDig_00 = 4
+
+[Chan_U1]
+Scale_00 = 0.000166917
+Unit_00 = V
+Desc_00 = 
+TotDig_00 = 10
+DecDig_00 = 4
+
+[Chan_U2]
+Scale_00 = 0.00025025
+Unit_00 = V
+Desc_00 = 
+TotDig_00 = 10
+DecDig_00 = 4
+
+[Shunt100y]
+Scale_00 = 0.0025
+Unit_00 = A
+Desc_00 = I-A
+TotDig_00 = 12
+DecDig_00 = 4
+
+[Melexis]
+Scale_00 = 0.6
+Unit_00 = A
+Desc_00 = I-A
+TotDig_00 = 12
+DecDig_00 = 1
+
+[Temp_0]
+Scale_00 = 0.1
+Unit_00 = °C
+Desc_00 = 
+TotDig_00 = 8
+DecDig_00 = 1
+
+[Temp_1]
+Scale_00 = 0.01
+Unit_00 = °C
+Desc_00 = 
+TotDig_00 = 10
+DecDig_00 = 2
+
+[Range]
+Range_0 = gain1, +720/-300mV
+Range_1 = gain6, +/-120mV
+Range_2 = gain24, +/-30mV
+Range_3 = gain50, +/-15mV
+Range_4 = gain100, +/-7.5mV
+Range_8 = OVR:gain1, +720/-300mV
+Range_9 = OVR:gain6, +/-120mV
+Range_10 = OVR:gain24, +/-30mV
+Range_11 = OVR:gain50, +/-15mV
+Range_12 = OVR:gain100, +/-7.5mV
+
+[Range_Fuse3]
+Range_0 = gain1, -240...+1050mV
+Range_1 = gain6, +/-210mV
+Range_2 = gain24, +/-42mV
+Range_3 = gain50, +/-27mV
+Range_4 = gain100, +/-9mV
+Range_8 = OVR:gain1, -240...+1050mV
+Range_9 = OVR:gain6, +/-210mV
+Range_10 = OVR:gain24, +/-47mV
+Range_11 = OVR:gain50, +/-27mV
+Range_12 = OVR:gain100, +/-9mV
+
+[TimeStamp]
+Scale = 0.000030517
+Unit = s
+
+[TimeStamp_Fuse3]
+Scale = 0.00000256
+Unit = s
+
+[MeasDisplay_0x06]
+Ch0_Set = Probe
+Ch0_Desc = P1
+Ch1_Set = Probe
+Ch1_Desc = P2
+Ch2_Set = Probe
+Ch2_Desc = P3
+Ch3_Set = Probe
+Ch3_Desc = P4
+Ch4_Set = Probe
+Ch4_Desc = P5
+Ch5_Set = Probe
+Ch5_Desc = P6
+Ch6_Set = Probe
+Ch6_Desc = P7
+Ch7_Set = Probe
+Ch7_Desc = P8
+
+[MeasDisplay_0x0A]
+Ch0_Set = Probe
+Ch0_Desc = P1
+Ch1_Set = Din_1
+Ch1_Desc = U-Bat
+Ch2_Set = Din_1
+Ch2_Desc = U-Aux
+Ch3_Set = Din_1
+Ch3_Desc = Temp
+
+[MeasDisplay_0x0E]
+Ch0_Set = Probe
+Ch0_Desc = P1
+
+[MeasDisplay_0x10]
+Ch0_Set = Probe
+Ch0_Desc = P1
+Ch1_Set = Probe
+Ch1_Desc = P2
+Ch2_Set = Din_0
+Ch2_Desc = U-Bat
+Ch3_Set = Din_0
+Ch3_Desc = U-Aux
+Ch4_Set = Temp_0
+Ch4_Desc = Temp
+
+[MeasDisplay_0x13]
+Ch0_Set = Probe
+Ch0_Desc = P1
+Ch1_Set = Probe
+Ch1_Desc = P2
+
+[MeasDisplay_0x14]
+Ch0_Set = Probe
+Ch0_Desc = P1
+Ch1_Set = Probe
+Ch1_Desc = P2
+Ch2_Set = Probe
+Ch2_Desc = P3
+Ch3_Set = Probe
+Ch3_Desc = P4
+Ch4_Set = Probe
+Ch4_Desc = P5
+Ch5_Set = Probe
+Ch5_Desc = P6
+Ch6_Set = Probe
+Ch6_Desc = P7
+Ch7_Set = Probe
+Ch7_Desc = P8
+
+[MeasDisplay_0x16]
+Ch0_Set = Shunt100y
+Ch0_Desc = Shunt100y
+Ch1_Set = Ubat
+Ch1_Desc = Ubat
+Ch2_Set = Ubat
+Ch2_Desc = Uaux
+Ch3_Set = Melexis
+Ch3_Desc = Melexis
+
+[MeasDisplay_0x19]
+Ch0_Set = Probe
+Ch0_Desc = P1
+
+[MeasDisplay_0x1A]
+Ch0_Set = Probe
+Ch0_Desc = P1
+Ch1_Set = Probe
+Ch1_Desc = P2
+Ch2_Set = Probe
+Ch2_Desc = P3
+Ch3_Set = Probe
+Ch3_Desc = P4
+
+[MeasDisplay_0x20]
+Ch0_Set = Probe
+Ch0_Desc = P1
+Ch1_Set = Probe
+Ch1_Desc = P1B
+
+[MeasDisplay_0x21]
+Ch0_Set = Probe
+Ch0_Desc = P1
+Ch1_Set = Ubat
+Ch1_Desc = Ubat
+Ch2_Set = Ubat
+Ch2_Desc = U1
+Ch3_Set = Ubat
+Ch3_Desc = U1
+
+[MeasDisplay_0x24]
+Ch0_Set = Probe
+Ch0_Desc = P1
+Ch1_Set = Probe
+Ch1_Desc = P2
+Ch2_Set = Probe
+Ch2_Desc = P3
+Ch3_Set = Probe
+Ch3_Desc = P4
+Ch4_Set = Probe
+Ch4_Desc = P1B
+Ch5_Set = Probe
+Ch5_Desc = P2B
+Ch6_Set = Probe
+Ch6_Desc = P3B
+Ch7_Set = Probe
+Ch7_Desc = P4B
+
+[MeasDisplay_0x25]
+Ch0_Set = Probe
+Ch0_Desc = P1
+Ch1_Set = Probe
+Ch1_Desc = P2
+Ch2_Set = Probe
+Ch2_Desc = P3
+Ch3_Set = Probe
+Ch3_Desc = P4
+Ch4_Set = Probe
+Ch4_Desc = P1B
+Ch5_Set = Probe
+Ch5_Desc = P2B
+Ch6_Set = Probe
+Ch6_Desc = P3B
+Ch7_Set = Probe
+Ch7_Desc = P4B
+
+[MeasDisplay_0x27]
+Ch0_Set = Probe
+Ch0_Desc = P1
+Ch1_Set = Din_1
+Ch1_Desc = U-Bat
+Ch2_Set = Din_1
+Ch2_Desc = U-Aux
+Ch3_Set = Din_1
+Ch3_Desc = Temp
+
+[MeasDisplay_0x28]
+Ch0_Set = Probe
+Ch0_Desc = P1
+Ch1_Set = Probe
+Ch1_Desc = P1B
+
+[MeasDisplay_0x29]
+Ch0_Set = Probe
+Ch0_Desc = P1
+Ch1_Set = Chan_U0
+Ch1_Desc = Ubat
+Ch2_Set = Chan_U0
+Ch2_Desc = U1
+Ch3_Set = Chan_U2
+Ch3_Desc = U2
+
+[MeasDisplay_0x30]
+Ch0_Set = Probe
+Ch0_Desc = P1    :
+Ch1_Set = Probe
+Ch1_Desc = P2    :
+Ch2_Set = Din_1
+Ch2_Desc = U-Bat :
+Ch3_Set = Din_1
+Ch3_Desc = U-Aux :
+Ch4_Set = Temp_1
+Ch4_Desc = Temp  :
+
+[MeasDisplay_0x33]
+Ch0_Set = Probe
+Ch0_Desc = Simulant :
+
+[MeasDisplay_0x34]
+Ch0_Set = Probe
+Ch0_Desc = P1    :
+Ch1_Set = Probe
+Ch1_Desc = P2    :
+Ch2_Set = Din_1
+Ch2_Desc = U-Bat :
+Ch3_Set = Din_1
+Ch3_Desc = U-Aux :
+Ch4_Set = Temp_1
+Ch4_Desc = Temp  :
+
+[MeasDisplay_0x37]
+Ch0_Set = Probe
+Ch0_Desc = P1    :
+Ch1_Set = Probe
+Ch1_Desc = P2    :
+
+[MeasDisplay_0x38]
+Ch0_Set = Probe
+Ch0_Desc = P1    :
+Ch1_Set = Probe
+Ch1_Desc = P2    :
+Ch2_Set = Din_1
+Ch2_Desc = U-Bat :
+Ch3_Set = Din_1
+Ch3_Desc = U-Aux :
+Ch4_Set = Temp_1
+Ch4_Desc = Temp  :
+
+[MeasDisplay_0x40]
+Ch0_Set = Probe
+Ch0_Desc = P1    :
+Ch1_Set = Probe
+Ch1_Desc = P2    :
+Ch2_Set = Din_1
+Ch2_Desc = U-Bat :
+Ch3_Set = Din_1
+Ch3_Desc = U-Aux :
+Ch4_Set = Temp_1
+Ch4_Desc = Temp  :
+
+[MeasDisplay_0x41]
+Ch0_Set = Probe
+Ch0_Desc = P1    :
+Ch1_Set = Probe
+Ch1_Desc = P2    :
+Ch2_Set = Din_1
+Ch2_Desc = U-Bat :
+Ch3_Set = Din_1
+Ch3_Desc = U-Aux :
+Ch4_Set = Temp_1
+Ch4_Desc = Temp  :
+
+[MeasDisplay_0x42]
+Ch0_Set = Probe
+Ch0_Desc = P1    :
+Ch1_Set = Probe
+Ch1_Desc = P2    :
+Ch2_Set = Din_1
+Ch2_Desc = U-Bat :
+Ch3_Set = Din_1
+Ch3_Desc = U-Aux :
+Ch4_Set = Din_1
+Ch4_Desc = U3    :
+Ch5_Set = Temp_1
+Ch5_Desc = Temp  :
+
+[MeasDisplay_0x43]
+Ch0_Set = Probe
+Ch0_Desc = P1    :
+Ch1_Set = Probe
+Ch1_Desc = P2    :
+Ch2_Set = Din_1
+Ch2_Desc = U-Bat :
+Ch3_Set = Din_1
+Ch3_Desc = U-Aux :
+Ch4_Set = Din_1
+Ch4_Desc = U3    :
+Ch5_Set = Temp_1
+Ch5_Desc = Temp  :
+
+[MeasDisplay_0x44]
+Ch0_Set = Probe
+Ch0_Desc = P1    :
+Ch1_Set = Probe
+Ch1_Desc = P2    :
+Ch2_Set = Din_1
+Ch2_Desc = U-Bat :
+Ch3_Set = Din_1
+Ch3_Desc = U-Aux :
+Ch4_Set = Temp_1
+Ch4_Desc = Temp  :
+
+[MeasDisplay_0x45]
+Ch0_Set = Probe
+Ch0_Desc = P1    :
+Ch1_Set = Probe
+Ch1_Desc = P2    :
+Ch2_Set = Din_1
+Ch2_Desc = U-Bat :
+Ch3_Set = Din_1
+Ch3_Desc = U-Aux :
+Ch4_Set = Temp_1
+Ch4_Desc = Temp  :
+
+[MeasDisplay_0x46]
+Ch0_Set = Probe
+Ch0_Desc = P1    :
+Ch1_Set = Probe
+Ch1_Desc = P2    :
+Ch2_Set = Din_1
+Ch2_Desc = U-Bat :
+Ch3_Set = Din_1
+Ch3_Desc = U-Aux :
+Ch4_Set = Din_1
+Ch4_Desc = U3    :
+Ch5_Set = Temp_1
+Ch5_Desc = Temp  :
+
+[MeasDisplay_0x47]
+Ch0_Set = Probe
+Ch0_Desc = P1    :
+Ch1_Set = Probe
+Ch1_Desc = P2    :
+Ch2_Set = Din_1
+Ch2_Desc = U-Bat :
+Ch3_Set = Din_1
+Ch3_Desc = U-Aux :
+Ch4_Set = Din_1
+Ch4_Desc = U3    :
+Ch5_Set = Temp_1
+Ch5_Desc = Temp  :
+
+[MeasDisplay_0x50]
+Ch0_Set = Probe_Fuse3
+Ch0_Desc = P1    :
+Ch1_Set = Probe_Fuse3
+Ch1_Desc = P2    :
+Ch2_Set = Probe_Fuse3
+Ch2_Desc = P3    :
+Ch3_Set = Probe_Fuse3
+Ch3_Desc = P4    :
+Ch4_Set = Probe_Fuse3
+Ch4_Desc = P5    :
+Ch5_Set = Probe_Fuse3
+Ch5_Desc = P6    :
+Ch6_Set = Probe_Fuse3
+Ch6_Desc = P7    :
+Ch7_Set = Probe_Fuse3
+Ch7_Desc = P8    :
+Ch8_Set = Probe_Fuse3
+Ch8_Desc = P1B   :
+Ch9_Set = Probe_Fuse3
+Ch9_Desc = P2B   :
+Ch10_Set = Probe_Fuse3
+Ch10_Desc = P3B   :
+Ch11_Set = Probe_Fuse3
+Ch11_Desc = P4B   :
+Ch12_Set = Probe_Fuse3
+Ch12_Desc = P5B   :
+Ch13_Set = Probe_Fuse3
+Ch13_Desc = P6B   :
+Ch14_Set = Probe_Fuse3
+Ch14_Desc = P7B   :
+Ch15_Set = Probe_Fuse3
+Ch15_Desc = P8B   :
+
+[MeasDisplay_0x51]
+Ch0_Set = Probe_Fuse3
+Ch0_Desc = P1    :
+Ch1_Set = Probe_Fuse3
+Ch1_Desc = P2    :
+Ch2_Set = Probe_Fuse3
+Ch2_Desc = P3    :
+Ch3_Set = Probe_Fuse3
+Ch3_Desc = P4    :
+
+[MeasDisplay_0x59]
+Ch0_Set = Probe_Fuse3
+Ch0_Desc = P1    :
+Ch1_Set = Probe_Fuse3
+Ch1_Desc = P2    :
+Ch2_Set = Probe_Fuse3
+Ch2_Desc = P3    :
+Ch3_Set = Probe_Fuse3
+Ch3_Desc = P4    :
+Ch4_Set = Probe_Fuse3
+Ch4_Desc = P1B   :
+Ch5_Set = Probe_Fuse3
+Ch5_Desc = P2B   :
+Ch6_Set = Probe_Fuse3
+Ch6_Desc = P3B   :
+Ch7_Set = Probe_Fuse3
+Ch7_Desc = P4B   :
+
+[MeasDisplay_0x5B]
+Ch0_Set = Probe_Fuse3
+Ch0_Desc = P1    :
+Ch1_Set = Probe_Fuse3
+Ch1_Desc = P2    :
+Ch2_Set = Probe_Fuse3
+Ch2_Desc = P3    :
+Ch3_Set = Probe_Fuse3
+Ch3_Desc = P4    :
+Ch4_Set = Probe_Fuse3
+Ch4_Desc = P5    :
+Ch5_Set = Probe_Fuse3
+Ch5_Desc = P6    :
+Ch6_Set = Probe_Fuse3
+Ch6_Desc = P7    :
+Ch7_Set = Probe_Fuse3
+Ch7_Desc = P8    :
+
+[MeasDisplay_0x5C]
+Ch0_Set = Probe_Fuse3
+Ch0_Desc = P1    :
+Ch1_Set = Probe_Fuse3
+Ch1_Desc = P2    :
+Ch2_Set = Probe_Fuse3
+Ch2_Desc = P3    :
+Ch3_Set = Probe_Fuse3
+Ch3_Desc = P4    :
+Ch4_Set = Probe_Fuse3
+Ch4_Desc = P1B   :
+Ch5_Set = Probe_Fuse3
+Ch5_Desc = P2B   :
+Ch6_Set = Probe_Fuse3
+Ch6_Desc = P3B   :
+Ch7_Set = Probe_Fuse3
+Ch7_Desc = P4B   :
+
+[0x0101]
+name = dsPic30F4011
+writeblock = 64
+readblock = 1
+eraseblock = 64
+devicetype = 2
+maxpacketsize = 128
+bytesperaddr = 1
+pmrangelow = 0x000800
+pmrangehigh = 0x007FFF
+eerangelow = 0x7FFC00
+eerangehigh = 0x7FFFFF
+usrrangelow = 0x200000
+usrrangehigh = 0x20000F
+cfgrangelow = 0xF80000
+cfgrangehigh = 0xF8000F
+
+[0x02C2]
+name = dsPic30F6012A
+writeblock = 64
+readblock = 1
+eraseblock = 64
+devicetype = 2
+maxpacketsize = 128
+bytesperaddr = 1
+pmrangelow = 0x000800
+pmrangehigh = 0x017FFF
+eerangelow = 0x7FF000
+eerangehigh = 0x7FFFFF
+usrrangelow = 0x200000
+usrrangehigh = 0x20000F
+cfgrangelow = 0xF80000
+cfgrangehigh = 0xF8000F
