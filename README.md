@@ -2,9 +2,9 @@
 
 This repository contains device specific memory maps for the visualization in KlariToolbox
 
-## Datfile location
+## DatFiles location
 
-Place the folder **DatFiles** to your local directory  **C:\Users\Public\Documents\Klaric\Config**
+Clone the repository, rename to **DatFiles** and place it to your local directory  **C:\Users\Public\Documents\Klaric\Config**
 
 ## KlaModInt.dat location
 
