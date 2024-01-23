@@ -1,14 +1,9 @@
 // ********************************************
 // created by DatFileCreator
-// device : 0x33F15D01
-//   - SW_EN_MANDATORY
-//   - SW_EN_CAN2
-//   - SW_EN_INDIVIDUAL_SETUP
-//   - SW_EN_KOMBI_PROBE
-//   - SW_EN_3RD_PARTY_PROBE
-//   - SW_EN_FAST
-//   - SW_EN_CHARGE_BALANCE
+// device : 0x0018640B
 //   - SW_EN_ETHERNET
+//   - SW_EN_PLP
+//   - SW_EN_PTP
 // ********************************************
 
 // ********************************************
@@ -47,7 +42,7 @@ Ident_04            = "ACT_KEY_PAR"
 Display_04          = "ViewAndModify"
 Save_04             = "No"
 
-Group_05            = "Tk:ProbeStat"	; global parameter
+Group_05            = "Tk:ProbeStat"; global parameter
 SubGroup_1          = "P1/P1B"
 SubGroup_2          = "P2/P2B"
 SubGroup_3          = "P3/P3B"
@@ -61,7 +56,7 @@ Ident_05            = "PROBE_DATA"
 Display_05          = "ViewOnly"
 Save_05             = "No"
 
-Group_06            = "Tk:ChannelStat"	; global parameter
+Group_06            = "Tk:ChannelStat"; global parameter
 SubGroup_1          = "P1/P1B"
 SubGroup_2          = "P2/P2B"
 SubGroup_3          = "P3/P3B"
@@ -75,7 +70,7 @@ Ident_06            = "CHANNEL_DATA"
 Display_06          = "ViewOnly"
 Save_06             = "No"
 
-Group_07            = "Tk:Status"	; status information
+Group_07            = "Tk:Status"; status information
 SubGroup_1          = "Tk:Overview"
 SubGroup_2          = "Tk:General"
 SubGroup_3          = "Tk:Adc"
@@ -88,9 +83,9 @@ Save_07             = "No"
 
 Group_08            = "Tk:Calib"
 SubGroup_1          = "Tk:Overview"
-SubGroup_2			= "Debug"
+SubGroup_2          = "Debug"
 SubGroup_3          = "Temp"
-SubGroup_4 			= "AC"					
+SubGroup_4          = "AC"
 SubGroup_5          = "AutoTune"
 SubGroup_6          = "Tk:CB"
 SubGroup_7          = "Tk:Ethernet"
@@ -150,49 +145,49 @@ Display_13          = "ViewOnly"
 // COMMANDs
 // ********************************************
 [COMMAND]; Festlegung der Modulkommandos
-Name_01             = "Tk:Reset"	; Reset
+Name_01             = "Tk:Reset"; Reset
 Value_01            = 0x0010
 Id_01               = CMD_RESET
 User_01             = default; Zugriffsrecht
 Help_01             = "Reset"
 
-Name_02             = "Apply Changes"	; Apply Changes
+Name_02             = "Apply Changes"; Apply Changes
 Value_02            = 0x0060
 Id_02               = CMD_APPLY_CHANGES
 User_02             = operator; Zugriffsrecht
-Help_02         	= "ApplyChanges"
+Help_02             = "ApplyChanges"
 
-Name_03             = "Tk:SaveAllPar"	; SavePar
+Name_03             = "Tk:SaveAllPar"; SavePar
 Value_03            = 0x0020
 Id_03               = CMD_SAVE_ALL_PAR
 User_03             = operator; Zugriffsrecht
 Help_03             = "SavePar"
 
-Name_04             = "Tk:StartMeas"	; StartMeas
+Name_04             = "Tk:StartMeas"; StartMeas
 Value_04            = 0x1020
 Id_04               = CMD_START_MEAS
 User_04             = operator; Zugriffsrecht
 Help_04             = "StartMeas"
 
-Name_05             = "Tk:StopMeas"	; StopMeas
+Name_05             = "Tk:StopMeas"; StopMeas
 Value_05            = 0x1021
 Id_05               = CMD_STOP_MEAS
 User_05             = operator; Zugriffsrecht
 Help_05             = "StopMeas"
 
-Name_06             = "Tk:SaveAsDef"	;
+Name_06             = "Tk:SaveAsDef";
 Value_06            = 0xCB1C
 Id_06               = CMD_SAVE_AS_DEF
 User_06             = operator; Zugriffsrecht
 Help_06             = "SaveAsDefault"
 
-Name_07             = "Tk:LoadDef"	;
+Name_07             = "Tk:LoadDef";
 Value_07            = 0xCB1D
 Id_07               = CMD_LOAD_DEF
 User_07             = operator; Zugriffsrecht
 Help_07             = "SaveAsDefault"
 
-Name_08             = "Tk:LocateMe"	;
+Name_08             = "Tk:LocateMe";
 Value_08            = 0x1301
 Id_08               = CMD_LOCATE_ME
 User_08             = operator; Zugriffsrecht
@@ -204,31 +199,31 @@ Id_09               = CMD_SAVE_CALIB
 User_09             = system; Zugriffsrecht
 Help_09             = "SaveCalib"
 
-Name_10             = "Tk:Boot"	; Boot
+Name_10             = "Tk:Boot"; Boot
 Value_10            = 0xB007
 User_10             = system; Zugriffsrecht
 Help_10             = "Boot"
 Protect_10          = "Tk:BootWarning"
 
-Name_11             = "DumpDbcAll"	; StopMeas
+Name_11             = "DumpDbcAll"; StopMeas
 Value_11            = 0x1101
 Id_11               = CMD_DUMP_DBC
 User_11             = system; Zugriffsrecht
 Help_11             = "DumpDbc"
 
-Name_12             = "Calib_ETR_ETS"	; CalibEtrEts
+Name_12             = "Calib_ETR_ETS"; CalibEtrEts
 Value_12            = 0x1201
 Id_12               = CMD_CALIB_ETR_ETS
 User_12             = system; Zugriffsrecht
 Help_12             = "CalibETRETS"
 
-Name_13             = "DIGIO init"	; CalibEtrEts
+Name_13             = "DIGIO init"; CalibEtrEts
 Value_13            = 0x1401
 Id_13               = CMD_DIGIO_INIT
 User_13             = system; Zugriffsrecht
 Help_13             = "CalibETRETS"
 
-Name_14             = "DIGIO exec"	; CalibEtrEts
+Name_14             = "DIGIO exec"; CalibEtrEts
 Value_14            = 0x1402
 Id_14               = CMD_DIGIO_EXEC
 User_14             = system; Zugriffsrecht
@@ -312,7 +307,7 @@ Value_00            = 0x00000841
 // ********************************************
 [Group]
 Group               = 2
-SubGroup			= 1
+SubGroup            = 1
 Type                = string
 Size                = 16
 Name                = "Tk:Group"
@@ -322,7 +317,7 @@ Row                 = 1
 
 [DeviceName]
 Group               = 2
-SubGroup			= 1
+SubGroup            = 1
 Type                = string
 Size                = 32
 Name                = "Tk:DeviceName"
@@ -332,7 +327,7 @@ Row                 = +1
 
 [TcpIp_Option]
 Group               = 2
-SubGroup			= 1
+SubGroup            = 1
 Type                = uLong
 Name                = "Tk:TcpIp_Option"
 Help                = "TcpIp_Option"
@@ -346,7 +341,7 @@ Mask_00             = 0x00000002
 
 [TcpIpV4_Addr]
 Group               = 2
-SubGroup			= 1
+SubGroup            = 1
 Type                = string
 Size                = 16
 Name                = "Tk:TcpIpV4_Addr"
@@ -356,7 +351,7 @@ Row                 = +1
 
 [TcpIpV4_Mask]
 Group               = 2
-SubGroup			= 1
+SubGroup            = 1
 Type                = string
 Size                = 16
 Name                = "Tk:TcpIpV4_Mask"
@@ -366,7 +361,7 @@ Row                 = +1
 
 [TcpIpV4_DefGw]
 Group               = 2
-SubGroup			= 1
+SubGroup            = 1
 Type                = string
 Size                = 16
 Name                = "Tk:TcpIpV4_DefGw"
@@ -376,7 +371,7 @@ Row                 = +1
 
 [TcpIpV4_MacAddr]
 Group               = 2
-SubGroup			= 1
+SubGroup            = 1
 Type                = string
 Size                = 24
 Name                = "Tk:TcpIpV4_MacAddr"
@@ -386,7 +381,7 @@ Row                 = +1
 
 [Config_Port]
 Group               = 2
-SubGroup			= 1
+SubGroup            = 1
 Name                = "Config Port"
 Type                = uInt
 Column              = +0
@@ -394,7 +389,7 @@ Row                 = +1
 
 [BC_Port]
 Group               = 2
-SubGroup			= 1
+SubGroup            = 1
 Name                = "BC Port"
 Type                = uInt
 Column              = +0
@@ -402,7 +397,7 @@ Row                 = +1
 
 [XCP_Type]
 Group               = 2
-SubGroup			= 1
+SubGroup            = 1
 Name                = "XCP Type"
 Type                = uInt
 Column              = +0
@@ -416,7 +411,7 @@ Value_00            = 1
 
 [XCP_Port]
 Group               = 2
-SubGroup			= 1
+SubGroup            = 1
 Name                = "XCP Port"
 Type                = uInt
 Column              = +0
@@ -492,72 +487,72 @@ Column              = +0
 Row                 = +1
 
 [UTC_Timezone]
-Group 				= 2
-SubGroup 			= 2
-Name 				= "UTC Timezone"
-Type 				= int
-Attrib 				= Combo
-Select_00 			= "-11h"
-Value_00 			= -11
-Select_01 			= "-10h"
-Value_01 			= -10
-Select_02 			= "-9h"
-Value_02 			= -9
-Select_03 			= "-8h"
-Value_03 			= -8
-Select_04 			= "-7h"
-Value_04 			= -7
-Select_05 			= "-6h"
-Value_05 			= -6
-Select_06 			= "-5h"
-Value_06 			= -5
-Select_07 			= "-4h"
-Value_07 			= -4
-Select_08 			= "-3h"
-Value_08 			= -3
-Select_09 			= "-2h"
-Value_09 			= -2
-Select_10 			= "-1h"
-Value_11 			= -1
-Select_12 			= "0h"
-Value_12 			= 0
-Select_13 			= "+1h"
-Value_13 			= 1
-Select_14 			= "+2h"
-Value_14 			= 2
-Select_15 			= "+3h"
-Value_15 			= 3
-Select_16 			= "+4h"
-Value_16 			= 4
-Select_17 			= "+5h"
-Value_17 			= 5
-Select_18 			= "+6h"
-Value_18 			= 6
-Select_19 			= "+7h"
-Value_19 			= 7
-Select_20 			= "+8h"
-Value_20 			= 8
-Select_21 			= "+9h"
-Value_21 			= 9
-Select_22 			= "+10h"
-Value_22 			= 10
-Select_23 			= "+11h"
-Value_23 			= 11
-Select_24 			= "+12h"
-Value_24 			= 12
+Group               = 2
+SubGroup            = 2
+Name                = "UTC Timezone"
+Type                = int
+Attrib              = Combo
+Select_00           = "-11h"
+Value_00            = -11
+Select_01           = "-10h"
+Value_01            = -10
+Select_02           = "-9h"
+Value_02            = -9
+Select_03           = "-8h"
+Value_03            = -8
+Select_04           = "-7h"
+Value_04            = -7
+Select_05           = "-6h"
+Value_05            = -6
+Select_06           = "-5h"
+Value_06            = -5
+Select_07           = "-4h"
+Value_07            = -4
+Select_08           = "-3h"
+Value_08            = -3
+Select_09           = "-2h"
+Value_09            = -2
+Select_10           = "-1h"
+Value_11            = -1
+Select_12           = "0h"
+Value_12            = 0
+Select_13           = "+1h"
+Value_13            = 1
+Select_14           = "+2h"
+Value_14            = 2
+Select_15           = "+3h"
+Value_15            = 3
+Select_16           = "+4h"
+Value_16            = 4
+Select_17           = "+5h"
+Value_17            = 5
+Select_18           = "+6h"
+Value_18            = 6
+Select_19           = "+7h"
+Value_19            = 7
+Select_20           = "+8h"
+Value_20            = 8
+Select_21           = "+9h"
+Value_21            = 9
+Select_22           = "+10h"
+Value_22            = 10
+Select_23           = "+11h"
+Value_23            = 11
+Select_24           = "+12h"
+Value_24            = 12
 
 [DayLight_saving_Time]
 Group               = 2
 SubGroup            = 2
 Name                = "DayLight saving time"
 Type                = int
-Attrib 				= Combo
-Select_00 			= "Not available"
-Value_00 			= -1
-Select_01 			= "Winter time"
-Value_01 			= 0
-Select_02 			= "Summer time"
-Value_02 			= 1
+Attrib              = Combo
+Select_00           = "Not available"
+Value_00            = -1
+Select_01           = "Winter time"
+Value_01            = 0
+Select_02           = "Summer time"
+Value_02            = 1
 
 // ********************************************
 // PLP
@@ -566,73 +561,72 @@ Value_02 			= 1
 Group               = 2
 SubGroup            = 3
 Name                = "BusSpecID"
-Format	            = Hex
+Format              = Hex
 Type                = ulong
 
 [PLP_MsgType]
-Group 				= 2
-SubGroup 			= 3
-Name 				= "PLP MsgType"
-Type 				= uInt
-Attrib 				= Combo
-Select_00 			= "CAN data (0x02)"
-Value_00 			= 0x02
-Select_01 			= "Analog (0x20)"
-Value_01 			= 0x20
-Select_01 			= "Analog BMW (0x28)"
-Value_01 			= 0x28
+Group               = 2
+SubGroup            = 3
+Name                = "PLP MsgType"
+Type                = uInt
+Attrib              = Combo
+Select_00           = "CAN data (0x02)"
+Value_00            = 0x02
+Select_01           = "Analog (0x20)"
+Value_01            = 0x20
+Select_01           = "Analog BMW (0x28)"
+Value_01            = 0x28
 
 [PLP_Type]
-Group 				= 2
-SubGroup 			= 3
-Name 				= "PLP Type"
-Type 				= uInt
-Attrib 				= Combo
-Select_00 			= "LoggingStream"
-Value_00 			= 0x03
+Group               = 2
+SubGroup            = 3
+Name                = "PLP Type"
+Type                = uInt
+Attrib              = Combo
+Select_00           = "LoggingStream"
+Value_00            = 0x03
 
 [PLP_ProbeType]
-Group 				= 2
-SubGroup 			= 3
-Name 				= "PLP ProbeType"
-Type 				= uInt
-Attrib 				= Combo
-Select_00 			= "void"
-Value_00 			= 0
-Select_01 			= "CM LIN Combo"
-Value_01 			= 2
-Select_02 			= "CM CAN Combo"
-Value_02 			= 4
-Select_03 			= "CM 100 High"
-Value_03 			= 6
-Select_04 			= "CM Eth Combo"
-Value_04 			= 8
-Select_05 			= "CM 1000 High"
-Value_05 			= 10
-Select_06 			= "SensorSpezifisch"
-Value_06 			= 16
-Select_07 			= "Logger"
-Value_07 			= 32
+Group               = 2
+SubGroup            = 3
+Name                = "PLP ProbeType"
+Type                = uInt
+Attrib              = Combo
+Select_00           = "void"
+Value_00            = 0
+Select_01           = "CM LIN Combo"
+Value_01            = 2
+Select_02           = "CM CAN Combo"
+Value_02            = 4
+Select_03           = "CM 100 High"
+Value_03            = 6
+Select_04           = "CM Eth Combo"
+Value_04            = 8
+Select_05           = "CM 1000 High"
+Value_05            = 10
+Select_06           = "SensorSpezifisch"
+Value_06            = 16
+Select_07           = "Logger"
+Value_07            = 32
 
 [PLP_TxFrameSizeLevel]
-Group 				= 2
-SubGroup 			= 3
-Name 				= "PLP_TxFrameSizeLevel [Byte]"
-Type 				= uInt
+Group               = 2
+SubGroup            = 3
+Name                = "PLP_TxFrameSizeLevel [Byte]"
+Type                = uInt
 Values              = 0..1300
 
 [Timeout_STATUS_BUS]
-Group 				= 2
-SubGroup 			= 3
-Name 				= "Timeout_STATUS_BUS [ms]"
-Type 				= uInt
+Group               = 2
+SubGroup            = 3
+Name                = "Timeout_STATUS_BUS [ms]"
+Type                = uInt
 
 [Timeout_STATUS_CAPTURE_MOD]
-Group 				= 2
-SubGroup 			= 3
-Name 				= "Timeout_STATUS_CAPTURE_MOD [ms]"
-Type 				= uint
-
+Group               = 2
+SubGroup            = 3
+Name                = "Timeout_STATUS_CAPTURE_MOD [ms]"
+Type                = uint
 
 // ********************************************
 // CHANNEL_PAR
@@ -5397,108 +5391,108 @@ Select_00           = "stop"
 Value_00            = 5
 
 [PLP_ProbeID]
-Group 				= 6
-SubGroup			= 4
-Name 				= "PLP ProbeID"
-Type 				= uInt
-Format	            = Hex
+Group               = 7
+SubGroup            = 4
+Name                = "PLP ProbeID"
+Type                = uInt
+Format              = Hex
 Column              = +0
 Row                 = +1
 
 [PLP_Version]
-Group 				= 6
-SubGroup 			= 4
-Name 				= "PLP Version"
-Type 				= uChar
+Group               = 7
+SubGroup            = 4
+Name                = "PLP Version"
+Type                = uChar
 Column              = +0
 Row                 = +1
 
 [PLP_VendorID]
-Group 				= 6
-SubGroup 			= 4
-Name 				= "PLP VendorID"
-Type 				= uChar
-Column 				= +0
-Row 				= +1
-Attrib				= Combo
-Select_00			= "void"
-Value_00 			= 0
-Select_01			= "AeD"
-Value_01 			= 4
-Select_02			= "Conti"
-Value_02 			= 8
-Select_03			= "Technica"
-Value_03 			= 12
-Select_04			= "ViGEM"
-Value_04 			= 16
-Select_05			= "X2E"
-Value_05 			= 20
-Select_06			= "Magna"
-Value_06 			= 32
-Select_07			= "Valeo"
-Value_07 			= 34
-Select_08			= "Aptiv"
-Value_08 			= 36
-Select_09			= "Klaric"
-Value_09 			= 40
+Group               = 7
+SubGroup            = 4
+Name                = "PLP VendorID"
+Type                = uChar
+Column              = +0
+Row                 = +1
+Attrib              = Combo
+Select_00           = "void"
+Value_00            = 0
+Select_01           = "AeD"
+Value_01            = 4
+Select_02           = "Conti"
+Value_02            = 8
+Select_03           = "Technica"
+Value_03            = 12
+Select_04           = "ViGEM"
+Value_04            = 16
+Select_05           = "X2E"
+Value_05            = 20
+Select_06           = "Magna"
+Value_06            = 32
+Select_07           = "Valeo"
+Value_07            = 34
+Select_08           = "Aptiv"
+Value_08            = 36
+Select_09           = "Klaric"
+Value_09            = 40
 
 [PLP_BusSpecID]
-Group 				= 6
-SubGroup 			= 4
-Name 				= "PLP BusSpecID"
-Type 				= ulong
-Format 				= Hex
+Group               = 7
+SubGroup            = 4
+Name                = "PLP BusSpecID"
+Type                = ulong
+Format              = Hex
 Column              = +0
 Row                 = +1
 
 [PLP_ProbeSerNum]
-Group 				= 6
-SubGroup 			= 4
-Name 				= "PLP ProbeSerNum"
-Type 				= ulong
-Column 				= +0
-Row 				= +1
+Group               = 7
+SubGroup            = 4
+Name                = "PLP ProbeSerNum"
+Type                = ulong
+Column              = +0
+Row                 = +1
 
 [PLP_ProbeVersion]
-Group 				= 6
-SubGroup 			= 4
-Name 				= "PLP ProbeVersion"
-Type 				= uChar
-Column 				= +0
-Row 				= +1
+Group               = 7
+SubGroup            = 4
+Name                = "PLP ProbeVersion"
+Type                = uChar
+Column              = +0
+Row                 = +1
 
 [PLP_ProbeType]
-Group 				= 6
-SubGroup 			= 4
-Name 				= "PLP ProbeType"
-Type 				= uChar
-Column 				= +0
-Row 				= +1
-Attrib 				= Combo
-Select_00 			= "void"
-Value_00 			= 0
-Select_01 			= "CM LIN Combo"
-Value_01 			= 2
-Select_02 			= "CM CAN Combo"
-Value_02 			= 4
-Select_03 			= "CM 100 High"
-Value_03 			= 6
-Select_04 			= "CM Eth Combo"
-Value_04 			= 8
-Select_05 			= "CM 1000 High"
-Value_05 			= 10
-Select_06 			= "SensorSpezifisch"
-Value_06 			= 16
-Select_07 			= "Logger"
-Value_07 			= 32
+Group               = 7
+SubGroup            = 4
+Name                = "PLP ProbeType"
+Type                = uChar
+Column              = +0
+Row                 = +1
+Attrib              = Combo
+Select_00           = "void"
+Value_00            = 0
+Select_01           = "CM LIN Combo"
+Value_01            = 2
+Select_02           = "CM CAN Combo"
+Value_02            = 4
+Select_03           = "CM 100 High"
+Value_03            = 6
+Select_04           = "CM Eth Combo"
+Value_04            = 8
+Select_05           = "CM 1000 High"
+Value_05            = 10
+Select_06           = "SensorSpezifisch"
+Value_06            = 16
+Select_07           = "Logger"
+Value_07            = 32
 
 [PLP_TxFrameSize]
-Group 				= 6
-SubGroup 			= 4
-Name 				= "PLP TxFrameSize [Byte]"
-Type 				= uint
-Column 				= +0
-Row 				= +1
+Group               = 7
+SubGroup            = 4
+Name                = "PLP TxFrameSize [Byte]"
+Type                = uint
+Column              = +0
+Row                 = +1
 
 [NetDev_State]
 Group               = 7
@@ -5664,12 +5658,12 @@ Option_00           = "green"
 Mask_00             = 0x00000002
 Option_00           = "blue"
 Mask_00             = 0x00000004
-Option_00 			= "RD_TERM1"
-Mask_00				= 0x00000008
-Option_00 			= "GN_TERM1"
-Mask_00				= 0x00000010
-Option_00 			= "BU_TERM1"
-Mask_00				= 0x00000020
+Option_00           = "RD_TERM1"
+Mask_00             = 0x00000008
+Option_00           = "GN_TERM1"
+Mask_00             = 0x00000010
+Option_00           = "BU_TERM1"
+Mask_00             = 0x00000020
 
 [LED_CHANNEL]
 Group               = 7
@@ -5703,7 +5697,7 @@ Mask_00             = 0x00000080
 [Serial_Number]
 Group               = 8
 SubGroup            = 1
-Common              = "Serial_Number"	
+Common              = "Serial_Number"
 Type                = int
 Default             = -1
 
