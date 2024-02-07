@@ -8533,6 +8533,14 @@ Name                = "P1_CB_Discharge"
 Column              = +0
 Row                 = +1
 
+[CB_P1B_Type]
+Group               = 13
+Common              = "ProbeType_D"
+Type                = Long
+Name                = "Tk:ProbeType1"
+Column              = +0
+Row                 = +1
+
 [CB_P1_Work]
 Group               = 13
 Name                = "CB P1 Work"
@@ -8570,6 +8578,14 @@ Group               = 13
 Name                = "CB P2 Discharge"
 Type                = float
 Name                = "P2_CB_Discharge"
+Column              = +0
+Row                 = +1
+
+[CB_P2B_Type]
+Group               = 13
+Common              = "ProbeType_D"
+Type                = Long
+Name                = "Tk:ProbeType2"
 Column              = +0
 Row                 = +1
 
@@ -8613,6 +8629,14 @@ Name                = "P3_CB_Discharge"
 Column              = +0
 Row                 = +1
 
+[CB_P3B_Type]
+Group               = 13
+Common              = "ProbeType_D"
+Type                = Long
+Name                = "Tk:ProbeType3"
+Column              = +0
+Row                 = +1
+
 [CB_P3_Work]
 Group               = 13
 Name                = "CB P3 Work"
@@ -8650,6 +8674,14 @@ Group               = 13
 Name                = "CB P4 Discharge"
 Type                = float
 Name                = "P4_CB_Discharge"
+Column              = +0
+Row                 = +1
+
+[CB_P4B_Type]
+Group               = 13
+Common              = "ProbeType_D"
+Type                = Long
+Name                = "Tk:ProbeType4"
 Column              = +0
 Row                 = +1
 
