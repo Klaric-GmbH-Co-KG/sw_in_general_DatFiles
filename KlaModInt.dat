@@ -10,6 +10,7 @@ Serial_6 =
 Serial_7 = 
 Serial_8 = 
 Serial_9 = 
+Virtual = //Virtual0
 Usb = 
 Can =
 Tcp_0 = 
@@ -18,6 +19,12 @@ Tcp_2 =
 Tcp_3 = 
 Baudrate = 115200
 LogFileSizeMax = 10000000
+
+[Virtual0]
+SerNu_0 = 123
+Signature_0 = 0x00005D0B
+SerNu_1 = 123
+Signature_1 = 0x0001590F
 
 [PeakCan]
 Baudrate = 500
