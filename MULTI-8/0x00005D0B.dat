@@ -222,13 +222,13 @@ Value_13            = 0x0070
 Id_13               = CMD_ACTIVATE_SW
 User_13             = operator
 
-Name_14             = "Tk:StartMeas"	; StartMeas
+Name_14             = "Tk:StartMeas"; StartMeas
 Value_14            = 0x1020
 Id_14               = CMD_START_MEAS
 User_14             = system; Zugriffsrecht
 Help_14             = "StartMeas"
 
-Name_15             = "Tk:StopMeas"	; StopMeas
+Name_15             = "Tk:StopMeas"; StopMeas
 Value_15            = 0x1021
 Id_15               = CMD_STOP_MEAS
 User_15             = system; Zugriffsrecht

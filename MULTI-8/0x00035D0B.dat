@@ -4723,8 +4723,6 @@ Group               = 6
 Type                = string
 Size                = 20
 Name                = "Enter SW-Key:"
-Column              = 1
-Row                 = 1
 
 // ********************************************
 // PROBE_DATA
