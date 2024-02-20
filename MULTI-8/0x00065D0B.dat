@@ -7152,17 +7152,17 @@ Group               = 8
 SubGroup            = 2
 Name                = "FreeMemory"
 Type                = uLong
-
 Column              = +0
 Row                 = +1
+
 [TcpIpHeap]
 Group               = 8
 SubGroup            = 2
 Name                = "TcpIpHeap"
 Type                = uLong
-
 Column              = +0
 Row                 = +1
+
 [Lvar1]
 Group               = 8
 SubGroup            = 2
