@@ -6698,7 +6698,6 @@ Option_00           = "ELAB OVR"
 Mask_00             = 0x00002000
 Option_00           = "Default"
 Mask_00             = 0x00008000
-;Col_00             = +1
 Option_00           = "Asic 1"
 Mask_00             = 0x00010000
 Option_00           = "Asic 2"
@@ -7906,7 +7905,6 @@ Option_00           = "Meas ready"
 Mask_00             = 0x00000002
 Option_00           = "Flush request"
 Mask_00             = 0x00000004
-
 Column              = +0
 Row                 = +1
 
@@ -7915,7 +7913,6 @@ Group               = 9
 SubGroup            = 4
 Name                = "XCP Instances"
 Type                = uInt
-
 Column              = +0
 Row                 = +1
 

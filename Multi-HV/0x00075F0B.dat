@@ -317,7 +317,6 @@ Group               = 1
 Column              = +1
 Row                 = +1
 Name                = "Tk:DeviceInfoTransmit"
-;Common              = "DeviceInfoTransmit"
 Type                = long
 Attrib  = Select
 Select_01="Off"
@@ -4129,7 +4128,6 @@ Option_00           = "ELAB OVR"
 Mask_00             = 0x00002000
 Option_00           = "Default"
 Mask_00             = 0x00008000
-;Col_00             = +1
 Option_00           = "Asic 1"
 Mask_00             = 0x00010000
 Option_00           = "Asic 2"
@@ -4574,60 +4572,60 @@ Group               = 8
 SubGroup            = 2
 Name                = "Uart TxBps"
 Type                = uLong
-
 Column              = +0
 Row                 = +1
+
 [KoDeX_Instances]
 Group               = 8
 SubGroup            = 2
 Name                = "KoDeX Instances"
 Type                = uChar
-
 Column              = +0
 Row                 = +1
+
 [KoDeX_Prot_Uart_State]
 Group               = 8
 SubGroup            = 2
 Common              = "KoDeX_Prot_State"
 Name                = "KoDeX Prot Uart State"
 Type                = uChar
-
 Column              = +0
 Row                 = +1
+
 [KoDeX_Prot_Can_State]
 Group               = 8
 SubGroup            = 2
 Common              = "KoDeX_Prot_State"
 Name                = "KoDeX Prot Can State"
 Type                = uInt
-
 Column              = +0
 Row                 = +1
+
 [KoDeX_Prot_Eth_State]
 Group               = 8
 SubGroup            = 2
 Common              = "KoDeX_Prot_State"
 Name                = "KoDeX Prot Ethernet State"
 Type                = uLong
-
 Column              = +0
 Row                 = +1
+
 [UartSysLog_RxBps]
 Group               = 8
 SubGroup            = 2
 Name                = "UartSysLog RxBps"
 Type                = uLong
-
 Column              = +1
 Row                 = +1
+
 [UartSysLog_TxBps]
 Group               = 8
 SubGroup            = 2
 Name                = "UartSysLog TxBps"
 Type                = uLong
-
 Column              = +0
 Row                 = +1
+
 [SysLog_Flags]
 Group               = 8
 SubGroup            = 2
@@ -4648,33 +4646,33 @@ Group               = 8
 SubGroup            = 2
 Name                = "SysLog_Head"
 Type                = uLong
-
 Column              = +0
 Row                 = +1
+
 [SysLog_Tail]
 Group               = 8
 SubGroup            = 2
 Name                = "SysLog_Tail"
 Type                = uLong
-
 Column              = +0
 Row                 = +1
+
 [SysLog_Space]
 Group               = 8
 SubGroup            = 2
 Name                = "SysLog_Space"
 Type                = uLong
-
 Column              = +0
 Row                 = +1
+
 [SysLog_Bps]
 Group               = 8
 SubGroup            = 2
 Name                = "SysLog_Bps"
 Type                = uLong
-
 Column              = +0
 Row                 = +1
+
 [ResetReason]
 Group               = 8
 SubGroup            = 2
@@ -4713,9 +4711,9 @@ Group               = 8
 SubGroup            = 2
 Name                = "SysTs"
 Type                = uLong
-
 Column              = +0
 Row                 = +1
+
 [LoopTime]
 Group               = 8
 SubGroup            = 2
@@ -5283,7 +5281,6 @@ Option_00           = "Meas ready"
 Mask_00             = 0x00000002
 Option_00           = "Flush request"
 Mask_00             = 0x00000004
-
 Column              = +0
 Row                 = +1
 
@@ -5292,7 +5289,6 @@ Group               = 8
 SubGroup            = 5
 Name                = "XCP Instances"
 Type                = uInt
-
 Column              = +0
 Row                 = +1
 
