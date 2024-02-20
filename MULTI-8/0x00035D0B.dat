@@ -192,64 +192,76 @@ Id_03               = CMD_SAVE_ALL_PAR
 User_03             = operator; Zugriffsrecht
 Help_03             = "SavePar"
 
-Name_04             = "Tk:SaveAsDef";
-Value_04            = 0xCB1C
-Id_04               = CMD_SAVE_AS_DEF
+Name_04             = "Tk:StartMeas"; StartMeas
+Value_04            = 0x1020
+Id_04               = CMD_START_MEAS
 User_04             = operator; Zugriffsrecht
-Help_04             = "SaveAsDefault"
+Help_04             = "StartMeas"
 
-Name_05             = "Tk:LoadDef";
-Value_05            = 0xCB1D
-Id_05               = CMD_LOAD_DEF
+Name_05             = "Tk:StopMeas"; StopMeas
+Value_05            = 0x1021
+Id_05               = CMD_STOP_MEAS
 User_05             = operator; Zugriffsrecht
-Help_05             = "SaveAsDefault"
+Help_05             = "StopMeas"
 
-Name_06             = "Tk:LocateMe";
-Value_06            = 0x1301
-Id_06               = CMD_LOCATE_ME
+Name_06             = "Tk:SaveAsDef";
+Value_06            = 0xCB1C
+Id_06               = CMD_SAVE_AS_DEF
 User_06             = operator; Zugriffsrecht
-Help_06             = "LocateMe"
+Help_06             = "SaveAsDefault"
 
-Name_07             = "Tk:SaveCalib"
-Value_07            = 0xCA1B
-Id_07               = CMD_SAVE_CALIB
-User_07             = system; Zugriffsrecht
-Help_07             = "SaveCalib"
+Name_07             = "Tk:LoadDef";
+Value_07            = 0xCB1D
+Id_07               = CMD_LOAD_DEF
+User_07             = operator; Zugriffsrecht
+Help_07             = "SaveAsDefault"
 
-Name_08             = "Tk:Boot"; Boot
-Value_08            = 0xB007
-User_08             = system; Zugriffsrecht
-Help_08             = "Boot"
-Protect_08          = "Tk:BootWarning"
+Name_08             = "Tk:LocateMe";
+Value_08            = 0x1301
+Id_08               = CMD_LOCATE_ME
+User_08             = operator; Zugriffsrecht
+Help_08             = "LocateMe"
 
-Name_09             = "DumpDbcAll"; StopMeas
-Value_09            = 0x1101
-Id_09               = CMD_DUMP_DBC
+Name_09             = "Tk:SaveCalib"
+Value_09            = 0xCA1B
+Id_09               = CMD_SAVE_CALIB
 User_09             = system; Zugriffsrecht
-Help_09             = "DumpDbc"
+Help_09             = "SaveCalib"
 
-Name_10             = "Calib_ETR_ETS"; CalibEtrEts
-Value_10            = 0x1201
-Id_10               = CMD_CALIB_ETR_ETS
+Name_10             = "Tk:Boot"; Boot
+Value_10            = 0xB007
 User_10             = system; Zugriffsrecht
-Help_10             = "CalibETRETS"
+Help_10             = "Boot"
+Protect_10          = "Tk:BootWarning"
 
-Name_11             = "DIGIO init"; CalibEtrEts
-Value_11            = 0x1401
-Id_11               = CMD_DIGIO_INIT
+Name_11             = "DumpDbcAll"; StopMeas
+Value_11            = 0x1101
+Id_11               = CMD_DUMP_DBC
 User_11             = system; Zugriffsrecht
-Help_11             = "CalibETRETS"
+Help_11             = "DumpDbc"
 
-Name_12             = "DIGIO exec"; CalibEtrEts
-Value_12            = 0x1402
-Id_12               = CMD_DIGIO_EXEC
+Name_12             = "Calib_ETR_ETS"; CalibEtrEts
+Value_12            = 0x1201
+Id_12               = CMD_CALIB_ETR_ETS
 User_12             = system; Zugriffsrecht
 Help_12             = "CalibETRETS"
 
-Name_13             = "Activate SW"
-Value_13            = 0x0070
-Id_13               = CMD_ACTIVATE_SW
-User_13             = operator
+Name_13             = "DIGIO init"; CalibEtrEts
+Value_13            = 0x1401
+Id_13               = CMD_DIGIO_INIT
+User_13             = system; Zugriffsrecht
+Help_13             = "CalibETRETS"
+
+Name_14             = "DIGIO exec"; CalibEtrEts
+Value_14            = 0x1402
+Id_14               = CMD_DIGIO_EXEC
+User_14             = system; Zugriffsrecht
+Help_14             = "CalibETRETS"
+
+Name_15             = "Activate SW"
+Value_15            = 0x0070
+Id_15               = CMD_ACTIVATE_SW
+User_15             = operator
 
 // ********************************************
 // GLOBAL_PAR

@@ -164,65 +164,77 @@ Id_03               = CMD_SAVE_ALL_PAR
 User_03             = operator; Zugriffsrecht
 Help_03             = "SavePar"
 
-Name_04             = "Tk:SaveAsDef";
-Value_04            = 0xCB1C
-Id_04               = CMD_SAVE_AS_DEF
+Name_04             = "Tk:StartMeas"; StartMeas
+Value_04            = 0x1020
+Id_04               = CMD_START_MEAS
 User_04             = operator; Zugriffsrecht
-Help_04             = "SaveAsDefault"
+Help_04             = "StartMeas"
 
-Name_05             = "Tk:LoadDef";
-Value_05            = 0xCB1D
-Id_05               = CMD_LOAD_DEF
+Name_05             = "Tk:StopMeas"; StopMeas
+Value_05            = 0x1021
+Id_05               = CMD_STOP_MEAS
 User_05             = operator; Zugriffsrecht
-Help_05             = "SaveAsDefault"
+Help_05             = "StopMeas"
 
-Name_06             = "Tk:LocateMe";
-Value_06            = 0x1301
-Id_06               = CMD_LOCATE_ME
+Name_06             = "Tk:SaveAsDef";
+Value_06            = 0xCB1C
+Id_06               = CMD_SAVE_AS_DEF
 User_06             = operator; Zugriffsrecht
-Help_06             = "LocateMe"
+Help_06             = "SaveAsDefault"
 
-Name_07             = "Tk:ResetBalance"; reset balance
-Value_07            = 0x0050
-Id_07               = CMD_RESET_BALANCE
+Name_07             = "Tk:LoadDef";
+Value_07            = 0xCB1D
+Id_07               = CMD_LOAD_DEF
 User_07             = operator; Zugriffsrecht
-Help_07             = "ResetBalance"
+Help_07             = "SaveAsDefault"
 
-Name_08             = "Tk:SaveCalib"
-Value_08            = 0xCA1B
-Id_08               = CMD_SAVE_CALIB
-User_08             = system; Zugriffsrecht
-Help_08             = "SaveCalib"
+Name_08             = "Tk:LocateMe";
+Value_08            = 0x1301
+Id_08               = CMD_LOCATE_ME
+User_08             = operator; Zugriffsrecht
+Help_08             = "LocateMe"
 
-Name_09             = "Tk:Boot"; Boot
-Value_09            = 0xB007
-User_09             = system; Zugriffsrecht
-Help_09             = "Boot"
-Protect_09          = "Tk:BootWarning"
+Name_09             = "Tk:ResetBalance"; reset balance
+Value_09            = 0x0050
+Id_09               = CMD_RESET_BALANCE
+User_09             = operator; Zugriffsrecht
+Help_09             = "ResetBalance"
 
-Name_10             = "DumpDbcAll"; StopMeas
-Value_10            = 0x1101
-Id_10               = CMD_DUMP_DBC
+Name_10             = "Tk:SaveCalib"
+Value_10            = 0xCA1B
+Id_10               = CMD_SAVE_CALIB
 User_10             = system; Zugriffsrecht
-Help_10             = "DumpDbc"
+Help_10             = "SaveCalib"
 
-Name_11             = "Calib_ETR_ETS"; CalibEtrEts
-Value_11            = 0x1201
-Id_11               = CMD_CALIB_ETR_ETS
+Name_11             = "Tk:Boot"; Boot
+Value_11            = 0xB007
 User_11             = system; Zugriffsrecht
-Help_11             = "CalibETRETS"
+Help_11             = "Boot"
+Protect_11          = "Tk:BootWarning"
 
-Name_12             = "DIGIO init"; CalibEtrEts
-Value_12            = 0x1401
-Id_12               = CMD_DIGIO_INIT
+Name_12             = "DumpDbcAll"; StopMeas
+Value_12            = 0x1101
+Id_12               = CMD_DUMP_DBC
 User_12             = system; Zugriffsrecht
-Help_12             = "CalibETRETS"
+Help_12             = "DumpDbc"
 
-Name_13             = "DIGIO exec"; CalibEtrEts
-Value_13            = 0x1402
-Id_13               = CMD_DIGIO_EXEC
+Name_13             = "Calib_ETR_ETS"; CalibEtrEts
+Value_13            = 0x1201
+Id_13               = CMD_CALIB_ETR_ETS
 User_13             = system; Zugriffsrecht
 Help_13             = "CalibETRETS"
+
+Name_14             = "DIGIO init"; CalibEtrEts
+Value_14            = 0x1401
+Id_14               = CMD_DIGIO_INIT
+User_14             = system; Zugriffsrecht
+Help_14             = "CalibETRETS"
+
+Name_15             = "DIGIO exec"; CalibEtrEts
+Value_15            = 0x1402
+Id_15               = CMD_DIGIO_EXEC
+User_15             = system; Zugriffsrecht
+Help_15             = "CalibETRETS"
 
 // ********************************************
 // GLOBAL_PAR
