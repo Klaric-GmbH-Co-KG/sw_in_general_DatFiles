@@ -208,46 +208,52 @@ Id_08               = CMD_LOCATE_ME
 User_08             = operator; Zugriffsrecht
 Help_08             = "LocateMe"
 
-Name_09             = "Tk:SaveCalib"
-Value_09            = 0xCA1B
-Id_09               = CMD_SAVE_CALIB
-User_09             = system; Zugriffsrecht
-Help_09             = "SaveCalib"
+Name_09             = "Tk:ResetBalance"; reset balance
+Value_09            = 0x0050
+Id_09               = CMD_RESET_BALANCE
+User_09             = operator; Zugriffsrecht
+Help_09             = "ResetBalance"
 
-Name_10             = "Tk:Boot"; Boot
-Value_10            = 0xB007
+Name_10             = "Tk:SaveCalib"
+Value_10            = 0xCA1B
+Id_10               = CMD_SAVE_CALIB
 User_10             = system; Zugriffsrecht
-Help_10             = "Boot"
-Protect_10          = "Tk:BootWarning"
+Help_10             = "SaveCalib"
 
-Name_11             = "DumpDbcAll"; StopMeas
-Value_11            = 0x1101
-Id_11               = CMD_DUMP_DBC
+Name_11             = "Tk:Boot"; Boot
+Value_11            = 0xB007
 User_11             = system; Zugriffsrecht
-Help_11             = "DumpDbc"
+Help_11             = "Boot"
+Protect_11          = "Tk:BootWarning"
 
-Name_12             = "Calib_ETR_ETS"; CalibEtrEts
-Value_12            = 0x1201
-Id_12               = CMD_CALIB_ETR_ETS
+Name_12             = "DumpDbcAll"; StopMeas
+Value_12            = 0x1101
+Id_12               = CMD_DUMP_DBC
 User_12             = system; Zugriffsrecht
-Help_12             = "CalibETRETS"
+Help_12             = "DumpDbc"
 
-Name_13             = "DIGIO init"; CalibEtrEts
-Value_13            = 0x1401
-Id_13               = CMD_DIGIO_INIT
+Name_13             = "Calib_ETR_ETS"; CalibEtrEts
+Value_13            = 0x1201
+Id_13               = CMD_CALIB_ETR_ETS
 User_13             = system; Zugriffsrecht
 Help_13             = "CalibETRETS"
 
-Name_14             = "DIGIO exec"; CalibEtrEts
-Value_14            = 0x1402
-Id_14               = CMD_DIGIO_EXEC
+Name_14             = "DIGIO init"; CalibEtrEts
+Value_14            = 0x1401
+Id_14               = CMD_DIGIO_INIT
 User_14             = system; Zugriffsrecht
 Help_14             = "CalibETRETS"
 
-Name_15             = "Activate SW"
-Value_15            = 0x0070
-Id_15               = CMD_ACTIVATE_SW
-User_15             = operator
+Name_15             = "DIGIO exec"; CalibEtrEts
+Value_15            = 0x1402
+Id_15               = CMD_DIGIO_EXEC
+User_15             = system; Zugriffsrecht
+Help_15             = "CalibETRETS"
+
+Name_16             = "Activate SW"
+Value_16            = 0x0070
+Id_16               = CMD_ACTIVATE_SW
+User_16             = operator
 
 // ********************************************
 // GLOBAL_PAR
