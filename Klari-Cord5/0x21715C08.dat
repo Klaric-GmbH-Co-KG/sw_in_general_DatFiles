@@ -626,13 +626,6 @@ Mask_00             = 0x00000001
 Option_00           = "buffer data while logger offline"
 Mask_00             = 0x00000002
 
-[BusSpecID]
-Group               = 2
-SubGroup            = 4
-Name                = "BusSpecID"
-Format	            = Hex
-Type                = ulong
-
 [PLP_MsgType]
 Group 				= 2
 SubGroup 			= 4
@@ -645,38 +638,6 @@ Select_01 			= "Analog (0x20)"
 Value_01 			= 0x20
 Select_01 			= "Analog BMW (0x28)"
 Value_01 			= 0x28
-
-[PLP_Type]
-Group 				= 2
-SubGroup 			= 4
-Name 				= "PLP Type"
-Type 				= uInt
-Attrib 				= Combo
-Select_00 			= "LoggingStream"
-Value_00 			= 0x03
-
-[PLP_ProbeType]
-Group 				= 2
-SubGroup 			= 4
-Name 				= "PLP ProbeType"
-Type 				= uInt
-Attrib 				= Combo
-Select_00 			= "void"
-Value_00 			= 0
-Select_01 			= "CM LIN Combo"
-Value_01 			= 2
-Select_02 			= "CM CAN Combo"
-Value_02 			= 4
-Select_03 			= "CM 100 High"
-Value_03 			= 6
-Select_04 			= "CM Eth Combo"
-Value_04 			= 8
-Select_05 			= "CM 1000 High"
-Value_05 			= 10
-Select_06 			= "SensorSpezifisch"
-Value_06 			= 16
-Select_07 			= "Logger"
-Value_07 			= 32
 
 [Tx_Payload_TO_MS]
 Group 				= 2
@@ -695,13 +656,6 @@ Group 				= 2
 SubGroup 			= 4
 Name 				= "Timeout_STATUS_CAPTURE_MOD [ms]"
 Type 				= uint
-
-[PLP_TxFrameSizeLevel]
-Group 				= 2
-SubGroup 			= 4
-Name 				= "PLP_TxFrameSizeLevel [Byte]"
-Type 				= ulong
-Values              = 0..1300
 
 // ********************************************
 // CHANNEL_PAR
