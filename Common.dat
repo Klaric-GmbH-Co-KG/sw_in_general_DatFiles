@@ -39,8 +39,6 @@ Help	       = "CAN_Option"
 Attrib       = Option
 Option_00    = "Tk:CAN_Term"
 Mask_00      = 0x00000001
-Option_00    = "Tk:CAN_Xtd_Format"
-Mask_00      = 0x00000002
 
 [CAN_BaseId]
 Name    = "Tk:Name"	; Namenskonvention : Tk:ParameterId:Name
