@@ -135,7 +135,7 @@ Option_05    = "Tk:V_Motor"
 Mask_05      = 0x00000200
 Option_06    = "Tk:Bat_SOC"
 Mask_06      = 0x00000400
-Option_07    = "Tk:Temp_Sens"
+Option_07    = Internal PCB Temperature ;Hard Coded
 Mask_07      = 0x00000800
 Option_08    = "Debug Counters"
 Mask_08      = 0x00001000
@@ -225,6 +225,7 @@ Help	       = "CAN_MotorTimeOut"
 [AutoCycle]
 Group        = 1
 Name         = "Tk:AutoCycle"
+Display      = "ViewOnly"
 Column       = 2
 Row          = 3
 Type         = uInt
