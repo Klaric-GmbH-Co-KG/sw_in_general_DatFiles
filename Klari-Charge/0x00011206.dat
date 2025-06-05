@@ -105,7 +105,7 @@ Values       = 20..100
 [CAN_MotorBaseId]
 Group        = 1
 Name         = "Tk:CAN_MotorBaseId"
-Display      = "ViewOnly"
+;Display      = "ViewOnly"
 Column       = 4
 Row          = 4
 Type         = uLong
@@ -135,7 +135,7 @@ Option_05    = "Tk:V_Motor"
 Mask_05      = 0x00000200
 Option_06    = "Tk:Bat_SOC"
 Mask_06      = 0x00000400
-Option_07    = Internal PCB Temperature ;Hard Coded
+Option_07    = "Tk:PCB_Temp"
 Mask_07      = 0x00000800
 Option_08    = "Debug Counters"
 Mask_08      = 0x00001000
@@ -209,25 +209,25 @@ Select_01    = "Tk:DigitalInput"
 Value_01     = 0
 Select_02    = "Tk:BordNetVoltage"
 Value_02     = 2
-Select_03    = ""
+Select_03    = "Tk:CANMessage"
 Value_03     = 1
 
 [CAN_MotorTimeOut]
 Group        = 1
 Name         = "Tk:CAN_MotorTimeOut"
-Display      = "ViewOnly"
+;Display      = "ViewOnly"
 Column       = 4
 Row          = 5
 Type         = uInt
 Values       = 1..50000
 Help	       = "CAN_MotorTimeOut"
 
-[AutoCycle]
-Group        = 1
+[AutoCycle]   ; Moved to Calib
+Group        = 2
 Name         = "Tk:AutoCycle"
-Display      = "ViewOnly"
+;Display      = "ViewOnly"
 Column       = 2
-Row          = 3
+Row          = 9
 Type         = uInt
 Help	       = "AutoCycle"
 Attrib       = Select
@@ -294,6 +294,7 @@ Help	       = "VinHigh"
 
 [IinHigh]
 Group        = 2
+Display      = "ViewOnly"
 Name         = "Tk:IinHigh"
 Column       = 1
 Row          = 6
@@ -312,6 +313,7 @@ Help	       = "IBatLow"
 
 [QCountCurr]
 Group        = 2
+Display      = "ViewOnly"
 Name         = "Tk:QCountCurr"
 Column       = 1
 Row          = 8
@@ -383,6 +385,7 @@ Help	       = "VCharge_Setting"
 
 [ICharge]
 Group        = 2
+Display      = "ViewOnly"
 Name         = "Tk:ICharge_Target"
 Column       = 1
 Row          = 16
@@ -462,10 +465,10 @@ Column       = 2
 Row          = 3
 Type         = uChar
 Attrib       = Select
-Select_00    = "Tk:Off"
-Value_00     = 0
-Select_01    = "Tk:On"
-Value_01     = 1
+Select_00    = "Tk:On"
+Value_00     = 1
+Select_01    = "Tk:Off"
+Value_01     = 0
 
 [BattSelection]
 Group        = 2
