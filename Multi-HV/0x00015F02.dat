@@ -38,35 +38,17 @@ Id_05        = CMD_STOP_MEAS
 User_05      = default;
 Help_05      = "StopMeas"
 
-Name_06      = "Tk:SaveAsDef";
-Value_06     = 0xCB1C
-Id_06        = CMD_SAVE_AS_DEF
-User_06      = system;
+Name_06      = "Tk:RestoreFactory";
+Value_06     = 0xB008
+Id_06        = CMD_LOAD_FACTORY
+User_06      = operator;
 Help_06      = "SaveAsDefault"
 
-Name_07      = "Tk:LoadDef";
-Value_07     = 0xCB1D
-Id_07        = CMD_LOAD_DEF
+Name_07      = "Tk:OptionByte";
+Value_07     = 0xFF01
+Id_07        = CMD_TEST_1
 User_07      = system;
-Help_07      = "SaveAsDefault"
-
-Name_08      = "Tk:SaveFactory";
-Value_08     = 0xB009
-Id_08        = CMD_SAVE_AS_FACTORY
-User_08      = system;
-Help_08      = "SaveAsDefault"
-
-Name_09      = "Tk:RestoreFactory";
-Value_09     = 0xB008
-Id_09        = CMD_LOAD_FACTORY
-User_09      = system;
-Help_09      = "SaveAsDefault"
-
-Name_10      = "Tk:OptionByte";
-Value_10     = 0xFF01
-Id_10        = CMD_TEST_1
-User_10      = default;
-Help_10      = "noHelp"
+Help_07      = "noHelp"
 
 
 // py_script: command,end
@@ -479,8 +461,8 @@ Select_3   = "W"
 Value_3     = 3
 
 [ch_01_adc_01future]
-Group      = 1
-SubGroup   = 2
+Group      = 9
+SubGroup   = 1
 Column     = 1
 Row        = 7
 Name       = "Tk:ch_01_adc_01future"
@@ -583,8 +565,8 @@ Select_3   = "W"
 Value_3     = 3
 
 [ch_01_adc_02future]
-Group      = 1
-SubGroup   = 2
+Group      = 9
+SubGroup   = 1
 Column     = 2
 Row        = 7
 Name       = "Tk:ch_01_adc_02future"
@@ -3888,8 +3870,8 @@ Type       = ulong
 Display    = "ViewOnly"
 
 [calibration_layout_version]
-Group      = 2
-Column     = 2
+Group      = 9
+Column     = 1
 Row        = 4
 Name       = "Tk:calibration_layout_version"
 Type       = uInt
@@ -3897,7 +3879,7 @@ Display    = "ViewOnly"
 
 [calibration_layout_future]
 Group      = 9
-Column     = 2
+Column     = 1
 Row        = 4
 Name       = "Tk:calibration_layout_future"
 Type       = uInt
@@ -3905,7 +3887,7 @@ Display    = "ViewOnly"
 
 [calibration_layout_date]
 Group      = 9
-Column     = 2
+Column     = 1
 Row        = 4
 Name       = "Tk:calibration_layout_date"
 Type       = ulong
@@ -3913,15 +3895,15 @@ Display    = "ViewOnly"
 
 [calibration_layout_future]
 Group      = 9
-Column     = 2
+Column     = 1
 Row        = 4
 Name       = "Tk:calibration_layout_future"
 Type       = ulong
 Display    = "ViewOnly"
 
 [memory_layout_version]
-Group      = 2
-Column     = 2
+Group      = 9
+Column     = 1
 Row        = 5
 Name       = "Tk:memory_layout_version"
 Type       = uInt
@@ -3929,7 +3911,7 @@ Display    = "ViewOnly"
 
 [memory_layout_future]
 Group      = 9
-Column     = 2
+Column     = 1
 Row        = 5
 Name       = "Tk:memory_layout_future"
 Type       = uInt
@@ -3937,7 +3919,7 @@ Display    = "ViewOnly"
 
 [memory_layout_date]
 Group      = 9
-Column     = 2
+Column     = 1
 Row        = 5
 Name       = "Tk:memory_layout_date"
 Type       = ulong
@@ -3945,14 +3927,14 @@ Display    = "ViewOnly"
 
 [memory_layout_future]
 Group      = 9
-Column     = 2
+Column     = 1
 Row        = 5
 Name       = "Tk:memory_layout_future"
 Type       = ulong
 Display    = "ViewOnly"
 
 [future]
-Group      = 2
+Group      = 9
 Column     = 1
 Row        = 6
 Name       = "Tk:future"
