@@ -256,7 +256,7 @@ Group      = 1
 SubGroup   = 1
 Column     = 2
 Row        = 1
-Name       = "Tk:interface_can_2_tx_traffic"
+Name       = "Tk:interface_can_tx_traffic"
 Type       = uLong
 Display    = "ViewOnly"
 
@@ -265,7 +265,7 @@ Group      = 1
 SubGroup   = 1
 Column     = 3
 Row        = 1
-Name       = "Tk:interface_can_2_rx_traffic"
+Name       = "Tk:interface_can_rx_traffic"
 Type       = uLong
 Display    = "ViewOnly"
 
