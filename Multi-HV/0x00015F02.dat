@@ -10379,12 +10379,12 @@ Name       = "Tk:name_1"
 Type       = string
 Size       = "32"
 
-[option_1]
+[common_option]
 Group      = 4
 SubGroup   = 1
 Column     = 1
 Row        = 2
-Name       = "Tk:option_1"
+Name       = "Tk:Common_Option"
 Type       = uChar
 Attrib     = Option
 Option_0   = "Tk:enable_channel"
@@ -10435,12 +10435,12 @@ Row        = 4
 Name       = "Tk:future_1"
 Type       = uInt
 
-[samplespeed_1]
+[common_speed]
 Group      = 4
 SubGroup   = 1
 Column     = 1
 Row        = 5
-Name       = "Tk:samplespeed_1"
+Name       = "Tk:Common_Speed"
 Type       = uLong
 Attrib     = Combo
 Select_0   = "8000"
@@ -10476,12 +10476,12 @@ Value_14     = 14
 Select_15   = "0.25"
 Value_15     = 15
 
-[range_1]
+[common_range]
 Group      = 4
 SubGroup   = 1
 Column     = 1
 Row        = 6
-Name       = "Tk:range_1"
+Name       = "Tk:Common_Range"
 Type       = uInt
 Attrib     = Combo
 Select_0   = "Gain1"
@@ -10529,31 +10529,31 @@ Row        = 10
 Name       = "Tk:calcfilter_1"
 Type       = float
 
-[cboptions_1]
+[common_cboptions]
 Group      = 4
 SubGroup   = 1
 Column     = 1
 Row        = 11
-Name       = "Tk:cboptions_1"
+Name       = "Tk:common_cboptions"
 Type       = uLong
 Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
-[cb_min_time_1]
+[common_cb_min_time]
 Group      = 4
 SubGroup   = 1
 Column     = 1
 Row        = 13
-Name       = "Tk:cb_min_time_1"
+Name       = "Tk:common_cb_min_time"
 Type       = float
 
-[cb_min_level_1]
+[common_cb_min_level]
 Group      = 4
 SubGroup   = 1
 Column     = 1
 Row        = 14
-Name       = "Tk:cb_min_level_1"
+Name       = "Tk:common_cb_min_level"
 Type       = float
 
 [future_1]
