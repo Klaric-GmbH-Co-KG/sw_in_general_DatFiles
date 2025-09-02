@@ -10497,20 +10497,20 @@ Value_4     = 4
 Select_5   = "Auto"
 Value_5     = 255
 
-[filterstage1_1]
+[common_filterstage1]
 Group      = 4
 SubGroup   = 1
 Column     = 1
 Row        = 7
-Name       = "Tk:filterstage1_1"
+Name       = "Tk:common_filterstage1"
 Type       = uInt
 
-[filterstage2_1]
+[common_filterstage2]
 Group      = 4
 SubGroup   = 1
 Column     = 1
 Row        = 8
-Name       = "Tk:filterstage2_1"
+Name       = "Tk:common_filterstage2"
 Type       = uInt
 
 [future_1]
@@ -10521,12 +10521,12 @@ Row        = 9
 Name       = "Tk:future_1"
 Type       = uInt
 
-[calcfilter_1]
+[common_calcfilter]
 Group      = 4
 SubGroup   = 1
 Column     = 1
 Row        = 10
-Name       = "Tk:calcfilter_1"
+Name       = "Tk:common_calcfilter"
 Type       = float
 
 [common_cboptions]
