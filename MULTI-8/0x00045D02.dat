@@ -98,7 +98,6 @@ SubGroup_7 = "Tk:adc_channel_5_id"
 SubGroup_8 = "Tk:adc_channel_6_id"
 SubGroup_9 = "Tk:adc_channel_7_id"
 SubGroup_10 = "Tk:adc_channel_8_id"
-SubGroup_11 = "Tk:protocol"
 
 Group_04   = "Tk:channel_settings"
 User_04    = "default; access"
@@ -144,7 +143,8 @@ Display_06 = "ViewAndModify"
 SubGroup_1 = "system_level"
 SubGroup_2 = "Common ID"
 SubGroup_3 = "ID Total Power"
-SubGroup_4 = "Tk:rtc"
+SubGroup_4 = "Tk:protocol"
+SubGroup_5 = "Tk:rtc"
 
 
 // py_script: group,end
@@ -243,7 +243,7 @@ Type       = uLong
 Display    = "ViewOnly"
 
 [interface_can_2_tx_traffic]
-Group      = 6
+Group      = 1
 SubGroup   = 1
 Column     = 2
 Row        = 1
@@ -252,7 +252,7 @@ Type       = uLong
 Display    = "ViewOnly"
 
 [interface_can_2_rx_traffic]
-Group      = 6
+Group      = 1
 SubGroup   = 1
 Column     = 3
 Row        = 1
@@ -297,7 +297,7 @@ Type       = uLong
 Display    = "ViewOnly"
 
 [interface_ethernet_1_tx_traffic]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 2
 Row        = 1
@@ -306,7 +306,7 @@ Type       = uLong
 Display    = "ViewOnly"
 
 [interface_ethernet_1_rx_traffic]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 3
 Row        = 1
@@ -4142,7 +4142,7 @@ Type       = ulong
 Format     = "Hex"
 
 [config_id]
-Group      = 6
+Group      = 3
 SubGroup   = 1
 Column     = 1
 Row        = 24
@@ -4190,7 +4190,7 @@ Type       = string
 Size       = "19"
 
 [can_02_baudrate]
-Group      = 6
+Group      = 3
 SubGroup   = 1
 Column     = 1
 Row        = 1
@@ -4207,7 +4207,7 @@ Select_3   = "125kBaud"
 Value_3     = 125000
 
 [can_02_option]
-Group      = 6
+Group      = 3
 SubGroup   = 1
 Column     = 1
 Row        = 2
@@ -4231,7 +4231,7 @@ Size       = "19"
 [uart_01_baudrate]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 9
 Name       = "Tk:uart_01_baudrate"
 Type       = ulong
@@ -4250,7 +4250,7 @@ Value_4     = 9600
 [uart_01_option]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 10
 Name       = "Tk:uart_01_option"
 Type       = uChar
@@ -4283,7 +4283,7 @@ Value_11     = 15
 [uart_01_future1]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 11
 Name       = "Tk:uart_01_future1"
 Type       = string
@@ -4292,7 +4292,7 @@ Size       = "3"
 [uart_01_future2]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 12
 Name       = "Tk:uart_01_future2"
 Type       = string
@@ -4301,7 +4301,7 @@ Size       = "16"
 [uart_02_baudrate]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 9
 Name       = "Tk:uart_02_baudrate"
 Type       = ulong
@@ -4320,7 +4320,7 @@ Value_4     = 9600
 [uart_02_option]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 10
 Name       = "Tk:uart_02_option"
 Type       = uChar
@@ -4353,7 +4353,7 @@ Value_11     = 15
 [uart_02_future1]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 11
 Name       = "Tk:uart_02_future1"
 Type       = string
@@ -4362,25 +4362,25 @@ Size       = "3"
 [uart_02_future2]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 12
 Name       = "Tk:uart_02_future2"
 Type       = string
 Size       = "16"
 
 [eth_ip_address]
-Group      = 3
+Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 10
 Name       = "Tk:eth_ip_address"
 Type       = string
 Size       = "15"
 
 [eth_ip_gateway]
-Group      = 3
+Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 11
 Name       = "Tk:eth_ip_gateway"
 Type       = string
@@ -4389,37 +4389,37 @@ Size       = "15"
 [eth_ip_dns]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 12
 Name       = "Tk:eth_ip_dns"
 Type       = string
 Size       = "15"
 
 [eth_subnet_mask]
-Group      = 3
+Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 13
 Name       = "Tk:eth_subnet_mask"
 Type       = uChar
 
 [eth_protocol_enable]
-Group      = 3
+Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 14
 Name       = "Tk:eth_protocol_enable"
 Type       = uInt
 Attrib     = Option
-Option_0   = "Tk:enable_dhcp"
+Option_0   = "dhcp"
 Mask_0     = 0x1
-Option_1   = "Tk:enable_ptp"
+Option_1   = "ptp"
 Mask_1     = 0x4
 
 [eth_server_tcp_port]
-Group      = 3
+Group      = 6
 SubGroup   = 1
-Column     = 2
+Column     = 3
 Row        = 10
 Name       = "Tk:eth_server_tcp_port"
 Type       = uInt
@@ -4427,15 +4427,15 @@ Type       = uInt
 [eth_server_udp_port]
 Group      = 6
 SubGroup   = 1
-Column     = 2
+Column     = 3
 Row        = 11
 Name       = "Tk:eth_server_udp_port"
 Type       = uInt
 
 [eth_server_udp_broadcast_port]
-Group      = 3
+Group      = 6
 SubGroup   = 1
-Column     = 2
+Column     = 3
 Row        = 12
 Name       = "Tk:eth_server_udp_broadcast_port"
 Type       = uInt
@@ -4443,7 +4443,7 @@ Type       = uInt
 [eth_server_protocol_1_port]
 Group      = 6
 SubGroup   = 1
-Column     = 2
+Column     = 3
 Row        = 13
 Name       = "Tk:eth_server_protocol_1_port"
 Type       = uInt
@@ -4451,7 +4451,7 @@ Type       = uInt
 [eth_server_protocol_2_port]
 Group      = 6
 SubGroup   = 1
-Column     = 2
+Column     = 3
 Row        = 14
 Name       = "Tk:eth_server_protocol_2_port"
 Type       = uInt
@@ -4459,15 +4459,15 @@ Type       = uInt
 [eth_server_protocol_3_port]
 Group      = 6
 SubGroup   = 1
-Column     = 2
+Column     = 3
 Row        = 15
 Name       = "Tk:eth_server_protocol_3_port"
 Type       = uInt
 
 [ptp_pdelay_interval]
-Group      = 3
+Group      = 6
 SubGroup   = 1
-Column     = 3
+Column     = 4
 Row        = 10
 Name       = "Tk:ptp_pdelay_interval"
 Type       = uChar
@@ -4488,7 +4488,7 @@ Value_5     = 16
 [eth_future]
 Group      = 6
 SubGroup   = 1
-Column     = 3
+Column     = 4
 Row        = 12
 Name       = "Tk:eth_future"
 Type       = string
@@ -5216,7 +5216,7 @@ Format     = "hex"
 [interface_1]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 1
 Name       = "Tk:interface_1"
 Type       = uLong
@@ -5225,9 +5225,9 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [lambdaid_1]
-Group      = 6
-SubGroup   = 1
-Column     = 1
+Group      = 3
+SubGroup   = 2
+Column     = 2
 Row        = 2
 Name       = "Tk:lambdaid_1"
 Type       = uLong
@@ -5236,7 +5236,7 @@ Format     = "hex"
 [interface_1]
 Group      = 6
 SubGroup   = 1
-Column     = 2
+Column     = 3
 Row        = 1
 Name       = "Tk:interface_1"
 Type       = uLong
@@ -5247,7 +5247,7 @@ Mask_0     = 0x2
 [workid_1]
 Group      = 3
 SubGroup   = 2
-Column     = 2
+Column     = 3
 Row        = 2
 Name       = "Tk:workid_1"
 Type       = uLong
@@ -5276,7 +5276,7 @@ Format     = "hex"
 [interface_2]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 3
 Name       = "Tk:interface_2"
 Type       = uLong
@@ -5285,9 +5285,9 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [lambdaid_2]
-Group      = 6
-SubGroup   = 1
-Column     = 1
+Group      = 3
+SubGroup   = 2
+Column     = 2
 Row        = 4
 Name       = "Tk:lambdaid_2"
 Type       = uLong
@@ -5296,7 +5296,7 @@ Format     = "hex"
 [interface_2]
 Group      = 6
 SubGroup   = 1
-Column     = 2
+Column     = 3
 Row        = 3
 Name       = "Tk:interface_2"
 Type       = uLong
@@ -5307,7 +5307,7 @@ Mask_0     = 0x2
 [workid_2]
 Group      = 3
 SubGroup   = 2
-Column     = 2
+Column     = 3
 Row        = 4
 Name       = "Tk:workid_2"
 Type       = uLong
@@ -5336,7 +5336,7 @@ Format     = "hex"
 [interface_3]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 5
 Name       = "Tk:interface_3"
 Type       = uLong
@@ -5345,9 +5345,9 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [lambdaid_3]
-Group      = 6
-SubGroup   = 1
-Column     = 1
+Group      = 3
+SubGroup   = 2
+Column     = 2
 Row        = 6
 Name       = "Tk:lambdaid_3"
 Type       = uLong
@@ -5356,7 +5356,7 @@ Format     = "hex"
 [interface_3]
 Group      = 6
 SubGroup   = 1
-Column     = 2
+Column     = 3
 Row        = 5
 Name       = "Tk:interface_3"
 Type       = uLong
@@ -5367,7 +5367,7 @@ Mask_0     = 0x2
 [workid_3]
 Group      = 3
 SubGroup   = 2
-Column     = 2
+Column     = 3
 Row        = 6
 Name       = "Tk:workid_3"
 Type       = uLong
@@ -5396,7 +5396,7 @@ Format     = "hex"
 [interface_4]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 7
 Name       = "Tk:interface_4"
 Type       = uLong
@@ -5405,9 +5405,9 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [lambdaid_4]
-Group      = 6
-SubGroup   = 1
-Column     = 1
+Group      = 3
+SubGroup   = 2
+Column     = 2
 Row        = 8
 Name       = "Tk:lambdaid_4"
 Type       = uLong
@@ -5416,7 +5416,7 @@ Format     = "hex"
 [interface_4]
 Group      = 6
 SubGroup   = 1
-Column     = 2
+Column     = 3
 Row        = 7
 Name       = "Tk:interface_4"
 Type       = uLong
@@ -5427,7 +5427,7 @@ Mask_0     = 0x2
 [workid_4]
 Group      = 3
 SubGroup   = 2
-Column     = 2
+Column     = 3
 Row        = 8
 Name       = "Tk:workid_4"
 Type       = uLong
@@ -5456,7 +5456,7 @@ Format     = "hex"
 [interface_5]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 9
 Name       = "Tk:interface_5"
 Type       = uLong
@@ -5465,9 +5465,9 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [lambdaid_5]
-Group      = 6
-SubGroup   = 1
-Column     = 1
+Group      = 3
+SubGroup   = 2
+Column     = 2
 Row        = 10
 Name       = "Tk:lambdaid_5"
 Type       = uLong
@@ -5476,7 +5476,7 @@ Format     = "hex"
 [interface_5]
 Group      = 6
 SubGroup   = 1
-Column     = 2
+Column     = 3
 Row        = 9
 Name       = "Tk:interface_5"
 Type       = uLong
@@ -5487,7 +5487,7 @@ Mask_0     = 0x2
 [workid_5]
 Group      = 3
 SubGroup   = 2
-Column     = 2
+Column     = 3
 Row        = 10
 Name       = "Tk:workid_5"
 Type       = uLong
@@ -5516,7 +5516,7 @@ Format     = "hex"
 [interface_6]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 11
 Name       = "Tk:interface_6"
 Type       = uLong
@@ -5525,9 +5525,9 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [lambdaid_6]
-Group      = 6
-SubGroup   = 1
-Column     = 1
+Group      = 3
+SubGroup   = 2
+Column     = 2
 Row        = 12
 Name       = "Tk:lambdaid_6"
 Type       = uLong
@@ -5536,7 +5536,7 @@ Format     = "hex"
 [interface_6]
 Group      = 6
 SubGroup   = 1
-Column     = 2
+Column     = 3
 Row        = 11
 Name       = "Tk:interface_6"
 Type       = uLong
@@ -5547,7 +5547,7 @@ Mask_0     = 0x2
 [workid_6]
 Group      = 3
 SubGroup   = 2
-Column     = 2
+Column     = 3
 Row        = 12
 Name       = "Tk:workid_6"
 Type       = uLong
@@ -5576,7 +5576,7 @@ Format     = "hex"
 [interface_7]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 13
 Name       = "Tk:interface_7"
 Type       = uLong
@@ -5585,9 +5585,9 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [lambdaid_7]
-Group      = 6
-SubGroup   = 1
-Column     = 1
+Group      = 3
+SubGroup   = 2
+Column     = 2
 Row        = 14
 Name       = "Tk:lambdaid_7"
 Type       = uLong
@@ -5596,7 +5596,7 @@ Format     = "hex"
 [interface_7]
 Group      = 6
 SubGroup   = 1
-Column     = 2
+Column     = 3
 Row        = 13
 Name       = "Tk:interface_7"
 Type       = uLong
@@ -5607,7 +5607,7 @@ Mask_0     = 0x2
 [workid_7]
 Group      = 3
 SubGroup   = 2
-Column     = 2
+Column     = 3
 Row        = 14
 Name       = "Tk:workid_7"
 Type       = uLong
@@ -5636,7 +5636,7 @@ Format     = "hex"
 [interface_8]
 Group      = 6
 SubGroup   = 1
-Column     = 1
+Column     = 2
 Row        = 15
 Name       = "Tk:interface_8"
 Type       = uLong
@@ -5645,9 +5645,9 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [lambdaid_8]
-Group      = 6
-SubGroup   = 1
-Column     = 1
+Group      = 3
+SubGroup   = 2
+Column     = 2
 Row        = 16
 Name       = "Tk:lambdaid_8"
 Type       = uLong
@@ -5656,7 +5656,7 @@ Format     = "hex"
 [interface_8]
 Group      = 6
 SubGroup   = 1
-Column     = 2
+Column     = 3
 Row        = 15
 Name       = "Tk:interface_8"
 Type       = uLong
@@ -5667,7 +5667,7 @@ Mask_0     = 0x2
 [workid_8]
 Group      = 3
 SubGroup   = 2
-Column     = 2
+Column     = 3
 Row        = 16
 Name       = "Tk:workid_8"
 Type       = uLong
@@ -10154,8 +10154,8 @@ Type       = uLong
 Format     = "hex"
 
 [enable_measure_protocol]
-Group      = 3
-SubGroup   = 11
+Group      = 6
+SubGroup   = 4
 Column     = 1
 Row        = 1
 Name       = "Tk:enable_measure_protocol"
@@ -10178,16 +10178,16 @@ Name       = "Tk:future_1"
 Type       = uInt
 
 [plp_timeout_measure_interval]
-Group      = 3
-SubGroup   = 11
+Group      = 6
+SubGroup   = 4
 Column     = 1
 Row        = 3
 Name       = "Tk:plp_timeout_measure_interval"
 Type       = uLong
 
 [plp_timeout_source]
-Group      = 3
-SubGroup   = 11
+Group      = 6
+SubGroup   = 4
 Column     = 1
 Row        = 4
 Name       = "Tk:plp_timeout_source"
@@ -10218,7 +10218,7 @@ Size       = "76"
 
 [unix_time_1]
 Group      = 6
-SubGroup   = 4
+SubGroup   = 5
 Column     = 1
 Row        = 1
 Name       = "Tk:unix_time_1"
@@ -10227,7 +10227,7 @@ Format     = "hex"
 
 [unix_time_2]
 Group      = 6
-SubGroup   = 4
+SubGroup   = 5
 Column     = 1
 Row        = 2
 Name       = "Tk:unix_time_2"
