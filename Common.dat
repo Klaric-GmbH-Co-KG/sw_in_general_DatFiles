@@ -1069,6 +1069,31 @@ Mask_00      = 0x00004000
 Option_00    = "P8B"
 Mask_00      = 0x00008000
 
+[SwitchChannels_MULTI4]
+Name         = "Tk:SwitchChannels"
+Type         = uLong
+Display      = "ViewAndModify"
+Help	       = "FastMode_Fuse3"
+Attrib       = Option
+Help         = "Channel_Option"
+Option_00    = "P1"
+Mask_00      = 0x00000001
+Option_00    = "P2"
+Mask_00      = 0x00000002
+Option_00    = "P3"
+Mask_00      = 0x00000004
+Option_00    = "P4"
+Mask_00      = 0x00000008
+Col_00    = +1
+Option_00    = "P1B"
+Mask_00      = 0x00000100
+Option_00    = "P2B"
+Mask_00      = 0x00000200
+Option_00    = "P3B"
+Mask_00      = 0x00000400
+Option_00    = "P4B"
+Mask_00      = 0x00000800
+
 [SwitchChannels_Quad]
 Name         = "Tk:SwitchChannels"
 Type         = uLong
