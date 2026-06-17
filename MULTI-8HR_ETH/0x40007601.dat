@@ -20,41 +20,47 @@ Id_02        = CMD_RESTART_MM
 User_02      = default;
 Help_02      = "Restart"
 
-Name_03      = "Tk:SaveAllPar";
+Name_03      = "Tk:SaveAndApply";
 Value_03     = 0x0020
-Id_03        = CMD_SAVE_ALL_PAR
+Id_03        = CMD_APPLY
 User_03      = default;
-Help_03      = "SavePar"
+Help_03      = "ApplyPar"
 
-Name_04      = "Tk:StartMeas";
-Value_04     = 0x1020
-Id_04        = CMD_START_MEAS
+Name_04      = "Tk:Apply";
+Value_04     = 0x0021
+Id_04        = CMD_SAVE_ALL_PAR
 User_04      = default;
-Help_04      = "StartMeas"
+Help_04      = "SavePar"
 
-Name_05      = "Tk:StopMeas";
-Value_05     = 0x1021
-Id_05        = CMD_STOP_MEAS
+Name_05      = "Tk:StartMeas";
+Value_05     = 0x1020
+Id_05        = CMD_START_MEAS
 User_05      = default;
-Help_05      = "StopMeas"
+Help_05      = "StartMeas"
 
-Name_06      = "Tk:SaveFactory";
-Value_06     = 0xB009
-Id_06        = CMD_SAVE_AS_FACTORY
-User_06      = system;
-Help_06      = "SaveAsDefault"
+Name_06      = "Tk:StopMeas";
+Value_06     = 0x1021
+Id_06        = CMD_STOP_MEAS
+User_06      = default;
+Help_06      = "StopMeas"
 
-Name_07      = "Tk:RestoreFactory";
-Value_07     = 0xB008
-Id_07        = CMD_LOAD_FACTORY
-User_07      = operator;
+Name_07      = "Tk:SaveFactory";
+Value_07     = 0xB009
+Id_07        = CMD_SAVE_AS_FACTORY
+User_07      = system;
 Help_07      = "SaveAsDefault"
 
-Name_08      = "Tk:OptionByte";
-Value_08     = 0xFF01
-Id_08        = CMD_TEST_1
-User_08      = system;
-Help_08      = "noHelp"
+Name_08      = "Tk:RestoreFactory";
+Value_08     = 0xB008
+Id_08        = CMD_LOAD_FACTORY
+User_08      = operator;
+Help_08      = "SaveAsDefault"
+
+Name_09      = "Tk:OptionByte";
+Value_09     = 0xFF01
+Id_09        = CMD_TEST_1
+User_09      = system;
+Help_09      = "noHelp"
 
 
 // py_script: command,end
@@ -99,6 +105,7 @@ SubGroup_8 = "Tk:adc_channel_6_id"
 SubGroup_9 = "Tk:adc_channel_7_id"
 SubGroup_10 = "Tk:adc_channel_8_id"
 SubGroup_11 = "Tk:protocol"
+SubGroup_12 = "Tk:sw_options"
 
 Group_04   = "Tk:channel_settings"
 User_04    = "default; access"
@@ -10424,6 +10431,17 @@ Name       = "Tk:unix_time_2"
 Type       = uLong
 Format     = "hex"
 
+[save_option]
+Group      = 3
+SubGroup   = 12
+Column     = 1
+Row        = 3
+Name       = "Tk:save_option"
+Type       = uChar
+Attrib     = Option
+Option_0   = "Tk:enable_auto_apply"
+Mask_0     = 0x1
+
 [rtc_future]
 Group      = 6
 SubGroup   = 1
@@ -10431,7 +10449,7 @@ Column     = 1
 Row        = 3
 Name       = "Tk:rtc_future"
 Type       = string
-Size       = "7"
+Size       = "6"
 
 [trc_checksum]
 Group      = 6
