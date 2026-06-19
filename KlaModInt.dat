@@ -52,6 +52,8 @@ Channel_5 =
 [Vector]
 Baudrate = 500
 Broadcast = 0x0100
+Channel = 0
+SerialNumber = 0
 Channel_0 = 0
 Channel_1 = 
 Channel_2 = 
