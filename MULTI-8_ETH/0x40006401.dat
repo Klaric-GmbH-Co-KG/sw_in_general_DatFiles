@@ -10169,8 +10169,6 @@ Name       = "Tk:enable_measure_protocol"
 Type       = uInt
 Format     = "hex"
 Attrib     = Select
-Select_0   = "Tk:xcp"
-Value_0     = 2
 Select_1   = "Tk:enable_tecmp"
 Value_1     = 4
 
