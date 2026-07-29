@@ -44,23 +44,17 @@ Id_06        = CMD_STOP_MEAS
 User_06      = default;
 Help_06      = "StopMeas"
 
-Name_07      = "Tk:SaveFactory";
-Value_07     = 0xB009
-Id_07        = CMD_SAVE_AS_FACTORY
-User_07      = system;
+Name_07      = "Tk:RestoreFactory";
+Value_07     = 0xB008
+Id_07        = CMD_LOAD_FACTORY
+User_07      = operator;
 Help_07      = "SaveAsDefault"
 
-Name_08      = "Tk:RestoreFactory";
-Value_08     = 0xB008
-Id_08        = CMD_LOAD_FACTORY
-User_08      = operator;
-Help_08      = "SaveAsDefault"
-
-Name_09      = "Tk:OptionByte";
-Value_09     = 0xFF01
-Id_09        = CMD_TEST_1
-User_09      = system;
-Help_09      = "noHelp"
+Name_08      = "Tk:OptionByte";
+Value_08     = 0xFF01
+Id_08        = CMD_TEST_1
+User_08      = system;
+Help_08      = "noHelp"
 
 
 // py_script: command,end
