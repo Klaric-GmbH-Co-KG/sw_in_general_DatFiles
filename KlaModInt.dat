@@ -12,7 +12,7 @@ Serial_8 =
 Serial_9 = 
 Usb = 
 Can = TechnicaEngineering
-Tcp_0 = 
+Tcp_0 = Ethernet1
 Tcp_1 = 
 Tcp_2 = 
 Tcp_3 = 
@@ -75,7 +75,7 @@ Channel_5 =
 [Ethernet1]
 --BroadcastFamily = IPv6
 --BroadcastAdaptor = fd00:0:0:202:0:0:0:76
-BroadcastAdaptor = 192.168.202.10
+BroadcastAdaptor = 10.104.3.2
 --BroadcastAddr = 169.254.255.255
 --BroadcastAddr = 0.0.0.0
 --BroadcastAddr = 192.168.202.255
