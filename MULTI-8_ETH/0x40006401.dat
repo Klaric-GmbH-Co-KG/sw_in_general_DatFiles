@@ -11693,9 +11693,9 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_2_2]
-Group      = 4
-SubGroup   = 2
-Column     = 2
+Group      = 6
+SubGroup   = 1
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_2"
 Type       = uLong
@@ -11709,7 +11709,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_2_2]
-Group      = 4
+Group      = 6
 SubGroup   = 2
 Column     = 2
 Row        = 12
@@ -11722,7 +11722,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_2_2]
-Group      = 4
+Group      = 6
 SubGroup   = 2
 Column     = 2
 Row        = 13
@@ -11949,7 +11949,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 [cboptions_2_3]
 Group      = 6
 SubGroup   = 1
-Column     = 3
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_3"
 Type       = uLong
@@ -12203,7 +12203,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 [cboptions_2_4]
 Group      = 6
 SubGroup   = 1
-Column     = 4
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_4"
 Type       = uLong
@@ -12729,9 +12729,9 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_3_2]
-Group      = 4
-SubGroup   = 3
-Column     = 2
+Group      = 6
+SubGroup   = 1
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_2"
 Type       = uLong
@@ -12745,7 +12745,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_3_2]
-Group      = 4
+Group      = 6
 SubGroup   = 3
 Column     = 2
 Row        = 12
@@ -12758,7 +12758,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_3_2]
-Group      = 4
+Group      = 6
 SubGroup   = 3
 Column     = 2
 Row        = 13
@@ -12985,7 +12985,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 [cboptions_3_3]
 Group      = 6
 SubGroup   = 1
-Column     = 3
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_3"
 Type       = uLong
@@ -13239,7 +13239,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 [cboptions_3_4]
 Group      = 6
 SubGroup   = 1
-Column     = 4
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_4"
 Type       = uLong
@@ -13765,9 +13765,9 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_4_2]
-Group      = 4
-SubGroup   = 4
-Column     = 2
+Group      = 6
+SubGroup   = 1
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_2"
 Type       = uLong
@@ -13781,7 +13781,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_4_2]
-Group      = 4
+Group      = 6
 SubGroup   = 4
 Column     = 2
 Row        = 12
@@ -13794,7 +13794,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_4_2]
-Group      = 4
+Group      = 6
 SubGroup   = 4
 Column     = 2
 Row        = 13
@@ -14021,7 +14021,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 [cboptions_4_3]
 Group      = 6
 SubGroup   = 1
-Column     = 3
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_3"
 Type       = uLong
@@ -14275,7 +14275,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 [cboptions_4_4]
 Group      = 6
 SubGroup   = 1
-Column     = 4
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_4"
 Type       = uLong
@@ -14801,9 +14801,9 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_5_2]
-Group      = 4
-SubGroup   = 5
-Column     = 2
+Group      = 6
+SubGroup   = 1
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_2"
 Type       = uLong
@@ -14817,7 +14817,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_5_2]
-Group      = 4
+Group      = 6
 SubGroup   = 5
 Column     = 2
 Row        = 12
@@ -14830,7 +14830,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_5_2]
-Group      = 4
+Group      = 6
 SubGroup   = 5
 Column     = 2
 Row        = 13
@@ -15057,7 +15057,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 [cboptions_5_3]
 Group      = 6
 SubGroup   = 1
-Column     = 3
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_3"
 Type       = uLong
@@ -15311,7 +15311,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 [cboptions_5_4]
 Group      = 6
 SubGroup   = 1
-Column     = 4
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_4"
 Type       = uLong
@@ -15837,9 +15837,9 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_6_2]
-Group      = 4
-SubGroup   = 6
-Column     = 2
+Group      = 6
+SubGroup   = 1
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_2"
 Type       = uLong
@@ -15853,7 +15853,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_6_2]
-Group      = 4
+Group      = 6
 SubGroup   = 6
 Column     = 2
 Row        = 12
@@ -15866,7 +15866,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_6_2]
-Group      = 4
+Group      = 6
 SubGroup   = 6
 Column     = 2
 Row        = 13
@@ -16093,7 +16093,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 [cboptions_6_3]
 Group      = 6
 SubGroup   = 1
-Column     = 3
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_3"
 Type       = uLong
@@ -16873,9 +16873,9 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_7_2]
-Group      = 4
-SubGroup   = 7
-Column     = 2
+Group      = 6
+SubGroup   = 1
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_2"
 Type       = uLong
@@ -16889,7 +16889,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_7_2]
-Group      = 4
+Group      = 6
 SubGroup   = 7
 Column     = 2
 Row        = 12
@@ -16902,7 +16902,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_7_2]
-Group      = 4
+Group      = 6
 SubGroup   = 7
 Column     = 2
 Row        = 13
@@ -17909,9 +17909,9 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_8_2]
-Group      = 4
-SubGroup   = 8
-Column     = 2
+Group      = 6
+SubGroup   = 1
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_2"
 Type       = uLong
@@ -17925,7 +17925,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_8_2]
-Group      = 4
+Group      = 6
 SubGroup   = 8
 Column     = 2
 Row        = 12
@@ -17938,7 +17938,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_8_2]
-Group      = 4
+Group      = 6
 SubGroup   = 8
 Column     = 2
 Row        = 13
@@ -18945,9 +18945,9 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_9_2]
-Group      = 4
-SubGroup   = 9
-Column     = 2
+Group      = 6
+SubGroup   = 1
+Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_2"
 Type       = uLong
@@ -18961,7 +18961,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_9_2]
-Group      = 4
+Group      = 6
 SubGroup   = 9
 Column     = 2
 Row        = 12
@@ -18974,7 +18974,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_9_2]
-Group      = 4
+Group      = 6
 SubGroup   = 9
 Column     = 2
 Row        = 13
