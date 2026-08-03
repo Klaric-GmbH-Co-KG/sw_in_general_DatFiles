@@ -5767,7 +5767,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 3
 Column     = 2
 Row        = 2
@@ -5787,7 +5787,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 3
 Column     = 3
 Row        = 2
@@ -5807,7 +5807,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 3
 Column     = 4
 Row        = 2
@@ -5907,7 +5907,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 4
 Column     = 2
 Row        = 2
@@ -5927,7 +5927,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 4
 Column     = 3
 Row        = 2
@@ -5947,7 +5947,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 4
 Column     = 4
 Row        = 2
@@ -6047,7 +6047,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 5
 Column     = 2
 Row        = 2
@@ -6067,7 +6067,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 5
 Column     = 3
 Row        = 2
@@ -6087,7 +6087,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 5
 Column     = 4
 Row        = 2
@@ -6187,7 +6187,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 6
 Column     = 2
 Row        = 2
@@ -6207,7 +6207,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 6
 Column     = 3
 Row        = 2
@@ -6227,7 +6227,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 6
 Column     = 4
 Row        = 2
@@ -6327,7 +6327,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 7
 Column     = 2
 Row        = 2
@@ -6347,7 +6347,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 7
 Column     = 3
 Row        = 2
@@ -6367,7 +6367,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 7
 Column     = 4
 Row        = 2
@@ -6467,7 +6467,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 8
 Column     = 2
 Row        = 2
@@ -6487,7 +6487,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 8
 Column     = 3
 Row        = 2
@@ -6507,7 +6507,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 8
 Column     = 4
 Row        = 2
@@ -6607,7 +6607,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 9
 Column     = 2
 Row        = 2
@@ -6627,7 +6627,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 9
 Column     = 3
 Row        = 2
@@ -6647,7 +6647,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 9
 Column     = 4
 Row        = 2
@@ -6747,7 +6747,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 10
 Column     = 2
 Row        = 2
@@ -6767,7 +6767,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 10
 Column     = 3
 Row        = 2
@@ -6787,7 +6787,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 10
 Column     = 4
 Row        = 2
@@ -6887,7 +6887,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 3
 Column     = 2
 Row        = 3
@@ -6907,7 +6907,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 3
 Column     = 3
 Row        = 3
@@ -6927,7 +6927,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 3
 Column     = 4
 Row        = 3
@@ -7027,7 +7027,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 4
 Column     = 2
 Row        = 3
@@ -7047,7 +7047,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 4
 Column     = 3
 Row        = 3
@@ -7067,7 +7067,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 4
 Column     = 4
 Row        = 3
@@ -7167,7 +7167,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 5
 Column     = 2
 Row        = 3
@@ -7187,7 +7187,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 5
 Column     = 3
 Row        = 3
@@ -7207,7 +7207,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 5
 Column     = 4
 Row        = 3
@@ -7307,7 +7307,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 6
 Column     = 2
 Row        = 3
@@ -7327,7 +7327,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 6
 Column     = 3
 Row        = 3
@@ -7347,7 +7347,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 6
 Column     = 4
 Row        = 3
@@ -7447,7 +7447,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 7
 Column     = 2
 Row        = 3
@@ -7467,7 +7467,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 7
 Column     = 3
 Row        = 3
@@ -7487,7 +7487,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 7
 Column     = 4
 Row        = 3
@@ -7587,7 +7587,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 8
 Column     = 2
 Row        = 3
@@ -7607,7 +7607,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 8
 Column     = 3
 Row        = 3
@@ -7627,7 +7627,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 8
 Column     = 4
 Row        = 3
@@ -7727,7 +7727,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 9
 Column     = 2
 Row        = 3
@@ -7747,7 +7747,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 9
 Column     = 3
 Row        = 3
@@ -7767,7 +7767,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 9
 Column     = 4
 Row        = 3
@@ -7867,7 +7867,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 10
 Column     = 2
 Row        = 3
@@ -7887,7 +7887,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 10
 Column     = 3
 Row        = 3
@@ -7907,7 +7907,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 10
 Column     = 4
 Row        = 3
@@ -11429,7 +11429,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_2_1]
-Group      = 4
+Group      = 6
 SubGroup   = 2
 Column     = 1
 Row        = 11
@@ -11445,7 +11445,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_2_1]
-Group      = 4
+Group      = 6
 SubGroup   = 2
 Column     = 1
 Row        = 12
@@ -11458,7 +11458,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_2_1]
-Group      = 4
+Group      = 6
 SubGroup   = 2
 Column     = 1
 Row        = 13
@@ -12465,7 +12465,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_3_1]
-Group      = 4
+Group      = 6
 SubGroup   = 3
 Column     = 1
 Row        = 11
@@ -12481,7 +12481,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_3_1]
-Group      = 4
+Group      = 6
 SubGroup   = 3
 Column     = 1
 Row        = 12
@@ -12494,7 +12494,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_3_1]
-Group      = 4
+Group      = 6
 SubGroup   = 3
 Column     = 1
 Row        = 13
@@ -13501,7 +13501,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_4_1]
-Group      = 4
+Group      = 6
 SubGroup   = 4
 Column     = 1
 Row        = 11
@@ -13517,7 +13517,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_4_1]
-Group      = 4
+Group      = 6
 SubGroup   = 4
 Column     = 1
 Row        = 12
@@ -13530,7 +13530,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_4_1]
-Group      = 4
+Group      = 6
 SubGroup   = 4
 Column     = 1
 Row        = 13
@@ -14537,7 +14537,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_5_1]
-Group      = 4
+Group      = 6
 SubGroup   = 5
 Column     = 1
 Row        = 11
@@ -14553,7 +14553,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_5_1]
-Group      = 4
+Group      = 6
 SubGroup   = 5
 Column     = 1
 Row        = 12
@@ -14566,7 +14566,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_5_1]
-Group      = 4
+Group      = 6
 SubGroup   = 5
 Column     = 1
 Row        = 13
@@ -15573,7 +15573,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_6_1]
-Group      = 4
+Group      = 6
 SubGroup   = 6
 Column     = 1
 Row        = 11
@@ -15589,7 +15589,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_6_1]
-Group      = 4
+Group      = 6
 SubGroup   = 6
 Column     = 1
 Row        = 12
@@ -15602,7 +15602,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_6_1]
-Group      = 4
+Group      = 6
 SubGroup   = 6
 Column     = 1
 Row        = 13
@@ -16609,7 +16609,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_7_1]
-Group      = 4
+Group      = 6
 SubGroup   = 7
 Column     = 1
 Row        = 11
@@ -16625,7 +16625,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_7_1]
-Group      = 4
+Group      = 6
 SubGroup   = 7
 Column     = 1
 Row        = 12
@@ -16638,7 +16638,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_7_1]
-Group      = 4
+Group      = 6
 SubGroup   = 7
 Column     = 1
 Row        = 13
@@ -17645,7 +17645,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_8_1]
-Group      = 4
+Group      = 6
 SubGroup   = 8
 Column     = 1
 Row        = 11
@@ -17661,7 +17661,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_8_1]
-Group      = 4
+Group      = 6
 SubGroup   = 8
 Column     = 1
 Row        = 12
@@ -17674,7 +17674,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_8_1]
-Group      = 4
+Group      = 6
 SubGroup   = 8
 Column     = 1
 Row        = 13
@@ -18681,7 +18681,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_9_1]
-Group      = 4
+Group      = 6
 SubGroup   = 9
 Column     = 1
 Row        = 11
@@ -18697,7 +18697,7 @@ Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
 [cb_min_time_9_1]
-Group      = 4
+Group      = 6
 SubGroup   = 9
 Column     = 1
 Row        = 12
@@ -18710,7 +18710,7 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_9_1]
-Group      = 4
+Group      = 6
 SubGroup   = 9
 Column     = 1
 Row        = 13
