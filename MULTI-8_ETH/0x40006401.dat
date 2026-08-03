@@ -5247,7 +5247,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [workid_1]
-Group      = 3
+Group      = 6
 SubGroup   = 2
 Column     = 2
 Row        = 2
@@ -5307,7 +5307,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [workid_2]
-Group      = 3
+Group      = 6
 SubGroup   = 2
 Column     = 2
 Row        = 4
@@ -5367,7 +5367,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [workid_3]
-Group      = 3
+Group      = 6
 SubGroup   = 2
 Column     = 2
 Row        = 6
@@ -5427,7 +5427,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [workid_4]
-Group      = 3
+Group      = 6
 SubGroup   = 2
 Column     = 2
 Row        = 8
@@ -5487,7 +5487,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [workid_5]
-Group      = 3
+Group      = 6
 SubGroup   = 2
 Column     = 2
 Row        = 10
@@ -5547,7 +5547,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [workid_6]
-Group      = 3
+Group      = 6
 SubGroup   = 2
 Column     = 2
 Row        = 12
@@ -5607,7 +5607,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [workid_7]
-Group      = 3
+Group      = 6
 SubGroup   = 2
 Column     = 2
 Row        = 14
@@ -5667,7 +5667,7 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [workid_8]
-Group      = 3
+Group      = 6
 SubGroup   = 2
 Column     = 2
 Row        = 16
@@ -10295,8 +10295,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_1_1]
 Group      = 6
@@ -11250,8 +11250,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_2_1]
 Group      = 6
@@ -11514,8 +11514,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_2_2]
 Group      = 6
@@ -12286,8 +12286,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_3_1]
 Group      = 6
@@ -12550,8 +12550,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_3_2]
 Group      = 6
@@ -13322,8 +13322,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_4_1]
 Group      = 6
@@ -13586,8 +13586,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_4_2]
 Group      = 6
@@ -14358,8 +14358,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_5_1]
 Group      = 6
@@ -14622,8 +14622,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_5_2]
 Group      = 6
@@ -15394,8 +15394,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_6_1]
 Group      = 6
@@ -15658,8 +15658,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_6_2]
 Group      = 6
@@ -16430,8 +16430,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_7_1]
 Group      = 6
@@ -16694,8 +16694,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_7_2]
 Group      = 6
@@ -17466,8 +17466,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_8_1]
 Group      = 6
@@ -17730,8 +17730,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_8_2]
 Group      = 6
@@ -18502,8 +18502,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_9_1]
 Group      = 6
@@ -18766,8 +18766,8 @@ Option_2   = "Tk:disable_raw"
 Mask_2     = 0x8
 Option_3   = "Tk:enable_power"
 Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
+;Option_4   = "Tk:enable_work"
+;Mask_4     = 0x20
 
 [totalpower_9_2]
 Group      = 6
