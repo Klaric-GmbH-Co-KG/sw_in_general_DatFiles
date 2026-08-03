@@ -69,15 +69,15 @@ Group_01   = "Tk:device_status"
 User_01    = "default; access"
 Ident_01   = "STATUS_PAR"
 Display_01 = "ViewAndModify"
-SubGroup_1 = "Tk:global"
-SubGroup_2 = "Tk:device_status_channel_1"
-SubGroup_3 = "Tk:device_status_channel_2"
-SubGroup_4 = "Tk:device_status_channel_3"
-SubGroup_5 = "Tk:device_status_channel_4"
-SubGroup_6 = "Tk:device_status_channel_5"
-SubGroup_7 = "Tk:device_status_channel_6"
-SubGroup_8 = "Tk:device_status_channel_7"
-SubGroup_9 = "Tk:device_status_channel_8"
+;SubGroup_1 = "Tk:global"
+SubGroup_1 = "Tk:device_status_channel_1"
+SubGroup_2 = "Tk:device_status_channel_2"
+SubGroup_3 = "Tk:device_status_channel_3"
+SubGroup_4 = "Tk:device_status_channel_4"
+SubGroup_5 = "Tk:device_status_channel_5"
+SubGroup_6 = "Tk:device_status_channel_6"
+SubGroup_7 = "Tk:device_status_channel_7"
+SubGroup_8 = "Tk:device_status_channel_8"
 
 Group_02   = "Tk:properties"
 User_02    = "default; access"
@@ -157,7 +157,7 @@ SubGroup_4 = "Tk:rtc"
 // py_script: status,start
 
 [activationkey]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 1
@@ -166,7 +166,7 @@ Type       = string
 Size       = "32"
 
 [flags_error1]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 2
@@ -176,7 +176,7 @@ Display    = "ViewOnly"
 Format     = "Hex"
 
 [flags_error2]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 3
@@ -186,7 +186,7 @@ Display    = "ViewOnly"
 Format     = "Hex"
 
 [flags_status1]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 4
@@ -196,7 +196,7 @@ Display    = "ViewOnly"
 Format     = "Hex"
 
 [flags_status2]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 5
@@ -206,7 +206,7 @@ Display    = "ViewOnly"
 Format     = "Hex"
 
 [flags_feature]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 6
@@ -298,7 +298,7 @@ Type       = uLong
 Display    = "ViewOnly"
 
 [interface_ethernet_1_tx_traffic]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 2
 Row        = 1
@@ -307,7 +307,7 @@ Type       = uLong
 Display    = "ViewOnly"
 
 [interface_ethernet_1_rx_traffic]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 3
 Row        = 1
@@ -377,7 +377,7 @@ Display    = "ViewOnly"
 
 [ch_01_adc_01measspeed]
 Group      = 1
-SubGroup   = 2
+SubGroup   = 1
 Column     = 1
 Row        = 2
 Name       = "Tk:ch_01_adc_01measspeed"
@@ -386,7 +386,7 @@ Display    = "ViewOnly"
 
 [ch_01_adc_01measvalue]
 Group      = 1
-SubGroup   = 2
+SubGroup   = 1
 Column     = 1
 Row        = 1
 Name       = "Tk:ch_01_adc_01measvalue"
@@ -395,7 +395,7 @@ Display    = "ViewOnly"
 
 [ch_01_adc_01measraw]
 Group      = 1
-SubGroup   = 2
+SubGroup   = 1
 Column     = 1
 Row        = 3
 Name       = "Tk:ch_01_adc_01measraw"
@@ -405,7 +405,7 @@ Format     = "Hex"
 
 [ch_01_adc_01measresolution]
 Group      = 1
-SubGroup   = 2
+SubGroup   = 1
 Column     = 1
 Row        = 4
 Name       = "Tk:ch_01_adc_01measresolution"
@@ -414,7 +414,7 @@ Display    = "ViewOnly"
 
 [ch_01_adc_01measgain]
 Group      = 1
-SubGroup   = 2
+SubGroup   = 1
 Column     = 1
 Row        = 5
 Name       = "Tk:ch_01_adc_01measgain"
@@ -440,7 +440,7 @@ Value_5     = 255
 
 [ch_01_adc_01unit]
 Group      = 1
-SubGroup   = 2
+SubGroup   = 1
 Column     = 1
 Row        = 6
 Name       = "Tk:ch_01_adc_01unit"
@@ -466,8 +466,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_01_adc_01minrange]
-Group      = 1
-SubGroup   = 2
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 8
 Name       = "Tk:ch_01_adc_01minrange"
@@ -475,8 +475,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_01_adc_01maxrange]
-Group      = 1
-SubGroup   = 2
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 9
 Name       = "Tk:ch_01_adc_01maxrange"
@@ -485,7 +485,7 @@ Display    = "ViewOnly"
 
 [ch_01_adc_02measspeed]
 Group      = 1
-SubGroup   = 2
+SubGroup   = 1
 Column     = 2
 Row        = 2
 Name       = "Tk:ch_01_adc_02measspeed"
@@ -494,7 +494,7 @@ Display    = "ViewOnly"
 
 [ch_01_adc_02measvalue]
 Group      = 1
-SubGroup   = 2
+SubGroup   = 1
 Column     = 2
 Row        = 1
 Name       = "Tk:ch_01_adc_02measvalue"
@@ -503,7 +503,7 @@ Display    = "ViewOnly"
 
 [ch_01_adc_02measraw]
 Group      = 1
-SubGroup   = 2
+SubGroup   = 1
 Column     = 2
 Row        = 3
 Name       = "Tk:ch_01_adc_02measraw"
@@ -513,7 +513,7 @@ Format     = "Hex"
 
 [ch_01_adc_02measresolution]
 Group      = 1
-SubGroup   = 2
+SubGroup   = 1
 Column     = 2
 Row        = 4
 Name       = "Tk:ch_01_adc_02measresolution"
@@ -522,7 +522,7 @@ Display    = "ViewOnly"
 
 [ch_01_adc_02measgain]
 Group      = 1
-SubGroup   = 2
+SubGroup   = 1
 Column     = 2
 Row        = 5
 Name       = "Tk:ch_01_adc_02measgain"
@@ -548,7 +548,7 @@ Value_5     = 255
 
 [ch_01_adc_02unit]
 Group      = 1
-SubGroup   = 2
+SubGroup   = 1
 Column     = 2
 Row        = 6
 Name       = "Tk:ch_01_adc_02unit"
@@ -574,8 +574,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_01_adc_02minrange]
-Group      = 1
-SubGroup   = 2
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 8
 Name       = "Tk:ch_01_adc_02minrange"
@@ -583,8 +583,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_01_adc_02maxrange]
-Group      = 1
-SubGroup   = 2
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 9
 Name       = "Tk:ch_01_adc_02maxrange"
@@ -809,7 +809,7 @@ Display    = "ViewOnly"
 
 [ch_02_adc_01measspeed]
 Group      = 1
-SubGroup   = 3
+SubGroup   = 2
 Column     = 1
 Row        = 2
 Name       = "Tk:ch_02_adc_01measspeed"
@@ -818,7 +818,7 @@ Display    = "ViewOnly"
 
 [ch_02_adc_01measvalue]
 Group      = 1
-SubGroup   = 3
+SubGroup   = 2
 Column     = 1
 Row        = 1
 Name       = "Tk:ch_02_adc_01measvalue"
@@ -827,7 +827,7 @@ Display    = "ViewOnly"
 
 [ch_02_adc_01measraw]
 Group      = 1
-SubGroup   = 3
+SubGroup   = 2
 Column     = 1
 Row        = 3
 Name       = "Tk:ch_02_adc_01measraw"
@@ -837,7 +837,7 @@ Format     = "Hex"
 
 [ch_02_adc_01measresolution]
 Group      = 1
-SubGroup   = 3
+SubGroup   = 2
 Column     = 1
 Row        = 4
 Name       = "Tk:ch_02_adc_01measresolution"
@@ -846,7 +846,7 @@ Display    = "ViewOnly"
 
 [ch_02_adc_01measgain]
 Group      = 1
-SubGroup   = 3
+SubGroup   = 2
 Column     = 1
 Row        = 5
 Name       = "Tk:ch_02_adc_01measgain"
@@ -872,7 +872,7 @@ Value_5     = 255
 
 [ch_02_adc_01unit]
 Group      = 1
-SubGroup   = 3
+SubGroup   = 2
 Column     = 1
 Row        = 6
 Name       = "Tk:ch_02_adc_01unit"
@@ -898,8 +898,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_02_adc_01minrange]
-Group      = 1
-SubGroup   = 3
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 8
 Name       = "Tk:ch_02_adc_01minrange"
@@ -907,8 +907,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_02_adc_01maxrange]
-Group      = 1
-SubGroup   = 3
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 9
 Name       = "Tk:ch_02_adc_01maxrange"
@@ -917,7 +917,7 @@ Display    = "ViewOnly"
 
 [ch_02_adc_02measspeed]
 Group      = 1
-SubGroup   = 3
+SubGroup   = 2
 Column     = 2
 Row        = 2
 Name       = "Tk:ch_02_adc_02measspeed"
@@ -926,7 +926,7 @@ Display    = "ViewOnly"
 
 [ch_02_adc_02measvalue]
 Group      = 1
-SubGroup   = 3
+SubGroup   = 2
 Column     = 2
 Row        = 1
 Name       = "Tk:ch_02_adc_02measvalue"
@@ -935,7 +935,7 @@ Display    = "ViewOnly"
 
 [ch_02_adc_02measraw]
 Group      = 1
-SubGroup   = 3
+SubGroup   = 2
 Column     = 2
 Row        = 3
 Name       = "Tk:ch_02_adc_02measraw"
@@ -945,7 +945,7 @@ Format     = "Hex"
 
 [ch_02_adc_02measresolution]
 Group      = 1
-SubGroup   = 3
+SubGroup   = 2
 Column     = 2
 Row        = 4
 Name       = "Tk:ch_02_adc_02measresolution"
@@ -954,7 +954,7 @@ Display    = "ViewOnly"
 
 [ch_02_adc_02measgain]
 Group      = 1
-SubGroup   = 3
+SubGroup   = 2
 Column     = 2
 Row        = 5
 Name       = "Tk:ch_02_adc_02measgain"
@@ -980,7 +980,7 @@ Value_5     = 255
 
 [ch_02_adc_02unit]
 Group      = 1
-SubGroup   = 3
+SubGroup   = 2
 Column     = 2
 Row        = 6
 Name       = "Tk:ch_02_adc_02unit"
@@ -1006,8 +1006,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_02_adc_02minrange]
-Group      = 1
-SubGroup   = 3
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 8
 Name       = "Tk:ch_02_adc_02minrange"
@@ -1015,8 +1015,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_02_adc_02maxrange]
-Group      = 1
-SubGroup   = 3
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 9
 Name       = "Tk:ch_02_adc_02maxrange"
@@ -1241,7 +1241,7 @@ Display    = "ViewOnly"
 
 [ch_03_adc_01measspeed]
 Group      = 1
-SubGroup   = 4
+SubGroup   = 3
 Column     = 1
 Row        = 2
 Name       = "Tk:ch_03_adc_01measspeed"
@@ -1250,7 +1250,7 @@ Display    = "ViewOnly"
 
 [ch_03_adc_01measvalue]
 Group      = 1
-SubGroup   = 4
+SubGroup   = 3
 Column     = 1
 Row        = 1
 Name       = "Tk:ch_03_adc_01measvalue"
@@ -1259,7 +1259,7 @@ Display    = "ViewOnly"
 
 [ch_03_adc_01measraw]
 Group      = 1
-SubGroup   = 4
+SubGroup   = 3
 Column     = 1
 Row        = 3
 Name       = "Tk:ch_03_adc_01measraw"
@@ -1269,7 +1269,7 @@ Format     = "Hex"
 
 [ch_03_adc_01measresolution]
 Group      = 1
-SubGroup   = 4
+SubGroup   = 3
 Column     = 1
 Row        = 4
 Name       = "Tk:ch_03_adc_01measresolution"
@@ -1278,7 +1278,7 @@ Display    = "ViewOnly"
 
 [ch_03_adc_01measgain]
 Group      = 1
-SubGroup   = 4
+SubGroup   = 3
 Column     = 1
 Row        = 5
 Name       = "Tk:ch_03_adc_01measgain"
@@ -1304,7 +1304,7 @@ Value_5     = 255
 
 [ch_03_adc_01unit]
 Group      = 1
-SubGroup   = 4
+SubGroup   = 3
 Column     = 1
 Row        = 6
 Name       = "Tk:ch_03_adc_01unit"
@@ -1330,8 +1330,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_03_adc_01minrange]
-Group      = 1
-SubGroup   = 4
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 8
 Name       = "Tk:ch_03_adc_01minrange"
@@ -1339,8 +1339,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_03_adc_01maxrange]
-Group      = 1
-SubGroup   = 4
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 9
 Name       = "Tk:ch_03_adc_01maxrange"
@@ -1349,7 +1349,7 @@ Display    = "ViewOnly"
 
 [ch_03_adc_02measspeed]
 Group      = 1
-SubGroup   = 4
+SubGroup   = 3
 Column     = 2
 Row        = 2
 Name       = "Tk:ch_03_adc_02measspeed"
@@ -1358,7 +1358,7 @@ Display    = "ViewOnly"
 
 [ch_03_adc_02measvalue]
 Group      = 1
-SubGroup   = 4
+SubGroup   = 3
 Column     = 2
 Row        = 1
 Name       = "Tk:ch_03_adc_02measvalue"
@@ -1367,7 +1367,7 @@ Display    = "ViewOnly"
 
 [ch_03_adc_02measraw]
 Group      = 1
-SubGroup   = 4
+SubGroup   = 3
 Column     = 2
 Row        = 3
 Name       = "Tk:ch_03_adc_02measraw"
@@ -1377,7 +1377,7 @@ Format     = "Hex"
 
 [ch_03_adc_02measresolution]
 Group      = 1
-SubGroup   = 4
+SubGroup   = 3
 Column     = 2
 Row        = 4
 Name       = "Tk:ch_03_adc_02measresolution"
@@ -1386,7 +1386,7 @@ Display    = "ViewOnly"
 
 [ch_03_adc_02measgain]
 Group      = 1
-SubGroup   = 4
+SubGroup   = 3
 Column     = 2
 Row        = 5
 Name       = "Tk:ch_03_adc_02measgain"
@@ -1412,7 +1412,7 @@ Value_5     = 255
 
 [ch_03_adc_02unit]
 Group      = 1
-SubGroup   = 4
+SubGroup   = 3
 Column     = 2
 Row        = 6
 Name       = "Tk:ch_03_adc_02unit"
@@ -1438,8 +1438,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_03_adc_02minrange]
-Group      = 1
-SubGroup   = 4
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 8
 Name       = "Tk:ch_03_adc_02minrange"
@@ -1447,8 +1447,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_03_adc_02maxrange]
-Group      = 1
-SubGroup   = 4
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 9
 Name       = "Tk:ch_03_adc_02maxrange"
@@ -1673,7 +1673,7 @@ Display    = "ViewOnly"
 
 [ch_04_adc_01measspeed]
 Group      = 1
-SubGroup   = 5
+SubGroup   = 4
 Column     = 1
 Row        = 2
 Name       = "Tk:ch_04_adc_01measspeed"
@@ -1682,7 +1682,7 @@ Display    = "ViewOnly"
 
 [ch_04_adc_01measvalue]
 Group      = 1
-SubGroup   = 5
+SubGroup   = 4
 Column     = 1
 Row        = 1
 Name       = "Tk:ch_04_adc_01measvalue"
@@ -1691,7 +1691,7 @@ Display    = "ViewOnly"
 
 [ch_04_adc_01measraw]
 Group      = 1
-SubGroup   = 5
+SubGroup   = 4
 Column     = 1
 Row        = 3
 Name       = "Tk:ch_04_adc_01measraw"
@@ -1701,7 +1701,7 @@ Format     = "Hex"
 
 [ch_04_adc_01measresolution]
 Group      = 1
-SubGroup   = 5
+SubGroup   = 4
 Column     = 1
 Row        = 4
 Name       = "Tk:ch_04_adc_01measresolution"
@@ -1710,7 +1710,7 @@ Display    = "ViewOnly"
 
 [ch_04_adc_01measgain]
 Group      = 1
-SubGroup   = 5
+SubGroup   = 4
 Column     = 1
 Row        = 5
 Name       = "Tk:ch_04_adc_01measgain"
@@ -1736,7 +1736,7 @@ Value_5     = 255
 
 [ch_04_adc_01unit]
 Group      = 1
-SubGroup   = 5
+SubGroup   = 4
 Column     = 1
 Row        = 6
 Name       = "Tk:ch_04_adc_01unit"
@@ -1762,8 +1762,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_04_adc_01minrange]
-Group      = 1
-SubGroup   = 5
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 8
 Name       = "Tk:ch_04_adc_01minrange"
@@ -1771,8 +1771,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_04_adc_01maxrange]
-Group      = 1
-SubGroup   = 5
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 9
 Name       = "Tk:ch_04_adc_01maxrange"
@@ -1781,7 +1781,7 @@ Display    = "ViewOnly"
 
 [ch_04_adc_02measspeed]
 Group      = 1
-SubGroup   = 5
+SubGroup   = 4
 Column     = 2
 Row        = 2
 Name       = "Tk:ch_04_adc_02measspeed"
@@ -1790,7 +1790,7 @@ Display    = "ViewOnly"
 
 [ch_04_adc_02measvalue]
 Group      = 1
-SubGroup   = 5
+SubGroup   = 4
 Column     = 2
 Row        = 1
 Name       = "Tk:ch_04_adc_02measvalue"
@@ -1799,7 +1799,7 @@ Display    = "ViewOnly"
 
 [ch_04_adc_02measraw]
 Group      = 1
-SubGroup   = 5
+SubGroup   = 4
 Column     = 2
 Row        = 3
 Name       = "Tk:ch_04_adc_02measraw"
@@ -1809,7 +1809,7 @@ Format     = "Hex"
 
 [ch_04_adc_02measresolution]
 Group      = 1
-SubGroup   = 5
+SubGroup   = 4
 Column     = 2
 Row        = 4
 Name       = "Tk:ch_04_adc_02measresolution"
@@ -1818,7 +1818,7 @@ Display    = "ViewOnly"
 
 [ch_04_adc_02measgain]
 Group      = 1
-SubGroup   = 5
+SubGroup   = 4
 Column     = 2
 Row        = 5
 Name       = "Tk:ch_04_adc_02measgain"
@@ -1844,7 +1844,7 @@ Value_5     = 255
 
 [ch_04_adc_02unit]
 Group      = 1
-SubGroup   = 5
+SubGroup   = 4
 Column     = 2
 Row        = 6
 Name       = "Tk:ch_04_adc_02unit"
@@ -1870,8 +1870,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_04_adc_02minrange]
-Group      = 1
-SubGroup   = 5
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 8
 Name       = "Tk:ch_04_adc_02minrange"
@@ -1879,8 +1879,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_04_adc_02maxrange]
-Group      = 1
-SubGroup   = 5
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 9
 Name       = "Tk:ch_04_adc_02maxrange"
@@ -2105,7 +2105,7 @@ Display    = "ViewOnly"
 
 [ch_05_adc_01measspeed]
 Group      = 1
-SubGroup   = 6
+SubGroup   = 5
 Column     = 1
 Row        = 2
 Name       = "Tk:ch_05_adc_01measspeed"
@@ -2114,7 +2114,7 @@ Display    = "ViewOnly"
 
 [ch_05_adc_01measvalue]
 Group      = 1
-SubGroup   = 6
+SubGroup   = 5
 Column     = 1
 Row        = 1
 Name       = "Tk:ch_05_adc_01measvalue"
@@ -2123,7 +2123,7 @@ Display    = "ViewOnly"
 
 [ch_05_adc_01measraw]
 Group      = 1
-SubGroup   = 6
+SubGroup   = 5
 Column     = 1
 Row        = 3
 Name       = "Tk:ch_05_adc_01measraw"
@@ -2133,7 +2133,7 @@ Format     = "Hex"
 
 [ch_05_adc_01measresolution]
 Group      = 1
-SubGroup   = 6
+SubGroup   = 5
 Column     = 1
 Row        = 4
 Name       = "Tk:ch_05_adc_01measresolution"
@@ -2142,7 +2142,7 @@ Display    = "ViewOnly"
 
 [ch_05_adc_01measgain]
 Group      = 1
-SubGroup   = 6
+SubGroup   = 5
 Column     = 1
 Row        = 5
 Name       = "Tk:ch_05_adc_01measgain"
@@ -2168,7 +2168,7 @@ Value_5     = 255
 
 [ch_05_adc_01unit]
 Group      = 1
-SubGroup   = 6
+SubGroup   = 5
 Column     = 1
 Row        = 6
 Name       = "Tk:ch_05_adc_01unit"
@@ -2194,8 +2194,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_05_adc_01minrange]
-Group      = 1
-SubGroup   = 6
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 8
 Name       = "Tk:ch_05_adc_01minrange"
@@ -2203,8 +2203,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_05_adc_01maxrange]
-Group      = 1
-SubGroup   = 6
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 9
 Name       = "Tk:ch_05_adc_01maxrange"
@@ -2213,7 +2213,7 @@ Display    = "ViewOnly"
 
 [ch_05_adc_02measspeed]
 Group      = 1
-SubGroup   = 6
+SubGroup   = 5
 Column     = 2
 Row        = 2
 Name       = "Tk:ch_05_adc_02measspeed"
@@ -2222,7 +2222,7 @@ Display    = "ViewOnly"
 
 [ch_05_adc_02measvalue]
 Group      = 1
-SubGroup   = 6
+SubGroup   = 5
 Column     = 2
 Row        = 1
 Name       = "Tk:ch_05_adc_02measvalue"
@@ -2231,7 +2231,7 @@ Display    = "ViewOnly"
 
 [ch_05_adc_02measraw]
 Group      = 1
-SubGroup   = 6
+SubGroup   = 5
 Column     = 2
 Row        = 3
 Name       = "Tk:ch_05_adc_02measraw"
@@ -2241,7 +2241,7 @@ Format     = "Hex"
 
 [ch_05_adc_02measresolution]
 Group      = 1
-SubGroup   = 6
+SubGroup   = 5
 Column     = 2
 Row        = 4
 Name       = "Tk:ch_05_adc_02measresolution"
@@ -2250,7 +2250,7 @@ Display    = "ViewOnly"
 
 [ch_05_adc_02measgain]
 Group      = 1
-SubGroup   = 6
+SubGroup   = 5
 Column     = 2
 Row        = 5
 Name       = "Tk:ch_05_adc_02measgain"
@@ -2276,7 +2276,7 @@ Value_5     = 255
 
 [ch_05_adc_02unit]
 Group      = 1
-SubGroup   = 6
+SubGroup   = 5
 Column     = 2
 Row        = 6
 Name       = "Tk:ch_05_adc_02unit"
@@ -2302,8 +2302,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_05_adc_02minrange]
-Group      = 1
-SubGroup   = 6
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 8
 Name       = "Tk:ch_05_adc_02minrange"
@@ -2311,8 +2311,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_05_adc_02maxrange]
-Group      = 1
-SubGroup   = 6
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 9
 Name       = "Tk:ch_05_adc_02maxrange"
@@ -2537,7 +2537,7 @@ Display    = "ViewOnly"
 
 [ch_06_adc_01measspeed]
 Group      = 1
-SubGroup   = 7
+SubGroup   = 6
 Column     = 1
 Row        = 2
 Name       = "Tk:ch_06_adc_01measspeed"
@@ -2546,7 +2546,7 @@ Display    = "ViewOnly"
 
 [ch_06_adc_01measvalue]
 Group      = 1
-SubGroup   = 7
+SubGroup   = 6
 Column     = 1
 Row        = 1
 Name       = "Tk:ch_06_adc_01measvalue"
@@ -2555,7 +2555,7 @@ Display    = "ViewOnly"
 
 [ch_06_adc_01measraw]
 Group      = 1
-SubGroup   = 7
+SubGroup   = 6
 Column     = 1
 Row        = 3
 Name       = "Tk:ch_06_adc_01measraw"
@@ -2565,7 +2565,7 @@ Format     = "Hex"
 
 [ch_06_adc_01measresolution]
 Group      = 1
-SubGroup   = 7
+SubGroup   = 6
 Column     = 1
 Row        = 4
 Name       = "Tk:ch_06_adc_01measresolution"
@@ -2574,7 +2574,7 @@ Display    = "ViewOnly"
 
 [ch_06_adc_01measgain]
 Group      = 1
-SubGroup   = 7
+SubGroup   = 6
 Column     = 1
 Row        = 5
 Name       = "Tk:ch_06_adc_01measgain"
@@ -2600,7 +2600,7 @@ Value_5     = 255
 
 [ch_06_adc_01unit]
 Group      = 1
-SubGroup   = 7
+SubGroup   = 6
 Column     = 1
 Row        = 6
 Name       = "Tk:ch_06_adc_01unit"
@@ -2626,8 +2626,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_06_adc_01minrange]
-Group      = 1
-SubGroup   = 7
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 8
 Name       = "Tk:ch_06_adc_01minrange"
@@ -2635,8 +2635,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_06_adc_01maxrange]
-Group      = 1
-SubGroup   = 7
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 9
 Name       = "Tk:ch_06_adc_01maxrange"
@@ -2645,7 +2645,7 @@ Display    = "ViewOnly"
 
 [ch_06_adc_02measspeed]
 Group      = 1
-SubGroup   = 7
+SubGroup   = 6
 Column     = 2
 Row        = 2
 Name       = "Tk:ch_06_adc_02measspeed"
@@ -2654,7 +2654,7 @@ Display    = "ViewOnly"
 
 [ch_06_adc_02measvalue]
 Group      = 1
-SubGroup   = 7
+SubGroup   = 6
 Column     = 2
 Row        = 1
 Name       = "Tk:ch_06_adc_02measvalue"
@@ -2663,7 +2663,7 @@ Display    = "ViewOnly"
 
 [ch_06_adc_02measraw]
 Group      = 1
-SubGroup   = 7
+SubGroup   = 6
 Column     = 2
 Row        = 3
 Name       = "Tk:ch_06_adc_02measraw"
@@ -2673,7 +2673,7 @@ Format     = "Hex"
 
 [ch_06_adc_02measresolution]
 Group      = 1
-SubGroup   = 7
+SubGroup   = 6
 Column     = 2
 Row        = 4
 Name       = "Tk:ch_06_adc_02measresolution"
@@ -2682,7 +2682,7 @@ Display    = "ViewOnly"
 
 [ch_06_adc_02measgain]
 Group      = 1
-SubGroup   = 7
+SubGroup   = 6
 Column     = 2
 Row        = 5
 Name       = "Tk:ch_06_adc_02measgain"
@@ -2708,7 +2708,7 @@ Value_5     = 255
 
 [ch_06_adc_02unit]
 Group      = 1
-SubGroup   = 7
+SubGroup   = 6
 Column     = 2
 Row        = 6
 Name       = "Tk:ch_06_adc_02unit"
@@ -2734,8 +2734,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_06_adc_02minrange]
-Group      = 1
-SubGroup   = 7
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 8
 Name       = "Tk:ch_06_adc_02minrange"
@@ -2743,8 +2743,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_06_adc_02maxrange]
-Group      = 1
-SubGroup   = 7
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 9
 Name       = "Tk:ch_06_adc_02maxrange"
@@ -2969,7 +2969,7 @@ Display    = "ViewOnly"
 
 [ch_07_adc_01measspeed]
 Group      = 1
-SubGroup   = 8
+SubGroup   = 7
 Column     = 1
 Row        = 2
 Name       = "Tk:ch_07_adc_01measspeed"
@@ -2978,7 +2978,7 @@ Display    = "ViewOnly"
 
 [ch_07_adc_01measvalue]
 Group      = 1
-SubGroup   = 8
+SubGroup   = 7
 Column     = 1
 Row        = 1
 Name       = "Tk:ch_07_adc_01measvalue"
@@ -2987,7 +2987,7 @@ Display    = "ViewOnly"
 
 [ch_07_adc_01measraw]
 Group      = 1
-SubGroup   = 8
+SubGroup   = 7
 Column     = 1
 Row        = 3
 Name       = "Tk:ch_07_adc_01measraw"
@@ -2997,7 +2997,7 @@ Format     = "Hex"
 
 [ch_07_adc_01measresolution]
 Group      = 1
-SubGroup   = 8
+SubGroup   = 7
 Column     = 1
 Row        = 4
 Name       = "Tk:ch_07_adc_01measresolution"
@@ -3006,7 +3006,7 @@ Display    = "ViewOnly"
 
 [ch_07_adc_01measgain]
 Group      = 1
-SubGroup   = 8
+SubGroup   = 7
 Column     = 1
 Row        = 5
 Name       = "Tk:ch_07_adc_01measgain"
@@ -3032,7 +3032,7 @@ Value_5     = 255
 
 [ch_07_adc_01unit]
 Group      = 1
-SubGroup   = 8
+SubGroup   = 7
 Column     = 1
 Row        = 6
 Name       = "Tk:ch_07_adc_01unit"
@@ -3058,8 +3058,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_07_adc_01minrange]
-Group      = 1
-SubGroup   = 8
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 8
 Name       = "Tk:ch_07_adc_01minrange"
@@ -3067,8 +3067,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_07_adc_01maxrange]
-Group      = 1
-SubGroup   = 8
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 9
 Name       = "Tk:ch_07_adc_01maxrange"
@@ -3077,7 +3077,7 @@ Display    = "ViewOnly"
 
 [ch_07_adc_02measspeed]
 Group      = 1
-SubGroup   = 8
+SubGroup   = 7
 Column     = 2
 Row        = 2
 Name       = "Tk:ch_07_adc_02measspeed"
@@ -3086,7 +3086,7 @@ Display    = "ViewOnly"
 
 [ch_07_adc_02measvalue]
 Group      = 1
-SubGroup   = 8
+SubGroup   = 7
 Column     = 2
 Row        = 1
 Name       = "Tk:ch_07_adc_02measvalue"
@@ -3095,7 +3095,7 @@ Display    = "ViewOnly"
 
 [ch_07_adc_02measraw]
 Group      = 1
-SubGroup   = 8
+SubGroup   = 7
 Column     = 2
 Row        = 3
 Name       = "Tk:ch_07_adc_02measraw"
@@ -3105,7 +3105,7 @@ Format     = "Hex"
 
 [ch_07_adc_02measresolution]
 Group      = 1
-SubGroup   = 8
+SubGroup   = 7
 Column     = 2
 Row        = 4
 Name       = "Tk:ch_07_adc_02measresolution"
@@ -3114,7 +3114,7 @@ Display    = "ViewOnly"
 
 [ch_07_adc_02measgain]
 Group      = 1
-SubGroup   = 8
+SubGroup   = 7
 Column     = 2
 Row        = 5
 Name       = "Tk:ch_07_adc_02measgain"
@@ -3140,7 +3140,7 @@ Value_5     = 255
 
 [ch_07_adc_02unit]
 Group      = 1
-SubGroup   = 8
+SubGroup   = 7
 Column     = 2
 Row        = 6
 Name       = "Tk:ch_07_adc_02unit"
@@ -3166,8 +3166,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_07_adc_02minrange]
-Group      = 1
-SubGroup   = 8
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 8
 Name       = "Tk:ch_07_adc_02minrange"
@@ -3175,8 +3175,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_07_adc_02maxrange]
-Group      = 1
-SubGroup   = 8
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 9
 Name       = "Tk:ch_07_adc_02maxrange"
@@ -3401,7 +3401,7 @@ Display    = "ViewOnly"
 
 [ch_08_adc_01measspeed]
 Group      = 1
-SubGroup   = 9
+SubGroup   = 8
 Column     = 1
 Row        = 2
 Name       = "Tk:ch_08_adc_01measspeed"
@@ -3410,7 +3410,7 @@ Display    = "ViewOnly"
 
 [ch_08_adc_01measvalue]
 Group      = 1
-SubGroup   = 9
+SubGroup   = 8
 Column     = 1
 Row        = 1
 Name       = "Tk:ch_08_adc_01measvalue"
@@ -3419,7 +3419,7 @@ Display    = "ViewOnly"
 
 [ch_08_adc_01measraw]
 Group      = 1
-SubGroup   = 9
+SubGroup   = 8
 Column     = 1
 Row        = 3
 Name       = "Tk:ch_08_adc_01measraw"
@@ -3429,7 +3429,7 @@ Format     = "Hex"
 
 [ch_08_adc_01measresolution]
 Group      = 1
-SubGroup   = 9
+SubGroup   = 8
 Column     = 1
 Row        = 4
 Name       = "Tk:ch_08_adc_01measresolution"
@@ -3438,7 +3438,7 @@ Display    = "ViewOnly"
 
 [ch_08_adc_01measgain]
 Group      = 1
-SubGroup   = 9
+SubGroup   = 8
 Column     = 1
 Row        = 5
 Name       = "Tk:ch_08_adc_01measgain"
@@ -3464,7 +3464,7 @@ Value_5     = 255
 
 [ch_08_adc_01unit]
 Group      = 1
-SubGroup   = 9
+SubGroup   = 8
 Column     = 1
 Row        = 6
 Name       = "Tk:ch_08_adc_01unit"
@@ -3490,8 +3490,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_08_adc_01minrange]
-Group      = 1
-SubGroup   = 9
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 8
 Name       = "Tk:ch_08_adc_01minrange"
@@ -3499,8 +3499,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_08_adc_01maxrange]
-Group      = 1
-SubGroup   = 9
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 9
 Name       = "Tk:ch_08_adc_01maxrange"
@@ -3509,7 +3509,7 @@ Display    = "ViewOnly"
 
 [ch_08_adc_02measspeed]
 Group      = 1
-SubGroup   = 9
+SubGroup   = 8
 Column     = 2
 Row        = 2
 Name       = "Tk:ch_08_adc_02measspeed"
@@ -3518,7 +3518,7 @@ Display    = "ViewOnly"
 
 [ch_08_adc_02measvalue]
 Group      = 1
-SubGroup   = 9
+SubGroup   = 8
 Column     = 2
 Row        = 1
 Name       = "Tk:ch_08_adc_02measvalue"
@@ -3527,7 +3527,7 @@ Display    = "ViewOnly"
 
 [ch_08_adc_02measraw]
 Group      = 1
-SubGroup   = 9
+SubGroup   = 8
 Column     = 2
 Row        = 3
 Name       = "Tk:ch_08_adc_02measraw"
@@ -3537,7 +3537,7 @@ Format     = "Hex"
 
 [ch_08_adc_02measresolution]
 Group      = 1
-SubGroup   = 9
+SubGroup   = 8
 Column     = 2
 Row        = 4
 Name       = "Tk:ch_08_adc_02measresolution"
@@ -3546,7 +3546,7 @@ Display    = "ViewOnly"
 
 [ch_08_adc_02measgain]
 Group      = 1
-SubGroup   = 9
+SubGroup   = 8
 Column     = 2
 Row        = 5
 Name       = "Tk:ch_08_adc_02measgain"
@@ -3572,7 +3572,7 @@ Value_5     = 255
 
 [ch_08_adc_02unit]
 Group      = 1
-SubGroup   = 9
+SubGroup   = 8
 Column     = 2
 Row        = 6
 Name       = "Tk:ch_08_adc_02unit"
@@ -3598,8 +3598,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_08_adc_02minrange]
-Group      = 1
-SubGroup   = 9
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 8
 Name       = "Tk:ch_08_adc_02minrange"
@@ -3607,8 +3607,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_08_adc_02maxrange]
-Group      = 1
-SubGroup   = 9
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 9
 Name       = "Tk:ch_08_adc_02maxrange"
