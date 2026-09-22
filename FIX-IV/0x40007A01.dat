@@ -1,6 +1,6 @@
 // ********************************************
-// created by ZA
-// device : 0x0001FA01
+// created by JB
+// device : 0x40007A01
 // ********************************************
 
 // ********************************************
@@ -14,48 +14,29 @@ Id_01        = CMD_RESET
 User_01      = default;
 Help_01      = "Reset"
 
-Name_02      = "Tk:Restart";
-Value_02     = 0x0016
-Id_02        = CMD_RESTART_MM
+Name_02      = "Tk:Apply";
+Value_02     = 0x0021
+Id_02        = CMD_APPLY
 User_02      = default;
-Help_02      = "Restart"
+Help_02      = "ApplyPar"
 
 Name_03      = "Tk:SaveAllPar";
 Value_03     = 0x0020
-Id_03        = CMD_SAVE_ALL_PAR
+Id_03        = CMD_APPLY
 User_03      = default;
-Help_03      = "SavePar"
+Help_03      = "ApplyPar"
 
-Name_04      = "Tk:StartMeas";
-Value_04     = 0x1020
-Id_04        = CMD_START_MEAS
-User_04      = default;
-Help_04      = "StartMeas"
+Name_04      = "Tk:SaveCalib";
+Value_04     = 0x0022
+Id_04        = CMD_APPLY
+User_04      = system;
+Help_04      = "Apply and store ADC calibration"
 
-Name_05      = "Tk:StopMeas";
-Value_05     = 0x1021
-Id_05        = CMD_STOP_MEAS
-User_05      = default;
-Help_05      = "StopMeas"
-
-Name_06      = "Tk:SaveFactory";
-Value_06     = 0xB009
-Id_06        = CMD_SAVE_AS_FACTORY
-User_06      = system;
-Help_06      = "SaveAsDefault"
-
-Name_07      = "Tk:RestoreFactory";
-Value_07     = 0xB008
-Id_07        = CMD_LOAD_FACTORY
-User_07      = operator;
-Help_07      = "SaveAsDefault"
-
-Name_08      = "Tk:OptionByte";
-Value_08     = 0xFF01
-Id_08        = CMD_TEST_1
-User_08      = system;
-Help_08      = "noHelp"
-
+Name_05      = "Enable Manual Probe Configuration";
+Value_05     = 0x0023
+Id_05        = CMD_PROBE_MANUAL
+User_05      = system;
+Help_05      = "Change FIX probe modes to Manual Configuration without saving"
 
 // py_script: command,end
 
@@ -69,8 +50,6 @@ Group_01   = "Tk:device_status"
 User_01    = "default; access"
 Ident_01   = "STATUS_PAR"
 Display_01 = "ViewAndModify"
-SubGroup_1 = "Tk:global"
-SubGroup_2 = "Tk:device_status_channel_1"
 
 Group_02   = "Tk:properties"
 User_02    = "default; access"
@@ -82,8 +61,7 @@ User_03    = "default; access"
 Ident_03   = "GLOBAL_PAR"
 Display_03 = "ViewAndModify"
 SubGroup_1 = "Tk:communicatioln_interface"
-SubGroup_2 = "ID Module Channel"
-SubGroup_3 = "Tk:adc_channel_1_id"
+SubGroup_2 = "Tk:adc_channel_1_id"
 
 Group_04   = "Tk:channel_settings"
 User_04    = "default; access"
@@ -156,7 +134,7 @@ SubGroup_41 = "Tk:calib_channel_8"
 // py_script: status,start
 
 [activationkey]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 1
@@ -165,7 +143,7 @@ Type       = string
 Size       = "32"
 
 [flags_error1]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 2
@@ -175,7 +153,7 @@ Display    = "ViewOnly"
 Format     = "Hex"
 
 [flags_error2]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 3
@@ -185,7 +163,7 @@ Display    = "ViewOnly"
 Format     = "Hex"
 
 [flags_status1]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 4
@@ -195,7 +173,7 @@ Display    = "ViewOnly"
 Format     = "Hex"
 
 [flags_status2]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 5
@@ -205,7 +183,7 @@ Display    = "ViewOnly"
 Format     = "Hex"
 
 [flags_feature]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 6
@@ -243,7 +221,7 @@ Type       = uLong
 Display    = "ViewOnly"
 
 [interface_can_2_tx_traffic]
-Group      = 1
+Group      = 6
 SubGroup   = 1
 Column     = 2
 Row        = 1
@@ -252,8 +230,8 @@ Type       = uLong
 Display    = "ViewOnly"
 
 [interface_can_2_rx_traffic]
-Group      = 1
-SubGroup   = 1
+Group      = 6
+SubGroup   = 6
 Column     = 3
 Row        = 1
 Name       = "Tk:interface_can_rx_traffic"
@@ -376,7 +354,6 @@ Display    = "ViewOnly"
 
 [ch_01_adc_01measspeed]
 Group      = 1
-SubGroup   = 2
 Column     = 1
 Row        = 2
 Name       = "Tk:ch_01_adc_01measspeed"
@@ -385,7 +362,6 @@ Display    = "ViewOnly"
 
 [ch_01_adc_01measvalue]
 Group      = 1
-SubGroup   = 2
 Column     = 1
 Row        = 1
 Name       = "Tk:ch_01_adc_01measvalue"
@@ -394,7 +370,6 @@ Display    = "ViewOnly"
 
 [ch_01_adc_01measraw]
 Group      = 1
-SubGroup   = 2
 Column     = 1
 Row        = 3
 Name       = "Tk:ch_01_adc_01measraw"
@@ -403,7 +378,7 @@ Display    = "ViewOnly"
 Format     = "Hex"
 
 [ch_01_adc_01measresolution]
-Group      = 1
+Group      = 6
 SubGroup   = 2
 Column     = 1
 Row        = 4
@@ -413,7 +388,6 @@ Display    = "ViewOnly"
 
 [ch_01_adc_01measgain]
 Group      = 1
-SubGroup   = 2
 Column     = 1
 Row        = 5
 Name       = "Tk:ch_01_adc_01measgain"
@@ -439,7 +413,6 @@ Value_5     = 255
 
 [ch_01_adc_01unit]
 Group      = 1
-SubGroup   = 2
 Column     = 1
 Row        = 6
 Name       = "Tk:ch_01_adc_01unit"
@@ -465,8 +438,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_01_adc_01minrange]
-Group      = 1
-SubGroup   = 2
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 8
 Name       = "Tk:ch_01_adc_01minrange"
@@ -474,8 +447,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_01_adc_01maxrange]
-Group      = 1
-SubGroup   = 2
+Group      = 6
+SubGroup   = 1
 Column     = 1
 Row        = 9
 Name       = "Tk:ch_01_adc_01maxrange"
@@ -484,7 +457,6 @@ Display    = "ViewOnly"
 
 [ch_01_adc_02measspeed]
 Group      = 1
-SubGroup   = 2
 Column     = 2
 Row        = 2
 Name       = "Tk:ch_01_adc_02measspeed"
@@ -493,7 +465,6 @@ Display    = "ViewOnly"
 
 [ch_01_adc_02measvalue]
 Group      = 1
-SubGroup   = 2
 Column     = 2
 Row        = 1
 Name       = "Tk:ch_01_adc_02measvalue"
@@ -502,7 +473,6 @@ Display    = "ViewOnly"
 
 [ch_01_adc_02measraw]
 Group      = 1
-SubGroup   = 2
 Column     = 2
 Row        = 3
 Name       = "Tk:ch_01_adc_02measraw"
@@ -511,8 +481,8 @@ Display    = "ViewOnly"
 Format     = "Hex"
 
 [ch_01_adc_02measresolution]
-Group      = 1
-SubGroup   = 2
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 4
 Name       = "Tk:ch_01_adc_02measresolution"
@@ -521,7 +491,6 @@ Display    = "ViewOnly"
 
 [ch_01_adc_02measgain]
 Group      = 1
-SubGroup   = 2
 Column     = 2
 Row        = 5
 Name       = "Tk:ch_01_adc_02measgain"
@@ -547,7 +516,6 @@ Value_5     = 255
 
 [ch_01_adc_02unit]
 Group      = 1
-SubGroup   = 2
 Column     = 2
 Row        = 6
 Name       = "Tk:ch_01_adc_02unit"
@@ -573,8 +541,8 @@ Type       = uInt
 Display    = "ViewOnly"
 
 [ch_01_adc_02minrange]
-Group      = 1
-SubGroup   = 2
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 8
 Name       = "Tk:ch_01_adc_02minrange"
@@ -582,8 +550,8 @@ Type       = float
 Display    = "ViewOnly"
 
 [ch_01_adc_02maxrange]
-Group      = 1
-SubGroup   = 2
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 9
 Name       = "Tk:ch_01_adc_02maxrange"
@@ -4122,6 +4090,7 @@ Row        = 20
 Name       = "Tk:min_id"
 Type       = ulong
 Format     = "Hex"
+Display    = "ViewOnly"
 
 [max_id]
 Group      = 3
@@ -4131,12 +4100,13 @@ Row        = 21
 Name       = "Tk:max_id"
 Type       = ulong
 Format     = "Hex"
+Display    = "ViewOnly"
 
 [base_id]
 Group      = 3
 SubGroup   = 1
 Column     = 1
-Row        = 22
+Row        = 23
 Name       = "Tk:base_id"
 Type       = ulong
 Format     = "Hex"
@@ -4145,10 +4115,11 @@ Format     = "Hex"
 Group      = 3
 SubGroup   = 1
 Column     = 1
-Row        = 24
+Row        = 22
 Name       = "Tk:config_id"
 Type       = ulong
 Format     = "Hex"
+Display    = "ViewOnly"
 
 [can_01_baudrate]
 Group      = 6
@@ -4177,8 +4148,10 @@ Type       = uChar
 Attrib     = Option
 Option_0   = "Tk:termination_resistor"
 Mask_0     = 0x1
-Option_1   = "Tk:extended_bus_id"
-Mask_1     = 0x2
+;Option_1   = "Tk:extended_bus_id"
+;Mask_1     = 0x2
+;Option_2   = "Tk:can_auto_config"
+;Mask_2     = 0x4
 
 [can_01_future]
 Group      = 6
@@ -4216,8 +4189,10 @@ Type       = uChar
 Attrib     = Option
 Option_0   = "Tk:termination_resistor"
 Mask_0     = 0x1
-Option_1   = "Tk:extended_bus_id"
-Mask_1     = 0x2
+;Option_1   = "Tk:extended_bus_id"
+;Mask_1     = 0x2
+;Option_2   = "Tk:can_auto_config"
+;Mask_2     = 0x4
 
 [can_02_future]
 Group      = 6
@@ -5208,9 +5183,10 @@ Mask_0     = 0x2
 Group      = 3
 SubGroup   = 2
 Column     = 1
-Row        = 2
+Row        = 4
 Name       = "Tk:powerid_1"
 Type       = uLong
+Display    = "ViewOnly"
 Format     = "hex"
 
 [interface_1]
@@ -5247,10 +5223,11 @@ Mask_0     = 0x2
 [workid_1]
 Group      = 3
 SubGroup   = 2
-Column     = 2
-Row        = 2
+Column     = 1
+Row        = 5
 Name       = "Tk:workid_1"
 Type       = uLong
+Display    = "ViewOnly"
 Format     = "hex"
 
 [interface_2]
@@ -5686,11 +5663,12 @@ Mask_0     = 0x2
 
 [rawid_1]
 Group      = 3
-SubGroup   = 3
+SubGroup   = 2
 Column     = 1
 Row        = 2
 Name       = "Tk:rawid_1"
 Type       = uLong
+Display    = "ViewOnly"
 Format     = "hex"
 
 [interface_1]
@@ -5766,11 +5744,12 @@ Mask_0     = 0x2
 
 [chargebalancetotalid_1]
 Group      = 3
-SubGroup   = 3
+SubGroup   = 2
 Column     = 2
 Row        = 2
 Name       = "Tk:chargebalancetotalid_1"
 Type       = uLong
+Display    = "ViewOnly"
 Format     = "hex"
 
 [interface_1]
@@ -5786,11 +5765,12 @@ Mask_0     = 0x2
 
 [chargebalancechargeid_1]
 Group      = 3
-SubGroup   = 3
-Column     = 3
-Row        = 2
+SubGroup   = 2
+Column     = 2
+Row        = 3
 Name       = "Tk:chargebalancechargeid_1"
 Type       = uLong
+Display    = "ViewOnly"
 Format     = "hex"
 
 [interface_1]
@@ -5806,11 +5786,12 @@ Mask_0     = 0x2
 
 [chargebalancedischargeid_1]
 Group      = 3
-SubGroup   = 3
-Column     = 4
-Row        = 2
+SubGroup   = 2
+Column     = 2
+Row        = 4
 Name       = "Tk:chargebalancedischargeid_1"
 Type       = uLong
+Display    = "ViewOnly"
 Format     = "hex"
 
 [interface_1]
@@ -6806,11 +6787,12 @@ Mask_0     = 0x2
 
 [rawid_2]
 Group      = 3
-SubGroup   = 3
+SubGroup   = 2
 Column     = 1
 Row        = 3
 Name       = "Tk:rawid_2"
 Type       = uLong
+Display    = "ViewOnly"
 Format     = "hex"
 
 [interface_2]
@@ -6885,12 +6867,13 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancetotalid_2]
-Group      = 3
-SubGroup   = 3
+Group      = 6
+SubGroup   = 1
 Column     = 2
 Row        = 3
 Name       = "Tk:chargebalancetotalid_2"
 Type       = uLong
+Display    = "ViewOnly"
 Format     = "hex"
 
 [interface_2]
@@ -6905,12 +6888,13 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancechargeid_2]
-Group      = 3
-SubGroup   = 3
+Group      = 6
+SubGroup   = 1
 Column     = 3
 Row        = 3
 Name       = "Tk:chargebalancechargeid_2"
 Type       = uLong
+Display    = "ViewOnly"
 Format     = "hex"
 
 [interface_2]
@@ -6925,12 +6909,13 @@ Option_0   = "can2"
 Mask_0     = 0x2
 
 [chargebalancedischargeid_2]
-Group      = 3
-SubGroup   = 3
+Group      = 6
+SubGroup   = 1
 Column     = 4
 Row        = 3
 Name       = "Tk:chargebalancedischargeid_2"
 Type       = uLong
+Display    = "ViewOnly"
 Format     = "hex"
 
 [interface_2]
@@ -10400,6 +10385,7 @@ Column     = 1
 Row        = 7
 Name       = "Tk:common_filterstage1"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -10413,30 +10399,58 @@ Column     = 1
 Row        = 8
 Name       = "Tk:common_filterstage2"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewAndModify"
 RefC_ResultNoMatch = "ViewOnly"
 
-[channel_future2_1_1]
+[power_source_1_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 9
-Name       = "Tk:common_future2"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewAndModify"
 RefC_ResultNoMatch = "ViewOnly"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_1_1]
+Group      = 6
+SubGroup   = 1
+Column     = 1
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_1_1]
 Group      = 6
 SubGroup   = 20
 Column     = 1
-Row        = 10
+Row        = 11
 Name       = "Tk:common_calcfilter"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -10449,9 +10463,9 @@ RefC_ResultNoMatch = "ViewOnly"
 Group      = 6
 SubGroup   = 1
 Column     = 1
-Row        = 11
+Row        = 12
 Name       = "Tk:common_cboptions"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -10461,11 +10475,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_1_1]
+Group      = 6
+SubGroup   = 1
+Column     = 1
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_1_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
-Row        = 12
+Row        = 14
 Name       = "Tk:common_cb_min_time"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -10478,7 +10512,7 @@ RefC_ResultNoMatch = "ViewOnly"
 Group      = 6
 SubGroup   = 1
 Column     = 1
-Row        = 13
+Row        = 15
 Name       = "Tk:common_cb_min_level"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -10491,7 +10525,7 @@ RefC_ResultNoMatch = "ViewOnly"
 Group      = 6
 SubGroup   = 1
 Column     = 1
-Row        = 14
+Row        = 16
 Name       = "Tk:common_future3"
 Type       = string
 Size       = "4"
@@ -10633,6 +10667,7 @@ Column     = 2
 Row        = 7
 Name       = "Tk:common_filterstage1"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -10646,30 +10681,58 @@ Column     = 2
 Row        = 8
 Name       = "Tk:common_filterstage2"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewAndModify"
 RefC_ResultNoMatch = "ViewOnly"
 
-[channel_future2_1_2]
+[power_source_1_2]
 Group      = 6
 SubGroup   = 1
 Column     = 2
 Row        = 9
-Name       = "Tk:common_future2"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewAndModify"
 RefC_ResultNoMatch = "ViewOnly"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_1_2]
+Group      = 6
+SubGroup   = 1
+Column     = 2
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_1_2]
 Group      = 6
 SubGroup   = 1
 Column     = 2
-Row        = 10
+Row        = 11
 Name       = "Tk:common_calcfilter"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -10682,9 +10745,9 @@ RefC_ResultNoMatch = "ViewOnly"
 Group      = 6
 SubGroup   = 1
 Column     = 2
-Row        = 11
+Row        = 12
 Name       = "Tk:common_cboptions"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -10694,11 +10757,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_1_2]
+Group      = 6
+SubGroup   = 1
+Column     = 2
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_1_2]
 Group      = 6
 SubGroup   = 1
 Column     = 2
-Row        = 12
+Row        = 14
 Name       = "Tk:common_cb_min_time"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -10711,7 +10794,7 @@ RefC_ResultNoMatch = "ViewOnly"
 Group      = 6
 SubGroup   = 1
 Column     = 2
-Row        = 13
+Row        = 15
 Name       = "Tk:common_cb_min_level"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -10724,7 +10807,7 @@ RefC_ResultNoMatch = "ViewOnly"
 Group      = 6
 SubGroup   = 1
 Column     = 2
-Row        = 14
+Row        = 16
 Name       = "Tk:common_future3"
 Type       = string
 Size       = "4"
@@ -10866,6 +10949,7 @@ Column     = 3
 Row        = 7
 Name       = "Tk:common_filterstage1"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -10879,30 +10963,58 @@ Column     = 3
 Row        = 8
 Name       = "Tk:common_filterstage2"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewAndModify"
 RefC_ResultNoMatch = "ViewOnly"
 
-[channel_future2_1_3]
+[power_source_1_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
 Row        = 9
-Name       = "Tk:common_future2"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewAndModify"
 RefC_ResultNoMatch = "ViewOnly"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_1_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_1_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 10
+Row        = 11
 Name       = "Tk:common_calcfilter"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -10915,9 +11027,9 @@ RefC_ResultNoMatch = "ViewOnly"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 11
+Row        = 12
 Name       = "Tk:common_cboptions"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -10927,11 +11039,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_1_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_1_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 12
+Row        = 14
 Name       = "Tk:common_cb_min_time"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -10944,7 +11076,7 @@ RefC_ResultNoMatch = "ViewOnly"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 13
+Row        = 15
 Name       = "Tk:common_cb_min_level"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -10957,7 +11089,7 @@ RefC_ResultNoMatch = "ViewOnly"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 14
+Row        = 16
 Name       = "Tk:common_future3"
 Type       = string
 Size       = "4"
@@ -11099,6 +11231,7 @@ Column     = 4
 Row        = 7
 Name       = "Tk:common_filterstage1"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -11112,30 +11245,58 @@ Column     = 4
 Row        = 8
 Name       = "Tk:common_filterstage2"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewAndModify"
 RefC_ResultNoMatch = "ViewOnly"
 
-[channel_future2_1_4]
+[power_source_1_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
 Row        = 9
-Name       = "Tk:common_future2"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewAndModify"
 RefC_ResultNoMatch = "ViewOnly"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_1_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_1_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 10
+Row        = 11
 Name       = "Tk:common_calcfilter"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -11148,9 +11309,9 @@ RefC_ResultNoMatch = "ViewOnly"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 11
+Row        = 12
 Name       = "Tk:common_cboptions"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -11160,11 +11321,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_1_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_1_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 12
+Row        = 14
 Name       = "Tk:common_cb_min_time"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -11177,7 +11358,7 @@ RefC_ResultNoMatch = "ViewOnly"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 13
+Row        = 15
 Name       = "Tk:common_cb_min_level"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -11190,7 +11371,7 @@ RefC_ResultNoMatch = "ViewOnly"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 14
+Row        = 16
 Name       = "Tk:common_future3"
 Type       = string
 Size       = "4"
@@ -11226,12 +11407,6 @@ Option_0   = "Tk:enable_channel"
 Mask_0     = 0x1
 Option_1   = "Tk:enable_invert"
 Mask_1     = 0x2
-Option_2   = "Tk:disable_raw"
-Mask_2     = 0x8
-Option_3   = "Tk:enable_power"
-Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
 
 [totalpower_2_1]
 Group      = 6
@@ -11265,13 +11440,33 @@ Value_7     = 7
 Select_8   = "Tk:total_power_8"
 Value_8     = 8
 
+[measurement_output_2_1]
+Group      = 4
+SubGroup   = 1
+Column     = 1
+Row        = 7
+Name       = "Channel 1 Measurement Value"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0    = 2
+Select_1   = "Filtered"
+Value_1    = 0
+Select_2   = "Unfiltered"
+Value_2    = 1
+
 [channel_future1_2_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
-Row        = 4
+Row        = 3
 Name       = "Tk:future1_1"
-Type       = uInt
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -11282,7 +11477,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 4
 SubGroup   = 1
 Column     = 1
-Row        = 5
+Row        = 3
 Name       = "Tk:samplespeed_1"
 Type       = uLong
 RefC_Group         = "CHANNEL_PAR"
@@ -11328,7 +11523,7 @@ Value_15     = 15
 Group      = 4
 SubGroup   = 1
 Column     = 1
-Row        = 6
+Row        = 4
 Name       = "Tk:range_1"
 Type       = uInt
 RefA_Group         = "CHANNEL_PAR"
@@ -11358,9 +11553,10 @@ Value_5     = 255
 Group      = 4
 SubGroup   = 1
 Column     = 1
-Row        = 7
+Row        = 5
 Name       = "Tk:filterstage1_1"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -11371,34 +11567,62 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 4
 SubGroup   = 1
 Column     = 1
-Row        = 8
+Row        = 6
 Name       = "Tk:filterstage2_1"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_2_1]
-Group      = 6
+[power_source_2_1]
+Group      = 4
 SubGroup   = 1
-Column     = 1
-Row        = 9
-Name       = "Tk:future2_1"
-Type       = uInt
+Column     = 3
+Row        = 8
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0    = 2
+Select_1   = "Filtered"
+Value_1    = 0
+Select_2   = "Unfiltered"
+Value_2    = 1
+
+[work_source_2_1]
+Group      = 4
+SubGroup   = 1
+Column     = 3
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0    = 2
+Select_1   = "Filtered"
+Value_1    = 0
+Select_2   = "Unfiltered"
+Value_2    = 1
 
 [calcfilter_2_1]
 Group      = 4
 SubGroup   = 1
-Column     = 1
-Row        = 10
-Name       = "Tk:calcfilter_1"
+Column     = 3
+Row        = 9
+Name       = "Power Calculated Values Filter [Hz]"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
@@ -11407,27 +11631,44 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cboptions_2_1]
-Group      = 4
+Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 11
 Name       = "Tk:cboptions_1"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
-Attrib     = Option
-Option_0   = "Tk:enable_cb"
-Mask_0     = 0x1
+
+[cb_source_2_1]
+Group      = 4
+SubGroup   = 1
+Column     = 3
+Row        = 12
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0    = 2
+Select_1   = "Filtered"
+Value_1    = 0
+Select_2   = "Unfiltered"
+Value_2    = 1
 
 [cb_min_time_2_1]
 Group      = 4
 SubGroup   = 1
-Column     = 1
-Row        = 12
-Name       = "Tk:cb_min_time_1"
+Column     = 3
+Row        = 13
+Name       = "Charge Balance Calculated Values Filter [Hz]"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
@@ -11438,9 +11679,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 [cb_min_level_2_1]
 Group      = 4
 SubGroup   = 1
-Column     = 1
-Row        = 13
-Name       = "Tk:cb_min_level_1"
+Column     = 3
+Row        = 14
+Name       = "Charge Balance Output Threshold [Ah]"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
@@ -11449,13 +11690,12 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [channel_future3_2_1]
-Group      = 6
+Group      = 4
 SubGroup   = 1
-Column     = 1
-Row        = 14
-Name       = "Tk:future3_1"
-Type       = string
-Size       = "4"
+Column     = 3
+Row        = 11
+Name       = "Work Calculated Values Filter [Hz]"
+Type       = float
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -11488,12 +11728,6 @@ Option_0   = "Tk:enable_channel"
 Mask_0     = 0x1
 Option_1   = "Tk:enable_invert"
 Mask_1     = 0x2
-Option_2   = "Tk:disable_raw"
-Mask_2     = 0x8
-Option_3   = "Tk:enable_power"
-Mask_3     = 0x10
-Option_4   = "Tk:enable_work"
-Mask_4     = 0x20
 
 [totalpower_2_2]
 Group      = 6
@@ -11527,13 +11761,33 @@ Value_7     = 7
 Select_8   = "Tk:total_power_8"
 Value_8     = 8
 
+[measurement_output_2_2]
+Group      = 4
+SubGroup   = 1
+Column     = 2
+Row        = 7
+Name       = "Channel 2 Measurement Value"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0    = 2
+Select_1   = "Filtered"
+Value_1    = 0
+Select_2   = "Unfiltered"
+Value_2    = 1
+
 [channel_future1_2_2]
 Group      = 6
 SubGroup   = 1
 Column     = 2
-Row        = 4
+Row        = 3
 Name       = "Tk:future1_2"
-Type       = uInt
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -11544,7 +11798,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 4
 SubGroup   = 1
 Column     = 2
-Row        = 5
+Row        = 3
 Name       = "Tk:samplespeed_2"
 Type       = uLong
 RefC_Group         = "CHANNEL_PAR"
@@ -11590,7 +11844,7 @@ Value_15     = 15
 Group      = 4
 SubGroup   = 1
 Column     = 2
-Row        = 6
+Row        = 4
 Name       = "Tk:range_2"
 Type       = uInt
 RefA_Group         = "CHANNEL_PAR"
@@ -11620,9 +11874,10 @@ Value_5     = 255
 Group      = 4
 SubGroup   = 1
 Column     = 2
-Row        = 7
+Row        = 5
 Name       = "Tk:filterstage1_2"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -11633,21 +11888,78 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 4
 SubGroup   = 1
 Column     = 2
-Row        = 8
+Row        = 6
 Name       = "Tk:filterstage2_2"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_2_2]
+[power_source_2_2]
+Group      = 6
+SubGroup   = 1
+Column     = 2
+Row        = 8
+Name       = "Power"
+Type       = uChar
+Display    = "ViewOnly"
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewOnly"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0    = 2
+Select_1   = "Filtered"
+Value_1    = 0
+Select_2   = "Unfiltered"
+Value_2    = 1
+
+[work_source_2_2]
+Group      = 6
+SubGroup   = 1
+Column     = 2
+Row        = 10
+Name       = "Work"
+Type       = uChar
+Display    = "ViewOnly"
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewOnly"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0    = 2
+Select_1   = "Filtered"
+Value_1    = 0
+Select_2   = "Unfiltered"
+Value_2    = 1
+
+[calcfilter_2_2]
 Group      = 6
 SubGroup   = 1
 Column     = 2
 Row        = 9
-Name       = "Tk:future2_2"
+Name       = "Power Calculated Values Filter [Hz]"
+Type       = float
+Display    = "ViewOnly"
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewOnly"
+
+[cboptions_2_2]
+Group      = 6
+SubGroup   = 1
+Column     = 2
+Row        = 11
+Name       = "Tk:cboptions_2"
 Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
@@ -11655,41 +11967,32 @@ RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[calcfilter_2_2]
-Group      = 4
-SubGroup   = 1
-Column     = 2
-Row        = 10
-Name       = "Tk:calcfilter_2"
-Type       = float
-RefC_Group         = "CHANNEL_PAR"
-RefC_Parameter     = "option_1_1"
-RefC_Mask          = "1"
-RefC_ResultMatch   = "ViewOnly"
-RefC_ResultNoMatch = "ViewAndModify"
-
-[cboptions_2_2]
-Group      = 4
+[cb_source_2_2]
+Group      = 6
 SubGroup   = 1
 Column     = 2
 Row        = 11
-Name       = "Tk:cboptions_2"
-Type       = uLong
+Name       = "Charge Balance"
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
-Attrib     = Option
-Option_0   = "Tk:enable_cb"
-Mask_0     = 0x1
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0    = 2
+Select_1   = "Filtered"
+Value_1    = 0
+Select_2   = "Unfiltered"
+Value_2    = 1
 
 [cb_min_time_2_2]
-Group      = 4
+Group      = 6
 SubGroup   = 1
 Column     = 2
 Row        = 12
-Name       = "Tk:cb_min_time_2"
+Name       = "Charge Balance Calculated Values Filter [Hz]"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
@@ -11698,11 +12001,11 @@ RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
 [cb_min_level_2_2]
-Group      = 4
+Group      = 6
 SubGroup   = 1
 Column     = 2
 Row        = 13
-Name       = "Tk:cb_min_level_2"
+Name       = "Charge Balance Output Threshold [Ah]"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
@@ -11714,15 +12017,15 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 2
-Row        = 14
-Name       = "Tk:future3_2"
-Type       = string
-Size       = "4"
+Row        = 11
+Name       = "Work Calculated Values Filter [Hz]"
+Type       = float
+Display    = "ViewOnly"
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
-RefC_ResultNoMatch = "ViewAndModify"
+RefC_ResultNoMatch = "ViewOnly"
 
 [name_2_3]
 Group      = 6
@@ -11875,6 +12178,7 @@ Column     = 3
 Row        = 7
 Name       = "Tk:filterstage1_3"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -11888,30 +12192,58 @@ Column     = 3
 Row        = 8
 Name       = "Tk:filterstage2_3"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_2_3]
+[power_source_2_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
 Row        = 9
-Name       = "Tk:future2_3"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_2_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_2_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -11924,9 +12256,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_3"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -11936,11 +12268,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_2_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_2_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -11953,7 +12305,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -11966,7 +12318,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_3"
 Type       = string
 Size       = "4"
@@ -12127,6 +12479,7 @@ Column     = 4
 Row        = 7
 Name       = "Tk:filterstage1_4"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -12140,30 +12493,58 @@ Column     = 4
 Row        = 8
 Name       = "Tk:filterstage2_4"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_2_4]
+[power_source_2_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
 Row        = 9
-Name       = "Tk:future2_4"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_2_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_2_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -12176,9 +12557,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_4"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -12188,11 +12569,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_2_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_2_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -12205,7 +12606,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -12218,7 +12619,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_4"
 Type       = string
 Size       = "4"
@@ -12389,6 +12790,7 @@ Column     = 1
 Row        = 7
 Name       = "Tk:filterstage1_1"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -12402,30 +12804,58 @@ Column     = 1
 Row        = 8
 Name       = "Tk:filterstage2_1"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_3_1]
+[power_source_3_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 9
-Name       = "Tk:future2_1"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_3_1]
+Group      = 6
+SubGroup   = 1
+Column     = 1
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_3_1]
 Group      = 6
 SubGroup   = 21
 Column     = 1
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -12438,9 +12868,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 21
 Column     = 1
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_1"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -12450,11 +12880,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_3_1]
+Group      = 6
+SubGroup   = 21
+Column     = 1
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_3_1]
 Group      = 6
 SubGroup   = 21
 Column     = 1
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -12467,7 +12917,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 21
 Column     = 1
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -12480,7 +12930,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 1
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_1"
 Type       = string
 Size       = "4"
@@ -12651,6 +13101,7 @@ Column     = 2
 Row        = 7
 Name       = "Tk:filterstage1_2"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -12664,30 +13115,58 @@ Column     = 2
 Row        = 8
 Name       = "Tk:filterstage2_2"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_3_2]
+[power_source_3_2]
 Group      = 6
 SubGroup   = 1
 Column     = 2
 Row        = 9
-Name       = "Tk:future2_2"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_3_2]
+Group      = 6
+SubGroup   = 1
+Column     = 2
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_3_2]
 Group      = 6
 SubGroup   = 21
 Column     = 2
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -12700,9 +13179,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 21
 Column     = 2
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_2"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -12712,11 +13191,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_3_2]
+Group      = 6
+SubGroup   = 21
+Column     = 2
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_3_2]
 Group      = 6
 SubGroup   = 21
 Column     = 2
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -12729,7 +13228,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 21
 Column     = 2
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -12742,7 +13241,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 2
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_2"
 Type       = string
 Size       = "4"
@@ -12903,6 +13402,7 @@ Column     = 3
 Row        = 7
 Name       = "Tk:filterstage1_3"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -12916,30 +13416,58 @@ Column     = 3
 Row        = 8
 Name       = "Tk:filterstage2_3"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_3_3]
+[power_source_3_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
 Row        = 9
-Name       = "Tk:future2_3"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_3_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_3_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -12952,9 +13480,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_3"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -12964,11 +13492,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_3_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_3_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -12981,7 +13529,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -12994,7 +13542,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_3"
 Type       = string
 Size       = "4"
@@ -13155,6 +13703,7 @@ Column     = 4
 Row        = 7
 Name       = "Tk:filterstage1_4"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -13168,30 +13717,58 @@ Column     = 4
 Row        = 8
 Name       = "Tk:filterstage2_4"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_3_4]
+[power_source_3_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
 Row        = 9
-Name       = "Tk:future2_4"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_3_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_3_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -13204,9 +13781,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_4"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -13216,11 +13793,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_3_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_3_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -13233,7 +13830,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -13246,7 +13843,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_4"
 Type       = string
 Size       = "4"
@@ -13417,6 +14014,7 @@ Column     = 1
 Row        = 7
 Name       = "Tk:filterstage1_1"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -13430,30 +14028,58 @@ Column     = 1
 Row        = 8
 Name       = "Tk:filterstage2_1"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_4_1]
+[power_source_4_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 9
-Name       = "Tk:future2_1"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_4_1]
+Group      = 6
+SubGroup   = 1
+Column     = 1
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_4_1]
 Group      = 6
 SubGroup   = 22
 Column     = 1
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -13466,9 +14092,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 22
 Column     = 1
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_1"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -13478,11 +14104,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_4_1]
+Group      = 6
+SubGroup   = 22
+Column     = 1
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_4_1]
 Group      = 6
 SubGroup   = 22
 Column     = 1
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -13495,7 +14141,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 22
 Column     = 1
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -13508,7 +14154,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 1
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_1"
 Type       = string
 Size       = "4"
@@ -13679,6 +14325,7 @@ Column     = 2
 Row        = 7
 Name       = "Tk:filterstage1_2"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -13692,30 +14339,58 @@ Column     = 2
 Row        = 8
 Name       = "Tk:filterstage2_2"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_4_2]
+[power_source_4_2]
 Group      = 6
 SubGroup   = 1
 Column     = 2
 Row        = 9
-Name       = "Tk:future2_2"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_4_2]
+Group      = 6
+SubGroup   = 1
+Column     = 2
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_4_2]
 Group      = 6
 SubGroup   = 22
 Column     = 2
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -13728,9 +14403,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 22
 Column     = 2
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_2"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -13740,11 +14415,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_4_2]
+Group      = 6
+SubGroup   = 22
+Column     = 2
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_4_2]
 Group      = 6
 SubGroup   = 22
 Column     = 2
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -13757,7 +14452,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 22
 Column     = 2
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -13770,7 +14465,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 2
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_2"
 Type       = string
 Size       = "4"
@@ -13931,6 +14626,7 @@ Column     = 3
 Row        = 7
 Name       = "Tk:filterstage1_3"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -13944,30 +14640,58 @@ Column     = 3
 Row        = 8
 Name       = "Tk:filterstage2_3"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_4_3]
+[power_source_4_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
 Row        = 9
-Name       = "Tk:future2_3"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_4_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_4_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -13980,9 +14704,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_3"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -13992,11 +14716,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_4_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_4_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -14009,7 +14753,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -14022,7 +14766,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_3"
 Type       = string
 Size       = "4"
@@ -14183,6 +14927,7 @@ Column     = 4
 Row        = 7
 Name       = "Tk:filterstage1_4"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -14196,30 +14941,58 @@ Column     = 4
 Row        = 8
 Name       = "Tk:filterstage2_4"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_4_4]
+[power_source_4_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
 Row        = 9
-Name       = "Tk:future2_4"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_4_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_4_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -14232,9 +15005,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_4"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -14244,11 +15017,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_4_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_4_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -14261,7 +15054,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -14274,7 +15067,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_4"
 Type       = string
 Size       = "4"
@@ -14445,6 +15238,7 @@ Column     = 1
 Row        = 7
 Name       = "Tk:filterstage1_1"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -14458,30 +15252,58 @@ Column     = 1
 Row        = 8
 Name       = "Tk:filterstage2_1"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_5_1]
+[power_source_5_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 9
-Name       = "Tk:future2_1"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_5_1]
+Group      = 6
+SubGroup   = 1
+Column     = 1
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_5_1]
 Group      = 6
 SubGroup   = 23
 Column     = 1
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -14494,9 +15316,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 23
 Column     = 1
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_1"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -14506,11 +15328,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_5_1]
+Group      = 6
+SubGroup   = 23
+Column     = 1
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_5_1]
 Group      = 6
 SubGroup   = 23
 Column     = 1
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -14523,7 +15365,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 23
 Column     = 1
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -14536,7 +15378,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 1
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_1"
 Type       = string
 Size       = "4"
@@ -14707,6 +15549,7 @@ Column     = 2
 Row        = 7
 Name       = "Tk:filterstage1_2"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -14720,30 +15563,58 @@ Column     = 2
 Row        = 8
 Name       = "Tk:filterstage2_2"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_5_2]
+[power_source_5_2]
 Group      = 6
 SubGroup   = 1
 Column     = 2
 Row        = 9
-Name       = "Tk:future2_2"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_5_2]
+Group      = 6
+SubGroup   = 1
+Column     = 2
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_5_2]
 Group      = 6
 SubGroup   = 23
 Column     = 2
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -14756,9 +15627,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 23
 Column     = 2
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_2"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -14768,11 +15639,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_5_2]
+Group      = 6
+SubGroup   = 23
+Column     = 2
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_5_2]
 Group      = 6
 SubGroup   = 23
 Column     = 2
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -14785,7 +15676,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 23
 Column     = 2
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -14798,7 +15689,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 2
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_2"
 Type       = string
 Size       = "4"
@@ -14959,6 +15850,7 @@ Column     = 3
 Row        = 7
 Name       = "Tk:filterstage1_3"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -14972,30 +15864,58 @@ Column     = 3
 Row        = 8
 Name       = "Tk:filterstage2_3"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_5_3]
+[power_source_5_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
 Row        = 9
-Name       = "Tk:future2_3"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_5_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_5_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -15008,9 +15928,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_3"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -15020,11 +15940,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_5_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_5_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -15037,7 +15977,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -15050,7 +15990,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_3"
 Type       = string
 Size       = "4"
@@ -15211,6 +16151,7 @@ Column     = 4
 Row        = 7
 Name       = "Tk:filterstage1_4"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -15224,30 +16165,58 @@ Column     = 4
 Row        = 8
 Name       = "Tk:filterstage2_4"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_5_4]
+[power_source_5_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
 Row        = 9
-Name       = "Tk:future2_4"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_5_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_5_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -15260,9 +16229,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_4"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -15272,11 +16241,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_5_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_5_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -15289,7 +16278,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -15302,7 +16291,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_4"
 Type       = string
 Size       = "4"
@@ -15473,6 +16462,7 @@ Column     = 1
 Row        = 7
 Name       = "Tk:filterstage1_1"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -15486,30 +16476,58 @@ Column     = 1
 Row        = 8
 Name       = "Tk:filterstage2_1"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_6_1]
+[power_source_6_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 9
-Name       = "Tk:future2_1"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_6_1]
+Group      = 6
+SubGroup   = 1
+Column     = 1
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_6_1]
 Group      = 6
 SubGroup   = 24
 Column     = 1
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -15522,9 +16540,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 24
 Column     = 1
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_1"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -15534,11 +16552,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_6_1]
+Group      = 6
+SubGroup   = 24
+Column     = 1
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_6_1]
 Group      = 6
 SubGroup   = 24
 Column     = 1
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -15551,7 +16589,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 24
 Column     = 1
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -15564,7 +16602,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 1
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_1"
 Type       = string
 Size       = "4"
@@ -15735,6 +16773,7 @@ Column     = 2
 Row        = 7
 Name       = "Tk:filterstage1_2"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -15748,30 +16787,58 @@ Column     = 2
 Row        = 8
 Name       = "Tk:filterstage2_2"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_6_2]
+[power_source_6_2]
 Group      = 6
 SubGroup   = 1
 Column     = 2
 Row        = 9
-Name       = "Tk:future2_2"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_6_2]
+Group      = 6
+SubGroup   = 1
+Column     = 2
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_6_2]
 Group      = 6
 SubGroup   = 24
 Column     = 2
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -15784,9 +16851,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 24
 Column     = 2
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_2"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -15796,11 +16863,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_6_2]
+Group      = 6
+SubGroup   = 24
+Column     = 2
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_6_2]
 Group      = 6
 SubGroup   = 24
 Column     = 2
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -15813,7 +16900,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 24
 Column     = 2
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -15826,7 +16913,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 2
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_2"
 Type       = string
 Size       = "4"
@@ -15987,6 +17074,7 @@ Column     = 3
 Row        = 7
 Name       = "Tk:filterstage1_3"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -16000,30 +17088,58 @@ Column     = 3
 Row        = 8
 Name       = "Tk:filterstage2_3"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_6_3]
+[power_source_6_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
 Row        = 9
-Name       = "Tk:future2_3"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_6_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_6_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -16036,9 +17152,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_3"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -16048,11 +17164,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_6_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_6_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -16065,7 +17201,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -16078,7 +17214,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_3"
 Type       = string
 Size       = "4"
@@ -16239,6 +17375,7 @@ Column     = 4
 Row        = 7
 Name       = "Tk:filterstage1_4"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -16252,30 +17389,58 @@ Column     = 4
 Row        = 8
 Name       = "Tk:filterstage2_4"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_6_4]
+[power_source_6_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
 Row        = 9
-Name       = "Tk:future2_4"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_6_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_6_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -16288,9 +17453,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_4"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -16300,11 +17465,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_6_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_6_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -16317,7 +17502,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -16330,7 +17515,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_4"
 Type       = string
 Size       = "4"
@@ -16501,6 +17686,7 @@ Column     = 1
 Row        = 7
 Name       = "Tk:filterstage1_1"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -16514,30 +17700,58 @@ Column     = 1
 Row        = 8
 Name       = "Tk:filterstage2_1"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_7_1]
+[power_source_7_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 9
-Name       = "Tk:future2_1"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_7_1]
+Group      = 6
+SubGroup   = 1
+Column     = 1
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_7_1]
 Group      = 6
 SubGroup   = 25
 Column     = 1
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -16550,9 +17764,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 25
 Column     = 1
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_1"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -16562,11 +17776,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_7_1]
+Group      = 6
+SubGroup   = 25
+Column     = 1
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_7_1]
 Group      = 6
 SubGroup   = 25
 Column     = 1
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -16579,7 +17813,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 25
 Column     = 1
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -16592,7 +17826,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 1
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_1"
 Type       = string
 Size       = "4"
@@ -16763,6 +17997,7 @@ Column     = 2
 Row        = 7
 Name       = "Tk:filterstage1_2"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -16776,30 +18011,58 @@ Column     = 2
 Row        = 8
 Name       = "Tk:filterstage2_2"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_7_2]
+[power_source_7_2]
 Group      = 6
 SubGroup   = 1
 Column     = 2
 Row        = 9
-Name       = "Tk:future2_2"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_7_2]
+Group      = 6
+SubGroup   = 1
+Column     = 2
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_7_2]
 Group      = 6
 SubGroup   = 25
 Column     = 2
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -16812,9 +18075,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 25
 Column     = 2
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_2"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -16824,11 +18087,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_7_2]
+Group      = 6
+SubGroup   = 25
+Column     = 2
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_7_2]
 Group      = 6
 SubGroup   = 25
 Column     = 2
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -16841,7 +18124,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 25
 Column     = 2
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -16854,7 +18137,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 2
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_2"
 Type       = string
 Size       = "4"
@@ -17015,6 +18298,7 @@ Column     = 3
 Row        = 7
 Name       = "Tk:filterstage1_3"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -17028,30 +18312,58 @@ Column     = 3
 Row        = 8
 Name       = "Tk:filterstage2_3"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_7_3]
+[power_source_7_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
 Row        = 9
-Name       = "Tk:future2_3"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_7_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_7_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -17064,9 +18376,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_3"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -17076,11 +18388,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_7_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_7_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -17093,7 +18425,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -17106,7 +18438,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_3"
 Type       = string
 Size       = "4"
@@ -17267,6 +18599,7 @@ Column     = 4
 Row        = 7
 Name       = "Tk:filterstage1_4"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -17280,30 +18613,58 @@ Column     = 4
 Row        = 8
 Name       = "Tk:filterstage2_4"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_7_4]
+[power_source_7_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
 Row        = 9
-Name       = "Tk:future2_4"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_7_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_7_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -17316,9 +18677,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_4"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -17328,11 +18689,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_7_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_7_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -17345,7 +18726,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -17358,7 +18739,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_4"
 Type       = string
 Size       = "4"
@@ -17529,6 +18910,7 @@ Column     = 1
 Row        = 7
 Name       = "Tk:filterstage1_1"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -17542,30 +18924,58 @@ Column     = 1
 Row        = 8
 Name       = "Tk:filterstage2_1"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_8_1]
+[power_source_8_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 9
-Name       = "Tk:future2_1"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_8_1]
+Group      = 6
+SubGroup   = 1
+Column     = 1
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_8_1]
 Group      = 6
 SubGroup   = 26
 Column     = 1
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -17578,9 +18988,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 26
 Column     = 1
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_1"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -17590,11 +19000,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_8_1]
+Group      = 6
+SubGroup   = 26
+Column     = 1
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_8_1]
 Group      = 6
 SubGroup   = 26
 Column     = 1
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -17607,7 +19037,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 26
 Column     = 1
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -17620,7 +19050,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 1
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_1"
 Type       = string
 Size       = "4"
@@ -17791,6 +19221,7 @@ Column     = 2
 Row        = 7
 Name       = "Tk:filterstage1_2"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -17804,30 +19235,58 @@ Column     = 2
 Row        = 8
 Name       = "Tk:filterstage2_2"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_8_2]
+[power_source_8_2]
 Group      = 6
 SubGroup   = 1
 Column     = 2
 Row        = 9
-Name       = "Tk:future2_2"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_8_2]
+Group      = 6
+SubGroup   = 1
+Column     = 2
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_8_2]
 Group      = 6
 SubGroup   = 26
 Column     = 2
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -17840,9 +19299,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 26
 Column     = 2
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_2"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -17852,11 +19311,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_8_2]
+Group      = 6
+SubGroup   = 26
+Column     = 2
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_8_2]
 Group      = 6
 SubGroup   = 26
 Column     = 2
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -17869,7 +19348,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 26
 Column     = 2
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -17882,7 +19361,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 2
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_2"
 Type       = string
 Size       = "4"
@@ -18043,6 +19522,7 @@ Column     = 3
 Row        = 7
 Name       = "Tk:filterstage1_3"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -18056,30 +19536,58 @@ Column     = 3
 Row        = 8
 Name       = "Tk:filterstage2_3"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_8_3]
+[power_source_8_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
 Row        = 9
-Name       = "Tk:future2_3"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_8_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_8_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -18092,9 +19600,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_3"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -18104,11 +19612,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_8_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_8_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -18121,7 +19649,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -18134,7 +19662,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_3"
 Type       = string
 Size       = "4"
@@ -18295,6 +19823,7 @@ Column     = 4
 Row        = 7
 Name       = "Tk:filterstage1_4"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -18308,30 +19837,58 @@ Column     = 4
 Row        = 8
 Name       = "Tk:filterstage2_4"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_8_4]
+[power_source_8_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
 Row        = 9
-Name       = "Tk:future2_4"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_8_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_8_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -18344,9 +19901,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_4"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -18356,11 +19913,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_8_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_8_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -18373,7 +19950,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -18386,7 +19963,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_4"
 Type       = string
 Size       = "4"
@@ -18557,6 +20134,7 @@ Column     = 1
 Row        = 7
 Name       = "Tk:filterstage1_1"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -18570,30 +20148,58 @@ Column     = 1
 Row        = 8
 Name       = "Tk:filterstage2_1"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_9_1]
+[power_source_9_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
 Row        = 9
-Name       = "Tk:future2_1"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_9_1]
+Group      = 6
+SubGroup   = 1
+Column     = 1
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_9_1]
 Group      = 6
 SubGroup   = 27
 Column     = 1
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -18606,9 +20212,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 27
 Column     = 1
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_1"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -18618,11 +20224,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_9_1]
+Group      = 6
+SubGroup   = 27
+Column     = 1
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_9_1]
 Group      = 6
 SubGroup   = 27
 Column     = 1
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -18635,7 +20261,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 27
 Column     = 1
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_1"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -18648,7 +20274,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 1
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_1"
 Type       = string
 Size       = "4"
@@ -18819,6 +20445,7 @@ Column     = 2
 Row        = 7
 Name       = "Tk:filterstage1_2"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -18832,30 +20459,58 @@ Column     = 2
 Row        = 8
 Name       = "Tk:filterstage2_2"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_9_2]
+[power_source_9_2]
 Group      = 6
 SubGroup   = 1
 Column     = 2
 Row        = 9
-Name       = "Tk:future2_2"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_9_2]
+Group      = 6
+SubGroup   = 1
+Column     = 2
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_9_2]
 Group      = 6
 SubGroup   = 27
 Column     = 2
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -18868,9 +20523,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 27
 Column     = 2
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_2"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -18880,11 +20535,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_9_2]
+Group      = 6
+SubGroup   = 27
+Column     = 2
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_9_2]
 Group      = 6
 SubGroup   = 27
 Column     = 2
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -18897,7 +20572,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 27
 Column     = 2
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_2"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -18910,7 +20585,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 2
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_2"
 Type       = string
 Size       = "4"
@@ -19071,6 +20746,7 @@ Column     = 3
 Row        = 7
 Name       = "Tk:filterstage1_3"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -19084,30 +20760,58 @@ Column     = 3
 Row        = 8
 Name       = "Tk:filterstage2_3"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_9_3]
+[power_source_9_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
 Row        = 9
-Name       = "Tk:future2_3"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_9_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_9_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -19120,9 +20824,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_3"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -19132,11 +20836,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_9_3]
+Group      = 6
+SubGroup   = 1
+Column     = 3
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_9_3]
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -19149,7 +20873,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_3"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -19162,7 +20886,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 3
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_3"
 Type       = string
 Size       = "4"
@@ -19323,6 +21047,7 @@ Column     = 4
 Row        = 7
 Name       = "Tk:filterstage1_4"
 Type       = uInt
+Values    = 1..1000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -19336,30 +21061,58 @@ Column     = 4
 Row        = 8
 Name       = "Tk:filterstage2_4"
 Type       = uInt
+Values    = 1..10000
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
 
-[channel_future2_9_4]
+[power_source_9_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
 Row        = 9
-Name       = "Tk:future2_4"
-Type       = uInt
+Name       = "Power"
+Type       = uChar
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
 RefC_ResultMatch   = "ViewOnly"
 RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
+[work_source_9_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 10
+Name       = "Work"
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
 
 [calcfilter_9_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 10
+Row        = 11
 Name       = "Tk:calcfilter_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -19372,9 +21125,9 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 11
+Row        = 12
 Name       = "Tk:cboptions_4"
-Type       = uLong
+Type       = uInt
 RefC_Group         = "CHANNEL_PAR"
 RefC_Parameter     = "option_1_1"
 RefC_Mask          = "1"
@@ -19384,11 +21137,31 @@ Attrib     = Option
 Option_0   = "Tk:enable_cb"
 Mask_0     = 0x1
 
+[cb_source_9_4]
+Group      = 6
+SubGroup   = 1
+Column     = 4
+Row        = 13
+Name       = "Charge Balance"
+Type       = uInt
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "option_1_1"
+RefC_Mask          = "1"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
+Attrib     = Combo
+Select_0   = "Disabled"
+Value_0     = 2
+Select_1   = "Filtered"
+Value_1     = 0
+Select_2   = "Unfiltered"
+Value_2     = 1
+
 [cb_min_time_9_4]
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 12
+Row        = 14
 Name       = "Tk:cb_min_time_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -19401,7 +21174,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 13
+Row        = 15
 Name       = "Tk:cb_min_level_4"
 Type       = float
 RefC_Group         = "CHANNEL_PAR"
@@ -19414,7 +21187,7 @@ RefC_ResultNoMatch = "ViewAndModify"
 Group      = 6
 SubGroup   = 1
 Column     = 4
-Row        = 14
+Row        = 16
 Name       = "Tk:future3_4"
 Type       = string
 Size       = "4"
@@ -19431,6 +21204,11 @@ Column     = 1
 Row        = 1
 Name       = "Tk:probemode_1"
 Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "ProbeMode_1_1"
+RefC_Mask          = "8"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
 Attrib     = Combo
 Select_0   = "Autodetect Continous"
 Value_0     = 0
@@ -19438,10 +21216,12 @@ Select_1   = "Autodetect Single"
 Value_1     = 1
 Select_2   = "Manual Configuration"
 Value_2     = 2
-Select_3   = "3rd Party"
-Value_3     = 4
-Select_4   = "3rd Party (no OWH)"
-Value_4     = 6
+Select_3   = "Fix Configuration"
+Value_3     = 8
+Select_4   = "3rd Party"
+Value_4     = 4
+Select_5   = "3rd Party (no OWH)"
+Value_5     = 6
 
 [probe_future1_1_1]
 Group      = 6
@@ -19601,6 +21381,12 @@ Column     = 2
 Row        = 1
 Name       = "Tk:probemode_2"
 Type       = uChar
+Type       = uChar
+RefC_Group         = "CHANNEL_PAR"
+RefC_Parameter     = "ProbeMode_1_2"
+RefC_Mask          = "8"
+RefC_ResultMatch   = "ViewOnly"
+RefC_ResultNoMatch = "ViewAndModify"
 Attrib     = Combo
 Select_0   = "Autodetect Continous"
 Value_0     = 0
@@ -19608,10 +21394,12 @@ Select_1   = "Autodetect Single"
 Value_1     = 1
 Select_2   = "Manual Configuration"
 Value_2     = 2
-Select_3   = "3rd Party"
-Value_3     = 4
-Select_4   = "3rd Party (no OWH)"
-Value_4     = 6
+Select_3   = "Fix Configuration"
+Value_3     = 8
+Select_4   = "3rd Party"
+Value_4     = 4
+Select_5   = "3rd Party (no OWH)"
+Value_5     = 6
 
 [probe_future1_1_2]
 Group      = 6
@@ -24898,6 +26686,7 @@ Column     = 1
 Row        = 1
 Name       = "Tk:factory_date_1"
 Type       = uLong
+Display    = "ViewOnly"
 
 [factory_date_2]
 Group      = 5
@@ -24906,6 +26695,7 @@ Column     = 1
 Row        = 2
 Name       = "Tk:factory_date_2"
 Type       = uLong
+Display    = "ViewOnly"
 
 [factory_note]
 Group      = 5
@@ -24915,6 +26705,7 @@ Row        = 3
 Name       = "Tk:factory_note"
 Type       = string
 Size       = "24"
+Display    = "ViewOnly"
 
 [customer_date_1]
 Group      = 5
@@ -24923,6 +26714,7 @@ Column     = 1
 Row        = 4
 Name       = "Tk:customer_date_1"
 Type       = uLong
+Display    = "ViewOnly"
 
 [customer_date_2]
 Group      = 5
@@ -24931,6 +26723,7 @@ Column     = 1
 Row        = 5
 Name       = "Tk:customer_date_2"
 Type       = uLong
+Display    = "ViewOnly"
 
 [customer_note]
 Group      = 5
@@ -24940,6 +26733,7 @@ Row        = 6
 Name       = "Tk:customer_note"
 Type       = string
 Size       = "24"
+Display    = "ViewOnly"
 
 [switch_up_gain1]
 Group      = 5
@@ -24948,6 +26742,7 @@ Column     = 1
 Row        = 1
 Name       = "Tk:switch_up_gain1"
 Type       = uChar
+Display    = "ViewOnly"
 
 [switch_down_gain1]
 Group      = 5
@@ -24956,6 +26751,7 @@ Column     = 1
 Row        = 2
 Name       = "Tk:switch_down_gain1"
 Type       = uChar
+Display    = "ViewOnly"
 
 [switch_overrange_gain1]
 Group      = 5
@@ -24964,6 +26760,7 @@ Column     = 1
 Row        = 3
 Name       = "Tk:switch_overrange_gain1"
 Type       = uChar
+Display    = "ViewOnly"
 
 [autorange_future1]
 Group      = 6
@@ -24981,6 +26778,7 @@ Column     = 2
 Row        = 1
 Name       = "Tk:switch_up_gain2"
 Type       = uChar
+Display    = "ViewOnly"
 
 [switch_down_gain2]
 Group      = 5
@@ -24989,6 +26787,7 @@ Column     = 2
 Row        = 2
 Name       = "Tk:switch_down_gain2"
 Type       = uChar
+Display    = "ViewOnly"
 
 [switch_overrange_gain2]
 Group      = 5
@@ -24997,6 +26796,7 @@ Column     = 2
 Row        = 3
 Name       = "Tk:switch_overrange_gain2"
 Type       = uChar
+Display    = "ViewOnly"
 
 [autorange_future2]
 Group      = 6
@@ -25014,6 +26814,7 @@ Column     = 3
 Row        = 1
 Name       = "Tk:switch_up_gain3"
 Type       = uChar
+Display    = "ViewOnly"
 
 [switch_down_gain3]
 Group      = 5
@@ -25022,6 +26823,7 @@ Column     = 3
 Row        = 2
 Name       = "Tk:switch_down_gain3"
 Type       = uChar
+Display    = "ViewOnly"
 
 [switch_overrange_gain3]
 Group      = 5
@@ -25030,6 +26832,7 @@ Column     = 3
 Row        = 3
 Name       = "Tk:switch_overrange_gain3"
 Type       = uChar
+Display    = "ViewOnly"
 
 [autorange_future3]
 Group      = 6
@@ -25047,6 +26850,7 @@ Column     = 4
 Row        = 1
 Name       = "Tk:switch_up_gain4"
 Type       = uChar
+Display    = "ViewOnly"
 
 [switch_down_gain4]
 Group      = 5
@@ -25055,6 +26859,7 @@ Column     = 4
 Row        = 2
 Name       = "Tk:switch_down_gain4"
 Type       = uChar
+Display    = "ViewOnly"
 
 [switch_overrange_gain4]
 Group      = 5
@@ -25063,6 +26868,7 @@ Column     = 4
 Row        = 3
 Name       = "Tk:switch_overrange_gain4"
 Type       = uChar
+Display    = "ViewOnly"
 
 [autorange_future4]
 Group      = 6
@@ -25080,6 +26886,7 @@ Column     = 5
 Row        = 1
 Name       = "Tk:switch_up_gain5"
 Type       = uChar
+Display    = "ViewOnly"
 
 [switch_down_gain5]
 Group      = 5
@@ -25088,6 +26895,7 @@ Column     = 5
 Row        = 2
 Name       = "Tk:switch_down_gain5"
 Type       = uChar
+Display    = "ViewOnly"
 
 [switch_overrange_gain5]
 Group      = 5
@@ -25096,6 +26904,7 @@ Column     = 5
 Row        = 3
 Name       = "Tk:switch_overrange_gain5"
 Type       = uChar
+Display    = "ViewOnly"
 
 [autorange_future5]
 Group      = 6
@@ -25113,6 +26922,7 @@ Column     = 6
 Row        = 1
 Name       = "Tk:switch_up_gain6"
 Type       = uChar
+Display    = "ViewOnly"
 
 [switch_down_gain6]
 Group      = 6
@@ -25121,6 +26931,7 @@ Column     = 6
 Row        = 2
 Name       = "Tk:switch_down_gain6"
 Type       = uChar
+Display    = "ViewOnly"
 
 [switch_overrange_gain6]
 Group      = 6
@@ -25129,6 +26940,7 @@ Column     = 6
 Row        = 3
 Name       = "Tk:switch_overrange_gain6"
 Type       = uChar
+Display    = "ViewOnly"
 
 [autorange_future6]
 Group      = 6
