@@ -4528,7 +4528,7 @@ Name       = "Tk:commonid_future2"
 Type       = string
 Size       = "60"
 
-[interface_1]
+[interface_1_1]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -4548,7 +4548,7 @@ Name       = "Tk:owh_rom_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_2]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -4568,7 +4568,7 @@ Name       = "Tk:owh_ram_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_1]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -4588,7 +4588,7 @@ Name       = "Tk:owh_rom_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_2]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -4608,7 +4608,7 @@ Name       = "Tk:owh_ram_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_1]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -4628,7 +4628,7 @@ Name       = "Tk:owh_rom_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_2]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -4648,7 +4648,7 @@ Name       = "Tk:owh_ram_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_1]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -4668,7 +4668,7 @@ Name       = "Tk:owh_rom_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_2]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -4688,7 +4688,7 @@ Name       = "Tk:owh_ram_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_5]
+[interface_5_1]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -4708,7 +4708,7 @@ Name       = "Tk:owh_rom_5"
 Type       = uLong
 Format     = "hex"
 
-[interface_5]
+[interface_5_2]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -4728,7 +4728,7 @@ Name       = "Tk:owh_ram_5"
 Type       = uLong
 Format     = "hex"
 
-[interface_6]
+[interface_6_1]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -4748,7 +4748,7 @@ Name       = "Tk:owh_rom_6"
 Type       = uLong
 Format     = "hex"
 
-[interface_6]
+[interface_6_2]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -4768,7 +4768,7 @@ Name       = "Tk:owh_ram_6"
 Type       = uLong
 Format     = "hex"
 
-[interface_7]
+[interface_7_1]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -4788,7 +4788,7 @@ Name       = "Tk:owh_rom_7"
 Type       = uLong
 Format     = "hex"
 
-[interface_7]
+[interface_7_2]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -4808,7 +4808,7 @@ Name       = "Tk:owh_ram_7"
 Type       = uLong
 Format     = "hex"
 
-[interface_8]
+[interface_8_1]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -4828,7 +4828,7 @@ Name       = "Tk:owh_rom_8"
 Type       = uLong
 Format     = "hex"
 
-[interface_8]
+[interface_8_2]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -4848,7 +4848,7 @@ Name       = "Tk:owh_ram_8"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_3]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -4859,7 +4859,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_1]
+[powerid_1_1]
 Group      = 6
 SubGroup   = 10
 Column     = 1
@@ -4868,7 +4868,7 @@ Name       = "Tk:powerid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_4]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -4879,7 +4879,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_1]
+[workid_1_1]
 Group      = 6
 SubGroup   = 10
 Column     = 2
@@ -4888,7 +4888,7 @@ Name       = "Tk:workid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_3]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -4899,7 +4899,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_2]
+[powerid_2_1]
 Group      = 6
 SubGroup   = 10
 Column     = 1
@@ -4908,7 +4908,7 @@ Name       = "Tk:powerid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_4]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -4919,7 +4919,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_2]
+[workid_2_1]
 Group      = 6
 SubGroup   = 10
 Column     = 2
@@ -4928,7 +4928,7 @@ Name       = "Tk:workid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_3]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -4939,7 +4939,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_3]
+[powerid_3_1]
 Group      = 6
 SubGroup   = 10
 Column     = 1
@@ -4948,7 +4948,7 @@ Name       = "Tk:powerid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_4]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -4959,7 +4959,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_3]
+[workid_3_1]
 Group      = 6
 SubGroup   = 10
 Column     = 2
@@ -4968,7 +4968,7 @@ Name       = "Tk:workid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_3]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -4979,7 +4979,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_4]
+[powerid_4_1]
 Group      = 6
 SubGroup   = 10
 Column     = 1
@@ -4988,7 +4988,7 @@ Name       = "Tk:powerid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_4]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -4999,7 +4999,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_4]
+[workid_4_1]
 Group      = 6
 SubGroup   = 10
 Column     = 2
@@ -5008,7 +5008,7 @@ Name       = "Tk:workid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_5]
+[interface_5_3]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5019,7 +5019,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_5]
+[powerid_5_1]
 Group      = 6
 SubGroup   = 10
 Column     = 1
@@ -5028,7 +5028,7 @@ Name       = "Tk:powerid_5"
 Type       = uLong
 Format     = "hex"
 
-[interface_5]
+[interface_5_4]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -5039,7 +5039,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_5]
+[workid_5_1]
 Group      = 6
 SubGroup   = 10
 Column     = 2
@@ -5048,7 +5048,7 @@ Name       = "Tk:workid_5"
 Type       = uLong
 Format     = "hex"
 
-[interface_6]
+[interface_6_3]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5059,7 +5059,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_6]
+[powerid_6_1]
 Group      = 6
 SubGroup   = 10
 Column     = 1
@@ -5068,7 +5068,7 @@ Name       = "Tk:powerid_6"
 Type       = uLong
 Format     = "hex"
 
-[interface_6]
+[interface_6_4]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -5079,7 +5079,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_6]
+[workid_6_1]
 Group      = 6
 SubGroup   = 10
 Column     = 2
@@ -5088,7 +5088,7 @@ Name       = "Tk:workid_6"
 Type       = uLong
 Format     = "hex"
 
-[interface_7]
+[interface_7_3]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5099,7 +5099,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_7]
+[powerid_7_1]
 Group      = 6
 SubGroup   = 10
 Column     = 1
@@ -5108,7 +5108,7 @@ Name       = "Tk:powerid_7"
 Type       = uLong
 Format     = "hex"
 
-[interface_7]
+[interface_7_4]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -5119,7 +5119,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_7]
+[workid_7_1]
 Group      = 6
 SubGroup   = 10
 Column     = 2
@@ -5128,7 +5128,7 @@ Name       = "Tk:workid_7"
 Type       = uLong
 Format     = "hex"
 
-[interface_8]
+[interface_8_3]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5139,7 +5139,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_8]
+[powerid_8_1]
 Group      = 6
 SubGroup   = 10
 Column     = 1
@@ -5148,7 +5148,7 @@ Name       = "Tk:powerid_8"
 Type       = uLong
 Format     = "hex"
 
-[interface_8]
+[interface_8_4]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -5159,7 +5159,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_8]
+[workid_8_1]
 Group      = 6
 SubGroup   = 10
 Column     = 2
@@ -5168,7 +5168,7 @@ Name       = "Tk:workid_8"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_5]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5179,7 +5179,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_1]
+[powerid_1_2]
 Group      = 3
 SubGroup   = 2
 Column     = 1
@@ -5189,7 +5189,7 @@ Type       = uLong
 Display    = "ViewOnly"
 Format     = "hex"
 
-[interface_1]
+[interface_1_6]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5209,7 +5209,7 @@ Name       = "Tk:lambdaid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_7]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -5220,7 +5220,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_1]
+[workid_1_2]
 Group      = 3
 SubGroup   = 2
 Column     = 1
@@ -5230,7 +5230,7 @@ Type       = uLong
 Display    = "ViewOnly"
 Format     = "hex"
 
-[interface_2]
+[interface_2_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5241,7 +5241,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_2]
+[powerid_2_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5250,7 +5250,7 @@ Name       = "Tk:powerid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5270,7 +5270,7 @@ Name       = "Tk:lambdaid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5281,7 +5281,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_2]
+[workid_2_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5290,7 +5290,7 @@ Name       = "Tk:workid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5301,7 +5301,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_3]
+[powerid_3_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5310,7 +5310,7 @@ Name       = "Tk:powerid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5330,7 +5330,7 @@ Name       = "Tk:lambdaid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5341,7 +5341,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_3]
+[workid_3_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5350,7 +5350,7 @@ Name       = "Tk:workid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5361,7 +5361,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_4]
+[powerid_4_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5370,7 +5370,7 @@ Name       = "Tk:powerid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5390,7 +5390,7 @@ Name       = "Tk:lambdaid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5401,7 +5401,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_4]
+[workid_4_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5410,7 +5410,7 @@ Name       = "Tk:workid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_5]
+[interface_5_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5421,7 +5421,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_5]
+[powerid_5_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5430,7 +5430,7 @@ Name       = "Tk:powerid_5"
 Type       = uLong
 Format     = "hex"
 
-[interface_5]
+[interface_5_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5450,7 +5450,7 @@ Name       = "Tk:lambdaid_5"
 Type       = uLong
 Format     = "hex"
 
-[interface_5]
+[interface_5_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5461,7 +5461,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_5]
+[workid_5_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5470,7 +5470,7 @@ Name       = "Tk:workid_5"
 Type       = uLong
 Format     = "hex"
 
-[interface_6]
+[interface_6_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5481,7 +5481,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_6]
+[powerid_6_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5490,7 +5490,7 @@ Name       = "Tk:powerid_6"
 Type       = uLong
 Format     = "hex"
 
-[interface_6]
+[interface_6_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5510,7 +5510,7 @@ Name       = "Tk:lambdaid_6"
 Type       = uLong
 Format     = "hex"
 
-[interface_6]
+[interface_6_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5521,7 +5521,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_6]
+[workid_6_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5530,7 +5530,7 @@ Name       = "Tk:workid_6"
 Type       = uLong
 Format     = "hex"
 
-[interface_7]
+[interface_7_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5541,7 +5541,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_7]
+[powerid_7_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5550,7 +5550,7 @@ Name       = "Tk:powerid_7"
 Type       = uLong
 Format     = "hex"
 
-[interface_7]
+[interface_7_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5570,7 +5570,7 @@ Name       = "Tk:lambdaid_7"
 Type       = uLong
 Format     = "hex"
 
-[interface_7]
+[interface_7_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5581,7 +5581,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_7]
+[workid_7_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5590,7 +5590,7 @@ Name       = "Tk:workid_7"
 Type       = uLong
 Format     = "hex"
 
-[interface_8]
+[interface_8_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5601,7 +5601,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[powerid_8]
+[powerid_8_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5610,7 +5610,7 @@ Name       = "Tk:powerid_8"
 Type       = uLong
 Format     = "hex"
 
-[interface_8]
+[interface_8_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5630,7 +5630,7 @@ Name       = "Tk:lambdaid_8"
 Type       = uLong
 Format     = "hex"
 
-[interface_8]
+[interface_8_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5641,7 +5641,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[workid_8]
+[workid_8_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -5650,7 +5650,7 @@ Name       = "Tk:workid_8"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_8]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5661,7 +5661,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_1]
+[rawid_1_1]
 Group      = 3
 SubGroup   = 2
 Column     = 1
@@ -5671,7 +5671,7 @@ Type       = uLong
 Display    = "ViewOnly"
 Format     = "hex"
 
-[interface_1]
+[interface_1_9]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5682,7 +5682,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_1]
+[rmsid_1_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5691,7 +5691,7 @@ Name       = "Tk:rmsid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_10]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5702,7 +5702,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_1]
+[frequencyid_1_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5711,7 +5711,7 @@ Name       = "Tk:frequencyid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_11]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5722,7 +5722,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_1]
+[acoffset_1_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5731,7 +5731,7 @@ Name       = "Tk:acoffset_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_12]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -5742,7 +5742,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_1]
+[chargebalancetotalid_1_1]
 Group      = 3
 SubGroup   = 2
 Column     = 2
@@ -5752,7 +5752,7 @@ Type       = uLong
 Display    = "ViewOnly"
 Format     = "hex"
 
-[interface_1]
+[interface_1_13]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -5763,7 +5763,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_1]
+[chargebalancechargeid_1_1]
 Group      = 3
 SubGroup   = 2
 Column     = 2
@@ -5773,7 +5773,7 @@ Type       = uLong
 Display    = "ViewOnly"
 Format     = "hex"
 
-[interface_1]
+[interface_1_14]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -5784,7 +5784,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_1]
+[chargebalancedischargeid_1_1]
 Group      = 3
 SubGroup   = 2
 Column     = 2
@@ -5794,7 +5794,7 @@ Type       = uLong
 Display    = "ViewOnly"
 Format     = "hex"
 
-[interface_1]
+[interface_1_15]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5805,7 +5805,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_1]
+[rawid_1_2]
 Group      = 6
 SubGroup   = 11
 Column     = 1
@@ -5814,7 +5814,7 @@ Name       = "Tk:rawid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_16]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5825,7 +5825,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_1]
+[rmsid_1_2]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5834,7 +5834,7 @@ Name       = "Tk:rmsid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_17]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5845,7 +5845,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_1]
+[frequencyid_1_2]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5854,7 +5854,7 @@ Name       = "Tk:frequencyid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_18]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5865,7 +5865,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_1]
+[acoffset_1_2]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5874,7 +5874,7 @@ Name       = "Tk:acoffset_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_19]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -5885,7 +5885,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_1]
+[chargebalancetotalid_1_2]
 Group      = 6
 SubGroup   = 11
 Column     = 2
@@ -5894,7 +5894,7 @@ Name       = "Tk:chargebalancetotalid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_20]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -5905,7 +5905,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_1]
+[chargebalancechargeid_1_2]
 Group      = 6
 SubGroup   = 11
 Column     = 3
@@ -5914,7 +5914,7 @@ Name       = "Tk:chargebalancechargeid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_21]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -5925,7 +5925,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_1]
+[chargebalancedischargeid_1_2]
 Group      = 6
 SubGroup   = 11
 Column     = 4
@@ -5934,7 +5934,7 @@ Name       = "Tk:chargebalancedischargeid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_22]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5945,7 +5945,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_1]
+[rawid_1_3]
 Group      = 6
 SubGroup   = 12
 Column     = 1
@@ -5954,7 +5954,7 @@ Name       = "Tk:rawid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_23]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5965,7 +5965,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_1]
+[rmsid_1_3]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5974,7 +5974,7 @@ Name       = "Tk:rmsid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_24]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5985,7 +5985,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_1]
+[frequencyid_1_3]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -5994,7 +5994,7 @@ Name       = "Tk:frequencyid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_25]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6005,7 +6005,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_1]
+[acoffset_1_3]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6014,7 +6014,7 @@ Name       = "Tk:acoffset_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_26]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -6025,7 +6025,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_1]
+[chargebalancetotalid_1_3]
 Group      = 6
 SubGroup   = 12
 Column     = 2
@@ -6034,7 +6034,7 @@ Name       = "Tk:chargebalancetotalid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_27]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -6045,7 +6045,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_1]
+[chargebalancechargeid_1_3]
 Group      = 6
 SubGroup   = 12
 Column     = 3
@@ -6054,7 +6054,7 @@ Name       = "Tk:chargebalancechargeid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_28]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -6065,7 +6065,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_1]
+[chargebalancedischargeid_1_3]
 Group      = 6
 SubGroup   = 12
 Column     = 4
@@ -6074,7 +6074,7 @@ Name       = "Tk:chargebalancedischargeid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_29]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6085,7 +6085,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_1]
+[rawid_1_4]
 Group      = 6
 SubGroup   = 13
 Column     = 1
@@ -6094,7 +6094,7 @@ Name       = "Tk:rawid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_30]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6105,7 +6105,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_1]
+[rmsid_1_4]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6114,7 +6114,7 @@ Name       = "Tk:rmsid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_31]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6125,7 +6125,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_1]
+[frequencyid_1_4]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6134,7 +6134,7 @@ Name       = "Tk:frequencyid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_32]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6145,7 +6145,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_1]
+[acoffset_1_4]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6154,7 +6154,7 @@ Name       = "Tk:acoffset_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_33]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -6165,7 +6165,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_1]
+[chargebalancetotalid_1_4]
 Group      = 6
 SubGroup   = 13
 Column     = 2
@@ -6174,7 +6174,7 @@ Name       = "Tk:chargebalancetotalid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_34]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -6185,7 +6185,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_1]
+[chargebalancechargeid_1_4]
 Group      = 6
 SubGroup   = 13
 Column     = 3
@@ -6194,7 +6194,7 @@ Name       = "Tk:chargebalancechargeid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_35]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -6205,7 +6205,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_1]
+[chargebalancedischargeid_1_4]
 Group      = 6
 SubGroup   = 13
 Column     = 4
@@ -6214,7 +6214,7 @@ Name       = "Tk:chargebalancedischargeid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_36]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6225,7 +6225,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_1]
+[rawid_1_5]
 Group      = 6
 SubGroup   = 14
 Column     = 1
@@ -6234,7 +6234,7 @@ Name       = "Tk:rawid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_37]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6245,7 +6245,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_1]
+[rmsid_1_5]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6254,7 +6254,7 @@ Name       = "Tk:rmsid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_38]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6265,7 +6265,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_1]
+[frequencyid_1_5]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6274,7 +6274,7 @@ Name       = "Tk:frequencyid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_39]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6285,7 +6285,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_1]
+[acoffset_1_5]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6294,7 +6294,7 @@ Name       = "Tk:acoffset_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_40]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -6305,7 +6305,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_1]
+[chargebalancetotalid_1_5]
 Group      = 6
 SubGroup   = 14
 Column     = 2
@@ -6314,7 +6314,7 @@ Name       = "Tk:chargebalancetotalid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_41]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -6325,7 +6325,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_1]
+[chargebalancechargeid_1_5]
 Group      = 6
 SubGroup   = 14
 Column     = 3
@@ -6334,7 +6334,7 @@ Name       = "Tk:chargebalancechargeid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_42]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -6345,7 +6345,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_1]
+[chargebalancedischargeid_1_5]
 Group      = 6
 SubGroup   = 14
 Column     = 4
@@ -6354,7 +6354,7 @@ Name       = "Tk:chargebalancedischargeid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_43]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6365,7 +6365,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_1]
+[rawid_1_6]
 Group      = 6
 SubGroup   = 15
 Column     = 1
@@ -6374,7 +6374,7 @@ Name       = "Tk:rawid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_44]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6385,7 +6385,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_1]
+[rmsid_1_6]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6394,7 +6394,7 @@ Name       = "Tk:rmsid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_45]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6405,7 +6405,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_1]
+[frequencyid_1_6]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6414,7 +6414,7 @@ Name       = "Tk:frequencyid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_46]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6425,7 +6425,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_1]
+[acoffset_1_6]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6434,7 +6434,7 @@ Name       = "Tk:acoffset_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_47]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -6445,7 +6445,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_1]
+[chargebalancetotalid_1_6]
 Group      = 6
 SubGroup   = 15
 Column     = 2
@@ -6454,7 +6454,7 @@ Name       = "Tk:chargebalancetotalid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_48]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -6465,7 +6465,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_1]
+[chargebalancechargeid_1_6]
 Group      = 6
 SubGroup   = 15
 Column     = 3
@@ -6474,7 +6474,7 @@ Name       = "Tk:chargebalancechargeid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_49]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -6485,7 +6485,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_1]
+[chargebalancedischargeid_1_6]
 Group      = 6
 SubGroup   = 15
 Column     = 4
@@ -6494,7 +6494,7 @@ Name       = "Tk:chargebalancedischargeid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_50]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6505,7 +6505,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_1]
+[rawid_1_7]
 Group      = 6
 SubGroup   = 16
 Column     = 1
@@ -6514,7 +6514,7 @@ Name       = "Tk:rawid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_51]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6525,7 +6525,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_1]
+[rmsid_1_7]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6534,7 +6534,7 @@ Name       = "Tk:rmsid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_52]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6545,7 +6545,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_1]
+[frequencyid_1_7]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6554,7 +6554,7 @@ Name       = "Tk:frequencyid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_53]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6565,7 +6565,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_1]
+[acoffset_1_7]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6574,7 +6574,7 @@ Name       = "Tk:acoffset_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_54]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -6585,7 +6585,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_1]
+[chargebalancetotalid_1_7]
 Group      = 6
 SubGroup   = 16
 Column     = 2
@@ -6594,7 +6594,7 @@ Name       = "Tk:chargebalancetotalid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_55]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -6605,7 +6605,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_1]
+[chargebalancechargeid_1_7]
 Group      = 6
 SubGroup   = 16
 Column     = 3
@@ -6614,7 +6614,7 @@ Name       = "Tk:chargebalancechargeid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_56]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -6625,7 +6625,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_1]
+[chargebalancedischargeid_1_7]
 Group      = 6
 SubGroup   = 16
 Column     = 4
@@ -6634,7 +6634,7 @@ Name       = "Tk:chargebalancedischargeid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_57]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6645,7 +6645,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_1]
+[rawid_1_8]
 Group      = 6
 SubGroup   = 17
 Column     = 1
@@ -6654,7 +6654,7 @@ Name       = "Tk:rawid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_58]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6665,7 +6665,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_1]
+[rmsid_1_8]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6674,7 +6674,7 @@ Name       = "Tk:rmsid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_59]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6685,7 +6685,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_1]
+[frequencyid_1_8]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6694,7 +6694,7 @@ Name       = "Tk:frequencyid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_60]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6705,7 +6705,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_1]
+[acoffset_1_8]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6714,7 +6714,7 @@ Name       = "Tk:acoffset_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_61]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -6725,7 +6725,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_1]
+[chargebalancetotalid_1_8]
 Group      = 6
 SubGroup   = 17
 Column     = 2
@@ -6734,7 +6734,7 @@ Name       = "Tk:chargebalancetotalid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_62]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -6745,7 +6745,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_1]
+[chargebalancechargeid_1_8]
 Group      = 6
 SubGroup   = 17
 Column     = 3
@@ -6754,7 +6754,7 @@ Name       = "Tk:chargebalancechargeid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_1]
+[interface_1_63]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -6765,7 +6765,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_1]
+[chargebalancedischargeid_1_8]
 Group      = 6
 SubGroup   = 17
 Column     = 4
@@ -6774,7 +6774,7 @@ Name       = "Tk:chargebalancedischargeid_1"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_8]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6785,7 +6785,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_2]
+[rawid_2_1]
 Group      = 3
 SubGroup   = 2
 Column     = 1
@@ -6795,7 +6795,7 @@ Type       = uLong
 Display    = "ViewOnly"
 Format     = "hex"
 
-[interface_2]
+[interface_2_9]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6806,7 +6806,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_2]
+[rmsid_2_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6815,7 +6815,7 @@ Name       = "Tk:rmsid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_10]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6826,7 +6826,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_2]
+[frequencyid_2_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6835,7 +6835,7 @@ Name       = "Tk:frequencyid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_11]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6846,7 +6846,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_2]
+[acoffset_2_1]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6855,7 +6855,7 @@ Name       = "Tk:acoffset_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_12]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -6866,7 +6866,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_2]
+[chargebalancetotalid_2_1]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -6876,7 +6876,7 @@ Type       = uLong
 Display    = "ViewOnly"
 Format     = "hex"
 
-[interface_2]
+[interface_2_13]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -6887,7 +6887,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_2]
+[chargebalancechargeid_2_1]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -6897,7 +6897,7 @@ Type       = uLong
 Display    = "ViewOnly"
 Format     = "hex"
 
-[interface_2]
+[interface_2_14]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -6908,7 +6908,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_2]
+[chargebalancedischargeid_2_1]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -6918,7 +6918,7 @@ Type       = uLong
 Display    = "ViewOnly"
 Format     = "hex"
 
-[interface_2]
+[interface_2_15]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6929,7 +6929,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_2]
+[rawid_2_2]
 Group      = 6
 SubGroup   = 11
 Column     = 1
@@ -6938,7 +6938,7 @@ Name       = "Tk:rawid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_16]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6949,7 +6949,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_2]
+[rmsid_2_2]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6958,7 +6958,7 @@ Name       = "Tk:rmsid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_17]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6969,7 +6969,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_2]
+[frequencyid_2_2]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6978,7 +6978,7 @@ Name       = "Tk:frequencyid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_18]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6989,7 +6989,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_2]
+[acoffset_2_2]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -6998,7 +6998,7 @@ Name       = "Tk:acoffset_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_19]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -7009,7 +7009,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_2]
+[chargebalancetotalid_2_2]
 Group      = 6
 SubGroup   = 11
 Column     = 2
@@ -7018,7 +7018,7 @@ Name       = "Tk:chargebalancetotalid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_20]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -7029,7 +7029,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_2]
+[chargebalancechargeid_2_2]
 Group      = 6
 SubGroup   = 11
 Column     = 3
@@ -7038,7 +7038,7 @@ Name       = "Tk:chargebalancechargeid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_21]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -7049,7 +7049,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_2]
+[chargebalancedischargeid_2_2]
 Group      = 6
 SubGroup   = 11
 Column     = 4
@@ -7058,7 +7058,7 @@ Name       = "Tk:chargebalancedischargeid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_22]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7069,7 +7069,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_2]
+[rawid_2_3]
 Group      = 6
 SubGroup   = 12
 Column     = 1
@@ -7078,7 +7078,7 @@ Name       = "Tk:rawid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_23]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7089,7 +7089,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_2]
+[rmsid_2_3]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7098,7 +7098,7 @@ Name       = "Tk:rmsid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_24]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7109,7 +7109,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_2]
+[frequencyid_2_3]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7118,7 +7118,7 @@ Name       = "Tk:frequencyid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_25]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7129,7 +7129,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_2]
+[acoffset_2_3]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7138,7 +7138,7 @@ Name       = "Tk:acoffset_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_26]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -7149,7 +7149,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_2]
+[chargebalancetotalid_2_3]
 Group      = 6
 SubGroup   = 12
 Column     = 2
@@ -7158,7 +7158,7 @@ Name       = "Tk:chargebalancetotalid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_27]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -7169,7 +7169,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_2]
+[chargebalancechargeid_2_3]
 Group      = 6
 SubGroup   = 12
 Column     = 3
@@ -7178,7 +7178,7 @@ Name       = "Tk:chargebalancechargeid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_28]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -7189,7 +7189,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_2]
+[chargebalancedischargeid_2_3]
 Group      = 6
 SubGroup   = 12
 Column     = 4
@@ -7198,7 +7198,7 @@ Name       = "Tk:chargebalancedischargeid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_29]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7209,7 +7209,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_2]
+[rawid_2_4]
 Group      = 6
 SubGroup   = 13
 Column     = 1
@@ -7218,7 +7218,7 @@ Name       = "Tk:rawid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_30]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7229,7 +7229,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_2]
+[rmsid_2_4]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7238,7 +7238,7 @@ Name       = "Tk:rmsid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_31]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7249,7 +7249,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_2]
+[frequencyid_2_4]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7258,7 +7258,7 @@ Name       = "Tk:frequencyid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_32]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7269,7 +7269,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_2]
+[acoffset_2_4]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7278,7 +7278,7 @@ Name       = "Tk:acoffset_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_33]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -7289,7 +7289,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_2]
+[chargebalancetotalid_2_4]
 Group      = 6
 SubGroup   = 13
 Column     = 2
@@ -7298,7 +7298,7 @@ Name       = "Tk:chargebalancetotalid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_34]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -7309,7 +7309,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_2]
+[chargebalancechargeid_2_4]
 Group      = 6
 SubGroup   = 13
 Column     = 3
@@ -7318,7 +7318,7 @@ Name       = "Tk:chargebalancechargeid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_35]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -7329,7 +7329,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_2]
+[chargebalancedischargeid_2_4]
 Group      = 6
 SubGroup   = 13
 Column     = 4
@@ -7338,7 +7338,7 @@ Name       = "Tk:chargebalancedischargeid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_36]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7349,7 +7349,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_2]
+[rawid_2_5]
 Group      = 6
 SubGroup   = 14
 Column     = 1
@@ -7358,7 +7358,7 @@ Name       = "Tk:rawid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_37]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7369,7 +7369,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_2]
+[rmsid_2_5]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7378,7 +7378,7 @@ Name       = "Tk:rmsid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_38]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7389,7 +7389,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_2]
+[frequencyid_2_5]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7398,7 +7398,7 @@ Name       = "Tk:frequencyid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_39]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7409,7 +7409,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_2]
+[acoffset_2_5]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7418,7 +7418,7 @@ Name       = "Tk:acoffset_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_40]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -7429,7 +7429,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_2]
+[chargebalancetotalid_2_5]
 Group      = 6
 SubGroup   = 14
 Column     = 2
@@ -7438,7 +7438,7 @@ Name       = "Tk:chargebalancetotalid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_41]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -7449,7 +7449,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_2]
+[chargebalancechargeid_2_5]
 Group      = 6
 SubGroup   = 14
 Column     = 3
@@ -7458,7 +7458,7 @@ Name       = "Tk:chargebalancechargeid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_42]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -7469,7 +7469,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_2]
+[chargebalancedischargeid_2_5]
 Group      = 6
 SubGroup   = 14
 Column     = 4
@@ -7478,7 +7478,7 @@ Name       = "Tk:chargebalancedischargeid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_43]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7489,7 +7489,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_2]
+[rawid_2_6]
 Group      = 6
 SubGroup   = 15
 Column     = 1
@@ -7498,7 +7498,7 @@ Name       = "Tk:rawid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_44]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7509,7 +7509,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_2]
+[rmsid_2_6]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7518,7 +7518,7 @@ Name       = "Tk:rmsid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_45]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7529,7 +7529,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_2]
+[frequencyid_2_6]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7538,7 +7538,7 @@ Name       = "Tk:frequencyid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_46]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7549,7 +7549,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_2]
+[acoffset_2_6]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7558,7 +7558,7 @@ Name       = "Tk:acoffset_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_47]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -7569,7 +7569,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_2]
+[chargebalancetotalid_2_6]
 Group      = 6
 SubGroup   = 15
 Column     = 2
@@ -7578,7 +7578,7 @@ Name       = "Tk:chargebalancetotalid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_48]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -7589,7 +7589,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_2]
+[chargebalancechargeid_2_6]
 Group      = 6
 SubGroup   = 15
 Column     = 3
@@ -7598,7 +7598,7 @@ Name       = "Tk:chargebalancechargeid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_49]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -7609,7 +7609,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_2]
+[chargebalancedischargeid_2_6]
 Group      = 6
 SubGroup   = 15
 Column     = 4
@@ -7618,7 +7618,7 @@ Name       = "Tk:chargebalancedischargeid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_50]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7629,7 +7629,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_2]
+[rawid_2_7]
 Group      = 6
 SubGroup   = 16
 Column     = 1
@@ -7638,7 +7638,7 @@ Name       = "Tk:rawid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_51]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7649,7 +7649,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_2]
+[rmsid_2_7]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7658,7 +7658,7 @@ Name       = "Tk:rmsid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_52]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7669,7 +7669,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_2]
+[frequencyid_2_7]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7678,7 +7678,7 @@ Name       = "Tk:frequencyid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_53]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7689,7 +7689,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_2]
+[acoffset_2_7]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7698,7 +7698,7 @@ Name       = "Tk:acoffset_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_54]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -7709,7 +7709,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_2]
+[chargebalancetotalid_2_7]
 Group      = 6
 SubGroup   = 16
 Column     = 2
@@ -7718,7 +7718,7 @@ Name       = "Tk:chargebalancetotalid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_55]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -7729,7 +7729,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_2]
+[chargebalancechargeid_2_7]
 Group      = 6
 SubGroup   = 16
 Column     = 3
@@ -7738,7 +7738,7 @@ Name       = "Tk:chargebalancechargeid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_56]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -7749,7 +7749,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_2]
+[chargebalancedischargeid_2_7]
 Group      = 6
 SubGroup   = 16
 Column     = 4
@@ -7758,7 +7758,7 @@ Name       = "Tk:chargebalancedischargeid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_57]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7769,7 +7769,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_2]
+[rawid_2_8]
 Group      = 6
 SubGroup   = 17
 Column     = 1
@@ -7778,7 +7778,7 @@ Name       = "Tk:rawid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_58]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7789,7 +7789,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_2]
+[rmsid_2_8]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7798,7 +7798,7 @@ Name       = "Tk:rmsid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_59]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7809,7 +7809,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_2]
+[frequencyid_2_8]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7818,7 +7818,7 @@ Name       = "Tk:frequencyid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_60]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7829,7 +7829,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_2]
+[acoffset_2_8]
 Group      = 6
 SubGroup   = 1
 Column     = 1
@@ -7838,7 +7838,7 @@ Name       = "Tk:acoffset_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_61]
 Group      = 6
 SubGroup   = 1
 Column     = 2
@@ -7849,7 +7849,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_2]
+[chargebalancetotalid_2_8]
 Group      = 6
 SubGroup   = 17
 Column     = 2
@@ -7858,7 +7858,7 @@ Name       = "Tk:chargebalancetotalid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_62]
 Group      = 6
 SubGroup   = 1
 Column     = 3
@@ -7869,7 +7869,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_2]
+[chargebalancechargeid_2_8]
 Group      = 6
 SubGroup   = 17
 Column     = 3
@@ -7878,7 +7878,7 @@ Name       = "Tk:chargebalancechargeid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_2]
+[interface_2_63]
 Group      = 6
 SubGroup   = 1
 Column     = 4
@@ -7889,7 +7889,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_2]
+[chargebalancedischargeid_2_8]
 Group      = 6
 SubGroup   = 17
 Column     = 4
@@ -7898,7 +7898,7 @@ Name       = "Tk:chargebalancedischargeid_2"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -7909,7 +7909,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_3]
+[rawid_3_1]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -7918,7 +7918,7 @@ Name       = "Tk:rawid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_9]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -7929,7 +7929,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_3]
+[rmsid_3_1]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -7938,7 +7938,7 @@ Name       = "Tk:rmsid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_10]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -7949,7 +7949,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_3]
+[frequencyid_3_1]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -7958,7 +7958,7 @@ Name       = "Tk:frequencyid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_11]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -7969,7 +7969,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_3]
+[acoffset_3_1]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -7978,7 +7978,7 @@ Name       = "Tk:acoffset_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_12]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -7989,7 +7989,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_3]
+[chargebalancetotalid_3_1]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -7998,7 +7998,7 @@ Name       = "Tk:chargebalancetotalid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_13]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8009,7 +8009,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_3]
+[chargebalancechargeid_3_1]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8018,7 +8018,7 @@ Name       = "Tk:chargebalancechargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_14]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8029,7 +8029,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_3]
+[chargebalancedischargeid_3_1]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8038,7 +8038,7 @@ Name       = "Tk:chargebalancedischargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_15]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8049,7 +8049,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_3]
+[rawid_3_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8058,7 +8058,7 @@ Name       = "Tk:rawid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_16]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8069,7 +8069,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_3]
+[rmsid_3_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8078,7 +8078,7 @@ Name       = "Tk:rmsid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_17]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8089,7 +8089,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_3]
+[frequencyid_3_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8098,7 +8098,7 @@ Name       = "Tk:frequencyid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_18]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8109,7 +8109,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_3]
+[acoffset_3_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8118,7 +8118,7 @@ Name       = "Tk:acoffset_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_19]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8129,7 +8129,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_3]
+[chargebalancetotalid_3_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8138,7 +8138,7 @@ Name       = "Tk:chargebalancetotalid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_20]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8149,7 +8149,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_3]
+[chargebalancechargeid_3_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8158,7 +8158,7 @@ Name       = "Tk:chargebalancechargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_21]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8169,7 +8169,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_3]
+[chargebalancedischargeid_3_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8178,7 +8178,7 @@ Name       = "Tk:chargebalancedischargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_22]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8189,7 +8189,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_3]
+[rawid_3_3]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8198,7 +8198,7 @@ Name       = "Tk:rawid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_23]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8209,7 +8209,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_3]
+[rmsid_3_3]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8218,7 +8218,7 @@ Name       = "Tk:rmsid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_24]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8229,7 +8229,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_3]
+[frequencyid_3_3]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8238,7 +8238,7 @@ Name       = "Tk:frequencyid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_25]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8249,7 +8249,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_3]
+[acoffset_3_3]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8258,7 +8258,7 @@ Name       = "Tk:acoffset_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_26]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8269,7 +8269,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_3]
+[chargebalancetotalid_3_3]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8278,7 +8278,7 @@ Name       = "Tk:chargebalancetotalid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_27]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8289,7 +8289,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_3]
+[chargebalancechargeid_3_3]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8298,7 +8298,7 @@ Name       = "Tk:chargebalancechargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_28]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8309,7 +8309,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_3]
+[chargebalancedischargeid_3_3]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8318,7 +8318,7 @@ Name       = "Tk:chargebalancedischargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_29]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8329,7 +8329,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_3]
+[rawid_3_4]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8338,7 +8338,7 @@ Name       = "Tk:rawid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_30]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8349,7 +8349,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_3]
+[rmsid_3_4]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8358,7 +8358,7 @@ Name       = "Tk:rmsid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_31]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8369,7 +8369,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_3]
+[frequencyid_3_4]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8378,7 +8378,7 @@ Name       = "Tk:frequencyid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_32]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8389,7 +8389,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_3]
+[acoffset_3_4]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8398,7 +8398,7 @@ Name       = "Tk:acoffset_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_33]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8409,7 +8409,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_3]
+[chargebalancetotalid_3_4]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8418,7 +8418,7 @@ Name       = "Tk:chargebalancetotalid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_34]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8429,7 +8429,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_3]
+[chargebalancechargeid_3_4]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8438,7 +8438,7 @@ Name       = "Tk:chargebalancechargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_35]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8449,7 +8449,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_3]
+[chargebalancedischargeid_3_4]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8458,7 +8458,7 @@ Name       = "Tk:chargebalancedischargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_36]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8469,7 +8469,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_3]
+[rawid_3_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8478,7 +8478,7 @@ Name       = "Tk:rawid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_37]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8489,7 +8489,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_3]
+[rmsid_3_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8498,7 +8498,7 @@ Name       = "Tk:rmsid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_38]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8509,7 +8509,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_3]
+[frequencyid_3_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8518,7 +8518,7 @@ Name       = "Tk:frequencyid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_39]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8529,7 +8529,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_3]
+[acoffset_3_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8538,7 +8538,7 @@ Name       = "Tk:acoffset_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_40]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8549,7 +8549,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_3]
+[chargebalancetotalid_3_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8558,7 +8558,7 @@ Name       = "Tk:chargebalancetotalid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_41]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8569,7 +8569,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_3]
+[chargebalancechargeid_3_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8578,7 +8578,7 @@ Name       = "Tk:chargebalancechargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_42]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8589,7 +8589,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_3]
+[chargebalancedischargeid_3_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8598,7 +8598,7 @@ Name       = "Tk:chargebalancedischargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_43]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8609,7 +8609,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_3]
+[rawid_3_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8618,7 +8618,7 @@ Name       = "Tk:rawid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_44]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8629,7 +8629,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_3]
+[rmsid_3_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8638,7 +8638,7 @@ Name       = "Tk:rmsid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_45]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8649,7 +8649,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_3]
+[frequencyid_3_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8658,7 +8658,7 @@ Name       = "Tk:frequencyid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_46]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8669,7 +8669,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_3]
+[acoffset_3_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8678,7 +8678,7 @@ Name       = "Tk:acoffset_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_47]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8689,7 +8689,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_3]
+[chargebalancetotalid_3_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8698,7 +8698,7 @@ Name       = "Tk:chargebalancetotalid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_48]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8709,7 +8709,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_3]
+[chargebalancechargeid_3_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8718,7 +8718,7 @@ Name       = "Tk:chargebalancechargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_49]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8729,7 +8729,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_3]
+[chargebalancedischargeid_3_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8738,7 +8738,7 @@ Name       = "Tk:chargebalancedischargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_50]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8749,7 +8749,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_3]
+[rawid_3_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8758,7 +8758,7 @@ Name       = "Tk:rawid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_51]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8769,7 +8769,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_3]
+[rmsid_3_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8778,7 +8778,7 @@ Name       = "Tk:rmsid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_52]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8789,7 +8789,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_3]
+[frequencyid_3_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8798,7 +8798,7 @@ Name       = "Tk:frequencyid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_53]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8809,7 +8809,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_3]
+[acoffset_3_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8818,7 +8818,7 @@ Name       = "Tk:acoffset_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_54]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8829,7 +8829,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_3]
+[chargebalancetotalid_3_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8838,7 +8838,7 @@ Name       = "Tk:chargebalancetotalid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_55]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8849,7 +8849,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_3]
+[chargebalancechargeid_3_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8858,7 +8858,7 @@ Name       = "Tk:chargebalancechargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_56]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8869,7 +8869,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_3]
+[chargebalancedischargeid_3_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8878,7 +8878,7 @@ Name       = "Tk:chargebalancedischargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_57]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8889,7 +8889,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_3]
+[rawid_3_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8898,7 +8898,7 @@ Name       = "Tk:rawid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_58]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8909,7 +8909,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_3]
+[rmsid_3_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8918,7 +8918,7 @@ Name       = "Tk:rmsid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_59]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8929,7 +8929,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_3]
+[frequencyid_3_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8938,7 +8938,7 @@ Name       = "Tk:frequencyid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_60]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8949,7 +8949,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_3]
+[acoffset_3_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8958,7 +8958,7 @@ Name       = "Tk:acoffset_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_61]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8969,7 +8969,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_3]
+[chargebalancetotalid_3_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8978,7 +8978,7 @@ Name       = "Tk:chargebalancetotalid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_62]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8989,7 +8989,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_3]
+[chargebalancechargeid_3_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -8998,7 +8998,7 @@ Name       = "Tk:chargebalancechargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_3]
+[interface_3_63]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9009,7 +9009,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_3]
+[chargebalancedischargeid_3_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9018,7 +9018,7 @@ Name       = "Tk:chargebalancedischargeid_3"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9029,7 +9029,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_4]
+[rawid_4_1]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9038,7 +9038,7 @@ Name       = "Tk:rawid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_9]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9049,7 +9049,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_4]
+[rmsid_4_1]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9058,7 +9058,7 @@ Name       = "Tk:rmsid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_10]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9069,7 +9069,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_4]
+[frequencyid_4_1]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9078,7 +9078,7 @@ Name       = "Tk:frequencyid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_11]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9089,7 +9089,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_4]
+[acoffset_4_1]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9098,7 +9098,7 @@ Name       = "Tk:acoffset_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_12]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9109,7 +9109,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_4]
+[chargebalancetotalid_4_1]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9118,7 +9118,7 @@ Name       = "Tk:chargebalancetotalid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_13]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9129,7 +9129,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_4]
+[chargebalancechargeid_4_1]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9138,7 +9138,7 @@ Name       = "Tk:chargebalancechargeid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_14]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9149,7 +9149,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_4]
+[chargebalancedischargeid_4_1]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9158,7 +9158,7 @@ Name       = "Tk:chargebalancedischargeid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_15]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9169,7 +9169,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_4]
+[rawid_4_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9178,7 +9178,7 @@ Name       = "Tk:rawid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_16]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9189,7 +9189,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_4]
+[rmsid_4_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9198,7 +9198,7 @@ Name       = "Tk:rmsid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_17]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9209,7 +9209,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_4]
+[frequencyid_4_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9218,7 +9218,7 @@ Name       = "Tk:frequencyid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_18]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9229,7 +9229,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_4]
+[acoffset_4_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9238,7 +9238,7 @@ Name       = "Tk:acoffset_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_19]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9249,7 +9249,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_4]
+[chargebalancetotalid_4_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9258,7 +9258,7 @@ Name       = "Tk:chargebalancetotalid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_20]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9269,7 +9269,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_4]
+[chargebalancechargeid_4_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9278,7 +9278,7 @@ Name       = "Tk:chargebalancechargeid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_21]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9289,7 +9289,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_4]
+[chargebalancedischargeid_4_2]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9298,7 +9298,7 @@ Name       = "Tk:chargebalancedischargeid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_22]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9309,7 +9309,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_4]
+[rawid_4_3]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9318,7 +9318,7 @@ Name       = "Tk:rawid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_23]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9329,7 +9329,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_4]
+[rmsid_4_3]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9338,7 +9338,7 @@ Name       = "Tk:rmsid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_24]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9349,7 +9349,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_4]
+[frequencyid_4_3]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9358,7 +9358,7 @@ Name       = "Tk:frequencyid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_25]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9369,7 +9369,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_4]
+[acoffset_4_3]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9378,7 +9378,7 @@ Name       = "Tk:acoffset_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_26]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9389,7 +9389,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_4]
+[chargebalancetotalid_4_3]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9398,7 +9398,7 @@ Name       = "Tk:chargebalancetotalid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_27]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9409,7 +9409,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_4]
+[chargebalancechargeid_4_3]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9418,7 +9418,7 @@ Name       = "Tk:chargebalancechargeid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_28]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9429,7 +9429,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_4]
+[chargebalancedischargeid_4_3]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9438,7 +9438,7 @@ Name       = "Tk:chargebalancedischargeid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_29]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9449,7 +9449,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_4]
+[rawid_4_4]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9458,7 +9458,7 @@ Name       = "Tk:rawid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_30]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9469,7 +9469,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_4]
+[rmsid_4_4]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9478,7 +9478,7 @@ Name       = "Tk:rmsid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_31]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9489,7 +9489,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_4]
+[frequencyid_4_4]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9498,7 +9498,7 @@ Name       = "Tk:frequencyid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_32]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9509,7 +9509,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_4]
+[acoffset_4_4]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9518,7 +9518,7 @@ Name       = "Tk:acoffset_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_33]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9529,7 +9529,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_4]
+[chargebalancetotalid_4_4]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9538,7 +9538,7 @@ Name       = "Tk:chargebalancetotalid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_34]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9549,7 +9549,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_4]
+[chargebalancechargeid_4_4]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9558,7 +9558,7 @@ Name       = "Tk:chargebalancechargeid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_35]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9569,7 +9569,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_4]
+[chargebalancedischargeid_4_4]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9578,7 +9578,7 @@ Name       = "Tk:chargebalancedischargeid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_36]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9589,7 +9589,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_4]
+[rawid_4_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9598,7 +9598,7 @@ Name       = "Tk:rawid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_37]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9609,7 +9609,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_4]
+[rmsid_4_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9618,7 +9618,7 @@ Name       = "Tk:rmsid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_38]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9629,7 +9629,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_4]
+[frequencyid_4_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9638,7 +9638,7 @@ Name       = "Tk:frequencyid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_39]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9649,7 +9649,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_4]
+[acoffset_4_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9658,7 +9658,7 @@ Name       = "Tk:acoffset_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_40]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9669,7 +9669,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_4]
+[chargebalancetotalid_4_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9678,7 +9678,7 @@ Name       = "Tk:chargebalancetotalid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_41]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9689,7 +9689,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_4]
+[chargebalancechargeid_4_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9698,7 +9698,7 @@ Name       = "Tk:chargebalancechargeid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_42]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9709,7 +9709,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_4]
+[chargebalancedischargeid_4_5]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9718,7 +9718,7 @@ Name       = "Tk:chargebalancedischargeid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_43]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9729,7 +9729,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_4]
+[rawid_4_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9738,7 +9738,7 @@ Name       = "Tk:rawid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_44]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9749,7 +9749,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_4]
+[rmsid_4_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9758,7 +9758,7 @@ Name       = "Tk:rmsid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_45]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9769,7 +9769,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_4]
+[frequencyid_4_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9778,7 +9778,7 @@ Name       = "Tk:frequencyid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_46]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9789,7 +9789,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_4]
+[acoffset_4_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9798,7 +9798,7 @@ Name       = "Tk:acoffset_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_47]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9809,7 +9809,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_4]
+[chargebalancetotalid_4_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9818,7 +9818,7 @@ Name       = "Tk:chargebalancetotalid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_48]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9829,7 +9829,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_4]
+[chargebalancechargeid_4_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9838,7 +9838,7 @@ Name       = "Tk:chargebalancechargeid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_49]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9849,7 +9849,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_4]
+[chargebalancedischargeid_4_6]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9858,7 +9858,7 @@ Name       = "Tk:chargebalancedischargeid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_50]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9869,7 +9869,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_4]
+[rawid_4_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9878,7 +9878,7 @@ Name       = "Tk:rawid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_51]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9889,7 +9889,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_4]
+[rmsid_4_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9898,7 +9898,7 @@ Name       = "Tk:rmsid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_52]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9909,7 +9909,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_4]
+[frequencyid_4_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9918,7 +9918,7 @@ Name       = "Tk:frequencyid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_53]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9929,7 +9929,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_4]
+[acoffset_4_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9938,7 +9938,7 @@ Name       = "Tk:acoffset_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_54]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9949,7 +9949,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_4]
+[chargebalancetotalid_4_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9958,7 +9958,7 @@ Name       = "Tk:chargebalancetotalid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_55]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9969,7 +9969,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_4]
+[chargebalancechargeid_4_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9978,7 +9978,7 @@ Name       = "Tk:chargebalancechargeid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_56]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9989,7 +9989,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_4]
+[chargebalancedischargeid_4_7]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -9998,7 +9998,7 @@ Name       = "Tk:chargebalancedischargeid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_57]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -10009,7 +10009,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rawid_4]
+[rawid_4_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -10018,7 +10018,7 @@ Name       = "Tk:rawid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_58]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -10029,7 +10029,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[rmsid_4]
+[rmsid_4_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -10038,7 +10038,7 @@ Name       = "Tk:rmsid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_59]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -10049,7 +10049,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[frequencyid_4]
+[frequencyid_4_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -10058,7 +10058,7 @@ Name       = "Tk:frequencyid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_60]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -10069,7 +10069,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[acoffset_4]
+[acoffset_4_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -10078,7 +10078,7 @@ Name       = "Tk:acoffset_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_61]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -10089,7 +10089,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancetotalid_4]
+[chargebalancetotalid_4_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -10098,7 +10098,7 @@ Name       = "Tk:chargebalancetotalid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_62]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -10109,7 +10109,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancechargeid_4]
+[chargebalancechargeid_4_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -10118,7 +10118,7 @@ Name       = "Tk:chargebalancechargeid_4"
 Type       = uLong
 Format     = "hex"
 
-[interface_4]
+[interface_4_63]
 Group      = 6
 SubGroup   = 1
 Column     = 0
@@ -10129,7 +10129,7 @@ Attrib     = Option
 Option_0   = "can2"
 Mask_0     = 0x2
 
-[chargebalancedischargeid_4]
+[chargebalancedischargeid_4_8]
 Group      = 6
 SubGroup   = 1
 Column     = 0
